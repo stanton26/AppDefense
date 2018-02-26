@@ -11,8 +11,8 @@ minimal_mistakes_skin    : "dark" #"default", "air", "aqua", "contrast", "dark",
 locale                   : "en-US"
 title                    : "VMware on AWS SET Team"
 title_separator          : "-"
-name                     : "Your Name"
-description              : "Welcome to the VMware on AWS S"
+name                     : 
+description              : "Welcome to the VMware on AWS SET Team Site"
 url                      : "https://vmc-field-team.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
