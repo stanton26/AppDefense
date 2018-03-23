@@ -6,6 +6,8 @@ main:
     url: /about/
   - title: "Posts"
     url: /Posts/
+  - title: "VMC Workshop"
+    url: /workshop/
   # - title: "Sample Collections"
   #   url: /collection-archive/
   # - title: "Sitemap"
