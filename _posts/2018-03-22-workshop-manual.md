@@ -12,7 +12,7 @@ Revision Date : February 11th, 2018
 
 Authors :
 
-- [Chris Lennon] (clennon@vmware.com)
+- Chris Lennon <clennon@vmware.com>
 - Eric Hardcastle, ehardcastle@vmware.com
 - Jamie Maillart, jmaillart@vmware.com
 - Randy Carson, rcarson@vmware.com
