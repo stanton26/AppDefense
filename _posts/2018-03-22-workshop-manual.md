@@ -84,7 +84,7 @@ By default, the firewall for the management gateway is set to deny all inbound a
 
 By default, the Compute NSX Edge Services Gateway is also set to deny all inbound and outbound traffic. You need to add additional firewall rules to allow traffic as needed.
 
-Create Firewall Rule under Compute Gateway for Inbound Native AWS Services access.
+#### Create Firewall Rule under Compute Gateway for Inbound Native AWS Services access.
 
 1. Under **Network** tab, navigate to **Compute Gateway**
 2. Expand **Firewall Rules**
@@ -94,50 +94,55 @@ Create Firewall Rule under Compute Gateway for Inbound Native AWS Services acces
 
 ### Create AWS Inbound Firewall Rule
 
-1. Name -AWS Inbound
-2. Action -Allow
-3. Source -All connected Amazon VPC
-4. Destination -192.168.#.0/24 (Where # is your student number)
-5. Service -ANY
+1. **Name** - AWS Inbound
+2. **Action** - Allow
+3. **Source** - All connected Amazon VPC
+4. **Destination** - 192.168.#.0/24 (Where # is your student number)
+5. **Service** - ANY
 6. Click **SAVE** button.
 
 ### AWS Outbound Firewall Rule
 
 Follow the same process as in the previous step and create AWS Outbound Firewall Rule following these instructions:
 
-1. Name -AWS Outbound
-2. Action -Allow
-3. Source -192.168.#.0/24 (Where # is your student number)
-4. Destination -All connected Amazon VPCAll connected Amazon VPC
-5. Service -ANYANY
-6. Click"SAVE""SAVE"button.
+1. **Name** - AWS Outbound
+2. **Action** - Allow
+3. **Source** - 192.168.#.0/24 (Where # is your student number)
+4. **Destination** - All connected Amazon VPC
+5. **Service** - ANY
+6. Click **SAVE** button.
 
-Log into VMware Cloud on AWS vCenterLog into VMware Cloud on AWS vCenter
+#### Log into VMware Cloud on AWS vCenter
 
 Connection Info Tab
 
-1. Login to your Student # SDDC and click on the "Connection InfoConnection Info" tab. This displays different connection information for your VMware Cloud on AWS environment like:
-2. URL to vSphere Client HTML5 client for your vCenter server
-3. URL to vCenter Server API Explorer
-4. Local Username for access to vCenter Server on VMware Cloud on AWS cloudadmin@vmc.local
-5. Ability to copy Username to your computer's clipboard
-6. Password to utilize for the cloudadmin user to access vCenter
-7. Ability to view cloudadmin's password
-8. Ability to copy cloudadmin's password to your computer's clipboard
-9. PowerCLI Connect string to be used if you desire to use PowerCLI to connect to your VMware Cloud on AWS vCenter Server
-10. Ability to copy PowerCLI string to your computer's clipboard
+Login to your Student # SDDC and click on the **Connection Info** tab. This displays different connection information for your VMware Cloud on AWS environment like:
 
-Click on the vSphere Client's HTML5 URL (#2 above), and login with cloudadmin@vmc.local User Name and copy the password to your computer's clipboard and paste it in the Password Field.
+- URL to vSphere Client HTML5 client for your vCenter server
+- URL to vCenter Server API Explorer
+- Local Username for access to vCenter Server on VMware Cloud on AWS **cloudadmin@vmc.local**
+- Ability to copy Username to your computer's clipboard
+- Password to utilize for the cloudadmin user to access vCenter
+- Ability to view cloudadmin's password
+- Ability to copy cloudadmin's password to your computer's clipboard
+- PowerCLI Connect string to be used if you desire to use PowerCLI to connect to your VMware Cloud on AWS vCenter Server
+- Ability to copy PowerCLI string to your computer's clipboard
+
+Click on the vSphere Client's HTML5 URL, and login with **cloudadmin@vmc.local** User Name and copy the password to your computer's clipboard and paste it in the Password Field.
 
 You are now logged in to your VMware Cloud on AWS vCenter Server as **cloudadmin@vmc.local** user.
 
 ### Create Content Library
 
-Content libraries are container objects for VM templates, vApp templates, and other types of files like ISO images. You can create a content library in the vSphere Web Client, and populate it with templates, which you can use to deploy virtual machines or vApps in your VMware Cloud on AWS environment or if you already have a Content Library in your on-premises data center, you can use the Content Library to import content into your SDDC. You can create two types of libraries: local or subscribed library. Local LibrariesLocal Libraries You use a local library to store items in a single vCenter Server instance. You can publish the local library so that users from other vCenter Server systems can subscribe to it. When you publish a content library externally, you can configure a password for authentication. VM templates and vApps templates are stored as OVF file formats in the content library. You can also upload other file types, such as ISO images, text files, and so on, in a content library.
+Content libraries are container objects for VM templates, vApp templates, and other types of files like ISO images. You can create a content library in the vSphere Web Client, and populate it with templates, which you can use to deploy virtual machines or vApps in your VMware Cloud on AWS environment or if you already have a Content Library in your on-premises data center, you can use the Content Library to import content into your SDDC. You can create two types of libraries: local or subscribed libraries.
+
+Local Libraries You use a local library to store items in a single vCenter Server instance. You can publish the local library so that users from other vCenter Server systems can subscribe to it. When you publish a content library externally, you can configure a password for authentication. VM templates and vApp templates are stored as an OVF file format in the content library. You can also upload other file types, such as ISO images, text files, and so on, in a content library.
 
 ### Subscribed Libraries
 
-You subscribe to a published library by creating a subscribed library. You can create the subscribed library in the same vCenter Server instance where the published library is, or in a different vCenter Server system. In the Create Library wizard you have the option to download all the contents of the published library immediately after the subscribed library is created, or to download only metadata for the items from the published library and later to download the full content of only the items you intend to use. To ensure the contents of a subscribed library are up-to-date, the subscribed library automatically synchronizes to the source published library on regular intervals. You can also manually synchronize subscribed libraries. You can use the option to download content from the source published library immediately or only when needed to manage your storage space. Synchronization of a subscribed library that is set with the option to download all the contents of the published library immediately, synchronizes both the item metadata and the item contents. During the synchronisation the library items that are new for the subscribed library are fully downloaded to the storage location of the subscribed library. Synchronization of a subscribed library that is set with the option to download contents only when needed synchronizes only the metadata for the library items from the published library, and does not download the contents of the items. This saves storage space. If you need to use a library item you need to synchronize that item. After you are done using the item, you can delete the item contents to free space on the storage. For subscribed libraries that are set with the option to download contents only when needed, synchronizing the subscribed library downloads only the metadata of all the items in the source published library, while synchronizing a library item downloads the full content of that item to your storage. If you use a subscribed library, you can only utilize the content, but cannot contribute with content. Only the administrator of the published library can manage the templates and files.
+You subscribe to a published library by creating a subscribed library. You can create the subscribed library in the same vCenter Server instance where the published library is, or in a different vCenter Server system. In the Create Library wizard you have the option to download all the contents of the published library immediately after the subscribed library is created, or to download only metadata for the items from the published library and later to download the full content of only the items you intend to use. To ensure the contents of a subscribed library are up-to-date, the subscribed library automatically synchronizes to the source published library on regular intervals. You can also manually synchronize subscribed libraries. You can use the option to download content from the source published library immediately or only when needed to manage your storage space.
+
+Synchronization of a subscribed library that is set with the option to download all the contents of the published library immediately, synchronizes both the item metadata and the item contents. During the synchronisation the library items that are new for the subscribed library are fully downloaded to the storage location of the subscribed library. Synchronization of a subscribed library that is set with the option to download contents only when needed synchronizes only the metadata for the library items from the published library, and does not download the contents of the items. This saves storage space. If you need to use a library item you need to synchronize that item. After you are done using the item, you can delete the item contents to free space on the storage. For subscribed libraries that are set with the option to download contents only when needed, synchronizing the subscribed library downloads only the metadata of all the items in the source published library, while synchronizing a library item downloads the full content of that item to your storage. If you use a subscribed library, you can only utilize the content, but cannot contribute with content. Only the administrator of the published library can manage the templates and files.
 
 1. Click on **Menu**
 2. Click on **Content Libraries**
@@ -146,92 +151,87 @@ You subscribe to a published library by creating a subscribed library. You can c
 
 You may already have a Content Library in your on-premises data center, you can use the Content Library to import content into your SDDC.
 
-1. In your Content Library window, click the "++" sign to add a new Content Library.
-2. Name your Content Library "Student#"Student#"where # is the number assigned to you
+1. In your Content Library window, click the **+** sign to add a new Content Library.
+2. Name your Content Library **Student#** where **#** is the number assigned to you
 3. (Optional) Enter some notes for your Content Library
-4. Click "Next" button
-5. Select "Subscribed content librarySubscribed content library"
-6. Under "Subscription URLSubscription URL" enter the following: <https://vcenter.sddc-34-216-241-49.vmc.vmware.com/cls/vcsp/lib/8d658764-2e89-44ff-https://vcenter.sddc-34-216-241-49.vmc.vmware.com/cls/vcsp/lib/8d658764-2e89-44ff-a7c1-ee777f0dfc8f/lib.jsona7c1-ee777f0dfc8f/lib.json>
+4. Click **Next** button
+5. Select **Subscribed content library**
+6. Under **Subscription URL** enter the following: <https://vcenter.sddc-34-216-241-49.vmc.vmware.com/cls/vcsp/lib/8d658764-2e89-44ff-https://vcenter.sddc-34-216-241-49.vmc.vmware.com/cls/vcsp/lib/8d658764-2e89-44ff-a7c1-ee777f0dfc8f/lib.jsona7c1-ee777f0dfc8f/lib.json>
 
-    PLEASE NOTE THAT THERE MAY BE AN ISSUE WITH DROPPING/ADDITION OF CHARACTERS PLEASE NOTE THAT THERE MAY BE AN ISSUE WITH DROPPING/ADDITION OF CHARACTERS FOR THE URL WHEN COPYING AND PASTING FROM THE MANUAL. THE ACTUAL URL IS ALSOFOR THE URL WHEN COPYING AND PASTING FROM THE MANUAL. THE ACTUAL URL IS ALSO AVAILABLE IN YOUR STUDENT DESKTOP ON THE Z:\ DRIVE IN A TEXT FILE, OPEN THIS TEXT AVAILABLE IN YOUR STUDENT DESKTOP ON THE Z:\ DRIVE IN A TEXT FILE, OPEN THIS TEXT FILE AND COPY THE URL FROM THERE. ASK YOUR INSTRUCTOR IN THE EVENT YOU CANNOTFILE AND COPY THE URL FROM THERE. ASK YOUR INSTRUCTOR IN THE EVENT YOU CANNOT LOCATE IT.LOCATE IT.
-7. Click the checkbox for "Enable authenticationEnable authentication"
-8. For "PasswordPassword" enter:VMware1!VMware1!
-9. Make sure Download content is set to "immediatelyimmediately"
-10. Click "Next"
-11. Highlight the "WorkloadDatastoreWorkloadDatastore" as the storage location
-12. Click "Next" button
-13. Click "Finish" button. Your content library should take about 20+ minutes to complete syncing.
+    PLEASE NOTE THAT THERE MAY BE AN ISSUE WITH DROPPING/ADDITION OF CHARACTERS FOR THE URL WHEN COPYING AND PASTING FROM THE MANUAL. THE ACTUAL URL IS ALSO AVAILABLE IN YOUR STUDENT DESKTOP ON THE Z:\ DRIVE IN A TEXT FILE, OPEN THIS TEXT FILE AND COPY THE URL FROM THERE. ASK YOUR INSTRUCTOR IN THE EVENT YOU CANNOT LOCATE IT.
+7. Click the checkbox for **Enable Authentication**
+8. For **Password** enter: VMware1!VMware1!
+9. Ensure Download content is set to **Immediately**
+10. Click **Next**
+11. Highlight the **WorkloadDatastore** as the storage location
+12. Click **Next**
+13. Click **Finish**. Your content library should take about ~20 minutes to complete syncing.
 
-Create a Local Content LibraryCreate a Local Content Library
+### Create a Local Content Library
 
-1. Click the "++" sign to create a new Content Library
-2. Name your new Content Library: "LocalContentLibrary#LocalContentLibrary#" where # is your student #
+1. Click the **+** sign to create a new Content Library
+2. Name your new Content Library: **LocalContentLibrary#** (where # is your student #)
 3. (Optional) Enter some notes about your Content Library
-4. Click "Next" button
-5. Make sure "Local content libraryLocal content library" is selected
-6. Click "Next" button
-7. Highlight the "WorkloadDatastoreWorkloadDatastore" as the storage location
-8. Click "Next" button
-9. Review your information and click "Finish" button
+4. Click **Next** button
+5. Make sure **Local content library** is selected
+6. Click **Next**
+7. Highlight the **WorkloadDatastore** as the storage location
+8. Click **Next**
+9. Review your information and click **Finish**
 
 Congratulations, you have created your Local Content Library.
 
 ### Create Logical Network
 
-1. Once you are logged in to your vCenter Server Click on "MenuMenu"
-2. Select "Global Inventory ListsGlobal Inventory Lists" from the drop down menu, the below screen shall appear
-
-3. Click on "Logical NetworksLogical Networks" in the left pane
-4. Click on the "+ Add+ Add" button
-5. Name your New Logical Network "Student#-LNStudent#-LN" where # is your student number
-6. Make sure to select "Routed NetworkRouted Network"
-7. For CIDR Block enter "192.168.###.0/24192.168.###.0/24" using your student number instead of #
-    If your designated student number is between 1 and 9, your CIDR block should look like this: 192.168.1.0/24 - This example represents student number 1
-    For students 10 thru 20 it should look like this:
-    192.168.10.0/24 - This example represents student number 10
-8. Enter "192.168.###.1192.168.###.1" for Default Gateway IP - Example: 192.168.1.1
-9. Make sure DHCP is Enabled by clicking on the checkbox
-10. Enter "192.168.###.100-192.168.###.200192.168.###.100-192.168.###.200" for IP Range
-11. Type "corp.localcorp.local" as your DNS Domain Name
-12. Click "OKOK" to create your new logical network
+1. Once you are logged in to your vCenter Server Click on **Menu**
+2. Select **Global Inventory Lists** from the drop down menu
+3. Click on **Logical Networks** in the left pane
+4. Click on the **+ Add** button
+5. Name your New Logical Network **Student#-LN** (where # is your student number)
+6. Make sure to select **Routed Network**
+7. For CIDR Block enter **192.168.###.0/24** (where # is your student #)
+    If your designated student number is between 1 and 9, your CIDR block should look like this: **192.168.1.0/24** - This example represents student number 1. For students 10 thru 20 it should look like this: **192.168.10.0/24** - This example represents student number 10
+8. Enter **192.168.###.1** for the Default Gateway IP - Example: 192.168.1.1
+9. Make sure DHCP is Enabled by clicking on the **checkbox**
+10. Enter **192.168.###.100-192.168.###.200** for IP Range
+11. Type **corp.local** as your DNS Domain Name
+12. Click **OK** to create your new logical network
 
 ### Create Linux Customization Spec
 
-When you clone a virtual machine or deploy a virtual machine from a template, you can customize the guest operating system ofthe virtual machine to change properties such as the computer name, network settings, and license settings. Customizing guest operating systems can help prevent conflicts that can result if virtual machines with identical settings are deployed, such as conflicts due to duplicate computer names. You can specify the customization settings by launching the Guest Customization wizard during the cloning or deployment process. Alternatively, you can create customization specifications, which are customization settings stored in the vCenter Server database. During the cloning or deployment process, you can select a customization specification to apply to the new virtual machine. Use the Customization Specification Manager to manage customization specifications you create with the Guest Customization wizard.
+When you clone a virtual machine or deploy a virtual machine from a template, you can customize the guest operating system of the virtual machine to change properties such as the computer name, network settings, and license settings. Customizing guest operating systems can help prevent conflicts that can result if virtual machines with identical settings are deployed, such as conflicts due to duplicate computer names. You can specify the customization settings by launching the Guest Customization wizard during the cloning or deployment process. Alternatively, you can create customization specifications, which are customization settings stored in the vCenter Server database. During the cloning or deployment process, you can select a customization specification to apply to the new virtual machine. Use the Customization Specification Manager to manage customization specifications you create with the Guest Customization wizard.
 
 1. Click **Menu**
-2. Click "Policies and ProfilesPolicies and Profiles"
-3. Click on "+ New+ New" to add a new Linux Customization Specification
+2. Click **Policies and Profiles**
+3. Click on **+ New** to add a new Linux Customization Specification
 4. Give your VM Customization Spec a Name
 5. Enter a description for it (Optional)
-6. Make sure to select "LinuxLinux"
-7. Click the "Next" button
-8. Click on the "Enter a nameEnter a name" button
-9. Enter a name for your linux VM's
-10. Click on the "Append a numeric valueAppend a numeric value" checkbox
-11. Enter "corp.localcorp.local" for the Domain Name
-12. Click the "Next" button
-13. Select "USUS" for Area
-14. Select "EasternEastern" for Location
-15. Select "Local timeLocal time"
-16. Click the "Next" button
+6. Make sure to select **Linux**
+7. Click **Next**
+8. Click on the **Enter a name** button
+9. Enter a name for your linux VMs
+10. Click on the **Append a numeric value** checkbox
+11. Enter **corp.local** for the Domain Name
+12. Click the **Next** button
+13. Select **US** for Area
+14. Select **Eastern** for Location
+15. Select **Local time**
+16. Click **Next**
+17. Leave the defaults on the **Network** screen and click **Next**
+18. Under Primary DNS Server enter **10.46.159.10**
+19. Type **corp.local** for DNS Search Paths
+20. Click **Next**
+21. Click **Finish**
 
-17. Leave the defaults on the "NetworkNetwork" screen and click the "Next" button
-
-18. Under Primary DNS Server enter "10.46.159.1010.46.159.10"
-19. Type "corp.localcorp.local" for DNS Search Paths
-20. Click the "Next" button
-21. Review your entries and click on the "Finish" button
-
-Congratulations! You have successfully created your VM Customization Spec for your Linux VM's. You can also export (Duplicate), Edit, Import, and Export a VM Customization Spec.
+Congratulations! You have successfully created your VM Customization Spec for your Linux VMs. You can also export (Duplicate), Edit, Import, and Export a VM Customization Spec.
 
 ### Deploy a Virtual Machine
 
-1. On your Content Libraries (Menu -> Content Libraries), select "Student#Student#" and select the "TemplatesTemplates" tab.
-2. Right click on the "centos01-webcentos01-web" template and select "New VM from This TemplateNew VM from This Template"
-3. Name your Virtual Machine "StudentVM#StudentVM#" where # is your student number
-4. Expand the location area until you see "WorkloadsWorkloads" and highlight it
-5. Click the "Next" button
+1. On your Content Libraries **(Menu -> Content Libraries)**, select **Student#** and select the **Templates** tab.
+2. Right click on the **centos01-web** template and select **New VM from This Template**
+3. Name your Virtual Machine **StudentVM#** (where # is your student number)
+4. Expand the location area until you see **Workloads** and highlight it
+5. Click **Next**
 6. Expand the destination compute resources until you find "Compute-ResourcePoolCompute-ResourcePool", select it
 7. Click "Next" button
 8. Click "Next" button on the Review details screen
