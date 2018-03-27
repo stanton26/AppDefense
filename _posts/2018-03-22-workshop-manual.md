@@ -232,26 +232,26 @@ Congratulations! You have successfully created your VM Customization Spec for yo
 3. Name your Virtual Machine **StudentVM#** (where # is your student number)
 4. Expand the location area until you see **Workloads** and highlight it
 5. Click **Next**
-6. Expand the destination compute resources until you find "Compute-ResourcePoolCompute-ResourcePool", select it
-7. Click "Next" button
-8. Click "Next" button on the Review details screen
-9. In the "Select storageSelect storage" step, highlight "WorkloadDatastoreWorkloadDatastore"
-10. Click "Next"
-11. In the "Select networksSelect networks" step, click the drop down box to select the Destination Network (you may need to click Browse to see other networks) and select your "Student#-LNStudent#-LN" network you created previously
-12. Click "Next"
-13. In the "Ready to completeReady to complete" section, review to ensure all your selections are correct and click "Finish" button
+6. Expand the destination compute resources until you find **Compute-ResourcePool**, select it
+7. Click **Next** button
+8. Click **Next** button on the Review details screen
+9. In the **Select storage** step, highlight **WorkloadDatastore**
+10. Click **Next**
+11. In the **Select networks** step, click the drop down box to select the Destination Network (you may need to click Browse to see other networks and select your "Student#-LNStudent#-LN" network you created previously
+12. Click **Next**
+13. In the **Ready to complete** section, review to ensure all your selections are correct and click **Finish**
 
 ### Convert Virtual Machine to Template
 
 In this step you will be cloning your newly created Virtual Machine into a Template for later use in vRealize Automation section.
 
 1. Ensure your VM deployment completed from your previous step
-2. Click on "MenuMenu"
-3. Select "VMs and TemplatesVMs and Templates"
-4. Select your newly created VM "Student#Student#" where # is your student number
-5. Click on "TemplateTemplate"
-6. Select "Convert to TemplateConvert to Template"
-7. Click "YesYes" button in the Convert to Template prompt
+2. Click on **Menu**
+3. Select **VMs and Templates**
+4. Select your newly created VM **Student#** (where # is your student number)
+5. Click on **Template**
+6. Select **Convert to Template**
+7. Click **Yes**  in the Convert to Template prompt
 
 You have completed this step.
 
