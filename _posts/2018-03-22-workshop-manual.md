@@ -261,17 +261,17 @@ You have completed this step.
 
 Open the PowerShell CLI windows
 
-1. Click on Start, and scroll down until you see theWindows PowerShellWindows PowerShellmenu
-2. Right click on the PowerShell CLI shortcut icon and select "Run as AdministratorRun as Administrator"
+1. Click on **Start**, and scroll down until you see the Windows PowerShell menu
+2. Right click on the **PowerShell CLI** shortcut icon and select **Run as Administrator**
 3. Click **Yes**
 
 Install the VMware PowerCLI module if not loaded
 
 ``` powershell
-install-Module VMware.PowerCLIinstall-Module VMware.PowerCLI
+install-Module VMware.PowerCLI
 ```
 
-Note: You can use the tab complete feature to complete the command. ie...type install-mod and then press tab. There may be a slight delay the first time but the command "install-install- modulemodule" will complete. Note: You will be asked to install the NuGet provider, take the default or pressYY and press enter, you will then be asked to trusted an untrusted repository, DO NOT take the default but typeYYand press Enter.
+Note: You can use the tab complete feature to complete the command. ie...type install-mod and then press tab. There may be a slight delay the first time but the command **install-module** will complete. Note: You will be asked to install the NuGet provider, take the default or press Y and press enter, you will then be asked to trust an untrusted repository, DO NOT take the default but type **Y** and press Enter.
 
 We now need to set the execution policy to Remote Signed.
 
@@ -279,16 +279,18 @@ We now need to set the execution policy to Remote Signed.
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
 ```
 
-Note: You will be asked to change the execution policy, type "Y" and press Enter
+Note: You will be asked to change the execution policy, type **Y** and press Enter
 
 You now will need to set the PowerCLI Configuration to Ignore Invalid Certificates.
-IMPORTANT STEP:IMPORTANT STEP:
+
+IMPORTANT STEP:
 
 ``` powershell
 Set-PowerCLIConfiguration -InvalidCertificateAction Ignore
 ```
 
 NOTE: Be sure the "i" in "Ignore" is capitalized
+
 NOTE: You will be asked to Update PowerCLI Configuration, type Y and press Enter
 
 We now need to install the VMware CLI commands
@@ -297,7 +299,7 @@ We now need to install the VMware CLI commands
 Install-Module -name VMware.VMC -scope AllUsers
 ```
 
-Note: You will be asked to trust an untrusted repository, typeYYand press Enter
+Note: You will be asked to trust an untrusted repository, type Y and press Enter
 
 Let's take a quick look at the VMware CLI commands.
 
@@ -305,12 +307,12 @@ Let's take a quick look at the VMware CLI commands.
 Get-VMCCommand
 ```
 
-We now need to get your Refresh Token from the VMC console. Switch back to or open the web browser and log intovmc.vmware.comvmc.vmware.com.
+We now need to get your Refresh Token from the VMC console. Switch back to or open the web browser and log into **vmc.vmware.com**
 
 If you are not already logged in
 
 1. open a new tab
-2. click on the VMware Cloud on AWS shortcut
+2. click on the **VMware Cloud on AWS** bookmark shortcut
 3. Fill in your email address
 4. click on **Next**
 5. Click on the drop down next to your Name/Org ID
@@ -318,9 +320,8 @@ If you are not already logged in
 
 Now we create a refresh token for your ID tied to this Org
 
-1. Click on Create a new tokenCreate a new token
-
-2. Click onCopy to ClipboardCopy to Clipboard
+1. Click on **Create a new token**
+2. Click on **Copy to Clipboard**
 
 Now let's attach to the VMC server
 
@@ -330,6 +331,7 @@ connect-vmc -refreshtoken "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 
 NOTE:Within the PowerShell window you can just right-click to paste the code, quotes are
 optional
+
 NOTE: Paste the refresh token you copied earlier in the exercise.
 
 Now we can see what Orgs we have access to
@@ -342,9 +344,8 @@ Get-VMCorg
 
 Now that we know the Org Display_Name we can find out information about the SDDC's inside our org.
 
-
 ```powershell
-Get-VMCSDDC -Org VMC-WS#Get-VMCSDDC -Org VMC-WS#
+Get-VMCSDDC -Org VMC-WS#
 ```
 
 NOTE:replace # with your workstation number
@@ -359,8 +360,7 @@ NOTE:replace # with your workstation number
 
 ### REST API with Swagger
 
-To start using the REST API commands we need to log into the Swagger interface that is build
-into VMC.VMWARE.COM.
+To start using the REST API commands we need to log into the Swagger interface that is build into **vmc.vmware.com**
 
 If it is not already open, Double-click on the Chrome browser icon on the desktop.
 
@@ -370,41 +370,39 @@ If you are not already logged into your Org,
 2. Click on the VMware Cloud on AWS bookmark
 3. Log into your Org
 
-    To get to the Swagger interface,
-4. Open a new tab
-5. Click on the Swagger bookmark
+To get to the Swagger interface
+
+1. Open a new tab
+2. Click on the **Swagger** bookmark
 
 The first thing we need to do is get "Authorized" to run these REST APIs
 
-1. Click on the refresh_token link
-2. Click on the Generate button to get your Access Key
-3. Copy the Access Key
+1. Click on the **refresh_token** link
+2. Click on the **Generate** button to get your Access Key
+3. Copy the **Access Key**
 4. Close this tab
-5. Click on the Authorize button on the Swagger tab
-6. Paste your Access Key into the Value box.
-7. Click on Authorize
+5. Click on the **Authorize** button on the Swagger tab
+6. Paste your **Access Key** into the Value box.
+7. Click on **Authorize**
 8. Click on orgs: to show the REST API calls for the Organizations
-9. Click on GET /orgs
-10. Click on theTry it out!Try it out!button This section shows you how to run this REST API. The cool thing is they will give you examples when you when you click on Try It, you see a
+9. Click on **GET /orgs**
+10. Click on the **Try it out** button This section shows you how to run this REST API. The cool thing is they will give you examples when you when you click on Try It, you see:
+  - Response Code: 200 is the code that means success, other response codes are listed under Response Messages.
+  - Response Header: This gives you some metadate about the response
+  - Response Body: This is the details that you are looking for. Look through this and find the Display_NameDisplay_NameandIDIDfor your Org.
+  - If you wanted to run the command at a linux prompt using the "curl" command, you can cut and paste this into your linux terminal
 
-11. Response Code: 200 is the code that means success, other response codes are listed under
-    Response Messages.
-12. Response Header: This gives you some metadate about the response
-13. Response Body: This is the details that you are looking for. Look through this and find the
-    Display_NameDisplay_NameandIDIDfor your Org.
-14. If you wanted to run the command at a linux prompt using the "curl" command, you can cut
-    and paste this into your linux terminal
-NOTE:Copy the ID without the quotes.
+NOTE: Copy the ID without the quotes.
 
 Now scroll down to the SDDC: Operations on SDDC section
 
-1. Click on the SDDC: to show the REST API calls for the SDDCs
-2. Click on the GET /org/{orgs}/sddcs
-3. Paste the Org ID you copied from the previous step in the org : Value box under the
-    Parameters section
-4. Click on theTry it out!Try it out!button
+1. Click on the **SDDC**: to show the REST API calls for the SDDCs
+2. Click on the **GET /org/{orgs}/sddcs**
+3. Paste the Org ID you copied from the previous step in the org : Value box under the **Parameters** section
+4. Click on the **Try it out** button
 
 Note the Response Code of 200.
+
 Look through the Response Body for details about the SDDC(s) in your organization.
 
 ### AWS Service Integration
@@ -413,131 +411,131 @@ AWS Relational Database Service (RDS)
 
 Integration
 
-Deploy Photo VM
+#### Deploy Photo VM
 
-1. If not already opened, open your VMware Cloud on AWS vCenter and click on the "MenuMenu" drop down
-2. Select "Content LibrariesContent Libraries"
-3. Click on your previously created Content Library named "Student#Student#" where # is your student number
-4. If not already there, make sure you click on the "TemplateTemplate" tab
-5. Right-click on the "photo appphoto app" Template
-6. Select "New VM from This TemplateNew VM from This Template"
-7. Name the virtual machine "PhotoApp#PhotoApp#" where # is your student #
-8. Expand the location and select "WorkloadsWorkloads"
-9. Click "Next"
-10. Expand the destination to select "Compute-ResourcePoolCompute-ResourcePool" as the compute resource
-11. Click "Next"
-12. In the "Review detailsReview details" step click "Next"
-13. In the "Select storageSelect storage" step, highlight the "WorkloadDatastoreWorkloadDatastore"
-14. Click "Next"
+1. If not already opened, open your VMware Cloud on AWS vCenter and click on the **Menu** drop down
+2. Select **Content Libraries**
+3. Click on your previously created Content Library named **Student#** (where # is your student number)
+4. If not already there, make sure you click on the **Template** tab
+5. Right-click on the **photo app** Template
+6. Select **New VM from This Template**
+7. Name the virtual machine **PhotoApp#** (where # is your student #)
+8. Expand the location and select **Workloads**
+9. Click **Next**
+10. Expand the destination to select **Compute-ResourcePool** as the compute resource
+11. Click **Next**
+12. In the **Review details** step click **Next**
+13. In the **Select storage** step, highlight the **WorkloadDatastore**
+14. Click **Next**
 15. Select the network you created in a previous step for your VM
-16. Click "Next"
-17. Click "Finish"
+16. Click **Next**
+17. Click **Finish**
 18. Monitor the deployment of your VM until it's completed
 19. Check for completion of the deployment of your VM
-20. Click "MenuMenu"
-21. Select "VMs and TemplatesVMs and Templates"
+20. Click **Menu**
+21. Select **VMs and Templates**
 22. Check to make sure your VM is powered on. If not, right-click on your VM
-23. Select "PowerPower" -> "Power OnPower On"
+23. Select **Power** -> **Power On**
 24. Make sure your VM is assigned an IP addresses (may need to wait a minute or 2). Make a note of this IP address for a future step.
 
 ### Firewall Rules for RDS Integration
 
-1. Go back your VMware Cloud on AWS portal and click on the "NetworkNetwork" tab in order to request a Public IP address
-2. Under the "Compute GatewayCompute Gateway" click and expand "Public IPsPublic IPs"
-3. Click on "REQUEST PUBLIC IPREQUEST PUBLIC IP"
+1. Go back your VMware Cloud on AWS portal and click on the **Network** tab in order to request a **Public IP address**
+2. Under the **Compute Gateway** click and expand **Public IPs**
+3. Click on **REQUEST PUBLIC IP**
 4. (Optional) Enter Notes for this public IP
-5. Click on "RequestRequest"
+5. Click on **Request**
 6. You should see a similar notification as the one above
 7. Take note of your newly acquired Public IP address
-8. Next you will create a NAT rule from the newly acquired Public IP address you noted in your last step to the internal IP address of the VM you created. Click on "NATNAT" to expand
-9. Click "ADD NAT RULEADD NAT RULE"
-10. Give your NAT rule a name
+8. Next you will create a **NAT rule** from the newly acquired Public IP address you noted in your last step to the internal IP address of the VM you created. Click on **NAT** to expand
+9. Click **ADD NAT RULE**
+10. Give your **NAT rule** a name
 11. Your new Public IP address should be pre-filled for you, if not, enter it
-12. Under "ServiceService" select "Any (All Traffic)Any (All Traffic)"
+12. Under **Service** select **Any (All Traffic)**
 13. Type your VM's internal IP address
-14. Click "SAVESAVE" button
-15. You should get a "NAT rule successfully createdNAT rule successfully created" notification
-16. Expand "Firewall RulesFirewall Rules"
-17. Click "ADD RULEADD RULE"
+14. Click the **SAVE** button
+15. You should get a **NAT rule successfully created** notification
+16. Expand **Firewall Rules**
+17. Click **ADD RULE**
 18. Give your Firewall Rule a name
-19. Select "All Internet and VPNAll Internet and VPN" for Source
-20. Type the Public IP Address you noted under "Destination"Destination"
-21. Select "Any (All Traffic)" for "ServiceService"
-22. Click "SAVESAVE" button
-23. You should get a "Firewall rule successfully createdFirewall rule successfully created" notification
+19. Select **All Internet and VPN** for **Source**
+20. Type the Public IP Address you noted under **Destination**
+21. Select **Any (All Traffic)** for **Service**
+22. Click **SAVE** button
+23. You should get a **Firewall rule successfully created** notification
 
 ### AWS Relational Database Service (RDS) Integration
 
-On your browser, open a new tab and go to:<https://vmcworkshop.signin.aws.amazon.com/console>
+On your browser, open a new tab and go to: <https://vmcworkshop.signin.aws.amazon.com/console>
 
-1. Account ID or alias -vmcworkshopvmcworkshop
-2. IAM user name -Student#Student#where # is the number assigned to you
-3. Password -VMCworkshop1211VMCworkshop1211
-4. Click "Sign InSign In"
-5. You are now signed in to the AWS console. Make sure the region selected is "OregonOregon"
-6. Click on the "RDSRDS" service
-7. In the left pane click on "InstancesInstances"
+1. Account ID or alias -vmcworkshop
+2. IAM user name -Student# (where # is the number assigned to you)
+3. Password -VMCworkshop1211
+4. Click **Sign In**
+5. You are now signed in to the AWS console. Make sure the region selected is **Oregon**
+6. Click on the **RDS** service
+7. In the left pane click on **Instances**
 8. Click on the RDS instance that corresponds to your Student number
-9. Scroll down to the "DetailsDetails" area and under "Security and networkSecurity and network" notice that the RDS instance is not publicly accessible, meaning this instance can only be accessed from within AWS
-10. Go back to the main Services page in the AWS console by clicking the "ServicesServices" link
-11. Scroll down to "Networking & Content DeliveryNetworking & Content Delivery" and click "VPCVPC"
-12. Click on "Security GroupsSecurity Groups" in the left pane
-13. Choose the "rds-launch-wizard-#rds-launch-wizard-#" RDS Security group corresponding to your student number
-14. After highlighting the appropriate security group click on the "Inbound RulesInbound Rules" tab below VMware Cloud on AWS establishes routing in the default VPC Security Group, only RDS can leverage this or create its own
+9. Scroll down to the **Details** area and under **Security and network** notice that the RDS instance is not publicly accessible, meaning this instance can only be accessed from within AWS
+10. Go back to the main Services page in the AWS console by clicking the **Services** link
+11. Scroll down to **Networking & Content Delivery** and click **VPC**
+12. Click on **Security Groups** in the left pane
+13. Choose the r**ds-launch-wizard-#** RDS Security group corresponding to your student number
+14. After highlighting the appropriate security group click on the **Inbound Rules** tab below VMware Cloud on AWS establishes routing in the default VPC Security Group, only RDS can leverage this or create its own
 15. Notice that the CIDR block range of your Student#-LN Logical Network you created in VMware Cloud on AWS is authorized for MySQL on port 3306. This was done for you ahead of time
 
     AWS Relational Database Service (RDS), also creates its own Elastic Network Interface (ENI) for access which is separate from the ENI created by VMware Cloud on AWS.
-16. Click on "ServicesServices" to go back to the Main Console
-17. Click on "EC2EC2"
-18. In the EC2 Dashboard click "Network InterfacesNetwork Interfaces" in the left pane
-19. All Student environments belong to the same AWS account, therefore, hundreds of ENI's may exist. In order to minimize the view, type "RDS" in the search area and press Enter to add a filter
-20. Highlight yourrds-launch-wizard-#rds-launch-wizard-#corresponding to your student number
-21. Make note of the "Primary private IPv4 IPPrimary private IPv4 IP" address for the next step
+16. Click on **Services** to go back to the Main Console
+17. Click on **EC2**
+18. In the EC2 Dashboard click **Network Interfaces** in the left pane
+19. All Student environments belong to the same AWS account, therefore, hundreds of ENI's may exist. In order to minimize the view, type "RDS" in the search area and press **Enter** to add a filter
+20. Highlight your **rds-launch-wizard-#** corresponding to your student number
+21. Make note of the **Primary private IPv4** IP address for the next step
 22. Open an additional browser tab and type your public IP address you requested in the VMware Cloud on AWS portal in the browser address bar followed by /Lychee (case sensitive) ie: x.x.x.x/Lychee
 23. Enter the database connection information below (case sensitive), using the IP address you noted in the previous step from the RDS ENI:
-    Database Host:x.x.x.x:3306x.x.x.x:3306
-    Database Username:student#student#
-    Database Password:VMware1!VMware1!
-24. Click "ConnectConnect"
+    **Database Host**: x.x.x.x:3306
+    **Database Username**: student#
+    **Database Password**:VMware1!
+24. Click **Connect**
 
 ### AWS Elastic File System (EFS) Integration
 
 ### EFS VM Creation
 
-1. Navigate to your Content Library, click "MenuMenu" on your VMware Cloud on AWS vCenter Server
-2. Select "Content LibrariesContent Libraries"
-3. Click on yourStudent#Student#Content Library
-4. Make sure the "TemplatesTemplates" tab is selected
-5. Right-click on the "efsefs" template
-6. Select "New VM from This TemplateNew VM from This Template"
-7. Name your VM "EFSVM#EFSVM#" where # is your student number
-8. Select "WorkloadsWorkloads" for the location of your VM
-9. Click "Next"
-10. Select "Compute-ResourcePoolCompute-ResourcePool" as the destination for your VM
-11. Click "Next"
-12. Click "Next"
+1. Navigate to your Content Library, click **Menu** on your VMware Cloud on AWS vCenter Server
+2. Select **Content Libraries**
+3. Click on your **Student#** Content Library
+4. Make sure the **Templates** tab is selected
+5. Right-click on the **efs** template
+6. Select **New VM from This Template**
+7. Name your VM **EFSVM#** (where # is your student number)
+8. Select **Workloads** for the location of your VM
+9. Click **Next**
+10. Select **Compute-ResourcePool** as the destination for your VM
+11. Click **Next**
+12. Click **Next**
 13. Select "WorkloadDatastoreWorkloadDatastore" for storage
-14. Click "Next"
+14. Click **Next**
 15. Select your Destination Network
-16. Click "Next"
-17. Click "Finish"
+16. Click **Next**
+17. Click **Finish**
 18. Make sure to Power on your VM and ensure it is assigned an IP address
 
 ### AWS Elastic File System (EFS)
 
 On your browser, open a new tab and go to: <https://vmcworkshop.signin.aws.amazon.com/console>
 
-1. Account ID or alias -vmcworkshopvmcworkshop
-2. IAM user name -Student#Student#where # is the number assigned to you
-3. Password -VMCworkshop1211VMCworkshop1211
-4. Click "Sign InSign In"
-5. You are now signed in to the AWS console. Make sure the region selected is "OregonOregon"
-6. Click on the "EFSEFS" service
+1. Account ID or alias - vmcworkshop
+2. IAM user name -Student# (where # is the number assigned to you)
+3. Password - VMCworkshop1211
+4. Click **Sign In**
+5. You are now signed in to the AWS console. Make sure the region selected is **Oregon**
+6. Click on the **EFS** service
 7. Select your Student # NFS
 8. Note the IP address
-9. Back on your vCenter Server tab, click on "Launch Web Console Launch Web Console" for your EFS VM (Might need to allow pop ups in browser). Log in using the following credentials:
- a. User:root
- b. Password:VMware1!VMware1!
+9. Back on your vCenter Server tab, click on **Launch Web Console**  for your EFS VM (Might need to allow pop ups in browser). Log in using the following credentials:
+ a. **User**: root
+ b. **Password**: VMware1!VMware1!
 
 Enter the following commands at the prompt:
 
@@ -553,21 +551,19 @@ ls
 
 ## Site Recovery
 
-Activate Site Recovery Add On
+### Activate Site Recovery Add On
 
 Important Instructions for Site Recovery ExercisesImportant Instructions for Site Recovery Exercises
 
-PLEASE BE AWARE THAT THESE EXERCISES MUST BE PERFORMED FROM THE ASSIGNED RDP PLEASE BE AWARE THAT THESE EXERCISES MUST BE PERFORMED FROM THE ASSIGNED RDP DESKTOP YOUR INSTRUCTORS ASSIGNED. IF YOU TRY TO PERFORM SOME OF THE EXERCISESDESKTOP YOUR INSTRUCTORS ASSIGNED. IF YOU TRY TO PERFORM SOME OF THE EXERCISES OUTSIDE OF THE RDP SESSION YOU WILL EXPERIENCE SOME FAILURES. PLEASE USE THEOUTSIDE OF THE RDP SESSION YOU WILL EXPERIENCE SOME FAILURES. PLEASE USE THE DESKTOP ASSIGNED TO YOU AT THE BEGINNING OF THE WORKSHOP.DESKTOP ASSIGNED TO YOU AT THE BEGINNING OF THE WORKSHOP.
+PLEASE BE AWARE THAT THESE EXERCISES MUST BE PERFORMED FROM THE ASSIGNED RDP DESKTOP YOUR INSTRUCTORS ASSIGNED. IF YOU TRY TO PERFORM SOME OF THE EXERCISES OUTSIDE OF THE RDP SESSION YOU WILL EXPERIENCE SOME FAILURES.
 
-### Activate Site Recovery Add On
-
-1. In your SDDC, click on the "Add Ons" tab
-2. Click the "Activate" button
-3. Click the "Activate" button
+1. In your SDDC, click on the **Add Ons** tab
+2. Click the **Activate** button
+3. Click the **Activate** button
 
 Wait until the Site Recovery Add On has been activated.
 
-What is VMware Site Recovery?What is VMware Site Recovery?
+What is VMware Site Recovery?
 
 VMware Site Recovery brings VMware enterprise-class Software-Defined Data Center (SDDC) Disaster Recovery as a Service to the AWS Cloud. It enables customers to protect and recover applications without the requirement for a dedicated secondary site. It is delivered, sold, supported, maintained and managed by VMware as an on-demand service. IT teams manage their cloud-based resources with familiar VMware tools without the difficulties of learning new skills or utilizing new tools. VMware Site Recovery is an add-on feature to VMware Cloud on AWS, powered by VMware Cloud Foundation, VMware Cloud on AWS integrates VMware's flagship compute, storage, and network virtualization products: VMware vSphere, VMware vSAN, and VMware NSX along with VMware vCenter Server management. It optimizes them to run on elastic, bare-metal AWS infrastructure. With the same architecture and operational experience on-premises and in the cloud, IT teams can now get instant business value via the AWS and VMware hybrid cloud experience. The VMware Cloud on AWS solution enables customers to have the flexibility to treat their private cloud and public cloud as equal partners and to easily transfer workloads between them, for example, to move applications from DevTest to production or burst capacity. Users can leverage the global AWS footprint while getting the benefits of elastically scalable SDDC clusters, a single bill from VMware for its tightly integrated software plus AWS infrastructure, and on-demand or subscription services like VMware Site Recovery Service. VMware Site Recovery extends VMware Cloud on AWS to provide a managed disaster recovery, disaster avoidance and non-disruptive testing capabilities to VMware customers without the need for a secondary site, or complex configuration.
 
@@ -579,7 +575,7 @@ VMware Site Recovery can be used between a customers datacenter and an SDDC depl
 
 We will be setting up a IPSEC VPN connection between your VPC and the VPC of the person you were paired with.
 
-1. Go back to the "VMware Cloud on AWS tab.
+1. Go back to the **VMware Cloud on AWS** tab.
 2. In the main SDDC windows, click onView DetailsView Details
 3. Then click on the "Network" menu In the Management Gateway box, make a note of thePublic IPPublic IPand theInfrastructure SubnetInfrastructure Subnet CIDR Scroll down a little to get to the Management Gateway setting
 4. Click the drop down arrow to open theIPsec VPNsIPsec VPNssection
@@ -914,12 +910,12 @@ vRealize Automation supports VMware Cloud on AWS in delivering a unified hybrid 
 ### Login to vRealize Automation
 
 1. On your Student desktop, click on the Chrome browser.
-2. On your bookmarks bar in Chrome click on the "VMware vRealize Automation ApplianceVMware vRealize Automation Appliance" link
-3. Click on the "Proceed to vraapp.corp.local (unsafe)Proceed to vraapp.corp.local (unsafe)" link
-4. Click on the "vRealize Automation ConsolevRealize Automation Console" link
-5. Click "Next"
-6. Login with yourvmcws#vmcws#user name where # is your student number
-7. Enter your password -VMware1!VMware1!
+2. On your bookmarks bar in Chrome click on the **VMware vRealize Automation Appliance** link
+3. Click on the "Proceed to vraapp.corp.local (unsafe) link
+4. Click on the **vRealize Automation Console** link
+5. Click **Next**
+6. Login with your **vmcws#** user name (where # is your student number)
+7. Enter your password - VMware1!
 
 You have successfully logged in to vRealize Automation!
 
@@ -927,38 +923,36 @@ You have successfully logged in to vRealize Automation!
 
 An endpoint is anything that vRealize Automation uses to complete it's provisioning processes. This could be a public cloud resource such as Amazon Web Services EC2, VMware Cloud on AWS, an external orchestrator appliance, or a private cloud hosted by vSphere or other hypervisors.
 
-1. Click on "InfrastructureInfrastructure" tab
-2. Click on "EndpointsEndpoints" on left pane
-3. Click on "EndpointsEndpoints" again on the left pane
-4. Click on "NewNew" button
-5. Select "VirtualVirtual"
-6. Select "vSphere (vCenter)vSphere (vCenter)"
+1. Click on **Infrastructure** tab
+2. Click on **Endpoints** on left pane
+3. Click on **Endpoints** again on the left pane
+4. Click on **New** button
+5. Select **Virtual**
+6. Select **vSphere (vCenter)**
 
     For these next few steps, make sure you are logged in to your VMware Cloud on AWS portal.
-7. On your VMware Cloud on AWS portal, make sure you click on the "Connection InfoConnection Info" tab, you will be using some of this information to create the vRealize Automation Endpoint
-8. Name your vRA Endpoint 'ws#ws#' where # is your student number.
-9. Under "AddressAddress" enter the information from the VMware Cloud on AWS portal under "vSphere Client (HTML5)vSphere Client (HTML5)" and replace the words 'ui' for sdk
+7. On your VMware Cloud on AWS portal, make sure you click on the **Connection Info** tab, you will be using some of this information to create the vRealize Automation Endpoint
+8. Name your vRA Endpoint **ws#** (where # is your student number)
+9. Under **Address** enter the information from the VMware Cloud on AWS portal under **vSphere Client (HTML5)** and replace the words 'ui' for 'sdk'
 10. Example:
     From VMware Cloud on AWS portal: <https://vcenter.sddc-X-X-X-X.vmc.vmware.com/ui>
-    What it should look like in vRealize Automation: <https://vcenter.sddc-X-X-X->
-    X.vmc.vmware.com/sdksdk
-11. Enter the user name (cloudadmin@vmc.localcloudadmin@vmc.local)
+    What it should look like in vRealize Automation: <https://vcenter.sddc-X-X-X-X.vmc.vmware.com/sdk>
+11. Enter the user name **cloudadmin@vmc.local**
 12. Enter the password (Please refer to VMware Cloud on AWS portal for this information)
-13. Click on the "Test ConnectionTest Connection" button
-14. If connection passes test, click on "OkOk" button to create your vRealize Automation Endpoint
+13. Click on the **Test Connection** button
+14. If connection passes test, click on **Ok** button to create your vRealize Automation Endpoint
 
 ### Create a Fabric Group
 
 An administrator can organize virtualization compute resources and cloud endpoints into fabric groupsby type and intent. Make sure for this step you've selected the Endpoint you created in the previous module.
 
-1. Click on "Fabric GroupsFabric Groups" on the left pane
-2. Click on "+ New+ New" to create a new Fabric Group
-3. Name your Fabric Group "ws#FabricGroupws#FabricGroup" where # is your student #
-4. Add the user assigned to your student number:vmcws#@corp.localvmcws#@corp.localand click on the magnifying glass icon to find and add your user
+1. Click on **Fabric Groups** on the left pane
+2. Click on **+ New** to create a new Fabric Group
+3. Name your Fabric Group **ws#FabricGroup** (where # is your student #)
+4. Add the user assigned to your student number: **vmcws#@corp.local** and click on the magnifying glass icon to find and add your user
 5. Select the vRealize Automation endpoint you created in the previous step
-    NOTE: MAKE SURE YOU SELECT THE CORRECT COMPUTE RESOURCE AS ILLUSTRATED BY THENOTE: MAKE SURE YOU SELECT THE CORRECT COMPUTE RESOURCE AS ILLUSTRATED BY THE
-    ARROWS. SHOULD BE THE "WS#" ENDPOINT YOU CREATED IN A PREVIOUS STEP.ARROWS. SHOULD BE THE "WS#" ENDPOINT YOU CREATED IN A PREVIOUS STEP.
-6. Click "OkOk" button
+    NOTE: MAKE SURE YOU SELECT THE CORRECT COMPUTE RESOURCE AS ILLUSTRATED BY THE ARROWS. SHOULD BE THE "WS#" ENDPOINT YOU CREATED IN A PREVIOUS STEP.
+6. Click **OK** button
 
 ## Reservations
 
@@ -966,8 +960,7 @@ When a user requests a machine, it can be provisioned on any reservation of the 
 
 ### Create Reservation Policy
 
-For this step if your Reservation tab is missing you may need to hit the Refresh button on your
-browser.
+For this step if your Reservation tab is missing you may need to hit the Refresh button on your browser.
 
 1. Click on the **Infrastructure** button on the left pane
 2. Click **Reservations** on the left pane
@@ -980,76 +973,76 @@ browser.
 
 A vRealize Automation reservation is a means to allocate resources in a fabric group (CPU, RAM, Storage, etc.) to a specific business group.
 
-1. Click on the "< Infrastructure< Infrastructure" button on the left pane
-2. Click on "ReservationsReservations" on the left pane
-3. Click "ReservationsReservations" on the left pane
-4. Click "+ New+ New" to create a new Reservation
-5. Select "vSphere (vCenter)vSphere (vCenter)"
-6. Give your reservation a name: "Student#"Student#", where # is your student number assigned to you
+1. Click on the **nfrastructure** button on the left pane
+2. Click on **Reservations** on the left pane
+3. Click **Reservations** on the left pane
+4. Click **+ New** to create a new Reservation
+5. Select **vSphere (vCenter)**
+6. Give your reservation a name: **Student#** (where # is your student number assigned to you)
 7. Leave/select vsphere.local as the Tenant
-8. Selectvmc-ws#vmc-ws#where # is your student number
-9. For Reservation policy type or selectStudent#Student#
-10. Priority should be set to 11
-11. Click on the "ResourcesResources" tab
-12. On the "ResourcesResources" tab for "Compute ResourceCompute Resource" select "Cluster-1 (WS#)Cluster-1 (WS#)" from the drop down box
-13. Type " 10241024 " in the "This ReservationThis Reservation" field
-14. Select the checkbox for "WorkloadDatastoreWorkloadDatastore"
-15. Type " 1000010000 " under the "This Reservation ReservedThis Reservation Reserved" field
-16. Type " 00 " under the Priority field and hit the "OKOK" button
-17. Select "Compute-ResourcePoolCompute-ResourcePool" in the "Resource PoolResource Pool" field
-18. Click on the "NetworkNetwork" tab
-19. Select the "sddc-cgw-network-1sddc-cgw-network-1" Network Adapter by clicking the checkbox to the left of it and select "sddc-cgw-network-1sddc-cgw-network-1" from the dropdown box on the right side
-20. Click on the "OKOK" button
+8. Select **vmc-ws#** (where # is your student number)
+9. For Reservation policy type or select **Student#** (where # is your student number assigned to you)
+10. Priority should be set to **1**
+11. Click on the **Resources** tab
+12. On the **Resources** tab for **Compute Resource** select **Cluster-1 (WS#)** from the drop down box
+13. Type **1024** in the **This Reservation** field
+14. Select the checkbox for **WorkloadDatastore**
+15. Type **10000** under the **This Reservation Reserved** field
+16. Type **0** under the Priority field and hit the **OK** button
+17. Select **Compute-ResourcePool** in the **Resource Pool** field
+18. Click on the **Network** tab
+19. Select the **sddc-cgw-network-1** Network Adapter by clicking the checkbox to the left of it and selecting **sddc-cgw-network-1** from the dropdown box on the right side
+20. Click on the **OK** button
 
-### Create a Blue Print
+### Create a Blue  Print
 
-A blueprint is a complete specification for a service. A blueprint determines the components of a service, which are the input parameters, submission and read-only forms, sequence of actions, and provisioning. You can create service blueprints to provision custom resources that you previously created.
+A blueprint is a complete specification for a service. A blueprint determines the components of a service, which are the input parameters, submission and read-only forms, sequence of actions and provisioning. You can create service blueprints to provision custom resources that you previously created.
 
-1. Click on the "DesignDesign" tab
-2. On the left pane click "BlueprintsBlueprints"
-3. Click the "+ New+ New" button
-4. Name your Blueprint "Student#Student#" where # is the Student number assigned to you
+1. Click on the **Design** tab
+2. On the left pane click **Blueprints**
+3. Click the **+ New** button
+4. Name your Blueprint **Student#** (where # is the Student number assigned to you)
 5. Use the same name for ID
-6. Enter " 11 " as the Deployment Limit
-7. Enter " 11 " as the Minimum Lease days
-8. Enter " 11 " as the Maximum Lease days
-9. Enter " 00 " for Archive Days
-10. Click the "OKOK" button, the Design Canvas below appears
-11. Ensure "Machine TypesMachine Types" is selected
-12. Click and drag onto the Canvas the "vSphere (vCenter) MachinevSphere (vCenter) Machine"
-13. Leave all defaults on the "GeneralGeneral" tab and click on the "Build InformationBuild Information" tab
-14. Make sure "ServerServer" is selected as the Blueprint Type
-15. Change Action to "CloneClone"
-16. Click on the elipsis button and select "StudentVM#StudentVM#" that you created in your previous step and click **OK**
-17. Click "SaveSave"
-18. Click "Finish"
+6. Enter **1** as the Deployment Limit
+7. Enter **1** as the Minimum Lease days
+8. Enter **1** as the Maximum Lease days
+9. Enter **0** for Archive Days
+10. Click the **OK** button, the Design Canvas below appears
+11. Ensure **Machine Types** is selected
+12. Click and drag onto the Canvas the **vSphere (vCenter) Machine**
+13. Leave all defaults on the **General** tab and click on the **Build Information** tab
+14. Make sure **Server** is selected as the Blueprint Type
+15. Change Action to **Clone**
+16. Click on the elipsis button and select **StudentVM#** that you created in your previous step and click **OK**
+17. Click **Save**
+18. Click **Finish**
 19. Select your Blueprint by highlighting it
-20. Click on the "PublishPublish" button to publish your blueprint
-21. Make sure you are in the "AdministrationAdministration" tab, if not, click on it and select "CatalogCatalog ManagementManagement"
-22. Select "Catalog ItemsCatalog Items" from the left pane and click your "Student#Student#" to configure
-23. Select "DesktopsDesktops" from the drop down box next to "ServiceService"
-24. Click the "OKOK" button
+20. Click on the **Publish** button to publish your blueprint
+21. Make sure you are in the **Administration** tab, if not, click on it and select **Catalog Management**
+22. Select **Catalog Items** from the left pane and click your **Student#** to configure
+23. Select **Desktops** from the drop down box next to **Service**
+24. Click the **OK** button
 
 ### Entitle your Blueprint
 
-1. Click the "AdministrationAdministration" tab
-2. Select "Catalog ManagementCatalog Management" from the left pane
-3. Click on "EntitlementsEntitlements" on the left pane
-4. Click the "+ New+ New" button in order to create a new Entitlement
-5. Name the Entitlement "ws#ws#" where # is your Student #
-6. Change the Status to "ActiveActive"
-7. Select "vmc-ws#vmc-ws#" for the Business Group where # is the number assigned to you
-8. Click "Next"
-9. Click the "++" sign next to "Entitled ServicesEntitled Services"
-10. Make sure to select the checkbox next to "DesktopsDesktops"
-11. Click "OKOK"
-12. Click on the "++" sign next to "Entitle ActionsEntitle Actions"
+1. Click the **Administration** tab
+2. Select **Catalog Management** from the left pane
+3. Click on **Entitlements** on the left pane
+4. Click the **+ New** button in order to create a new Entitlement
+5. Name the Entitlement **ws#** (where # is your Student #)
+6. Change the Status to **Active**
+7. Select **vmc-ws#** for the Business Group (where # is the number assigned to you)
+8. Click **Next**
+9. Click the **+** sign next to **Entitled Services**
+10. Make sure to select the checkbox next to **Desktops**
+11. Click **OK**
+12. Click on the **+** sign next to **Entitle Actions**
 13. Select the checkbox at the top to select all Actions
-14. Click "OKOK" button
-15. Click "Finish" button
-16. Select the "CatalogCatalog" tab
-17. Click on your newly created "Student#Student#" blueprint and click on the "RequestRequest" button
-18. Highlight the "vSphere_VCenter_MachinevSphere_VCenter_Machine" under your Blueprint
-19. Check all the options are correct and click the "SubmitSubmit" button
-20. Click on the "RequestsRequests" tab to check on the status of your Blueprint submission
+14. Click **OK** button
+15. Click **Finish** button
+16. Select the **Catalog** tab
+17. Click on your newly created **Student#** blueprint and click on the **Request** button
+18. Highlight the **vSphere_VCenter_Machine** under your Blueprint
+19. Check all the options are correct and click the **Submit** button
+20. Click on the **Requests** tab to check on the status of your Blueprint submission
 21. Check the status to ensure the request completes successfully
