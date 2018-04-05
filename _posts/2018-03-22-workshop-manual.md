@@ -42,7 +42,7 @@ AWS Console <https://vmcworkshop.signin.aws.amazon.com/console>
 
 ### Workshop Bookmarks
 
-![Workshop Bookmarks](/assests/images/ws-1.png)
+<img src="{{site.cdn_path}}/vmc-workshops/ws-1.png" />
 
 Import Bookmarks into Chrome by double clicking the Chrome Icon on your Desktop (Preferred browser for workshop)
 
