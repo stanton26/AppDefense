@@ -387,10 +387,10 @@ The first thing we need to do is get "Authorized" to run these REST APIs
 8. Click on orgs: to show the REST API calls for the Organizations
 9. Click on **GET /orgs**
 10. Click on the **Try it out** button This section shows you how to run this REST API. The cool thing is they will give you examples when you when you click on Try It, you see:
-  - Response Code: 200 is the code that means success, other response codes are listed under Response Messages.
-  - Response Header: This gives you some metadate about the response
-  - Response Body: This is the details that you are looking for. Look through this and find the Display_NameDisplay_NameandIDIDfor your Org.
-  - If you wanted to run the command at a linux prompt using the "curl" command, you can cut and paste this into your linux terminal
+- Response Code: 200 is the code that means success, other response codes are listed under Response Messages.
+- Response Header: This gives you some metadate about the response
+- Response Body: This is the details that you are looking for. Look through this and find the Display_NameDisplay_NameandIDIDfor your Org.
+- If you wanted to run the command at a linux prompt using the "curl" command, you can cut and paste this into your linux terminal
 
 NOTE: Copy the ID without the quotes.
 
@@ -576,41 +576,40 @@ VMware Site Recovery can be used between a customers datacenter and an SDDC depl
 We will be setting up a IPSEC VPN connection between your VPC and the VPC of the person you were paired with.
 
 1. Go back to the **VMware Cloud on AWS** tab.
-2. In the main SDDC windows, click onView DetailsView Details
-3. Then click on the "Network" menu In the Management Gateway box, make a note of thePublic IPPublic IPand theInfrastructure SubnetInfrastructure Subnet CIDR Scroll down a little to get to the Management Gateway setting
-4. Click the drop down arrow to open theIPsec VPNsIPsec VPNssection
-5. Click on ADD VPNADD VPN
+2. In the main SDDC windows, click on **View Details**
+3. Then click on the **Network** menu In the Management Gateway box, make a note of the Public IP and the Infrastructure Subnet CIDR, Scroll down a little to get to the Management Gateway setting
+4. Click the drop down arrow to open the **IPsec VPNs** section
+5. Click on **ADD VPN**
 
 Fill in the following information
 6. Student ## MGMT GW : Put the student number of the person you were paired with.
-7. The Public IP address of the person you were paired with
-8. The Infrastructure IP CIDR of the person you were paired with
-9. Pre-shared key isVMware1!VMware1!
-10. Click on Save.
+7. The **Public IP address** of the person you were paired with
+8. The **Infrastructure IP CIDR** of the person you were paired with
+9. Pre-shared key is **VMware1!**
+10. Click on **Save**.
 
-When both you and the person you were paired with have completed these steps you should see the status turn toConnectedConnected
+When both you and the person you were paired with have completed these steps you should see the status turn to Connected
 
 There will be a need to setup a second VPN to our Host infrastructure for this setup to work. This is not normally needed when setting up your on-premises environment but it's needed for the special setup done for this workshop.
 
-1. Make sure the drop down is opened, if not click it under "Management Gateway"
-2. Click on "Add VPN"
+1. Make sure the drop down is opened, if not click it under **Management Gateway**
+2. Click on **Add VPN**
 
     Fill in the following information
-3. Name this VPN "Student# to Host" where # is your student number
-4. Enter "54.70.191.234" for the Remote Gateway Public IP
-5. Enter "192.168.30.0/24" under Remote Networks
-6. Pre-shared key isVMware1!VMware1!
-7. Click on Save.
+3. Name this VPN **Student# to Host** (where # is your student number)
+4. Enter **54.70.191.234** for the Remote Gateway Public IP
+5. Enter **192.168.30.0/24** under Remote Networks
+6. Pre-shared key is **VMware1!**
+7. Click on **Save**.
 
-Prepare and Pair Site RecoveryPrepare and Pair Site Recovery
+#### Prepare and Pair Site Recovery
 
-Firewall Rules for Site RecoveryFirewall Rules for Site Recovery
+Firewall Rules for Site Recovery
 
-If you still have your OAuth Token from the Powershell module, you are free to use it,
-otherwise, follow the following instructions to obtain a new one.
+If you still have your OAuth Token from the Powershell module, you are free to use it, otherwise, follow the following instructions to obtain a new one.
 
-1. Click on the drop down next to your Name/Org ID
-2. Click on OAuth Refresh Token
+1. Click on the drop down next to your **Name/Org ID**
+2. Click on **OAuth Refresh Token**
 
 Now we create a refresh token for your ID tied to this Org
 
@@ -619,10 +618,14 @@ Now we create a refresh token for your ID tied to this Org
 3. Click on **Copy to Clipboard**
 
 Now let's attach to the VMC server
-Typeconnect-vmc -refreshtoken "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"connect-vmc -refreshtoken "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"and press Enter.
+
+``` powershell
+connect-vmc -refreshtoken "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"connect-vmc -refreshtoken "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+```
+
 NOTE: Paste the refresh token you copied earlier in the exercise.
 
-Import Firewall Rules for Site Recovery via PowerCLI
+#### Import Firewall Rules for Site Recovery via PowerCLI
 
 Open a Powershell window and enter the following commands:
 
@@ -631,10 +634,11 @@ Set-Location \\vmcwindc01\documents\import-dr-fw-rules.ps1 -refreshToken "xxxxxx
 ```
 
 Where xxxx is the OAuth Token you generated in a previous step and # is your Student number.
+
 Ensure the appropriate firewall rules were created by:
 
-1. Click on the "Network" tab.
-2. Expand "Firewall Rules" under "Management Gateway"
+1. Click on the **Network** tab.
+2. Expand **Firewall Rules** under **Management Gateway**
 
     Confirm the following Firewall Rules have been created:
 3. SRM 9086
@@ -648,12 +652,12 @@ Please note that the rules may have been created in a different order than shown
 
 ### VMware Site Recovery - Site Pairing
 
-IMPORTANT NOTEIMPORTANT NOTE: Only one person can do the Site Pairing exercise. Please decide between you and your partner who performs this step.
+**IMPORTANT NOTE**: Only one person can do the Site Pairing exercise. Please decide between you and your partner who performs this step.
 
-1. On your VMware Cloud on AWS Portal click on the "Add Ons" tab
-2. Click "Open Site Recovery"
-3. Click on "New Site Pair" You will be pairing the partner site that was assigned to you by your instructor, note that this is not the information for your SDDC used up until now. This is the information your partner will need from you and you will need from your partner's site.
-4. Click on the "Connection Info" tab
+1. On your VMware Cloud on AWS Portal click on the **Add Ons** tab
+2. Click **Open Site Recovery**
+3. Click on **New Site Pair** You will be pairing the partner site that was assigned to you by your instructor, note that this is not the information for your SDDC used up until now. This is the information your partner will need from you and you will need from your partner's site.
+4. Click on the **Connection Info** tab
 5. Copy or note the URL for the vCenter Server, drop the /ui at the end
 6. Note the username
 7. Note the password
@@ -663,100 +667,100 @@ IMPORTANT NOTEIMPORTANT NOTE: Only one person can do the Site Pairing exercise. 
     User name
     Password
 10. Make sure local vCenter server is selected
-11. Select all Services
-12. Click "Next"
-13. Click "Finish" button
+11. Select **all Services**
+12. Click **Next**
+13. Click **Finish** button
 
 ### Configure Network Mappings
 
-1. Click "Network Mappings" in the left pane of the Site Recovery page
-2. Click "+ New"
-3. Select "Prepare mappings manually
-4. Click "Next"
-5. Expand "SDDC Datacenter" on both sides
-6. Expand "Management Networks" on both sides
-7. Expand "vmc-dvs" on both sides
-8. Select your "Student#-LN" network and your partner's "Student#-LN" (You may need to scroll down to find these networks)
-9. Click the "Add Mappings" button
-10. Click "Next"
-11. DO NOT enter or select anything in Reverse Mappings, click "Next"
-12. Leave defaults and click "Next"
-13. Click "Finish"
+1. Click **Network Mappings** in the left pane of the Site Recovery page
+2. Click **+ New**
+3. Select **Prepare mappings manually**
+4. Click **Next**
+5. Expand **SDDC Datacenter** on both sides
+6. Expand **Management Networks** on both sides
+7. Expand **vmc-dvs** on both sides
+8. Select your **Student#-LN** network and your partner's **Student#-LN** (You may need to scroll down to find these networks)
+9. Click the **Add Mappings** button
+10. Click **Next**
+11. DO NOT enter or select anything in Reverse Mappings, click **Next**
+12. Leave defaults and click **Next**
+13. Click **Finish**
 
 ### Folder mappings
 
-1. Select "Folder Mappings" in the left pane
-2. Click "+ New" to create a new folder mapping
-3. Select "Prepare mappings manually"
-4. Click "Next"
-5. Expand "SDDC Datacenter" on both sides
-6. Select "Workloads" on both sides
-7. Click the "Add Mappings" button
-8. Click "Next"
-9. DO NOT select any Reverse mappings, click "Next"
-10. Click "Finish"
+1. Select **Folder Mappings** in the left pane
+2. Click **+ New** to create a new folder mapping
+3. Select **Prepare mappings manually**
+4. Click **Next**
+5. Expand **SDDC Datacenter** on both sides
+6. Select **Workloads** on both sides
+7. Click the **Add Mappings** button
+8. Click **Next**
+9. DO NOT select any Reverse mappings, click **Next**
+10. Click **Finish**
 
 ### Resource Mappings
 
-1. Click "Resource Mappings" in the left pane
-2. Click "+ New"
-3. Expand "SDDC Datacenter" on both sides
-4. Expand "Cluster 1" on both sides
-5. Select "Compute-ResourcePool on both sides
-6. Click "Add Mappings" button
-7. Click "Next"
-8. DO NOT select any reverse mappings, click "Next"
-9. Click "Finish"
+1. Click **Resource Mappings** in the left pane
+2. Click **+ New**
+3. Expand **SDDC Datacenter** on both sides
+4. Expand **Cluster 1** on both sides
+5. Select **Compute-ResourcePool** on both sides
+6. Click **Add Mappings** button
+7. Click **Next**
+8. DO NOT select any reverse mappings, click **Next**
+9. Click **Finish**
 
 ### Placeholder Datastores
 
-1. Select "Placeholder Datastores" in the left pane
-2. Click "+ New"
-3. Select "WorkloadDatastore"
-4. Click "Add"
+1. Select **Placeholder Datastores** in the left pane
+2. Click **+ New**
+3. Select **WorkloadDatastore**
+4. Click **Add**
 
 ### SRM - Protect a VM
 
 1. Select a VM to replicate and right-click
-2. Select "All Site Recovery actions"
-3. Click "Configure Replication"
+2. Select **All Site Recovery actions**
+3. Click **Configure Replication**
 
-    NOTE: You may need to log in to the paired site (This is your partner's site), make sure you use cloudadmin@vmc.local and get your partner's user's password. After entering you may need to repeat this step.
-4. Click "Next"
+    NOTE: You may need to log in to the paired site (This is your partner's site), make sure you use **cloudadmin@vmc.local** and get your partner users password. After entering you may need to repeat this step.
+4. Click **Next**
 5. Select the Target Site
 6. If not logged in you may need to login (Remember this is your partner's site not yours)
-7. Enter your partner's site credentials
-8. Leave all defaults and click "Next"
-9. Leave the default "Datastore Default" as the VM Storage Policy
-10. Select "WorkloadDatastore"
-11. Click "Next"
+7. Enter your partners site credentials
+8. Leave all defaults and click **Next**
+9. Leave the default **Datastore Default** as the VM Storage Policy
+10. Select **WorkloadDatastore**
+11. Click **Next**
 12. Leave the default 1 hour for Recovery Point Objective, RPO can be as low as 5 minutes, as high as 24 hour
-13. Click "Next"
-14. Select "Add to new protection group"
-15. Name your Protection Group "PG#" where # is your student number
-16. Click "Next"
-17. Select "Add to new recovery plan"
-18. Name your Recovery Plan "RP#" where # is your student number
-19. Click "Next" button
-20. Click "Finish"
+13. Click **Next**
+14. Select **Add to new protection group**
+15. Name your Protection Group **PG#** (where # is your student number)
+16. Click **Next**
+17. Select **Add to new recovery plan**
+18. Name your Recovery Plan **RP#** (where # is your student number)
+19. Click **Next** button
+20. Click **Finish**
 
 ### Perform a Recovery Test
 
-1. In the VMware Cloud on AWS portal, click the "Add Ons" tab
-2. Click on "Open Site Recovery" (You may need to allow Pop-ups in browser)
-3. In the Site Recovery window, click "Open"
-4. Click on "Recovery Plans"
-5. Click on your protection group "PG#" where # is your student number
-6. Click on "Recovery Plans"
-7. Click on "RP#" which should be your Recovery Plan you created in a previous step
-8. Click the "Test" button
-9. Leave all defaults and click "Next" button
-10. Click "Finish" button
+1. In the VMware Cloud on AWS portal, click the **Add Ons** tab
+2. Click on **Open Site Recovery** (You may need to allow Pop-ups in browser)
+3. In the Site Recovery window, click **Open**
+4. Click on **Recovery Plans**
+5. Click on your protection group **PG#** (where # is your student number)
+6. Click on **Recovery Plans**
+7. Click on **RP#** which should be your Recovery Plan you created in a previous step
+8. Click the **Test** button
+9. Leave all defaults and click **Next** button
+10. Click **Finish** button
 11. Follow the progress in the Recent Tasks area at the bottom of your window
 12. Notice the test has successfully completed
-13. Click the "Cleanup" button to clean up the activity and return the environment to its normal state
-14. Click "Next"
-15. Click "Finish", the environment will now be clean. Please note that during testing, your replications protecting your VM's is not interrupted
+13. Click the **Cleanup** button to clean up the activity and return the environment to its normal state
+14. Click **Next**
+15. Click **Finish**, the environment will now be clean. Please note that during testing, your replications protecting your VM's is not interrupted
 
 ## Hybrid Cloud Extension (HCX)
 
@@ -788,106 +792,106 @@ Eliminate the need for cloud readiness and app dependency assessment
 
 ### HCX - vMotion Migration
 
-1. Open your Chrome browser and click on the "HCX-vMotion" bookmark
-2. Click the "X" on the right pane to enlarge the main screen The first tab in the browser demonstrate an on-premises vCenter server.
+1. Open your Chrome browser and click on the **HCX-vMotion** bookmark
+2. Click the **X** on the right pane to enlarge the main screen The first tab in the browser demonstrate an on-premises vCenter server.
 
 3. Click on the second tab, this represents a second data center (This can also represent a VMware Cloud on AWS vCenter)
 4. Click the first tab in the browser to go back to the on-premises vCenter.
-5. Click on the VM named "Mission Critical Workload 1"
-6. Click on the Console screen
+5. Click on the VM named **Mission Critical Workload 1**
+6. Click on the **Console screen**
 
-    A console window is now open for the "Mission Critical Workload 1" VM, it will try to ping IP Address 10.159.137.212 which corresponds to a VM in the second site.
+    A console window is now open for the **Mission Critical Workload 1** VM, it will try to ping IP Address 10.159.137.212 which corresponds to a VM in the second site.
 7. Click in the tab corresponding to the second site
-8. Click on the VM named "TargetSite-TestVM"
-9. Note the IP address corresponding to this VM is the IP address that the "Mission Critical Workload 1" VM on the source site is trying to ping
+8. Click on the VM named **TargetSite-TestVM**
+9. Note the IP address corresponding to this VM is the IP address that the **Mission Critical Workload 1** VM on the source site is trying to ping
 10. Click on the **Mission Critical Workload 1** tab
     - Press enter after the ping command
-    - Click Control-C to stop ping
+    - Click **Control-C** to stop ping
     - Type ping 172.16..4.2 which is this VM's own IP address
-11. Click the "X" on this tab to close this tab on your browser
+11. Click the **X** on this tab to close this tab on your browser
 12. Click on the first tab to go back to the on-premises vCenter
-13. Click on the "Actions" button
-14. Click on "Hybridity Actions"
-15. Click on "Migrate to the Cloud"
-16. Click on "(Specify Destination Container)"
-17. Select "RedwoodCluster"
-18. Click on "Select Destination" button
-19. Click on "(Select Storage)" button
-20. Select "cloudStorage"
-21. Click "(Select Virtual Disk Format)"
-22. Select "Same format as source"
-23. Click on "(Select Migration Type)"
-24. Select "vMotion"
-25. Click "Next"
-26. Look for the "Validation is Successful" message
-27. Click "Finish" button
-28. Click on the "Home" button
-29. Click "HCX" in the left pane
-30. Click the "Migration" tab
+13. Click on the **Actions** button
+14. Click on **Hybridity Actions**
+15. Click on **Migrate to the Cloud**
+16. Click on **(Specify Destination Container)**
+17. Select **RedwoodCluster**
+18. Click on **Select Destination** button
+19. Click on **(Select Storage)** button
+20. Select **cloudStorage**
+21. Click **(Select Virtual Disk Format)**
+22. Select **Same format as source**
+23. Click on **(Select Migration Type)**
+24. Select **vMotion**
+25. Click **Next**
+26. Look for the **Validation is Successful** message
+27. Click **Finish** button
+28. Click on the **Home** button
+29. Click **HCX** in the left pane
+30. Click the **Migration** tab
 31. Notice the progress of the vMotion migration
-32. Click on the "Refresh" tab to update the progress
+32. Click on the **Refresh** tab to update the progress
 33. Once progress has completed, click on the second tab to open the target site's vCenter
-34. You now see that "Mission Critical Workload 1" has successfully migrated to the Target Site, click on its name
+34. You now see that **Mission Critical Workload 1** has successfully migrated to the Target Site, click on its name
 35. Click on the Console window
     - You can see that the ping you left running in a previous step never stopped, successfully vMotioning the VM with zero downtime
-    - Press Control-C to stop the ping
-36. Click on the "X" on the browser tab to close the console tab
+    - Press **Control-C** to stop the ping
+36. Click on the **X** on the browser tab to close the console tab
 
 ### Reverse Migration
 
 1. Click on the first tab in the browser
-2. Click the "Migrate Virtual Machines" button
-3. Click the "Reverse Migration" checkbox
-4. Click the checkbox for "Mission Critical Workload 1"
-5. Click on "(Specify Destination Container)"
-6. Select "Tier 0 Workloads"
-7. Click "Select Destination" button
-8. Click on "(Select Storage)"
-9. Select "onpremStorage"
-10. Click "(Select Virtual Disk Format)"
-11. Select "Same format as source"
-12. Click on "(Select Migration Type)"
-13. Select "vMotion"
-14. Click "Next"
-15. Once "Validation is Successful" message appears
-16. Click "Finish" button
+2. Click the **Migrate Virtual Machines** button
+3. Click the **Reverse Migration** checkbox
+4. Click the checkbox for **Mission Critical Workload 1**
+5. Click on **(Specify Destination Container)**
+6. Select **Tier 0 Workloads**
+7. Click **Select Destination** button
+8. Click on **(Select Storage)**
+9. Select **onpremStorage**
+10. Click **(Select Virtual Disk Format)**
+11. Select **Same format as source**
+12. Click on **(Select Migration Type)**
+13. Select **vMotion**
+14. Click **Next**
+15. Once **Validation is Successful** message appears
+16. Click **Finish** button
 17. Check the progress of the migration
-18. Click "Refresh" button
-19. Click the Home button
-20. Click "Hosts and Clusters" button
-21. Click on the "Mission Critical Workload 1" VM, you can see that the Reverse migration to the on-premises vCenter was successful
+18. Click **Refresh** button
+19. Click the **Home** button
+20. Click **Hosts and Clusters** button
+21. Click on the **Mission Critical Workload 1** VM, you can see that the Reverse migration to the on-premises vCenter was successful
 
 ### HCX - Bulk Migration
 
-1. In your Chrome browser click the "HCX-Bulk" bookmark
-2. Click on the "X" to enlarge the main screen
+1. In your Chrome browser click the **HCX-Bulk** bookmark
+2. Click on the **X** to enlarge the main screen
 3. As with the vMotion module, in this example we also have a source site (on-premises) vCenter
 4. Click on the second tab in the browser to view the Target site vCenter
 5. Click on the tab for the on-premises vCenter
-6. Click on the Home button
-7. Click "HCX"
-8. Click on the "Migration" tab
-9. Click the "Migrate Virtual Machines" button
-10. Select "Tier 1 Workloads" in the left pane
-11. Click the checkbox to select all VM's
-12. Click "(Specify Destination Container)"
-13. Select "RedwoodCluster" as the Destination Container
-14. Click the "Select Destination" button
-15. Click "(Select Storage)"
-16. Select "cloudStorage"
-17. Click "(Select Virtual Disk Format)"
-18. Select "Same format as source"
-19. Click "(Select Migration Type)"
-20. Select "Bulk Migration"
-21. Click on "HelpDesk Workload 1" to see the options for this workload
-22. Click on "HelpDesk Workload 2" to see the options for this workload
-23. Click on the sidebar to view all the options
-24. Click the "Next" button
-25. Wait for "Validation is Successful" message
-26. Click "Finish" button
+6. Click on the **Home** button
+7. Click **HCX**
+8. Click on the **Migration** tab
+9. Click the **Migrate Virtual Machines** button
+10. Select **Tier 1 Workloads** in the left pane
+11. Click the **checkbox** to select all VM's
+12. Click **(Specify Destination Container)**
+13. Select **RedwoodCluster** as the Destination Container
+14. Click the **Select Destination** button
+15. Click **(Select Storage)**
+16. Select **cloudStorage**
+17. Click **(Select Virtual Disk Format)**
+18. Select **Same format as source**
+19. Click **(Select Migration Type)**
+20. Select **Bulk Migration**
+21. Click on **HelpDesk Workload 1** to see the options for this workload
+22. Click on **HelpDesk Workload 2** to see the options for this workload
+23. Click on the **sidebar** to view all the options
+24. Click the **Next** button
+25. Wait for **Validation is Successful** message
+26. Click **Finish** button
 27. Check Progress of the migrations
-28. Click "Refresh" button
-29. Once migrations complete, click the "Hosts and Clusters" button
+28. Click **Refresh** button
+29. Once migrations complete, click the **Hosts and Clusters** button
 30. Click on the second tab to view the cloud vCenter
 31. You can see that both workloads have successfully migrated to the Target vCenter
 
