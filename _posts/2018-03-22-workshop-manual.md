@@ -62,10 +62,10 @@ Import Bookmarks into Chrome by double clicking the Chrome Icon on your Desktop 
 ## Add a Host to your SDDC
 
 1. On your "Student Workshop #" SDDC, click on the "View Details" button.
-2. Click on the "ActionsActions" button
-3. Click on "Add HostsAdd Hosts"
+2. Click on the "Actions" button
+3. Click on "Add Hosts"
 4. As you will only be adding only one host, review the field highlighted
-5. Click the "Add HostsAdd Hosts" button
+5. Click the "Add Hosts" button
 
 Congratulations! You have completed this step. The adding of an additional host to an existing SDDC should take approximately 10 minutes to complete.
 
