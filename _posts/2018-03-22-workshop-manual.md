@@ -42,8 +42,6 @@ AWS Console <https://vmcworkshop.signin.aws.amazon.com/console>
 
 ### Workshop Bookmarks
 
-<img src="{{site.cdn_path}}/vmc-workshops-images/Page-7-Image-1.png"/>
-
 ![alt-text](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-7-Image-1.png)
 
 Import Bookmarks into Chrome by double clicking the Chrome Icon on your Desktop (Preferred browser for workshop)
