@@ -42,17 +42,17 @@ AWS Console <https://vmcworkshop.signin.aws.amazon.com/console>
 
 ### Workshop Bookmarks
 
-![ws-bookmarks](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-7-Image-1.png)
+![ws](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-7-Image-1.png)
 
 Import Bookmarks into Chrome by double clicking the Chrome Icon on your Desktop (Preferred browser for workshop)
 
 1. Click on the three dots on the top right corner
 2. Select **Bookmarks**
 3. Select **Import bookmarks and settings**
-    ![ws-bookmarks](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-8-Image-2.png)
+ ![ws](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-8-Image-2.png)
 4. Click on the down arrow
 5. Select **Bookmarks HTML File**
-    ![ws](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-8-Image-3.png)
+ ![ws](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-8-Image-3.png)
 6. Click **Choose File**
 7. Click on **Desktop**
 8. Select **bookmarks_vmc_workshopbookmarks_vmc_workshop**
