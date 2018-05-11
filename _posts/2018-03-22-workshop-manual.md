@@ -51,7 +51,7 @@ Import Bookmarks into Chrome by double clicking the Chrome Icon on your Desktop 
 3. Select **Import bookmarks and settings**
  ![ws](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-8-Image-2.png)
 4. Click on the down arrow
-5. Select **Bookmarks HTML File**
+5. Select **Bookmarks HTML File**/s/s
  ![ws](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-8-Image-3.png)
 6. Click **Choose File**
 7. Click on **Desktop**
