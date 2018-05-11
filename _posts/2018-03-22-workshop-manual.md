@@ -71,7 +71,7 @@ Import Bookmarks into Chrome by double clicking the Chrome Icon on your Desktop 
 3. Click on "Add Hosts"
     ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-12-Image-7.png)
 4. As you will only be adding only one host, review the field highlighted
-5. Click the "Add Hosts" buttons
+5. Click the "Add Hosts" button
 
 Congratulations! You have completed this step. The adding of an additional host to an existing SDDC should take approximately 10 minutes to complete.
 
