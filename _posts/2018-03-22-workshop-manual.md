@@ -1028,43 +1028,80 @@ Important Instructions for Site Recovery ExercisesImportant Instructions for Sit
 
 PLEASE BE AWARE THAT THESE EXERCISES MUST BE PERFORMED FROM THE ASSIGNED RDP DESKTOP YOUR INSTRUCTORS ASSIGNED. IF YOU TRY TO PERFORM SOME OF THE EXERCISES OUTSIDE OF THE RDP SESSION YOU WILL EXPERIENCE SOME FAILURES.
 
+#### Activate Site Recovery
+
+(https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-102-Image-158.png)
+
 1. In your SDDC, click on the **Add Ons** tab
 2. Click the **Activate** button
+    (https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-103-Image-159.png)
 3. Click the **Activate** button
+
+(https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-103-Image-160.png)
 
 Wait until the Site Recovery Add On has been activated.
 
-What is VMware Site Recovery?
+#### What is VMware Site Recovery
 
-VMware Site Recovery brings VMware enterprise-class Software-Defined Data Center (SDDC) Disaster Recovery as a Service to the AWS Cloud. It enables customers to protect and recover applications without the requirement for a dedicated secondary site. It is delivered, sold, supported, maintained and managed by VMware as an on-demand service. IT teams manage their cloud-based resources with familiar VMware tools without the difficulties of learning new skills or utilizing new tools. VMware Site Recovery is an add-on feature to VMware Cloud on AWS, powered by VMware Cloud Foundation, VMware Cloud on AWS integrates VMware's flagship compute, storage, and network virtualization products: VMware vSphere, VMware vSAN, and VMware NSX along with VMware vCenter Server management. It optimizes them to run on elastic, bare-metal AWS infrastructure. With the same architecture and operational experience on-premises and in the cloud, IT teams can now get instant business value via the AWS and VMware hybrid cloud experience. The VMware Cloud on AWS solution enables customers to have the flexibility to treat their private cloud and public cloud as equal partners and to easily transfer workloads between them, for example, to move applications from DevTest to production or burst capacity. Users can leverage the global AWS footprint while getting the benefits of elastically scalable SDDC clusters, a single bill from VMware for its tightly integrated software plus AWS infrastructure, and on-demand or subscription services like VMware Site Recovery Service. VMware Site Recovery extends VMware Cloud on AWS to provide a managed disaster recovery, disaster avoidance and non-disruptive testing capabilities to VMware customers without the need for a secondary site, or complex configuration.
+(https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-104-Image-161.png)
+
+VMware Site Recovery brings VMware enterprise-class Software-Defined Data Center (SDDC) Disaster Recovery as a Service to the AWS Cloud. It enables customers to protect and recover applications without the requirement for a dedicated secondary site. It is delivered, sold, supported, maintained and managed by VMware as an on-demand service. IT teams manage their cloud-based resources with familiar VMware tools without the difficulties of learning new skills or utilizing new tools.
+
+VMware Site Recovery is an add-on feature to VMware Cloud on AWS, powered by VMware Cloud Foundation, VMware Cloud on AWS integrates VMware's flagship compute, storage, and network virtualization products: VMware vSphere, VMware vSAN, and VMware NSX along with VMware vCenter Server management. It optimizes them to run on elastic, bare-metal AWS infrastructure. With the same architecture and operational experience on-premises and in the cloud, IT teams can now get instant business value via the AWS and VMware hybrid cloud experience.
+
+The VMware Cloud on AWS solution enables customers to have the flexibility to treat their private cloud and public cloud as equal partners and to easily transfer workloads between them, for example, to move applications from DevTest to production or burst capacity. Users can leverage the global AWS footprint while getting the benefits of elastically scalable SDDC clusters, a single bill from VMware for its tightly integrated software plus AWS infrastructure, and on-demand or subscription services like VMware Site Recovery Service. VMware Site Recovery extends VMware Cloud on AWS to provide a managed disaster recovery, disaster avoidance and non-disruptive testing capabilities to VMware customers without the need for a secondary site, or complex configuration.
 
 VMware Site Recovery works in conjunction with VMware Site Recovery Manager 8.0 and VMware vSphere Replication 8.0 to automate the process of recovering, testing, re-protecting, and failing-back virtual machine workloads. VMware Site Recovery utilizes VMware Site Recovery Manager servers to coordinate the operations of the VMware SDDC. This is so that as virtual machines at the protected site are shut down, copies of these virtual machines at the recovery site startup. By using the data replicated from the protected site these virtual machines assume responsibility for providing the same services.
 
-VMware Site Recovery can be used between a customers datacenter and an SDDC deployed on VMware Cloud on AWS or it can be used between two SDDCs deployed to different AWS availability zones or regions. The second option allows VMware Site Recovery to provide a fully VMware managed and maintained Disaster Recovery solution. Migration of protected inventory and services from one site to the other is controlled by a recovery plan that specifies the order in which virtual machines are shut down and started up, the resource pools to which they are allocated, and the networks they can access. VMware Site Recovery enables the testing of recovery plans, using a temporary copy of the replicated data, and isolated networks in a way that does not disrupt ongoing operations at either site. Multiple recovery plans can be configured to migrate individual applications or entire sites providing finer control over what virtual machines are failed over and failed back. This also enables flexible testing schedules. VMware Site Recovery extends the feature set of the virtual infrastructure platform to provide for rapid business continuity through partial or complete site failures.
+(https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-105-Image-162.png)
+
+VMware Site Recovery can be used between a customers datacenter and an SDDC deployed on VMware Cloud on AWS or it can be used between two SDDCs deployed to different AWS availability zones or regions. The second option allows VMware Site Recovery to provide a fully VMware managed and maintained Disaster Recovery solution. Migration of protected inventory and services from one site to the other is controlled by a recovery plan that specifies the order in which virtual machines are shut down and started up, the resource pools to which they are allocated, and the networks they can access.
+
+VMware Site Recovery enables the testing of recovery plans, using a temporary copy of the replicated data, and isolated networks in a way that does not disrupt ongoing operations at either site. Multiple recovery plans can be configured to migrate individual applications or entire sites providing finer control over what virtual machines are failed over and failed back. This also enables flexible testing schedules. VMware Site Recovery extends the feature set of the virtual infrastructure platform to provide for rapid business continuity through partial or complete site failures.
 
 ### Create a Cross SDDC VPN
 
 We will be setting up a IPSEC VPN connection between your VPC and the VPC of the person you were paired with.
 
+(https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-106-Image-163.png)
+
 1. Go back to the **VMware Cloud on AWS** tab.
 2. In the main SDDC windows, click on **View Details**
-3. Then click on the **Network** menu In the Management Gateway box, make a note of the Public IP and the Infrastructure Subnet CIDR, Scroll down a little to get to the Management Gateway setting
-4. Click the drop down arrow to open the **IPsec VPNs** section
-5. Click on **ADD VPN**
+    (https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-106-Image-164.png)
+3. Then click on the **Network** menu
+
+(https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-107-Image-165.png)
+
+In the Management Gateway box, make a note of the Public IP and the Infrastructure Subnet CIDR
+
+(https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-107-Image-166.png)
+
+Scroll down a little to get to the Management Gateway setting
+
+1. Click the drop down arrow to open the **IPsec VPNs** section
+2. Click on **ADD VPN**
+
+(https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-102-Image-158.png)
 
 Fill in the following information
-6. Student ## MGMT GW : Put the student number of the person you were paired with.
-7. The **Public IP address** of the person you were paired with
-8. The **Infrastructure IP CIDR** of the person you were paired with
-9. Pre-shared key is **VMware1!**
-10. Click on **Save**.
 
-When both you and the person you were paired with have completed these steps you should see the status turn to Connected
+1. Student ## MGMT GW : Put the student number of the person you were paired with.
+2. The **Public IP address** of the person you were paired with
+3. The **Infrastructure IP CIDR** of the person you were paired with
+4. Pre-shared key is **VMware1!**
+5. Click on **Save**
+
+(https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-108-Image-159.png)
+
+When both you and the person you were paired with have completed these steps you should see the status turn to **Connected**
+
+(https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-108-Image-160.png)
 
 There will be a need to setup a second VPN to our Host infrastructure for this setup to work. This is not normally needed when setting up your on-premises environment but it's needed for the special setup done for this workshop.
 
 1. Make sure the drop down is opened, if not click it under **Management Gateway**
 2. Click on **Add VPN**
+    (https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-108-Image-161.png)
 
     Fill in the following information
 3. Name this VPN **Student# to Host** (where # is your student number)
@@ -1075,9 +1112,11 @@ There will be a need to setup a second VPN to our Host infrastructure for this s
 
 #### Prepare and Pair Site Recovery
 
-Firewall Rules for Site Recovery
+#### Firewall Rules for Site Recovery
 
 If you still have your OAuth Token from the Powershell module, you are free to use it, otherwise, follow the following instructions to obtain a new one.
+
+(https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-110-Image-162.png)
 
 1. Click on the drop down next to your **Name/Org ID**
 2. Click on **OAuth Refresh Token**
