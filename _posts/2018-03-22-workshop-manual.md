@@ -79,19 +79,30 @@ Congratulations! You have completed this step. The adding of an additional host 
 
 ### Management Gateway Firewall Rules
 
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-13-Image-8.png)
+
 By default, the firewall for the management gateway is set to deny all inbound and outbound traffic. In this exercise, you will add a firewall rule to allow vCenter traffic. In order to access vCenter Server in your SDDC, you must set a firewall rule to allow traffic to the vCenter Server.
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-13-Image-9.png)
 
 1. Under **Management Gateway** click the arrow to expand **Firewall Rules**
 2. Click **Add Rule**
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-13-Image-10.png)
 3. Enter a name for your rule under **Rule Name**
 4. Type **Any** for Source
 5. Make sure **vCenter** is selected as Destination
 6. Select **HTTPS (TCP 443)** from the drop down box for Service
 7. Click the **SAVE** button, your rule should look like the below image
 
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-14-Image-11.png)
+
 ### Compute Gateway Firewall Rules
 
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-14-Image-12.png)
+
 By default, the Compute NSX Edge Services Gateway is also set to deny all inbound and outbound traffic. You need to add additional firewall rules to allow traffic as needed.
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-14-Image-13.png)
 
 #### Create Firewall Rule under Compute Gateway for Inbound Native AWS Services access.
 
@@ -100,6 +111,8 @@ By default, the Compute NSX Edge Services Gateway is also set to deny all inboun
 3. Click **ADD RULE**
 
 ## AWS Inbound Firewall Rule
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-15-Image-14.png)
 
 ### Create AWS Inbound Firewall Rule
 
@@ -111,6 +124,8 @@ By default, the Compute NSX Edge Services Gateway is also set to deny all inboun
 6. Click **SAVE** button.
 
 ### AWS Outbound Firewall Rule
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-15-Image-15.png)
 
 Follow the same process as in the previous step and create AWS Outbound Firewall Rule following these instructions:
 
@@ -125,6 +140,8 @@ Follow the same process as in the previous step and create AWS Outbound Firewall
 
 Connection Info Tab
 
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-16-Image-16.png)
+
 Login to your Student # SDDC and click on the **Connection Info** tab. This displays different connection information for your VMware Cloud on AWS environment like:
 
 - URL to vSphere Client HTML5 client for your vCenter server
@@ -137,21 +154,41 @@ Login to your Student # SDDC and click on the **Connection Info** tab. This disp
 - PowerCLI Connect string to be used if you desire to use PowerCLI to connect to your VMware Cloud on AWS vCenter Server
 - Ability to copy PowerCLI string to your computer's clipboard
 
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-17-Image-17.png)
+
 Click on the vSphere Client's HTML5 URL, and login with **cloudadmin@vmc.local** User Name and copy the password to your computer's clipboard and paste it in the Password Field.
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-17-Image-18.png)
 
 You are now logged in to your VMware Cloud on AWS vCenter Server as **cloudadmin@vmc.local** user.
 
 ### Create Content Library
 
-Content libraries are container objects for VM templates, vApp templates, and other types of files like ISO images. You can create a content library in the vSphere Web Client, and populate it with templates, which you can use to deploy virtual machines or vApps in your VMware Cloud on AWS environment or if you already have a Content Library in your on-premises data center, you can use the Content Library to import content into your SDDC. You can create two types of libraries: local or subscribed libraries.
+Content libraries are container objects for VM templates, vApp templates, and other types of files like ISO images.
 
-Local Libraries You use a local library to store items in a single vCenter Server instance. You can publish the local library so that users from other vCenter Server systems can subscribe to it. When you publish a content library externally, you can configure a password for authentication. VM templates and vApp templates are stored as an OVF file format in the content library. You can also upload other file types, such as ISO images, text files, and so on, in a content library.
+You can create a content library in the vSphere Web Client, and populate it with templates, which you can use to deploy virtual machines or vApps in your VMware Cloud on AWS environment or if you already have a Content Library in your on-premises data center, you can use the Content Library to import content into your SDDC.
 
-### Subscribed Libraries
+You can create two types of libraries: local or subscribed libraries.
 
-You subscribe to a published library by creating a subscribed library. You can create the subscribed library in the same vCenter Server instance where the published library is, or in a different vCenter Server system. In the Create Library wizard you have the option to download all the contents of the published library immediately after the subscribed library is created, or to download only metadata for the items from the published library and later to download the full content of only the items you intend to use. To ensure the contents of a subscribed library are up-to-date, the subscribed library automatically synchronizes to the source published library on regular intervals. You can also manually synchronize subscribed libraries. You can use the option to download content from the source published library immediately or only when needed to manage your storage space.
+#### Local Libraries
 
-Synchronization of a subscribed library that is set with the option to download all the contents of the published library immediately, synchronizes both the item metadata and the item contents. During the synchronisation the library items that are new for the subscribed library are fully downloaded to the storage location of the subscribed library. Synchronization of a subscribed library that is set with the option to download contents only when needed synchronizes only the metadata for the library items from the published library, and does not download the contents of the items. This saves storage space. If you need to use a library item you need to synchronize that item. After you are done using the item, you can delete the item contents to free space on the storage. For subscribed libraries that are set with the option to download contents only when needed, synchronizing the subscribed library downloads only the metadata of all the items in the source published library, while synchronizing a library item downloads the full content of that item to your storage. If you use a subscribed library, you can only utilize the content, but cannot contribute with content. Only the administrator of the published library can manage the templates and files.
+You use a local library to store items in a single vCenter Server instance. You can publish the local library so that users from other vCenter Server systems can subscribe to it. When you publish a content library externally, you can configure a password for authentication.
+
+VM templates and vApp templates are stored as an OVF file format in the content library. You can also upload other file types, such as ISO images, text files, and so on, in a content library.
+
+##### Subscribed Libraries
+
+You subscribe to a published library by creating a subscribed library. You can create the subscribed library in the same vCenter Server instance where the published library is, or in a different vCenter Server system. In the Create Library wizard you have the option to download all the contents of the published library immediately after the subscribed library is created, or to download only metadata for the items from the published library and later to download the full content of only the items you intend to use.
+
+To ensure the contents of a subscribed library are up-to-date, the subscribed library automatically synchronizes to the source published library on regular intervals.
+
+You can also manually synchronize subscribed libraries. You can use the option to download content from the source published library immediately or only when needed to manage your storage space.
+
+Synchronization of a subscribed library that is set with the option to download all the contents of the published library immediately, synchronizes both the item metadata and the item contents. During the synchronisation the library items that are new for the subscribed library are fully downloaded to the storage location of the subscribed library.
+
+Synchronization of a subscribed library that is set with the option to download contents only when needed synchronizes only the metadata for the library items from the published library, and does not download the contents of the items. This saves storage space. If you need to use a library item you need to synchronize that item. After you are done using the item, you can delete the item contents to free space on the storage. For subscribed libraries that are set with the option to download contents only when needed, synchronizing the subscribed library downloads only the metadata of all the items in the source published library, while synchronizing a library item downloads the full content of that item to your storage. If you use a subscribed library, you can only utilize the content, but cannot contribute with content. Only the administrator of the published library can manage the templates and files.
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-19-Image-19.png)
 
 1. Click on **Menu**
 2. Click on **Content Libraries**
@@ -160,42 +197,58 @@ Synchronization of a subscribed library that is set with the option to download 
 
 You may already have a Content Library in your on-premises data center, you can use the Content Library to import content into your SDDC.
 
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-20-Image-20.png)
+
 1. In your Content Library window, click the **+** sign to add a new Content Library.
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-20-Image-21.png)
 2. Name your Content Library **Student#** where **#** is the number assigned to you
 3. (Optional) Enter some notes for your Content Library
 4. Click **Next** button
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-21-Image-22.png)
 5. Select **Subscribed content library**
 6. Under **Subscription URL** enter the following: <https://vcenter.sddc-34-216-241-49.vmc.vmware.com/cls/vcsp/lib/8d658764-2e89-44ff-https://vcenter.sddc-34-216-241-49.vmc.vmware.com/cls/vcsp/lib/8d658764-2e89-44ff-a7c1-ee777f0dfc8f/lib.jsona7c1-ee777f0dfc8f/lib.json>
 
     PLEASE NOTE THAT THERE MAY BE AN ISSUE WITH DROPPING/ADDITION OF CHARACTERS FOR THE URL WHEN COPYING AND PASTING FROM THE MANUAL. THE ACTUAL URL IS ALSO AVAILABLE IN YOUR STUDENT DESKTOP ON THE Z:\ DRIVE IN A TEXT FILE, OPEN THIS TEXT FILE AND COPY THE URL FROM THERE. ASK YOUR INSTRUCTOR IN THE EVENT YOU CANNOT LOCATE IT.
 7. Click the checkbox for **Enable Authentication**
-8. For **Password** enter: VMware1!VMware1!
+8. For **Password** enter: **VMware1!**
 9. Ensure Download content is set to **Immediately**
 10. Click **Next**
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-22-Image-23.png)
 11. Highlight the **WorkloadDatastore** as the storage location
 12. Click **Next**
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-22-Image-24.png)
 13. Click **Finish**. Your content library should take about ~20 minutes to complete syncing.
 
 ### Create a Local Content Library
 
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-23-Image-25.png)
+
 1. Click the **+** sign to create a new Content Library
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-23-Image-26.png)
 2. Name your new Content Library: **LocalContentLibrary#** (where # is your student #)
 3. (Optional) Enter some notes about your Content Library
 4. Click **Next** button
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-24-Image-27.png)
 5. Make sure **Local content library** is selected
 6. Click **Next**
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-24-Image-28.png)
 7. Highlight the **WorkloadDatastore** as the storage location
 8. Click **Next**
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-25-Image-29.png)
 9. Review your information and click **Finish**
 
 Congratulations, you have created your Local Content Library.
 
-### Create Logical Network
+### Create a Logical Network
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-26-Image-30.png)
 
 1. Once you are logged in to your vCenter Server Click on **Menu**
 2. Select **Global Inventory Lists** from the drop down menu
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-26-Image-31.png)
 3. Click on **Logical Networks** in the left pane
-4. Click on the **+ Add** button
+4. Click on the **Add** button
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-27-Image-32.png)
 5. Name your New Logical Network **Student#-LN** (where # is your student number)
 6. Make sure to select **Routed Network**
 7. For CIDR Block enter **192.168.###.0/24** (where # is your student #)
@@ -208,58 +261,86 @@ Congratulations, you have created your Local Content Library.
 
 ### Create Linux Customization Spec
 
-When you clone a virtual machine or deploy a virtual machine from a template, you can customize the guest operating system of the virtual machine to change properties such as the computer name, network settings, and license settings. Customizing guest operating systems can help prevent conflicts that can result if virtual machines with identical settings are deployed, such as conflicts due to duplicate computer names. You can specify the customization settings by launching the Guest Customization wizard during the cloning or deployment process. Alternatively, you can create customization specifications, which are customization settings stored in the vCenter Server database. During the cloning or deployment process, you can select a customization specification to apply to the new virtual machine. Use the Customization Specification Manager to manage customization specifications you create with the Guest Customization wizard.
+When you clone a virtual machine or deploy a virtual machine from a template, you can customize the guest operating system of the virtual machine to change properties such as the computer name, network settings, and license settings.
+
+Customizing guest operating systems can help prevent conflicts that can result if virtual machines with identical settings are deployed, such as conflicts due to duplicate computer names.
+
+You can specify the customization settings by launching the Guest Customization wizard during the cloning or deployment process. Alternatively, you can create customization specifications, which are customization settings stored in the vCenter Server database. During the cloning or deployment process, you can select a customization specification to apply to the new virtual machine.
+
+Use the Customization Specification Manager to manage customization specifications you create with the Guest Customization wizard.
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-28-Image-33.png)
 
 1. Click **Menu**
 2. Click **Policies and Profiles**
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-29-Image-34.png)
 3. Click on **+ New** to add a new Linux Customization Specification
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-29-Image-35.png)
 4. Give your VM Customization Spec a Name
 5. Enter a description for it (Optional)
 6. Make sure to select **Linux**
 7. Click **Next**
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-30-Image-36.png)
 8. Click on the **Enter a name** button
 9. Enter a name for your linux VMs
 10. Click on the **Append a numeric value** checkbox
 11. Enter **corp.local** for the Domain Name
 12. Click the **Next** button
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-31-Image-37.png)
 13. Select **US** for Area
 14. Select **Eastern** for Location
 15. Select **Local time**
 16. Click **Next**
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-31-Image-38.png)
 17. Leave the defaults on the **Network** screen and click **Next**
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-32-Image-39.png)
 18. Under Primary DNS Server enter **10.46.159.10**
 19. Type **corp.local** for DNS Search Paths
 20. Click **Next**
-21. Click **Finish**
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-32-Image-40.png)
+21. Review your entries and click **Finish**
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-33-Image-41.png)
 
 Congratulations! You have successfully created your VM Customization Spec for your Linux VMs. You can also export (Duplicate), Edit, Import, and Export a VM Customization Spec.
 
 ### Deploy a Virtual Machine
 
-1. On your Content Libraries **(Menu -> Content Libraries)**, select **Student#** and select the **Templates** tab.
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-34-Image-42.png)
+
+1. On your Content Libraries (Menu -> Content Libraries)**, select **Student#** and select the **Templates** tab.
 2. Right click on the **centos01-web** template and select **New VM from This Template**
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-34-Image-43.png)
 3. Name your Virtual Machine **StudentVM#** (where # is your student number)
 4. Expand the location area until you see **Workloads** and highlight it
 5. Click **Next**
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-35-Image-44.png)
 6. Expand the destination compute resources until you find **Compute-ResourcePool**, select it
 7. Click **Next** button
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-35-Image-45.png)
 8. Click **Next** button on the Review details screen
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-36-Image-46.png)
 9. In the **Select storage** step, highlight **WorkloadDatastore**
 10. Click **Next**
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-36-Image-47.png)
 11. In the **Select networks** step, click the drop down box to select the Destination Network (you may need to click Browse to see other networks and select your "Student#-LNStudent#-LN" network you created previously
 12. Click **Next**
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-37-Image-48.png)
 13. In the **Ready to complete** section, review to ensure all your selections are correct and click **Finish**
 
 ### Convert Virtual Machine to Template
 
 In this step you will be cloning your newly created Virtual Machine into a Template for later use in vRealize Automation section.
 
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-38-Image-49.png)
+
 1. Ensure your VM deployment completed from your previous step
 2. Click on **Menu**
 3. Select **VMs and Templates**
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-39-Image-50.png)
 4. Select your newly created VM **Student#** (where # is your student number)
 5. Click on **Template**
 6. Select **Convert to Template**
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-39-Image-51.png)
 7. Click **Yes**  in the Convert to Template prompt
 
 You have completed this step.
@@ -268,11 +349,16 @@ You have completed this step.
 
 ### Using PowerShell
 
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-41-Image-52.png)
+
 Open the PowerShell CLI windows
 
 1. Click on **Start**, and scroll down until you see the Windows PowerShell menu
 2. Right click on the **PowerShell CLI** shortcut icon and select **Run as Administrator**
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-41-Image-53.png)
 3. Click **Yes**
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-42-Image-54.png)
 
 Install the VMware PowerCLI module if not loaded
 
@@ -280,7 +366,11 @@ Install the VMware PowerCLI module if not loaded
 install-Module VMware.PowerCLI
 ```
 
-Note: You can use the tab complete feature to complete the command. ie...type install-mod and then press tab. There may be a slight delay the first time but the command **install-module** will complete. Note: You will be asked to install the NuGet provider, take the default or press Y and press enter, you will then be asked to trust an untrusted repository, DO NOT take the default but type **Y** and press Enter.
+Note: You can use the tab complete feature to complete the command. ie...type install-mod and then press tab. There may be a slight delay the first time but the command **install-module** will complete.
+
+Note: You will be asked to install the NuGet provider, take the default or press Y and press enter, you will then be asked to trust an untrusted repository, DO NOT take the default but type **Y** and press Enter.
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-42-Image-55.png)
 
 We now need to set the execution policy to Remote Signed.
 
@@ -288,7 +378,15 @@ We now need to set the execution policy to Remote Signed.
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
 ```
 
+For Tab completion, type
+
+``` powershell
+Set-Ex{tab} -Exe{tab} Rem{tab}
+```
+
 Note: You will be asked to change the execution policy, type **Y** and press Enter
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-43-Image-56.png)
 
 You now will need to set the PowerCLI Configuration to Ignore Invalid Certificates.
 
@@ -302,6 +400,8 @@ NOTE: Be sure the "i" in "Ignore" is capitalized
 
 NOTE: You will be asked to Update PowerCLI Configuration, type Y and press Enter
 
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-43-Image-57.png)
+
 We now need to install the VMware CLI commands
 
 ``` powershell
@@ -310,11 +410,14 @@ Install-Module -name VMware.VMC -scope AllUsers
 
 Note: You will be asked to trust an untrusted repository, type Y and press Enter
 
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-44-Image-58.png)
+
 Let's take a quick look at the VMware CLI commands.
 
 ``` powershell
 Get-VMCCommand
 ```
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-44-Image-59.png)
 
 We now need to get your Refresh Token from the VMC console. Switch back to or open the web browser and log into **vmc.vmware.com**
 
@@ -324,13 +427,18 @@ If you are not already logged in
 2. click on the **VMware Cloud on AWS** bookmark shortcut
 3. Fill in your email address
 4. click on **Next**
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-45-Image-60.png)
 5. Click on the drop down next to your Name/Org ID
 6. Click on **OAuth Refresh Token**
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-45-Image-61.png)
 
 Now we create a refresh token for your ID tied to this Org
 
 1. Click on **Create a new token**
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-46-Image-62.png)
 2. Click on **Copy to Clipboard**
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-45-Image-63.png)
 
 Now let's attach to the VMC server
 
@@ -338,10 +446,11 @@ Now let's attach to the VMC server
 connect-vmc -refreshtoken "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 ```
 
-NOTE:Within the PowerShell window you can just right-click to paste the code, quotes are
-optional
+NOTE: Within the PowerShell window you can just right-click to paste the code,quotes are optional
 
 NOTE: Paste the refresh token you copied earlier in the exercise.
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-46-Image-64.png)
 
 Now we can see what Orgs we have access to
 
@@ -350,6 +459,7 @@ Get-VMCorg
 ```
 
 1. Note the Org Display_Name and ID
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-47-Image-65.png)
 
 Now that we know the Org Display_Name we can find out information about the SDDC's inside our org.
 
@@ -367,113 +477,438 @@ Get-VMCSDDCDefaultCredential -org VMC-WS#
 
 NOTE:replace # with your workstation number
 
-### REST API with Swagger
+### REST APIs through Developer Center
 
-To start using the REST API commands we need to log into the Swagger interface that is build into **vmc.vmware.com**
+In this module we will be using REST APIs to get some basic information about your
+organization and SDDC. To do this we will be using the new Developer Center, that was built specifically to focus on using APIs and scripts to create SDDCs, add and remove hosts, plus connect to and use the full vCenter API set. To get started, let go back to your VMC environment.
 
-If it is not already open, Double-click on the Chrome browser icon on the desktop.
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-49-Image-66.png)
 
-If you are not already logged into your Org,
+Launch Chrome
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-49-Image-67.png)
+
+If you are not already logged in, log into your VMC org.
+
+1. From within the VMware Cloud on AWS tab, click on the Developer Center menu
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-50-Image-68.png)
+
+In the Developer Center there are a lot of great resources for you to explore. For example, let's check out a code sample that was uploaded by one of our API developers. If you scroll through this screen you will see there are code samples for Postman (a REST API Development Environment), Python, PowerCLI, and many other. Anyone can contribute code samples to the community, if that interests you go to http://code.vmware.com or click on the link "VMware{code} Sample Exchange".
+
+1. Click on Code Samples in the menu
+2. Click on Download in the PowerCLI - VMC Example Scripts box
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-50-Image-69.png)
+    After the script downloads
+3. Click on the dropdown arrow
+4. Click on show in folder
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-51-Image-70.png)
+5. Right click on the downloaded script
+6. Click onm **Edit**
+
+This will open the PowerShell ISE environment. Now you can see the PowerShell commands you used in the previous module as well as other commands you can use with your SDDC.
+
+Close the PowerShell ISE windows
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-51-Image-71.png)
+
+Let's now run some simple REST API commands built into Developer Center, go back to your browser
+
+1. Click on the **API Explorer** menu
+2. Click on the drop down arrow next to Organization
+3. Click on the drop down arrow next to the first "GET" API
+4. Click on **Execute**
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-52-Image-72.png)
+
+What did we not do?? We did not put in any authentication to pull this data. The reason is we are using the session authentication to execute these commands. To run these commands in other application, like PowerShell or Postman, you will need to get your resource and session tokens before you can run these commands.
+
+Let's look through the response.
+
+1. Here you see the Organization's alphanumeric name. Which you can also find in #3
+2. The organization ID. NOTE: Copy the ID number, without the quotes, for possible use in the next step.
+3. The organization Display_Name
+4. The organization Version
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-53-Image-73.png)
+
+In this step, we will GET some information about our organization
+
+1. Click on the drop down arrow by SDDCs
+2. Click on GET
+3. The Org ID should already be filled in for you, another great feature the developers built in based on customer feedback. NOTE: If this Org ID did not automatically fill in, paste it in.
+4. Click on **Execute**
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-53-Image-74.png)
+
+Now let's look at the response body
+1. The creation date of the SDDC
+2. the SDDC ID
+3. the SDDC state
+
+### Postman
+
+In this module, we will be exploring how to use Postman to do REST API requests and build automation through collections. Postman is an API development toolset. As an example, you can create variables for use within the APIs, test the response, and use webhooks to integrate with collaboration platforms.
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-55-Image-75.png)
+
+Postman is very easy to install, so let's get started. To install Postman app.
+
+1. Open a new browser tab and go to https://www.getpostman.com
+2. Click on Download the App
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-56-Image-76.png)
+
+1. Find Postman for Windows (64-bit)
+2. Click Download
+3. Double-click on the file that was downloaded, the install will happen without interaction.
+
+NOTE: For cleanup you can close all postman tabs in Chrome
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-56-Image-77.png)
+
+1. Click on the text: Take me straight to the app. I'll create an account another time.
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-57-Image-78.png)
+2. Close this windows
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-57-Image-79.png)
+3. Uncheck Show this window on launch
+4. Close this window
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-58-Image-80.png)
+
+Go back to your browser window, if you do not have a tab opened for VMware Cloud
 
 1. Open a new tab
-2. Click on the VMware Cloud on AWS bookmark
-3. Log into your Org
+2. type: https://vmc.vmware.com
+3. Log in with you email address
+4. username : corp\vmcws# (your student number)
+5. password : VMware1!
 
-To get to the Swagger interface
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-58-Image-81.png)
 
-1. Open a new tab
-2. Click on the **Swagger** bookmark
+Our internal API development team has done a great job pre-creating SDK for many of the popular languages in use today. For this module, we will be using the SDK for REST to show you how you can easily import and reuse some pre-built collections to create your own.
 
-The first thing we need to do is get "Authorized" to run these REST APIs
+1. Click on Developer Center
+2. Click on SDK
+3. Click on Source on Github for REST
 
-1. Click on the **refresh_token** link
-2. Click on the **Generate** button to get your Access Key
-3. Copy the **Access Key**
-4. Close this tab
-5. Click on the **Authorize** button on the Swagger tab
-6. Paste your **Access Key** into the Value box.
-7. Click on **Authorize**
-8. Click on orgs: to show the REST API calls for the Organizations
-9. Click on **GET /orgs**
-10. Click on the **Try it out** button This section shows you how to run this REST API. The cool thing is they will give you examples when you when you click on Try It, you see:
-- Response Code: 200 is the code that means success, other response codes are listed under Response Messages.
-- Response Header: This gives you some metadate about the response
-- Response Body: This is the details that you are looking for. Look through this and find the Display_NameDisplay_NameandIDIDfor your Org.
-- If you wanted to run the command at a linux prompt using the "curl" command, you can cut and paste this into your linux terminal
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-59-Image-82.png)
 
-NOTE: Copy the ID without the quotes.
+You will be redirected to the vsphere-automation -sdk github page specifically for vSphere's REST APIs. There is a lot of great information in here about how to use REST APIs with vSphere, vCenter, and VMC. We will be pulling down this github repository so we can import the VMC collection.
 
-Now scroll down to the SDDC: Operations on SDDC section
+1. Click on Clone or download
+2. Click on Download ZIP
 
-1. Click on the **SDDC**: to show the REST API calls for the SDDCs
-2. Click on the **GET /org/{orgs}/sddcs**
-3. Paste the Org ID you copied from the previous step in the org : Value box under the **Parameters** section
-4. Click on the **Try it out** button
+NOTE: This is only 1 way to download a repository. If you want to actively use or even contribute to the development of the code in this repository, you can install git desktop in Windows or git in Linux or Mac and clone the repository.
 
-Note the Response Code of 200.
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-59-Image-83.png)
 
-Look through the Response Body for details about the SDDC(s) in your organization.
+1. Click on the download menu
+2. Click on Open
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-60-Image-84.png)
+3. Click on **Extract**
+4. Click on **Extract all**
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-60-Image-85.png)
 
-### AWS Service Integration
+We will keep the default file path.
 
-AWS Relational Database Service (RDS)
+1. Uncheck the box
+2. Click on Extract
 
-Integration
+Close the file explorer windows and the github tab
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-61-Image-86.png)
+
+Now that we have Postman installed and the github repository on our local system, lets import the VMC collection and use some the requests to build our own collection.
+
+1. Click on Import
+2. Click on Choose Files
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-61-Image-87.png)
+
+To import the VMC collection json file we downloaded earlier.
+
+1. Browse to the directory we save it to earlier. That directory should be C:\downloads\vsphere-automation-sdk-rest-master\vsphere-automation-sdk-rest-master\samples\postman
+2. Click **VMware Cloud on AWS APIs.postman_collection.json**
+3. Click **Open**
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-62-Image-88.png)
+
+We now need to get our refresh token for our Org in VMC. Go back to your VMware Cloud tab in your browser
+
+1. Click on the drop down next to your Student Name/Org ID
+2. Click on OAuth Refresh Token
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-63-Image-89.png)
+
+1. Click on Copy to Clipboard NOTE: If you have not generated a token yet, click on Generate and then copy to clipboard.
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-63-Image-90.png)
+
+Return to the Postman app. We now need to setup a Postman environment for use with VMC. An environment is where we will be creating and storing our variables. These variables can be local or global, depending on your use within Postman. In this module, we will only be using local variables.
+
+1. Click on New
+2. Click on Environment
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-64-Image-91.png)
+3. Name the environment VMC
+4. In the Key column type in refresh_token
+5. In the Value column use CTRL-V to paste your actual refresh token you copied in a previous step.
+6. Click on **Add**
+7. Close the window
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-64-Image-92.png)
+
+Now set this as our default environment. NOTE: If you don't set the default environment to VMC, then the variables that get created will not be accessible.
+
+1. Click on the drop down arrow
+2. Select VMC
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-65-Image-93.png)
+
+Now we will start to build our own collection by using some request that came in the SDK we imported earlier.
+
+1. Click on Collections
+2. Click on - Authentication and Login
+3. See how this request is our refresh token variable we defined in an earlier step. NOTE: If the environment is not set to VMC, this will request will fail because the refresh_token variable is not defined.
+4. Click on Send
+5. You will now see the access token that was generated with the refresh token. This is the body or payload of the response to our request.
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-66-Image-94.png)
+
+1. Click on the Eye icon
+
+You will see that we have stored your access token into a variable so we can use it for future calls. How did we do that? We ran a "test" on the response body. You will see how in the next step.
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-66-Image-96.png)
+
+1. Click on Tests
+
+The access_token variable was set by running some java script code against the response. We are also using the Postman setEnvironmentVariable function to create it.
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-67-Image-97.png)
+
+Lets save this request to our own collection so we can use it later.
+
+1. Click on the drop down arrow
+2. Click on Save As
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-67-Image-98.png)
+
+1. Change the Request name to Authorize
+2. Change the Request description to Get Access Token
+3. Click on "+Create Collection"
+4. Type Workshop and click the "check box"
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-68-Image-99.png)
+
+1. Select the Workshop folder
+2. Click on Save to Workshop
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-68-Image-100.png)
+
+A new window will pop open indicating that you created a new collection. We will not do anything here at this time.
+
+1. Close this window
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-69-Image-101.png)
+
+Lets request some details from our Org so we can send them to Slack.
+
+1. Click on **Orgs** and **List Orgs**
+2. Click on **Headers**
+3. Click **Send**
+4. You see here how we are using the access_token variable for the csp-auth-token. This will authorize our request. NOTE: This access token is only good for 30 minutes. If you run this request and get a response of 400 unauthorized, go back and run the authorize request.
+5. Look through the response body for your Org's display_name
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-69-Image-102.png)
+
+Lets save this request to our own collection so we can use it later.
+1. Click on the drop down arrow
+2. Click on **Save As**
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-70-Image-103.png)
+
+1. Change the Request name to Org list
+2. Change the Request description to Get a list of your Orgs
+3. Be sure Workshop is selected under Select a collection or folder to save to:
+4. Click on Save to Workshop
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-70-Image-104.png)
+
+We need to replace the Test code that came with the SDK so we can create variable we want to use when send our message to Slack.
+
+1. Click on Tests
+2. Copy and paste the below code into the Tests section. NOTE: You may have to press CTRL-V to past into the text box.
+3. Click **Send**
+
+``` javascript
+var jsonData = JSON.parse(responseBody);
+if (responseCode.code === 200) {
+for (i = 0; i < jsonData.length; i++) {
+  pm.environment.set("name", jsonData[i].display_name);
+  pm.environment.set("ID", jsonData[i].id);
+  pm.environment.set("version", jsonData[i].version);
+  pm.environment.set("state", jsonData[i].project_state);
+  }
+}
+```
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-71-Image-105.png)
+
+We can verify if the variables have been created and assigned values.
+
+1. Click on the "eye" icon
+2. Scroll down to see if the new variables were created.
+3. Once verified click on the "eye" icon again to close the window
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-71-Image-106.png)
+
+Lets save the changes we made to this request.
+
+1. Click on Save
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-72-Image-107.png)
+
+Now that we have details of our Org lets send them to slack inn a message.
+
+To post to slack a link needs to be generated for the slack channel that we want to post to. This has already been done for you and is listed below. One of the instructors will have this slack channel displayed on the screens. So you can see the results. Slack channel URL: https://hooks.slack.com/services/T9HQFCTC1/B9JBL5SV7/
+ArgKjF4zZDh7dnaWRyKNJfRY
+
+Now we need to setup the request:
+
+1. Click on the "+" sign for a new request
+2. Change the request type to POST
+3. Cut and paste the above slack channel URL to the address box
+4. Select Body
+5. Change the format type to raw
+6. Type the below code, or cut and paste it into the Body section. NOTE: You may have to press CTRL-V
+
+``` json
+{
+"text" : "Your Org ID is: {{ID}}\nYour Org version is: {{version}}\nAnd your Org
+state is: {{state}}",
+"username" : "{{name}}"
+}
+```
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-72-Image-108.png)
+
+Lets save this request to our own collection so we can use it later.
+
+1. Click on the drop down arrow
+2. Click on Save As
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-73-Image-109.png)
+
+1. Change the Request name to Post to Slack
+2. Change the Request description to Post some Org details to slack
+3. Be sure Workshop is selected under Select a collection or folder to save to:
+4. Click on Save to Workshop
+
+Check and see if your request posted the Name, ID, Version, and Status of your Org.
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-73-Image-110.png)
+
+The last thing to show you with Postman is the way that you can run a collection to automate a series of tasks. What we have been doing in this module is building a collection. As you see in the screen shot there are 3 tasks in the Workshop collection.
+
+1. Click on the Arrow in the Workshop window
+2. Click on Run
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-74-Image-111.png)
+
+1. Click on Run Workshop
+2. Be sure the Environment is set to VMC
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-74-Image-112.png)
+
+If all your work was saved and ran individually, they should run here as well.
+
+1. Check out the status of each request.
+
+If you have all "200 OK" then you will see another post in slack for your workshop Org.
+
+## AWS Service Integration
+
+### AWS Relational Database Service (RDS) Integration
 
 #### Deploy Photo VM
 
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-77-Image-113.png)
+
 1. If not already opened, open your VMware Cloud on AWS vCenter and click on the **Menu** drop down
 2. Select **Content Libraries**
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-78-Image-114.png)
 3. Click on your previously created Content Library named **Student#** (where # is your student number)
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-78-Image-115.png)
 4. If not already there, make sure you click on the **Template** tab
 5. Right-click on the **photo app** Template
 6. Select **New VM from This Template**
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-79-Image-115.png)
 7. Name the virtual machine **PhotoApp#** (where # is your student #)
 8. Expand the location and select **Workloads**
 9. Click **Next**
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-79-Image-116.png)
 10. Expand the destination to select **Compute-ResourcePool** as the compute resource
 11. Click **Next**
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-80-Image-117.png)
 12. In the **Review details** step click **Next**
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-80-Image-118.png)
 13. In the **Select storage** step, highlight the **WorkloadDatastore**
 14. Click **Next**
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-81-Image-119.png)
 15. Select the network you created in a previous step for your VM
 16. Click **Next**
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-81-Image-120.png)
 17. Click **Finish**
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-82-Image-121.png)
 18. Monitor the deployment of your VM until it's completed
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-82-Image-122.png)
 19. Check for completion of the deployment of your VM
 20. Click **Menu**
 21. Select **VMs and Templates**
+        ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-83-Image-123.png)
 22. Check to make sure your VM is powered on. If not, right-click on your VM
 23. Select **Power** -> **Power On**
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-83-Image-124.png)
 24. Make sure your VM is assigned an IP addresses (may need to wait a minute or 2). Make a note of this IP address for a future step.
 
 ### Firewall Rules for RDS Integration
 
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-84-Image-125.png)
+
 1. Go back your VMware Cloud on AWS portal and click on the **Network** tab in order to request a **Public IP address**
 2. Under the **Compute Gateway** click and expand **Public IPs**
 3. Click on **REQUEST PUBLIC IP**
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-84-Image-126.png)
 4. (Optional) Enter Notes for this public IP
 5. Click on **Request**
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-84-Image-127.png)
 6. You should see a similar notification as the one above
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-85-Image-128.png)
 7. Take note of your newly acquired Public IP address
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-85-Image-129.png)
 8. Next you will create a **NAT rule** from the newly acquired Public IP address you noted in your last step to the internal IP address of the VM you created. Click on **NAT** to expand
 9. Click **ADD NAT RULE**
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-85-Image-130.png)
 10. Give your **NAT rule** a name
 11. Your new Public IP address should be pre-filled for you, if not, enter it
 12. Under **Service** select **Any (All Traffic)**
 13. Type your VM's internal IP address
 14. Click the **SAVE** button
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-85-Image-131.png)
 15. You should get a **NAT rule successfully created** notification
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-85-Image-132.png)
 16. Expand **Firewall Rules**
 17. Click **ADD RULE**
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-86-Image-133.png)
 18. Give your Firewall Rule a name
 19. Select **All Internet and VPN** for **Source**
 20. Type the Public IP Address you noted under **Destination**
 21. Select **Any (All Traffic)** for **Service**
 22. Click **SAVE** button
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-86-Image-134.png)
 23. You should get a **Firewall rule successfully created** notification
 
-### AWS Relational Database Service (RDS) Integration
+### AWS Relational Database Service (RDS Configuration)
 
 On your browser, open a new tab and go to: <https://vmcworkshop.signin.aws.amazon.com/console>
 
