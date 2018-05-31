@@ -6,6 +6,7 @@ tags: workshop
 toc: true
 classes: wide
 author_profile: false
+layout: search
 ---
 
 Release Date: December 2, 2017
