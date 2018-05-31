@@ -2,8 +2,6 @@
 main:
   - title: "About"
     url: /about/
-  - title: "VMC Workshop"
-    url: /workshop/
   # - title: "Sample Collections"
   #   url: /collection-archive/
   # - title: "Sitemap"
