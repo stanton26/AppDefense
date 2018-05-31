@@ -925,27 +925,27 @@ On your browser, open a new tab and go to: <https://vmcworkshop.signin.aws.amazo
 
 7. In the left pane click on **Instances**
 8. Click on the RDS instance that corresponds to your Student number
-    (https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-88-Image-138.png)
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-88-Image-138.png)
 9. Scroll down to the **Details** area and under **Security and network** notice that the RDS instance is not publicly accessible, meaning this instance can only be accessed from within AWS
-    (https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-89-Image-139.png)
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-89-Image-139.png)
 10. Go back to the main Services page in the AWS console by clicking the **Services** link
 11. Scroll down to **Networking & Content Delivery** and click **VPC**
-    (https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-89-Image-140.png)
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-89-Image-140.png)
 12. Click on **Security Groups** in the left pane
 13. Choose the r**ds-launch-wizard-#** RDS Security group corresponding to your student number
 14. After highlighting the appropriate security group click on the **Inbound Rules** tab below VMware Cloud on AWS establishes routing in the default VPC Security Group, only RDS can leverage this or create its own
 15. Notice that the CIDR block range of your Student#-LN Logical Network you created in VMware Cloud on AWS is authorized for MySQL on port 3306. This was done for you ahead of time
-    (https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-90-Image-141.png)
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-90-Image-141.png)
 
     AWS Relational Database Service (RDS), also creates its own Elastic Network Interface (ENI) for access which is separate from the ENI created by VMware Cloud on AWS.
 16. Click on **Services** to go back to the Main Console
 17. Click on **EC2**
-    (https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-91-Image-142.png)
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-91-Image-142.png)
 18. In the EC2 Dashboard click **Network Interfaces** in the left pane
 19. All Student environments belong to the same AWS account, therefore, hundreds of ENI's may exist. In order to minimize the view, type "RDS" in the search area and press **Enter** to add a filter
 20. Highlight your **rds-launch-wizard-#** corresponding to your student number
 21. Make note of the **Primary private IPv4** IP address for the next step
-    (https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-92-Image-143.png)
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-92-Image-143.png)
 22. Open an additional browser tab and type your public IP address you requested in the VMware Cloud on AWS portal in the browser address bar followed by /Lychee (case sensitive) ie: x.x.x.x/Lychee
 23. Enter the database connection information below (case sensitive), using the IP address you noted in the previous step from the RDS ENI:
     **Database Host**: x.x.x.x:3306
@@ -957,39 +957,39 @@ On your browser, open a new tab and go to: <https://vmcworkshop.signin.aws.amazo
 
 ### EFS VM Creation
 
-(https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-93-Image-144.png)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-93-Image-144.png)
 
 1. Navigate to your Content Library, click **Menu** on your VMware Cloud on AWS vCenter Server
 2. Select **Content Libraries**
-    (https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-94-Image-145.png)
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-94-Image-145.png)
 3. Click on your **Student#** Content Library
-    (https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-94-Image-146.png)
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-94-Image-146.png)
 4. Make sure the **Templates** tab is selected
 5. Right-click on the **efs** template
 6. Select **New VM from This Template**
-    (https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-95-Image-147.png)
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-95-Image-147.png)
 7. Name your VM **EFSVM#** (where # is your student number)
 8. Select **Workloads** for the location of your VM
 9. Click **Next**
-    (https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-95-Image-148.png)
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-95-Image-148.png)
 10. Select **Compute-ResourcePool** as the destination for your VM
 11. Click **Next**
-    (https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-96-Image-149.png)
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-96-Image-149.png)
 12. Click **Next**
-    (https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-96-Image-150.png)
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-96-Image-150.png)
 13. Select **WorkloadDatastore** for storage
 14. Click **Next**
-    (https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-97-Image-151.png)
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-97-Image-151.png)
 15. Select your Destination Network
 16. Click **Next**
-    (https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-97-Image-152.png)
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-97-Image-152.png)
 17. Click **Finish**
-    (https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-98-Image-153.png)
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-98-Image-153.png)
 18. Make sure to Power on your VM and ensure it is assigned an IP address
 
 ### AWS Elastic File System (EFS)
 
-(https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-98-Image-154.png)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-98-Image-154.png)
 
 On your browser, open a new tab and go to: <https://vmcworkshop.signin.aws.amazon.com/console>
 
@@ -997,13 +997,13 @@ On your browser, open a new tab and go to: <https://vmcworkshop.signin.aws.amazo
 2. IAM user name -Student# (where # is the number assigned to you)
 3. Password - **VMCworkshop1211**
 4. Click **Sign In**
-    (https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-99-Image-155.png)
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-99-Image-155.png)
 5. You are now signed in to the AWS console. Make sure the region selected is **Oregon**
 6. Click on the **EFS** service
-    (https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-99-Image-156.png)
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-99-Image-156.png)
 7. Select your Student # NFS
 8. Note the IP address
-    (https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-100-Image-157.png)
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-100-Image-157.png)
 9. Back on your vCenter Server tab, click on **Launch Web Console**  for your EFS VM (Might need to allow pop ups in browser). Log in using the following credentials:
  a. **User**: root
  b. **Password**: VMware1!VMware1!
@@ -1030,20 +1030,20 @@ PLEASE BE AWARE THAT THESE EXERCISES MUST BE PERFORMED FROM THE ASSIGNED RDP DES
 
 #### Activate Site Recovery
 
-(https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-102-Image-158.png)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-102-Image-158.png)
 
 1. In your SDDC, click on the **Add Ons** tab
 2. Click the **Activate** button
-    (https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-103-Image-159.png)
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-103-Image-159.png)
 3. Click the **Activate** button
 
-(https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-103-Image-160.png)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-103-Image-160.png)
 
 Wait until the Site Recovery Add On has been activated.
 
 #### What is VMware Site Recovery
 
-(https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-104-Image-161.png)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-104-Image-161.png)
 
 VMware Site Recovery brings VMware enterprise-class Software-Defined Data Center (SDDC) Disaster Recovery as a Service to the AWS Cloud. It enables customers to protect and recover applications without the requirement for a dedicated secondary site. It is delivered, sold, supported, maintained and managed by VMware as an on-demand service. IT teams manage their cloud-based resources with familiar VMware tools without the difficulties of learning new skills or utilizing new tools.
 
@@ -1053,7 +1053,7 @@ The VMware Cloud on AWS solution enables customers to have the flexibility to tr
 
 VMware Site Recovery works in conjunction with VMware Site Recovery Manager 8.0 and VMware vSphere Replication 8.0 to automate the process of recovering, testing, re-protecting, and failing-back virtual machine workloads. VMware Site Recovery utilizes VMware Site Recovery Manager servers to coordinate the operations of the VMware SDDC. This is so that as virtual machines at the protected site are shut down, copies of these virtual machines at the recovery site startup. By using the data replicated from the protected site these virtual machines assume responsibility for providing the same services.
 
-(https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-105-Image-162.png)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-105-Image-162.png)
 
 VMware Site Recovery can be used between a customers datacenter and an SDDC deployed on VMware Cloud on AWS or it can be used between two SDDCs deployed to different AWS availability zones or regions. The second option allows VMware Site Recovery to provide a fully VMware managed and maintained Disaster Recovery solution. Migration of protected inventory and services from one site to the other is controlled by a recovery plan that specifies the order in which virtual machines are shut down and started up, the resource pools to which they are allocated, and the networks they can access.
 
@@ -1063,25 +1063,25 @@ VMware Site Recovery enables the testing of recovery plans, using a temporary co
 
 We will be setting up a IPSEC VPN connection between your VPC and the VPC of the person you were paired with.
 
-(https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-106-Image-163.png)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-106-Image-163.png)
 
 1. Go back to the **VMware Cloud on AWS** tab.
 2. In the main SDDC windows, click on **View Details**
     (https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-106-Image-164.png)
 3. Then click on the **Network** menu
 
-(https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-107-Image-165.png)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-107-Image-165.png)
 
 In the Management Gateway box, make a note of the Public IP and the Infrastructure Subnet CIDR
 
-(https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-107-Image-166.png)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-107-Image-166.png)
 
 Scroll down a little to get to the Management Gateway setting
 
 1. Click the drop down arrow to open the **IPsec VPNs** section
 2. Click on **ADD VPN**
 
-(https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-102-Image-158.png)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-102-Image-158.png)
 
 Fill in the following information
 
@@ -1091,17 +1091,17 @@ Fill in the following information
 4. Pre-shared key is **VMware1!**
 5. Click on **Save**
 
-(https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-108-Image-159.png)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-108-Image-159.png)
 
 When both you and the person you were paired with have completed these steps you should see the status turn to **Connected**
 
-(https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-108-Image-160.png)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-108-Image-160.png)
 
 There will be a need to setup a second VPN to our Host infrastructure for this setup to work. This is not normally needed when setting up your on-premises environment but it's needed for the special setup done for this workshop.
 
 1. Make sure the drop down is opened, if not click it under **Management Gateway**
 2. Click on **Add VPN**
-    (https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-108-Image-161.png)
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-108-Image-161.png)
 
     Fill in the following information
 3. Name this VPN **Student# to Host** (where # is your student number)
@@ -1116,18 +1116,24 @@ There will be a need to setup a second VPN to our Host infrastructure for this s
 
 If you still have your OAuth Token from the Powershell module, you are free to use it, otherwise, follow the following instructions to obtain a new one.
 
-(https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-110-Image-162.png)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-110-Image-162.png)
 
 1. Click on the drop down next to your **Name/Org ID**
 2. Click on **OAuth Refresh Token**
 
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-111-Image-163.png)
+
 Now we create a refresh token for your ID tied to this Org
 
 1. Click on **Create a new token**
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-111-Image-164.png)
 2. Click on **Continue**
 3. Click on **Copy to Clipboard**
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-112-Image-165.png)
 
 Now let's attach to the VMC server
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-112-Image-166.png)
 
 ``` powershell
 connect-vmc -refreshtoken "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"connect-vmc -refreshtoken "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
@@ -1137,6 +1143,8 @@ NOTE: Paste the refresh token you copied earlier in the exercise.
 
 #### Import Firewall Rules for Site Recovery via PowerCLI
 
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-113-Image-167.png)
+
 Open a Powershell window and enter the following commands:
 
 ``` powershell
@@ -1145,10 +1153,13 @@ Set-Location \\vmcwindc01\documents\import-dr-fw-rules.ps1 -refreshToken "xxxxxx
 
 Where xxxx is the OAuth Token you generated in a previous step and # is your Student number.
 
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-114-Image-168.png)
+
 Ensure the appropriate firewall rules were created by:
 
 1. Click on the **Network** tab.
 2. Expand **Firewall Rules** under **Management Gateway**
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-114-Image-169.png)
 
     Confirm the following Firewall Rules have been created:
 3. SRM 9086
@@ -1164,27 +1175,44 @@ Please note that the rules may have been created in a different order than shown
 
 **IMPORTANT NOTE**: Only one person can do the Site Pairing exercise. Please decide between you and your partner who performs this step.
 
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-115-Image-170.png)
+
 1. On your VMware Cloud on AWS Portal click on the **Add Ons** tab
 2. Click **Open Site Recovery**
-3. Click on **New Site Pair** You will be pairing the partner site that was assigned to you by your instructor, note that this is not the information for your SDDC used up until now. This is the information your partner will need from you and you will need from your partner's site.
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-116-Image-171.png)
+
+3. Click on **New Site Pair**
+    You will be pairing the partner site that was assigned to you by your instructor, note that this is not the information for your SDDC used up until now. 
+
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-116-Image-172.png)
+
+    This is the information your partner will need from you and you will need from your partner's site.
+
 4. Click on the **Connection Info** tab
 5. Copy or note the URL for the vCenter Server, drop the /ui at the end
 6. Note the username
 7. Note the password
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-117-Image-173.png)
+
 8. Make sure your local vCenter is selected
 9. Enter the information from your partner's SDDC:
     PSC host name
     User name
     Password
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-118-Image-174.png)
 10. Make sure local vCenter server is selected
 11. Select **all Services**
 12. Click **Next**
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-118-Image-175.png)
 13. Click **Finish** button
 
 ### Configure Network Mappings
 
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-119-Image-176.png)
+
 1. Click **Network Mappings** in the left pane of the Site Recovery page
-2. Click **+ New**
+2. Click **New**
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-119-Image-177.png)
 3. Select **Prepare mappings manually**
 4. Click **Next**
 5. Expand **SDDC Datacenter** on both sides
