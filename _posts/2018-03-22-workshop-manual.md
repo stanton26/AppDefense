@@ -4,6 +4,7 @@ title: "VMware on AWS Workshop Manual"
 date: 2018-03-22
 tags: workshop
 #toc: true
+classes: wide
 author_profile: false
 ---
 
