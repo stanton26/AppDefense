@@ -4,6 +4,8 @@ main:
     url: /about/
   - title: "Useful Links"
     url: /links/
+  - title: "Authors"
+    url: /authors/
   # - title: "Sample Collections"
   #   url: /collection-archive/
   # - title: "Sitemap"
