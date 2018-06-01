@@ -13,19 +13,17 @@ The VMware on AWS workshop is your chance to test drive this unique solution in 
 
 The class is a one-day activity where we will go through the acitivities of setting up a VMware SDDC environment in AWS and run through common administration activities of the platform, you will then move onto understanding how you can run workloads in VMware on AWS and integrate with native AWS services before you work through integration exercises with vRealize suite solutions such as vRealize Automation and vRealize Operations. Finally you will work through how you can utilise VMware on AWS as a target for DRaaS utilsiing VMware Site Recover Manager and VM Replication.
 
-## Pre-requisites
+## Workshop Details
 
-# Workshop Details
-
-## Windows RDP Access
+### Windows RDP Access
 
 At the start of the workshop, your instructor will assign a Student Number for you, based on that number, please login via your preferred Remote Access Client to the appropriate desktop based on the instructor's slide.
 
-## Location of Files
+### Location of Files
 
 Any file(s) referenced in this manual are located in the Z: drive of the RDP desktop you are assigned
 
-## Workshop URL's
+### Workshop URL's
 
 VMware Cloud on AWS Login <https://vmc.vmware.com>
 
@@ -37,7 +35,7 @@ Swagger API Interface <https://vmc.vmware.com/swagger/index.html>
 
 AWS Console <https://vmcworkshop.signin.aws.amazon.com/console>
 
-## Workshop Bookmarks
+### Workshop Bookmarks
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-7-Image-1.png)
 
