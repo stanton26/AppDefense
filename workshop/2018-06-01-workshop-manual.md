@@ -15,7 +15,46 @@ The class is a one-day activity where we will go through the acitivities of sett
 
 ## Pre-requisites
 
-Insert prereqs here...
+# Workshop Details
+
+## Windows RDP Access
+
+At the start of the workshop, your instructor will assign a Student Number for you, based on that number, please login via your preferred Remote Access Client to the appropriate desktop based on the instructor's slide.
+
+## Location of Files
+
+Any file(s) referenced in this manual are located in the Z: drive of the RDP desktop you are assigned
+
+## Workshop URL's
+
+VMware Cloud on AWS Login <https://vmc.vmware.com>
+
+vRealize Automation <https://vraapp.corp.local/vcac>
+
+vRealize Operations <https://vrops.corp.local>
+
+Swagger API Interface <https://vmc.vmware.com/swagger/index.html>
+
+AWS Console <https://vmcworkshop.signin.aws.amazon.com/console>
+
+## Workshop Bookmarks
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-7-Image-1.png)
+
+Import Bookmarks into Chrome by double clicking the Chrome Icon on your Desktop (Preferred browser for workshop)
+
+1. Click on the three dots on the top right corner
+2. Select **Bookmarks**
+3. Select **Import bookmarks and settings**
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-8-Image-2.png)
+4. Click on the down arrow
+5. Select **Bookmarks HTML File**  
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-8-Image-3.png)
+6. Click **Choose File**
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-9-Image-4.png)
+7. Click on **Desktop**
+8. Select **bookmarks_vmc_workshopbookmarks_vmc_workshop**
+9. Click **Open**
 
 ## Labs
 
