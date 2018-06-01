@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "VMware on AWS. vRealize Automation Lab Manual"
+title: "vRealize Automation Lab Manual"
 date: 2018-06-01
 tags: workshop
 toc: true

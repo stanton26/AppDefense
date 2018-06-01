@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "VMware on AWS. Working with your SDDC Lab Manual"
+title: "Working with your SDDC Lab Manual"
 date: 2018-06-01
 tags: workshop
 toc: true

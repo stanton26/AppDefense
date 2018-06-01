@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "VMware on AWS. Hybrid Cloud Extension (HCX) Lab Manual"
+title: "Hybrid Cloud Extension (HCX) Lab Manual"
 categories: labs
 date: 2018-06-01
 tags: workshop
