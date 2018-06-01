@@ -51,7 +51,7 @@ Import Bookmarks into Chrome by double clicking the Chrome Icon on your Desktop 
 6. Click **Choose File**  
     ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-9-Image-4.png)
 7. Click on **Desktop**
-8. Select **bookmarks_vmc_workshopbookmarks_vmc_workshop**
+8. Select **bookmarks_vmc_workshop**
 9. Click **Open**
 
 ## Labs
