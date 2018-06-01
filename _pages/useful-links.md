@@ -6,4 +6,4 @@ date: 2018-06-01
 tags: links
 ---
 
-Placeholder for lunks
+Placeholder for links
