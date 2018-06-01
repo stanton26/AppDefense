@@ -52,7 +52,7 @@ By default, the Compute NSX Edge Services Gateway is also set to deny all inboun
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-14-Image-13.png)
 
-#### Create Firewall Rule under Compute Gateway for Inbound Native AWS Services access.
+#### Create Firewall Rule under Compute Gateway for Inbound Native AWS Services access
 
 1. Under **Network** tab, navigate to **Compute Gateway**
 2. Expand **Firewall Rules**
