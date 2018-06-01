@@ -1,7 +1,6 @@
 ---
 layout: single
 title: "VMware on AWS API Lab Manual"
-permalink: /api-lab/
 categories: labs
 date: 2018-06-01
 tags: workshop
