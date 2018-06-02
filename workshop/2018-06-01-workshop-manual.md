@@ -57,9 +57,9 @@ Import Bookmarks into Chrome by double clicking the Chrome Icon on your Desktop 
 ## Labs
 
 Lab | Description
-<a href="https://vmc-field-team.github.io/labs/working-with-sddc-lab/" target="_blank">Working with your SDDC</a> | Learn the basics of running a a VMware on AWS SDDC environment
-<a href="/labs/api-lab" target="_blank">VMware on AWS APIs</a> | Learn how to interact with VMware on AWS through APIs
-<a href="https://vmc-field-team.github.io/labs/aws-integration-lab" target="_blank">AWS integration</a> | Learn how to integrate with native AWS services such as RDS and EFS
-<a href="https://vmc-field-team.github.io/labs/srm-lab" target="_blank">VMware Site Recovery Manager</a> | Learn how you can utilise VMware on AWS for DRaaS use cases
-<a href="https://vmc-field-team.github.io/labs/hcx-lab" target="_blank">VMware Hybrid Cloud Extension</a> | Learn how VMwares Hybrid Cloud Extension (HCX) technology can help with bulk and live migration to the VMware on AWS cloud platform
-<a href="https://vmc-field-team.github.io/labs/vra-lab" target="_blank">VMware vRealize Automation</a> | Utilise integration capbilities with VMware cloud management tools
+[Working with your SDDC](https://vmc-field-team.github.io/labs/working-with-sddc-lab/){:target="_blank"} | Learn the basics of running a a VMware on AWS SDDC environment
+[VMware on AWS APIs](https://vmc-field-team.github.io/labs/labs/api-lab){:target="_blank"} | Learn how to interact with VMware on AWS through APIs
+[AWS integration](https://vmc-field-team.github.io/labs/aws-integration-lab){:target="_blank"} | Learn how to integrate with native AWS services such as RDS and EFS
+[VMware Site Recovery Manager](https://vmc-field-team.github.io/labs/srm-lab){:target="_blank"} | Learn how you can utilise VMware on AWS for DRaaS use cases
+[VMware Hybrid Cloud Extension](https://vmc-field-team.github.io/labs/hcx-lab){:target="_blank"} | Learn how VMwares Hybrid Cloud Extension (HCX) technology can help with bulk and live migration to the VMware on AWS cloud platform
+[VMware vRealize Automation](https://vmc-field-team.github.io/labs/vra-lab){:target="_blank"} | Utilise integration capbilities with VMware cloud management tools
