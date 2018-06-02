@@ -6,7 +6,7 @@ date: 2018-06-02
 tags: students
 ---
 
-| Student Name | SDDC | Student Number | Ip Address RDP Login | RDP Login | Password |
+|Student Name|SDDC|Student Number|Ip Address RDP Login|RDP Login|Password|
 |---|---| ---|---|---|---|
 | Student 1     | VMC-WS1        | Student #1 |
 | Student 11    | VMC-WS1        | Student #11 |
