@@ -1,14 +1,11 @@
 # main links
 main:
-  - title: "About"
-    url: /about/
-  - title: "Useful Links"
-    url: /links/
-  - title: "Authors"
-    url: /authors/
   - title: "Student Information"
     url: /student-info/
-  # - title: "Sample Collections"
-  #   url: /collection-archive/
-  # - title: "Sitemap"
-  #   url: /sitemap/
+  - title: "Useful Links"
+    url: /links/
+  - title: "About"
+    url: /about/
+  - title: "Authors"
+    url: /authors/
+  
