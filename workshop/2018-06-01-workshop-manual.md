@@ -56,7 +56,7 @@ Import Bookmarks into Chrome by double clicking the Chrome Icon on your Desktop 
 
 ## Labs
 
-Lab | Description
+Lab Name | Description
 [Working with your SDDC](https://vmc-field-team.github.io/labs/working-with-sddc-lab/){:target="_blank"} | Learn the basics of running a a VMware on AWS SDDC environment
 [VMware on AWS APIs](https://vmc-field-team.github.io/labs/labs/api-lab/){:target="_blank"} | Learn how to interact with VMware on AWS through APIs
 [AWS integration](https://vmc-field-team.github.io/labs/aws-integration-lab/){:target="_blank"} | Learn how to integrate with native AWS services such as RDS and EFS
