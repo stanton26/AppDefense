@@ -6,6 +6,8 @@ main:
     url: /links/
   - title: "Authors"
     url: /authors/
+  - title: "Student Information"
+    url: /student-info/
   # - title: "Sample Collections"
   #   url: /collection-archive/
   # - title: "Sitemap"
