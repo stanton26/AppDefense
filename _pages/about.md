@@ -2,7 +2,7 @@
 layout: single
 permalink: /about/
 title: "Welcome to the VMware on AWS Team page"
-date: 2018-03-22
+date: 2018-06-02
 tags: about
 classes: wide
 ---
