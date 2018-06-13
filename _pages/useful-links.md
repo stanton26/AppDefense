@@ -1,7 +1,7 @@
 ---
 layout: single
 permalink: /links/
-title: "VMware on AWS Useful Links"
+title: "VMware Cloud on AWS Useful Links"
 date: 2018-06-01
 tags: links
 classes: wide
