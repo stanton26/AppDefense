@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "VMware on AWS Workshop"
+title: "VMware Cloud on AWS Workshop"
 permalink: /workshop-manual/
 date: 2018-06-01
 tags: workshop
@@ -9,9 +9,9 @@ author_profile: false
 ---
 # Introduction
 
-The VMware on AWS workshop is your chance to test drive this unique solution in the market place in a classroom session with VMware on AWS experts and work through hands on lab exercises to understand and gain experience with the solution to understand how it can be used in your business.
+The VMware Cloud on AWS workshop is your chance to test drive this unique solution in the market place in a classroom session with VMware Cloud on AWS experts and work through hands on lab exercises to understand and gain experience with the solution to understand how it can be used in your business.
 
-The class is a one-day activity where we will go through the acitivities of setting up a VMware SDDC environment in AWS and run through common administration activities of the platform, you will then move onto understanding how you can run workloads in VMware on AWS and integrate with native AWS services before you work through integration exercises with vRealize suite solutions such as vRealize Automation and vRealize Operations. Finally you will work through how you can utilise VMware on AWS as a target for DRaaS utilsiing VMware Site Recover Manager and VM Replication.
+The class is a one-day activity where we will go through the acitivities of setting up a VMware SDDC environment in AWS and run through common administration activities of the platform, you will then move onto understanding how you can run workloads in VMware Cloud on AWS and integrate with native AWS services before you work through integration exercises with vRealize suite solutions such as vRealize Automation and vRealize Operations. Finally you will work through how you can utilise VMware on AWS as a target for DRaaS utilsiing VMware Site Recover Manager and VM Replication.
 
 ## Workshop Details
 
