@@ -1,0 +1,9 @@
+# main links
+main:
+  - title: "Student Information"
+    url: /student-info/
+  - title: "Useful Links"
+    url: /links/
+  - title: "About"
+    url: /about/
+  
