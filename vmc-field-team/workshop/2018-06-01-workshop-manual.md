@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "VMware Cloud on AWS Workshop"
+title: "VMware Cloud on AWS Workshop presented by ADAM BOHLE!!!! YEAH !!!!"
 permalink: /workshop-manual/
 date: 2018-06-01
 tags: workshop
