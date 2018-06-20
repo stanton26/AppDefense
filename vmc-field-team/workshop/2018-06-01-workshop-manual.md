@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "VMware Cloud on AWS Workshop"
+title: "VMware Cloud on AWS Workshop Manual"
 permalink: /workshop-manual/
 date: 2018-06-01
 tags: workshop
