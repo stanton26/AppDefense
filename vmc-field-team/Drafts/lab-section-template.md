@@ -1,7 +1,7 @@
 ---
 layout: single # This is the layout which is used to format the HTML page when the .md is built, leave this unchanged 
 title: "Title of Lab" # Title of your lab
-date: YYYY-MM-DD # Put the date in here when the section was created
+date: 2018-06-21 # Put the date in here when the section was created
 tags: workshop # This tag is not used at the moment, but may be used later down the line
 toc: true # This will place a Table of Content section at the top of the lab manual and will use Heading hastags
 classes: wide # This will format the text to 
