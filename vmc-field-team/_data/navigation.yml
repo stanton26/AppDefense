@@ -1,11 +1,7 @@
 # main links
 main:
-<<<<<<< HEAD
   - title: "Student Access"
-=======
-  - title: "Student Information"
->>>>>>> origin/master
-    url: /student-info/
+    url: /student-access/
   - title: "Useful Links"
     url: /links/
   - title: "About"
