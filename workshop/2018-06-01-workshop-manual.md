@@ -63,3 +63,4 @@ Lab Name | Description
 [VMware Site Recovery Manager](https://vmc-field-team.github.io/labs/srm-lab/){:target="_blank"} | Learn how you can utilise VMware on AWS for DRaaS use cases
 [VMware Hybrid Cloud Extension](https://vmc-field-team.github.io/labs/hcx-lab/){:target="_blank"} | Learn how VMwares Hybrid Cloud Extension (HCX) technology can help with bulk and live migration to the VMware on AWS cloud platform
 [VMware vRealize Automation](https://vmc-field-team.github.io/labs/vra-lab/){:target="_blank"} | Utilise integration capbilities with VMware cloud management tools
+[VMware Horizon 7](https://vmc-field-team.github.io/labs/horizon-lab/){:target="_blank"} | In this lab you will learn how to configure and utilise Horizon 7 desktop environments hosted in your VMware Cloud on AWS deployment 
