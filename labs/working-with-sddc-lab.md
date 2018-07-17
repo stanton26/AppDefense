@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "Working with your SDDC Lab Manual"
-date: 2018-06-01
+date: 2018-07-17
 tags: workshop
 toc: true
 classes: wide
@@ -22,26 +22,26 @@ You will be directed to a login page for Cloud Services from VMware. You will ne
 You will now be logged into your organisation hosting your VMware Cloud on AWS SDDC cluster.
 
 1. On your "Student Workshop #" SDDC, click on the "View Details" button.
-    ![view details](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/Screenshot+at+Jul+17+15-32-13.png)
+    ![View details](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/Screenshot+at+Jul+17+15-32-13.png)
+2. Click on the **Actions** button in the upper right hand corner of the UI
+3. Click on **Add Hosts**
+4. In this student environment, we have restricted the platform to only allow the addition of one host. If this were a customer environment there would not be this restriction
+5. Click the **Add Hosts** button
+    ![Add Hosts](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/Screenshot+at+Jul+17+15-45-30.png)
 
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-11-Image-6.png)
-2. Click on the "Actions" button
-3. Click on "Add Hosts"
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-12-Image-7.png)
-4. As you will only be adding only one host, review the field highlighted
-5. Click the "Add Hosts" button
+Your SDDC environment will now go through the process of adding an additional host to the SDDC environment. The process can take up to 10 minutes to complete. In the background automated tasks are provisoning an additional host, adding the host to the SDDC cluster and extending the VSAN cluster to utilise the storage presented by this additional host. All of this is done without human interaction in roughly 10 minutes. You may choose to wait for this action to process or move onto the next exercise and check back later to see your additional host.
 
-Congratulations! You have completed this step. The adding of an additional host to an existing SDDC should take approximately 10 minutes to complete.
+Congratulations! You have completed this step. Please move onto configuring your SDDC Firewall rules below.
 
 ----------------
 
 ## Configuring SDDC Firewall Rules
 
+In VMware Cloud on AWS we have two Edge Gateways which are protecting the two main networks in the VMware Cloud on AWS SDDC. The **Management Network** and the **Compute Network**. When we first intiate your SDDC environment, the default is for all traffic to both the Management and Compute networks to be denied. In this exercise we will go through the steps required to open up firewall rules so that we can manage the SDDC and not only access compute workloads but allow those compute workloads to communicate with native AWS services.
+
 ### Management Gateway Firewall Rules
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-13-Image-8.png)
-
-By default, the firewall for the management gateway is set to deny all inbound and outbound traffic. In this exercise, you will add a firewall rule to allow vCenter traffic. In order to access vCenter Server in your SDDC, you must set a firewall rule to allow traffic to the vCenter Server.
+By default, the firewall for the Management Gateway is set to deny all inbound and outbound traffic. In this exercise, you will add a firewall rule to allow vCenter traffic. In order to access the vCenter Server in your SDDC, you must set a firewall rule to allow traffic to the vCenter Server.
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-13-Image-9.png)
 
@@ -263,7 +263,7 @@ Use the Customization Specification Manager to manage customization specificatio
 
 Congratulations! You have successfully created your VM Customization Spec for your Linux VMs. You can also export (Duplicate), Edit, Import, and Export a VM Customization Spec.
 
-## Deploy Virtual Machine
+## Deploy Virtual Machines
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-34-Image-42.png)
 
@@ -287,7 +287,7 @@ Congratulations! You have successfully created your VM Customization Spec for yo
     ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-37-Image-48.png)
 13. In the **Ready to complete** section, review to ensure all your selections are correct and click **Finish**
 
-## Convert Virtual Machine to Template
+## Convert a Virtual Machine to a Template
 
 In this step you will be cloning your newly created Virtual Machine into a Template for later use in vRealize Automation section.
 
@@ -303,4 +303,4 @@ In this step you will be cloning your newly created Virtual Machine into a Templ
     ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-39-Image-51.png)
 7. Click **Yes**  in the Convert to Template prompt
 
-You have completed this step.
+You have completed this lab. Please continue to the API Lab which you can access from this [API Lab Link](https://vmc-field-team.github.io/labs/api-lab/)
