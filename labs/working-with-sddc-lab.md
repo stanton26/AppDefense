@@ -9,11 +9,21 @@ author_profile: false
 ---
 # Introduction
 
+In this lab we are going to start with looking at the basic tasks which you will perform in the VMware Cloud on AWS user interface when you are administering the platform.
+
 ## Add a Host to your SDDC
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-11-Image-5.png)
+We will start by adding a host to the VMware Cloud on AWS platform. For the purposes of this lab, we have already precreated the VMware Cloud on AWS SDDC environments for you, in order to save time.
+
+In your chrome browser you will see a bookmark on the bokkmarks bar named **VMware Cloud Services**. Please click this bookmark.
+
+You will be directed to a login page for Cloud Services from VMware. You will need to login with the email address which you signed up to the VMware Cloud on AWS Experience day with. You will also need to ensure that this email address is associated with a "MyVMware Account" in order for the login to VMware Cloud Services to work correctly.
+
+You will now be logged into your organisation hosting your VMware Cloud on AWS SDDC cluster.
 
 1. On your "Student Workshop #" SDDC, click on the "View Details" button.
+    ![view details](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/Screenshot+at+Jul+17+15-32-13.png)
+
     ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-11-Image-6.png)
 2. Click on the "Actions" button
 3. Click on "Add Hosts"
