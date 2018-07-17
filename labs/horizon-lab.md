@@ -113,6 +113,7 @@ You may already have a Content Library in your on-premises data center, you can 
 2. Name your Content Library **Student#-HorizonGM** where **#** is the number assigned to you
 3. (Optional) Enter some notes for your Content Library
 4. Click **Next** button
+
     ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-21-Image-22.png)
 5. Select **Subscribed content library**
 6. Under **Subscription URL** enter the following: <https://vcenter.sddc-34-216-241-49.vmc.vmware.com:443/cls/vcsp/lib/ddfe9c01-09ea-4fc2-a03b-91cc7ed5f4b1/lib.json>
