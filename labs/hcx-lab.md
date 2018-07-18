@@ -7,6 +7,7 @@ tags: workshop
 toc: true
 classes: wide
 author_profile: false
+comments: true
 ---
 # Introduction
 
