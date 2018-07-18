@@ -19,7 +19,7 @@ on AWS, with the market-leading capabilities of VMware Horizon for a simple, sec
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/1.png)
 
-### Simplify Public and Hybrid Cloud Management 
+### Simplify Public and Hybrid Cloud Management
 
 For customers who are already familiar with Horizon 7 or have Horizon 7 deployed
 on premises, running Horizon 7 on VMware Cloud lets you leverage a unified
@@ -121,14 +121,12 @@ You may already have a Content Library in your on-premises data center, you can 
 
     PLEASE NOTE THAT THERE MAY BE AN ISSUE WITH DROPPING/ADDITION OF CHARACTERS FOR THE URL WHEN COPYING AND PASTING FROM THE MANUAL.ASK YOUR INSTRUCTOR IN THE EVENT YOU CANNOT LOCATE IT.
 
-8. Ensure Download content is set to **Immediately**
-9. Click **Next**
+7. Ensure Download content is set to **Immediately**
+8. Click **Next**
     ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-22-Image-23.png)
-10. Highlight the **WorkloadDatastore** as the storage location
-11. Click **Next**
+9. Highlight the **WorkloadDatastore** as the storage location
+10. Click **Next**
     ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-22-Image-24.png)
-12. Click **Finish**. Your content library should take about ~20 minutes to complete syncing.
+11. Click **Finish**. Your content library should take about ~20 minutes to complete syncing.
 
-
-## Import an Windows Customization Spec 
-
+## Import a Windows Customization Spec

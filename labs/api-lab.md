@@ -41,7 +41,6 @@ Note: You will be asked to change the execution policy, type **Y** and press **E
 
 You now will need to set the PowerCLI Configuration to Ignore Invalid Certificates. Please type the following command to action this.
 
-
 ``` powershell
 Set-PowerCLIConfiguration -InvalidCertificateAction Ignore
 ```
@@ -124,7 +123,7 @@ If you are not already logged in, log into your VMC org.
 
 1. From within the VMware Cloud on AWS tab, click on the Developer Center menu
 
-In the Developer Center there are a lot of great resources for you to explore. For example, let's check out a code sample that was uploaded by one of our API developers. If you scroll through this screen you will see there are code samples for Postman (a REST API Development Tool), Python, PowerCLI, and many others. Anyone can contribute code samples to the community, if that interests you go to http://code.vmware.com or click on the link **VMware{code} Sample Exchange**.
+In the Developer Center there are a lot of great resources for you to explore. For example, let's check out a code sample that was uploaded by one of our API developers. If you scroll through this screen you will see there are code samples for Postman (a REST API Development Tool), Python, PowerCLI, and many others. Anyone can contribute code samples to the community, if that interests you go to <http://code.vmware.com> or click on the link **VMware{code} Sample Exchange**.
 
 1. Click on Code Samples in the menu
 2. Click on Download in the PowerCLI - VMC Example Scripts box
@@ -172,7 +171,7 @@ In this module, we will be exploring how to use Postman to execute REST API requ
 
 Postman is very easy to install, so let's get started.
 
-1. Open a new browser tab and go to https://www.getpostman.com
+1. Open a new browser tab and go to <https://www.getpostman.com>
 2. Click on **Download the App**
 3. Find Postman for Windows (64-bit)
 4. Click **Download**
@@ -181,16 +180,14 @@ Postman is very easy to install, so let's get started.
 NOTE: For cleanup you can close all postman tabs in Chrome
 
 1. Click on the text: Take me straight to the app. I'll create an account another time.
-2. Close this windows
+2. Close this Window
 3. Uncheck Show this window on launch
 4. Close this window
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-58-Image-80.png)
-
-Go back to your browser window, if you do not have a tab opened for VMware Cloud
+Go back to your browser window, if you do not have a tab opened for VMware Cloud on AWS, follow the below instructions
 
 1. Open a new tab
-2. type: https://vmc.vmware.com
+2. Navigate to <https://vmc.vmware.com>
 3. Log in with you email address
 4. username : corp\vmcws# (your student number)
 5. password : VMware1!
