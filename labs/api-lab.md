@@ -196,125 +196,89 @@ Our internal API development team has done a great job pre-creating SDKs for man
 2. Click on **SDK**
 3. Click on **Source on Github for REST**
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-59-Image-82.png)
+You will be redirected to the vsphere-automation -sdk github page specifically for vSphere's REST API. There is a lot of great information here about how to use the vSphere REST API and VMware Cloud on AWS. We will be pulling down this github repository so we can import the VMC collection.
 
-You will be redirected to the vsphere-automation -sdk github page specifically for vSphere's REST APIs. There is a lot of great information in here about how to use REST APIs with vSphere, vCenter, and VMC. We will be pulling down this github repository so we can import the VMC collection.
+1. Click on **Clone or download**
+2. Click on **Download ZIP**
 
-1. Click on Clone or download
-2. Click on Download ZIP
+NOTE: This is only 1 way to download a repository. If you want to actively use or even contribute to the development of the code in this repository, you can install git tools in Windows or in Linux or Mac and clone the repository in order to push commits to the repository.
 
-NOTE: This is only 1 way to download a repository. If you want to actively use or even contribute to the development of the code in this repository, you can install git desktop in Windows or git in Linux or Mac and clone the repository.
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-59-Image-83.png)
-
-1. Click on the download menu
-2. Click on Open
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-60-Image-84.png)
+1. Click on the **Download menu**
+2. Click on **Open**
 3. Click on **Extract**
 4. Click on **Extract all**
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-60-Image-85.png)
 
 We will keep the default file path.
 
 1. Uncheck the box
 2. Click on Extract
 
-Close the file explorer windows and the github tab
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-61-Image-86.png)
-
 Now that we have Postman installed and the github repository on our local system, lets import the VMC collection and use some the requests to build our own collection.
 
-1. Click on Import
-2. Click on Choose Files
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-61-Image-87.png)
+1. Click on **Import**
+2. Click on **Choose Files**
 
 To import the VMC collection json file we downloaded earlier.
 
-1. Browse to the directory we save it to earlier. That directory should be C:\downloads\vsphere-automation-sdk-rest-master\vsphere-automation-sdk-rest-master\samples\postman
+1. Browse to the directory we saved it to earlier. That directory should be "C:\downloads\vsphere-automation-sdk-rest-master\vsphere-automation-sdk-rest-master\samples\postman"
 2. Click **VMware Cloud on AWS APIs.postman_collection.json**
 3. Click **Open**
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-62-Image-88.png)
-
-We now need to get our refresh token for our Org in VMC. Go back to your VMware Cloud tab in your browser
+We now need to get our refresh token for our Org in VMC. Go back to your VMware Cloud on AWS tab in your browser
 
 1. Click on the drop down next to your Student Name/Org ID
-2. Click on OAuth Refresh Token
+2. Click on **OAuth Refresh Token**
+3. Click on **Copy to Clipboard**
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-63-Image-89.png)
-
-1. Click on Copy to Clipboard NOTE: If you have not generated a token yet, click on Generate and then copy to clipboard.
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-63-Image-90.png)
+NOTE: If you have not generated a token yet, click on **Generate** and then copy to clipboard.
 
 Return to the Postman app. We now need to setup a Postman environment for use with VMC. An environment is where we will be creating and storing our variables. These variables can be local or global, depending on your use within Postman. In this module, we will only be using local variables.
 
-1. Click on New
-2. Click on Environment
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-64-Image-91.png)
-3. Name the environment VMC
-4. In the Key column type in refresh_token
+1. Click on **New**
+2. Click on **Environment**
+3. Name the Environment "VMC"
+4. In the Key column type in "refresh_token"
 5. In the Value column use CTRL-V to paste your actual refresh token you copied in a previous step.
 6. Click on **Add**
-7. Close the window
+7. Close the Window
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-64-Image-92.png)
+Now set this as our default environment.
 
-Now set this as our default environment. NOTE: If you don't set the default environment to VMC, then the variables that get created will not be accessible.
+NOTE: If you don't set the default environment to VMC, then the variables that get created will not be accessible.
 
 1. Click on the drop down arrow
 2. Select VMC
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-65-Image-93.png)
-
 Now we will start to build our own collection by using some request that came in the SDK we imported earlier.
 
-1. Click on Collections
-2. Click on - Authentication and Login
-3. See how this request is our refresh token variable we defined in an earlier step. NOTE: If the environment is not set to VMC, this will request will fail because the refresh_token variable is not defined.
-4. Click on Send
+1. Click on **Collections**
+2. Click on **Authentication and Login**
+3. See how this request is our refresh token variable we defined in an earlier step.
+    NOTE: If the environment is not set to VMC, this will request will fail because the refresh_token variable is not defined.
+4. Click on **Send**
 5. You will now see the access token that was generated with the refresh token. This is the body or payload of the response to our request.
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-66-Image-94.png)
-
-1. Click on the Eye icon
+6. Click on the Eye icon
 
 You will see that we have stored your access token into a variable so we can use it for future calls. How did we do that? We ran a "test" on the response body. You will see how in the next step.
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-66-Image-96.png)
 
 1. Click on Tests
 
 The access_token variable was set by running some java script code against the response. We are also using the Postman setEnvironmentVariable function to create it.
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-67-Image-97.png)
-
 Lets save this request to our own collection so we can use it later.
 
 1. Click on the drop down arrow
-2. Click on Save As
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-67-Image-98.png)
-
-1. Change the Request name to Authorize
-2. Change the Request description to Get Access Token
-3. Click on "+Create Collection"
-4. Type Workshop and click the "check box"
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-68-Image-99.png)
-
-1. Select the Workshop folder
-2. Click on Save to Workshop
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-68-Image-100.png)
+2. Click on **Save As**
+3. Change the Request name to "Authorize"
+4. Change the Request description to "Get Access Token"
+5. Click on **Create Collection**
+6. Type Workshop and click the **check box**
+7. Select the Workshop folder
+8. Click on **Save to Workshop**
 
 A new window will pop open indicating that you created a new collection. We will not do anything here at this time.
 
 1. Close this window
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-69-Image-101.png)
 
 Lets request some details from our Org so we can send them to Slack.
 
@@ -324,24 +288,18 @@ Lets request some details from our Org so we can send them to Slack.
 4. You see here how we are using the access_token variable for the csp-auth-token. This will authorize our request. NOTE: This access token is only good for 30 minutes. If you run this request and get a response of 400 unauthorized, go back and run the authorize request.
 5. Look through the response body for your Org's display_name
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-69-Image-102.png)
-
 Lets save this request to our own collection so we can use it later.
+
 1. Click on the drop down arrow
 2. Click on **Save As**
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-70-Image-103.png)
-
-1. Change the Request name to Org list
-2. Change the Request description to Get a list of your Orgs
-3. Be sure Workshop is selected under Select a collection or folder to save to:
-4. Click on Save to Workshop
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-70-Image-104.png)
+3. Change the Request name to Org list
+4. Change the Request description to "Get a list of your Orgs"
+5. Be sure Workshop is selected under Select a collection or folder to save to:
+6. Click on **Save to Workshop**
 
 We need to replace the Test code that came with the SDK so we can create variable we want to use when send our message to Slack.
 
-1. Click on Tests
+1. Click on **Tests**
 2. Copy and paste the below code into the Tests section. NOTE: You may have to press CTRL-V to past into the text box.
 3. Click **Send**
 
@@ -357,26 +315,19 @@ for (i = 0; i < jsonData.length; i++) {
 }
 ```
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-71-Image-105.png)
-
 We can verify if the variables have been created and assigned values.
 
-1. Click on the "eye" icon
+1. Click on the **eye** icon
 2. Scroll down to see if the new variables were created.
-3. Once verified click on the "eye" icon again to close the window
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-71-Image-106.png)
+3. Once verified click on the **eye** icon again to close the window
 
 Lets save the changes we made to this request.
 
-1. Click on Save
+1. Click on **Save**
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-72-Image-107.png)
+Now that we have details of our Org lets send them to Slack in a message.
 
-Now that we have details of our Org lets send them to slack inn a message.
-
-To post to slack a link needs to be generated for the slack channel that we want to post to. This has already been done for you and is listed below. One of the instructors will have this slack channel displayed on the screens. So you can see the results. Slack channel URL: https://hooks.slack.com/services/T9HQFCTC1/B9JBL5SV7/
-ArgKjF4zZDh7dnaWRyKNJfRY
+To post to slack, a link needs to be generated for the slack channel that we want to post to. This has already been done for you and is listed below. One of the instructors will have this slack channel displayed on the screens. So you can see the results. Slack channel URL: <https://hooks.slack.com/services/T9HQFCTC1/B9JBL5SV7ArgKjF4zZDh7dnaWRyKNJfRY>
 
 Now we need to setup the request:
 
@@ -395,38 +346,26 @@ state is: {{state}}",
 }
 ```
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-72-Image-108.png)
-
 Lets save this request to our own collection so we can use it later.
 
 1. Click on the drop down arrow
-2. Click on Save As
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-73-Image-109.png)
-
-1. Change the Request name to Post to Slack
-2. Change the Request description to Post some Org details to slack
-3. Be sure Workshop is selected under Select a collection or folder to save to:
-4. Click on Save to Workshop
+2. Click on **Save As**
+3. Change the Request name to "Post to Slack"
+4. Change the Request description to "Post some Org details to slack"
+5. Be sure Workshop is selected under Select a collection or folder to save to:
+6. Click on **Save to Workshop**
 
 Check and see if your request posted the Name, ID, Version, and Status of your Org.
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-73-Image-110.png)
-
 The last thing to show you with Postman is the way that you can run a collection to automate a series of tasks. What we have been doing in this module is building a collection. As you see in the screen shot there are 3 tasks in the Workshop collection.
 
-1. Click on the Arrow in the Workshop window
-2. Click on Run
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-74-Image-111.png)
-
-1. Click on Run Workshop
-2. Be sure the Environment is set to VMC
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-74-Image-112.png)
+1. Click on the **Arrow** in the Workshop window
+2. Click on **Run**
+3. Click on **Run Workshop**
+4. Be sure the Environment is set to **VMC**
 
 If all your work was saved and ran individually, they should run here as well.
 
 1. Check out the status of each request.
 
-If you have all "200 OK" then you will see another post in slack for your workshop Org.
+If you have "200 OK" then you will see another post in slack for your workshop Org.
