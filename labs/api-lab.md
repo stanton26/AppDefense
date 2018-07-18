@@ -188,17 +188,13 @@ Go back to your browser window, if you do not have a tab opened for VMware Cloud
 
 1. Open a new tab
 2. Navigate to <https://vmc.vmware.com>
-3. Log in with you email address
-4. username : corp\vmcws# (your student number)
-5. password : VMware1!
+3. Log in with you email address which you used to register for the VMware Cloud on AWS Experience Day
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-58-Image-81.png)
+Our internal API development team has done a great job pre-creating SDKs for many of the popular languages in use today. For this module, we will be using the SDK for REST to show you how you can easily import and reuse some pre-built collections to create your own.
 
-Our internal API development team has done a great job pre-creating SDK for many of the popular languages in use today. For this module, we will be using the SDK for REST to show you how you can easily import and reuse some pre-built collections to create your own.
-
-1. Click on Developer Center
-2. Click on SDK
-3. Click on Source on Github for REST
+1. Click on **Developer Center**
+2. Click on **SDK**
+3. Click on **Source on Github for REST**
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-59-Image-82.png)
 
