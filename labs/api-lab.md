@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "VMware Cloud on AWS API Lab Manual"
-date: 2018-06-01
+date: 2018-07-18
 tags: workshop
 toc: true
 classes: wide
@@ -9,6 +9,8 @@ author_profile: false
 categories: labs
 ---
 # Introduction
+
+In this lab exercise we will be showing how you can intereact with the VMware Cloud on AWS platform through programmatic means. We will go through how we can use PowerShell as a means to interact with the Cloud Solution Platform. We will then delve into how we can interact with the VMware Cloud on AWS REST API and perform actions in both the interegrated "Developer Center" view in the console, and also through popular third party and open source REST clients. For the purposes of our lab exercise we will be making use of the popular "Postman" software.
 
 ## Using PowerShell
 
