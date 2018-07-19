@@ -189,7 +189,7 @@ On your browser, open a new tab and go to: <https://vmcworkshop.signin.aws.amazo
     ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-100-Image-157.png)
 9. Back on your vCenter Server tab, click on **Launch Web Console**  for your EFS VM (Might need to allow pop ups in browser). Log in using the following credentials:
  a. **User**: root
- b. **Password**: VMware1!VMware1!
+ b. **Password**: VMware1!
 
 Enter the following commands at the prompt:
 
