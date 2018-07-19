@@ -261,3 +261,5 @@ In this step you will be cloning your newly created Virtual Machine into a Templ
 7. Click **Yes**  in the Convert to Template prompt
 
 You have completed this lab. Please continue to the API Lab which you can access from this [API Lab Link](https://vmc-field-team.github.io/labs/api-lab/)
+
+Please add comments below if you would like to give feedback on this lab.
