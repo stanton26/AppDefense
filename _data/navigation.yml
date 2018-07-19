@@ -4,7 +4,7 @@ main:
     url: /student-access/
   - title: "Useful Links"
     url: /links/
-  - title: "About"
-    url: /about/
   - title: "Videos"
     url: /videos/
+  - title: "About"
+    url: /about/
