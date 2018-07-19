@@ -62,25 +62,22 @@ If you are not already logged in
 
 1. Open a new tab
 2. Click on the **VMware Cloud on AWS** bookmark shortcut on the Bookmarks bar
-3. Fill in your email address
-4. click on **Next**
-5. Click on the drop down next to your Name/Org ID
-6. Click on **OAuth Refresh Token**
+3. Login with the email address which you used to sign up to the VMware Cloud on AWS Experience day
+4. Click on the drop down next to your Name/Org ID
+5. Click on **My Account** under "User Settings"
+6. In the My Account page, click on **API Tokens**
+7. Click on **New Token**
+8. Click **Continue**
 
-Now we can create a refresh token for your ID tied to this Org
+Now you can click on **copy to clipboard** you also have the ability to revoke and regenerate the token if you wish.
 
-1. Click on **Create a new token**
-2. Click on **Copy to Clipboard**
-
-Now let's attach to the VMC server
+Now let's connect to our VMware Cloud on AWS platform from PowerShell
 
 ``` powershell
 connect-vmc -refreshtoken "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 ```
 
-NOTE: Within the PowerShell window you can just right-click to paste the code,quotes are optional
-
-Now we can see what Orgs we have access to
+Now we can use the following PowerShell command to see what VMware Cloud on AWS Organisations we have access to
 
 ``` powershell
 Get-VMCorg
@@ -94,7 +91,9 @@ Now that we know the Org Display_Name we can find out information about the SDDC
 Get-VMCSDDC -Org VMC-WS#
 ```
 
-NOTE:replace # with your Student Number
+NOTE: Replace # with your Student Number
+
+![get-vmcsddc](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/api-lab/Screenshot+at+Jul+19+13-47-47.png)
 
 Another thing you can do is see the Default Credentials for your SDDC
 
@@ -110,15 +109,21 @@ In this module we will be using the VMware Cloud on AWS REST API to get some bas
 
 Launch the Chrome browser on your Student View Desktop
 
-If you are not already logged in, log into your VMC org.
+If you are not already logged in, log into your VMware Cloud on AWS organisation.
 
 1. From within the VMware Cloud on AWS tab, click on the Developer Center menu
 
-In the Developer Center there are a lot of great resources for you to explore. For example, let's check out a code sample that was uploaded by one of our API developers. If you scroll through this screen you will see there are code samples for Postman (a REST API Development Tool), Python, PowerCLI, and many others. Anyone can contribute code samples to the community, if that interests you go to <http://code.vmware.com> or click on the link **VMware{code} Sample Exchange**.
+![Dev Center](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/api-lab/Screenshot+at+Jul+19+13-57-33.png)
+
+In the Developer Center there are a lot of great resources for you to explore. For example, let's check out a code sample that was uploaded by one of our API developers. If you scroll through this screen you will see there are code samples for Postman (a REST API Development Tool)
+
+![Postman Samples](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/api-lab/Screenshot+at+Jul+19+14-00-33.png)
+
+You will also find samples for Python, PowerCLI, and many others. Anyone can contribute code samples to the community, if that interests you go to <http://code.vmware.com> or click on the link **VMware{code} Sample Exchange**.
 
 1. Click on Code Samples in the menu
-2. Click on Download in the PowerCLI - VMC Example Scripts box
-3. After the script downloads. Click on the dropdown arrow
+2. Click on **Download** in the "PowerCLI - VMC Example Script" box
+3. After the script downloads. Unzip
 4. Click on **show in folder**
 5. Right click on the downloaded script
 6. Click on **Edit**
@@ -127,14 +132,15 @@ This will open the PowerShell ISE environment. Now you can see the PowerShell co
 
 Close the PowerShell ISE Window
 
-Let's now run some simple REST API commands built into Developer Center, go back to your chrome browser
+Let's now run some simple REST API commands built into Developer Center. Navigate back to your chrome browser and into your VMware Cloud on AWS page.
 
-1. Click on the **API Explorer** menu
-2. Click on the drop down arrow next to "Organization"
-3. Click on the drop down arrow next to the first "GET" API section
+1. Click on the **API Explorer** heading
+2. Click on the drop down arrow next to "Organizations"
+    ![dev center organisations](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/api-lab/Screenshot+at+Jul+19+14-08-46.png)
+3. Click on the drop down arrow next to the first "GET" API section (/orgs)
 4. Click on **Execute**
 
-What did we not do?? We did not put in any authentication to pull this data. The reason is we are using the session authentication to execute these commands. To run these commands in other application, like PowerShell or Postman, you will need to get your resource and session tokens before you can run these commands. THe Developer Center does all this for you
+What did we not do?? We did not put in any authentication to pull this data. The reason is we are using the session authentication to execute these commands. To run these commands in other application, like PowerShell or Postman, you will need to get your resource and session tokens before you can run these commands. THe Developer Center does all this for you.
 
 Let's look through the response.
 
@@ -158,22 +164,20 @@ Now let's look at the response body
 
 ## Postman
 
-In this module, we will be exploring how to use Postman to execute REST API requests and build automation through collections. Postman is an API development tool. As an example, you can create variables for use within the APIs, test the response, and use webhooks to integrate with collaboration platforms.
+In this module, we will be exploring how to use Postman to execute REST API requests and build automation through collections. Postman is an API Explorer tool. As an example, you can create variables for use within the APIs, test the response, and use webhooks to integrate with collaboration platforms.
 
 Postman is very easy to install, so let's get started.
 
 1. Open a new browser tab and go to <https://www.getpostman.com>
 2. Click on **Download the App**
-3. Find Postman for Windows (64-bit)
+3. Select Postman for Windows (64-bit)
 4. Click **Download**
 5. Double-click on the downloaded file, the install will execute without interaction.
 
 NOTE: For cleanup you can close all postman tabs in Chrome
 
-1. Click on the text: Take me straight to the app. I'll create an account another time.
-2. Close this Window
-3. Uncheck Show this window on launch
-4. Close this window
+1. Click on the text: "Skip Signing in and Take me straight to the app"
+2. Close the Pop up Window which you are presented with, Uncheck Show this window on launch check box before closing the pop up.
 
 Go back to your browser window, if you do not have a tab opened for VMware Cloud on AWS, follow the below instructions
 
@@ -185,43 +189,33 @@ Our internal API development team has done a great job pre-creating SDKs for man
 
 1. Click on **Developer Center**
 2. Click on **SDK**
-3. Click on **Source on Github for REST**
+3. Find **vSphere Automation SDK For REST**
+4. Click **View Source**
 
-You will be redirected to the vsphere-automation -sdk github page specifically for vSphere's REST API. There is a lot of great information here about how to use the vSphere REST API and VMware Cloud on AWS. We will be pulling down this github repository so we can import the VMC collection.
+This will download a vsphere-automation-sdk-rest-master.zip file to your machine. Please extract the contents of this zip file.
 
-1. Click on **Clone or download**
-2. Click on **Download ZIP**
+Now that we have Postman installed and our REST samples on our local system, lets import the VMC collection and use some the requests to build our own collection.
 
-NOTE: This is only 1 way to download a repository. If you want to actively use or even contribute to the development of the code in this repository, you can install git tools in Windows or in Linux or Mac and clone the repository in order to push commits to the repository.
-
-1. Click on the **Download menu**
-2. Click on **Open**
-3. Click on **Extract**
-4. Click on **Extract all**
-
-We will keep the default file path.
-
-1. Uncheck the box
-2. Click on Extract
-
-Now that we have Postman installed and the github repository on our local system, lets import the VMC collection and use some the requests to build our own collection.
-
-1. Click on **Import**
-2. Click on **Choose Files**
+1. In the Postman Application
+2. Click on **Import**
+3. Click on **Choose Files**
 
 To import the VMC collection json file we downloaded earlier.
 
-1. Browse to the directory we saved it to earlier. That directory should be "C:\downloads\vsphere-automation-sdk-rest-master\vsphere-automation-sdk-rest-master\samples\postman"
+1. Browse to the directory we extracted the zip file to earlier. That directory should be "C:\downloads\vsphere-automation-sdk-rest-master\vsphere-automation-sdk-rest-master\samples\postman"
 2. Click **VMware Cloud on AWS APIs.postman_collection.json**
+    ![postman collection](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/api-lab/Screenshot+at+Jul+19+15-26-05.png)
 3. Click **Open**
 
 We now need to get our refresh token for our Org in VMC. Go back to your VMware Cloud on AWS tab in your browser
 
-1. Click on the drop down next to your Student Name/Org ID
-2. Click on **OAuth Refresh Token**
-3. Click on **Copy to Clipboard**
-
-NOTE: If you have not generated a token yet, click on **Generate** and then copy to clipboard.
+1. If you do not have VMware Cloud on AWS, Open a new tab in your browser
+2. Click on the **VMware Cloud on AWS** bookmark shortcut on the Bookmarks bar
+3. Login with the email address which you used to sign up to the VMware Cloud on AWS Experience day
+4. Click on the drop down next to your Name/Org ID
+5. Click on **My Account** under "User Settings"
+6. In the My Account page, click on **API Tokens**
+7. You will see your token here which you created in the previous Powershell section. Please copy this token to your clipboard
 
 Return to the Postman app. We now need to setup a Postman environment for use with VMC. An environment is where we will be creating and storing our variables. These variables can be local or global, depending on your use within Postman. In this module, we will only be using local variables.
 
@@ -229,36 +223,40 @@ Return to the Postman app. We now need to setup a Postman environment for use wi
 2. Click on **Environment**
 3. Name the Environment "VMC"
 4. In the Key column type in "refresh_token"
-5. In the Value column use CTRL-V to paste your actual refresh token you copied in a previous step.
+5. In the Value column paste your token you copied in a previous step.
 6. Click on **Add**
 7. Close the Window
-
-Now set this as our default environment.
-
-NOTE: If you don't set the default environment to VMC, then the variables that get created will not be accessible.
-
-1. Click on the drop down arrow
-2. Select VMC
+8. Click on the drop down arrow oin the top right hand corner of the app labelled "No Environment"
+9. Select the "VMC" Environment we just created
 
 Now we will start to build our own collection by using some request that came in the SDK we imported earlier.
 
-1. Click on **Collections**
-2. Click on **Authentication and Login**
-3. See how this request is our refresh token variable we defined in an earlier step.
+1. Click on **Collections** in the left hand pane
+2. Expand the "VMware Cloud on AWS APIs" collection
+3. Expand **Authentication**
+4. Click on the Login "Post" entry
+5. See how this request has our refresh token variable we defined in an earlier step.
     NOTE: If the environment is not set to VMC, this will request will fail because the refresh_token variable is not defined.
-4. Click on **Send**
-5. You will now see the access token that was generated with the refresh token. This is the body or payload of the response to our request.
-6. Click on the Eye icon
+    ![refresh token](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/api-lab/Screenshot+at+Jul+19+15-54-04.png)
+6. Click on **Send**
+7. You will now see the access token that was generated with the refresh token. This is the body or payload of the response to our request.
+8. Click on the Eye icon
+    ![eye icon](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/api-lab/Screenshot+at+Jul+19+15-55-29.png)
 
 You will see that we have stored your access token into a variable so we can use it for future calls. How did we do that? We ran a "test" on the response body. You will see how in the next step.
 
-1. Click on Tests
+![access token](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/api-lab/Screenshot+at+Jul+19+15-57-43.png)
 
-The access_token variable was set by running some java script code against the response. We are also using the Postman setEnvironmentVariable function to create it.
+1. Click on **Tests**
+
+The access_token variable was set by running some java script code against the response. We are also using the Postman setEnvironment variable function to create it.
+
+![Tests](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/api-lab/Screenshot+at+Jul+19+16-10-43.png)
 
 Lets save this request to our own collection so we can use it later.
 
-1. Click on the drop down arrow
+1. Click on the drop down arrow next to "Save"
+    ![save request](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/api-lab/Screenshot+at+Jul+19+16-15-09.png)
 2. Click on **Save As**
 3. Change the Request name to "Authorize"
 4. Change the Request description to "Get Access Token"
@@ -267,31 +265,37 @@ Lets save this request to our own collection so we can use it later.
 7. Select the Workshop folder
 8. Click on **Save to Workshop**
 
+![save workshop](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/api-lab/Screenshot+at+Jul+19+16-18-26.png)
+
 A new window will pop open indicating that you created a new collection. We will not do anything here at this time.
 
 1. Close this window
 
 Lets request some details from our Org so we can send them to Slack.
 
-1. Click on **Orgs** and **List Orgs**
+1. In the VMware Cloud on AWS APIs collection, click on **Orgs** and **List Orgs**
 2. Click on **Headers**
 3. Click **Send**
-4. You see here how we are using the access_token variable for the csp-auth-token. This will authorize our request. NOTE: This access token is only good for 30 minutes. If you run this request and get a response of 400 unauthorized, go back and run the authorize request.
-5. Look through the response body for your Org's display_name
+
+You see here how we are using the access_token variable for the csp-auth-token. This will authorize our request. 
+
+NOTE: This access token is only good for 30 minutes. If you run this request and get a response of 400 unauthorized, go back and run the authorize request.
+
+1. Look through the response body for your Org's display_name
 
 Lets save this request to our own collection so we can use it later.
 
-1. Click on the drop down arrow
+1. Click on the drop down arrow next to "Save"
 2. Click on **Save As**
-3. Change the Request name to Org list
+3. Change the Request name to "Org list"
 4. Change the Request description to "Get a list of your Orgs"
 5. Be sure Workshop is selected under Select a collection or folder to save to:
 6. Click on **Save to Workshop**
 
-We need to replace the Test code that came with the SDK so we can create variable we want to use when send our message to Slack.
+We need to replace the Test code that came with the SDK so we can create the variables we want to use when send our message to Slack.
 
 1. Click on **Tests**
-2. Copy and paste the below code into the Tests section. NOTE: You may have to press CTRL-V to past into the text box.
+2. Copy and paste the below code into the Tests section.
 3. Click **Send**
 
 ``` javascript
@@ -306,9 +310,9 @@ for (i = 0; i < jsonData.length; i++) {
 }
 ```
 
-We can verify if the variables have been created and assigned values.
+Now we can verify if the variables have been created and assigned values.
 
-1. Click on the **eye** icon
+1. Click on the **eye** icon next to the "VMC" Environment in the top right hand corner
 2. Scroll down to see if the new variables were created.
 3. Once verified click on the **eye** icon again to close the window
 
@@ -318,12 +322,15 @@ Lets save the changes we made to this request.
 
 Now that we have details of our Org lets send them to Slack in a message.
 
+If you are not familiar with Slack, Slack is a collaboration hub tool which brings people together in "Channels". The tool allows for inbound and outbound API calls for integrations with the systems which Slack teams interact with which allows them to get their work done faster.
+
 To post to slack, a link needs to be generated for the slack channel that we want to post to. This has already been done for you and is listed below. One of the instructors will have this slack channel displayed on the screens. So you can see the results. Slack channel URL: <https://hooks.slack.com/services/T9HQFCTC1/B9JBL5SV7ArgKjF4zZDh7dnaWRyKNJfRY>
 
 Now we need to setup the request:
 
-1. Click on the "+" sign for a new request
-2. Change the request type to POST
+1. Click on "+" across the top to open a new tab
+    ![new tab](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/api-lab/Screenshot+at+Jul+19+16-47-57.png)
+2. Change the request type to "POST"
 3. Cut and paste the above slack channel URL to the address box
 4. Select Body
 5. Change the format type to raw
