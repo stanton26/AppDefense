@@ -46,13 +46,13 @@ We now need to install the VMware CLI commands
 Install-Module -name VMware.VMC -scope AllUsers
 ```
 
-Note: You will be asked to trust an untrusted repository, type **Y** and press **Enter**
-
 Let's take a quick look at the VMware CLI commands.
 
 ``` powershell
 Get-VMCCommand
 ```
+
+![get-vmccommand](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/api-lab/Screenshot+at+Jul+19+13-22-31.png)
 
 We now need to get your Refresh Token from the VMC console.
 
