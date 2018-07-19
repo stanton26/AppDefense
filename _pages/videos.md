@@ -5,6 +5,7 @@ title: "VMware Cloud on AWS Instructional Videos"
 date: 2018-07-19
 tags: links
 classes: wide
+comments: true
 ---
 # Introduction
 
@@ -20,7 +21,7 @@ Listed below are a number of videos which have been produced by Jeffrey Moore fr
 
 ## VMware Cloud on AWS - DRaaS with Site Recovery Manager
 
-{% include video id="6ZkYEotT0M" provider="youtube" %}
+{% include video id="-6ZkYEotT0M" provider="youtube" %}
 
 ## VMware Cloud on AWS - Native AWS Service (Load Balancing)
 
