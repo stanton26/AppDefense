@@ -11,7 +11,7 @@ comments: true
 ---
 # Introduction
 
-In this lab exercise we will be showing how you can intereact with the VMware Cloud on AWS platform through programmatic means. We will go through how we can use PowerShell as a means to interact with the Cloud Solution Platform. We will then delve into how we can interact with the VMware Cloud on AWS REST API and perform actions in both the interegrated "Developer Center" view in the console, and also through popular third party and open source REST clients. For the purposes of our lab exercise we will be making use of the popular "Postman" software.
+In this lab exercise we will be showing how you can intereact with the VMware Cloud on AWS platform through programmatic means. We will go through how we can use PowerShell as a means to interact with the Cloud Solution Platform as well as the vCenter instance. We will then delve into how we can interact with the VMware Cloud on AWS REST API and perform actions in both the interegrated "Developer Center" view in the console, and also through popular third party and open source REST clients. For the purposes of our lab exercise we will be making use of "Postman" as our REST Client.
 
 ## Using PowerShell
 
@@ -19,7 +19,6 @@ In this lab exercise we will be showing how you can intereact with the VMware Cl
 
 1. Click on **Start**, and scroll down until you see the Windows PowerShell menu
 2. Right click on the **PowerShell CLI** shortcut icon and select **Run as Administrator**
-3. Click **Yes**
 
 Install the VMware PowerCLI module if not loaded
 
@@ -27,27 +26,19 @@ Install the VMware PowerCLI module if not loaded
 install-Module VMware.PowerCLI
 ```
 
-Note: You can use the tab complete feature to complete the command. ie...type install-mod and then press tab. There may be a slight delay the first time but the command **install-module** will complete.
-
-Note: You will be asked to install the NuGet provider, take the default or press Y and press enter, you will then be asked to trust an untrusted repository, DO NOT take the default but type **Y** and press Enter.
-
 We now need to set the execution policy to Remote Signed in the PowerShell session.
 
 ``` powershell
-Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -force
 ```
-
-Note: You will be asked to change the execution policy, type **Y** and press **Enter**
 
 You now will need to set the PowerCLI Configuration to Ignore Invalid Certificates. Please type the following command to action this.
 
 ``` powershell
-Set-PowerCLIConfiguration -InvalidCertificateAction Ignore
+Set-PowerCLIConfiguration -InvalidCertificateAction Ignore -Confirm:$false
 ```
 
-NOTE: Be sure the "i" in "Ignore" is capitalized
-
-NOTE: You will be asked to Update PowerCLI Configuration, type **Y** and press Enter
+NOTE: Be sure the "i" in "Ignore" is capitalized if you are not using copy/paste to input this command
 
 We now need to install the VMware CLI commands
 
