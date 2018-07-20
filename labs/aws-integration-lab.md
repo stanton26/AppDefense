@@ -8,6 +8,7 @@ toc: true
 classes: wide
 author_profile: false
 comments: true
+categories: labs
 ---
 # Introduction
 

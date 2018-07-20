@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "vRealize Automation Lab Manual"
-date: 2018-06-01
+date: 2018-07-20
 tags: workshop
 toc: true
 classes: wide
@@ -9,6 +9,8 @@ author_profile: false
 comments: true
 ---
 # Introduction
+
+Very often, customers want to utilise tools which sit above the vCenter API layer and provide additional value to the consumption or onitoring process. One such tool is VMware vRealize Automation which can be utilised to create a governance and "store front" portal so that users can provision workloads where they wish, based on policies defined by the Cloud Administrator.
 
 ## What is vRealize Automation (vRA)
 
@@ -38,9 +40,9 @@ You have successfully logged in to vRealize Automation!
 
 ## Add a vSphere Endpoint
 
-An endpoint is anything that vRealize Automation uses to complete it's provisioning processes. This could be a public cloud resource such as Amazon Web Services EC2, VMware Cloud on AWS, an external orchestrator appliance, or a private cloud hosted by vSphere or other hypervisors.
+An endpoint is anything that vRealize Automation uses to complete it's provisioning processes. This could be a public cloud resource such as Amazon Web Services EC2, Microsoft Azure, VMware Cloud on AWS, an external orchestrator appliance, or a private cloud hosted by vSphere or other hypervisors.
 
-1. Click on **Infrastructure** tab
+1. Click on the **Infrastructure** tab
 2. Click on **Endpoints** on left pane
 3. Click on **Endpoints** again on the left pane
 4. Click on **New** button
@@ -61,10 +63,10 @@ An endpoint is anything that vRealize Automation uses to complete it's provision
 
 ## Create a Fabric Group
 
-An administrator can organize virtualization compute resources and cloud endpoints into fabric groupsby type and intent. Make sure for this step you've selected the Endpoint you created in the previous module.
+An administrator can organize virtualization compute resources and cloud endpoints into fabric groups by type and intent. Make sure for this step you've selected the Endpoint you created in the previous module.
 
 1. Click on **Fabric Groups** on the left pane
-2. Click on **+ New** to create a new Fabric Group
+2. Click on "+ New" to create a new Fabric Group
 3. Name your Fabric Group **ws#FabricGroup** (where # is your student #)
 4. Add the user assigned to your student number: **vmcws#@corp.local** and click on the magnifying glass icon to find and add your user
 5. Select the vRealize Automation endpoint you created in the previous step
@@ -153,13 +155,16 @@ A blueprint is a complete specification for a service. A blueprint determines th
 9. Click the **+** sign next to **Entitled Services**
 10. Make sure to select the checkbox next to **Desktops**
 11. Click **OK**
-12. Click on the **+** sign next to **Entitle Actions**
+12. Click on the "+" sign next to **Entitle Actions**
 13. Select the checkbox at the top to select all Actions
 14. Click **OK** button
 15. Click **Finish** button
-16. Select the **Catalog** tab
-17. Click on your newly created **Student#** blueprint and click on the **Request** button
-18. Highlight the **vSphere_VCenter_Machine** under your Blueprint
-19. Check all the options are correct and click the **Submit** button
-20. Click on the **Requests** tab to check on the status of your Blueprint submission
-21. Check the status to ensure the request completes successfully
+
+### Request a catalog item
+
+1. Select the **Catalog** tab
+2. Click on your newly created **Student#** blueprint and click on the **Request** button
+3. Highlight the **vSphere_VCenter_Machine** under your Blueprint
+4. Check all the options are correct and click the **Submit** button
+5. Click on the **Requests** tab to check on the status of your Blueprint submission
+6. Check the status to ensure the request completes successfully
