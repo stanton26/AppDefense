@@ -19,6 +19,8 @@ In this lab we will work through some common basic integrations which you can ut
 
 ### Deploy Photo VM
 
+As a first step in setting up our integration between the VMware vSphere platform in VMware Cloud on AWS and native AWS services, we are going deploy a VM which we will use for this demo. This VM will be referred to as "Photo VM". Please follow the instructions below.
+
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-77-Image-113.png)
 
 1. If not already opened, open your VMware Cloud on AWS vCenter and click on the **Menu** drop down

@@ -150,9 +150,9 @@ You may already have a Content Library in your on-premises data center, you can 
 3. (Optional) Enter some notes for your Content Library
 4. Click **Next** button
 5. Select **Subscribed content library**
-6. Under **Subscription URL** enter the following: https://vcenter.sddc-34-216-241-49.vmc.vmware.com/cls/vcsp/lib/8d658764-2e89-44ff-https://vcenter.sddc-34-216-241-49.vmc.vmware.com/cls/vcsp/lib/8d658764-2e89-44ff-a7c1-ee777f0dfc8f/lib.jsona7c1-ee777f0dfc8f/lib.json
+6. Under **Subscription URL** enter the following:
 
-    PLEASE NOTE THAT THERE MAY BE AN ISSUE WITH DROPPING/ADDITION OF CHARACTERS FOR THE URL WHEN COPYING AND PASTING FROM THE MANUAL. THE ACTUAL URL IS ALSO AVAILABLE IN YOUR STUDENT DESKTOP ON THE Z:\ DRIVE IN A TEXT FILE, OPEN THIS TEXT FILE AND COPY THE URL FROM THERE. ASK YOUR INSTRUCTOR IN THE EVENT YOU CANNOT LOCATE IT.
+    <https://vcenter.sddc-34-216-241-49.vmc.vmware.com:443/cls/vcsp/lib/4aa185b4-3d6e-45b4-90ca-cd3a845d4502/lib.json>
 7. Click the checkbox for **Enable Authentication**
 8. For the **Password** enter: **VMware1!**
 9. Ensure Download content is set to **Immediately**
