@@ -11,6 +11,8 @@ comments: true
 ---
 # Introduction
 
+In this lab exercise you will learn about Hybr Cloud Extension (HCX), Primarily this is a tool, bundled with VMware Cloud on AWS, which will allow you to bulk migrate workloads to VMware Cloud on AWS and significantly reduce the time and complexity of moving workloads into the public cloud sphere.
+
 ## What is Hybrid Cloud Extension (HCX)
 
 Hybrid Cloud Extension abstracts on-premises and cloud resources and presents them to the apps as one continuous hybrid cloud. On this, Hybrid Cloud Extension provides high-performance, secure and optimized multisite interconnects. The abstraction and interconnects create infrastructure hybridity. Over this hybridity, Hybrid Cloud Extension facilitates secure and seamless app mobility and disaster recovery across on-premises vSphere platforms and VMware Clouds. Hybrid Cloud Extension is a multi-site, multi cloud service, facilitating true hybrid cloud.
@@ -27,7 +29,7 @@ Eliminate the need for cloud readiness and app dependency assessment
 - IP and MAC address remapping is not required
 - No need to retrofit existing VM environment
 - Hybrid Cloud Extension provides warm and cold bulk migration, and bidirectional migration
-- Hybrid Cloud Extension simplifies your operational model Architected for SecurityArchitected for Security
+- Hybrid Cloud Extension simplifies your operational model Architected for Security
 - Ensure highly secure tethering of private and public clouds
 - Protect resources with resilient disaster recovery capabilities
 - Hybrid Cloud Extension hybrid DMZ enables portability of enterprise network and security practices to the cloud
