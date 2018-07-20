@@ -15,87 +15,65 @@ One of the most compelling reasons to adopt VMware Cloud on AWS is to integrate 
 
 In this lab we will work through some common basic integrations which you can utilise in your VMware Cloud on AWS platform.
 
+Note: There is a requirement in this lab to have completed the steps in the [Working with your SDDC Lab](https://vmc-field-team.github.io/labs/working-with-sddc-lab/) concerning Content Library creation and Network creation.
+
 ## AWS Relational Database Service (RDS) Integration
 
 ### Deploy Photo VM
 
 As a first step in setting up our integration between the VMware vSphere platform in VMware Cloud on AWS and native AWS services, we are going deploy a VM which we will use for this demo. This VM will be referred to as "Photo VM". Please follow the instructions below.
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-77-Image-113.png)
-
 1. If not already opened, open your VMware Cloud on AWS vCenter and click on the **Menu** drop down
 2. Select **Content Libraries**
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-78-Image-114.png)
 3. Click on your previously created Content Library named **Student#** (where # is your student number)
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-78-Image-115.png)
-4. If not already there, make sure you click on the **Template** tab
+4. Make sure you click on the **Template** tab
 5. Right-click on the **photo app** Template
 6. Select **New VM from This Template**
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-79-Image-115.png)
 7. Name the virtual machine **PhotoApp#** (where # is your student #)
 8. Expand the location and select **Workloads**
 9. Click **Next**
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-79-Image-116.png)
 10. Expand the destination to select **Compute-ResourcePool** as the compute resource
 11. Click **Next**
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-80-Image-117.png)
-12. In the **Review details** step click **Next**
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-80-Image-118.png)
-13. In the **Select storage** step, highlight the **WorkloadDatastore**
+12. In the "Review details" step click **Next**
+13. In the **Select storage** step, highlight the "WorkloadDatastore"
 14. Click **Next**
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-81-Image-119.png)
 15. Select the network you created in a previous step for your VM
 16. Click **Next**
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-81-Image-120.png)
 17. Click **Finish**
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-82-Image-121.png)
 18. Monitor the deployment of your VM until it's completed
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-82-Image-122.png)
 19. Check for completion of the deployment of your VM
 20. Click **Menu**
 21. Select **VMs and Templates**
-        ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-83-Image-123.png)
 22. Check to make sure your VM is powered on. If not, right-click on your VM
 23. Select **Power** -> **Power On**
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-83-Image-124.png)
-24. Make sure your VM is assigned an IP addresses (may need to wait a minute or 2). Make a note of this IP address for a future step.
+24. Make sure your VM is assigned an IP addresses (may need to a few minutes for this information to be populated). Make a note of this IP address for a future step.
 
 ### Firewall Rules for RDS Integration
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-84-Image-125.png)
+In this step we will ensure that we have the correct firewall rules in place in order for our Photo App VM in VMware Cloud on AWS to talk across to the RDS service in our AWS VPC.
 
 1. Go back your VMware Cloud on AWS portal and click on the **Network** tab in order to request a **Public IP address**
 2. Under the **Compute Gateway** click and expand **Public IPs**
-3. Click on **REQUEST PUBLIC IP**
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-84-Image-126.png)
-4. (Optional) Enter Notes for this public IP
+3. Click on **REQUEST PUBLIC IP***
+4. (Optional) Enter Notes for this public IP, such as the name of the VM we are linking this too.
 5. Click on **Request**
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-84-Image-127.png)
-6. You should see a similar notification as the one above
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-85-Image-128.png)
-7. Take note of your newly acquired Public IP address
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-85-Image-129.png)
-8. Next you will create a **NAT rule** from the newly acquired Public IP address you noted in your last step to the internal IP address of the VM you created. Click on **NAT** to expand
-9. Click **ADD NAT RULE**
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-85-Image-130.png)
-10. Give your **NAT rule** a name
-11. Your new Public IP address should be pre-filled for you, if not, enter it
-12. Under **Service** select **Any (All Traffic)**
-13. Type your VM's internal IP address
-14. Click the **SAVE** button
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-85-Image-131.png)
-15. You should get a **NAT rule successfully created** notification
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-85-Image-132.png)
-16. Expand **Firewall Rules**
-17. Click **ADD RULE**
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-86-Image-133.png)
-18. Give your Firewall Rule a name
-19. Select **All Internet and VPN** for **Source**
-20. Type the Public IP Address you noted under **Destination**
-21. Select **Any (All Traffic)** for **Service**
-22. Click **SAVE** button
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-86-Image-134.png)
-23. You should get a **Firewall rule successfully created** notification
+6. Take note of your newly acquired Public IP address
+7. Next you will create a **NAT rule** from the newly acquired Public IP address you noted in your last step to the internal IP address of the VM you created. Click on **NAT** under the "Compute Gateway" section to expand the NAT Rules
+8. Click **ADD NAT RULE**
+9. Give your **NAT rule** a name
+10. Your new Public IP address should be pre-filled for you, if not, select it now
+11. Under **Service** select **Any (All Traffic)**
+12. Type your VM's internal IP address
+13. Click the **SAVE** button
+14. You should get a **NAT rule successfully created** notification
+15. Expand **Firewall Rules** under the Compute Gateway section
+16. Click **ADD RULE**
+17. Give your Firewall Rule a name
+18. Select **All Internet and VPN** for **Source**
+19. Type the Public IP Address you noted under **Destination**
+20. Select **Any (All Traffic)** for **Service**
+21. Click **SAVE** button
+22. You should get a **Firewall rule successfully created** notification
 
 ### AWS Relational Database Service (RDS Configuration)
 
