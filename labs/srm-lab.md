@@ -13,7 +13,7 @@ categories: labs
 
 ## Activate Site Recovery Add On
 
-Important Instructions for Site Recovery ExercisesImportant Instructions for Site Recovery Exercises
+Important Instructions for Site Recovery Exercises
 
 PLEASE BE AWARE THAT THESE EXERCISES MUST BE PERFORMED FROM THE ASSIGNED RDP DESKTOP YOUR INSTRUCTORS ASSIGNED. IF YOU TRY TO PERFORM SOME OF THE EXERCISES OUTSIDE OF THE RDP SESSION YOU WILL EXPERIENCE SOME FAILURES.
 
