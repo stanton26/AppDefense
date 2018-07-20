@@ -2,7 +2,7 @@
 layout: single
 title: "AWS Integration Lab Manual"
 categories: labs
-date: 2018-06-01
+date: 2018-07-20
 tags: workshop
 toc: true
 classes: wide
@@ -10,6 +10,10 @@ author_profile: false
 comments: true
 ---
 # Introduction
+
+One of the most compelling reasons to adopt VMware Cloud on AWS is to integrate your existing systems which sit in your VMware cloud environment, with application platforms which reside in your AWS Virtual Private Cloud (VPC) environment. The intergration which VMware and AWS have created allows for these services to communicate, for free, across a private network address space for services such as EC2 instances, which connect into subnets within a native AWS VPC, or with platform services which have the ability to connect to a VPC Endpoint, such as S3 Storage.
+
+In this lab we will work through some common basic integrations which you can utilise in your VMware Cloud on AWS platform.
 
 ## AWS Relational Database Service (RDS) Integration
 
