@@ -21,6 +21,8 @@ At the start of the workshop, your instructor will have given you logon details 
 
 Below are the credentials for workshop on July 24th 2018. 
 
+![](https://s3-us-west-2.amazonaws.com/partner-workshop-screenshots/student-access-july24.png)
+
 ### Location of Files
 
 Any file(s) referenced in this manual are located in the Z: drive of the Horizon desktop you are assigned
