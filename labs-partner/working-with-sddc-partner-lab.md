@@ -13,31 +13,13 @@ comments: true
 
 In this lab we are going to start with looking at the basic tasks which you will perform in the VMware Cloud on AWS user interface when you are administering the platform.
 
-## Add a Host to your SDDC
-
-We will start by adding a host to the VMware Cloud on AWS platform. For the purposes of this lab, we have already precreated the VMware Cloud on AWS SDDC environments for you, in order to save time.
-
-In your chrome browser you will see a bookmark on the bokkmarks bar named **VMware Cloud Services**. Please click this bookmark.
-
-You will be directed to a login page for Cloud Services from VMware. You will need to login with the email address which you signed up to the VMware Cloud on AWS Experience day with. You will also need to ensure that this email address is associated with a "MyVMware Account" in order for the login to VMware Cloud Services to work correctly.
-
-You will now be logged into your organisation hosting your VMware Cloud on AWS SDDC cluster.
-
-1. On your "Student Workshop #" SDDC, click on the "View Details" button.
-    ![View details](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/Screenshot+at+Jul+17+15-32-13.png)
-2. Click on the **Actions** button in the upper right hand corner of the UI
-3. Click on **Add Hosts**
-4. In this student environment, we have restricted the platform to only allow the addition of one host. If this were a customer environment there would not be this restriction
-5. Click the **Add Hosts** button
-    ![Add Hosts](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/Screenshot+at+Jul+17+15-45-30.png)
-
-Your SDDC environment will now go through the process of adding an additional host to the SDDC environment. The process can take up to 10 minutes to complete. In the background automated tasks are provisoning an additional host, adding the host to the SDDC cluster and extending the VSAN cluster to utilise the storage presented by this additional host. All of this is done without human interaction in roughly 10 minutes. You may choose to wait for this action to process or move onto the next exercise and check back later to see your additional host.
-
-Congratulations! You have completed this step. Please move onto configuring your SDDC Firewall rules below.
-
-----------------
-
 ## Configuring SDDC Firewall Rules
+
+We will start by allowing inbound internet access to your vCenter managing your SDDC. We have already pre-created the VMware Cloud on AWS SDDC environment for you, in order to save time. 
+
+In your chrome browser you will see a bookmark on the bookmars bar names **VMware Cloud Services**. Please click this bookmark
+
+You will be directed to a login page for Cloud Services from VMware. You will need to login with the email address which you provided to the presenter. You will also need to ensure that this email address is associated with a "MyVMware Account" in order for the login to the VMware Cloud Services to work correctly.
 
 In VMware Cloud on AWS we have two Edge Gateways which are protecting the two main networks in the VMware Cloud on AWS SDDC. The **Management Network** and the **Compute Network**. When we first intiate your SDDC environment, the default is for all traffic to both the Management and Compute networks to be denied. In this exercise we will go through the steps required to open up firewall rules so that we can manage the SDDC and not only access compute workloads but allow those compute workloads to communicate with native AWS services.
 
