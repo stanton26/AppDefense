@@ -17,7 +17,7 @@ The class is a one-day activity where we will go through the acitivities of sett
 
 ### Horizon Access
 
-At the start of the workshop, your instructor will have given you logon details to use in a VMware Horizon session. In order to access details regarding how to connect to Horizon, you will have been directred to the following link to [Student Access Instructions](https://vmc-field-team.github.io/student-access/)
+At the start of the workshop, your instructor will have given you logon details to use in a VMware Horizon session. You can access your horizon session at <https://54.70.94.188/> (If you are experiencing latency it is recommended to use the horizon client instead of the html client.)
 
 ### Location of Files
 
@@ -26,10 +26,6 @@ Any file(s) referenced in this manual are located in the Z: drive of the Horizon
 ### Workshop URL's
 
 VMware Cloud on AWS Login <https://vmc.vmware.com>
-
-vRealize Automation <https://vraapp.corp.local/vcac>
-
-vRealize Operations <https://vrops.corp.local>
 
 Swagger API Interface <https://vmc.vmware.com/swagger/index.html>
 
