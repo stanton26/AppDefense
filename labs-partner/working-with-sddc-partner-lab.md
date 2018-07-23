@@ -248,18 +248,4 @@ Congratulations! You have successfully created your VM Customization Spec for yo
 15. Click **Next**
 16. In the "Ready to complete" section, review and ensure all your selections are correct and click **Finish**
 
-## Convert a Virtual Machine to a Template
-
-In this step you will be cloning your newly created Virtual Machine into a Template for later use in vRealize Automation section.
-
-1. Ensure your VM deployment completed from your previous step
-2. Click on **Menu**
-3. Select **VMs and Templates**
-4. Select your newly created VM **Student#** (where # is your student number)
-5. Click on **Template**
-6. Select **Convert to Template**
-7. Click **Yes**  in the Convert to Template prompt
-
-You have completed this lab. Please continue to the API Lab which you can access from this [API Lab Link](https://vmc-field-team.github.io/labs/api-lab/)
-
 Please add comments below if you would like to give feedback on this lab.
