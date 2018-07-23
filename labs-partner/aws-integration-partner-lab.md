@@ -16,7 +16,7 @@ One of the most compelling reasons to adopt VMware Cloud on AWS is to integrate 
 
 In this lab we will work through some common basic integrations which you can utilise in your VMware Cloud on AWS platform.
 
-Note: There is a requirement in this lab to have completed the steps in the [Working with your SDDC Lab](https://vmc-field-team.github.io/labs/working-with-sddc-lab/) concerning Content Library creation and Network creation and firewall rule creation.
+Note: There is a requirement in this lab to have completed the steps in the [Working with your SDDC Lab](https://vmc-field-team.github.io/labs-partner/working-with-sddc-partner-lab/) concerning Content Library creation and Network creation and firewall rule creation.
 
 ## AWS Relational Database Service (RDS) Integration
 
@@ -80,7 +80,7 @@ In this step we will ensure that we have the correct firewall rules in place in 
 
 On your browser, open a new tab and go to: <https://vmcworkshop.signin.aws.amazon.com/console>
 
-1. For Account ID or alias ensure "vmcworkshop" is specified
+1. For Account ID or alias ensure "vmcworkshop-partner" is specified
 2. IAM user name - Student# (where # is the number assigned to you)
 3. Password - VMCworkshop1211
 4. Click **Sign In**
@@ -143,7 +143,7 @@ In our next section on integrating AWS services with VMware Cloud on AWS. We wil
 
 On your browser, open a new tab and go to: <https://vmcworkshop.signin.aws.amazon.com/console>
 
-1. Account ID or alias - vmcworkshop
+1. Account ID or alias - vmcworkshop-partner
 2. IAM user name - Student# (where # is the number assigned to you)
 3. Password - **VMCworkshop1211**
 4. Click **Sign In**
