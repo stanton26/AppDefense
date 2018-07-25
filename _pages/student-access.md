@@ -1,12 +1,11 @@
 ---
 layout: single
 permalink: /student-access/
-title: "Student Access"
 date: 2018-06-22
 tags: students
 classes: wide
 ---
-# Student Information
+# Student Access
 
 In order to access your student lab environment you will need to conenct through the Horizon portal. You can do this either through your web browser, or you can download the client.
 
