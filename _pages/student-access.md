@@ -50,7 +50,7 @@ The Password for these desktops is: [To be provided by workshop leader]
 |Student 8|VMC-WS8|Student #8|corp\VMCWS8|
 |Student 9|VMC-WS9|Student #9|corp\VMCWS9|
 |Student 10|VMC-WS10|Student #10|corp\VMCWS10|
-|Student 11|VMC-WS1|Student #11corp\VMCWS11|
+|Student 11|VMC-WS1|Student #11|corp\VMCWS11|
 |Student 12|VMC-WS2|Student #12|corp\VMCWS12|
 |Student 13|VMC-WS3|Student #13|corp\VMCWS13|
 |Student 14|VMC-WS4|Student #14|corp\VMCWS14|
