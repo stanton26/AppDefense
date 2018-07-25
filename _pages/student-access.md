@@ -1,6 +1,7 @@
 ---
 layout: single
 permalink: /student-access/
+title: ""
 date: 2018-06-22
 tags: students
 classes: wide
