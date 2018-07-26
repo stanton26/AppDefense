@@ -19,9 +19,9 @@ The class is a one-day activity where we will go through the acitivities of sett
 
 At the start of the workshop, your instructor will have given you logon details to use in a VMware Horizon session. You can access your horizon session at <https://54.70.94.188/> (If you are experiencing latency it is recommended to use the horizon client instead of the html client.)
 
-Below are the credentials for workshop on July 25th 2018. 
+Below are the credentials for workshop on July 26th 2018. 
 
-![](https://s3-us-west-2.amazonaws.com/partner-workshop-screenshots/student-access-july25.png)
+![](https://s3-us-west-2.amazonaws.com/partner-workshop-screenshots/student-access-july26.png)
 
 ### Location of Files
 
