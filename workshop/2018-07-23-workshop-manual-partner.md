@@ -21,7 +21,7 @@ At the start of the workshop, your instructor will have given you logon details 
 
 Below are the credentials for workshop on July 26th 2018. 
 
-![](https://s3-us-west-2.amazonaws.com/partner-workshop-screenshots/student-access-july26.png)
+![]()
 
 ### Location of Files
 
