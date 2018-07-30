@@ -17,9 +17,14 @@ In this lab we are going to start with looking at the basic tasks which you will
 
 We will start by allowing inbound internet access to your vCenter managing your SDDC. We have already pre-created the VMware Cloud on AWS SDDC environment for you, in order to save time. 
 
-In your browser of choice please login to **cloud.vmware.com** click on "Log in" at the top right hand corner of the screen. 
+In your browser of choice please login to <https://cloud.vmware.com> click on "Log in" at the top right hand corner of the screen.
+    ![cloud.vmwware.com](https://s3-us-west-2.amazonaws.com/partner-workshop-screenshots/Login1.png)
+
+Select **Login**
+    ![cloud.vmware.com (login)](https://s3-us-west-2.amazonaws.com/partner-workshop-screenshots/Login2.png)
 
 You will be directed to a login page for Cloud Services from VMware. You will need to login with the email address which you provided to the presenter. You will also need to ensure that this email address is associated with a "MyVMware Account" in order for the login to the VMware Cloud Services to work correctly.
+    ![Enter credentials provided to instructor. Note this email must be registed with <myvmware.com>](https://s3-us-west-2.amazonaws.com/partner-workshop-screenshots/Login3.png)
 
 In VMware Cloud on AWS we have two Edge Gateways which are protecting the two main networks in the VMware Cloud on AWS SDDC. The **Management Network** and the **Compute Network**. When we first intiate your SDDC environment, the default is for all traffic to both the Management and Compute networks to be denied. In this exercise we will go through the steps required to open up firewall rules so that we can manage the SDDC and not only access compute workloads but allow those compute workloads to communicate with native AWS services.
 
