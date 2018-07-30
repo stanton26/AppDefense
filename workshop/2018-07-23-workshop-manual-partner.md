@@ -19,10 +19,6 @@ The class is a one-day activity where we will go through the acitivities of sett
 
 At the start of the workshop, your instructor will have given you logon details to use in a VMware Horizon session. You can access your horizon session at <https://54.70.94.188/> (If you are experiencing latency it is recommended to use the horizon client instead of the html client.)
 
-Below are the credentials for workshop on July 26th 2018. 
-
-![]()
-
 ### Location of Files
 
 Any file(s) referenced in this manual are located in the Z: drive of the Horizon desktop you are assigned
