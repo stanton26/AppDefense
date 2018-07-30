@@ -17,7 +17,7 @@ In this lab we are going to start with looking at the basic tasks which you will
 
 We will start by allowing inbound internet access to your vCenter managing your SDDC. We have already pre-created the VMware Cloud on AWS SDDC environment for you, in order to save time. 
 
-In your chrome browser you will see a bookmark on the bookmars bar names **VMware Cloud Services**. Please click this bookmark
+In your browser of choice please login to **cloud.vmware.com** click on "Log in" at the top right hand corner of the screen. 
 
 You will be directed to a login page for Cloud Services from VMware. You will need to login with the email address which you provided to the presenter. You will also need to ensure that this email address is associated with a "MyVMware Account" in order for the login to the VMware Cloud Services to work correctly.
 
@@ -39,6 +39,8 @@ By default, the firewall for the Management Gateway is set to deny all inbound a
 9. Click the **SAVE** button, your rule should look like the below image
 
 ![vCenter Rule](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/Screenshot+at+Jul+17+20-55-42.png)
+
+Note: In a production environment it is not recommended to open vCenter access from any source but rather from an established VPN connection to a trusted secure network. 
 
 ### Compute Gateway Firewall Rules
 
