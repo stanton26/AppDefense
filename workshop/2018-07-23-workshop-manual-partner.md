@@ -15,14 +15,6 @@ The class is a one-day activity where we will go through the acitivities of sett
 
 ## Workshop Details
 
-### Horizon Access
-
-At the start of the workshop, your instructor will have given you logon details to use in a VMware Horizon session. You can access your horizon session at <https://54.70.94.188/> (If you are experiencing latency it is recommended to use the horizon client instead of the html client.)
-
-### Location of Files
-
-Any file(s) referenced in this manual are located in the Z: drive of the Horizon desktop you are assigned
-
 ### Workshop URL's
 
 VMware Cloud on AWS Login <https://vmc.vmware.com>
@@ -31,27 +23,9 @@ Swagger API Interface <https://vmc.vmware.com/swagger/index.html>
 
 AWS Console <https://vmcworkshop.signin.aws.amazon.com/console>
 
-### Workshop Bookmarks
-
-Import Bookmarks into Chrome by double clicking the Chrome Icon on your Desktop (Preferred browser for workshop)
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-7-Image-1.png)
-
-1. Click on the three dots on the top right corner
-2. Select **Bookmarks**
-3. Select **Import bookmarks and settings**
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-8-Image-2.png)
-4. Click on the down arrow where it states "Microsoft Edge"
-5. Select **Bookmarks HTML File**  
-6. Click **Choose File**  
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-9-Image-4.png)
-7. Navigate to the Z: drive by going to **This PC > Z:\p**
-8. Select **bookmarks_vmc_workshop**
-9. Click **Open**
-
 ## Labs
 
 Lab Name | Description
 [Working with your SDDC](https://vmc-field-team.github.io/labs-partner/working-with-sddc-partner-lab/){:target="_blank"} | Learn the basics of running a a VMware on AWS SDDC environment
 [AWS Integration](https://vmc-field-team.github.io/labs-partner/aws-integration-partner-lab/){:target="_blank"} | Learn how to integrate with native AWS services such as RDS and EFS
-[VMware on AWS APIs](https://vmc-field-team.github.io/labs-partner/api-partner-lab/){:target="_blank"} | Learn how to interact with VMware on AWS through APIs
+[VMware on AWS APIs (Optional)](https://vmc-field-team.github.io/labs-partner/api-partner-lab/){:target="_blank"} | Learn how to interact with VMware on AWS through APIs
