@@ -141,7 +141,7 @@ In our next section on integrating AWS services with VMware Cloud on AWS. We wil
 
 ### AWS Elastic File System (EFS)
 
-On your browser, open a new tab and go to: <https://vmcworkshop.signin.aws.amazon.com/console>
+On your browser, open a new tab and go to: <https://vmcworkshop-partner.signin.aws.amazon.com/console>
 
 1. Account ID or alias - vmcworkshop-partner
 2. IAM user name - Student# (where # is the number assigned to you)
