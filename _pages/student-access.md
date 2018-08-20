@@ -36,7 +36,7 @@ Follow the steps below to access the desktop via the web browser
 
 [VMware Horizon HTML Portal Access](https://workshop.vmc.ninja/portal/webclient/index.html)
 
-The Password for these desktops is: [To be provided by workshop leader]
+The Password for these desktops is: [To be provided by workshop leader]:  x16Lj>6m=
 
 | Student Name | SDDC     | Student Number | Horizon Login |
 |:-------------|:---------|:---------------|:----------|
