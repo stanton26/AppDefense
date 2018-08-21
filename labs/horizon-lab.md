@@ -153,3 +153,28 @@ As we support Full Clones at the moment we need to create a windows customizatio
 13. type in " windows server domain" corp.local
 14. username : your studen username / password ... /  Check this point with adam
 15. click **OK**
+
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/customization2.png)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/customization3.png)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/customization4.png)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/customization5.png)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-server1.png)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-server2.png)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-server3.png)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-server4.png)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-server5.png)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-server6.png)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-server7.png)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-server8.png)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-server9.png)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-pool1.png)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-pool2.png)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-pool3.png)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-pool4.png)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-pool5.png)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-pool6.png)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-pool7.png)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-pool8.png)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-pool9.png)
+
