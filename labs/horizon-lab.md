@@ -65,7 +65,7 @@ Fill in the following information
     Fill in the following information
 3. Name this VPN **Student# to Host** (where # is your student number)
 4. Enter **54.70.191.234** for the Remote Gateway Public IP
-5. Enter  **Stunen LN network created** for example **192.168.1.0/24** for Stunden 1 SDDC under Remote Networks
+5. Enter  **192.168.30.0/24** for Student 1 SDDC u der remote network
 6. Pre-shared key is **VMware1!**
 7. Click on **Save**.
 
@@ -114,7 +114,6 @@ You may already have a Content Library in your on-premises data center, you can 
 3. (Optional) Enter some notes for your Content Library
 4. Click **Next** button
 
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-21-Image-22.png)
 5. Select **Subscribed content library**
 6. Under **Subscription URL** enter the following: <https://vcenter.sddc-34-216-241-49.vmc.vmware.com:443/cls/vcsp/lib/ddfe9c01-09ea-4fc2-a03b-91cc7ed5f4b1/lib.json>
 
@@ -130,4 +129,29 @@ You may already have a Content Library in your on-premises data center, you can 
 
 
 ## Import an Windows Customization Spec 
+
+As we support Full Clones at the moment we need to create a windows customization spec that we will use in Horizon for creating a bunch of VM's and this will be directly placed in the Active Directoy.
+
+
+1.  Click on **Menu**
+2.  Click **Policies and Profiles**
+3.  Click on **import**
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/customization1.png)
+
+4.  Click on **Browse**
+5.  got to "Z:\Horizon\W10-NEW.xml"
+6.  enter a name **W10-Customization**
+7.  Click **OK**
+
+
+### We now do have a customization spec imported. We need to open it and run through all the settings again to double check everything is configurated right
+
+8.  Click on your new imported Custom Spec click **edit**
+9.  Check Guest OS "Generate a new security identity (SID)" is selected
+10. Click on the left site on **Administrator password**
+11. Set Administrator password to **VMware1!**
+12. Click on the left site on **Workgroup or domain**
+13. type in " windows server domain" corp.local
+14. username : your studen username / password ... /  Check this point with adam
+15. click **OK**
 
