@@ -154,14 +154,30 @@ As we support Full Clones at the moment we need to create a windows customizatio
 14. username : your studen username / password ... /  Check this point with adam
 15. click **OK**
 
+## Create your SDDC vcenter as an enpoint in the existing Horizon environment
+That you can create desktops in your SDDC we need to implement your Student SDDC vCenter into the existing Horizon infrastructure.
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/customization2.png)
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/customization3.png)
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/customization4.png)
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/customization5.png)
+1.  Please open a Browser and navigate to : "https://192.168.20.70/admin"
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-server1.png)
+2.  enter student username and passworsd ->  follow up assing users to Horizon Admin console
+3.  click **Log In**
+
+You now can see the Dashboard / manin page of the Horizon Connection Server. This is the place where we will be working the next hour
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-server2.png)
+
+1.  Click on the left site on Servers:
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-server3.png)
+
+2.  Click on vCenter Servers **Add**
+3.  type in server adress "this is the ip adress of your vcenter"
+4.  type in username and password / "cloudadmin@vmc.local and the password from cloudadmin"
+5.  click **next**
+
+
+
+
+
+
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-server4.png)
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-server5.png)
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-server6.png)
