@@ -368,6 +368,6 @@ If all your work was saved and ran individually, they should run here as well.
 
 If you have "200 OK" then you will see another post in slack for your workshop Org.
 
-You have completed this lab. Please continue to the AWS Integration Lab which you can access from this [AWS Integration Lab Link](https://vmc-field-team.github.io/labs/aws-integration-lab/)
+You have completed this lab. Please continue to the API Lab which you can access from this [AWS Integration Lab Link](https://vmc-field-team.github.io/labs/aws-integration-lab/)
 
 Please add comments below if you would like to give feedback on this lab.

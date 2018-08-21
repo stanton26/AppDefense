@@ -13,31 +13,18 @@ comments: true
 
 In this lab we are going to start with looking at the basic tasks which you will perform in the VMware Cloud on AWS user interface when you are administering the platform.
 
-## Add a Host to your SDDC
-
-We will start by adding a host to the VMware Cloud on AWS platform. For the purposes of this lab, we have already precreated the VMware Cloud on AWS SDDC environments for you, in order to save time.
-
-In your chrome browser you will see a bookmark on the bokkmarks bar named **VMware Cloud Services**. Please click this bookmark.
-
-You will be directed to a login page for Cloud Services from VMware. You will need to login with the email address which you signed up to the VMware Cloud on AWS Experience day with. You will also need to ensure that this email address is associated with a "MyVMware Account" in order for the login to VMware Cloud Services to work correctly.
-
-You will now be logged into your organisation hosting your VMware Cloud on AWS SDDC cluster.
-
-1. On your "Student Workshop #" SDDC, click on the "View Details" button.
-    ![View details](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/Screenshot+at+Jul+17+15-32-13.png)
-2. Click on the **Actions** button in the upper right hand corner of the UI
-3. Click on **Add Hosts**
-4. In this student environment, we have restricted the platform to only allow the addition of one host. If this were a customer environment there would not be this restriction
-5. Click the **Add Hosts** button
-    ![Add Hosts](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/Screenshot+at+Jul+17+15-45-30.png)
-
-Your SDDC environment will now go through the process of adding an additional host to the SDDC environment. The process can take up to 10 minutes to complete. In the background automated tasks are provisoning an additional host, adding the host to the SDDC cluster and extending the VSAN cluster to utilise the storage presented by this additional host. All of this is done without human interaction in roughly 10 minutes. You may choose to wait for this action to process or move onto the next exercise and check back later to see your additional host.
-
-Congratulations! You have completed this step. Please move onto configuring your SDDC Firewall rules below.
-
-----------------
-
 ## Configuring SDDC Firewall Rules
+
+We will start by allowing inbound internet access to your vCenter managing your SDDC. We have already pre-created the VMware Cloud on AWS SDDC environment for you, in order to save time. 
+
+In your browser of choice please login to <https://cloud.vmware.com> click on "Log in" at the top right hand corner of the screen.
+    ![cloud.vmwware.com](https://s3-us-west-2.amazonaws.com/partner-workshop-screenshots/Login1.png)
+
+Select **Login**
+    ![cloud.vmware.com (login)](https://s3-us-west-2.amazonaws.com/partner-workshop-screenshots/Login2.png)
+
+You will be directed to a login page for Cloud Services from VMware. You will need to login with the email address which you provided to the presenter. You will also need to ensure that this email address is associated with a "MyVMware Account" in order for the login to the VMware Cloud Services to work correctly.
+    ![Enter credentials](https://s3-us-west-2.amazonaws.com/partner-workshop-screenshots/Login3.png)
 
 In VMware Cloud on AWS we have two Edge Gateways which are protecting the two main networks in the VMware Cloud on AWS SDDC. The **Management Network** and the **Compute Network**. When we first intiate your SDDC environment, the default is for all traffic to both the Management and Compute networks to be denied. In this exercise we will go through the steps required to open up firewall rules so that we can manage the SDDC and not only access compute workloads but allow those compute workloads to communicate with native AWS services.
 
@@ -57,6 +44,8 @@ By default, the firewall for the Management Gateway is set to deny all inbound a
 9. Click the **SAVE** button, your rule should look like the below image
 
 ![vCenter Rule](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/Screenshot+at+Jul+17+20-55-42.png)
+
+Note: In a production environment it is not recommended to open vCenter access from any source but rather from an established VPN connection to a trusted secure network. 
 
 ### Compute Gateway Firewall Rules
 
@@ -247,19 +236,5 @@ Congratulations! You have successfully created your VM Customization Spec for yo
 14. In the **Select networks** step, click the drop down box to select the Destination Network (you may need to click Browse to see other networks and select your **Student#-LN** network you created previously
 15. Click **Next**
 16. In the "Ready to complete" section, review and ensure all your selections are correct and click **Finish**
-
-## Convert a Virtual Machine to a Template
-
-In this step you will be cloning your newly created Virtual Machine into a Template for later use in vRealize Automation section.
-
-1. Ensure your VM deployment completed from your previous step
-2. Click on **Menu**
-3. Select **VMs and Templates**
-4. Select your newly created VM **Student#** (where # is your student number)
-5. Click on **Template**
-6. Select **Convert to Template**
-7. Click **Yes**  in the Convert to Template prompt
-
-You have completed this lab. Please continue to the API Lab which you can access from this [API Lab Link](https://vmc-field-team.github.io/labs/api-lab/)
 
 Please add comments below if you would like to give feedback on this lab.
