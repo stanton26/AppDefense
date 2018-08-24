@@ -112,7 +112,8 @@ connect-vmc -refreshtoken "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 Open a Powershell window and enter the following commands:
 
 ``` powershell
-Set-Location \\vmcwindc01\documents\import-dr-fw-rules.ps1 -refreshToken "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" -orgName "VMC-WS#" -sddcName "Student Workshop #"
+Set-Location \\vmcwindc01\documents
+.\import-dr-fw-rules.ps1 -refreshToken "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" -orgName "VMC-WS#" -sddcName "Student Workshop #"
 ```
 
 Where xxxx is the OAuth Token you generated in a previous step and # is your Student number.
