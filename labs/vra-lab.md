@@ -10,7 +10,7 @@ comments: true
 ---
 # Introduction
 
-Very often, customers want to utilise tools which sit above the vCenter API layer and provide additional value to the consumption or onitoring process. One such tool is VMware vRealize Automation which can be utilised to create a governance and "store front" portal so that users can provision workloads where they wish, based on policies defined by the Cloud Administrator.
+Very often, customers want to utilise tools which sit above the vCenter API layer and provide additional value to the consumption or monitoring process. One such tool is VMware vRealize Automation which can be utilised to create a governance and "store front" portal so that users can provision workloads where they wish, based on policies defined by the Cloud Administrator.
 
 ## What is vRealize Automation (vRA)
 
