@@ -12,6 +12,10 @@ comments: true
 
 # Introduction
 
+We do have a working Horizon environment. You are using it to jump on the Workshop SDDC. This Horizon environement is running on our BU SDDC.
+In this Lab we will conect you Student SDDC vCenter to this existing Horizon environment to rollout Desktops. You can then see the new created pool.
+Hold in mind. Only one of the Students per SDDC can do this task.
+
 ## What is Horizon on VMware Cloud on AWS
 
 VMware Horizon® 7 for VMware Cloud™ on AWS delivers a seamlessly integrated hybrid cloud for virtual desktops and applications. It combines the enterprise capabilities of the VMware Software-Defined Data Center, delivered as a service
@@ -31,22 +35,25 @@ This means that you use the same expertise and tools you know from VMware
 vSphere® and Horizon 7 for operational consistency, and leverage the rich feature
 set and flexibility you expect from Horizon 7
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/2.png)
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/2.png) 
+
 
 ## Create a Cross SDDC VPN
 
 We will be setting up a IPSEC VPN connection between your VPC and the VPC where Horizon Connection Server is already installed.
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-106-Image-163.png)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/Cross-SDDC-VPN-HZ.png)
 
 1. Go back to the **VMware Cloud on AWS** tab.
 2. In the main SDDC windows, click on **View Details**
-    (https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-106-Image-164.png)
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-106-Image-164.png)
 3. Then click on the **Network** menu
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-107-Image-165.png)
 
-In the Management Gateway box, make a note of the Public IP and the Infrastructure Subnet CIDR
+In the Management Gateway box, make a note of the Public IP and the Infrastructure Subnet CIDR.
+Do the same for the Compute Gateway box.
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-107-Image-166.png)
 
@@ -64,12 +71,14 @@ Fill in the following information
     ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-108-Image-161.png)
 
     Fill in the following information
-3. Name this VPN **Student# to Host** (where # is your student number)
+3. Name this VPN **Student MGW# to Host CGW** (where # is your student number)
 4. Enter **54.70.191.234** for the Remote Gateway Public IP
-5. Enter  **192.168.30.0/24** for Student 1 SDDC u der remote network
+5. Enter  **192.168.30.0/24** for SDDC under remote network
 6. Pre-shared key is **VMware1!**
 7. Click on **Save**.
+8. Do the same for the same task for establishing connection from Studen SDDC compute gateway and Host coumpute gateway.
 
+<!--  
 ## Create Content Library
 
 Content libraries are container objects for VM templates, vApp templates, and other types of files like ISO images.
@@ -127,6 +136,7 @@ You may already have a Content Library in your on-premises data center, you can 
 10. Click **Next**
     ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-22-Image-24.png)
 11. Click **Finish**. Your content library should take about ~20 minutes to complete syncing.
+-->
 
 ## Import a Windows Customization Spec
 As we support Full Clones at the moment we need to create a windows customization spec that we will use in Horizon for creating a bunch of VM's and this will be directly placed in the Active Directoy.
@@ -169,14 +179,14 @@ You now can see the Dashboard / manin page of the Horizon Connection Server. Thi
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-server3.png)
 
 2.  Click on vCenter Servers **Add**
-3.  type in server adress "this is the ip adress of your vcenter"
-4.  type in username and password / "cloudadmin@vmc.local and the password from cloudadmin"
+3.  type in server adress "this is the ip adress of your student vcenter"
+4.  type in username and password / "cloudadmin@vmc.local and the password from cloudadmin of your student vcenter"
 5.  click **next**
 
 
+## Deploy Desktop Pool
 
-
-
+Now as we have the vCenter as an Endpoint in Horizon we can deploy Desktops.
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-server4.png)
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-server5.png)
