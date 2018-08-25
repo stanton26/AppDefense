@@ -192,6 +192,7 @@ You may already have a Content Library in your on-premises data center, you can 
 11. Select **WorkloadDatastore** and click **next**
 12. Select the network you created in privious LAB **Student#-LN**
 13. Click **next** and **finish**
+14. Right click on the VM and convert it to a Template
 
 
 ## Import a Windows Customization Spec
@@ -282,3 +283,6 @@ Now as we have the vCenter as an Endpoint in Horizon we can start deploying Desk
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-pool9.1.png)
 10. Select **Use VMware Virtual SAN**
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-pool11.png)
+
+Now we need to select your GM Image which you converted to a Template
+11. Click on **Browse** and select your Golden Master Image for example **W10-LTSB-1**
