@@ -92,6 +92,28 @@ Fill in the following information
 7. Pre-shared key is **VMware1!**
 8.  Click on **Save**.
 
+## Configuring SDDC Firewall Rules
+
+### Compute Gateway Firewall Rules
+
+Like the Management NSX Edge Services Gateway. By default, the Compute NSX Edge Services Gateway is also set to deny all inbound and outbound traffic. You need to add additional firewall rules to allow access to your workload VMs which you provision in the VMware Cloud on AWS platform.
+
+#### Create Firewall Rule under Compute Gateway for Inbound Native AWS Services access
+
+1. Under **Network** tab, navigate to **Compute Gateway**
+2. Expand **Firewall Rules**
+3. Click **ADD RULE**
+
+Follow the same process as in the previous step and create Horizon Inbound and Outbound Firewall Rule following these instructions:
+Just to hold it easy use the Any Any rule.
+
+1. **Name** - Horizon
+2. **Action** - Allow
+3. **Source** - Any 
+4. **Destination** - Any
+5. **Service** - ANY
+6. Click **SAVE** button.
+
 
 <!--  
 ## Create Content Library
@@ -198,6 +220,15 @@ As we support Full Clones at the moment we need to create a windows customizatio
 14. username : your studen username and your password
 15. click **OK**
 
+## Check the Golden Master Image you created can start and work
+1. Click on **Menu**
+2.   Go to **VMs and Templates**
+3.  Click on the Folder **Templates**
+4.  Power on the new VM **W10-LTBS-#** # is where your Studen VM number will be
+5.  Click on **Launch the Web Console** -> Note you may have the popup blocker in the uper right active
+6.  Start a **cmd** and try a ping to **192.168.20.70** if it is successful
+7.  shut down the vm
+
 ## Create your SDDC vcenter as an enpoint in the existing Horizon environment
 That you can create desktops in your SDDC we need to implement your Student SDDC vCenter into the existing Horizon infrastructure.
 
@@ -209,13 +240,16 @@ That you can create desktops in your SDDC we need to implement your Student SDDC
 You now can see the Dashboard / manin page of the Horizon Connection Server. This is the place where we will be working the next hour
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-server2.png)
 
-1.  Click on the left site on Servers:
+4.  Click on the left site on Servers:
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-server3.png)
 
-2.  Click on vCenter Servers **Add**
-3.  type in server adress "this is the ip adress of your student vcenter"
-4.  type in username and password / "cloudadmin@vmc.local and the password from cloudadmin of your student vcenter"
-5.  click **next**
+5.  Click on vCenter Servers **Add**
+6.  type in server adress "this is the ip adress of your student vcenter" for example 54.72.217.99
+7.  type in username and password / "cloudadmin@vmc.local and the password from cloudadmin of your student vcenter"
+8.  you can find your cloudadmin password by going back to the VMC tab in your browser.
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-server10.png)
+8.  if you had filled in the fields: server adress, user name and password click **next**
+
 
 
 ## Deploy Desktop Pool
