@@ -134,7 +134,7 @@ In our next section on integrating AWS services with VMware Cloud on AWS. We wil
 12. Click **Next**
 13. Select **WorkloadDatastore** for storage
 14. Click **Next**
-15. Select your Destination Network
+15. Select your Destination Network.  This should be StudentX-LN.
 16. Click **Next**
 17. Click **Finish**
 18. Make sure to Power on your VM and ensure it has an assigned private IP address

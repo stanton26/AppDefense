@@ -21,7 +21,6 @@ Hybrid Cloud Extension abstracts on-premises and cloud resources and presents th
 
 Any-to-Any vSphere Cloud App Mobility
 
-Eliminate the need for cloud readiness and app dependency assessment
 
 - Rapidly move existing workloads from a vSphere platform to the latest SDDC
 - Reduce upfront planning time for cost and resource analysis
