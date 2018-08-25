@@ -301,3 +301,7 @@ If you cant see any template here it might be that you forgot to convert the VM 
 18. Select **Use this customization specification:** and select your customization policy click **netx**
  ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-pool14.png)
 19. Check all settings and click **Finish**
+
+
+## Ckeck if the desktops get created
+1. Go back to your vCenter and see if the cloning starts. This could take up to 5 minutes
