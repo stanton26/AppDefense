@@ -258,8 +258,6 @@ You now can see the Dashboard / manin page of the Horizon Connection Server. Thi
 10. Click **next**
 11. Click **Finish**
 
-
-
 ## Deploy Desktop Pool
 
 Now as we have the vCenter as an Endpoint in Horizon we can start deploying Desktops.
@@ -280,6 +278,7 @@ Now as we have the vCenter as an Endpoint in Horizon we can start deploying Desk
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-pool7.1.png)
 8.  scroll down and select **HTML Access** click **next**
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-pool8.png)
-9.  Under " use a naming pattern" enter **studen-#
+9.  Under " use a naming pattern" enter **studen-#** click **next**
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-pool9.1.png)
-
+10. 
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-pool9.1.png)
