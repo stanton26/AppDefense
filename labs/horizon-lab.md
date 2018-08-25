@@ -219,6 +219,8 @@ As we support Full Clones at the moment we need to create a windows customizatio
 12. Click on the left site on **Workgroup or domain**
 13. type in " windows server domain" corp.local
 14. username : your studen username and your password
+it should look like this : 
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/customization6.png)
 15. click **OK**
 
 ## Check the Golden Master Image you created can start and work
@@ -285,7 +287,15 @@ Now as we have the vCenter as an Endpoint in Horizon we can start deploying Desk
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-pool11.png)
 
 Now we need to select your GM Image which you converted to a Template
-11. Click on **Browse** and select your Golden Master Image for example **W10-LTSB-1** 
+11. Click on **Browse** and select your Golden Master Image for example **W10-LTSB-1**  click **OK**
 
 If you cant see any template here it might be that you forgot to convert the VM into a Template. As we are working with full clones we have to have a Template. This will change in the future when we will work with Instant Clones.
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-pool12.png)
+12. Click **browse** on VM folder location and select **Workloads** click **OK**
+13. Click **browse** on host and cluster and select the cluster click **OK**
+14. Click **browse** next to Ressource pool and select **Compute-ResourcePool**  click **OK**
+15. Click **browse** next Storage and select **WorkloadDatastore** click **OK**
+16. Verify all fields do have entries and click **next**
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-pool13.png)
+17. On Advanced Storage Options don't select anything just click **next**
+18. 
