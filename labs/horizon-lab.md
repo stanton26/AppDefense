@@ -153,6 +153,25 @@ You may already have a Content Library in your on-premises data center, you can 
 11. Click **Finish**. Your content library should take about ~20 minutes to complete syncing.
 -->
 
+## Create your Golden Master Image
+
+1.  Click on **Menu**
+2.  Click on **Content Library**
+3.  Click on the content library you subscribed to in the previus lab
+4.  Click on **Templates**
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/GM-W10-1.png)
+
+5.  Right Click on the W10-LTBS-1607-WS Template and choose **New VM from this Template....**
+6.  Give it the same the name **W10-LTBS-#** where # is put your student ID in
+7.  As location click on **Templates**
+8.  Click on **Next**
+9.  Select **Compute-ResourcePool** and click **Next**
+10. Click **next**
+11. Select **WorkloadDatastore** and click **next**
+12. Select the network you created in privious LAB **Student#-LN**
+13. Click **next** and **finish**
+
+
 ## Import a Windows Customization Spec
 As we support Full Clones at the moment we need to create a windows customization spec that we will use in Horizon for creating a bunch of VM's and this will be directly placed in the Active Directoy.
 
@@ -184,7 +203,7 @@ That you can create desktops in your SDDC we need to implement your Student SDDC
 
 1.  Please open a Browser and navigate to : "https://192.168.20.70/admin"
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-server1.png)
-2.  enter student username and passworsd ->  follow up assing users to Horizon Admin console
+2.  enter student username and passworsd
 3.  click **Log In**
 
 You now can see the Dashboard / manin page of the Horizon Connection Server. This is the place where we will be working the next hour
