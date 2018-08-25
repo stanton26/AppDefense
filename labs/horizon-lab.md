@@ -88,7 +88,7 @@ Fill in the following information
 3. Name this VPN **Student CGW# to Host CGW** (where # is your student number)
 4. Enter **54.70.191.234** for the Remote Gateway Public IP
 5. Enter  **192.168.20.0/24** for SDDC under remote network
-6. Choose your created student logical network that you created in previous LAB
+6. 6. Select **Studen#-LN** and also **cgw-dns-network** in Local Networks
 7. Pre-shared key is **VMware1!**
 8.  Click on **Save**.
 
