@@ -262,15 +262,24 @@ You now can see the Dashboard / manin page of the Horizon Connection Server. Thi
 
 ## Deploy Desktop Pool
 
-Now as we have the vCenter as an Endpoint in Horizon we can deploy Desktops.
-
+Now as we have the vCenter as an Endpoint in Horizon we can start deploying Desktops.
+1.  On the Horizon Connection Server admin console on the left site you can click on **Desktop Pools**
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-pool1.png)
+2.  Select **Automated Desktop Pool** and click on **Next**
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-pool2.png)
+3.  Select **Dedicated** and click **next**
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-pool3.png)
+4.  you will get a promt "More Information" click **Ignore**
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-pool4.png)
+5. Select **Full virtual machines** and select **your Student vCenter** with your student vCenter IP
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-pool5.png)
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-pool6.png)
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-pool7.png)
+6. Type under ID: **Studen-#** Display name **Stunden-#** and select Access group **WS1** under Description  **Stundent #**  click **next**
+    Note # is your student ID
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-pool6.1.png)
+7.  On Desktop Pool Settings under Remote Settings click **Remote machine Power Policy** and select **Always powered on** click **next**
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-pool7.1.png)
+8.  scroll down and select **HTML Access** click **next**
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-pool8.png)
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-pool9.png)
+9.  Under " use a naming pattern" enter **studen-#
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-pool9.1.png)
 
