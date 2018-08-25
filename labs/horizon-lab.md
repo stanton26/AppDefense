@@ -73,10 +73,25 @@ Fill in the following information
     Fill in the following information
 3. Name this VPN **Student MGW# to Host CGW** (where # is your student number)
 4. Enter **54.70.191.234** for the Remote Gateway Public IP
-5. Enter  **192.168.30.0/24** for SDDC under remote network
+5. Enter  **192.168.20.0/24** for SDDC under remote network
 6. Pre-shared key is **VMware1!**
 7. Click on **Save**.
 8. Do the same for the same task for establishing connection from Studen SDDC compute gateway and Host coumpute gateway.
+
+Fill in the following information
+
+1. Make sure the drop down is opened, if not click it under **Compute Gateway**
+2. Click on **Add VPN**
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-108-Image-161.png)
+
+    Fill in the following information
+3. Name this VPN **Student CGW# to Host CGW** (where # is your student number)
+4. Enter **54.70.191.234** for the Remote Gateway Public IP
+5. Enter  **192.168.20.0/24** for SDDC under remote network
+6. Choose your created student logical network that you created in previous LAB
+7. Pre-shared key is **VMware1!**
+8.  Click on **Save**.
+
 
 <!--  
 ## Create Content Library
