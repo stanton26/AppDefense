@@ -50,7 +50,7 @@ We will be setting up a IPSEC VPN connection between your VPC and the VPC where 
     ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-106-Image-164.png)
 3. Then click on the **Network** menu
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-107-Image-165.png)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-107-Image-165.png) ![]https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/Cross-SDDC-VPN-HZ2.png)
 
 In the Management Gateway box, make a note of the Public IP and the Infrastructure Subnet CIDR.
 Do the same for the Compute Gateway box.
