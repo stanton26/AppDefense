@@ -285,4 +285,7 @@ Now as we have the vCenter as an Endpoint in Horizon we can start deploying Desk
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-pool11.png)
 
 Now we need to select your GM Image which you converted to a Template
-11. Click on **Browse** and select your Golden Master Image for example **W10-LTSB-1**
+11. Click on **Browse** and select your Golden Master Image for example **W10-LTSB-1** 
+
+If you cant see any template here it might be that you forgot to convert the VM into a Template. As we are working with full clones we have to have a Template. This will change in the future when we will work with Instant Clones.
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-pool12.png)
