@@ -298,4 +298,6 @@ If you cant see any template here it might be that you forgot to convert the VM 
 16. Verify all fields do have entries and click **next**
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-pool13.png)
 17. On Advanced Storage Options don't select anything just click **next**
-18. 
+18. Select **Use this customization specification:** and select your customization policy click **netx**
+ ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-pool14.png)
+19. Check all settings and click **Finish**
