@@ -280,5 +280,5 @@ Now as we have the vCenter as an Endpoint in Horizon we can start deploying Desk
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-pool8.png)
 9.  Under " use a naming pattern" enter **studen-#** click **next**
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-pool9.1.png)
-10. 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-pool9.1.png)
+10. Select **Use VMware Virtual SAN**
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-pool11.png)
