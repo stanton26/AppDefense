@@ -249,6 +249,14 @@ You now can see the Dashboard / manin page of the Horizon Connection Server. Thi
 8.  you can find your cloudadmin password by going back to the VMC tab in your browser.
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-server10.png)
 8.  if you had filled in the fields: server adress, user name and password click **next**
+9.  you will get a promt Invalid Certifcate Detected 
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-server6.png)
+10. Click on View Certficate and **Accept**
+11. On View Composer settings check **Do not use View Composer** click **Next**
+12. Please verfiy that **Enable View Storage Accelerator** is NOT selected
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-server8.png)
+10. Click **next**
+11. Click **Finish**
 
 
 
