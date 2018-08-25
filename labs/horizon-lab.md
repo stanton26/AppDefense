@@ -224,7 +224,7 @@ As we support Full Clones at the moment we need to create a windows customizatio
 1. Click on **Menu**
 2.   Go to **VMs and Templates**
 3.  Click on the Folder **Templates**
-4.  Power on the new VM **W10-LTBS-#** # is where your Studen VM number will be
+4.  Power on the new VM **W10-LTBS-#**      # is where your Studen VM number will be
 5.  Click on **Launch the Web Console** -> Note you may have the popup blocker in the uper right active
 6.  Start a **cmd** and try a ping to **192.168.20.70** if it is successful
 7.  shut down the vm
@@ -264,12 +264,6 @@ You now can see the Dashboard / manin page of the Horizon Connection Server. Thi
 
 Now as we have the vCenter as an Endpoint in Horizon we can deploy Desktops.
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-server4.png)
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-server5.png)
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-server6.png)
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-server7.png)
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-server8.png)
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-server9.png)
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-pool1.png)
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-pool2.png)
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-pool3.png)
