@@ -195,7 +195,7 @@ As we support Full Clones at the moment we need to create a windows customizatio
 11. Set Administrator password to **VMware1!**
 12. Click on the left site on **Workgroup or domain**
 13. type in " windows server domain" corp.local
-14. username : your studen username / password ... /  Check this point with adam
+14. username : your studen username and your password
 15. click **OK**
 
 ## Create your SDDC vcenter as an enpoint in the existing Horizon environment
