@@ -1,8 +1,8 @@
 ---
 layout: single
-title: "Hybrid Cloud Extension (HCX) Lab Manual - Japanese"
+title: "Hybrid Cloud Extension (HCX) ラボ マニュアル"
 categories: labs
-date: 2018-06-01
+date: 2018-08-29
 tags: workshop
 toc: true
 classes: wide
@@ -56,27 +56,24 @@ Eliminate the need for cloud readiness and app dependency assessment
 ### Hybrid Cloud Extension の機能
 
 - Any-to-Any の可搬性
-  - クラウド化の準備とアプリケーションの依存関係のアセスメントを不要にします。
-  - vSphere プラットフォームから最新の SDDC へ既存のワークロードを迅速に移動させます。
-  - コストやリソースの分析のための事前の計画時間を削減します。
+  - クラウド化の準備とアプリケーションの依存関係のアセスメントを不要にします
+  - vSphere プラットフォームから最新の SDDC へ既存のワークロードを迅速に移動させます
+  - コストやリソースの分析のための事前の計画時間を削減します
   - クラウドへの適用を加速し、オンプレミス環境の改修を避けることができます
 - 低い TCO でのビジネス継続性
   - IP アドレス、MAC アドレスの再設定が不要
   - 既存の仮想マシン環境の改修が不要
-  - Hybrid Cloud Extension は、ウォーム バルク マイグレーションとコールド バルク マイグレーションを提供し、さらには双方向のマイグレーションも提供します。
-  - Hybrid Cloud Extension は運用モデルをシンプルにします。
+  - Hybrid Cloud Extension は、ウォーム バルク マイグレーションとコールド バルク マイグレーションを提供し、さらには双方向のマイグレーションも提供します
+  - Hybrid Cloud Extension は運用モデルをシンプルにします
 - セキュリティを踏まえた設計
   - プライベート クラウドとパブリック クラウドの接続をよりセキュアに実現
   - 回復性のある災害対策機能によるリソースの保護
   - Hybrid Cloud Extension の Hybrid DMZ は、エンタープライズのネットワークの可搬性とクラウドへのセキュリティのプラクティスを可能にします。
   - アプリケーションと共にセキュリティ ポリシーの移行
 - ハイパフォーマンスなインフラストラクチャのハイブリッド性
-  - In-built WAN optimization is tuned for the needs of hybrid use cases
   - ハイブリッドなユースケースのニーズのためのビルトインされた WAN 最適化
   - Hybrid Cloud Extension は俊敏性のあるインテリジェントなルーティングを提供
-  - Traffic load balancing overlay is policy-enforced
-  - トラフィックのロードバランシングポリシーにより適用される
-  - Multiple VM migration models (including vMotion, warm, cold) make it easy to migrate to and from the cloud without any changes
+  - トラフィックがロードバランシングされたオーバーレイはポリシーが適用されます
   - 複数の仮想マシンの移行モデル (vMotion、ウォーム、コールド) は変更無しでクラウドから、そしてクラウドへの移行を容易に。
 
 <!--
@@ -131,23 +128,20 @@ Eliminate the need for cloud readiness and app dependency assessment
 ## HCX - vMotion マイグレーション
 
 1. Chrome ブラウザを起動し、 **HCX-vMotion** ブックマークをクリックします。
-2. Click the **X** on the right pane to enlarge the main screen The first tab in the browser demonstrate an on-premises vCenter server.
-
-3. Click on the second tab, this represents a second data center (This can also represent a VMware Cloud on AWS vCenter)
-4. Click the first tab in the browser to go back to the on-premises vCenter.
+2. メイン スクリーンを最大化するために、右上の **-** をクリックします。ブラウザの最初のタブはオンプレミスの vCenter になります
+3. 2 つ目のタブをクリックします。これは 2 つ目のデータセンター (VMware Cloud on AWS の vCenter) になります。
+4. ブラウザの最初のタブをクリックし、オンプレミスの vCenter を表示します
 5. **Mission Critical Workload 1** という名前の仮想マシンをクリックします。
-6. **Console screen** をクリックします。
-
-    A console window is now open for the **Mission Critical Workload 1** VM, it will try to ping IP Address 10.159.137.212 which corresponds to a VM in the second site.
-7. Click in the tab corresponding to the second site
-8. Click on the VM named **TargetSite-TestVM**
-9. Note the IP address corresponding to this VM is the IP address that the **Mission Critical Workload 1** VM on the source site is trying to ping
-10. Click on the **Mission Critical Workload 1** tab
-    - Press enter after the ping command
-    - Click **Control-C** to stop ping
-    - Type ping 172.16..4.2 which is this VM's own IP address
-11. Click the **X** on this tab to close this tab on your browser
-12. Click on the first tab to go back to the on-premises vCenter
+6. **Console screen** をクリックします。仮想マシン **Mission Critical Workload 1** のコンソール ウィンドウが開きました。2 つ目のサイトの VM に対応する IP アドレス  10.159.137.212 へ ping を打ちます
+7. 2 つ目のサイトに対応するタブをクリックします
+8. **TargetSite-TestVM** という名前の仮想マシンをクリックします
+9. この仮想マシンの IP アドレスが、ソースサイトの仮想マシン **Mission Critical Workload 1** が ping を行っている先の IP アドレスであることを確認します
+10. **Mission Critical Workload 1** タブをクリックします
+    - ping コマンドの後に Enter を押下します
+    - **Control-C** で ping を停止します
+    - ping 172.16.4.2 とタイプします。IP アドレスはこの仮想マシンの IP アドレスになります
+11. このタブを閉じるために **X** をクリックします
+12. 最初のタブをクリックし、オンプレミスの vCenter に戻ります
 13. **Actions** ボタンをクリックします
 14. **Hybridity Actions** をクリックします
 15. **Migrate to the Cloud** をクリックします
