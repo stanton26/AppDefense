@@ -36,27 +36,27 @@ Follow the steps below to access the desktop via the web browser
 
 [VMware Horizon HTML Portal Access](https://workshop.vmc.ninja/portal/webclient/index.html)
 
-The Password for these desktops is: ?\u{'y5Xx
+The Password for these desktops is: k#2m=ZhD+
 
 | Student Name | SDDC     | Student Number | Horizon Login |
 |:-------------|:---------|:---------------|:----------|
-|Student 1|VMC-WS1|Student #1|corp\VMCWS1|
-|Student 2|VMC-WS2|Student #2|corp\VMCWS2|
-|Student 3|VMC-WS3|Student #3|corp\VMCWS3|
-|Student 4|VMC-WS4|Student #4|corp\VMCWS4|
-|Student 5|VMC-WS5|Student #5|corp\VMCWS5|
-|Student 6|VMC-WS6|Student #6|corp\VMCWS6|
-|Student 7|VMC-WS7|Student #7|corp\VMCWS7|
-|Student 8|VMC-WS8|Student #8|corp\VMCWS8|
-|Student 9|VMC-WS9|Student #9|corp\VMCWS9|
-|Student 10|VMC-WS10|Student #10|corp\VMCWS10|
-|Student 11|VMC-WS1|Student #11|corp\VMCWS11|
-|Student 12|VMC-WS2|Student #12|corp\VMCWS12|
-|Student 13|VMC-WS3|Student #13|corp\VMCWS13|
-|Student 14|VMC-WS4|Student #14|corp\VMCWS14|
-|Student 15|VMC-WS5|Student #15|corp\VMCWS15|
-|Student 16|VMC-WS6|Student #16|corp\VMCWS16|
-|Student 17|VMC-WS7|Student #17|corp\VMCWS17|
-|Student 18|VMC-WS8|Student #18|corp\VMCWS18|
-|Student 19|VMC-WS9|Student #19|corp\VMCWS19|
-|Student 20|VMC-WS10|Student #20|corp\VMCWS20|
+|Student 1|VMC-WS1|Student #1|VMCWS1|
+|Student 2|VMC-WS2|Student #2|VMCWS2|
+|Student 3|VMC-WS3|Student #3|VMCWS3|
+|Student 4|VMC-WS4|Student #4|VMCWS4|
+|Student 5|VMC-WS5|Student #5|VMCWS5|
+|Student 6|VMC-WS6|Student #6|VMCWS6|
+|Student 7|VMC-WS7|Student #7|VMCWS7|
+|Student 8|VMC-WS8|Student #8|VMCWS8|
+|Student 9|VMC-WS9|Student #9|VMCWS9|
+|Student 10|VMC-WS10|Student #10|VMCWS10|
+|Student 11|VMC-WS1|Student #11|VMCWS11|
+|Student 12|VMC-WS2|Student #12|VMCWS12|
+|Student 13|VMC-WS3|Student #13|VMCWS13|
+|Student 14|VMC-WS4|Student #14|VMCWS14|
+|Student 15|VMC-WS5|Student #15|VMCWS15|
+|Student 16|VMC-WS6|Student #16|VMCWS16|
+|Student 17|VMC-WS7|Student #17|VMCWS17|
+|Student 18|VMC-WS8|Student #18|VMCWS18|
+|Student 19|VMC-WS9|Student #19|VMCWS19|
+|Student 20|VMC-WS10|Student #20|VMCWS20|
