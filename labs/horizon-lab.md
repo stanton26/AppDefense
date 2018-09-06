@@ -290,8 +290,7 @@ With Horizon 7.6 we do have the option to also do Instant Clones. For this lab w
 2.  Launch the Web Console
 3.  Sign in with  **corp\vmcws1** and password **VMware1!**
 
-Wait about 10 minutes until all services are runnig
-In the meantime jump back to the VMC console in your browser.
+Wait about 10 minutes until all services are runnig. In the meantime jump back to the VMC console in your browser.
 
 Now we will request a public IP adress. We will use this public IP adress to access the Horizon infrastructre afterwards. Please go back to VMC console in your browser. Go to the network tab.
 
