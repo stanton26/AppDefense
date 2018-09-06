@@ -213,7 +213,7 @@ Now that we have subscribed to the Conten Library we can deploy the Horizon Infr
 ## Create your Active Directory VM
 
 5.  Right Click on the **VMCWINDC01** and choose **New VM from this Template....**
-6.  Give it the same the name **VMCWINDC01** w
+6.  Give it the same the name **VMCWINDC01**
 7.  As location click on **Templates**
 8.  Click on **Next**
 9.  Select **Compute-ResourcePool** and click **Next**
