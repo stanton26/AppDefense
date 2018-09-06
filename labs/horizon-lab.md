@@ -94,12 +94,13 @@ Fill in the following information
 -->
 
 ## Configuring SDDC Firewall Rules
+If not done already in the previous lab please also create the Firewall rule for the Management Gateway so you can access the vCenter.
 
 ### Compute Gateway Firewall Rules
 
 Like the Management NSX Edge Services Gateway. By default, the Compute NSX Edge Services Gateway is also set to deny all inbound and outbound traffic. You need to add additional firewall rules to allow access to your workload VMs which you provision in the VMware Cloud on AWS platform.
-
-#### Create Firewall Rule under Compute Gateway for Inbound Native AWS Services access
+<!--  
+#### Create Firewall Rule under Compute Gateway 
 
 1. Under **Network** tab, navigate to **Compute Gateway**
 2. Expand **Firewall Rules**
@@ -114,7 +115,7 @@ Just to hold it easy use the Any Any rule.
 4. **Destination** - Any
 5. **Service** - ANY
 6. Click **SAVE** button.
-
+-->
 
 <!--  
 ## Create Content Library
@@ -131,6 +132,27 @@ You use a local library to store items in a single vCenter Server instance. You 
 
 VM templates and vApp templates are stored as an OVF file format in the content library. You can also upload other file types, such as ISO images, text files, and so on, in a content library.
 -->
+
+##Cretea a Logical Network
+
+For our Horizon Lab we prepared several machines like AD, Hoirzon Connections Server, Unified access gateway and the Goldenmaster Image.
+The AD, Horizon Connection Server, UAG and Goldenmaster Image will be deployed in a 192.168.20.0/24 subnet. Therefore we need to create this network first.
+
+## Create a Logical Network
+
+1. Once you are logged in to your vCenter Server Click on **Menu**
+2. Select **Global Inventory Lists**
+3. Click on **Logical Networks** in the left pane
+4. Click on the **Add** button
+5. Name your New Logical Network **Horizon#-LN** (where # is your student number)
+6. Select the **Routed Network** radio button
+7. For CIDR Block enter **192.168.20.0/24**
+   
+8. Enter **192.168.20.1** for the Default Gateway IP
+9. Make sure DHCP is disabled
+10. Type **corp.local** as your DNS Domain Name
+11. Click **OK** to create your new logical network
+
 
 ## Subscribed Libraries
 
@@ -178,17 +200,46 @@ You may already have a Content Library in your on-premises data center, you can 
 10. Click **Next**
     ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-22-Image-24.png)
 11. Click **Finish**. Your content library should take about ~20 minutes to complete syncing.
--->
 
-## Create your Golden Master Image
-
-With Horizon 7.6 we do have the option to also do Instant Clones. For this lab we prepared two Golden Master Images. The first one is for Full Clones, the second one is for Instant Clones. You can decide to either go for Full clones or use Instant Clones. We suggest to do instant clones cause it is much faster to rollout this desktops. 
+Now that we have subscribed to the Conten Library we can deploy the Horizon Infrastructre:
 
 1.  Click on **Menu**
 2.  Click on **Content Library**
 3.  Click on the content library you subscribed to in the previus lab
 4.  Click on **Templates**
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/GM-W10-1.png)
+
+
+## Create your Active Directory VM
+
+5.  Right Click on the **VMCWINDC01** and choose **New VM from this Template....**
+6.  Give it the same the name **VMCWINDC01** w
+7.  As location click on **Templates**
+8.  Click on **Next**
+9.  Select **Compute-ResourcePool** and click **Next**
+10. Click **next**
+11. Select **WorkloadDatastore** and click **next**
+12. Select the network you created in privious LAB **Student#-LN**
+13. Click **next** and **finish**
+14. Right click on the VM and convert it to a Template
+
+## Create Horizon Server VM
+
+5.  Right Click on the **HZ-76-WS** and choose **New VM from this Template....**
+6.  Give it the same the name **HZ-76-WS** where # is put your student ID in
+7.  As location click on **Templates**
+8.  Click on **Next**
+9.  Select **Compute-ResourcePool** and click **Next**
+10. Click **next**
+11. Select **WorkloadDatastore** and click **next**
+12. Select the network you created in privious LAB **Student#-LN**
+13. Click **next** and **finish**
+14. Right click on the VM and convert it to a Template
+
+## Create your Golden Master Image
+
+With Horizon 7.6 we do have the option to also do Instant Clones. For this lab we prepared two Golden Master Images. The first one is for Full Clones, the second one is for Instant Clones. You can decide to either go for Full clones or use Instant Clones. We suggest to do instant clones cause it is much faster to rollout this desktops. 
+
 
 5.  Right Click on the **W10-LTBS-1607-IC Template** and choose **New VM from this Template....**
 6.  Give it the same the name **W10-LTBS-#** where # is put your student ID in
