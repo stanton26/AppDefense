@@ -38,7 +38,7 @@ set and flexibility you expect from Horizon 7
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/2.png) 
 
-
+<!-- 
 ## Create a Cross SDDC VPN
 
 We will be setting up a IPSEC VPN connection between your VPC and the VPC where Horizon Connection Server is already installed.
@@ -91,6 +91,10 @@ Fill in the following information
 6. 6. Select **Studen#-LN** and also **cgw-dns-network** in Local Networks
 7. Pre-shared key is **VMware1!**
 8.  Click on **Save**.
+-->
+
+
+
 
 ## Configuring SDDC Firewall Rules
 
@@ -129,8 +133,9 @@ You can create two types of libraries: local or subscribed libraries.
 You use a local library to store items in a single vCenter Server instance. You can publish the local library so that users from other vCenter Server systems can subscribe to it. When you publish a content library externally, you can configure a password for authentication.
 
 VM templates and vApp templates are stored as an OVF file format in the content library. You can also upload other file types, such as ISO images, text files, and so on, in a content library.
+-->
 
-### Subscribed Libraries
+## Subscribed Libraries
 
 You subscribe to a published library by creating a subscribed library. You can create the subscribed library in the same vCenter Server instance where the published library is, or in a different vCenter Server system. In the Create Library wizard you have the option to download all the contents of the published library immediately after the subscribed library is created, or to download only metadata for the items from the published library and later to download the full content of only the items you intend to use.
 
@@ -163,10 +168,12 @@ You may already have a Content Library in your on-premises data center, you can 
 
 5. Select **Subscribed content library**
 6. Under **Subscription URL** enter the following: <https://vcenter.sddc-34-216-241-49.vmc.vmware.com:443/cls/vcsp/lib/ddfe9c01-09ea-4fc2-a03b-91cc7ed5f4b1/lib.json>
+**https://vcenter.sddc-34-216-241-49.vmc.vmware.com:443/cls/vcsp/lib/4aa185b4-3d6e-45b4-90ca-cd3a845d4502/lib.json**
+
 
     PLEASE NOTE THAT THERE MAY BE AN ISSUE WITH DROPPING/ADDITION OF CHARACTERS FOR THE URL WHEN COPYING AND PASTING FROM THE MANUAL.ASK YOUR INSTRUCTOR IN THE EVENT YOU CANNOT LOCATE IT.
 
-7. Ensure Download content is set to **Immediately**
+7. Ensure Download content is set to **when needed**
 8. Click **Next**
     ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-22-Image-23.png)
 9. Highlight the **WorkloadDatastore** as the storage location
@@ -176,6 +183,8 @@ You may already have a Content Library in your on-premises data center, you can 
 -->
 
 ## Create your Golden Master Image
+
+With Horizon 7.6 we do have the option to also do Instant Clones. Therefore we prepared 
 
 1.  Click on **Menu**
 2.  Click on **Content Library**
@@ -195,18 +204,13 @@ You may already have a Content Library in your on-premises data center, you can 
 14. Right click on the VM and convert it to a Template
 
 
-## Import a Windows Customization Spec
-As we support Full Clones at the moment we need to create a windows customization spec that we will use in Horizon for creating a bunch of VM's and this will be directly placed in the Active Directoy.
-
+## Create a Windows Customization Spec
+As we support Full Clones and Instant Clones we need to create a windows customization spec for the Full Cones that we will use in Horizon for creating a bunch of VM's and those will be directly placed in the Active Directoy. 
 
 1.  Click on **Menu**
 2.  Click **Policies and Profiles**
-3.  Click on **import**
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/customization1.png)
-
-4.  Click on **Browse**
-5.  got to "Z:\Horizon\W10-NEW.xml"
-6.  enter a name **W10-Customization**
+3.  Click on **crate**
+-...
 7.  Click **OK**
 
 
