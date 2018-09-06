@@ -214,7 +214,7 @@ Now that we have subscribed to the Conten Library we can deploy the Horizon Infr
 
 5.  Right Click on the **VMCWINDC01** and choose **New VM from this Template....**
 6.  Give it the same the name **VMCWINDC01**
-7.  As location click on **Templates**
+7.  As location click on **Workloads**
 8.  Click on **Next**
 9.  Select **Compute-ResourcePool** and click **Next**
 10. Click **next**
@@ -228,7 +228,7 @@ Now that we have subscribed to the Conten Library we can deploy the Horizon Infr
 
 5.  Right Click on the **HZ-76-WS** and choose **New VM from this Template....**
 6.  Give it the same the name **HZ-76-WS** where # is put your student ID in
-7.  As location click on **Templates**
+7.  As location click on **Workloads**
 8.  Click on **Next**
 9.  Select **Compute-ResourcePool** and click **Next**
 10. Click **next**
