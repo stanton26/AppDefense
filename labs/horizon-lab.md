@@ -93,9 +93,6 @@ Fill in the following information
 8.  Click on **Save**.
 -->
 
-
-
-
 ## Configuring SDDC Firewall Rules
 
 ### Compute Gateway Firewall Rules
@@ -167,7 +164,8 @@ You may already have a Content Library in your on-premises data center, you can 
 4. Click **Next** button
 
 5. Select **Subscribed content library**
-6. Under **Subscription URL** enter the following: <https://vcenter.sddc-34-216-241-49.vmc.vmware.com:443/cls/vcsp/lib/ddfe9c01-09ea-4fc2-a03b-91cc7ed5f4b1/lib.json>
+6. Under **Subscription URL** enter the following: 
+
 **https://vcenter.sddc-34-216-241-49.vmc.vmware.com:443/cls/vcsp/lib/4aa185b4-3d6e-45b4-90ca-cd3a845d4502/lib.json**
 
 
@@ -184,7 +182,7 @@ You may already have a Content Library in your on-premises data center, you can 
 
 ## Create your Golden Master Image
 
-With Horizon 7.6 we do have the option to also do Instant Clones. Therefore we prepared 
+With Horizon 7.6 we do have the option to also do Instant Clones. For this lab we prepared two Golden Master Images. The first one is for Full Clones, the second one is for Instant Clones. You can decide to either go for Full clones or use Instant Clones. We suggest to do instant clones cause it is much faster to rollout this desktops. 
 
 1.  Click on **Menu**
 2.  Click on **Content Library**
@@ -192,7 +190,7 @@ With Horizon 7.6 we do have the option to also do Instant Clones. Therefore we p
 4.  Click on **Templates**
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/GM-W10-1.png)
 
-5.  Right Click on the W10-LTBS-1607-WS Template and choose **New VM from this Template....**
+5.  Right Click on the **W10-LTBS-1607-IC Template** and choose **New VM from this Template....**
 6.  Give it the same the name **W10-LTBS-#** where # is put your student ID in
 7.  As location click on **Templates**
 8.  Click on **Next**
@@ -204,8 +202,9 @@ With Horizon 7.6 we do have the option to also do Instant Clones. Therefore we p
 14. Right click on the VM and convert it to a Template
 
 
+
 ## Create a Windows Customization Spec
-As we support Full Clones and Instant Clones we need to create a windows customization spec for the Full Cones that we will use in Horizon for creating a bunch of VM's and those will be directly placed in the Active Directoy. 
+If decision made to go for Full Clones in the previous step we need to create a windows customization spec for the Full Cones that we will use in Horizon for creating a bunch of VM's and those will be directly placed in the Active Directoy. 
 
 1.  Click on **Menu**
 2.  Click **Policies and Profiles**
@@ -214,7 +213,7 @@ As we support Full Clones and Instant Clones we need to create a windows customi
 7.  Click **OK**
 
 
-### We now do have a customization spec imported. We need to open it and run through all the settings again to double check everything is configurated right
+We now do have a customization spec imported. We need to open it and run through all the settings again to double check everything is configurated right
 
 8.  Click on your new imported Custom Spec click **edit**
 9.  Check Guest OS "Generate a new security identity (SID)" is selected
