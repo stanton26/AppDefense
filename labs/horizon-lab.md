@@ -259,6 +259,14 @@ With Horizon 7.6 we do have the option to also do Instant Clones. For this lab w
 3.  Sign in with  **corp\vmcws1** and password **VMware1!**
 
 
+##Power on the new created VM's
+
+1.  Power on the VM **HZ-76-WS**
+2.  Launch the Web Console
+3.  Sign in with  **corp\vmcws1** and password **VMware1!**
+
+Wait about 10 minutes until all services are runnig. In the meantime jump create the UAG VM
+
 ## Create UAG VM
 1.  Go back to your vCenter web Client
 2.  Right click on the compute ressource pool
@@ -295,15 +303,8 @@ With Horizon 7.6 we do have the option to also do Instant Clones. For this lab w
 24. choose the right side **configure manually** and click **select**
 25. Click on Edge Services Settings **show**
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/customization19.png)
-26. All the settings in the picture have to be green.
+26. Tunnel, BLAST,UDP Tunnel Server, HORIZON DESTINATION Server have to be **GREEN**
 
-
-##Power on the new created VM's
-1.  Power on the VM **HZ-76-WS**
-2.  Launch the Web Console
-3.  Sign in with  **corp\vmcws1** and password **VMware1!**
-
-Wait about 10 minutes until all services are runnig. In the meantime jump back to the VMC console in your browser.
 
 Now we will request a public IP adress. We will use this public IP adress to access the Horizon infrastructre afterwards. Please go back to VMC console in your browser. Go to the network tab.
 
