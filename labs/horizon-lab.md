@@ -295,6 +295,7 @@ With Horizon 7.6 we do have the option to also do Instant Clones. For this lab w
 24. choose the right side **configure manually** and click **select**
 25. Click on Edge Services Settings **show**
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/customization19.png)
+26. All the settings in the picture have to be green.
 
 
 ##Power on the new created VM's
