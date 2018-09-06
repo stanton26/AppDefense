@@ -221,7 +221,7 @@ Now that we have subscribed to the Conten Library we can deploy the Horizon Infr
 11. Select **WorkloadDatastore** and click **next**
 12. Select the network you created in privious LAB **Horizon#-LN**
 13. Click **next** and **finish**
-14. Right click on the VM and convert it to a Template
+
 
 
 ## Create Horizon Server VM
@@ -235,7 +235,7 @@ Now that we have subscribed to the Conten Library we can deploy the Horizon Infr
 11. Select **WorkloadDatastore** and click **next**
 12. Select the network you created in privious LAB **Horizon#-LN**
 13. Click **next** and **finish**
-14. Right click on the VM and convert it to a Template
+
 
 ## Create your Golden Master Image
 
@@ -251,21 +251,38 @@ With Horizon 7.6 we do have the option to also do Instant Clones. For this lab w
 11. Select **WorkloadDatastore** and click **next**
 12. Select the network you created in privious step for 192.168.20.0/24 **Horizon#-LN**
 13. Click **next** and **finish**
-14. Right click on the VM and convert it to a Template
 
 
 ##Power on the new created VM's
-
 1.  Power on the VM **VMCWINDC01**
 2.  Launch the Web Console
 3.  Sign in with  **corp\vmcws1** and password **VMware1!**
 
 
+## Create UAG VM
+5.  Right Click on the **UAG33** and choose **New VM from this Template....**
+6.  Give it the same the name **UAG33**
+7.  As location click on **Workloads**
+8.  Click on **Next**
+9.  Select **Compute-ResourcePool** and click **Next**
+10. Click **next**
+11. Select **WorkloadDatastore** and click **next**
+12. Select the network you created in privious LAB **Horizon#-LN**
+13. Under point 6 Customize template go down to Password option and type **VMware1!** in all fields
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/customization7.png)
+13. Click **next** and **finish**
+
+
+##Power on the new created VM's
 1.  Power on the VM **HZ-76-WS**
 2.  Launch the Web Console
 3.  Sign in with  **corp\vmcws1** and password **VMware1!**
-4.  Wait about 10 minutes until all services are runnig
-5.  
+Wait about 10 minutes until all services are runnig
+In the meantime jump back to the VMC console in your browser.
+
+Now we will request a public IP adress. We will use this public IP adress to access the Horizon infrastructre afterwards. Please go back to VMC console in your browser. Go to the network tab.
+Scroll down to Compute Gateway.
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/customization8.png)
 
 Now we have to create a Snapshot on the Golden Master Image. Cause Instant Clones are working with snapshots.
 
