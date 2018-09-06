@@ -284,14 +284,18 @@ With Horizon 7.6 we do have the option to also do Instant Clones. For this lab w
 
 17. Click **Finish**
 18. Wait until the new created UAG VM is powered on.
-19. Open you browser and go to :
+19. Open you browser and go to : https://192.168.20.73:9443
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/customization16.png)
 20. Click on Import Settings
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/customization17.png)
 21. Brwose to ** z://horizon/...
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/customization18.png)
 22. Click **Import**
-23. 
+23. Login agian to https://192.168.20.72/9443 
+24. choose the right side **configure manually** and click **select**
+25. Click on Edge Services Settings **show**
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/customization19.png)
+
 
 ##Power on the new created VM's
 1.  Power on the VM **HZ-76-WS**
