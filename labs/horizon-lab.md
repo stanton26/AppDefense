@@ -283,7 +283,15 @@ With Horizon 7.6 we do have the option to also do Instant Clones. For this lab w
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/customization15.png)
 
 17. Click **Finish**
-
+18. Wait until the new created UAG VM is powered on.
+19. Open you browser and go to :
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/customization16.png)
+20. Click on Import Settings
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/customization17.png)
+21. Brwose to ** z://horizon/...
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/customization17.png)
+22. Click **Import**
+23. 
 
 ##Power on the new created VM's
 1.  Power on the VM **HZ-76-WS**
