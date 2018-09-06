@@ -258,7 +258,22 @@ With Horizon 7.6 we do have the option to also do Instant Clones. For this lab w
 
 1.  Power on the VM **VMCWINDC01**
 2.  Launch the Web Console
-3.  Sign in with 
+3.  Sign in with  **corp\vmcws1** and password **VMware1!**
+
+
+1.  Power on the VM **HZ-76-WS**
+2.  Launch the Web Console
+3.  Sign in with  **corp\vmcws1** and password **VMware1!**
+4.  Wait about 10 minutes until all services are runnig
+5.  
+
+Now we have to create a Snapshot on the Golden Master Image. Cause Instant Clones are working with snapshots.
+
+1.  Right click on **W10-LTBS-1607-IC**
+2.  Click on **Snapshot**
+3.  Take a Snapshot
+3.  type a name **1.0** for example
+4.  Click **OK**
 
 
 If decision made to go for Full Clones in the previous step we need to create a windows customization spec for the Full Cones that we will use in Horizon for creating a bunch of VM's and those will be directly placed in the Active Directoy.
