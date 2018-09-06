@@ -219,9 +219,10 @@ Now that we have subscribed to the Conten Library we can deploy the Horizon Infr
 9.  Select **Compute-ResourcePool** and click **Next**
 10. Click **next**
 11. Select **WorkloadDatastore** and click **next**
-12. Select the network you created in privious LAB **Student#-LN**
+12. Select the network you created in privious LAB **Horizon#-LN**
 13. Click **next** and **finish**
 14. Right click on the VM and convert it to a Template
+
 
 ## Create Horizon Server VM
 
@@ -232,7 +233,7 @@ Now that we have subscribed to the Conten Library we can deploy the Horizon Infr
 9.  Select **Compute-ResourcePool** and click **Next**
 10. Click **next**
 11. Select **WorkloadDatastore** and click **next**
-12. Select the network you created in privious LAB **Student#-LN**
+12. Select the network you created in privious LAB **Horizon#-LN**
 13. Click **next** and **finish**
 14. Right click on the VM and convert it to a Template
 
@@ -248,34 +249,35 @@ With Horizon 7.6 we do have the option to also do Instant Clones. For this lab w
 9.  Select **Compute-ResourcePool** and click **Next**
 10. Click **next**
 11. Select **WorkloadDatastore** and click **next**
-12. Select the network you created in privious LAB **Student#-LN**
+12. Select the network you created in privious step for 192.168.20.0/24 **Horizon#-LN**
 13. Click **next** and **finish**
 14. Right click on the VM and convert it to a Template
 
 
+##Power on the new created VM's
+
+1.  Power on the VM **VMCWINDC01**
+2.  Launch the Web Console
+3.  Sign in with 
+
+
+If decision made to go for Full Clones in the previous step we need to create a windows customization spec for the Full Cones that we will use in Horizon for creating a bunch of VM's and those will be directly placed in the Active Directoy.
 
 ## Create a Windows Customization Spec
-If decision made to go for Full Clones in the previous step we need to create a windows customization spec for the Full Cones that we will use in Horizon for creating a bunch of VM's and those will be directly placed in the Active Directoy. 
-
 1.  Click on **Menu**
 2.  Click **Policies and Profiles**
-3.  Click on **crate**
--...
-7.  Click **OK**
-
-
-We now do have a customization spec imported. We need to open it and run through all the settings again to double check everything is configurated right
-
-8.  Click on your new imported Custom Spec click **edit**
-9.  Check Guest OS "Generate a new security identity (SID)" is selected
-10. Click on the left site on **Administrator password**
-11. Set Administrator password to **VMware1!**
-12. Click on the left site on **Workgroup or domain**
-13. type in " windows server domain" corp.local
-14. username : your studen username and your password
-it should look like this : 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/customization6.png)
-15. click **OK**
+3.  Click on **create**
+4.  Type a Name **Windows**
+5.  Click **Next**
+6.  Type Owner name **VMC** Owner organization **VMC** click **Next**
+7.  Check that **Use the virtual machine name** is selected
+8.  Do not use a product key **next**
+9.  Type Password **VMware1!**
+10. Click **next**
+11. Click **next**
+12. Click **next**
+13. Select **Windows Server domain** and type **corp.local** under username **vmcws#** where # is please chose your ID and your studen password
+14. Click **Finish**
 
 ## Check the Golden Master Image you created can start and work
 1. Click on **Menu**
