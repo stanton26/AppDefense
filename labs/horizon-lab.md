@@ -260,29 +260,53 @@ With Horizon 7.6 we do have the option to also do Instant Clones. For this lab w
 
 
 ## Create UAG VM
-5.  Right Click on the **UAG33** and choose **New VM from this Template....**
-6.  Give it the same the name **UAG33**
-7.  As location click on **Workloads**
-8.  Click on **Next**
-9.  Select **Compute-ResourcePool** and click **Next**
+1.  Go back to your vCenter web Client
+2.  Right click on the compute ressource pool
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/customization9.png)
+3. click on deploy ovf template
+4. ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/customization10.png)
+5.  Select **Local Files**
+6.  Click **Choose Files**
+7.  Go to Z://Horizon/ and select euc-unified-access-gateway-3.3.0.0-8539
+8.  ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/customization10.png)
+9.  Click **Open**
 10. Click **next**
-11. Select **WorkloadDatastore** and click **next**
-12. Select the network you created in privious LAB **Horizon#-LN**
-13. Under point 6 Customize template go down to Password option and type **VMware1!** in all fields
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/customization7.png)
-13. Click **next** and **finish**
+11. Click **next**
+12. Click **next**
+13. Select **Single NIC**
+14. Click **next**
+15. Select Destination Network for all three networks **Horizon#-LN**
+16. Following Settings need to be done:
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/customization12.png)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/customization13.png)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/customization14.png)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/customization15.png)
+
+17. Click **Finish**
 
 
 ##Power on the new created VM's
 1.  Power on the VM **HZ-76-WS**
 2.  Launch the Web Console
 3.  Sign in with  **corp\vmcws1** and password **VMware1!**
+
 Wait about 10 minutes until all services are runnig
 In the meantime jump back to the VMC console in your browser.
 
 Now we will request a public IP adress. We will use this public IP adress to access the Horizon infrastructre afterwards. Please go back to VMC console in your browser. Go to the network tab.
-Scroll down to Compute Gateway.
+
+1.  Scroll down to Compute Gateway and request a new public ip. 
+2.  Please note this public IP.
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/customization8.png)
+3.  Click on NAT
+4.  Click on **ADD NAT RULE**
+5.  Under Description type **Horizon Desktop**
+6.  Public IP **your requested IP**
+7.  Service **HTTPS(TCP 443)
+8.  Public Ports **443**
+9.  Internal IP **192.168.20.73**
+10. Click **SAVE**
+11. Check the Firewall Rule you previous created. -> ANY ANY ANY
 
 Now we have to create a Snapshot on the Golden Master Image. Cause Instant Clones are working with snapshots.
 
@@ -311,14 +335,6 @@ If decision made to go for Full Clones in the previous step we need to create a 
 13. Select **Windows Server domain** and type **corp.local** under username **vmcws#** where # is please chose your ID and your studen password
 14. Click **Finish**
 
-## Check the Golden Master Image you created can start and work
-1. Click on **Menu**
-2.   Go to **VMs and Templates**
-3.  Click on the Folder **Templates**
-4.  Power on the new VM **W10-LTBS-#**      # is where your Studen VM number will be
-5.  Click on **Launch the Web Console** -> Note you may have the popup blocker in the uper right active
-6.  Start a **cmd** and try a ping to **192.168.20.70** if it is successful
-7.  shut down the vm
 
 ## Create your SDDC vcenter as an enpoint in the existing Horizon environment
 That you can create desktops in your SDDC we need to implement your Student SDDC vCenter into the existing Horizon infrastructure.
