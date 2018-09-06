@@ -268,7 +268,7 @@ With Horizon 7.6 we do have the option to also do Instant Clones. For this lab w
 5.  Select **Local Files**
 6.  Click **Choose Files**
 7.  Go to Z://Horizon/ and select euc-unified-access-gateway-3.3.0.0-8539
-8.  ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/customization10.png)
+8.  ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/customization11.png)
 9.  Click **Open**
 10. Click **next**
 11. Click **next**
