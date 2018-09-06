@@ -289,7 +289,7 @@ With Horizon 7.6 we do have the option to also do Instant Clones. For this lab w
 20. Click on Import Settings
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/customization17.png)
 21. Brwose to ** z://horizon/...
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/customization17.png)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/customization18.png)
 22. Click **Import**
 23. 
 
