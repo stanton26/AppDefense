@@ -190,7 +190,7 @@ You may already have a Content Library in your on-premises data center, you can 
 
 **https://vcenter.sddc-34-216-241-49.vmc.vmware.com:443/cls/vcsp/lib/4aa185b4-3d6e-45b4-90ca-cd3a845d4502/lib.json**
 
-ok
+
     PLEASE NOTE THAT THERE MAY BE AN ISSUE WITH DROPPING/ADDITION OF CHARACTERS FOR THE URL WHEN COPYING AND PASTING FROM THE MANUAL.ASK YOUR INSTRUCTOR IN THE EVENT YOU CANNOT LOCATE IT.
 
 7. Ensure Download content is set to **when needed**
@@ -239,7 +239,7 @@ Now that we have subscribed to the Conten Library we can deploy the Horizon Infr
 
 ## Create your Golden Master Image
 
-With Horizon 7.6 we do have the option to also do Instant Clones. For this lab we prepared two Golden Master Images. The first one is for Full Clones, the second one is for Instant Clones. You can decide to either go for Full clones or use Instant Clones. We suggest to do instant clones cause it is much faster to rollout this desktops. 
+With Horizon 7.6 we do have the option to also do Instant Clones. For this lab we prepared two Golden Master Images. The first one is for Instant Clones with the Name **W10-LTBS-1607-IC**, the second one is for Full Clones. You can decide to either go for Full clones or use Instant Clones. We suggest to do instant clones cause it is much faster to rollout this desktops. 
 
 
 5.  Right Click on the **W10-LTBS-1607-IC Template** and choose **New VM from this Template....**
