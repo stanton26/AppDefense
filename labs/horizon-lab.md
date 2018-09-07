@@ -190,8 +190,6 @@ You may already have a Content Library in your on-premises data center, you can 
 
 **https://vcenter.sddc-34-216-241-49.vmc.vmware.com:443/cls/vcsp/lib/6f0bc23f-3157-4fb5-a4c4-2f3f180b8d8d/lib.json**
 
-
-
     PLEASE NOTE THAT THERE MAY BE AN ISSUE WITH DROPPING/ADDITION OF CHARACTERS FOR THE URL WHEN COPYING AND PASTING FROM THE MANUAL.ASK YOUR INSTRUCTOR IN THE EVENT YOU CANNOT LOCATE IT.
 
 7. Ensure Download content is set to **when needed**
