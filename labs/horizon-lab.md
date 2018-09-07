@@ -188,7 +188,7 @@ You may already have a Content Library in your on-premises data center, you can 
 5. Select **Subscribed content library**
 6. Under **Subscription URL** enter the following: 
 
-**https://vcenter.sddc-34-216-241-49.vmc.vmware.com:443/cls/vcsp/lib/615023b4-8827-48ee-9363-aacaf3ed7c3c/lib.json**
+**https://vcenter.sddc-34-216-241-49.vmc.vmware.com:443/cls/vcsp/lib/6f0bc23f-3157-4fb5-a4c4-2f3f180b8d8d/lib.json**
 
 
 
