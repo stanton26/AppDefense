@@ -9,7 +9,7 @@ classes: wide
 author_profile: false
 comments: true
 ---
-jkljljljk
+
 # Introduction
 
 We do have a working Horizon environment. You are using it to jump on the Workshop SDDC. This Horizon environement is running on our BU SDDC.
