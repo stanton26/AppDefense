@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "VMware Cloud on AWS Workshop"
-permalink: /workshop-manual/
+permalink: /workshop-manual-es/
 date: 2018-06-01
 tags: workshop
 classes: wide
