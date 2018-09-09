@@ -16,11 +16,79 @@ Una de las razones más convincentes para adoptar VMware Cloud on AWS es integra
 
 En este módulo, trabajaremos en algunas integraciones básicas comunes que puede utilizar en su plataforma VMware Cloud on AWS.
 
-*Nota:* hay un requisito en este laboratorio de haber completado los pasos en el módulo [Trabajando con un SDDC](https://vmc-field-team.github.io/labs-es/working-with-sddc-lab/) en relación a la creación de un  Content Library, Redes, y las reglas de Firewall.
+*Nota:* hay un requisito en este módulo de haber completado los pasos en el módulo [Trabajando con un SDDC](https://vmc-field-team.github.io/labs-es/working-with-sddc-lab/) en relación a la creación de un  Content Library, Redes, y las reglas de Firewall.
+
+## Integración con AWS Simple Storage Service (S3)
+
+**Bibliotecas respaldadas por AWS Simple Storage Service (S3)**
+
+Las bibliotecas de contenido de vSphere permiten a los clientes aprovechar diferentes tipos de respaldo de almacenamiento además de vSphere Datastores. El requisito principal es que el punto final del contenido sea accesible a través de HTTP(s), lo que significa que se pueden usar varias soluciones desde un simple servidor web como Nginx hasta un almacén de objetos distribuidos avanzado como el Simple Storage Service (S3) de AWS.
+
+El flujo de trabajo para crear una biblioteca de contenido de vSphere en S3 es la siguiente:
+
+1. Cargue y organice el contenido en S3
+
+2. Ejecute un script de python para indexar y generar los metadatos de la biblioteca de contenido
+
+3. Con la capacidad de indexar y generar de forma remota los archivos de metadatos de la Biblioteca de contenido, no es necesario que guarde una copia local de todo su contenido. Todos los cambios pueden realizarse directamente en el depósito S3 y luego simplemente volver a ejecutar el script para generar los metadatos actualizados que incluso se pueden programar como un simple trabajo cron.
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/S3-1.jpg)
+
+El script de python al que se hace referencia que se puede descargar [aquí](https://code.vmware.com/samples/4388/automating-the-creation-of-3rd-party-content-library-directly-on-amazon-s3) ahora puede indexar contenido tanto localmente como en un depósito S3 remoto.
+
+En caso de que no lo supiera, el uso de S3 (ingreso / egreso) desde un SDDC de un cliente es 100% gratis para clientes de VMware Cloud en AWS simplemente usando un S3 Endpoint vinculado. Esto significa que puede aprovechar S3 para almacenar sus plantillas, ISO y otros archivos estáticos, que también pueden compartir otros SDDC. Esto significa que no está consumiendo ninguna parte de su almacenamiento primario para contenido estático y puede usarse para lo que significaba, para sus cargas de trabajo.
+
+Para éste módulo, y en aras del tiempo, el contenido de este ejercicio se ha cargado en un contenedor S3 existente en AWS para usted. ¡Creemos la Biblioteca de Contenidos respaldada por S3!
+
+**Agregar biblioteca de contenido con respaldo S3**
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/S3-2.jpg)
+
+1\. En la ventanilla de VMware Cloud on AWS vCenter haga click en *Menu*
+
+2\. Haga click en *Content Libraries*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/S3-3.jpg)
+
+3\. En la ventanilla de Biblioteca de contenido, haga clic en el signo **+** para agregar una nueva Biblioteca de contenido.
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/S3-4.jpg)
+
+4\. Nombre su biblioteca de contenido como usted guste, ejemplo **S3 Content Library**
+
+5\. (Opcional) Ingrese algunas notas para su Biblioteca de contenido
+
+6\. Haga click en *NEXT*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/S3-5.jpg)
+
+7\. Seleccione *Subscribed content library*
+
+8\. En el área *Subscription URL* entre lo siguiente: **http://vmc-elw-vms.s3-accelerate.amazonaws.com/lib.json**
+
+9\. Asegúrese que *Download content* esté seleccionado con *immediately*
+
+10\. Haga click en *NEXT*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/S3-6.jpg)
+
+11\. En casp qie la notificación "No se puede identificar muy bien el host de suscripción" le aparezca, haga click en *YES*.
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/S3-7.jpg)
+
+12\. Resalte *WorkloadDatastore* como la ubicación de almacenamiento
+
+13\. Haga click en *Next*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/S3-8.jpg)
+
+14\. Haga click en el botón *Finish*. Su biblioteca de contenido debe demorar más o menos 20 minutos para completar la sincronización.
+
+Felicidades, has completado este ejercicio.
 
 ## Integración con AWS Relational Database Service (RDS)
 
-### Implementar la VM Photo
+**Implementar la VM Photo**
 
 Como primer paso para configurar nuestra integración entre la plataforma VMware Cloud on AWS y los servicios nativos de AWS, implementaremos una máquina virtual que utilizaremos para esta demostración. Esta VM se denominará "Photo VM". Por favor, siga las siguientes instrucciones.
 
@@ -245,7 +313,7 @@ Esta funcionalidad ofrece a los clientes ahora opciones sobre cómo se migran la
 
 ## Integración con AWS Elastic File System (EFS)
 
-### Creación de una VM para integrar con EFS
+**Creación de una VM para integrar con EFS**
 
 En nuestra próxima sección sobre integración de servicios de AWS con VMware Cloud on AWS, utilizaremos AWS Elastic File System (EFS), que podemos usar para montar recursos compartidos de NFS en nuestras máquinas virtuales alojadas en VMware Cloud on AWS.
 
