@@ -60,6 +60,7 @@ Importe los enlaces favoritos en Chrome haciendo doble click en el icono de Chro
 8. Seleccione **bookmarks_vmc_workshop**
 9. Haga click en **Open**
 
+
 ## Módulos
 
 Nombre de Módulos | Descripción
