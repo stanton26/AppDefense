@@ -42,7 +42,7 @@ Importe los enlaces favoritos en Chrome haciendo doble click en el icono de Chro
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Workshop+Details/WorkshopDetails1.jpg)
 
 1. Haga click en los tres puntos verticales en la esquina superior derecha
-2. Seleccione la opción Bookmarks
+2. Seleccione la opción **Bookmarks**
 3. Seleccione la opción **Import bookmarks and settings**
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-8-Image-2.png)
