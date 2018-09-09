@@ -47,11 +47,14 @@ Importe los enlaces favoritos en Chrome haciendo doble click en el icono de Chro
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Workshop+Details/WorkshopDetails2.jpg)
 
-4. Haga click en la menu desplegable
+4. Haga click en el menú desplegable
 5. Seleccione la opción **Bookmarks HTML File**
-6. Haga click en **Choose File**
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Workshop+Details/WorkshopDetails3.jpg)
+
+6. Haga click en **Choose File**
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Workshop+Details/WorkshopDetails4.jpg)
 
 7. Haga click en **Desktop**
 8. Seleccione **bookmarks_vmc_workshop**
