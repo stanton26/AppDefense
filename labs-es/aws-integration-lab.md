@@ -336,13 +336,19 @@ En el browser, abra una nueva pestaña y visite: https://vmcworkshop.signin.aws
     Password: **VMware1!**
 
 Escriba los siguientes comandos en la terminal:
+
 • **cd /**
+
 • **mkdir efs**
+
 • **sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2
 MOUNT_TARGET_IP:/ efs**
     Dónde *MOUNT_TARGET_IP* es la IP que anotó en un paso anterior para su EFS
+
 • **cd efs**
+
 • **touch hello.world**
+
 • **ls**
 
 Hemos integrado AWS EFS don una VM en VMware Cloud on AWS.
