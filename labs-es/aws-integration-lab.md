@@ -72,7 +72,7 @@ Para éste módulo, y en aras del tiempo, el contenido de este ejercicio se ha c
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/S3-6.jpg)
 
-11\. En casp qie la notificación "No se puede identificar muy bien el host de suscripción" le aparezca, haga click en *YES*.
+11\. En caso que la notificación "No se puede identificar muy bien el host de suscripción" le aparezca, haga click en *YES*.
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/S3-7.jpg)
 
