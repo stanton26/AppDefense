@@ -39,7 +39,7 @@ AWS Console <https://vmcworkshop.signin.aws.amazon.com/console>
 
 Importe los enlaces favoritos en Chrome haciendo doble click en el icono de Chrome en el Escritorio (Este es el explorador preferido para el taller)
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-7-Image-1.png)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Workshop+Details/WorkshopDetails1.jpg)
 
 1. Haga click en los tres puntos verticales en la esquina superior derecha
 2. Seleccione la opción Bookmarks
