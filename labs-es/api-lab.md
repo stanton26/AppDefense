@@ -11,97 +11,127 @@ comments: true
 ---
 # Introduction
 
-In this lab exercise we will be showing how you can intereact with the VMware Cloud on AWS platform through programmatic means. We will go through how we can use PowerShell as a means to interact with the Cloud Solution Platform as well as the vCenter instance. We will then delve into how we can interact with the VMware Cloud on AWS REST API and perform actions in both the interegrated "Developer Center" view in the console, and also through popular third party and open source REST clients. For the purposes of our lab exercise we will be making use of "Postman" as our REST Client.
+En este ejercicio mostraremos cómo puede interactuar con VMware Cloud on AWS a través de medios programáticos. Veremos cómo podemos usar PowerShell como un medio para interactuar con la plataforma de soluciones de la nube, así como con la instancia de vCenter. Después, profundizaremos en cómo podemos interactuar con el API REST de VMware Cloud on AWS y realizar acciones tanto en la pestaña integrada de "Developer Center" en la consola, como a través de populares clientes REST de código abierto y de otras herramientas. Continuaremos nuestro ejercicio haciendo uso de "Postman" como nuestro cliente REST.
 
-## Using PowerShell
+## Usando PowerShell
 
-### Open the PowerShell CLI
+### Abra la ventana de PowerShell CLI
 
-1. Click on **Start**, and scroll down until you see the Windows PowerShell menu
-2. Right click on the **PowerShell CLI** shortcut icon and select **Run as Administrator**
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs1.jpg)
 
-Install the VMware PowerCLI module if not loaded
+1\. Haga click en **Start**, y baje hasta que vea el menú **Windows PowerShell**
+2\. Haga click derecho en el acceso directo de PowerShell CLI y seleccione **Run as
+Administrator**
 
-``` powershell
-install-Module VMware.PowerCLI
-```
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs2.jpg)
 
-We now need to set the execution policy to Remote Signed in the PowerShell session.
+3\. Haga click en **Yes**
 
-``` powershell
-Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -force
-```
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs3.jpg)
 
-You now will need to set the PowerCLI Configuration to Ignore Invalid Certificates. Please type the following command to action this.
+Instale el módulo VMware PowerCLI si no está cargado Escriba **install-Module VMware.PowerCLI** y pulse intro
 
-``` powershell
-Set-PowerCLIConfiguration -InvalidCertificateAction Ignore -Confirm:$false
-```
+*Nota:* Es posible usar tabulación para completar el comando. ej...escriba install-mod y luego tabulación. Podría haber un pequeño retraso la primera vez pero el comando **install-module** se completará.
 
-NOTE: Be sure the "i" in "Ignore" is capitalized if you are not using copy/paste to input this command
+*Nota:* Se preguntará si desea instalar el NuGet provider, elija la opción por defecto o escriba Y y luego intro, luego se preguntará si desea confiar en un repositorio no confiado, **NO ELIJA** la opción por defecto y escriba **Y** y luego intro.
 
-We now need to install the VMware CLI commands
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs4.jpg)
 
-``` powershell
-Install-Module -name VMware.VMC -scope AllUsers
-```
+Ahora es necesario cambiar la politica de ejecución a Remote Signed.
 
-Let's take a quick look at the VMware CLI commands.
+Escriba **Set-ExecutionPolicy -ExecutionPolicy RemoteSigned** y presione intro
 
-``` powershell
-Get-VMCCommand
-```
+Para autocompletar usando tabulación, escriba **Set-Ex{tab} -Exe{tab} Rem{tab}** y presione intro
 
-![get-vmccommand](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/api-lab/Screenshot+at+Jul+19+13-22-31.png)
+*Nota:* Se preguntará si desea cambiar la politica de ejecución, escriba **Y** y presione intro
 
-We now need to get your Refresh Token from the VMC console.
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs5.jpg)
 
-Switch back to or open the web browser and log into **vmc.vmware.com**
+Ahora será necesario la Configuración de PowerCLI a Ignore Invalid Certificates.
 
-If you are not already logged in
+**PASO IMPORTANTE:**
 
-1. Open a new tab
-2. Click on the **VMware Cloud on AWS** bookmark shortcut on the Bookmarks bar
-3. Login with the email address which you used to sign up to the VMware Cloud on AWS Experience day
-4. Click on the drop down next to your Name/Org ID
-5. Click on **My Account** under "User Settings"
-6. In the My Account page, click on **API Tokens**
-7. Click on **New Token**
-8. Click **Continue**
+Escriba **Set-PowerCLICon guration -InvalidCertificateAction Ignore** y pulse intro
 
-Now you can click on **copy to clipboard** you also have the ability to revoke and regenerate the token if you wish.
+*NOTA:* Asegúrese de que la "i" en "Ignore" sea mayúscula
 
-Now let's connect to our VMware Cloud on AWS platform from PowerShell
+*Nota:* Se le preguntará si desea actualizar la Configuración de PowerCLI, escriba **Y** y presione intro
 
-``` powershell
-connect-vmc -refreshtoken "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-```
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs6.jpg)
 
-Now we can use the following PowerShell command to see what VMware Cloud on AWS Organisations we have access to
+Ahora es necesario instalar los VMware CLI cmdlets
 
-``` powershell
-Get-VMCorg
-```
+Escriba **Install-Module -name VMware.VMC -scope AllUsers** y presione intro
 
-Note the Org Display_Name and ID
+*Nota:* Se le preguntará si desea confiar en un repositorio no confiado, escriba **Y** y presione intro
 
-Now that we know the Org Display_Name we can find out information about the SDDC's inside our org.
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs7.jpg)
 
-```powershell
-Get-VMCSDDC -Org VMC-WS#
-```
+Hagamos una revisión rápida de los VMware CLI cmdlets.
 
-NOTE: Replace # with your Student Number
+Escriba **Get-VMCCommand** y presione intro
 
-![get-vmcsddc](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/api-lab/Screenshot+at+Jul+19+13-47-47.png)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs8.jpg)
 
-Another thing you can do is see the Default Credentials for your SDDC
+Ahora necesitará obtener el Refresh Token desde la consola de VMC. Cambie al browser o abra uno e ingrese a **vmc.vmware.com**.
 
-```powershell
-Get-VMCSDDCDefaultCredential -org VMC-WS#
-```
+Si todavía no ha ingresado
+1\. Abra una nueva pestaña
+2\. Haga click en el acceso directo VMware Cloud on AWS
+3\. Escriba su correo electrónico
+4\. Haga click en **Next**
 
-NOTE: Replace # with your Student Number
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs9.jpg)
+
+5\. Haga click en la caja desplegable junto a **Name/Org ID**
+6\. Haga click en **OAuth Refresh Token**
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs10.jpg)
+
+Ahora cree un nuevo refresh token para su ID vinculada a esta Org
+
+7\. Haga click en **Create a new token**
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs11.jpg)
+
+8\. Haga click en **Copy to Clipboard**
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs12.jpg)
+
+Ahora agréguela al servidor VMC
+
+Escriba **connect-vmc -refreshtoken "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"** y presione intro.
+
+*NOTA:* Dentro de la ventana de PowerShell usted puede hacer click derecho y copiar el código, las comillas son opcionales
+
+*NOTA:* Pegue el refresh token que copió en el ejercicio anterior.
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs13.jpg)
+
+Ahora podemos ver a cuales Orgs tenemos acceso
+
+Escriba **Get-VMCorg** y presione intro.
+
+9\. Note el Org Display_Name y ID
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs14.jpg)
+
+Ahora que sabemos el Org Display_Name podemos buscar información sobre el SDDC dentro de nuestra org.
+
+Escriba **Get-VMCSDDC -Org VMC-WS#** y presione intro.
+
+*NOTA:* reemplace # con su número de estación de trabajo
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs15.png)
+
+Otra cosa interesante que se puede hacer es ver las Credenciales por Defecto de su SDDC
+
+Escriba **Get-VMCSDDCDefaultCredential -org VMC-WS#** y presione intro.
+
+*NOTA:* reemplace # con su número de estación de trabajo.
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs16.png)
+
 
 ## REST APIs through Developer Center
 
@@ -277,7 +307,7 @@ Lets request some details from our Org so we can send them to Slack.
 2. Click on **Headers**
 3. Click **Send**
 
-You see here how we are using the access_token variable for the csp-auth-token. This will authorize our request. 
+You see here how we are using the access_token variable for the csp-auth-token. This will authorize our request.
 
 NOTE: This access token is only good for 30 minutes. If you run this request and get a response of 400 unauthorized, go back and run the authorize request.
 
