@@ -20,6 +20,7 @@ En este ejercicio mostraremos cómo puede interactuar con VMware Cloud on AWS a 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs1.jpg)
 
 1\. Haga click en **Start**, y baje hasta que vea el menú **Windows PowerShell**
+
 2\. Haga click derecho en el acceso directo de PowerShell CLI y seleccione **Run as
 Administrator**
 
@@ -76,25 +77,29 @@ Escriba **Get-VMCCommand** y presione intro
 Ahora necesitará obtener el Refresh Token desde la consola de VMC. Cambie al browser o abra uno e ingrese a **vmc.vmware.com**.
 
 Si todavía no ha ingresado
-1\. Abra una nueva pestaña
-2\. Haga click en el acceso directo VMware Cloud on AWS
-3\. Escriba su correo electrónico
-4\. Haga click en **Next**
+4\. Abra una nueva pestaña
+
+5\. Haga click en el acceso directo VMware Cloud on AWS
+
+6\. Escriba su correo electrónico
+
+7\. Haga click en **Next**
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs9.jpg)
 
-5\. Haga click en la caja desplegable junto a **Name/Org ID**
-6\. Haga click en **OAuth Refresh Token**
+8\. Haga click en la caja desplegable junto a **Name/Org ID**
+
+9\. Haga click en **OAuth Refresh Token**
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs10.jpg)
 
 Ahora cree un nuevo refresh token para su ID vinculada a esta Org
 
-7\. Haga click en **Create a new token**
+10\. Haga click en **Create a new token**
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs11.jpg)
 
-8\. Haga click en **Copy to Clipboard**
+11\. Haga click en **Copy to Clipboard**
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs12.jpg)
 
@@ -112,7 +117,7 @@ Ahora podemos ver a cuales Orgs tenemos acceso
 
 Escriba **Get-VMCorg** y presione intro.
 
-9\. Note el Org Display_Name y ID
+12\. Note el Org Display_Name y ID
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs14.jpg)
 
