@@ -343,6 +343,7 @@ Escriba los siguientes comandos en la terminal:
 
 • **sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2
 MOUNT_TARGET_IP:/ efs**
+
     Dónde *MOUNT_TARGET_IP* es la IP que anotó en un paso anterior para su EFS
 
 • **cd efs**
