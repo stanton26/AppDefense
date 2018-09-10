@@ -307,23 +307,56 @@ El usuario de los dos lados (su compañero y suyo) siempre será *cloudadmin@v
 
 44\. Haga click en *Finish*
 
-### Placeholder Datastores
+### Storage Policy Mappings
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM37.jpg)
 
-45\. Seleccione *Placeholder Datastores* en el panel izquierdo
+45\. Seleccione *Storage Policy Mappings* en el panel izquierdo
 
 46\. Haga click en *+ New*
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM38.jpg)
 
-47\. Seleccione *WorkloadDatastore*
 
-48\. Haga click en *Add*
+47\. Seleccione *Prepare mappings manually*
+
+48\. Haga click en *NEXT*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM39.jpg)
+
+49\. Escoja *Datastore Default* de los dos lados
+
+50\. Haga click en *ADD MAPPINGS*
+
+51\. Haga click en *NEXT*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM40.jpg)
+
+52\. Seleccione *DatastoreDefault*
+
+53\. Haga click en *NEXT*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM41.jpg)
+
+54\. Haga click en *FINISH*
+
+### Placeholder Datastores
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM42.jpg)
+
+55\. Seleccione *Placeholder Datastores* en el panel izquierdo
+
+56\. Haga click en *+ New*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM43.jpg)
+
+57\. Seleccione *WorkloadDatastore*
+
+58\. Haga click en *Add*
 
 ## SRM - Protección de una VM
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM39.jpg)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM44.jpg)
 
 1\. Seleccione una VM para replicar y haga click derecho
 
@@ -333,25 +366,25 @@ El usuario de los dos lados (su compañero y suyo) siempre será *cloudadmin@v
 
 *NOTA*: Podría ser necesario ingresar en sitio conectado (El sitio de su compañero), asegúrese de usar cloudadmin@vmc.local y use la contraseña de su compañero. Luego de entrar podría tener que repetir este paso.
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM40.jpg)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM45.jpg)
 
 4\. Haga click en *Next*
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM41.jpg)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM46.jpg)
 
 5\. Seleccione el Target Site
 
 6\. Si ha ingresado es necesario hacerlo (Recuerde es que el sitio de su compañero no el suyo)
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM42.jpg)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM47.jpg)
 
 7\. Escriba las credenciales del sitio de su compañero
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM43.jpg)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM48.jpg)
 
 8\. Deje los valores por defecto y haga click en el botón *Next*
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM44.jpg)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM49.jpg)
 
 9\. Deje *Datastore Default* como la VM Storage Policy por defecto
 
@@ -359,13 +392,13 @@ El usuario de los dos lados (su compañero y suyo) siempre será *cloudadmin@v
 
  11\. Haga click en *Next*
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM45.jpg)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM50.jpg)
 
 12\. Deje el valor por defecto de 1 hora para Recovery Point Objective, RPO puede ser tan bajo como 5 minutos, y tan alto como 24 horas
 
 13\. Haga click en *Next*
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM46.jpg)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM51.jpg)
 
 14\. Seleccione *Add to new protection group* 
 
@@ -373,7 +406,7 @@ El usuario de los dos lados (su compañero y suyo) siempre será *cloudadmin@v
 
 16\. Haga click en *Next*
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM47.jpg)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM52.jpg)
 
 17\. Seleccione *Add to new recovery plan*
 
@@ -381,62 +414,62 @@ El usuario de los dos lados (su compañero y suyo) siempre será *cloudadmin@v
 
 19\. Haga click en el boton *Next*
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM48.jpg)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM53.jpg)
 
 20\. Haga click en *Finish*
 
 ## Realice una Prueba de Recuperación
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM49.jpg)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM54.jpg)
 
 1\. En el portal VMware Cloud on AWS portal, haga click en la pestaña *Add Ons*
 
 2\. Haga click en *Open Site Recovery* (Se deben habilitar las ventanas emergentes)
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM50.jpg)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM55.jpg)
 
 3\. En la ventana Site Recovery, haga click en *Open*
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM51.jpg)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM56.jpg)
 
 4\. Haga click en *Recovery Plans*
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM52.jpg)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM57.jpg)
 
 5\. Haga click en su grupo de protección *PG#* donde # es su número de estudiante
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM53.jpg)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM58.jpg)
 
 6\. Haga click en *Recovery Plans* 
 
 7\. Haga click en *RP#* el cual debería ser su Recovery Plan creado en el paso anterior
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM54.jpg)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM59.jpg)
 
 8\. Haga click en el botón *Test*
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM55.jpg)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM60.jpg)
 
 9\. Deje todos los valores por defecto y haga click en el botón *Next*
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM56.jpg)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM61.jpg)
 
 10\. Haga click en el botón *Finish*
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM57.jpg)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM62.jpg)
 
 11\. Siga el progreso de la tarea en *Recent Tasks* que se encuentra en la parte inferior de la ventana
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM58.jpg)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM63.jpg)
 
 12\. Note que la prueba fue completada exitosamente
 
 13\. Haga click en el botón *Cleanup* para limpiar la actividad y devolver el ambiente a su estado normal
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM59.jpg)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM64.jpg)
 
 14\. Haga click en *Next*
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM60.jpg)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM65.jpg)
 
 15\. Haga click en *Finish*, el ambiente ahora está limpio. Note que durante la prueba, las replicaciones que protegen sus VMs no son interrumpidas
