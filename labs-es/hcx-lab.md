@@ -271,36 +271,100 @@ Una consola se abrirá para la VM *Mission Critical Workload 1*, trate de hacer 
 
 57\. Haga click en la VM *Mission Critical Workload 1*, puede ver que el proceso de migración reversa al vCenter on-premise fue exitoso
 
-## HCX - Bulk Migration
+## HCX - Migración en Lote
 
-1. In your Chrome browser click the **HCX-Bulk** bookmark
-2. Click on the **X** to enlarge the main screen
-3. As with the vMotion module, in this example we also have a source site (on-premises) vCenter
-4. Click on the second tab in the browser to view the Target site vCenter
-5. Click on the tab for the on-premises vCenter
-6. Click on the **Home** button
-7. Click **HCX**
-8. Click on the **Migration** tab
-9. Click the **Migrate Virtual Machines** button
-10. Select **Tier 1 Workloads** in the left pane
-11. Click the **checkbox** to select all VM's
-12. Click **(Specify Destination Container)**
-13. Select **RedwoodCluster** as the Destination Container
-14. Click the **Select Destination** button
-15. Click **(Select Storage)**
-16. Select **cloudStorage**
-17. Click **(Select Virtual Disk Format)**
-18. Select **Same format as source**
-19. Click **(Select Migration Type)**
-20. Select **Bulk Migration**
-21. Click on **HelpDesk Workload 1** to see the options for this workload
-22. Click on **HelpDesk Workload 2** to see the options for this workload
-23. Click on the **sidebar** to view all the options
-24. Click the **Next** button
-25. Wait for **Validation is Successful** message
-26. Click **Finish** button
-27. Check Progress of the migrations
-28. Click **Refresh** button
-29. Once migrations complete, click the **Hosts and Clusters** button
-30. Click on the second tab to view the cloud vCenter
-31. You can see that both workloads have successfully migrated to the Target vCenter
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/Bulk1.jpg)
+
+1\. En Chrome browser haga click en el acceso directo *HCX-Bulk*
+
+2\. Haga click en la *X* para aumentar el tamaño de la pantalla principal
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/Bulk2.jpg)
+
+3\. Como en el módulo de vMotion, en este ejemplo también tendremos el vCenter del sitio principal (on-premises)
+
+4\. Haga click en la segunda pestaña del browser para ver el vCenter del sitio principal
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/Bulk3.jpg)
+
+5\. Haga click en la pestaña del vCenter on-premises
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/Bulk4.jpg)
+
+6\. Haga click en el botón *Home*
+
+7\. Haga click en *HCX*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/Bulk5.jpg)
+
+8\. Haga click en la pestaña *Migration*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/Bulk6.jpg)
+
+9\. Haga click en el botón *Migrate Virtual Machines*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/Bulk7.jpg)
+
+10\. Seleccione *Tier 1 Workloads* en el panel izquierdo
+
+11\. Haga click en la caja de verificación para seleccionar todas las VM
+
+12\. Haga click *(Specify Destination Container)*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/Bulk8.jpg)
+
+13\. Seleccione *RedwoodCluster* como el Destination Container
+
+14\. Haga click en el botón *Select Destination*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/Bulk9.jpg)
+
+15\. Haga click en *(Select Storage)*
+
+16\. Seleccione *cloudStorage*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/Bulk10.jpg)
+
+17\. Haga click en *(Select Virtual Disk Format)*
+
+18\. Seleccione *Same format as source*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/Bulk11.jpg)
+
+19\. Haga click en *(Select Migration Type)*
+
+20\. Seleccione en *Bulk Migration*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/Bulk12.jpg)
+
+21\. Haga click en *HelpDesk Workload 1* para ver las opciones de esta carga de trabajo
+
+22\. Haga click en *HelpDesk Workload 2* para ver las opciones de esta carga de trabajo
+
+23\. Haga click en el sidebar para ver todas las opciones
+
+24\. Haga click en el botón *Next*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/Bulk13.jpg)
+
+25\. Espere que el mensaje *Validation is Successful* aparezca
+
+26\. Haga click en el botón *Finish*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/Bulk14.jpg)
+
+27\. Revise el progreso de la migración
+
+28\. Haga click en el botón *Refresh*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/Bulk15.jpg)
+
+29\. Una vez las migraciones hayan completado, haga click en el botón *Hosts and Clusters*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/Bulk16.jpg)
+
+30\. Haga click en la segunda pestaña para ver el cloud vCenter
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/Bulk17.jpg)
+
+31\. Puede ver que las dos cargas de trabajo han migrado exitosamente al vCenter Destino
