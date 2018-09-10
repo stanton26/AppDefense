@@ -11,255 +11,425 @@ comments: true
 ---
 # Introduction
 
-In this lab we are going to start with looking at the basic tasks which you will perform in the VMware Cloud on AWS user interface when you are administering the platform.
+En este módulo, comenzaremos con las tareas básicas que realizará en la interfaz de usuario de VMware Cloud on AWS cuando administre la plataforma.
 
-## Add a Host to your SDDC
+## Agregue un Host a su SDDC
 
-We will start by adding a host to the VMware Cloud on AWS platform. For the purposes of this lab, we have already precreated the VMware Cloud on AWS SDDC environments for you, in order to save time.
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC1.jpg)
 
-In your chrome browser you will see a bookmark on the bokkmarks bar named **VMware Cloud Services**. Please click this bookmark.
+1\. En el *Student Workshop #* SDDC asignado, haga click en el botón *View Details*
 
-You will be directed to a login page for Cloud Services from VMware. You will need to login with the email address which you signed up to the VMware Cloud on AWS Experience day with. You will also need to ensure that this email address is associated with a "MyVMware Account" in order for the login to VMware Cloud Services to work correctly.
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC2.jpg)
 
-You will now be logged into your organisation hosting your VMware Cloud on AWS SDDC cluster.
+2\. Haga click en el botón *Actions*
 
-1. On your "Student Workshop #" SDDC, click on the "View Details" button.
-    ![View details](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/Screenshot+at+Jul+17+15-32-13.png)
-2. Click on the **Actions** button in the upper right hand corner of the UI
-3. Click on **Add Hosts**
-4. In this student environment, we have restricted the platform to only allow the addition of one host. If this were a customer environment there would not be this restriction
-5. Click the **Add Hosts** button
-    ![Add Hosts](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/Screenshot+at+Jul+17+15-45-30.png)
+3\. Haga click en *Add Hosts*
 
-Your SDDC environment will now go through the process of adding an additional host to the SDDC environment. The process can take up to 10 minutes to complete. In the background automated tasks are provisoning an additional host, adding the host to the SDDC cluster and extending the VSAN cluster to utilise the storage presented by this additional host. All of this is done without human interaction in roughly 10 minutes. You may choose to wait for this action to process or move onto the next exercise and check back later to see your additional host.
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC3.jpg)
 
-Congratulations! You have completed this step. Please move onto configuring your SDDC Firewall rules below.
+4\. Como solo se va a agregar un host, revise el campo resaltado
 
-----------------
+5\. Haga click en el botón *Add Hosts*
 
-## Configuring SDDC Firewall Rules
+Felicitaciones! Ha completado este paso.
+
+Agregar un host adicional a un SDDC existente toma alrededor de 10 minutos para completar.
+
+## Configuración de Reglas de Firewall en un SDDC
 
 In VMware Cloud on AWS we have two Edge Gateways which are protecting the two main networks in the VMware Cloud on AWS SDDC. The **Management Network** and the **Compute Network**. When we first intiate your SDDC environment, the default is for all traffic to both the Management and Compute networks to be denied. In this exercise we will go through the steps required to open up firewall rules so that we can manage the SDDC and not only access compute workloads but allow those compute workloads to communicate with native AWS services.
 
-### Management Gateway Firewall Rules
+### Reglas de Firewall para el Management Gateway
 
-By default, the firewall for the Management Gateway is set to deny all inbound and outbound traffic. In this exercise, you will add a firewall rule to allow vCenter traffic. This will allow you to access the vCenter Server in your SDDC.
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC4.jpg)
 
-1. From your SDDC, click **View Details**
-2. Click **Network**
-3. Expand **Firewall Rules**
-4. Click **Add Rule**
-    ![Add Rule](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/Screenshot+at+Jul+17+20-48-57.png)
-5. Enter a name for your rule under **Rule Name**, For Example, "vCenter-Allow-Any"
-6. Type **Any** for Source
-7. Make sure **vCenter** is selected as Destination
-8. Select **HTTPS (TCP 443)** from the drop down box for Service
-9. Click the **SAVE** button, your rule should look like the below image
+Por defecto, el Firewall está configurado para denegar todo el tráfico tanto entrante como saliente del Management Gateway. En este ejercicio, se agregará una regla de Firewall para permitir el tráfico de vCenter. Para tener acceso al vCenter Server del SDDC, se debe agregar que lo permita al vCenter Server.
 
-![vCenter Rule](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/Screenshot+at+Jul+17+20-55-42.png)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC5.jpg)
 
-### Compute Gateway Firewall Rules
+1\. Haga click en la pestaña titulada *Network*
 
-Like the Management NSX Edge Services Gateway. By default, the Compute NSX Edge Services Gateway is also set to deny all inbound and outbound traffic. You need to add additional firewall rules to allow access to your workload VMs which you provision in the VMware Cloud on AWS platform.
+ 2\. Bajo *Management Gateway* haga click en la flecha y expanda *Firewall Rules*
 
-#### Create Firewall Rule under Compute Gateway for Inbound Native AWS Services access
+3\. Haga click en el texto titulado *Add Rule*
 
-1. Under **Network** tab, navigate to **Compute Gateway**
-2. Expand **Firewall Rules**
-3. Click **ADD RULE**
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC6.jpg)
 
-#### AWS Inbound Firewall Rule
+4\. Escriba el nombre de la regla en el campo *Rule Name* 
 
-1. **Name** - AWS Inbound
-2. **Action** - Allow
-3. **Source** - All connected Amazon VPC
-4. **Destination** - 192.168.#.0/24 (Where # is your student number)
-5. **Service** - ANY
-6. Click **SAVE** button.
+5\. Seleccione *Any* como el tipo de fuente
 
-![Aws Inbound](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/Screenshot+at+Jul+17+21-01-43.png)
+ 6\. Asegúrese que *vCenter* este seleccionado como destino 
 
-#### Create AWS Outbound Firewall Rule
+7\. Seleccione *HTTPS (TCP 443)* en el menú desplegable Service
 
-Follow the same process as in the previous step and create AWS Outbound Firewall Rule following these instructions:
+ 8\. Haga click en el botón *SAVE*, la regla debe ser igual a la de la imagen siguiente
 
-1. **Name** - AWS Outbound
-2. **Action** - Allow
-3. **Source** - 192.168.#.0/24 (Where # is your student number)
-4. **Destination** - All connected Amazon VPC
-5. **Service** - ANY
-6. Click **SAVE** button.
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC7.jpg)
 
-![AWS Outbound](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/Screenshot+at+Jul+17+21-10-22.png)
+### Reglas de Firewall para el Compute Gateway
 
-We have now successfully created rules which will allow us to access our vCenter server over port 443 from any location, in a real world deployment we would change this to only allow communication from a specific IP address range over a private link, once we have a VPN in place. We have also configured our Compute workloads to be able to communicate with any services in our native AWS VPC which our VMware Cloud on AWS environment is connected too.
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC8.jpg)
 
-## Log into VMware Cloud on AWS vCenter
+Por defecto, el Compute NSX Edge Services Gateway también esta configurado para denegar todo el tráfico tanto entrante como saliente. Será necesario crear reglas de firewall para permitir el tráfico de acuerdo a las necesidades.
 
-We will now login to our VMware Cloud on AWS vCenter instance, now that the required ports have been open on our Management NSX Edge Services Gateway.
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC9.jpg)
 
-Login to your Student # SDDC and click **Open vCenter**
+Cree una Regla de Firewall bajo la sección Compute Gateway para el acceso nativo a los servicios de AWS.
 
-Here you will see the default username and password which has been set for your SDDC vCenter login. You can either view, or copy the password (Please copy the password for the purposes of this lab)
+1\. Bajo la pestaña *Network*, navegue hasta *ComputeGateway*
 
-Click **Open Vcenter** from the Default vCenter Credentials view.
+2\. Expanda *FirewallRules*
 
-This will open a new tab which will take you to the standard vSphere HTML5 client login
+ 3\. Haga click en *ADD RULE*
 
-Login with **cloudadmin@vmc.local** user name and the password which you copied to the clipboard.
+#### Regla de Firewall AWS Entrante
 
-You are now logged in to your VMware Cloud on AWS vCenter Server as **cloudadmin@vmc.local** user.
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC10.jpg)
 
-![vCenter login](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/Screenshot+at+Jul+17+21-26-55.png)
+Cree una Regla de Firewall AWS entrante siguiendo las siguientes instrucciones:
 
-## Create Content Library
+4\. Name - **AWS Inbound**
 
-Content libraries are container objects for VM templates, vApp templates, and other types of files like ISO images.
+5\. Action - **Allow**
 
-You can create a content library in the vSphere Web Client, and populate it with templates, which you can use to deploy virtual machines or vApps in your VMware Cloud on AWS environment, or if you already have a Content Library in your on-premises data center, you can use the Content Library to import content into your SDDC.
+6\. Source - **All connected Amazon VPC**
 
-You can create two types of libraries: local or subscribed libraries.
+7\. Destination - **192.168.#.0/24** (Donde # es su número de estudiante)
 
-### Local Libraries
+8\. Service - **ANY**
 
-You use a local library to store items in a single vCenter Server instance. You can publish the local library so that users from other vCenter Server systems can subscribe to it. When you publish a content library externally, you can configure a password for authentication.
+9\. Haga click en el botón *SAVE*
 
-VM templates and vApp templates are stored as an OVF file format in the content library. You can also upload other file types, such as ISO images, text files, and so on, in a content library.
+#### Regla de Firewall AWS Saliente
 
-### Subscribed Libraries
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC11.jpg)
 
-You subscribe to a published library by creating a subscribed library. You can create the subscribed library in the same vCenter Server instance where the published library is, or in a different vCenter Server system. In the Create Library wizard you have the option to download all the contents of the published library immediately after the subscribed library is created, or to download only metadata for the items from the published library and later to download the full content of only the items you intend to use.
+Siga el mismo proceso que en la sección anterior y cree una Regla de Firewall AWS Saliente:
 
-To ensure the contents of a subscribed library are up-to-date, the subscribed library automatically synchronizes to the source published library on regular intervals.
+1\. Name - **AWSOutbound**
 
-You can also manually synchronize subscribed libraries. You can use the option to download content from the source published library immediately or only when needed to manage your storage space.
+2\. Action - **Allow**
 
-Synchronization of a subscribed library that is set with the option to download all the contents of the published library immediately, synchronizes both the item metadata and the item contents. During the synchronisation the library items that are new for the subscribed library are fully downloaded to the storage location of the subscribed library.
+3\. Source - **192.168.#.0/24** (Donde # es su número de estudiante)
 
-Synchronization of a subscribed library that is set with the option to download contents only when needed synchronizes only the metadata for the library items from the published library, and does not download the contents of the items. This saves storage space. If you need to use a library item you need to synchronize that item. After you are done using the item, you can delete the item contents to free space on the storage. For subscribed libraries that are set with the option to download contents only when needed, synchronizing the subscribed library downloads only the metadata of all the items in the source published library, while synchronizing a library item downloads the full content of that item to your storage. If you use a subscribed library, you can only utilize the content, but cannot contribute with content. Only the administrator of the published library can manage the templates and files.
+4\. Destination - **All connected Amazon VPC**
 
-1. In the vSphere HTML5 client, click on **Menu**
-2. click on **Content Libraries**
+5\. Service - **ANY**
 
-### Subscribe to an existing Content Library
+6\. Haga click en el botón *SAVE*
 
-You may already have a Content Library in your on-premises data center, you can use the Content Library to import content into your SDDC.
+## Ingrese al vCenter de VMware Cloud on AWS
 
-1. In your Content Library window, click the **+** sign to add a new Content Library.
-2. Name your Content Library **Student#** (where # is the number assigned to you)
-3. (Optional) Enter some notes for your Content Library
-4. Click **Next** button
-5. Select **Subscribed content library**
-6. Under **Subscription URL** enter the following:
+### Pestaña de Ajustes (Settings)
 
-    <https://vcenter.sddc-34-216-241-49.vmc.vmware.com:443/cls/vcsp/lib/4aa185b4-3d6e-45b4-90ca-cd3a845d4502/lib.json>
-7. Click the checkbox for **Enable Authentication**
-8. For the **Password** enter: **VMware1!**
-9. Ensure Download content is set to **Immediately**
-10. Click **Next**
-11. Highlight the **WorkloadDatastore** as the storage location
-12. Click **Next**
-13. Click **Finish**. Your content library should take about ~20 minutes to complete syncing.
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC12.jpg)
 
-You have now successfully subscribed to a vSphere content library from your VMware Cloud on AWS vCenter instance.
+1\. Ingrese a su Student # SDDC y haga click en la pestaña *Settings*. La información de conexión será desplegada para el ambiente VMware Cloud on AWS:
 
-### Create a Local Content Library
+2\. Información de la cuenta local para el vCenter de VMware Cloud on AWS.
 
-We will now create a local content library for this VMware Cloud on AWS vCenter instance.
+    NOTE QUE EL USUARIO MOSTRADO ES EL USER ID ASIGNADO PERO DEBERIA SER cloudadmin@vmc.local COMO CUENTA DE VCENTER POR DEFECTO.
 
-1. Click the + sign to create a new Content Library
-2. Name your new Content Library: **LocalContentLibrary#** (where # is your student #)
-3. (Optional) Enter some notes about your Content Library
-4. Click **Next** button
-5. Make sure **Local content library** is selected
-6. Click **Next**
-7. Highlight the **WorkloadDatastore** as the storage location
-8. Click **Next**
-9. Review your information and click **Finish**
+3\. URL del vCenter Server
 
-Congratulations, you have created your Local Content Library.
+4\. URL del vCenter Server API Explorer
 
-## Create a Logical Network
+5\. Cadena de conexión PowerCLI Connect para conectarse via PowerCLI al vCenter Server de VMware Cloud on AWS
 
-1. Once you are logged in to your vCenter Server Click on **Menu**
-2. Select **Global Inventory Lists**
-3. Click on **Logical Networks** in the left pane
-4. Click on the **Add** button
-5. Name your New Logical Network **Student#-LN** (where # is your student number)
-6. Select the **Routed Network** radio button
-7. For CIDR Block enter **192.168.#.0/24** (where # is your student #)
-    If your designated student number is between 1 and 9, your CIDR block should look like this: **192.168.1.0/24** - This example represents student number 1. For students 10 thru 20 it should look like this: **192.168.10.0/24** - This example represents student number 10
-8. Enter **192.168.#.1** for the Default Gateway IP - Example: 192.168.1.1
-9. Make sure DHCP is Enabled by clicking on the **checkbox**
-10. Enter **192.168.#.100-192.168.#.200** for IP Range
-11. Type **corp.local** as your DNS Domain Name
-12. Click **OK** to create your new logical network
+6\. Nombre de dominio completo (FQDN) de vCenter
 
-## Create Linux Customization Spec
+7\. Información de IP pública de vCenter
 
-When you clone a virtual machine or deploy a virtual machine from a template, you can customize the guest operating system of the virtual machine to change properties such as the computer name, network settings, and license settings.
+8\. IP pública actual de vCenter
 
-Customizing guest operating systems can help prevent conflicts that can result if virtual machines with identical settings are deployed, such as conflicts due to duplicate computer names.
+9\. IP privada asignada a vCenter
 
-You can specify the customization settings by launching the Guest Customization wizard during the cloning or deployment process. Alternatively, you can create customization specifications, which are customization settings stored in the vCenter Server database. During the cloning or deployment process, you can select a customization specification to apply to the new virtual machine.
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC13.jpg)
 
-Use the Customization Specification Manager to manage customization specifications you create with the Guest Customization wizard.
+Haga click en la URL del vSphere Client (#3 mencionado arriba), ingrese con el usuario cloudadmin@vmc.local y copie la contraseña al portapapeles del computador y péguelo en el campo Password.
 
-1. In the vCenter HTML5 client click **Menu**
-2. Click **Policies and Profiles**
-3. Click on "+ New" to add a new Customization Specification
-4. Give your VM Customization Spec a name, such as "Linux Spec"
-5. Enter a description for it (Optional)
-6. Make sure to select **Linux** in the Guest OS, Target guest OS section
-7. Click **Next**
-8. Click on the third option, **Enter a name** button
-9. Enter a name for your linux VMs, such as "linux-vm-"
-10. Click on the **Append a numeric value** checkbox
-11. Enter **corp.local** for the Domain Name
-12. Click the **Next** button
-13. Select **US** for Area
-14. Select **Eastern** for Location
-15. Select **Local time**
-16. Click **Next**
-17. Leave the defaults on the **Network** screen and click **Next**
-18. Under Primary DNS Server enter **10.46.159.10** and leave the Secondary DNS Server and Tertiory DNS Server blank
-19. Type **corp.local** for DNS Search Paths and click **Add**
-20. Click **Next**
-21. Review your entries and click **Finish**
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC14.jpg)
 
-Congratulations! You have successfully created your VM Customization Spec for your Linux VMs. You can also export (Duplicate), Edit, Import, and Export a VM Customization Spec.
+Ahora se encuentra dentro del vCenter Server de VMware Cloud on AWS como el usuario cloudadmin@vmc.local.
 
-## Deploy Virtual Machines
+## Creación de un Content Library
 
-1. On your Content Libraries (Menu -> Content Libraries)**, select **Student#** and select the **Templates** tab.
-2. Right click on the **centos-web** template and select **New VM from This Template**
-3. Name your Virtual Machine **StudentVM#** (where # is your student number)
-4. Expand the location area until you see **Workloads** and highlight it
-5. Ensure you tick **Customize this operating system**
-6. Click **Next**
-7. Select the Customization Specification you created in the previous exercise
-8. Click **Next**
-9. Expand the destination compute resources until you find **Compute-ResourcePool**, select it
-10. Click the **Next** button
-11. Click the **Next** button on the Review details screen
-12. In the **Select storage** step, highlight **WorkloadDatastore**
-13. Click **Next**
-14. In the **Select networks** step, click the drop down box to select the Destination Network (you may need to click Browse to see other networks and select your **Student#-LN** network you created previously
-15. Click **Next**
-16. In the "Ready to complete" section, review and ensure all your selections are correct and click **Finish**
+Las bibliotecas de contenido son contenedores para objetos como plantillas de VM, plantillas de vApp, y otros tipos de archivos como imágenes ISO.
 
-## Convert a Virtual Machine to a Template
+Es posible crear bibliotecas de contenido usando vSphere Web Client, y agregarles plantillas, con las cuales es posible desplegar máquinas virtuales o vApps en su ambiente VMware Cloud on AWS si ya tiene una biblioteca de contenido en su centro de datos el contenido puede ser importado a su SDDC.
 
-In this step you will be cloning your newly created Virtual Machine into a Template for later use in vRealize Automation section.
+Puede crear dos tipos de bibliotecas de contenido: contenido local o suscrita.
 
-1. Ensure your VM deployment completed from your previous step
-2. Click on **Menu**
-3. Select **VMs and Templates**
-4. Select your newly created VM **Student#** (where # is your student number)
-5. Click on **Template**
-6. Select **Convert to Template**
-7. Click **Yes**  in the Convert to Template prompt
+### Bibliotecas Locales
 
-You have completed this lab. Please continue to the API Lab which you can access from this [API Lab Link](https://vmc-field-team.github.io/labs/api-lab/)
+Puede usar las bibliotecas locales para almacenar objetos en una sola instacia de vCenter Server. Puede publicar la biblioteca local para que usuarios en otros sistemas vCenter Server se suscriban a ella. Cuando se publica una biblioteca de contenido externamente, es posible configurar una contraseña como medio de autenticación.
 
-Please add comments below if you would like to give feedback on this lab.
+Las plantillas de VM y las plantillas de vApp son almacenadas como archivos OVF en la biblioteca de contenido. También se pueden cargar otros tipos de archivos como imágenes ISO, archivos de texto y demás.
+
+### Bibliotecas Suscritas
+
+La suscripción a una biblioteca publicada se realiza al crear una biblioteca suscrita. Es posible crear una biblioteca suscrita en la misma instancia de vCenter Server donde la biblioteca esta publicada o en un vCenter Server diferente. En el asistente de creación de la biblioteca existe la opción para descargar todo el contenido de la biblioteca publicada inmediatamente luego de que la biblioteca suscrita haya sido creada o solamente descargar la metadata de los objetos de la biblioteca pubilcada y luego descargar el contenido de los objetos que se desean utilizar.
+
+Para asegurar que el contenido de la biblioteca suscrita esté actualizado, la biblioteca suscrita se sincroniza automáticamente con la biblioteca publicada de origen en intervalos regulares. También es posible sincronizar la biblioteca manualmente.
+
+Puede usar la opción de descarga de contenido de la biblioteca publicada inmediatamente o solamente cuando sea necesario para administrar el almacenamiento.
+
+La sincronización de una biblioteca suscrita que tiene la opción de descargar todo el contenido de la biblioteca publicada inmediatamente, sincronizar tanto como la metadata de los objetos así como ellos. Durante la sincronización de la biblioteca los nuevos objetos son completamente descargados a la ubicación configurada en la biblioteca suscrita.
+
+La sincronización en una biblioteca suscrita que tiene la opción de descargar el contenido solo cuando es necesario, sincronizar solamente la metadata de los objetos de la biblioteca publicada y no descargar los objetos. Esto ahorra espacio. Si un objeto de la biblioteca debe ser utilizado es necesario sincronizar el objeto. Luego de usarlo es posible eliminar el objeto para liberar espacio.
+
+Si utiliza una biblioteca suscrita, solo puede utilizar el contenido, pero no contribuir con nuevos elementos. Solo el administrador de la biblioteca publicada puede administrar los archivos y plantillas.
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC15.jpg)
+
+1\. Haga click en *Menu*
+
+ 2\. Haga click en *Content Libraries*
+
+### Suscripción a una Biblioteca de Contenido existente
+
+Es posible que tenga Bibliotecas de Contenido en su centro de datos y es posible usar Bibliotecas de Contenido como fuente para importar contenido a su SDDC.
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC16.jpg)
+
+1\. En la ventana Content Library, haga click en el simbolo *+* para agregar una Biblioteca de Contenido.
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC17.jpg)
+
+2\. Dele el nombre *Student#* a su Biblioteca de Contenido donde # es el número asignado
+
+3\. (Opcional) Agregue algunas notas a su Biblioteca de Contenido 
+
+4\. Haga click en el botón *NEXT*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC18.jpg)
+
+5\. Seleccione *Subscribed content library*
+
+6\. En el campo *Subscription URL* entre lo siguiente: *https://vcenter.sddc-34-216-241-49.vmc.vmware.com/cls/vcsp/lib/8d658764-2e89-44b-a7c1-ee777f0dfc8f/lib.json*
+
+      POR FAVOR TENGA EN CUENTA QUE PUEDEN HABER PROBLEMAS AL COPIAR Y PEGAR CARACTERES DE LA URL CUANDO SE COPIA Y PEGA DESDE EL MANUAL. LA URL SE ENCUENTRA EN UN ARCHIVO DE TEXTO EN LA UNIDAD Z:\ DEL ESCRITORIO ASIGNADO. SOLICITE INSTRUCCIONES AL INTRUCTOR SI NO PUEDE ENCONTRAR EL ARCHIVO.
+
+7\. Haga click la caja de verificación *Enable authentication*
+
+ 8\. Para el campo *Password* entre: **VMware1!**
+
+ 9\. Asegúrese que la opción *Download content* se encuentre en *immediately*
+
+10\. Haga click en *NEXT*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC19.jpg)
+
+11\. Elija *WorkloadDatastore* como la ubicación de almacenamiento
+
+12\. Haga click en el botón *Next*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC20.jpg)
+
+13\. Haga click en el botón *Finish*. La biblioteca de contenido toma aproximadamente 20 minutos en completar su sincronización.
+
+### Crear una Biblioteca de Contenido Local
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC21.jpg)
+
+1\. Haga click en el signo *+* para crear una Biblioteca de Contenido
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC22.jpg)
+
+2\. Dele el nombre : *LocalContentLibrary#* a su Biblioteca de Contenido donde # corresponde su número de estudiante
+
+3\. (Opcional) Agregue algunas notas a su Biblioteca de Contenido 
+
+4\. Haga click en el botón *Next*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC23.jpg)
+
+5\. Asegúrese que *Local content library* este seleccionado
+
+6\. Haga click en el botón *Next*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC24.jpg)
+
+7\. Seleccione *WorkloadDatastore* como la ubicación de almacenamiento
+
+8\. Haga click en el botón *Next*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC25.jpg)
+
+9\. Revise la información y haga click en el botón *Finish* Felicitaciones, ha creado una Biblioteca Local de Contenido.
+
+## Creación de una Red Lógica
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC26.jpg)
+
+1\. Una vez haya ingresado a vCenter Server haga click in *Menu*
+
+2\. Seleccione *Global Inventory Lists* del menú desplegable, la siguiente imagen deberá aparecer
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC27.jpg)
+
+3\. Haga click en *Logical Networks* en el panel izquierdo
+
+4\. Haga click en el botón *+ Add*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC28.jpg)
+
+5\. Dele el nombre *Student#-LN* a la nueva Red Lógica donde # es su número de estudiante
+
+6\. Asegúrese de haber seleccionado *Routed Network*
+
+7\. Para el bloque CIDR entre *192.168.###.0/24* usando su número de estudiante en lugar de \#
+
+    • Si su número de estudiante asignado esta entre 1 y 9, su bloque CIDRd ebería parecerse a: 192.168.1.0/24 - En este ejemplo se muestra el número de estudiante 1
+
+    • Para los números de estudiante entre 10 y 20 debería parecerse a: 192.168.10.0/24 - En este ejemplo se muestra el número de estudiante 10
+
+8\. Entre *192.168.###.1* como Default Gateway IP - Ejemplo: 192.168.1.1 
+
+9\. Asegúrese que la opción DHCP este habilitada dandole click a la caja de verificación
+
+10\. Entre *192.168.###.100-192.168.###.200* en el campo IP Range
+
+ 11\. Digite *corp.local* en el campo DNS Domain Name
+
+ 12\. Haga click en *OK* para crear una nueva Red Lógica
+
+## Creación de una Especificación de Personalización para Linux
+
+Cuando se clona una máquina virtual o se despliega desde una plantilla, es posible personalizar el sistema operativo de la VM para cambiar propiedades como el nombre del red, la configuración de red o licenciamiento.
+
+Personalizar los sistemas operativos de las VMs ayuda a prevenir conflictos que pueden resultar en VMs desplegadas con configuraciones idénticas como por ejemplo nombres de red iguales.
+
+Se pueden especificar características personalizadas abriendo el asistente de Guest Customization durante los procesos de clonación o despliegue. Alternativamente, se pueden crear especificaciones de personalización, que son configuraciones de personalización almacenadas en la base de datos de vCenter. Durante los procesos de clonación o despliegue, es posible seleccionar una especificación de personalización para aplicar a esta nueva máquina virtual.
+
+
+Use el Customization Specification Manager para administrar las especificaciones de personalización que son creadas usando el asistente de Guest Customization.
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC29.jpg)
+
+1\. Haga click en *Menu*
+
+ 2\. Haga click en *Policies and Profiles*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC30.jpg)
+
+3\. Haga click en *+ New* para agregar una nueva Especificación de Personalización para Linux
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC31.jpg)
+
+4\. Dele un nombre a la Especificación de Configuración de la VM
+
+5\. Entre una descripción (Opcional)
+
+6\. Asegúrese de seleccionar *Linux*
+
+7\. Haga click en el botón *Next*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC32.jpg)
+
+8\. Haga click en el botón *Enter a name*
+
+ 9\. Dele un nombre a la VM linux
+
+ 10\. Haga click en la caja de verificación *Append a numeric value*
+
+11\. Entre *corp.local* para el campo *Domain Name*
+
+ 12\. Haga click en el botón *Next*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC33.jpg)
+
+13\. Seleccione *US* en el campo Area
+
+14\. Seleccione *Eastern* en el Location
+
+15\. Seleccione *Local time*
+
+ 16\. Haga click en el botón *Next*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC34.jpg)
+
+17\. Deje los valores por defecto en la pantalla *Network* y haga click en el botón *Next*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC35.jpg)
+
+18\. En el campo Primary DNS Server entre *10.46.159.10*
+
+19\. Escriba *corp.local* en el campo DNS Search Paths
+
+ 20\. Haga click en el botón *Next*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC36.jpg)
+
+21\. Revise la información y haga click en el botón *Finish*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC37.jpg)
+
+Felicitaciones! Ha creado exitosamente una Especificación de Personalización para maquinas virtuales Linux. Tambien es posible Duplicar, Editar, Importar y Exportar una Especificación de Configuración para VM.
+
+## Implementación de una Máquina Virtual
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC38.jpg)
+
+1\. En Bibliotecas de Contenido *(Menu -> Content Libraries)*, seleccione *Student#* y seleccione la pestaña *Templates*
+
+2\. Haga click derecho en la plantilla *centos01-web* y seleccione *New VM from This Template*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC39.jpg)
+
+3\. Dele el nombre *StudentVM#* a la Máquina Virtual donde # es el número de estudiante
+
+4\. Expanda el area de ubicación hasta que *Workloads* sea visible y selecciónela
+
+5\. Haga click en el botón *Next*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC40.jpg)
+
+6\. Expanda el area hasta encontrar *Compute-ResourcePool*, seleccione esta opción
+
+7\. Haga click en el botón *Next*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC41.jpg)
+
+8\. Haga click en el botón *Next* y revise la información en la pantalla de detalles
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC42.jpg)
+
+9\. En el paso *Select storage*, seleccione *WorkloadDatastore*
+
+10\. Haga click en el botón *Next*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC43.jpg)
+
+11\. En el paso *Select networks*, despliegue y seleccione en Destination Network (podría ser necesario hacer click en Browse para ver más redes) y seleccione la red *Student#-LN* que fue creada previamente
+
+12\. Haga click en el botón *Next*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC44.jpg)
+
+13\. En la sección *Ready to complete*, asegúrese que todas las secciones tienen la información correcta y haga click en el botón *Finish*
+
+## Conversión de una Máquina Virtual a Plantilla
+
+En este sección se clonará una Máquina Virtual recién creada a una Plantilla para usarla luego en la sección de vRealize Automation.
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC45.jpg)
+
+1\. Asegúrese que la implementación de la VM de la sección anterior haya terminado
+
+2\. Haga click en *Menu*
+
+ 3\. Seleccione *VMs and Templates*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC46.jpg)
+
+4\. Seleccione la VM recientemente creada *Student#* donde # es su numero de estudiante
+
+5\. Haga click en *Template*
+
+ 6\. Seleccione *Convert to Template*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC47.jpg)
+
+7. Haga click en el boton *Yes* en el cuadro de dialogo de con_rmación Ha terminado este paso.
