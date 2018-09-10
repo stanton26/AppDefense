@@ -9,243 +9,434 @@ author_profile: false
 comments: true
 categories: labs
 ---
-# Introduction
+# Introducción
 
-In this lab you will pair up with another student group in order to simulate the setup and configuration tasks for VMware Site Recovery Manager
+En este módulo, se emparejará con otro grupo de alumnos para simular las tareas de configuración de VMware Site Recovery Manager con VMware Cloud on AWS.
 
-## Activate Site Recovery Add On
+## Activación del Site Recovery Add On
 
-Important Instructions for Site Recovery Exercises
+Instrucciones Importantes para los Ejercicios de Site Recovery
 
-PLEASE BE AWARE THAT THESE EXERCISES MUST BE PERFORMED FROM THE ASSIGNED HORIZON DESKTOP YOUR INSTRUCTORS ASSIGNED. IF YOU TRY TO PERFORM SOME OF THE EXERCISES OUTSIDE OF THE HORIZON SESSION YOU WILL EXPERIENCE SOME FAILURES.
+POR FAVOR ASEGURECE DE USAR EL DESKTOP ASIGNADO POR SU INSTRUCTOR PARA REALIZAR ESTOS EJERCICIOS. SI SE INTENTA REALIZAR ALGUNOS EJERCICIOS FUERA SE LA SESIÓN ASIGNADA SE EXPERIMENTARÁN FALLAS. POR FAVOR USE EL ESCRITORIO ASIGNADO DESDE EL COMIENZO DEL TALLER.
 
-### Activate Site Recovery
+### Activación del Site Recovery Add On
 
-1. In your VMware Cloud on AWS Organisation, click on the **View Details** for your SDDC deployment
-2. Click on the **Add ons** tab
-3. Under the Site Recovery Add On, Click the **Activate** button
-4. In the pop up window Click **Activate** again
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM1.jpg)
 
-Wait until the Site Recovery Add On has been activated. This process should take ~10 minutes to complete.
+1\. En el SDDC asignado, haga click en la pestaña *Add Ons*
 
-## What is VMware Site Recovery
+2\. Haga click en el botón *Activate*
 
-VMware Site Recovery brings VMware enterprise-class Software-Defined Data Center (SDDC) Disaster Recovery as a Service to the AWS Cloud. It enables customers to protect and recover applications without the requirement for a dedicated secondary site. It is delivered, sold, supported, maintained and managed by VMware as an on-demand service. IT teams manage their cloud-based resources with familiar VMware tools without the difficulties of learning new skills or utilizing new tools and processes.
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM2.jpg)
 
-VMware Site Recovery is an add-on feature to VMware Cloud on AWS. VMware Cloud on AWS integrates VMware's flagship compute, storage, and network virtualization products: VMware vSphere, VMware vSAN, and VMware NSX along with VMware vCenter Server management. It optimizes them to run on elastic, bare-metal AWS infrastructure. With the same architecture and operational experience on-premises and in the cloud, IT teams can now get instant business value via the AWS and VMware hybrid cloud experience.
+3\. Haga click en el *Activate*
 
-The VMware Cloud on AWS solution enables customers to have the flexibility to treat their private cloud and public cloud as equal partners and to easily transfer workloads between them, for example, to move applications from DevTest to production or burst capacity. Users can leverage the global AWS footprint while getting the benefits of elastically scalable SDDC clusters, a single bill from VMware for its tightly integrated software plus AWS infrastructure, and on-demand or subscription services like VMware Site Recovery Service. VMware Site Recovery extends VMware Cloud on AWS to provide a managed disaster recovery, disaster avoidance and non-disruptive testing capabilities to VMware customers without the need for a secondary site, or complex configuration.
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM3.jpg)
 
-VMware Site Recovery works in conjunction with VMware Site Recovery Manager and VMware vSphere Replication to automate the process of recovering, testing, re-protecting, and failing-back virtual machine workloads. VMware Site Recovery utilizes VMware Site Recovery Manager servers to coordinate the operations of the VMware SDDC. This is so that, as virtual machines at the protected site are shut down, copies of these virtual machines at the recovery site startup. By using the data replicated from the protected site these virtual machines assume responsibility for providing the same services.
+Espere a que se active el Site Recovery Add On.
 
-![SRM Scenarios](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/Screenshot+at+Jul+20+18-03-34.png)
+### ¿Qué es VMware Site Recovery?
 
-VMware Site Recovery can be used between a customers datacenter and an SDDC deployed on VMware Cloud on AWS or it can be used between two SDDCs deployed to different AWS availability zones or regions. The second option allows VMware Site Recovery to provide a fully VMware managed and maintained Disaster Recovery solution. Migration of protected inventory and services from one site to the other is controlled by a recovery plan that specifies the order in which virtual machines are shut down and started up, the resource pools to which they are allocated, and the networks they can access.
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM4.jpg)
 
-VMware Site Recovery enables the testing of recovery plans, using a temporary copy of the replicated data, and isolated networks in a way that does not disrupt ongoing operations at either site. Multiple recovery plans can be configured to migrate individual applications or entire sites providing finer control over what virtual machines are failed over and failed back. This also enables flexible testing schedules. VMware Site Recovery extends the feature set of the virtual infrastructure platform to provide for rapid business continuity through partial or complete site failures.
+VMware Site Recovery trae las capacidades empresariales de Software-Defined Data Center (SDDC) Disaster Recovery al Servicio de VMware Cloud on AWS. Site Recovery permite que los clientes protejan y recuperen aplicaciones sin necesidad de un sitio alterno dedicado. Es entregado, vendido, soportado, mantenido y administrado por VMware como un servicio on-demand. El equipo de TI administra los recursos en la nube con las herramientas de VMware con las que ya son familiares sin necesidad de aprender nuevas herramientas o uso de nuevas herramientas.
 
-## Create a Cross SDDC VPN
+VMware Site Recovery es un add-on a VMware Cloud on AWS, que hace uso de VMware Cloud Foundation, VMware Cloud on AWS integra los mejores productos de cómputo, almacenamiento y virtualización de redes de VMware: VMware vSphere, VMware vSAN y VMware NSX junto con VMware vCenter Server para la administración, optimizándolas para correr en la infraestructura física y elástica de AWS. Con la misma arquitectura y experiencia operacional tanto en el centro de datos como en la nube, los equipos de TI ahora pueden obtener valor de inmediato al usar AWS y la experiencia de nube híbrida de VMware.
 
-We will be setting up an IPSEC VPN connection between your VPC and the VPC of the person you were paired with.
+La solución VMware Cloud on AWS le permite a los clientes tener la flexibilidad para utilizar la nube privada y la nube pública sin distinción y transferir fácilmente cargas de trabajo entre ellas, por ejemplo: mover aplicaciones desde DevTest a producción o incrementar rápidamente su capacidad. Los usuarios pueden aprovechar la presencia global de AWS mientras obtiene los beneficios de elasticidad de los clusters de SDDC elásticamente escalables, una única factura de VMware por todos los servicios de software altamente integrados más la infraestructura AWS, y servicios on-demand o por suscripción como VMware Site Recovery Service.
 
-1. Go back to the **VMware Cloud on AWS** tab.
-2. In the main SDDC window, click on **View Details**
-3. Click on the **Network** menu
+VMware Site Recovery extiende VMware Cloud on AWS para proveer recuperación de desastres administrado, prevención de desastres y capacidades de pruebas no disruptivas para los usuarios de VMware sin necesidad de un sitio secundario o una configuración compleja.
 
-In the Management Gateway section, make a note of the Public IP and the Infrastructure Subnet CIDR
+VMware Site Recovery funciona junto con VMware Site Recovery Manager 8.0 y VMware vSphere Replication 8.0 para automatizar el proceso de de recuperación, pruebas, re-protección y recuperación de las cargas de trabajo virtuales.
 
-![Management Gteway IP](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/Screenshot+at+Jul+20+18-03-34.png)
+VMware Site Recovery utiliza servidores de VMware Site Recovery Manager para coordinar las operaciones del SDDC de VMware. Esto significa que las máquinas virtuales en el sitio protegido son apagadas, las copias de las máquinas virtuales en el sitio de recuperación se encenderán. Al usar la información replicada desde el sitio protegido estas máquinas asumen la responsabilidad de prestar los mismos servicios.
 
-In the Management Gateway settings below
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM5.jpg)
 
-1. Click the drop down arrow to open the **IPsec VPNs** section
-2. Click on **ADD VPN**
+VMware Site Recovery puede ser usado en los centro de datos de los usuarios y un SDDC implementado en VMware Cloud on AWS ó puede ser usado entre dos SDDCs implementados en dos zonas de disponibilidad diferentes o regiones de AWS. Esta segunda opción le permite a VMware Site Recovery proveer un servicio completamente administrado por VMware y una solución de Disaster Recovery gestionada.
 
-Fill in the following information
+La migración del inventario protegido y servicios de un sitio a otro esta controlado por un plan de recuperación que especifica el orden en el cual las máquinas virtuales son apagadas y encendidas, los grupos de recursos en los cuales residen, y las redes a las que tienen acceso. VMware Site Recovery permite la prueba de los planes de recuperación, usando una copia temporal de la información replicada y en redes aisladas de manera que no interrumpa las operaciones en ninguno de los sitios. Multiples planes de recuperación pueden ser configurados para mirar aplicaciones individuales o sitios completos al proveer un control mas granular sobre las maquinas virtuales que fallaron y fueron recuperadas. Esto también permite mayor flexibilidad en los horarios de recuperación.
 
-1. Name: Student # MGMT GW (where # is your student number)
-2. The **Public IP address** of the persons Gateway you were paired with
-3. The **Infrastructure IP CIDR** of the person you were paired with
-4. Pre-shared key is **VMware1!**
-5. Click on **Save**
+VMware Site Recovery extiende las caraterísticas de una plataforma de infraestructura virtual que permiten una mayor continuidad de negocio a pesar de fallas parciales o completas de un sitio.
 
-When both you and the person you were paired with have completed these steps you should see the status of the VPN turn to **Connected**
+## Creación de una Cross SDDC VPN
 
-There will be a need to setup a second VPN to our Host infrastructure for this setup to work. This is not normally needed when setting up your on-premises environment but it's needed for the special setup in this workshop.
+Se realizará la configuración de una conexión usando una VPN IPSEC entre su VPC y el VPC de su compañero.
 
-1. Make sure the IPSecVPNs drop down is opened, if not click it under **Management Gateway**
-2. Click on **Add VPN**
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM6.jpg)
 
-    Fill in the following information
-3. Name this VPN **Student# to Host** (where # is your student number)
-4. Enter **54.70.191.234** for the Remote Gateway Public IP
-5. Enter **192.168.30.0/24** under Remote Networks
-6. Pre-shared key is **VMware1!**
-7. Click on **Save**.
+1\. Regrese a la pestaña *VMware Cloud on AWS*
 
-## Prepare and Pair Site Recovery
+2\. En la ventana principal del SDDC, haga click en *View Details*
 
-### Firewall Rules for Site Recovery
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM7.jpg)
 
-If you still have your OAuth Token from the Powershell module, you are free to use it, otherwise, follow the following instructions to obtain a new one.
+3\. Luego haga click en el menú *Network*
 
-1. Click on the drop down next to your **Name/Org ID** in the top right hand corner
-2. Click **My Account**
-3. Click on **API Tokens**
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM8.jpg)
 
-If you already have a token from the previous API lab, please reuse this, if not you can create a new one using the following steps
+En el campo Management Gateway, tome nota de la *Public IP* y del *Infrastructure Subnet CIDR*
 
-1. Click on **Create a new token**
-2. Click on **Continue**
-3. Click on **Copy to Clipboard**
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM9.jpg)
 
-Now let's attach to the VMC server
+Baje un poco para ver la configuración del Management Gateway
 
-From your Horizon workstation, replacing the refreshtoken placeholder below with your token.
+4\. Haga click en la flecha desplegable para abrir la sección *IPsec VPNs*
 
-``` powershell
-connect-vmc -refreshtoken "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-```
+5\. Haga click en *ADD VPN*
 
-#### Import Firewall Rules for Site Recovery via PowerCLI
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM10.jpg)
 
-Open a Powershell window and enter the following commands:
+Complete la siguiente información
 
-``` powershell
-Set-Location \\vmcwindc01\documents
-.\import-dr-fw-rules.ps1 -refreshToken "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" -orgName "VMC-WS#" -sddcName "Student Workshop #"
-```
+6\. Student ## MGMT GW : Escriba el número de estudiante de su compañero
 
-Where xxxx is the OAuth Token you generated in a previous step and # is your Student number.
+7\. La dirección IP Pública de su compañero
 
-Ensure the appropriate firewall rules were created by following the below instructions.
+8\. El *Infrastructure IP CIDR* de su compañero
 
-1. Click on the **Network** tab in your Student SDDC
-2. Expand **Firewall Rules** under the **Management Gateway**
+9\. La Pre-shared key es **VMware1!**
 
-Confirm the following Firewall Rules have been created:
+10\. Haga click en *Save*
 
-SRM 9086
-VR Replication
-VR 8043
-VR 443
-VR Out
-SRM Out
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM11.jpg)
 
-Please note that the rules may have been created in a different order than shown above.
+Cuando usted y su compañero hayan completado los pasos deberían ver el estado como **Connected**
 
-### VMware Site Recovery - Site Pairing
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM12.jpg)
 
-**IMPORTANT NOTE**: Only one person can do the Site Pairing exercise. Please decide between you and your partner who performs this step.
+Es necesario crear una segunda VPN en nuestro Host para que esta configuración funcione. Normalmente no es necesario cuando se configura un ambiente on-premises pero en este caso en especial se debe hacer.
 
-1. On your VMware Cloud on AWS Portal click on the **Add Ons** tab
-2. Click **Open Site Recovery**
-3. Click on **New Site Pair**
-    You will be pairing the partner site that was assigned to you by your instructor, note that this is not the information for your SDDC used up until now.
+11\. Asegúrese que el menu desplegable este abierto, si no haga click en *Management Gateway*
 
-    This is the information your partner will need from you and you will need from your partner's site.
-4. Click on the **Settings** tab in your SDDC
-5. Copy or note the URL for the vCenter Server
-6. Now Click on **Open vCenter** in the top right corner for the VMWare Cloud on AWS console
-7. Note the username
-8. Note the password
-9. Make sure your local vCenter is selected
-10. Enter the information from your partner's SDDC:
-    a. PSC host name
-    b. User name
-    c. Password
-11. Make sure local vCenter server is selected
-12. Select **all Services**
-13. Click **Next**
-14. Click **Finish** button
+12\. Haga click en *Add VPN*
 
-### Configure Network Mappings
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM13.jpg)
 
-1. Click **Network Mappings** in the left pane of the Site Recovery page
-2. Click **New**
-3. Select **Prepare mappings manually**
-4. Click **Next**
-5. Expand **SDDC Datacenter** on both sides
-6. Expand **Management Networks** on both sides
-7. Expand **vmc-dvs** on both sides
-8. Select your **Student#-LN** network and your partner's **Student#-LN** (You may need to scroll down to find these networks)
-9. Click the **Add Mappings** button
-10. Click **Next**
-11. DO NOT enter or select anything in Reverse Mappings, click **Next**
-12. Leave defaults and click **Next**
-13. Click **Finish**
+Complete con la siguiente información
+
+13\. Dele el nombre a esta VPN de *Student# to Host* donde # es su número de estudiante
+
+14\. Escriba *54.70.191.234* como el Remote Gateway Public IP
+
+15\. Escriba *192.168.30.0/24* en Remote Networks
+
+16\. La Pre-shared key es **VMware1!**
+
+17\. Haga click en *Save*
+
+## Preparación y Conexión de Site Recovery
+
+### Reglas de Firewall para Site Recovery
+
+Para este ejercicio, utilizaremos la nueva opción de *Firewall Rule Accelerator* en el portal de VMware Cloud on AWS.
+
+El Firewall Rule Accelerator creará un grupo de reglas de Firewall para ciertos casos de uso. La red remota del VPN seleccionado será utilizado como la fuente y destino para estas reglas. Usted puede editar estas reglas en la sección de Firewall Rules después que hayan sido creadas por la herramienta si es deseado, aunque esto no es necesario para este ejercicio.
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM14.jpg)
+
+1\. Haga click en la pestaña llamada *Network*
+
+2\. Expanda el aérea llamada *Firewall Rule Accelerator*
+
+3\. Seleccione la opción de *Site Recovery* para el *Rule Group*
+
+4\. Para la opción de VPN, seleccione el VPN creado con el estudiante designado como su pareja para este ejercicio, también repetirá el mismo proceso para el VPN creado para la infrastructure Host.
+
+**Asegúrese de repetir este paso tanto para el VPN creado con el ambiente de su compañero como con el VPN de el ambiente Host.**
+
+5\. Haga click en el botón *Create Firewall Rules*
+
+Observe como esta herramienta crea automáticamente todas las reglas de Firewall. Una vez completadas, favor de repetir los mismos pasos en el segundo VPN creado, una vez este segundo haya terminado, revise las reglas de Firewall creadas.
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM15.jpg)
+
+### VMware Site Recovery - Conexión con el Sitio
+
+*NOTA IMPORTANTE*: Solo una persona puede hacer el ejercicio de Site Pairing. Decidan quien realizará este paso.
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM16.jpg)
+
+1\. En el Portal VMware Cloud on AWS haga click en la pestaña *Add Ons*
+
+2\. Haga click en *Open Site Recovery*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM17.jpg)
+
+3\. Haga click en *New Site Pair*
+
+Se conectará al sitio asignado por su instructor, note que ha sido usada para su SDDC hasta ahora.
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM18.jpg)
+
+Esta es la información que su compañero necesitara de usted y que usted tendra obtendrá del sitio de su compañero.
+
+4\. Haga click en la pestaña *Settings*
+
+El usuario de los dos lados (su compañero y suyo) siempre será *cloudadmin@vmc.local*
+
+5\. Copie o escriba la contraseña
+
+6\. Tome nota del URL del vCenter Server, favor anotar el formato desplegado versus el formato a usar:
+
+*DESPLEGADO*: https://vcenter.sddc-xx-xxx-xx-xx.vmc.vmware.com/ui
+
+*A USAR*: vcenter.sddc-xx-xxx-xx-xx.vmc.vmware.com
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM19.jpg)
+
+7\. Asegúrese que el vCenter local este seleccionado
+
+8\. Escriba la información del SDDC de su compañero:
+
+    PSC host name
+
+    User name
+
+    Password
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM20.jpg)
+
+9\. Asegúrese que el vCenter server local este seleccionado
+
+10\. Seleccione *All Services*
+
+11\. Haga click en *Next*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM21.jpg)
+
+12\. Haga click en el botón *Finish*
+
+### Configuración de los Network Mappings
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM22.jpg)
+
+13\. Haga click en *Network Mappings* en el panel izquierdo en la página Site Recovery
+
+14\. Haga click en *+ New*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM23.jpg)
+
+15\. Seleccione *Prepare mappings manually*
+
+16\. Haga click en *Next*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM24.jpg)
+
+17\. Expanda *SDDC Datacenter* en los dos sitios
+
+18\. Expanda *Management Networks* en los dos sitios
+
+19\. Expanda *vmc-dvs* en los dos sitios
+
+20\. Seleccione su red *Student#-LN* y la red *Student#-LN* de su compañero (Podría ser necesario buscarla en la lista)
+
+21\. Haga click en el botón *Add Mappings*
+
+22\. Haga click en *Next*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM25.jpg)
+
+23\. NO ESCRIBA o seleccione nada en Reverse Mappings, haga click en *Next*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM26.jpg)
+
+24\. Deje los valores por defecto y haga click en *Next*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM27.jpg)
+
+25\. Haga click en *Finish*
 
 ### Folder mappings
 
-1. Select **Folder Mappings** in the left pane
-2. Click **+ New** to create a new folder mapping
-3. Select **Prepare mappings manually**
-4. Click **Next**
-5. Expand **SDDC Datacenter** on both sides
-6. Select **Workloads** on both sides
-7. Click the **Add Mappings** button
-8. Click **Next**
-9. DO NOT select any Reverse mappings, click **Next**
-10. Click **Finish**
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM28.jpg)
+
+26\. Seleccione *Folder Mappings* en el panel izquierdo
+
+27\. Haga click en *+ New* para crear un nuevo folder mapping
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM29.jpg)
+
+28\. Seleccione *Prepare mappings manually*
+
+29\. Haga click en *Next*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM30.jpg)
+
+30\. Expanda *SDDC Datacenter* en los dos sitios
+
+31\. Seleccione *Workloads* en los dos sitios
+
+32\. Haga click en el botón *Add Mappings*
+
+33\. Haga click en *Next*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM31.jpg)
+
+34\. NO SELECCIONE ningún Reverse mappings, haga click en *Next*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM32.jpg)
+
+35\. Haga click en *Finish*
 
 ### Resource Mappings
 
-1. Click **Resource Mappings** in the left pane
-2. Click **+ New**
-3. Expand **SDDC Datacenter** on both sides
-4. Expand **Cluster 1** on both sides
-5. Select **Compute-ResourcePool** on both sides
-6. Click **Add Mappings** button
-7. Click **Next**
-8. DO NOT select any reverse mappings, click **Next**
-9. Click **Finish**
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM33.jpg)
+
+36\. Haga click en *Resource Mappings* en el panel izquierdo
+
+37\. Haga click en *+ New*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM34.jpg)
+
+38\. Expanda *SDDC Datacenter* en los dos sitios
+
+ 39\. Expanda *Cluster 1* en los dos sitios
+
+ 40\. Seleccione *Compute-ResourcePool* en los dos sitios
+
+41\. Haga click en el boton *Add Mappings*
+
+ 42\. Haga click en *Next*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM35.jpg)
+
+43\. NO SELECCIONE ningún reverse mappings, haga click en *Next*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM36.jpg)
+
+44\. Haga click en *Finish*
 
 ### Placeholder Datastores
 
-1. Select **Placeholder Datastores** in the left pane
-2. Click **+ New**
-3. Select **WorkloadDatastore**
-4. Click **Add**
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM37.jpg)
 
-## SRM - Protect a VM
+45\. Seleccione *Placeholder Datastores* en el panel izquierdo
 
-1. Select a VM to replicate and right-click
-2. Select **All Site Recovery actions**
-3. Click **Configure Replication**
+46\. Haga click en *+ New*
 
-    NOTE: You may need to log in to the paired site (This is your partner's site), make sure you use **cloudadmin@vmc.local** and get your partner users password. After entering you may need to repeat this step.
-4. Click **Next**
-5. Select the Target Site
-6. If not logged in you may need to login (Remember this is your partner's site not yours)
-7. Enter your partners site credentials
-8. Leave all defaults and click **Next**
-9. Leave the default **Datastore Default** as the VM Storage Policy
-10. Select **WorkloadDatastore**
-11. Click **Next**
-12. Leave the default 1 hour for Recovery Point Objective, RPO can be as low as 5 minutes, as high as 24 hour
-13. Click **Next**
-14. Select **Add to new protection group**
-15. Name your Protection Group **PG#** (where # is your student number)
-16. Click **Next**
-17. Select **Add to new recovery plan**
-18. Name your Recovery Plan **RP#** (where # is your student number)
-19. Click **Next** button
-20. Click **Finish**
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM38.jpg)
 
-## Perform a Recovery Test
+47\. Seleccione *WorkloadDatastore*
 
-1. In the VMware Cloud on AWS portal, click the **Add Ons** tab
-2. Click on **Open Site Recovery** (You may need to allow Pop-ups in browser)
-3. In the Site Recovery window, click **Open**
-4. Click on **Recovery Plans**
-5. Click on your protection group **PG#** (where # is your student number)
-6. Click on **Recovery Plans**
-7. Click on **RP#** which should be your Recovery Plan you created in a previous step
-8. Click the **Test** button
-9. Leave all defaults and click **Next** button
-10. Click **Finish** button
-11. Follow the progress in the Recent Tasks area at the bottom of your window
-12. Notice the test has successfully completed
-13. Click the **Cleanup** button to clean up the activity and return the environment to its normal state
-14. Click **Next**
-15. Click **Finish**, the environment will now be clean. Please note that during testing, your replications protecting your VM's is not interrupted
+48\. Haga click en *Add*
+
+## SRM - Protección de una VM
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM39.jpg)
+
+1\. Seleccione una VM para replicar y haga click derecho
+
+2\. Seleccione *All Site Recovery actions*
+
+ 3\. Haga click en *Configure Replication*
+
+*NOTA*: Podría ser necesario ingresar en sitio conectado (El sitio de su compañero), asegúrese de usar cloudadmin@vmc.local y use la contraseña de su compañero. Luego de entrar podría tener que repetir este paso.
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM40.jpg)
+
+4\. Haga click en *Next*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM41.jpg)
+
+5\. Seleccione el Target Site
+
+6\. Si ha ingresado es necesario hacerlo (Recuerde es que el sitio de su compañero no el suyo)
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM42.jpg)
+
+7\. Escriba las credenciales del sitio de su compañero
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM43.jpg)
+
+8\. Deje los valores por defecto y haga click en el botón *Next*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM44.jpg)
+
+9\. Deje *Datastore Default* como la VM Storage Policy por defecto
+
+10\. Seleccione *WorkloadDatastore*
+
+ 11\. Haga click en *Next*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM45.jpg)
+
+12\. Deje el valor por defecto de 1 hora para Recovery Point Objective, RPO puede ser tan bajo como 5 minutos, y tan alto como 24 horas
+
+13\. Haga click en *Next*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM46.jpg)
+
+14\. Seleccione *Add to new protection group* 
+
+15\. Dele el nombre *PG#* a su Protection Group donde # es su número de estudiante
+
+16\. Haga click en *Next*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM47.jpg)
+
+17\. Seleccione *Add to new recovery plan*
+
+ 18\. Dele el nombre de *RP#* a su Recovery Plan donde # es su número de estudiante
+
+19\. Haga click en el boton *Next*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM48.jpg)
+
+20\. Haga click en *Finish*
+
+## Realice una Prueba de Recuperación
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM49.jpg)
+
+1\. En el portal VMware Cloud on AWS portal, haga click en la pestaña *Add Ons*
+
+2\. Haga click en *Open Site Recovery* (Se deben habilitar las ventanas emergentes)
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM50.jpg)
+
+3\. En la ventana Site Recovery, haga click en *Open*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM51.jpg)
+
+4\. Haga click en *Recovery Plans*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM52.jpg)
+
+5\. Haga click en su grupo de protección *PG#* donde # es su número de estudiante
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM53.jpg)
+
+6\. Haga click en *Recovery Plans* 
+
+7\. Haga click en *RP#* el cual debería ser su Recovery Plan creado en el paso anterior
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM54.jpg)
+
+8\. Haga click en el botón *Test*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM55.jpg)
+
+9\. Deje todos los valores por defecto y haga click en el botón *Next*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM56.jpg)
+
+10\. Haga click en el botón *Finish*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM57.jpg)
+
+11\. Siga el progreso de la tarea en *Recent Tasks* que se encuentra en la parte inferior de la ventana
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM58.jpg)
+
+12\. Note que la prueba fue completada exitosamente
+
+13\. Haga click en el botón *Cleanup* para limpiar la actividad y devolver el ambiente a su estado normal
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM59.jpg)
+
+14\. Haga click en *Next*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM60.jpg)
+
+15\. Haga click en *Finish*, el ambiente ahora está limpio. Note que durante la prueba, las replicaciones que protegen sus VMs no son interrumpidas
