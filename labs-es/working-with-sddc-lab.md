@@ -9,7 +9,7 @@ author_profile: false
 categories: labs
 comments: true
 ---
-# Introduction
+# Introducción
 
 En este módulo, comenzaremos con las tareas básicas que realizará en la interfaz de usuario de VMware Cloud on AWS cuando administre la plataforma.
 
@@ -37,7 +37,7 @@ Agregar un host adicional a un SDDC existente toma alrededor de 10 minutos para 
 
 ## Configuración de Reglas de Firewall en un SDDC
 
-In VMware Cloud on AWS we have two Edge Gateways which are protecting the two main networks in the VMware Cloud on AWS SDDC. The **Management Network** and the **Compute Network**. When we first intiate your SDDC environment, the default is for all traffic to both the Management and Compute networks to be denied. In this exercise we will go through the steps required to open up firewall rules so that we can manage the SDDC and not only access compute workloads but allow those compute workloads to communicate with native AWS services.
+En VMware Cloud on AWS tenemos dos Edge Gateways los cuales protegen las dos redes de un VMware Cloud on AWS SDDC. La **Management Network** y a **Compute Network**. Cuando iniciamos nuestro ambiente SDDC por primera vez, por defecto todo el trafico de las redes de Management y Compute esta prohibido. En este ejercicio seguiremos los pasos necesarios para crear reglas de firewall para poder administrar el SDDC y no solamente las cargas de trabajo, también podremos permitirles comunicarse con los servicios nativos de AWS.
 
 ### Reglas de Firewall para el Management Gateway
 
