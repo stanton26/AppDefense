@@ -89,9 +89,9 @@ Baje un poco para ver la configuración del Management Gateway
 
 Complete la siguiente información
 
-6\. Student ## MGMT GW : Escriba el número de estudiante de su compañero
+6\. Student # MGMT GW : Escriba el número de estudiante de su compañero
 
-7\. La dirección IP Pública de su compañero
+7\. La dirección *IP Pública* de su compañero
 
 8\. El *Infrastructure IP CIDR* de su compañero
 
@@ -115,11 +115,11 @@ Es necesario crear una segunda VPN en nuestro Host para que esta configuración
 
 Complete con la siguiente información
 
-13\. Dele el nombre a esta VPN de *Student# to Host* donde # es su número de estudiante
+13\. Dele el nombre a esta VPN de **Student# to Host** donde # es su número de estudiante
 
-14\. Escriba *54.70.191.234* como el Remote Gateway Public IP
+14\. Escriba **54.70.191.234** como el Remote Gateway Public IP
 
-15\. Escriba *192.168.30.0/24* en Remote Networks
+15\. Escriba **192.168.30.0/24** en Remote Networks
 
 16\. La Pre-shared key es **VMware1!**
 
@@ -410,7 +410,7 @@ El usuario de los dos lados (su compañero y suyo) siempre será *cloudadmin@v
 
 17\. Seleccione *Add to new recovery plan*
 
- 18\. Dele el nombre de *RP#* a su Recovery Plan donde # es su número de estudiante
+ 18\. Dele el nombre de **RP#** a su Recovery Plan donde # es su número de estudiante
 
 19\. Haga click en el boton *Next*
 
