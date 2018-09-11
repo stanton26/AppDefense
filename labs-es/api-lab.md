@@ -19,10 +19,10 @@ En este ejercicio mostraremos cómo puede interactuar con VMware Cloud on AWS a 
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs1.jpg)
 
-1\. Haga click en **Start**, y baje hasta que vea el menú **Windows PowerShell**
+1\. Haga click en *Start*, y baje hasta que vea el menú *Windows PowerShell*
 
-2\. Haga click derecho en el acceso directo de PowerShell CLI y seleccione **Run as
-Administrator**
+2\. Haga click derecho en el acceso directo de PowerShell CLI y seleccione *Run as
+Administrator*
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs2.jpg)
 
@@ -84,13 +84,13 @@ Si todavía no ha ingresado
 
 6\. Escriba su correo electrónico
 
-7\. Haga click en **Next**
+7\. Haga click en *Next*
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs9.jpg)
 
 8\. Haga click en la caja desplegable junto a **Name/Org ID**
 
-9\. Haga click en **My Account**
+9\. Haga click en *My Account*
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs10.jpg)
 
@@ -159,9 +159,9 @@ Si todavia no ha ingresado, hagalo a su VMC org.
 
 En el Developer Center hay muchos recursos para explorar. Por ejemplo, revisemos código de ejemplo que fue cargado por uno de los programadores de nuestra API. Si recorre esta pantalla verá diferentes ejemplos de código para (un Ambiente de Desarrollo para REST API ), Python, PowerCLI, y muchos otros. Cualquiera puede contribuir con ejemplos de código para la comunidad, si tiene interés visite http://code.vmware.com ó haga click en el enlace **VMware{code} Sample Exchange**.
 
-2\. Haga click en **Code Samples** en el menú
+2\. Haga click en *Code Samples* en el menú
 
-3\. Haga click en **Download** en el cuadro PowerCLI - VMC Example Scripts
+3\. Haga click en *Download* en el cuadro PowerCLI - VMC Example Scripts
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/DeveloperCenter4.jpg)
 
@@ -169,7 +169,7 @@ Luego de que el script se descargue
 
 4\. Haga click en la flecha desplegable
 
-5\. Haga click en **Show in Folder**
+5\. Haga click en *Show in Folder*
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/DeveloperCenter5.jpg)
 
@@ -193,7 +193,7 @@ Ahora se realizarán algunas invocaciones REST API simples en Developer Center,
 
 11\. Haga click en la flecha desplegable al lado del primer "GET" API
 
-12\. Haga click en **Execute**
+12\. Haga click en *Execute*
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/DeveloperCenter7.jpg)
 
@@ -203,7 +203,7 @@ Revisemos la respuesta.
 
 13\. Aqui podrá ver el nombre alfanumérico de la Organization. Que puede encontrar en \#15
 
-14\. El *ID*. **NOTA:** Copie el número de ID, sin comillas para uso en el siguiente paso.
+14\. El *ID*. *NOTA:* Copie el número de ID, sin comillas para uso en el siguiente paso.
 
 15\. El *Display_Name* de la organización
 
@@ -215,13 +215,13 @@ En este paso, se obtendrá información usando el metodo GET acerca de su orga
 
 17\. Haga click en la flecha desplegable cerca a los SDDCs
 
-18\. Haga click en **GET**
+18\. Haga click en *GET*
 
 19\. El Org ID debería estar completado, otra característica incluida por los programadores
 basada en la retroalimentación de los clientes. *NOTA:* Si el Org ID no se completa
 automaticamente, péguelo.
 
-20\. Haga click en **Execute**
+20\. Haga click en *Execute*
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/DeveloperCenter9.jpg)
 
@@ -468,8 +468,7 @@ Para guardar este petición en nuestra colección y poder usarla luego.
 Es necesario reemplazar el código de prueba que viene con el SDK para poder crear las variables que sean necesarias para usar el mensaje a Slack.
 
 63\. Haga click en *Tests*
-    Copie y pegue el siguiente código en la sección **Tests**. *NOTA:* Es posible que tenga que
-    oprimir CTRL-V para pegar el texto.
+    Copie y pegue el siguiente código en la sección **Tests**. *NOTA:* Es posible que tenga que oprimir CTRL-V para pegar el texto.
 
 64\. Haga click en *Send*
 
