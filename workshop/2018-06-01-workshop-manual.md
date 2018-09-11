@@ -11,13 +11,14 @@ author_profile: false
 
 The VMware Cloud on AWS workshop is your chance to test drive this unique solution in the market place in a classroom session with VMware Cloud on AWS experts and work through hands on lab exercises to understand and gain experience with the solution to understand how it can be used in your business.
 
-The class is a one-day activity where we will go through the acitivities of setting up a VMware SDDC environment in AWS and run through common administration activities of the platform, you will then move onto understanding how you can run workloads in VMware Cloud on AWS and integrate with native AWS services before you work through integration exercises with vRealize suite solutions such as vRealize Automation and vRealize Operations. You will work through how you can utilise VMware Cloud on AWS as a target for DRaaS utilsiing VMware Site Recover Manager and VM Replication. You also have the opportunity to test drive Horizon 7 in the VMware Cloud on AWS platform.
+The class is a one-day workshop in which we will set up a VMware SDDC environment in AWS, work through common administration activities of the platform and explore integrations with native AWS services and vRealize Suite solutions including vRealize Automation and vRealize Operations.    
+You will work through leveraging VMware Cloud on AWS as a target for DRaaS utilsiing VMware Site Recover Manager and VM Replication and will also have the opportunity to test drive Horizon 7 in the VMware Cloud on AWS platform.
 
 ## Workshop Details
 
 ### Horizon Access
 
-At the start of the workshop, your instructor will have given you logon details to use in a VMware Horizon session. In order to access details regarding how to connect to Horizon, you will have been directred to the following link to [Student Access Instructions](https://vmc-field-team.github.io/student-access/)
+At the start of the workshop, your instructor will have given you logon details to use in a VMware Horizon session. In order to access details regarding how to connect to Horizon, you will have been directed to the following link to [Student Access Instructions](https://vmc-field-team.github.io/student-access/)
 
 ### Location of Files
 
