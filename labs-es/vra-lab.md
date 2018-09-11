@@ -106,9 +106,10 @@ En estos siguientes pasos, asegúrese de haber ingresado al portal VMware Cloud 
 10\. Ejemplo:
 
  Para el portal VMware Cloud on AWS: https://vcenter.sddc-X-X-X-X.vmc.vmware.com/ui 
-  Se debería ver en vRealize Automation así: https://vcenter.sddc-X-X-X-X.vmc.vmware.com/sdk
 
-11\. Escriba el nombre de usuario (cloudadmin@vmc.local)
+Se debería ver en vRealize Automation así: https://vcenter.sddc-X-X-X-X.vmc.vmware.com/sdk
+
+11\. Escriba el nombre de usuario **cloudadmin@vmc.local**
 
  12\. Escriba la contraseña (Por favor revise esta información en el portal VMware Cloud on AWS)
 
@@ -134,7 +135,7 @@ Asegúrese que para este paso haya seleccionado el Endpoint que fue creado en e
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/vra/vRA15.jpg)
 
-3\. Dele el Nombre de *ws#FabricGroup* al Fabric Group donde # es su número de estudiante
+3\. Dele el Nombre de **ws#FabricGroup** al Fabric Group donde # es su número de estudiante
 
 4\. Agregue el usuario asignado a su número de estudiante: *vmcws#@corp.local* y haga click en el icono lupa para encontrar y agregar el usuario
 
@@ -170,17 +171,6 @@ Para este paso si la pestaña *Reservation* no aparece es posible que sea neces
 
 3\. Haga click en el boton *OK*
 
-### Create Reservation Policy
-
-For this step if your Reservation tab is missing you may need to hit the Refresh button on your browser.
-
-1. Click on the **Infrastructure** button on the left pane
-2. Click **Reservations** on the left pane
-3. Click **Reservation Policies** on the left pane
-4. Click **New** button
-5. Name your Reservation Policy "Student#"
-6. Click **OK** button
-
 ### Creación de una Reservación
 
 Una reservación de vRealize Automation es un medio para asignar recursos de un fabric group (CPU, RAM, Storage, etc.) a un business group especifico.
@@ -203,7 +193,7 @@ Una reservación de vRealize Automation es un medio para asignar recursos de un
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/vra/vRA23.jpg)
 
-6\. Dele el nombre de *Student#* a la reservación, donde # es el número de estudiante asignado
+6\. Dele el nombre de **Student#** a la reservación, donde # es el número de estudiante asignado
 
 7\. Deje/seleccione *vsphere.local* como Tenant
 
@@ -211,7 +201,7 @@ Una reservación de vRealize Automation es un medio para asignar recursos de un
 
 9\. Como Reservation policy escriba o seleccione *Student#*
 
-10\. Priority debería estar en 1 
+10\. Priority debería estar en *1* 
 
 11\. Haga click en la pestaña *Resources*
 
@@ -219,13 +209,13 @@ Una reservación de vRealize Automation es un medio para asignar recursos de un
 
 12\. En la pestaña *Resources* para *Compute Resource* seleccione *Cluster-1 (WS#)* en la caja desplegable
 
-13\. Escriba *1024* en el campo *This Reservation*
+13\. Escriba **1024** en el campo *This Reservation*
 
  14\. Seleccione la caja de verificación *WorkloadDatastore*
 
- 15\. Escriba *10000* en el campo *This Reservation Reserved*
+ 15\. Escriba **10000** en el campo *This Reservation Reserved*
 
- 16\. Escriba *0* en el campo Priority field y haga click en el boton *OK*
+ 16\. Escriba **0** en el campo Priority field y haga click en el boton *OK*
 
 17\. Seleccione *Compute-ResourcePool* en el campo *Resource Pool*
 
@@ -251,17 +241,17 @@ Un blueprint es la especificación completa de un servicio. Un blueprint determ
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/vra/vRA27.jpg)
 
-4\. Dele el nombre *Student#* al Blueprint donde # es el número de estudiante asignado
+4\. Dele el nombre **Student#** al Blueprint donde # es el número de estudiante asignado
 
 5\. Use el mismo nombre como ID 
 
-6\. Escriba *1* como Deployment Limit
+6\. Escriba **1** como Deployment Limit
 
- 7\. Escriba *1* como Minimum Lease days
+ 7\. Escriba **1** como Minimum Lease days
 
-8\. Escriba *1* como Maximum Lease days 
+8\. Escriba **1** como Maximum Lease days 
 
-9\. Escriba *0* en el campo Archive Days 
+9\. Escriba **0** en el campo Archive Days 
 
 10\. Haga click en el botón *OK*, entonces aparecerá el Design Canvas
 
@@ -303,7 +293,7 @@ Un blueprint es la especificación completa de un servicio. Un blueprint determ
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/vra/vRA32.jpg)
 
-Asignación de permisos a su Blueprint 
+### Asignación de permisos a su Blueprint 
 
 25\. Haga click en la pestaña *Administration*
 
@@ -344,6 +334,8 @@ Asignación de permisos a su Blueprint 
 39\. Haga click en el botón *Finish*
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/vra/vRA37.jpg)
+
+### Seleccione un articulo del catalogo
 
 40\. Seleccione la pestaña *Catalog*
 
