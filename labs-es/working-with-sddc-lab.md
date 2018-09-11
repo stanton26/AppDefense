@@ -77,9 +77,9 @@ Por defecto, el Compute NSX Edge Services Gateway también esta configurado par
 
 Cree una Regla de Firewall bajo la sección Compute Gateway para el acceso nativo a los servicios de AWS.
 
-1\. Bajo la pestaña *Network*, navegue hasta *ComputeGateway*
+1\. Bajo la pestaña *Network*, navegue hasta *Compute Gateway*
 
-2\. Expanda *FirewallRules*
+2\. Expanda *Firewall Rules*
 
  3\. Haga click en *ADD RULE*
 
@@ -129,8 +129,6 @@ Siga el mismo proceso que en la sección anterior y cree una Regla de Firewall 
 
 2\. Información de la cuenta local para el vCenter de VMware Cloud on AWS.
 
-    NOTE QUE EL USUARIO MOSTRADO ES EL USER ID ASIGNADO PERO DEBERIA SER cloudadmin@vmc.local COMO CUENTA DE VCENTER POR DEFECTO.
-
 3\. URL del vCenter Server
 
 4\. URL del vCenter Server API Explorer
@@ -147,7 +145,7 @@ Siga el mismo proceso que en la sección anterior y cree una Regla de Firewall 
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC13.jpg)
 
-Haga click en la URL del vSphere Client (#3 mencionado arriba), ingrese con el usuario cloudadmin@vmc.local y copie la contraseña al portapapeles del computador y péguelo en el campo Password.
+Haga click en la URL del vSphere Client (\#3 mencionado arriba), ingrese con el usuario cloudadmin@vmc.local y copie la contraseña al portapapeles del computador y péguelo en el campo Password.
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC14.jpg)
 
@@ -237,7 +235,7 @@ Es posible que tenga Bibliotecas de Contenido en su centro de datos y es posible
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC22.jpg)
 
-2\. Dele el nombre : *LocalContentLibrary#* a su Biblioteca de Contenido donde # corresponde su número de estudiante
+2\. Dele el nombre : **LocalContentLibrary#** a su Biblioteca de Contenido donde # corresponde su número de estudiante
 
 3\. (Opcional) Agregue algunas notas a su Biblioteca de Contenido 
 
@@ -257,7 +255,9 @@ Es posible que tenga Bibliotecas de Contenido en su centro de datos y es posible
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC25.jpg)
 
-9\. Revise la información y haga click en el botón *Finish* Felicitaciones, ha creado una Biblioteca Local de Contenido.
+9\. Revise la información y haga click en el botón *Finish*
+
+Felicitaciones, ha creado una Biblioteca Local de Contenido.
 
 ## Creación de una Red Lógica
 
@@ -279,19 +279,19 @@ Es posible que tenga Bibliotecas de Contenido en su centro de datos y es posible
 
 6\. Asegúrese de haber seleccionado *Routed Network*
 
-7\. Para el bloque CIDR entre *192.168.###.0/24* usando su número de estudiante en lugar de \#
+7\. Para el bloque CIDR entre **192.168.###.0/24** usando su número de estudiante en lugar de \#
 
-    • Si su número de estudiante asignado esta entre 1 y 9, su bloque CIDRd ebería parecerse a: 192.168.1.0/24 - En este ejemplo se muestra el número de estudiante 1
+    • Si su número de estudiante asignado esta entre 1 y 9, su bloque CIDR debería parecerse a: *192.168.1.0/24* - En este ejemplo se muestra el número de estudiante 1
 
-    • Para los números de estudiante entre 10 y 20 debería parecerse a: 192.168.10.0/24 - En este ejemplo se muestra el número de estudiante 10
+    • Para los números de estudiante entre 10 y 20 debería parecerse a: *192.168.10.0/24* - En este ejemplo se muestra el número de estudiante 10
 
-8\. Entre *192.168.###.1* como Default Gateway IP - Ejemplo: 192.168.1.1 
+8\. Entre **192.168.###.1** como Default Gateway IP - Ejemplo: 192.168.1.1 
 
 9\. Asegúrese que la opción DHCP este habilitada dandole click a la caja de verificación
 
-10\. Entre *192.168.###.100-192.168.###.200* en el campo IP Range
+10\. Entre **192.168.###.100-192.168.###.200** en el campo IP Range
 
- 11\. Digite *corp.local* en el campo DNS Domain Name
+ 11\. Digite **corp.local** en el campo DNS Domain Name
 
  12\. Haga click en *OK* para crear una nueva Red Lógica
 
@@ -334,7 +334,7 @@ Use el Customization Specification Manager para administrar las especificaciones
 
  10\. Haga click en la caja de verificación *Append a numeric value*
 
-11\. Entre *corp.local* para el campo *Domain Name*
+11\. Entre **corp.local** para el campo *Domain Name*
 
  12\. Haga click en el botón *Next*
 
@@ -354,9 +354,9 @@ Use el Customization Specification Manager para administrar las especificaciones
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC35.jpg)
 
-18\. En el campo Primary DNS Server entre *10.46.159.10*
+18\. En el campo Primary DNS Server entre **10.46.159.10**
 
-19\. Escriba *corp.local* en el campo DNS Search Paths
+19\. Escriba **corp.local** en el campo DNS Search Paths
 
  20\. Haga click en el botón *Next*
 
@@ -433,3 +433,7 @@ En este sección se clonará una Máquina Virtual recién creada a una Plant
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC47.jpg)
 
 7. Haga click en el boton *Yes* en el cuadro de dialogo de con_rmación Ha terminado este paso.
+
+Ha completado esta sección.
+
+Entre comentarios en el àrea de abajo si le gustaría dejar sugerencias sobre este ejercicio.
