@@ -201,7 +201,7 @@ Una consola se abrirá para la VM *Mission Critical Workload 1*, trate de hacer 
 
 36\. Haga click en la *X* de la pestaña del browser para cerrar la pestaña de la consola
 
-**Migración Reversa**
+### Migración Reversa
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/HCX27.jpg)
 
@@ -263,7 +263,7 @@ Una consola se abrirá para la VM *Mission Critical Workload 1*, trate de hacer 
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/HCX38.jpg)
 
-55\. Haga click en el botón Home
+55\. Haga click en el botón *Home*
 
 56\. Haga click en el botón *Hosts and Clusters*
 
