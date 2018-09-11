@@ -13,8 +13,7 @@ comments: true
 # Introduction
 
 We do have a working Horizon environment. You are using it to jump on the Workshop SDDC. This Horizon environement is running on our BU SDDC.
-In this Lab we will conect you Student SDDC vCenter to this existing Horizon environment to rollout Desktops. You can then see the new created pool.
-Hold in mind. Only one of the Students per SDDC can do this task.
+In this Lab you will get your own Hoirzon Connection Server, Active Directory with DHCP enabled and UAG.
 
 ## What is Horizon on VMware Cloud on AWS
 

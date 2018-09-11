@@ -150,8 +150,7 @@ The AD, Horizon Connection Server, UAG and Goldenmaster Image will be deployed i
    
 8. Enter **192.168.20.1** for the Default Gateway IP
 9. Make sure DHCP is disabled
-10. Type **corp.local** as your DNS Domain Name
-11. Click **OK** to create your new logical network
+10. Click **OK** to create your new logical network
 
 
 ## Subscribed Libraries
