@@ -20,7 +20,7 @@ En este módulo, trabajaremos en algunas integraciones básicas comunes que pued
 
 ## Integración con AWS Simple Storage Service (S3)
 
-**Bibliotecas respaldadas por AWS Simple Storage Service (S3)**
+### Bibliotecas respaldadas por AWS Simple Storage Service (S3)
 
 Las bibliotecas de contenido de vSphere permiten a los clientes aprovechar diferentes tipos de respaldo de almacenamiento además de vSphere Datastores. El requisito principal es que el punto final del contenido sea accesible a través de HTTP(s), lo que significa que se pueden usar varias soluciones desde un simple servidor web como Nginx hasta un almacén de objetos distribuidos avanzado como el Simple Storage Service (S3) de AWS.
 
@@ -40,7 +40,7 @@ En caso de que no lo supiera, el uso de S3 (ingreso / egreso) desde un SDDC de u
 
 Para éste módulo, y en aras del tiempo, el contenido de este ejercicio se ha cargado en un contenedor S3 existente en AWS para usted. ¡Creemos la Biblioteca de Contenidos respaldada por S3!
 
-**Agregar biblioteca de contenido con respaldo S3**
+#### Agregar biblioteca de contenido con respaldo S3
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/S3-2.jpg)
 
@@ -88,7 +88,7 @@ Felicidades, has completado este ejercicio.
 
 ## Integración con AWS Relational Database Service (RDS)
 
-**Implementar la VM Photo**
+### Implementar la VM Photo
 
 Como primer paso para configurar nuestra integración entre la plataforma VMware Cloud on AWS y los servicios nativos de AWS, implementaremos una máquina virtual que utilizaremos para esta demostración. Esta VM se denominará "Photo VM". Por favor, siga las siguientes instrucciones.
 
@@ -100,7 +100,7 @@ Como primer paso para configurar nuestra integración entre la plataforma VMware
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS2.jpg)
 
-3\. Haga click en la Biblioteca de Contenido previamente creada con el nombre **Student#** donde # es su número de estudiante
+3\. Haga click en la Biblioteca de Contenido previamente creada con el nombre *Student#* donde # es su número de estudiante
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS3.jpg)
 
@@ -290,7 +290,7 @@ AWS Relational Database Service (RDS), también crea su propia Elastic Network 
 
 65\. En el EC2 Dashboard haga click en *Network Interfaces* en el panel izquierdo
 
-66\. Todos los ambientes de los estudiantes pertenecen a la misma cuenta de AWS, por esta razón, cientos de ENIs podrían existir. Para minimizar la vista, escriba *RDS* en el area de búsqueda y presione Intro para agregar un filtro
+66\. Todos los ambientes de los estudiantes pertenecen a la misma cuenta de AWS, por esta razón, cientos de ENIs podrían existir. Para minimizar la vista, escriba *RDS* en el area de búsqueda y presione *Intro* para agregar un filtro
 
 67\. Seleccione **rds-launch-wizard-#** que corresponde a su número de estudiante
 
@@ -313,7 +313,7 @@ Esta funcionalidad ofrece a los clientes ahora opciones sobre cómo se migran la
 
 ## Integración con AWS Elastic File System (EFS)
 
-**Creación de una VM para integrar con EFS**
+### Creación de una VM para integrar con EFS
 
 En nuestra próxima sección sobre integración de servicios de AWS con VMware Cloud on AWS, utilizaremos AWS Elastic File System (EFS), que podemos usar para montar recursos compartidos de NFS en nuestras máquinas virtuales alojadas en VMware Cloud on AWS.
 
