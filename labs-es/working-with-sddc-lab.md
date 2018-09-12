@@ -205,7 +205,7 @@ Es posible que tenga Bibliotecas de Contenido en su centro de datos y es posible
 
 5\. Seleccione *Subscribed content library*
 
-6\. En el campo *Subscription URL* entre lo siguiente: *https://vcenter.sddc-34-216-241-49.vmc.vmware.com/cls/vcsp/lib/8d658764-2e89-44b-a7c1-ee777f0dfc8f/lib.json*
+6\. En el campo *Subscription URL* entre lo siguiente: *https://vcenter.sddc-34-216-241-49.vmc.vmware.com:443/cls/vcsp/lib/4aa185b4-3d6e-45b4-90ca-cd3a845d4502/lib.json*
 
       POR FAVOR TENGA EN CUENTA QUE PUEDEN HABER PROBLEMAS AL COPIAR Y PEGAR CARACTERES DE LA URL CUANDO SE COPIA Y PEGA DESDE EL MANUAL. LA URL SE ENCUENTRA EN UN ARCHIVO DE TEXTO EN LA UNIDAD Z:\ DEL ESCRITORIO ASIGNADO. SOLICITE INSTRUCCIONES AL INTRUCTOR SI NO PUEDE ENCONTRAR EL ARCHIVO.
 
