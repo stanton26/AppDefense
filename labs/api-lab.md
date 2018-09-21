@@ -30,24 +30,25 @@ In this lab exercise we will be showing how you can intereact with the VMware Cl
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs3.jpg)
 
 Install the VMware PowerCLI module is not loaded
-Type **install-Module VMware.PowerCLI** and press enter
 
-*Note*: You can use the tab complete feature to complete the command. ie...type install-mod
+```powershell
+install-Module VMware.PowerCLI
+```
+
+**NOTE**: You can use the tab complete feature to complete the command. ie...type install-mod
 and then press tab. There may be a slight delay the first time but the command **install-module**
 will complete.
 
-*Note*: You will be asked to install the NuGet provider, take the default or press Y and press
+**NOTE**: You will be asked to install the NuGet provider, take the default or press Y and press
 enter, you will then be asked to trusted an untrusted repository, **DO NOT** take the default but type **Y** and press Enter.
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs4.jpg)
 
 We now need to set the execution policy to Remote Signed.
 
-Type **Set-ExecutionPolicy -ExecutionPolicy RemoteSigned** and press Enter
-
-For Tab completion, type **Set-Ex{tab} -Exe{tab} Rem{tab}** and press Enter
-
-*Note*: You will be asked to change the execution policy, type **Y** and press Enter
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Force
+```
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs5.jpg)
 
@@ -55,25 +56,27 @@ You now will need to set the PowerCLI Configuration to Ignore Invalid Certificat
 
 **IMPORTANT STEP:**
 
-Type **Set-PowerCLIConfiguration -InvalidCertificateAction Ignore** and press Enter
+```powershell
+Set-PowerCLIConfiguration -InvalidCertificateAction Ignore -Confirm:$false
+```
 
-*NOTE*: Be sure the "i" in "Ignore" is capitalized
-
-*NOTE*: You will be asked to Update PowerCLI Configuration, type **Y** and press Enter
+**NOTE**: Be sure the "i" in "Ignore" is capitalized if you are not using copy/paste
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs6.jpg)
 
 We now need to install the VMware CLI commands
 
-Type **Install-Module -name VMware.VMC -scope AllUsers** and press Enter
-
-*NOTE*: You will be asked to trust an untrusted repository, type **Y** and press Enter
+```powershell
+Install-Module -name VMware.VMC -scope AllUsers -Confirm:$false
+```
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs7.jpg)
 
 Let's take a quick look at the VMware CLI commands.
 
-Type **Get-VMCCommand** and press Enter
+```powershell
+Get-VMCCommand
+```
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs8.jpg)
 
@@ -88,7 +91,7 @@ If you are not already logged in
 
 6\. Fill in your email address
 
-7\. Click on *Next*
+7\. Click on **Next**
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs9.jpg)
 
@@ -114,7 +117,9 @@ We will now create a new Refresh Token for the ID linked to this Org
 
 Now let's attach to the VMC server
 
-Type **connect-vmc -refreshtoken xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx** and press Enter.
+```powershell
+connect-vmc -refreshtoken xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+```
 
 *NOTE*: Within the PowerShell window you can just right-click to paste the code, quotes are optional
 
@@ -122,9 +127,11 @@ Type **connect-vmc -refreshtoken xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx** and pres
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs13.jpg)
 
-Now we can see what Orgs we have access to
+Now we can see what Orgs we have access to using the following command
 
-Type **Get-VMCorg** and press Enter.
+```powershell
+Get-VMCorg
+```
 
 14\. Note the Org Display_Name and ID
 
@@ -133,17 +140,21 @@ Type **Get-VMCorg** and press Enter.
 Now that we know the Org Display_Name we can find out information about the SDDC's inside
 our org.
 
-Type **Get-VMCSDDC -Org VMC-WS#** and press Enter.
+**NOTE**: replace # with your workstation number
 
-*NOTE*: replace # with your workstation number
+```powershell
+Get-VMCSDDC -Org VMC-WS#
+```
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs15.png)
 
 Another cool thing you can do is see the Default Credentials for your SDDC
 
-Type **Get-VMCSDDCDefaultCredential -org VMC-WS#** and press Enter.
+```powershell
+Get-VMCSDDCDefaultCredential -org VMC-WS#
+```
 
-*NOTE*: replace # with your workstation number
+**NOTE**: replace # with your workstation number
 
 ## REST APIs through Developer Center
 
