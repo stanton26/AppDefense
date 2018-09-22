@@ -10,7 +10,7 @@ classes: wide
 
 In order to access your student lab environment you will need to conenct through the Horizon portal. You can do this either through your web browser, or you can download the client.
 
-If you wish to download the client, please follow this link
+Please be aware that this Horizon connection at the moment currently uses a self signed certificate, please click continue if prompted to accept a self signed certificate
 
 ## Horizon Client Access
 

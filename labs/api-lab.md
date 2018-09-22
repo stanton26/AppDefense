@@ -17,17 +17,17 @@ In this lab exercise we will be showing how you can intereact with the VMware Cl
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs1.jpg)
 
-1\. Click on *Start*, and scroll down until you see the Windows PowerShell menu
+1\. Click on **Start**, and scroll down until you see the Windows PowerShell menu
 
-2\. Right click on the *PowerShell CLI* shortcut icon and select *Run as Administrator*
+2\. Right click on the **PowerShell** CLI shortcut icon and select **Run as Administrator**
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs2.jpg)
 
-3\. Click *Yes*
+3\. Click **Yes**
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs3.jpg)
 
-Install the VMware PowerCLI module is not loaded
+Install the VMware PowerCLI module
 
 ```powershell
 Install-Module VMware.PowerCLI
