@@ -15,8 +15,6 @@ In this lab exercise we will be showing how you can intereact with the VMware Cl
 
 ## Using PowerShell
 
-### Open the PowerShell CLI
-
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs1.jpg)
 
 1\. Click on *Start*, and scroll down until you see the Windows PowerShell menu
