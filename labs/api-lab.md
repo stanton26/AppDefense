@@ -33,11 +33,7 @@ Install the VMware PowerCLI module
 Install-Module VMware.PowerCLI
 ```
 
-**NOTE**: You can use the tab complete feature to complete the command. ie...type install-mod
-and then press tab. There may be a slight delay the first time but the command **install-module**
-will complete.
-
-**NOTE**: You will be asked to install the NuGet provider, take the default or press Y and press
+**NOTE**: You will be asked to install the NuGet provider, take the default or press **Y** and press
 enter, you will then be asked to trusted an untrusted repository, **DO NOT** take the default but type **Y** and press Enter.
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs4.jpg)
@@ -65,7 +61,7 @@ Set-PowerCLIConfiguration -InvalidCertificateAction Ignore -Confirm:$false
 We now need to install the VMware CLI commands
 
 ```powershell
-Install-Module -name VMware.VMC -scope AllUsers -Confirm:$false
+Install-Module -name VMware.VMC -scope AllUsers -Force
 ```
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs7.jpg)
