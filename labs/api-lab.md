@@ -21,10 +21,6 @@ In this lab exercise we will be showing how you can intereact with the VMware Cl
 
 2\. Right click on the **PowerShell** CLI shortcut icon and select **Run as Administrator**
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs2.jpg)
-
-3\. Click **Yes**
-
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs3.jpg)
 
 Install the VMware PowerCLI module
