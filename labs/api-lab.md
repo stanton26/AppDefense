@@ -32,7 +32,7 @@ In this lab exercise we will be showing how you can intereact with the VMware Cl
 Install the VMware PowerCLI module is not loaded
 
 ```powershell
-install-Module VMware.PowerCLI
+Install-Module VMware.PowerCLI
 ```
 
 **NOTE**: You can use the tab complete feature to complete the command. ie...type install-mod
