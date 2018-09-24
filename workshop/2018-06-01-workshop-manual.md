@@ -11,7 +11,7 @@ author_profile: false
 
 The VMware Cloud on AWS workshop is your chance to test drive this unique solution in the market place in a classroom session with VMware Cloud on AWS experts and work through hands on lab exercises to understand and gain experience with the solution to understand how it can be used in your business.
 
-The class is a one-day workshop in which we will set up a VMware SDDC environment in AWS, work through common administration activities of the platform and explore integrations with native AWS services and vRealize Suite solutions including vRealize Automation and vRealize Operations.    
+The class is a one-day workshop in which we will set up a VMware SDDC environment in AWS, work through common administration activities of the platform and explore integrations with native AWS services and vRealize Suite solutions including vRealize Automation and vRealize Operations.
 You will work through leveraging VMware Cloud on AWS as a target for DRaaS utilsiing VMware Site Recovery Manager and VM Replication and will also have the opportunity to test drive Horizon 7 in the VMware Cloud on AWS platform.
 
 ## Workshop Details
@@ -40,16 +40,16 @@ AWS Console <https://vmcworkshop.signin.aws.amazon.com/console>
 
 Import Bookmarks into Chrome by double clicking the Chrome Icon on your Desktop (Preferred browser for workshop)
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-7-Image-1.png)
+![bookmarks-01](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-7-Image-1.png)
 
 1. Click on the three dots on the top right corner
 2. Select **Bookmarks**
 3. Select **Import bookmarks and settings**
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-8-Image-2.png)
+    ![bookmarks-02](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-8-Image-2.png)
 4. Click on the down arrow where it states "Microsoft Edge"
 5. Select **Bookmarks HTML File**  
 6. Click **Choose File**  
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-9-Image-4.png)
+    ![bookmarks-03](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-9-Image-4.png)
 7. Navigate to the Z: drive by going to **This PC > Z:\p**
 8. Select **bookmarks_vmc_workshop**
 9. Click **Open**
