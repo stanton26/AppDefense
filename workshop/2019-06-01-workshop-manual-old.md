@@ -2,7 +2,7 @@
 layout: single
 title: "VMware Cloud on AWS Workshop"
 permalink: /workshop-manual/
-date: 2018-09-24
+date: 2018-06-01
 tags: workshop
 classes: wide
 author_profile: false
@@ -40,22 +40,19 @@ AWS Console <https://vmcworkshop.signin.aws.amazon.com/console>
 
 Import Bookmarks into Chrome by double clicking the Chrome Icon on your Desktop (Preferred browser for workshop)
 
-![bookmarks-01](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/workshop-manual/Screenshot+at+Sep+24+22-00-45.png)
+![bookmarks-01](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-7-Image-1.png)
 
 1. Click on the three dots on the top right corner
 2. Select **Bookmarks**
 3. Select **Import bookmarks and settings**
-    ![bookmarks-02](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/workshop-manual/Screenshot+at+Sep+24+22-02-56.png)
+    ![bookmarks-02](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-8-Image-2.png)
 4. Click on the down arrow where it states "Microsoft Edge"
 5. Select **Bookmarks HTML File**  
 6. Click **Choose File**  
-    ![bookmarks-03](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/workshop-manual/Screenshot+at+Sep+24+22-03-42.png)
+    ![bookmarks-03](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-9-Image-4.png)
 7. Navigate to the Z: drive by going to **This PC > Z:\p**
 8. Select **bookmarks_vmc_workshop**
 9. Click **Open**
-    ![bookmarks-04](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/workshop-manual/Screenshot+at+Sep+24+22-04-34.png)
-10. The final step is to click **Done** once you have successfully imported the bookmarks
-    ![bookmarks-05](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/workshop-manual/Screenshot+at+Sep+24+22-05-01.png)
 
 ## Labs
 
