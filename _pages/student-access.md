@@ -21,7 +21,7 @@ Downloaded the client and install.
 Once you have the Horizon client running.
 
 1. Click the *+* button to add a new connection server.
-2. Enter the connection server name as *workshop.vmc.ninja*
+2. Enter the connection server name as **workshop.vmc.ninja**
 3. You may be prompted to accept an untrusted certificate, please do so.
 
 You will now have a new Horizon session to connect to named **workshop.vmc.ninja** please click on this connection and you will be presented with a login prompt for the desktop session you will use for the class.
