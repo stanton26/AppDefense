@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "Working with your SDDC Lab Manual"
-date: 2018-07-17
+date: 2018-09-24
 tags: workshop
 toc: true
 classes: wide
