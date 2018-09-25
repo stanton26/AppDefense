@@ -221,7 +221,9 @@ You may already have a Content Library in your on-premises data center, you can 
 
 6\. Under *Subscription URL* enter the following:
 
-    <https://vcenter.sddc-34-216-241-49.vmc.vmware.com:443/cls/vcsp/lib/4aa185b4-3d6e-45b4-90ca-cd3a845d4502/lib.json>
+```
+https://vcenter.sddc-34-216-241-49.vmc.vmware.com:443/cls/vcsp/lib/4aa185b4-3d6e-45b4-90ca-cd3a845d4502/lib.json
+```
 
 7\. Click the checkbox for *Enable Authentication*
 
