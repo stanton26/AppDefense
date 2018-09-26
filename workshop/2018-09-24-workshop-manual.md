@@ -20,11 +20,17 @@ You will work through leveraging VMware Cloud on AWS as a target for DRaaS utils
 
 At the start of the workshop, your instructor will have given you logon details to use in a VMware Horizon session. In order to access details regarding how to connect to Horizon, you will have been directed to the following link to [Student Access Instructions](https://vmc-field-team.github.io/student-access/)
 
+### VMware Cloud on AWS Org Access
+
+You will also receive details from your instructor regarding how to access your VMware Cloud on AWS organization where you will be able to use and configure your SDDC solution in AWS. Your instructor will inform you of these details when you start the lab exercises.
+
 ### Location of Files
 
 Any file(s) referenced in this manual are located in the Z: drive of the Horizon desktop you are assigned
 
 ### Workshop URL's
+
+Below are a list of the URLs you will use over the course of the lab exercises. You can will have a access to these via the bookmarks file which we will import in the following step, they are referenced here as well for your convenience.
 
 VMware Cloud on AWS Login <https://vmc.vmware.com>
 
@@ -59,10 +65,14 @@ Import Bookmarks into Chrome by double clicking the Chrome Icon on your Desktop 
 
 ## Labs
 
+Listed below are the lab exercises which are available as part of this experience day event. Please ensure that you complete the **Working with your SDDC lab**, the **AWS Integration** lab relies on sections of the Working with your SDDC lab to be completed. Please note that you will not be able to complete all of the content. For this reason we typically state that the first 3 labs listed below are mandatory lab content. After those labs are complete you can choose your own path. If you are interested in exploring the DRaaS use case in the **VMware Site Recovery Manager** lab, you will need to pair up with another team so that one team can be the "protected site" and the other team can be the "failover" site. All other labs can be completed individually.
+
+Please enjoy these labs, if you have any questions, please do not hestiate to speak to the VMware Cloud on AWS specialists in the room with you.
+
 Lab Name | Description
 [Working with your SDDC](https://vmc-field-team.github.io/labs/working-with-sddc-lab/){:target="_blank"} | Learn the basics of running a VMware on AWS SDDC environment
-[VMware Cloud on AWS APIs](https://vmc-field-team.github.io/labs/api-lab/){:target="_blank"} | Learn how to interact with VMware on AWS through APIs
 [AWS Integration](https://vmc-field-team.github.io/labs/aws-integration-lab/){:target="_blank"} | Learn how to integrate with native AWS services such as RDS and EFS
+[VMware Cloud on AWS APIs](https://vmc-field-team.github.io/labs/api-lab/){:target="_blank"} | Learn how to interact with VMware on AWS through APIs
 [VMware Site Recovery Manager](https://vmc-field-team.github.io/labs/srm-lab/){:target="_blank"} | Learn how you can utilise VMware on AWS for DRaaS use cases
 [VMware Hybrid Cloud Extension](https://vmc-field-team.github.io/labs/hcx-lab/){:target="_blank"} | Learn how VMwares Hybrid Cloud Extension (HCX) technology can help with bulk and live migration to the VMware on AWS cloud platform
 [VMware vRealize Automation](https://vmc-field-team.github.io/labs/vra-lab/){:target="_blank"} | Utilise integration capabilities with VMware cloud management tools
