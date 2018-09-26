@@ -26,6 +26,7 @@ You will now be logged into your organization hosting your VMware Cloud on AWS S
 ![SDDC1](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC1.jpg)
 
 1. On your *Student Workshop #* SDDC, click on the **View Details** button.
+
     ![SDDC2](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC2.jpg)
 2. Click on the **Actions** button in the upper right hand corner of the UI
 3. Click on **Add Hosts**
@@ -51,23 +52,16 @@ By default, the firewall for the Management Gateway is set to deny all inbound a
 
 ![SDDC5](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC5.jpg)
 
-1\. Click *Network* tab
+1. Click **Network** tab
+2. Under Management Gateway expand **Firewall Rules**
+3. Click **Add Rule**
 
-2\. Under Management Gateway expand *Firewall Rules*
-
-3\. Click *Add Rule*
-
-![SDDC6](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC6.jpg)
-
-4\. Enter a name for your rule under *Rule Name*, For Example, "vCenter-Allow-Any"
-
-5\. Type *Any* for Source
-
-6\. Make sure *vCenter* is selected as Destination
-
-7\. Select *HTTPS (TCP 443)* from the drop down box for Service
-
-8\. Click the *SAVE* button, your rule should look like the below image
+    ![SDDC6](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC6.jpg)
+4. Enter a name for your rule under *Rule Name*, For Example, "vCenter-Allow-Any"
+5. Type *Any* for Source
+6. Make sure *vCenter* is selected as Destination
+7. Select *HTTPS (TCP 443)* from the drop down box for Service
+8. Click the *SAVE* button, your rule should look like the below image
 
 ![SDDC7](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC7.jpg)
 
@@ -81,45 +75,28 @@ Like the Management NSX Edge Services Gateway. By default, the Compute NSX Edge 
 
 Create Firewall Rule under Compute Gateway for Inbound Native AWS Services access
 
-1\. Under *Network* tab, navigate to *Compute Gateway*
+1. Under **Network** tab, navigate to **Compute Gateway**
+2. Expand **Firewall Rules**
+3. Click **ADD RULE**
 
-2\. Expand *Firewall Rules*
-
-3\. Click *ADD RULE*
-
-#### AWS Inbound Firewall Rule
-
-![SDDC10](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC10.jpg)
-
-4\. Name - **AWS Inbound**
-
-5\. Action - **Allow**
-
-6\. Source - **All connected Amazon VPC**
-
-7\. Destination - **192.168.#.0/24** (Where # is your student number)
-
-8\. Service - **ANY**
-
-9\. Click *SAVE* button.
-
-#### Create AWS Outbound Firewall Rule
+    ![SDDC10](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC10.jpg)
+4. Name - **AWS Inbound**
+5. Action - **Allow**
+6. Source - **All connected Amazon VPC**
+7. Destination - **192.168.#.0/24** (Where # is your student number)
+8. Service - **ANY**
+9. Click *SAVE* button.
 
 ![SDDC11](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC11.jpg)
 
 Follow the same process as in the previous step and create AWS Outbound Firewall Rule following these instructions:
 
-1\. Name - **AWS Outbound**
-
-2\. Action - **Allow**
-
-3\. Source - **192.168.#.0/24** (Where # is your student number)
-
-4\. Destination - **All connected Amazon VPC**
-
-5\. Service - **ANY**
-
-6\. Click *SAVE* button.
+1. Name - **AWS Outbound**
+2. Action - **Allow**
+3. Source - **192.168.#.0/24** (Where # is your student number)
+4. Destination - **All connected Amazon VPC**
+5. Service - **ANY**
+6. Click **SAVE** button.
 
 We have now successfully created rules which will allow us to access our vCenter server over port 443 from any location, in a real world deployment we would change this to only allow communication from a specific IP address range over a private link, once we have a VPN in place. We have also configured our Compute workloads to be able to communicate with any services in our native AWS VPC which our VMware Cloud on AWS environment is connected too.
 
@@ -131,30 +108,19 @@ We will now login to our VMware Cloud on AWS vCenter instance, now that the requ
 
 ![SDDC12](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC12.jpg)
 
-1\. Login to your Student # SDDC and click on the *Settings* tab. This displays different connection information for your VMware Cloud on AWS environment like:
-
-2\. Default account information for your vCenter server
-
-3\. URL to vCenter Server
-
-4\. URL to vCenter API Explorer
-
-5\. PowerCLI Connect string to be used if you desire to use PowerCLI to connect to your VMware
-Cloud on AWS vCenter Server
-
-6\. vCenter FQDN
-
-7\. vCenter Public IP information
-
-8\. Actual Public IP Address assigned to vCenter
-
-9\. vCenter Private IP
+1. Login to your Student # SDDC and click on the *Settings* tab. This displays different connection information for your VMware Cloud on AWS environment like:
+2. Default account information for your vCenter server
+3. URL to vCenter Server
+4. URL to vCenter API Explorer
+5. PowerCLI Connect string to be used if you desire to use PowerCLI to connect to your VMware Cloud on AWS vCenter Server
+6. vCenter FQDN
+7. vCenter Public IP information
+8. Actual Public IP Address assigned to vCenter
+9. vCenter Private IP
 
 ![SDDC13](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC13.jpg)
 
-Click on the vSphere Client's HTML5 URL copy button (\#3 above), and login with
-cloudadmin@vmc.local User Name and copy the password to your computer's clipboard and
-paste it in the Password Field.
+Click on the vSphere Client's HTML5 URL copy button (\#3 above), and login with cloudadmin@vmc.local User Name and copy the password to your computer's clipboard and paste it in the Password Field.
 
 ![SDDC14](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC14.jpg)
 
@@ -197,43 +163,31 @@ You may already have a Content Library in your on-premises data center, you can 
 
 ![SDDC16](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC16.jpg)
 
-1\. In your Content Library window, click the *+* sign to add a new Content Library.
+1. In your Content Library window, click the *+* sign to add a new Content Library.
 
-![SDDC17](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC17.jpg)
+    ![SDDC17](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC17.jpg)
+2. Name your Content Library *Student#* (where # is the number assigned to you)
+3. (Optional) Enter some notes for your Content Library
+4. Click *Next* button
 
-2\. Name your Content Library *Student#* (where # is the number assigned to you)
+    ![SDDC18](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC18.jpg)
+5. Select *Subscribed content library*
+6. Under *Subscription URL* enter the following:
 
-3\. (Optional) Enter some notes for your Content Library
+    ``` link
+    https://vcenter.sddc-34-216-241-49.vmc.vmware.com:443/cls/vcsp/lib/4aa185b4-3d6e-45b4-90ca-cd3a845d4502/lib.json
+    ```
+7. Click the checkbox for **Enable Authentication**
+8. For the *Password* enter: **VMware1!**
+9. Ensure Download content is set to *Immediately*
+10. Click *Next*
 
-4\. Click *Next* button
+    ![SDDC19](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC19.jpg)
+11. Highlight the *WorkloadDatastore* as the storage location
+12. Click *Next*
 
-![SDDC18](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC18.jpg)
-
-5\. Select *Subscribed content library*
-
-6\. Under *Subscription URL* enter the following:
-
-```
-https://vcenter.sddc-34-216-241-49.vmc.vmware.com:443/cls/vcsp/lib/4aa185b4-3d6e-45b4-90ca-cd3a845d4502/lib.json
-```
-
-7\. Click the checkbox for *Enable Authentication*
-
-8\. For the *Password* enter: **VMware1!**
-
-9\. Ensure Download content is set to *Immediately*
-
-10\. Click *Next*
-
-![SDDC19](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC19.jpg)
-
-11\. Highlight the *WorkloadDatastore* as the storage location
-
-12\. Click *Next*
-
-![SDDC20](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC20.jpg)
-
-13\. Click *Finish*. Your content library should take about ~20 minutes to complete syncing.
+    ![SDDC20](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC20.jpg)
+13. Click *Finish*. Your content library should take about ~20 minutes to complete syncing.
 
 You have now successfully subscribed to a vSphere content library from your VMware Cloud on AWS vCenter instance.
 
@@ -243,31 +197,23 @@ We will now create a local content library for this VMware Cloud on AWS vCenter 
 
 ![SDDC21](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC21.jpg)
 
-1\. Click the *+* sign to create a new Content Library
+1. Click the *+* sign to create a new Content Library
 
-![SDDC22](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC22.jpg)
+    ![SDDC22](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC22.jpg)
+2. Name your new Content Library: **LocalContentLibrary#** (where # is your student #)
+3. (Optional) Enter some notes about your Content Library
+4. Click *Next* button
 
-2\. Name your new Content Library: **LocalContentLibrary#** (where # is your student #)
+    ![SDDC23](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC23.jpg)
+5. Make sure *Local content library* is selected
+6. Click *Next*
 
-3\. (Optional) Enter some notes about your Content Library
+    ![SDDC24](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC24.jpg)
+7. Highlight the *WorkloadDatastore* as the storage location
+8. Click *Next*
 
-4\. Click *Next* button
-
-![SDDC23](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC23.jpg)
-
-5\. Make sure *Local content library* is selected
-
-6\. Click *Next*
-
-![SDDC24](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC24.jpg)
-
-7\. Highlight the *WorkloadDatastore* as the storage location
-
-8\. Click *Next*
-
-![SDDC25](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC25.jpg)
-
-9\. Review your information and click *Finish*
+    ![SDDC25](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC25.jpg)
+9. Review your information and click *Finish*
 
 Congratulations, you have created your Local Content Library.
 
@@ -275,37 +221,26 @@ Congratulations, you have created your Local Content Library.
 
 ![SDDC26](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC26.jpg)
 
-1\. Once you are logged in to your vCenter Server Click on *Menu*
+1. Once you are logged in to your vCenter Server Click on *Menu*
+2. Select *Global Inventory Lists*
 
-2\. Select *Global Inventory Lists*
+    ![SDDC27](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC27.jpg)
+3. Click on *Logical Networks* in the left pane
+4. Click on the *Add* button
 
-![SDDC27](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC27.jpg)
-
-3\. Click on *Logical Networks* in the left pane
-
-4\. Click on the *Add* button
-
-![SDDC28](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC28.jpg)
-
-5\. Name your New Logical Network *Student#-LN* (where # is your student number)
-
-6\. Select the *Routed Network* radio button
-
-7\. For CIDR Block enter **192.168.#.0/24** (where # is your student #)
+    ![SDDC28](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC28.jpg)
+5. Name your New Logical Network *Student#-LN* (where # is your student number)
+6. Select the *Routed Network* radio button
+7. For CIDR Block enter **192.168.#.0/24** (where # is your student #)
 
     • If your designated student number is between 1 and 9, your CIDR block should look like this: **192.168.1.0/24** - This example represents student number 1
 
     • For students 10 thru 20 it should look like this: **192.168.10.0/24** - This example represents student number 10
-
-8\. Enter **192.168.#.1** for the Default Gateway IP - Example: 192.168.1.1
-
-9\. Make sure DHCP is Enabled by clicking on the *checkbox*
-
-10\. Enter **192.168.#.100-192.168.#.200** for IP Range
-
-11\. Type **corp.local** as your DNS Domain Name
-
-12\. Click *OK* to create your new logical network
+8. Enter **192.168.#.1** for the Default Gateway IP - Example: 192.168.1.1
+9. Make sure DHCP is Enabled by clicking on the *checkbox*
+10. Enter **192.168.#.100-192.168.#.200** for IP Range
+11. Type **corp.local** as your DNS Domain Name
+12. Click **OK** to create your new logical network
 
 ## Create Linux Customization Spec
 
@@ -319,61 +254,43 @@ Use the Customization Specification Manager to manage customization specificatio
 
 ![SDDC29](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC29.jpg)
 
-1\. In the vCenter HTML5 client click *Menu*
+1. In the vCenter HTML5 client click *Menu*
+2. Click *Policies and Profiles*
 
-2\. Click *Policies and Profiles*
+    ![SDDC30](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC30.jpg)
+3. Click on *+ New* to add a new Customization Specification
 
-![SDDC30](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC30.jpg)
+    ![SDDC31](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC31.jpg)
+4. Give your VM Customization Spec a name, such as **Linux Spec**
+5. Enter a description for it (Optional)
+6. Make sure to select *Linux* in the Guest OS, Target guest OS section
+7. Click *Next*
 
-3\. Click on *+ New* to add a new Customization Specification
+    ![SDDC32](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC32.jpg)
+8. Click on the third option, *Enter a name* button
+9. Enter a name for your linux VMs, such as *linux-vm*
+10. Click on the *Append a numeric value* checkbox
+11. Enter **corp.local** for the Domain Name
+12. Click the *Next* button
 
-![SDDC31](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC31.jpg)
+    ![SDDC33](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC33.jpg)
 
-4\. Give your VM Customization Spec a name, such as *Linux Spec*
+13. Select *US* for Area
+14. Select *Eastern* for Location
+15. Select *Local time*
+16. Click *Next*
 
-5\. Enter a description for it (Optional)
+    ![SDDC34](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC34.jpg)
+17. Leave the defaults on the *Network* screen and click *Next*
 
-6\. Make sure to select *Linux* in the Guest OS, Target guest OS section
+    ![SDDC35](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC35.jpg)
 
-7\. Click *Next*
+18. Under Primary DNS Server enter **10.46.159.10** and leave the Secondary DNS Server and Tertiary DNS Server blank
+19. Type **corp.local** for DNS Search Paths and click **Add**
+20. Click *Next*
 
-![SDDC32](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC32.jpg)
-
-8\. Click on the third option, *Enter a name* button
-
-9\. Enter a name for your linux VMs, such as *linux-vm*
-
-10\. Click on the *Append a numeric value* checkbox
-
-11\. Enter **corp.local** for the Domain Name
-
-12\. Click the *Next* button
-
-![SDDC33](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC33.jpg)
-
-13\. Select *US* for Area
-
-14\. Select *Eastern* for Location
-
-15\. Select *Local time*
-
-16\. Click *Next*
-
-![SDDC34](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC34.jpg)
-
-17\. Leave the defaults on the *Network* screen and click *Next*
-
-![SDDC35](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC35.jpg)
-
-18\. Under Primary DNS Server enter **10.46.159.10** and leave the Secondary DNS Server and Tertiary DNS Server blank
-
-19\. Type **corp.local** for DNS Search Paths and click **Add**
-
-20\. Click *Next*
-
-![SDDC36](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC36.jpg)
-
-21\. Review your entries and click *Finish*
+    ![SDDC36](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC36.jpg)
+21. Review your entries and click **Finish**
 
 ![SDDC37](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC37.jpg)
 
@@ -383,43 +300,31 @@ Congratulations! You have successfully created your VM Customization Spec for yo
 
 ![SDDC38](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC38.jpg)
 
-1\. On your Content Libraries *(Menu -> Content Libraries)*, select *Student#* and select the *Templates* tab.
+1. On your Content Libraries *(Menu -> Content Libraries)*, select *Student#* and select the *Templates* tab.
+2. Right click on the *centos01-web* template and select *New VM from This Template*
 
-2\. Right click on the *centos01-web* template and select *New VM from This Template*
+    ![SDDC39](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC39.jpg)
+3. Name your Virtual Machine *StudentVM#* (where # is your student number)
+4. Expand the location area until you see *Workloads* and highlight it
+5. Click *Next*
 
-![SDDC39](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC39.jpg)
+    ![SDDC40](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC40.jpg)
+6. Expand the destination compute resources until you find *Compute-ResourcePool*, select it
+7. Click the *Next* button
 
-3\. Name your Virtual Machine *StudentVM#* (where # is your student number)
+    ![SDDC41](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC41.jpg)
+8. Click the *Next* button on the Review details screen
 
-4\. Expand the location area until you see *Workloads* and highlight it
+    ![SDDC42](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC42.jpg)
+9. In the *Select storage* step, highlight *WorkloadDatastore*
+10. Click *Next*
 
-5\. Click *Next*
+    ![SDDC43](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC43.jpg)
+11. In the *Select networks* step, click the drop down box to select the Destination Network (you may need to click Browse to see other networks and select your *Student#-LN* network you created previously
+12. Click *Next*
 
-![SDDC40](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC40.jpg)
-
-6\. Expand the destination compute resources until you find *Compute-ResourcePool*, select it
-
-7\. Click the *Next* button
-
-![SDDC41](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC41.jpg)
-
-8\. Click the *Next* button on the Review details screen
-
-![SDDC42](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC42.jpg)
-
-9\. In the *Select storage* step, highlight *WorkloadDatastore*
-
-10\. Click *Next*
-
-![SDDC43](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC43.jpg)
-
-11\. In the *Select networks* step, click the drop down box to select the Destination Network (you may need to click Browse to see other networks and select your *Student#-LN* network you created previously
-
-12\. Click *Next*
-
-![SDDC44](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC44.jpg)
-
-13\. In the *Ready to complete* section, review and ensure all your selections are correct and click *Finish*
+    ![SDDC44](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC44.jpg)
+13. In the *Ready to complete* section, review and ensure all your selections are correct and click *Finish*
 
 ## Convert a Virtual Machine to a Template
 
@@ -427,22 +332,16 @@ In this step you will be cloning your newly created Virtual Machine into a Templ
 
 ![SDDC45](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC45.jpg)
 
-1\. Ensure your VM deployment completed from your previous step
+1. Ensure your VM deployment completed from your previous step
+2. Click on *Menu*
+3. Select *VMs and Templates*
 
-2\. Click on *Menu*
+    ![SDDC46](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC46.jpg)
+4. Select your newly created VM *Student#* (where # is your student number)
+5. Click on *Template*
+6. Select *Convert to Template*
 
-3\. Select *VMs and Templates*
-
-![SDDC46](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC46.jpg)
-
-4\. Select your newly created VM *Student#* (where # is your student number)
-
-5\. Click on *Template*
-
-6\. Select *Convert to Template*
-
-![SDDC47](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC47.jpg)
-
+    ![SDDC47](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC47.jpg)
 7. Click *Yes*  in the Convert to Template prompt
 
 You have completed this module.
