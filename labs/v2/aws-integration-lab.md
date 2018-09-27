@@ -96,7 +96,7 @@ As a first step in setting up our integration between the VMware vSphere platfor
 6. Select *New VM from This Template*
 
     ![RDS4](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS4.jpg)
-    **IIMPORTANT - Please ensure that you select Customize the operating system checkbox and apply the customization specification which you created earlier**
+    **IMPORTANT - Please ensure that you select Customize the operating system checkbox and apply the customization specification which you created earlier**
 7. Name the virtual machine **PhotoApp#** (where # is your student #)
 8. Expand the location and select **Workloads**
 9. Click **Next**
@@ -111,9 +111,7 @@ As a first step in setting up our integration between the VMware vSphere platfor
     ![RDS7](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS7.jpg)
 13. In the **Select storage** step, highlight the *WorkloadDatastore*
 14. Click **Next**
-
-    ![RDS8](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS8.jpg)
-15. Select the network you created in a previous step for your VM
+15. On the Select Networks page, Select the network you created in a previous step for your VM
 16. Click **Next**
 
     ![RDS9](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS9.jpg)
