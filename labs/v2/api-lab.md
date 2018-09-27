@@ -46,7 +46,7 @@ You now will need to set the PowerCLI Configuration to Ignore Invalid Certificat
 **IMPORTANT STEP:**
 
 ```powershell
-Set-PowerCLIConfiguration -InvalidCertificateAction Ignore -Confirm:$false
+Set-PowerCLIConfiguration -InvalidCertificateAction Ignore -Confirm:$false -WarningAction:SilentlyContinue
 ```
 
 **NOTE**: Be sure the "i" in "Ignore" is capitalized if you are not using copy/paste
@@ -64,7 +64,7 @@ Install-Module -name VMware.VMC -scope AllUsers -Force
 Let's take a quick look at the VMware CLI commands
 
 ```powershell
-Get-VMCCommand
+Get-VMCCommand -WarningAction:SilentlyContinue
 ```
 
 ![APIs8](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs8.jpg)

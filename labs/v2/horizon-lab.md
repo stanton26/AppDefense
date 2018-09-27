@@ -147,11 +147,9 @@ The AD, Horizon Connection Server, UAG and Goldenmaster Image will be deployed i
 5. Name your New Logical Network **Horizon#-LN** (where # is your student number)
 6. Select the **Routed Network** radio button
 7. For CIDR Block enter **192.168.20.0/24**
-   
 8. Enter **192.168.20.1** for the Default Gateway IP
 9. Make sure DHCP is disabled
 10. Click **OK** to create your new logical network
-
 
 ## Subscribed Libraries
 
@@ -185,11 +183,11 @@ You may already have a Content Library in your on-premises data center, you can 
 4. Click **Next** button
 
 5. Select **Subscribed content library**
-6. Under **Subscription URL** enter the following: 
+6. Under **Subscription URL** enter the following:
 
-**https://vcenter.sddc-34-216-241-49.vmc.vmware.com:443/cls/vcsp/lib/6f0bc23f-3157-4fb5-a4c4-2f3f180b8d8d/lib.json**
-
-    PLEASE NOTE THAT THERE MAY BE AN ISSUE WITH DROPPING/ADDITION OF CHARACTERS FOR THE URL WHEN COPYING AND PASTING FROM THE MANUAL.ASK YOUR INSTRUCTOR IN THE EVENT YOU CANNOT LOCATE IT.
+    ```link
+    https://vcenter.sddc-34-216-241-49.vmc.vmware.com:443/cls/vcsp/lib/6f0bc23f-3157-4fb5-a4c4-2f3f180b8d8d/lib.json
+    ```
 
 7. Ensure Download content is set to **when needed**
 8. Click **Next**
@@ -201,17 +199,16 @@ You may already have a Content Library in your on-premises data center, you can 
 
 Now that we have subscribed to the Conten Library we can deploy the Horizon Infrastructre:
 
-1.  Click on **Menu**
-2.  Click on **Content Library**
-3.  Click on the content library you subscribed to in the previus lab
-4.  Click on **Templates**
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/GM-W10-1.png)
-
+1. Click on **Menu**
+2. Click on **Content Library**
+3. Click on the content library you subscribed to in the previus lab
+4. Click on **Templates**
+    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/GM-W10-1.png)
 
 ## Create your Active Directory VM
 
-5.  Right Click on the **VMCWINDC01** and choose **New VM from this Template....**
-6.  Give it the same the name **VMCWINDC01**
+5. Right Click on the **VMCWINDC01** and choose **New VM from this Template....**
+6. Give it the same the name **VMCWINDC01**
 7.  As location click on **Workloads**
 8.  Click on **Next**
 9.  Select **Compute-ResourcePool** and click **Next**
@@ -219,8 +216,6 @@ Now that we have subscribed to the Conten Library we can deploy the Horizon Infr
 11. Select **WorkloadDatastore** and click **next**
 12. Select the network you created in privious LAB **Horizon#-LN**
 13. Click **next** and **finish**
-
-
 
 ## Create Horizon Server VM
 
@@ -234,11 +229,9 @@ Now that we have subscribed to the Conten Library we can deploy the Horizon Infr
 12. Select the network you created in privious LAB **Horizon#-LN**
 13. Click **next** and **finish**
 
-
 ## Create your Golden Master Image
 
-With Horizon 7.6 we do have the option to also do Instant Clones. For this lab we prepared two Golden Master Images. The first one is for Instant Clones with the Name **W10-LTBS-1607-IC**, the second one is for Full Clones. You can decide to either go for Full clones or use Instant Clones. We suggest to do instant clones cause it is much faster to rollout this desktops. 
-
+With Horizon 7.6 we do have the option to also do Instant Clones. For this lab we prepared two Golden Master Images. The first one is for Instant Clones with the Name **W10-LTBS-1607-IC**, the second one is for Full Clones. You can decide to either go for Full clones or use Instant Clones. We suggest to do instant clones cause it is much faster to rollout this desktops.
 
 5.  Right Click on the **W10-LTBS-1607-IC Template** and choose **New VM from this Template....**
 6.  Give it the same the name **W10-LTBS-#** where # is put your student ID in
@@ -250,18 +243,17 @@ With Horizon 7.6 we do have the option to also do Instant Clones. For this lab w
 12. Select the network you created in privious step for 192.168.20.0/24 **Horizon#-LN**
 13. Click **next** and **finish**
 
+## Power on the new created VM's
 
-##Power on the new created VM's
-1.  Power on the VM **VMCWINDC01**
-2.  Launch the Web Console
-3.  Sign in with  **corp\vmcws1** and password **VMware1!**
+1. Power on the VM **VMCWINDC01**
+2. Launch the Web Console
+3. Sign in with  **corp\vmcws1** and password **VMware1!**
 
+## Power on the new created VM's
 
-##Power on the new created VM's
-
-1.  Power on the VM **HZ-76-WS**
-2.  Launch the Web Console
-3.  Sign in with  **corp\vmcws1** and password **VMware1!**
+1. Power on the VM **HZ-76-WS**
+2. Launch the Web Console
+3. Sign in with  **corp\vmcws1** and password **VMware1!**
 
 Wait about 10 minutes until all services are runnig. In the meantime jump create the UAG VM
 
@@ -303,19 +295,18 @@ Wait about 10 minutes until all services are runnig. In the meantime jump create
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/customization19.png)
 26. Tunnel, BLAST,UDP Tunnel Server, HORIZON DESTINATION Server have to be **GREEN**
 
-
 Now we will request a public IP adress. We will use this public IP adress to access the Horizon infrastructre afterwards. Please go back to VMC console in your browser. Go to the network tab.
 
-1.  Scroll down to Compute Gateway and request a new public ip. 
-2.  Please note this public IP.
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/customization8.png)
-3.  Click on NAT
-4.  Click on **ADD NAT RULE**
-5.  Under Description type **Horizon Desktop**
-6.  Public IP **your requested IP**
-7.  Service **HTTPS(TCP 443)
-8.  Public Ports **443**
-9.  Internal IP **192.168.20.73**
+1. Scroll down to Compute Gateway and request a new public ip. 
+2. Please note this public IP.
+    ![customization8](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/customization8.png)
+3. Click on **NAT**
+4. Click on **ADD NAT RULE**
+5. Under Description type **Horizon Desktop**
+6. Public IP **your requested IP**
+7. Service **HTTPS(TCP 443)
+8. Public Ports **443**
+9. Internal IP **192.168.20.73**
 10. Click **SAVE**
 11. Check the Firewall Rule you previous created. -> ANY ANY ANY
 
@@ -327,10 +318,10 @@ Now we have to create a Snapshot on the Golden Master Image. Cause Instant Clone
 3.  type a name **1.0** for example
 4.  Click **OK**
 
-
 If decision made to go for Full Clones in the previous step we need to create a windows customization spec for the Full Cones that we will use in Horizon for creating a bunch of VM's and those will be directly placed in the Active Directoy.
 
 ## Create a Windows Customization Spec
+
 1.  Click on **Menu**
 2.  Click **Policies and Profiles**
 3.  Click on **create**
