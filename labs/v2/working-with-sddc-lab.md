@@ -317,11 +317,9 @@ Congratulations! You have successfully created your VM Customization Spec for yo
 
     ![SDDC42](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC42.jpg)
 12. In the *Select storage* step, highlight *WorkloadDatastore*
-13. Click *Next*
-
-    ![SDDC43](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC43.jpg)
+13. Click **Next**
 14. In the *Select networks* step, click the drop down box to select the Destination Network (you may need to click Browse to see other networks and select your *Student#-LN* network you created previously
-15. Click *Next*
+15. Click **Next**
 
     ![SDDC44](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC44.jpg)
 16. In the *Ready to complete* section, review and ensure all your selections are correct and click *Finish*
@@ -334,7 +332,7 @@ In this step you will be cloning your newly created Virtual Machine into a Templ
 
 1. Ensure your VM deployment completed from your previous step
 2. Click on **Menu**
-3. Select *V*Ms and Templates**
+3. Select **VMs and Templates**
 
     ![SDDC46](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC46.jpg)
 4. Select your newly created VM *Student#* (where # is your student number)
