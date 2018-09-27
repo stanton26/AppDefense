@@ -308,8 +308,6 @@ Congratulations! You have successfully created your VM Customization Spec for yo
 5. Ensure that you tick the option to **Customize the Operating System**
 6. Click **Next**
 7. Choose the linux customization specification which we created in the previous step
-
-    ![SDDC40](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC40.jpg)
 8. Expand the destination compute resources until you find *Compute-ResourcePool*, select it
 9. Click the *Next* button
 
