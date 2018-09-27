@@ -253,6 +253,7 @@ In our next section on integrating AWS services with VMware Cloud on AWS. We wil
 6. Select *New VM from This Template*
 
     ![EFS4](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/EFS4.jpg)
+    **IIMPORTANT - Please ensure that you select Customize the operating system checkbox and apply the customization specification which you created earlier**
 7. Name your VM **EFSVM#** (where # is your student number)
 8. Select *Workloads* for the location of your VM
 9. Click **Next**
