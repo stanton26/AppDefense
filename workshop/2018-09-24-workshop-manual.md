@@ -70,9 +70,9 @@ Listed below are the lab exercises which are available as part of this experienc
 Please enjoy these labs, if you have any questions, please do not hestiate to speak to the VMware Cloud on AWS specialists in the room with you.
 
 Lab Name | Description
-[Working with your SDDC](https://vmc-field-team.github.io/labs/working-with-sddc-lab/){:target="_blank"} | Learn the basics of running a VMware on AWS SDDC environment
-[AWS Integration](https://vmc-field-team.github.io/labs/aws-integration-lab/){:target="_blank"} | Learn how to integrate with native AWS services such as RDS and EFS
-[VMware Cloud on AWS APIs](https://vmc-field-team.github.io/labs/api-lab/){:target="_blank"} | Learn how to interact with VMware on AWS through APIs
-[VMware Site Recovery Manager](https://vmc-field-team.github.io/labs/srm-lab/){:target="_blank"} | Learn how you can utilise VMware on AWS for DRaaS use cases
-[VMware Hybrid Cloud Extension](https://vmc-field-team.github.io/labs/hcx-lab/){:target="_blank"} | Learn how VMwares Hybrid Cloud Extension (HCX) technology can help with bulk and live migration to the VMware on AWS cloud platform
-[VMware vRealize Automation](https://vmc-field-team.github.io/labs/vra-lab/){:target="_blank"} | Utilise integration capabilities with VMware cloud management tools
+[Working with your SDDC](https://vmc-field-team.github.io/labs/v2/working-with-sddc-lab/){:target="_blank"} | Learn the basics of running a VMware on AWS SDDC environment
+[AWS Integration](https://vmc-field-team.github.io/labs/v2/aws-integration-lab/){:target="_blank"} | Learn how to integrate with native AWS services such as RDS and EFS
+[VMware Cloud on AWS APIs](https://vmc-field-team.github.io/labs/v2/api-lab/){:target="_blank"} | Learn how to interact with VMware on AWS through APIs
+[VMware Site Recovery Manager](https://vmc-field-team.github.io/labs/v2/srm-lab/){:target="_blank"} | Learn how you can utilise VMware on AWS for DRaaS use cases
+[VMware Hybrid Cloud Extension](https://vmc-field-team.github.io/labs/v2/hcx-lab/){:target="_blank"} | Learn how VMwares Hybrid Cloud Extension (HCX) technology can help with bulk and live migration to the VMware on AWS cloud platform
+[VMware vRealize Automation](https://vmc-field-team.github.io/labs/v2/vra-lab/){:target="_blank"} | Utilise integration capabilities with VMware cloud management tools
