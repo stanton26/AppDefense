@@ -279,7 +279,12 @@ Wait about 10 minutes until all services are runnig. In the meantime jump create
     ![customization15](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/customization15.png)
 16. Click **Finish**
 17. Wait until the new created UAG VM is powered on.
-18. Open you browser and go to : https://192.168.20.73:9443
+18. Open you browser and go to :
+
+    ```link
+    https://192.168.20.73:9443
+    ```
+
     ![customization16](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/customization16.png)
 19. Click on Import Settings
     ![customization17](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/customization17.png)
@@ -297,7 +302,7 @@ Wait about 10 minutes until all services are runnig. In the meantime jump create
 
 Now we will request a public IP adress. We will use this public IP adress to access the Horizon infrastructre afterwards. Please go back to VMC console in your browser. Go to the network tab.
 
-1. Scroll down to Compute Gateway and request a new public ip. 
+1. Scroll down to Compute Gateway and request a new public ip.
 2. Please note this public IP.
     ![customization8](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/customization8.png)
 3. Click on **NAT**
@@ -360,7 +365,7 @@ That you can create desktops in your SDDC we need to implement your Student SDDC
 8. you can find your cloudadmin password by going back to the VMC tab in your browser.
     ![horizon-server10](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-server10.png)
 9. if you had filled in the fields: server adress, user name and password click **next**
-10. you will get a promt Invalid Certifcate Detected 
+10. you will get a promt Invalid Certifcate Detected
     ![horizon-server6](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-server6.png)
 11. Click on View Certficate and **Accept**
 12. On View Composer settings check **Do not use View Composer** click **Next**

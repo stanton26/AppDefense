@@ -21,23 +21,21 @@ PLEASE BE AWARE THAT THESE EXERCISES MUST BE PERFORMED FROM THE ASSIGNED HORIZON
 
 ### Activate Site Recovery
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM1.jpg)
+![SRM1](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM1.jpg)
 
-1\. Click on the *Add ons* tab
+1. Click on the *Add ons* tab
+2. Under the Site Recovery Add On, Click the *Activate* button
 
-2\. Under the Site Recovery Add On, Click the *Activate* button
+    ![SRM2](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM2.jpg)
+3. In the pop up window Click *Activate* again
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM2.jpg)
-
-3\. In the pop up window Click *Activate* again
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM3.jpg)
+    ![SRM3](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM3.jpg)
 
 Wait until the Site Recovery Add On has been activated. This process should take ~10 minutes to complete.
 
 ## What is VMware Site Recovery
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM4.jpg)
+![SRM4](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM4.jpg)
 
 VMware Site Recovery brings VMware enterprise-class Software-Defined Data Center (SDDC) Disaster Recovery as a Service to the AWS Cloud. It enables customers to protect and recover applications without the requirement for a dedicated secondary site. It is delivered, sold, supported, maintained and managed by VMware as an on-demand service. IT teams manage their cloud-based resources with familiar VMware tools without the difficulties of learning new skills or utilizing new tools and processes.
 
@@ -47,7 +45,7 @@ The VMware Cloud on AWS solution enables customers to have the flexibility to tr
 
 VMware Site Recovery works in conjunction with VMware Site Recovery Manager and VMware vSphere Replication to automate the process of recovering, testing, re-protecting, and failing-back virtual machine workloads. VMware Site Recovery utilizes VMware Site Recovery Manager servers to coordinate the operations of the VMware SDDC. This is so that, as virtual machines at the protected site are shut down, copies of these virtual machines at the recovery site startup. By using the data replicated from the protected site these virtual machines assume responsibility for providing the same services.
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM5.jpg)
+![SRM5](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM5.jpg)
 
 VMware Site Recovery can be used between a customers datacenter and an SDDC deployed on VMware Cloud on AWS or it can be used between two SDDCs deployed to different AWS availability zones or regions. The second option allows VMware Site Recovery to provide a fully VMware managed and maintained Disaster Recovery solution. Migration of protected inventory and services from one site to the other is controlled by a recovery plan that specifies the order in which virtual machines are shut down and started up, the resource pools to which they are allocated, and the networks they can access.
 
@@ -57,67 +55,51 @@ VMware Site Recovery enables the testing of recovery plans, using a temporary co
 
 We will be setting up an IPSEC VPN connection between your VPC and the VPC of the person you were paired with.
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM6.jpg)
+![SRM6](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM6.jpg)
 
-1\. Go back to the *VMware Cloud on AWS* tab.
+1. Go back to the *VMware Cloud on AWS* tab.
+2. In the main SDDC window, click on *View Details*
 
-2\. In the main SDDC window, click on *View Details*
+    ![SRM7](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM7.jpg)
+3. Click on the *Network* menu
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM7.jpg)
+    ![SRM8](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM8.jpg)
 
-3\. Click on the *Network* menu
+    In the Management Gateway section, make a note of the *Public IP* and the *Infrastructure Subnet CIDR*
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM8.jpg)
+    ![SRM9](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM9.jpg)
 
-In the Management Gateway section, make a note of the *Public IP* and the *Infrastructure Subnet CIDR*
+    In the Management Gateway settings below
+4. Click the drop down arrow to open the *IPsec VPNs* section
+5. Click on *ADD VPN*
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM9.jpg)
+    ![SRM10](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM10.jpg)
 
-In the Management Gateway settings below
+    Fill in the following information
+6. Name: Student # MGMT GW (where # is your peer's student number)
+7. The *Public IP address* of the persons Gateway you were paired with
+8. The *Infrastructure IP CIDR* of the person you were paired with
+9. Pre-shared key is **VMware1!**
+10. Click on *Save*
 
-4\. Click the drop down arrow to open the *IPsec VPNs* section
+    ![SRM11](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM11.jpg)
 
-5\. Click on *ADD VPN*
+    When both you and the person you were paired with have completed these steps you should see the status of the VPN turn to **Connected**
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM10.jpg)
+    ![SRM12](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM12.jpg)
 
-Fill in the following information
+    There will be a need to setup a second VPN to our Host infrastructure for this setup to work. This is not normally needed when setting up your on-premises environment but it's needed for the special setup in this workshop.
+11. Make sure the IPSecVPNs drop down is opened, if not click it under *Management Gateway*
+12. Click on *Add VPN*
 
-6\. Name: Student # MGMT GW (where # is your peer's student number)
+    ![SRM12](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM13.jpg)
 
-7\. The *Public IP address* of the persons Gateway you were paired with
-
-8\. The *Infrastructure IP CIDR* of the person you were paired with
-
-9\. Pre-shared key is **VMware1!**
-
-10\. Click on *Save*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM11.jpg)
-
-When both you and the person you were paired with have completed these steps you should see the status of the VPN turn to **Connected**
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM12.jpg)
-
-There will be a need to setup a second VPN to our Host infrastructure for this setup to work. This is not normally needed when setting up your on-premises environment but it's needed for the special setup in this workshop.
-
-11\. Make sure the IPSecVPNs drop down is opened, if not click it under *Management Gateway*
-
-12\. Click on *Add VPN*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM13.jpg)
-
-Fill in the following information
-
-13\. Name this VPN **Student# to Host** (where # is your student number)
-
-14\. Enter **54.70.191.234** for the Remote Gateway Public IP
-
-15\. Enter **192.168.30.0/24** under Remote Networks
-
-16\. Pre-shared key is **VMware1!**
-
-17\. Click on *Save*
+    Fill in the following information
+13. Name this VPN **Student# to Host** (where # is your student number)
+14. Enter **54.70.191.234** for the Remote Gateway Public IP
+15. Enter **192.168.30.0/24** under Remote Networks
+16. Pre-shared key is **VMware1!**
+17. Click on *Save*
 
 ## Prepare and Pair Site Recovery
 
@@ -131,341 +113,259 @@ Remote Network of the selected VPN will be used as the source or destination for
 You can edit the rules in the Firewall Rules section after they are created if desired although
 there should be no need to edit them.
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM14.jpg)
+![SRM14](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM14.jpg)
 
-1\. Click on the *Network* tab
-
-2\. Expand the *Firewall Rule Accelerator* area
-
-3\. For Rule Group select *Site Recovery* option
-
-4\. For VPN Select the VPN created against the Student you were paired up with, and you will repeat the same process for the VPN created to the Host infrastructure.
-
-    MAKE SURE TO REPEAT THIS STEP FOR BOTH VPN'S CREATED, THE ONE WITH YOUR PEER STUDENT, AND THE ONE FOR THE HOST.
-
-5\. Click on *Create Firewall Rules*
+1. Click on the *Network* tab
+2. Expand the *Firewall Rule Accelerator* area
+3. For Rule Group select *Site Recovery* option
+4. For VPN Select the VPN created against the Student you were paired up with, and you will repeat the same process for the VPN created to the Host infrastructure.
+    * MAKE SURE TO REPEAT THIS STEP FOR BOTH VPN'S CREATED, THE ONE WITH YOUR PEER STUDENT, AND THE ONE FOR THE HOST.
+5. Click on *Create Firewall Rules*
 
 Watch as the firewall rules get created automatically for you. Once completed, repeat for second VPN, once that one completes you can examine the firewall rules created.
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM15.jpg)
+![SRM15](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM15.jpg)
 
 ### VMware Site Recovery - Site Pairing
 
 *IMPORTANT NOTE*: Only one person can do the Site Pairing exercise. Please decide between you and your partner who performs this step.
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM16.jpg)
+![SRM16](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM16.jpg)
 
-1\. On your VMware Cloud on AWS Portal click on the *Add Ons* tab
+1. On your VMware Cloud on AWS Portal click on the *Add Ons* tab
+2. Click *Open Site Recovery*
 
-2\. Click *Open Site Recovery*
+    ![SRM17](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM17.jpg)
+3. Click on *New Site Pair*
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM17.jpg)
+    You will be pairing the partner site that was assigned to you by your instructor, note that this is not the information for your SDDC used up until now.
 
-3\. Click on *New Site Pair*
+    ![SRM18](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM18.jpg)
 
-You will be pairing the partner site that was assigned to you by your instructor, note that this is not the information for your SDDC used up until now.
+    This is the information your partner will need from you and you will need from your partner's site.
+4. Click on the *Settings* tab in your SDDC
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM18.jpg)
+    The username on both sides (yours and your peer) will always be *cloudadmin@vmc.local*
+5. Copy or note the password for the vCenter Server user
+6. Note the URL for the vCenter server and the format it's displayed versus the format it should be used:
 
-This is the information your partner will need from you and you will need from your partner's site.
+    *DISPLAYED*:
 
-4\. Click on the *Settings* tab in your SDDC
+    ```link
+    https://vcenter.sddc-xx-xxx-xx-xx.vmc.vmware.com/ui
+    ```
 
-The username on both sides (yours and your peer) will always be *cloudadmin@vmc.local*
+    *USED*:
 
-5\. Copy or note the password for the vCenter Server user
+    ```link
+    vcenter.sddc-xx-xxx-xx-xx.vmc.vmware.com
+    ```
 
-6\. Note the URL for the vCenter server and the format it's displayed versus the format it should
-be used:
+    ![SRM19](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM19.jpg)
+7. Make sure your local vCenter is selected
+8. Enter the information from your partner's SDDC:
 
-*DISPLAYED*: https://vcenter.sddc-xx-xxx-xx-xx.vmc.vmware.com/ui
+    PSC host name (make sure to enter the correct format as noted above)
 
-*USED*: vcenter.sddc-xx-xxx-xx-xx.vmc.vmware.com
+    User name
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM19.jpg)
+    Password
 
-7\. Make sure your local vCenter is selected
+    ![SRM20](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM20.jpg)
+9. Make sure local vCenter server is selected
+10. Select all Services
+11. Click *Next*
 
-8\. Enter the information from your partner's SDDC:
-
-  PSC host name (make sure to enter the correct format as noted above)
-
-  User name
-
-  Password
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM20.jpg)
-
-9\. Make sure local vCenter server is selected
-
-10\. Select all Services
-
-11\. Click *Next*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM21.jpg)
-
+    ![SRM21](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM21.jpg)
 12. Click *Finish* button
 
 ### Configure Network Mappings
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM22.jpg)
+![SRM20](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM22.jpg)
 
-13\. Click *Network Mappings* in the left pane of the Site Recovery page
+1. Click *Network Mappings* in the left pane of the Site Recovery page
+2. Click *New*
 
-14\. Click *New*
+    ![SRM23](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM23.jpg)
+3. Select *Prepare mappings manually*
+4. Click *Next*
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM23.jpg)
+    ![SRM24](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM24.jpg)
+5. Expand *SDDC Datacenter* on both sides
+6. Expand *Management Networks* on both sides
+7. Expand *vmc-dvs* on both sides
+8. Select your *Student#-LN* network and your partner's *Student#-LN* (You may need to scroll down to fid these networks)
+9. Click the *Add Mappings* button
+10. Click *Next*
 
-15\. Select *Prepare mappings manually*
+    ![SRM25](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM25.jpg)
+11. DO NOT enter or select anything in Reverse Mappings, click *Next*
+12. Leave defaults and click *Next*
 
-16\. Click *Next*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM24.jpg)
-
-17\. Expand *SDDC Datacenter* on both sides
-
-18\. Expand *Management Networks* on both sides
-
-19\. Expand *vmc-dvs* on both sides
-
-20\. Select your *Student#-LN* network and your partner's *Student#-LN* (You may need to scroll down to fid these networks)
-
-21\. Click the *Add Mappings* button
-
-22\. Click *Next*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM25.jpg)
-
-23\. DO NOT enter or select anything in Reverse Mappings, click *Next*
-
-24\. Leave defaults and click *Next*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM27.jpg)
-
-25\. Click *Finish*
+    ![SRM27](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM27.jpg)
+13. Click *Finish*
 
 ### Folder mappings
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM28.jpg)
+![SRM28](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM28.jpg)
 
-26\. Select *Folder Mappings* in the left pane
+1. Select *Folder Mappings* in the left pane
+2. Click *+ New* to create a new folder mapping
 
-27\. Click *+ New* to create a new folder mapping
+    ![SRM29](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM29.jpg)
+3. Select *Prepare mappings manually*
+4. Click *Next*
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM29.jpg)
+    ![SRM30](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM30.jpg)
+5. Expand *SDDC Datacenter* on both sides
+6. Select *Workloads* on both sides
+7. Click the *Add Mappings* button
+8. Click *Next*
 
-28\. Select *Prepare mappings manually*
+    ![SRM31](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM31.jpg)
+9. DO NOT select any Reverse mappings, click *Next*
 
-29\. Click *Next*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM30.jpg)
-
-30\. Expand *SDDC Datacenter* on both sides
-
-31\. Select *Workloads* on both sides
-
-32\. Click the *Add Mappings* button
-
-33\. Click *Next*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM31.jpg)
-
-34\. DO NOT select any Reverse mappings, click *Next*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM32.jpg)
-
-35\. Click *Finish*
+    ![SRM32](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM32.jpg)
+10. Click *Finish*
 
 ### Resource Mappings
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM33.jpg)
+![SRM33](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM33.jpg)
 
-36\. Click *Resource Mappings* in the left pane
+1. Click *Resource Mappings* in the left pane
+2. Click *+ New*
 
-37\. Click *+ New*
+    ![SRM34](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM34.jpg)
+3. Expand *SDDC Datacenter* on both sides
+4. Expand *Cluster 1* on both sides
+5. Select *Compute-ResourcePool* on both sides
+6. Click *Add Mappings* button
+7. Click *Next*
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM34.jpg)
+    ![SRM35](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM35.jpg)
+8. DO NOT select any reverse mappings, click *Next*
 
-38\. Expand *SDDC Datacenter* on both sides
-
-39\. Expand *Cluster 1* on both sides
-
-40\. Select *Compute-ResourcePool* on both sides
-
-41\. Click *Add Mappings* button
-
-42\. Click *Next*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM35.jpg)
-
-43\. DO NOT select any reverse mappings, click *Next*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM36.jpg)
-
-44\. Click *Finish*
+    ![SRM36](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM36.jpg)
+9. Click *Finish*
 
 ### Storage Policy Mappings
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM37.jpg)
+![SRM37](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM37.jpg)
 
-45\. Select *Storage Policy Mappings* in the left pane
+1. Select *Storage Policy Mappings* in the left pane
+2. Click *+ New*
 
-46\. Click *+ New*
+    ![SRM38](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM38.jpg)
+3. Select *Prepare mappings manually*
+4. Click *Next*
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM38.jpg)
+    ![SRM39](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM39.jpg)
+5. Click to select *Datastore Default* on both the left and right pane
+6. Click *ADD MAPPINGS*
+7. Click *NEXT*
 
-47\. Select *Prepare mappings manually*
+    ![SRM40](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM40.jpg)
+8. Click *Datastore Default* for Reverse mappings
+9. Click *NEXT*
 
-48\. Click *Next*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM39.jpg)
-
-49\. Click to select *Datastore Default* on both the left and right pane
-
-50\. Click *ADD MAPPINGS*
-
-51\. Click *NEXT*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM40.jpg)
-
-52\. Click *Datastore Default* for Reverse mappings
-
-53\. Click *NEXT*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM41.jpg)
-
-54\. Click *FINISH*
+    ![SRM41](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM41.jpg)
+10. Click *FINISH*
 
 ### Placeholder Datastores
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM42.jpg)
+![SRM42](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM42.jpg)
 
-55\. Select *Placeholder Datastores* in the left pane
+1. Select *Placeholder Datastores* in the left pane
+2. Click *+ New*
 
-56\. Click *+ New*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM43.jpg)
-
-57\. Select *WorkloadDatastore*
-
-58\. Click *Add*
+    ![SRM43](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM43.jpg)
+3. Select *WorkloadDatastore*
+4. Click *Add*
 
 ## SRM - Protect a VM
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM44.jpg)
+![SRM43](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM44.jpg)
 
-1\. Select a VM to replicate and right-click
+1. Select a VM to replicate and right-click
+2. Select *All Site Recovery actions*
+3. Click *Configure Replication*
 
-2\. Select *All Site Recovery actions*
+    *NOTE*: You may need to log in to the paired site (This is your partner's site), make sure you use *cloudadmin@vmc.local* and get your partner users password. After entering you may need to repeat this step.
 
-3\. Click *Configure Replication*
+    ![SRM45](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM45.jpg)
+4. Click *Next*
 
-*NOTE*: You may need to log in to the paired site (This is your partner's site), make sure you use *cloudadmin@vmc.local* and get your partner users password. After entering you may need to repeat this step.
+    ![SRM43](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM46.jpg)
+5. Select the Target Site
+6. If not logged in you may need to login (Remember this is your partner's site not yours)
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM45.jpg)
+    ![SRM47](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM47.jpg)
+7. Enter your partners site credentials
 
-4\. Click *Next*
+    ![SRM48](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM48.jpg)
+8. Leave all defaults and click *Next*
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM46.jpg)
+    ![SRM49](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM49.jpg)
+9. Leave the default *Datastore Default* as the VM Storage Policy
+10. Select *WorkloadDatastore*
+11. Click *Next*
 
-5\. Select the Target Site
+    ![SRM50](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM50.jpg)
+12. Leave the default 1 hour for Recovery Point Objective, RPO can be as low as 5 minutes, as high as 24 hour
+13. Click *Next*
 
-6\. If not logged in you may need to login (Remember this is your partner's site not yours)
+    ![SRM51](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM51.jpg)
+14. Select *Add to new protection group*
+15. Name your Protection Group *PG#* (where # is your student number)
+16. Click *Next*
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM47.jpg)
+    ![SRM52](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM52.jpg)
+17. Select *Add to new recovery plan*
+18. Name your Recovery Plan **RP#** (where # is your student number)
+19. Click *Next* button
 
-7\. Enter your partners site credentials
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM48.jpg)
-
-8\. Leave all defaults and click *Next*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM49.jpg)
-
-9\. Leave the default *Datastore Default* as the VM Storage Policy
-
-10\. Select *WorkloadDatastore*
-
-11\. Click *Next*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM50.jpg)
-
-12\. Leave the default 1 hour for Recovery Point Objective, RPO can be as low as 5 minutes, as high as 24 hour
-
-13\. Click *Next*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM51.jpg)
-
-14\. Select *Add to new protection group*
-
-15\. Name your Protection Group *PG#* (where # is your student number)
-
-16\. Click *Next*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM52.jpg)
-
-17\. Select *Add to new recovery plan*
-
-18\. Name your Recovery Plan **RP#** (where # is your student number)
-
-19\. Click *Next* button
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM53.jpg)
-
-20\. Click *Finish*
+    ![SRM53](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM53.jpg)
+20. Click *Finish*
 
 ## Perform a Recovery Test
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM54.jpg)
+![SRM54](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM54.jpg)
 
-1\. In the VMware Cloud on AWS portal, click the *Add Ons* tab
+1. In the VMware Cloud on AWS portal, click the *Add Ons* tab
+2. Click on *Open Site Recovery* (You may need to allow Pop-ups in browser)
 
-2\. Click on *Open Site Recovery* (You may need to allow Pop-ups in browser)
+    ![SRM55](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM55.jpg)
+3. In the Site Recovery window, click *Open*
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM55.jpg)
+    ![SRM56](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM56.jpg)
+4. Click on *Recovery Plans*
 
-3\. In the Site Recovery window, click *Open*
+    ![SRM57](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM57.jpg)
+5. Click on your protection group *PG#* (where # is your student number)
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM56.jpg)
+    ![SRM58](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM58.jpg)
+6. Click on *Recovery Plans*
+7. Click on *RP#* which should be your Recovery Plan you created in a previous step
 
-4\. Click on *Recovery Plans*
+    ![SRM59](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM59.jpg)
+8. Click the *Test* button
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM57.jpg)
+    ![SRM60](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM60.jpg)
 
-5\. Click on your protection group *PG#* (where # is your student number)
+9. Leave all defaults and click *Next* button
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM58.jpg)
+    ![SRM61](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM61.jpg)
+10. Click *Finish* button
 
-6\. Click on *Recovery Plans*
+    ![SRM62](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM62.jpg)
+11. Follow the progress in the Recent Tasks area at the bottom of your window
 
-7\. Click on *RP#* which should be your Recovery Plan you created in a previous step
+    ![SRM63](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM63.jpg)
+12. Notice the test has successfully completed
+13. Click the *Cleanup* button to clean up the activity and return the environment to its normal state
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM59.jpg)
+    ![SRM64](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM64.jpg)
+14. Click *Next*
 
-8\. Click the *Test* button
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM60.jpg)
-
-9\. Leave all defaults and click *Next* button
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM61.jpg)
-
-10\. Click *Finish* button
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM62.jpg)
-
-11\. Follow the progress in the Recent Tasks area at the bottom of your window
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM63.jpg)
-
-12\. Notice the test has successfully completed
-
-13\. Click the *Cleanup* button to clean up the activity and return the environment to its normal state
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM64.jpg)
-
-14\. Click *Next*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM65.jpg)
-
-15\. Click *Finish*, the environment will now be clean. Please note that during testing, your replications protecting your VM's is not interrupted
+    ![SRM65](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM65.jpg)
+15. Click *Finish*, the environment will now be clean. Please note that during testing, your replications protecting your VM's is not interrupted
