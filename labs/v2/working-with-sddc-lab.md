@@ -284,7 +284,7 @@ Use the Customization Specification Manager to manage customization specificatio
 
     ![SDDC35](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC35.jpg)
 
-18. Under Primary DNS Server enter **10.46.159.10** and leave the Secondary DNS Server and Tertiary DNS Server blank
+18. Under Primary DNS Server enter **8.8.8.8** and leave the Secondary DNS Server and Tertiary DNS Server blank
 19. Type **corp.local** for DNS Search Paths and click **Add**
 20. Click *Next*
 
@@ -308,22 +308,23 @@ Congratulations! You have successfully created your VM Customization Spec for yo
 5. Ensure that you tick the option to **Customize the Operating System**
 6. Click **Next**
 7. Choose the linux customization specification which we created in the previous step
-8. Expand the destination compute resources until you find *Compute-ResourcePool*, select it
-9. Click the *Next* button
+8. Click **Next**
+9. Expand the destination compute resources until you find *Compute-ResourcePool*, select it
+10. Click the *Next* button
 
     ![SDDC41](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC41.jpg)
-10. Click the *Next* button on the Review details screen
+11. Click the *Next* button on the Review details screen
 
     ![SDDC42](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC42.jpg)
-11. In the *Select storage* step, highlight *WorkloadDatastore*
-12. Click *Next*
+12. In the *Select storage* step, highlight *WorkloadDatastore*
+13. Click *Next*
 
     ![SDDC43](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC43.jpg)
-13. In the *Select networks* step, click the drop down box to select the Destination Network (you may need to click Browse to see other networks and select your *Student#-LN* network you created previously
-14. Click *Next*
+14. In the *Select networks* step, click the drop down box to select the Destination Network (you may need to click Browse to see other networks and select your *Student#-LN* network you created previously
+15. Click *Next*
 
     ![SDDC44](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC44.jpg)
-15. In the *Ready to complete* section, review and ensure all your selections are correct and click *Finish*
+16. In the *Ready to complete* section, review and ensure all your selections are correct and click *Finish*
 
 ## Convert a Virtual Machine to a Template
 

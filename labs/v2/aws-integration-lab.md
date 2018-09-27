@@ -63,7 +63,7 @@ For the purpose of this exercise, and in the interest of time, the contents of t
 10. Click **NEXT**
 
     ![S3-6](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/S3-6.jpg)
-11. On the *Unable to very identity of the subscription host* notification click *YES*
+11. On the *Unable to verify identity of the subscription host* notification click *YES*
 
     ![S3-7](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/S3-7.jpg)
 12. Highlight the **WorkloadDatastore** as the storage location
