@@ -96,7 +96,7 @@ As a first step in setting up our integration between the VMware vSphere platfor
 6. Select *New VM from This Template*
 
     ![RDS4](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS4.jpg)
-    **IIMPORTANT - Please ensure that you select Customise the operating system checkbox and apply the customization specification which you created earlier**
+    **IIMPORTANT - Please ensure that you select Customize the operating system checkbox and apply the customization specification which you created earlier**
 7. Name the virtual machine **PhotoApp#** (where # is your student #)
 8. Expand the location and select **Workloads**
 9. Click **Next**

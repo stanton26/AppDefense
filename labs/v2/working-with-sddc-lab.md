@@ -267,18 +267,18 @@ Use the Customization Specification Manager to manage customization specificatio
 7. Click *Next*
 
     ![SDDC32](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC32.jpg)
-8. Click on the third option, *Enter a name* button
+8. Click on the third option, **Enter a name** button
 9. Enter a name for your linux VMs, such as *linux-vm*
-10. Click on the *Append a numeric value* checkbox
+10. Click on the **Append a numeric value** checkbox
 11. Enter **corp.local** for the Domain Name
-12. Click the *Next* button
+12. Click the **Next** button
 
     ![SDDC33](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC33.jpg)
 
-13. Select *US* for Area
-14. Select *Eastern* for Location
-15. Select *Local time*
-16. Click *Next*
+13. Select **US** for Area
+14. Select **Eastern** for Location
+15. Select **Local time**
+16. Click **Next**
 
     ![SDDC34](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC34.jpg)
 17. Leave the defaults on the *Network* screen and click *Next*
@@ -301,12 +301,12 @@ Congratulations! You have successfully created your VM Customization Spec for yo
 ![SDDC38](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC38.jpg)
 
 1. On your Content Libraries *(Menu -> Content Libraries)*, select *Student#* and select the *Templates* tab.
-2. Right click on the *centos01-web* template and select *New VM from This Template*
+2. Right click on the **centos01-web** template and select **New VM from This Template**
 
     ![SDDC39](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC39.jpg)
-3. Name your Virtual Machine *StudentVM#* (where # is your student number)
-4. Expand the location area until you see *Workloads* and highlight it
-5. Click *Next*
+3. Name your Virtual Machine **StudentVM#** (where # is your student number)
+4. Expand the location area until you see **Workloads** and highlight it
+5. Click **Next**
 
     ![SDDC40](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC40.jpg)
 6. Expand the destination compute resources until you find *Compute-ResourcePool*, select it
@@ -333,13 +333,13 @@ In this step you will be cloning your newly created Virtual Machine into a Templ
 ![SDDC45](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC45.jpg)
 
 1. Ensure your VM deployment completed from your previous step
-2. Click on *Menu*
-3. Select *VMs and Templates*
+2. Click on **Menu**
+3. Select *V*Ms and Templates**
 
     ![SDDC46](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC46.jpg)
 4. Select your newly created VM *Student#* (where # is your student number)
-5. Click on *Template*
-6. Select *Convert to Template*
+5. Click on **Template**
+6. Select *C*onvert to Template**
 
     ![SDDC47](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC47.jpg)
 7. Click *Yes*  in the Convert to Template prompt
