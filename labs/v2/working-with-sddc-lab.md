@@ -48,7 +48,7 @@ In VMware Cloud on AWS we have two Edge Gateways which are protecting the two ma
 
 ![SDDC4](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC4.jpg)
 
-By default, the firewall for the Management Gateway is set to deny all inbound and outbound traffic. In this exercise, you will add a firewall rule to allow vCenter traffic. This will allow you to access the vCenter Server in your SDDC.
+By default, the firewall for the Management Gateway is set to deny all inbound and outbound traffic. In this exercise, you will add a firewall rule to allow vCenter access. This will allow you to access the vCenter Server in your SDDC from the internet.
 
 ![SDDC5](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC5.jpg)
 
@@ -155,7 +155,7 @@ Synchronization of a subscribed library that is set with the option to download 
 ![SDDC15](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC15.jpg)
 
 1. In the vSphere HTML5 client, click on **Menu**
-2. Click on **C*ontent Libraries**
+2. Click on **Content Libraries**
 
 ### Subscribe to an existing Content Library
 
@@ -233,9 +233,8 @@ Congratulations, you have created your Local Content Library.
 6. Select the *Routed Network* radio button
 7. For CIDR Block enter **192.168.#.0/24** (where # is your student #)
 
-    • If your designated student number is between 1 and 9, your CIDR block should look like this: **192.168.1.0/24** - This example represents student number 1
+    • For Example. If your designated student number is between 1, then your CIDR block should look like this: **192.168.1.0/24** - This example represents student number 1
 
-    • For students 10 thru 20 it should look like this: **192.168.10.0/24** - This example represents student number 10
 8. Enter **192.168.#.1** for the Default Gateway IP - Example: 192.168.1.1
 9. Make sure DHCP is Enabled by clicking on the *checkbox*
 10. Enter **192.168.#.100-192.168.#.200** for IP Range
@@ -306,25 +305,27 @@ Congratulations! You have successfully created your VM Customization Spec for yo
     ![SDDC39](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC39.jpg)
 3. Name your Virtual Machine **StudentVM#** (where # is your student number)
 4. Expand the location area until you see **Workloads** and highlight it
-5. Click **Next**
+5. Ensure that you tick the option to **Customize the Operating System**
+6. Click **Next**
+7. Choose the linux customization specification which we created in the previous step
 
     ![SDDC40](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC40.jpg)
-6. Expand the destination compute resources until you find *Compute-ResourcePool*, select it
-7. Click the *Next* button
+8. Expand the destination compute resources until you find *Compute-ResourcePool*, select it
+9. Click the *Next* button
 
     ![SDDC41](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC41.jpg)
-8. Click the *Next* button on the Review details screen
+10. Click the *Next* button on the Review details screen
 
     ![SDDC42](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC42.jpg)
-9. In the *Select storage* step, highlight *WorkloadDatastore*
-10. Click *Next*
-
-    ![SDDC43](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC43.jpg)
-11. In the *Select networks* step, click the drop down box to select the Destination Network (you may need to click Browse to see other networks and select your *Student#-LN* network you created previously
+11. In the *Select storage* step, highlight *WorkloadDatastore*
 12. Click *Next*
 
+    ![SDDC43](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC43.jpg)
+13. In the *Select networks* step, click the drop down box to select the Destination Network (you may need to click Browse to see other networks and select your *Student#-LN* network you created previously
+14. Click *Next*
+
     ![SDDC44](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC44.jpg)
-13. In the *Ready to complete* section, review and ensure all your selections are correct and click *Finish*
+15. In the *Ready to complete* section, review and ensure all your selections are correct and click *Finish*
 
 ## Convert a Virtual Machine to a Template
 
