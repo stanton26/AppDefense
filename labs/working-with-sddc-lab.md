@@ -407,7 +407,7 @@ Congratulations! You have successfully created your VM Customization Spec for yo
 
 6\. Expand the destination compute resources until you find *compute-ResourcePool*, select it
 
-7\. Click the *Next* button
+7\. Click *Next*
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC41.jpg)
 
