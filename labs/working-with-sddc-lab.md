@@ -451,7 +451,7 @@ In this step you will be cloning your newly created Virtual Machine into a Templ
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC47.jpg)
 
-7. Click *Yes*  in the Convert to Template prompt
+7\. Click *Yes*  in the Convert to Template prompt
 
 You have completed this module.
 
