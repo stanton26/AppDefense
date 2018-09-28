@@ -405,7 +405,7 @@ Congratulations! You have successfully created your VM Customization Spec for yo
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC40.jpg)
 
-6\. Expand the destination compute resources until you find *Compute-ResourcePool*, select it
+6\. Expand the destination compute resources until you find *compute-ResourcePool*, select it
 
 7\. Click the *Next* button
 
