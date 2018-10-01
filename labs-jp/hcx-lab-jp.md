@@ -11,7 +11,7 @@ author_profile: false
 <!-- based on commit: 92156fe1fbcc43df548a5ef8cbe5e20d05ff5413 -->
 
 <!--
-# Introduction
+# Introduction 
 
 In this lab exercise you will learn about Hybr Cloud Extension (HCX), Primarily this is a tool, bundled with VMware Cloud on AWS, which will allow you to bulk migrate workloads to VMware Cloud on AWS and significantly reduce the time and complexity of moving workloads into the public cloud sphere.
 -->
