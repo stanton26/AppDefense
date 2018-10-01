@@ -23,8 +23,7 @@ Hybrid Cloud Extension abstracts on-premises and cloud resources and presents th
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/HCX2.jpg)
 
-Any-to-Any vSphere Cloud App Mobility
-
+**Any-to-Any vSphere Cloud App Mobility**
 
 • Rapidly move existing workloads from a vSphere platform to the latest SDDC
 
