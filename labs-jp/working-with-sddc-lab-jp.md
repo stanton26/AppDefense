@@ -52,211 +52,296 @@ Congratulations! You have completed this step. Please move onto configuring your
 -->
 ## SDDC へのホストの追加
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-11-Image-5.png)
+VMware Cloud on AWS プラットフォームにホストを追加するところから初めて行きます。このラボのために、既に作成済みの VMware Cloud on AWS 環境をご用意しております。これは時間短縮のためです。
 
-1. 受講生に割り当てられた SDDC "Student Workshop #" の "View Details" ボタンをクリックします。
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-11-Image-6.png)
-2. "Actions" をクリックします。
-3. "Add Hosts" をクリックします。
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-12-Image-7.png)
-4. ここでは 1 ホストのみしか追加できませんが、ハイライトされたフィールドを確認してください。
-5. "Add Hosts" ボタンをクリックします。
+Chrome ブラウザのブックマーク バーには **VMware Cloud on AWS Services** というブックマークが確認できます。このブックマークをクリックしてください。
 
-おめでとうございます！これでこのステップは完了です。既存の SDDC へのホストの追加は、完了まで 10 分程度掛かります。
+VMware から提供される Cloud Services のログイン ページが表示されます。VMware Cloud on AWS Experience day の申込に使用したメール アドレスを使ってログインする必要があります。VMware Cloud Services のログインを正常に行うために、このメール アドレスが "MyVMware アカウント" に関連づけられていることをご確認ください。
+
+それでは VMware Cloud on AWS の SDDC クラスタのある組織にログインしてください。
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC1.jpg)
+
+1\. 受講生に割り当てられた SDDC "Student Workshop #" の "View Details" ボタンをクリックします。
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC2.jpg)
+
+2\. "Actions" をクリックします。
+
+3\. "Add Hosts" をクリックします。
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC3.jpg)
+
+4\. このラボでは、1 ホストのみしか追加できないよう制限されています。もし実際のお客様環境の場合、この制限はありません。
+
+5\. "Add Hosts" ボタンをクリックします。
+
+SDDC 環境は、この環境にホストを追加するプロセスにあります。このプロセスは完了するまでに 10 分程度掛かります。バックグラウンドにて自動化されたタスクは、追加のホストのプロビジョニング、そのホストの SDDC クラスタへの追加、追加されたホストのストレージを利用するための vSAN クラスタの拡張が含まれます。これらの全ては、人手での操作なしに
+行われ、おおよそ 10 分程度で完了します。このアクションが完了するまで待つこともできますし、先の演習に進みあとから追加されたホストを確認することもできます。
+
+おめでとうございます！これでこのステップは完了です。SDDC のファイアウォール ルールの構成に進んでください
 
 ----------------
 <!--
 ## Configuring SDDC Firewall Rules
+
+In VMware Cloud on AWS we have two Edge Gateways which are protecting the two main networks in the VMware Cloud on AWS SDDC. The **Management Network** and the **Compute Network**. When we first initiate your SDDC environment, the default is for all traffic to both the Management and Compute networks to be denied. In this exercise we will go through the steps required to open up firewall rules so that we can manage the SDDC and not only access compute workloads but allow those compute workloads to communicate with native AWS services.
 -->
 
 ## SDDC のファイアウォール ルールの構成
 
+VMware Cloud on AWS では、VMware Cloud on AWS の 2 つの主なネットワークを保護する 2 つのエッジ ゲートウェイがあります。そのネットワークは **Management Network** と **Compute Network** です。SDDC をデプロイした当初は、デフォルトでマネージメントとコンピュートのネットワークの全てのトラフィックが拒否されています。この演習では、ファイアウォール ルールを適用するのに必要なステップを見ていきます。これにより、SDDC を管理でき、コンピュート ワークロードにアクセスできるだけでなく、これらコンピュート ワークロードがネイティブの AWS サービスに通信できるようになります。
+
 <!--
 ### Management Gateway Firewall Rules
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-13-Image-8.png)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC4.jpg)
 
-By default, the firewall for the management gateway is set to deny all inbound and outbound traffic. In this exercise, you will add a firewall rule to allow vCenter traffic. In order to access vCenter Server in your SDDC, you must set a firewall rule to allow traffic to the vCenter Server.
+By default, the firewall for the Management Gateway is set to deny all inbound and outbound traffic. In this exercise, you will add a firewall rule to allow vCenter traffic. This will allow you to access the vCenter Server in your SDDC.
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-13-Image-9.png)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC5.jpg)
 
-1. Under **Management Gateway** click the arrow to expand **Firewall Rules**
-2. Click **Add Rule**
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-13-Image-10.png)
-3. Enter a name for your rule under **Rule Name**
-4. Type **Any** for Source
-5. Make sure **vCenter** is selected as Destination
-6. Select **HTTPS (TCP 443)** from the drop down box for Service
-7. Click the **SAVE** button, your rule should look like the below image
+1\. Click *Network* tab
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-14-Image-11.png)
+2\. Under Management Gateway expand *Firewall Rules*
+
+3\. Click *Add Rule*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC6.jpg)
+
+4\. Enter a name for your rule under *Rule Name*, For Example, "vCenter-Allow-Any"
+
+5\. Type *Any* for Source
+
+6\. Make sure *vCenter* is selected as Destination
+
+7\. Select *HTTPS (TCP 443)* from the drop down box for Service
+
+8\. Click the *SAVE* button, your rule should look like the below image
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC7.jpg)
 -->
 ### マネージメント ゲートウェイのファイアウォール ルール
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-13-Image-8.png)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC4.jpg)
 
-デフォルトでは、マネージメント ゲートウェイのファイアウォールはインバウンド、アウトバウンドの全てのトラフィックが拒否 (Deny) に設定されています。この演習では、vCenter へのトラフィックを許可するファイアウォール ルールを追加します。SDDC の vCenter Server へアクセスするためには、vCenter Server へのトラフィックを許可するファイアウォール ルールを設定しなければなりません。
+デフォルトでは、マネージメント ゲートウェイのファイアウォールはインバウンド、アウトバウンドの全てのトラフィックが拒否 (Deny) に設定されています。この演習では、vCenter へのトラフィックを許可するファイアウォール ルールを追加します。この設定により SDDC の vCenter Server にアクセスできるようになります
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-13-Image-9.png)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC5.jpg)
 
-1. **Management Gateway** の下にある下矢印をクリックして **Firewall Rules** を展開します。
-2. **Add Rule** をクリックします。
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-13-Image-10.png)
-3. **Rule Name** の下にルールの名前を入力します。
-4. Source には **Any** と入力します。
-5. Destination として **vCenter** が選択されていることを確認します。
-6. **HTTPS (TCP 443)** を Service のドロップ ダウン ボックスから選択します。   
-7. **SAVE** ボタンをクリックすると、以下のイメージのようにルールが作成されます。
+1\. *Network* タブをクリックします
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-14-Image-11.png)
+2\. *Management Gateway* 下の *Firewall Rules* を展開します。
+
+3\. *Add Rule* をクリックします
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC6.jpg)
+
+4\. *Rule Name* の下にルールの名前を入力します。例: "vCenter-Allow-Any"
+
+5\. Source には *Any* と入力します
+
+6\. Destination として *vCenter* が選択されていることを確認します
+
+7\. *HTTPS (TCP 443)* を Service のドロップ ダウン ボックスから選択します
+
+8\. *SAVE* ボタンをクリックすると、以下のイメージのようにルールが作成されます
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC7.jpg)
 
 <!--
 ### Compute Gateway Firewall Rules
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-14-Image-12.png)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC8.jpg)
 
-By default, the Compute NSX Edge Services Gateway is also set to deny all inbound and outbound traffic. You need to add additional firewall rules to allow traffic as needed.
+Like the Management NSX Edge Services Gateway. By default, the Compute NSX Edge Services Gateway is also set to deny all inbound and outbound traffic. You need to add additional firewall rules to allow access to your workload VMs which you provision in the VMware Cloud on AWS platform.
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-14-Image-13.png)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC9.jpg)
+
+Create Firewall Rule under Compute Gateway for Inbound Native AWS Services access
+
+1\. Under *Network* tab, navigate to *Compute Gateway*
+
+2\. Expand *Firewall Rules*
+
+3\. Click *ADD RULE*
 -->
 
 ### コンピュート ゲートウェイのファイアウォール
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-14-Image-12.png)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC8.jpg)
 
-デフォルトでは、コンピュート ゲートウェイも同様に、全てのインバウンド、アウトバウンド トラフィックが拒否 (Deny) に設定されています。必要に応じてファイアウォール ルールを追加していく必要があります。
+マネージメント NSX エッジ サービス ゲートウェイと似ています。コンピュート NSX エッジ サービス ゲートウェイもまた、全てのインバウンド、アウトバンドのトラフィックを拒否するよう設定されています。VMware Cloud on AWS プラットフォームにプロビジョニングしたワークロード VM にアクセスするにはファイアウォール ルールを追加する必要があります
 
-<!--
-#### Create Firewall Rule under Compute Gateway for Inbound Native AWS Services access
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC9.jpg)
 
-1. Under **Network** tab, navigate to **Compute Gateway**
-2. Expand **Firewall Rules**
-3. Click **ADD RULE**
--->
+Create Firewall Rule under Compute Gateway for Inbound Native AWS Services access
+Compute ゲートウェイにネイティブ AWS サービスからのインバウンド トラフィックのための
 
-#### ネイティブ AWS サービスへのアクセスのためにコンピュート ゲートウェイにファイアウォール ルールを作成
+1\. *Network* タブの下の、*Compute Gateway* までナビゲートします
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-14-Image-13.png)
+2\. *Firewall Rules* を拡げます
 
-1. **Network** タブ配下の、**Compute Gateway** を表示させます。
-2. **Firewall Rules** を展開します。
-3. **ADD RULE** をクリックします。
+3\. *ADD RULE* をクリックします
 
 <!--
 #### AWS Inbound Firewall Rule
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-15-Image-14.png)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC10.jpg)
 
-1. **Name** - AWS Inbound
-2. **Action** - Allow
-3. **Source** - All connected Amazon VPC
-4. **Destination** - 192.168.#.0/24 (Where # is your student number)
-5. **Service** - ANY
-6. Click **SAVE** button.
+4\. Name - **AWS Inbound**
+
+5\. Action - **Allow**
+
+6\. Source - **All connected Amazon VPC**
+
+7\. Destination - **192.168.#.0/24** (Where # is your student number)
+
+8\. Service - **ANY**
+
+9\. Click *SAVE* button.
 -->
 
 #### AWS インバウンド ファイアウォール ルールの作成
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-15-Image-14.png)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC10.jpg)
 
-1. **Name** - AWS Inbound
-2. **Action** - Allow
-3. **Source** - All connected Amazon VPC
-4. **Destination** - 192.168.#.0/24 (# は受講者番号)
-5. **Service** - ANY
-6. **SAVE** ボタンをクリックします。
+4\. **Name** - AWS Inbound
+
+5\. **Action** - Allow
+
+6\. **Source** - All connected Amazon VPC
+
+7\. **Destination** - 192.168.#.0/24 (# は受講者番号)
+
+8\. **Service** - ANY
+
+9\. **SAVE** ボタンをクリックします。
 
 <!--
 #### Create AWS Outbound Firewall Rule
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-15-Image-15.png)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC11.jpg)
 
 Follow the same process as in the previous step and create AWS Outbound Firewall Rule following these instructions:
 
-1. **Name** - AWS Outbound
-2. **Action** - Allow
-3. **Source** - 192.168.#.0/24 (Where # is your student number)
-4. **Destination** - All connected Amazon VPC
-5. **Service** - ANY
-6. Click **SAVE** button.
+1\. Name - **AWS Outbound**
+
+2\. Action - **Allow**
+
+3\. Source - **192.168.#.0/24** (Where # is your student number)
+
+4\. Destination - **All connected Amazon VPC**
+
+5\. Service - **ANY**
+
+6\. Click *SAVE* button.
+
+We have now successfully created rules which will allow us to access our vCenter server over port 443 from any location, in a real world deployment we would change this to only allow communication from a specific IP address range over a private link, once we have a VPN in place. We have also configured our Compute workloads to be able to communicate with any services in our native AWS VPC which our VMware Cloud on AWS environment is connected too.
 -->
 
 #### AWS アウトバウンド ファイアウォール ルールの作成
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-15-Image-15.png)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC11.jpg)
 
-Follow the same process as in the previous step and create AWS Outbound Firewall Rule following these instructions:
 前のステップと同じ手順をなぞり、AWS アウトバウンド ファイアウォール ルールを以下の手順で作成します。
 
-1. **Name** - AWS Outbound
-2. **Action** - Allow
-3. **Source** - 192.168.#.0/24 (Where # is your student number)
-4. **Destination** - All connected Amazon VPC
-5. **Service** - ANY
-6. **SAVE** ボタンをクリックします。
+1\. Name - **AWS Outbound**
+
+2\. Action - **Allow**
+
+3\. Source - 192.168.#.0/24 (Where # is your student number)
+
+4\. Destination - **All connected Amazon VPC**
+
+5\. Service - **ANY**
+
+6\. **SAVE** ボタンをクリックします。
+
+これで、どこからでもポート 443 で我々の vCenter Server にアクセスを可能にするルールの作成に成功しました。実際の環境では、VPN などを張り、プライベートなリンク上の特定の IP アドレス レンジからの通信のみ許可するよう変更することになるでしょう。また、VMware Cloud on AWS に接続されたネイティブ AWS VPC で提供されるサービスに通信できるようにコンピュート ゲートウェイにも設定を行っています。
 
 ----------------
 
 <!--
 ## Log into VMware Cloud on AWS vCenter
 
-Connection Info Tab
+### Settings Tab
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-16-Image-16.png)
+We will now login to our VMware Cloud on AWS vCenter instance, now that the required ports have been open on our Management NSX Edge Services Gateway.
 
-Login to your Student # SDDC and click on the **Connection Info** tab. This displays different connection information for your VMware Cloud on AWS environment like:
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC12.jpg)
 
-- URL to vSphere Client HTML5 client for your vCenter server
-- URL to vCenter Server API Explorer
-- Local Username for access to vCenter Server on VMware Cloud on AWS **cloudadmin@vmc.local**
-- Ability to copy Username to your computer's clipboard
-- Password to utilize for the cloudadmin user to access vCenter
-- Ability to view cloudadmin's password
-- Ability to copy cloudadmin's password to your computer's clipboard
-- PowerCLI Connect string to be used if you desire to use PowerCLI to connect to your VMware Cloud on AWS vCenter Server
-- Ability to copy PowerCLI string to your computer's clipboard
+1\. Login to your Student # SDDC and click on the *Settings* tab. This displays different
+connection information for your VMware Cloud on AWS environment like:
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-17-Image-17.png)
+2\. Default account information for your vCenter server
 
-Click on the vSphere Client's HTML5 URL, and login with **cloudadmin@vmc.local** User Name and copy the password to your computer's clipboard and paste it in the Password Field.
+3\. URL to vCenter Server
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-17-Image-18.png)
+4\. URL to vCenter API Explorer
 
-You are now logged in to your VMware Cloud on AWS vCenter Server as **cloudadmin@vmc.local** user.
+5\. PowerCLI Connect string to be used if you desire to use PowerCLI to connect to your VMware
+Cloud on AWS vCenter Server
+
+6\. vCenter FQDN
+
+7\. vCenter Public IP information
+
+8\. Actual Public IP Address assigned to vCenter
+
+9\. vCenter Private IP
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC13.jpg)
+
+Click on the vSphere Client's HTML5 URL copy button (\#3 above), and login with
+cloudadmin@vmc.local User Name and copy the password to your computer's clipboard and
+paste it in the Password Field.
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC14.jpg)
+
+You have successfully logged in to the vCenter Server in your VMware Cloud on AWS environments as local user cloudadming@vmc.local.
 -->
 
 ## VMware Cloud on AWS の vCenter へのログイン
 
-Connection Info タブ
+### Settings タブ
+
+マネージメント NSX エッジ サービス ゲートウェイで必要なポートがオープンされたので、これから VMware Cloud on AWS の vCenter インスタンスにログインします。
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-16-Image-16.png)
 
-受講者番号の SDDC にログインし、**Connection Info** をクリックします。このタブは、受講者の VMware Cloud on AWS 環境への以下の接続情報を表示します。この接続情報は受講者毎に異なります。
+1\. 受講者番号の SDDC にログインし、**Settings** タブをクリックします。このタブは、受講者の VMware Cloud on AWS 環境への以下の接続情報を表示します
 
-- 受講者の vCenter Server の vSphere Client HTML5 クライアントの URL
-- vCenter Server API エクスプローラーの URL
-- VMware Cloud on AWS の vCenter Server にアクセスするためのローカル ユーザー名 **cloudadmin@vmc.local**
-- ユーザー名をコンピューターのクリップボードにコピーする機能。
-- vCenter へアクセスするための cloudadmin ユーザーで用いられるパスワード。
-- cloudadmin のパスワードを表示する機能。
-- cloudadmin のパスワードをコンピューターのクリップボードにコピーする機能。
-- VMware Cloud on AWS の vCenter Server へ接続するために PowerCLI を用いる場合の PowerCLI の接続文字列
-- PowerCLI の接続文字列をコンピューターのクリップボードにコピーする機能。
+2\. あなたの vCenter Server のデフォルトのアカウント情報
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-17-Image-17.png)
+3\. vCenter Server の URL
 
-Click on the vSphere Client's HTML5 URL, and login with **cloudadmin@vmc.local** User Name and copy the password to your computer's clipboard and paste it in the Password Field.
+4\. vCenter Server API エクスプローラーの URL
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-17-Image-18.png)
+5\. PowerCLI で VMware Cloud on AWS に接続する際に用いられる PowerCLI の接続文字列
 
-You are now logged in to your VMware Cloud on AWS vCenter Server as **cloudadmin@vmc.local** user.
+6\. vCenter の FQDN
+
+7\. DNS で解決される vCenter の IP アドレス
+
+8\. 実際に vCenter に割り当てられている パブリック IP アドレス
+
+9\. vCenter の プライベート IP アドレス
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC13.jpg)
+
+vSphere HTML5 クライアントの URL コピー ボタン (\#3 にあります) をクリックし新しいブラウザのタブで開きます。cloudadmin@vmc.local ユーザー名をユーザー フィールドに入力し、パスワードのコピーボタンをクリックし、パスワード フィールドにペーストします
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC14.jpg)
+
+あなたの VMware Cloud on AWS 環境の vCenter Server へ、cloudadmin@vmc.local ローカル ユーザーとしてログインに成功しました。
 
 <!--
 ## Create Content Library
 
 Content libraries are container objects for VM templates, vApp templates, and other types of files like ISO images.
 
-You can create a content library in the vSphere Web Client, and populate it with templates, which you can use to deploy virtual machines or vApps in your VMware Cloud on AWS environment or if you already have a Content Library in your on-premises data center, you can use the Content Library to import content into your SDDC.
+You can create a content library in the vSphere Web Client, and populate it with templates, which you can use to deploy virtual machines or vApps in your VMware Cloud on AWS environment, or if you already have a Content Library in your on-premises data center, you can use the Content Library to import content into your SDDC.
 
 You can create two types of libraries: local or subscribed libraries.
 -->
@@ -296,11 +381,11 @@ Synchronization of a subscribed library that is set with the option to download 
 
 Synchronization of a subscribed library that is set with the option to download contents only when needed synchronizes only the metadata for the library items from the published library, and does not download the contents of the items. This saves storage space. If you need to use a library item you need to synchronize that item. After you are done using the item, you can delete the item contents to free space on the storage. For subscribed libraries that are set with the option to download contents only when needed, synchronizing the subscribed library downloads only the metadata of all the items in the source published library, while synchronizing a library item downloads the full content of that item to your storage. If you use a subscribed library, you can only utilize the content, but cannot contribute with content. Only the administrator of the published library can manage the templates and files.
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-19-Image-19.png)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC15.jpg)
 
-1. Click on **Menu**
-2. Click on **Content Libraries**
+1\. In the vSphere HTML5 client, click on *Menu*
 
+2\. Click on *Content Libraries*
 -->
 
 ### 購読済みライブラリ
@@ -317,146 +402,245 @@ Synchronization of a subscribed library that is set with the option to download 
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-19-Image-19.png)
 
-1. **Menu** をクリックします。
-2. **Content Libraries** をクリックします。
+1\. vSphere HTML5 クライアントにて、**Menu** をクリックします
+
+2\. **Content Libraries** をクリックします
 
 <!--
 ### Subscribe to an existing Content Library
 
 You may already have a Content Library in your on-premises data center, you can use the Content Library to import content into your SDDC.
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-20-Image-20.png)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC16.jpg)
 
-1. In your Content Library window, click the **+** sign to add a new Content Library.
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-20-Image-21.png)
-2. Name your Content Library **Student#** where **#** is the number assigned to you
-3. (Optional) Enter some notes for your Content Library
-4. Click **Next** button
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-21-Image-22.png)
-5. Select **Subscribed content library**
-6. Under **Subscription URL** enter the following: <https://vcenter.sddc-34-216-241-49.vmc.vmware.com/cls/vcsp/lib/8d658764-2e89-44ff-https://vcenter.sddc-34-216-241-49.vmc.vmware.com/cls/vcsp/lib/8d658764-2e89-44ff-a7c1-ee777f0dfc8f/lib.jsona7c1-ee777f0dfc8f/lib.json>
+1\. In your Content Library window, click the *+* sign to add a new Content Library.
 
-    PLEASE NOTE THAT THERE MAY BE AN ISSUE WITH DROPPING/ADDITION OF CHARACTERS FOR THE URL WHEN COPYING AND PASTING FROM THE MANUAL. THE ACTUAL URL IS ALSO AVAILABLE IN YOUR STUDENT DESKTOP ON THE Z:\ DRIVE IN A TEXT FILE, OPEN THIS TEXT FILE AND COPY THE URL FROM THERE. ASK YOUR INSTRUCTOR IN THE EVENT YOU CANNOT LOCATE IT.
-7. Click the checkbox for **Enable Authentication**
-8. For **Password** enter: **VMware1!**
-9. Ensure Download content is set to **Immediately**
-10. Click **Next**
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-22-Image-23.png)
-11. Highlight the **WorkloadDatastore** as the storage location
-12. Click **Next**
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-22-Image-24.png)
-13. Click **Finish**. Your content library should take about ~20 minutes to complete syncing.
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC17.jpg)
+
+2\. Name your Content Library *Student#* (where # is the number assigned to you)
+
+3\. (Optional) Enter some notes for your Content Library
+
+4\. Click *Next* button
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC18.jpg)
+
+5\. Select *Subscribed content library*
+
+6\. Under *Subscription URL* enter the following:
+
+```
+https://vcenter.sddc-34-216-241-49.vmc.vmware.com:443/cls/vcsp/lib/4aa185b4-3d6e-45b4-90ca-cd3a845d4502/lib.json
+```
+
+7\. Click the checkbox for *Enable Authentication*
+
+8\. For the *Password* enter: **VMware1!**
+
+9\. Ensure Download content is set to *Immediately*
+
+10\. Click *Next*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC19.jpg)
+
+11\. Highlight the *WorkloadDatastore* as the storage location
+
+12\. Click *Next*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC20.jpg)
+
+13\. Click *Finish*. Your content library should take about ~20 minutes to complete syncing.
+
+You have now successfully subscribed to a vSphere content library from your VMware Cloud on AWS vCenter instance.
 -->
 
 ### 既存のコンテンツ ライブラリの購読
 
 オンプレミスのデータセンターに既にコンテンツ ライブラリがあれば、SDDC にコンテンツをインポートするためにそのコンテンツ ライブラリを利用できます。
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-20-Image-20.png)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC16.jpg)
 
-1. コンテンツ ライブラリ ウィンドウにて、**+** マークをクリックし新しいコンテンツ ライブラリを追加します。
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-20-Image-21.png)
-2. コンテンツ ライブラリの名前を **Student#** とします。ここで **#** は受講者に割り当てられた番号です。
-3. (オプション) コンテンツ ライブラリのノートを適当に入力します。
-4. **Next** ボタンをクリックします。
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-21-Image-22.png)
-5. **Subscribed content library** を選択します。
-6. Under **Subscription URL** の下に以下を入力します。<https://vcenter.sddc-34-216-241-49.vmc.vmware.com/cls/vcsp/lib/8d658764-2e89-44ff-https://vcenter.sddc-34-216-241-49.vmc.vmware.com/cls/vcsp/lib/8d658764-2e89-44ff-a7c1-ee777f0dfc8f/lib.jsona7c1-ee777f0dfc8f/lib.json>
+1\. コンテンツ ライブラリ ウィンドウにて、**+** マークをクリックし新しいコンテンツ ライブラリを追加します。
 
-    マニュアルからコピー アンド ペーストした場合、URL の文字の不意に欠損/追加させてしまう問題があるかもしれません。実際の URL は、受講者のデスクトップの Z:\ ドライブにテキスト ファイルとして利用できますので、そこから URL をコピーしてください。見付からない場合はインストラクターに質問して下さい。
-7. **Enable Authentication** チェック ボックスをクリックします。
-8. **Password** は **VMware1!** と入力します。
-9. ダウンロード コンテントが **Immediately** に設定されていることを確認します。
-10. **Next** をクリックします。
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-22-Image-23.png)
-11. ストレージ ロケーションとして **WorkloadDatastore** をハイライトします。
-12. **Next** をクリックします。
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-22-Image-24.png)
-13. **Finish** をクリックします。コンテンツ ライブラリが同期を完了するまで 20 分ほど掛かります。
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC17.jpg)
 
+2\. コンテンツ ライブラリの名前を **Student#** とします。(# は受講者番号)
+
+3\. (オプション) コンテンツ ライブラリのノートを適当に入力します。
+
+4\. **Next** ボタンをクリックします。
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC18.jpg)
+
+5\. **Subscribed content library** を選択します。
+
+6\. Under **Subscription URL** の下に以下を入力します。
+
+```
+https://vcenter.sddc-34-216-241-49.vmc.vmware.com:443/cls/vcsp/lib/4aa185b4-3d6e-45b4-90ca-cd3a845d4502/lib.json
+```
+
+7\. **Enable Authentication** チェック ボックスをクリックします。
+
+8\. **Password** は **VMware1!** と入力します。
+
+9\. ダウンロード コンテントが **Immediately** に設定されていることを確認します。
+
+10\. **Next** をクリックします。
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC19.jpg)
+
+11\. ストレージ ロケーションとして **WorkloadDatastore** をハイライトします。
+
+12\. **Next** をクリックします。
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC20.jpg)
+
+13\. **Finish** をクリックします。コンテンツ ライブラリが同期を完了するまで 20 分ほど掛かります。
+
+これで、あなたの VMware Cloud on AWS の vCenter インスタンスから、vSphere のコンテンツ ライブラリを購読することに成功しました
 <!--
 ### Create a Local Content Library
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-23-Image-25.png)
+We will now create a local content library for this VMware Cloud on AWS vCenter instance.
 
-1. Click the **+** sign to create a new Content Library
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-23-Image-26.png)
-2. Name your new Content Library: **LocalContentLibrary#** (where # is your student #)
-3. (Optional) Enter some notes about your Content Library
-4. Click **Next** button
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-24-Image-27.png)
-5. Make sure **Local content library** is selected
-6. Click **Next**
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-24-Image-28.png)
-7. Highlight the **WorkloadDatastore** as the storage location
-8. Click **Next**
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-25-Image-29.png)
-9. Review your information and click **Finish**
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC21.jpg)
+
+1\. Click the *+* sign to create a new Content Library
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC22.jpg)
+
+2\. Name your new Content Library: **LocalContentLibrary#** (where # is your student #)
+
+3\. (Optional) Enter some notes about your Content Library
+
+4\. Click *Next* button
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC23.jpg)
+
+5\. Make sure *Local content library* is selected
+
+6\. Click *Next*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC24.jpg)
+
+7\. Highlight the *WorkloadDatastore* as the storage location
+
+8\. Click *Next*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC25.jpg)
+
+9\. Review your information and click *Finish*
 
 Congratulations, you have created your Local Content Library.
 -->
 
 ### ローカル コンテンツ ライブラリの作成
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-23-Image-25.png)
+これから、VMware Cloud on AWS の vCenter インスタンスにローカル コンテンツ ライブラリを作成します
 
-1. **+** マークをクリックし、新しいコンテンツ ライブラリを追加します。
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-23-Image-26.png)
-2. コンテンツ ライブラリの名前を **LocalContentLibrary#** とします。(# は受講者番号になります。)
-3. (オプション) コンテンツ ライブラリのノートを適当に入力します。
-4. **Next** ボタンをクリックします。
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-24-Image-27.png)
-5. **Local content library** が選択されていることを確認します。
-6. **Next** をクリックします。
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-24-Image-28.png)
-7. ストレージ ロケーションとして **WorkloadDatastore** をハイライトさせます。
-8. **Next** をクリックします。
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-25-Image-29.png)
-9. 入力した情報を確認し、**Finish** をクリックします。
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC21.jpg)
+
+1\. **+** マークをクリックし、新しいコンテンツ ライブラリを追加します。
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC22.jpg)
+
+2\. コンテンツ ライブラリの名前を **LocalContentLibrary#** とします。(# は受講者番号になります。)
+
+3\. (オプション) コンテンツ ライブラリのノートを適当に入力します。
+
+4\. **Next** ボタンをクリックします。
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC23.jpg)
+
+5\. **Local content library** が選択されていることを確認します。
+
+6\. **Next** をクリックします。
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC24.jpg)
+
+7\. ストレージ ロケーションとして **WorkloadDatastore** をハイライトさせます。
+
+8\. **Next** をクリックします。
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC25.jpg)
+
+9\. 入力した情報を確認し、**Finish** をクリックします。
 
 おめでとうございます。ローカル コンテンツ ライブラリが作成されました。
 
 <!--
-## Create Logical Network
+## Create a Logical Network
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-26-Image-30.png)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC26.jpg)
 
-1. Once you are logged in to your vCenter Server Click on **Menu**
-2. Select **Global Inventory Lists** from the drop down menu
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-26-Image-31.png)
-3. Click on **Logical Networks** in the left pane
-4. Click on the **Add** button
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-27-Image-32.png)
-5. Name your New Logical Network **Student#-LN** (where # is your student number)
-6. Make sure to select **Routed Network**
-7. For CIDR Block enter **192.168.###.0/24** (where # is your student #)
-    If your designated student number is between 1 and 9, your CIDR block should look like this: **192.168.1.0/24** - This example represents student number 1. For students 10 thru 20 it should look like this: **192.168.10.0/24** - This example represents student number 10
-8. Enter **192.168.###.1** for the Default Gateway IP - Example: 192.168.1.1
-9. Make sure DHCP is Enabled by clicking on the **checkbox**
-10. Enter **192.168.###.100-192.168.###.200** for IP Range
-11. Type **corp.local** as your DNS Domain Name
-12. Click **OK** to create your new logical network
+1\. Once you are logged in to your vCenter Server Click on *Menu*
+
+2\. Select *Global Inventory Lists*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC27.jpg)
+
+3\. Click on *Logical Networks* in the left pane
+
+4\. Click on the *Add* button
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC28.jpg)
+
+5\. Name your New Logical Network *Student#-LN* (where # is your student number)
+
+6\. Select the *Routed Network* radio button
+
+7\. For CIDR Block enter **192.168.#.0/24** (where # is your student #)
+
+    • If your designated student number is between 1 and 9, your CIDR block should look like this: **192.168.1.0/24** - This example represents student number 1
+
+    • For students 10 thru 20 it should look like this: **192.168.10.0/24** - This example represents student number 10
+
+8\. Enter **192.168.#.1** for the Default Gateway IP - Example: 192.168.1.1
+
+9\. Make sure DHCP is Enabled by clicking on the *checkbox*
+
+10\. Enter **192.168.#.100-192.168.#.200** for IP Range
+
+11\. Type **corp.local** as your DNS Domain Name
+
+12\. Click *OK* to create your new logical network
 -->
 
 ## 論理ネットワークの作成
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-26-Image-30.png)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC26.jpg)
 
-1. vCenter Server にログインし、**メニュー** をクリックします。
-2. ドロップ ダウン メニューから **グローバル インベントリ リスト** を選択します。
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-26-Image-31.png)
-3. 左ペインから **論理ネットワーク** をクリックします。
-4. **追加** ボタンをクリックします。
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-27-Image-32.png)
-5. 新しい論理ネットワークの名前を **Student#-LN** とします。(# は受講者番号となります。)
-6. **Routed Network** が選択されていることを確認します。
-7. CIDR ブロックに **192.168.###.0/24** を入力します。(# は受講者番号となります。)
-    受講者番号が 1 から 9 の場合、CIDR ブロックは次のようになります。**192.168.1.0/24** - この例は受講者番号 1 の場合です。受講者番号が 10 から 20 の場合、CIDR ブロックは次のようになります。**192.168.10.0/24** - この例は受講者番号 10 の場合です。
-8. デフォルト ゲートウェイ IP に **192.168.###.1** を入力します。- 例: 192.168.1.1
-9. **チェック ボックス** をクリックして、DHCP が 有効であることを確認します。
-10. IP レンジに **192.168.###.100-192.168.###.200** を入力します。
-11. DNS ドメイン名として **corp.local** を入力します。
-12. **OK** をクリックし、新しい論理ネットワークを作成します。
+1\. vCenter Server にログインし、**メニュー** をクリックします。
+
+2\. **グローバル インベントリ リスト** を選択します。
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC27.jpg)
+
+3\. 左ペインから **論理ネットワーク** をクリックします。
+
+4\. **追加** ボタンをクリックします。
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC28.jpg)
+
+5\. 新しい論理ネットワークの名前を **Student#-LN** とします。(# は受講者番号)
+
+6\. **Routed Network** が選択されていることを確認します。
+
+7\. CIDR ブロックに **192.168.###.0/24** を入力します。(# は受講者番号)
+
+    • 受講者番号が 1 から 9 の場合、CIDR ブロックは次のようになります。**192.168.1.0/24** - この例は受講者番号 1 の場合です
+    • 受講者番号が 10 から 20 の場合、CIDR ブロックは次のようになります。**192.168.10.0/24** - この例は受講者番号 10 の場合です
+
+8\. デフォルト ゲートウェイ IP に **192.168.###.1** を入力します。- 例: 192.168.1.1
+
+9\. **チェック ボックス** をクリックして、DHCP が 有効であることを確認します。
+
+10\. IP レンジに **192.168.###.100-192.168.###.200** を入力します。
+
+11\. DNS ドメイン名として **corp.local** を入力します。
+
+12\. **OK** をクリックし、新しい論理ネットワークを作成します。
 
 <!--
 ## Create Linux Customization Spec
@@ -469,37 +653,65 @@ You can specify the customization settings by launching the Guest Customization 
 
 Use the Customization Specification Manager to manage customization specifications you create with the Guest Customization wizard.
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-28-Image-33.png)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC29.jpg)
 
-1. Click **Menu**
-2. Click **Policies and Profiles**
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-29-Image-34.png)
-3. Click on **+ New** to add a new Linux Customization Specification
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-29-Image-35.png)
-4. Give your VM Customization Spec a Name
-5. Enter a description for it (Optional)
-6. Make sure to select **Linux**
-7. Click **Next**
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-30-Image-36.png)
-8. Click on the **Enter a name** button
-9. Enter a name for your linux VMs
-10. Click on the **Append a numeric value** checkbox
-11. Enter **corp.local** for the Domain Name
-12. Click the **Next** button
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-31-Image-37.png)
-13. Select **US** for Area
-14. Select **Eastern** for Location
-15. Select **Local time**
-16. Click **Next**
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-31-Image-38.png)
-17. Leave the defaults on the **Network** screen and click **Next**
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-32-Image-39.png)
-18. Under Primary DNS Server enter **10.46.159.10**
-19. Type **corp.local** for DNS Search Paths
-20. Click **Next**
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-32-Image-40.png)
-21. Review your entries and click **Finish**
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-33-Image-41.png)
+1\. In the vCenter HTML5 client click *Menu*
+
+2\. Click *Policies and Profiles*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC30.jpg)
+
+3\. Click on *+ New* to add a new Customization Specification
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC31.jpg)
+
+4\. Give your VM Customization Spec a name, such as *Linux Spec*
+
+5\. Enter a description for it (Optional)
+
+6\. Make sure to select *Linux* in the Guest OS, Target guest OS section
+
+7\. Click *Next*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC32.jpg)
+
+8\. Click on the third option, *Enter a name* button
+
+9\. Enter a name for your linux VMs, such as *linux-vm*
+
+10\. Click on the *Append a numeric value* checkbox
+
+11\. Enter **corp.local** for the Domain Name
+
+12\. Click the *Next* button
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC33.jpg)
+
+13\. Select *US* for Area
+
+14\. Select *Eastern* for Location
+
+15\. Select *Local time*
+
+16\. Click *Next*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC34.jpg)
+
+17\. Leave the defaults on the *Network* screen and click *Next*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC35.jpg)
+
+18\. Under Primary DNS Server enter **10.46.159.10** and leave the Secondary DNS Server and Tertiary DNS Server blank
+
+19\. Type **corp.local** for DNS Search Paths and click **Add**
+
+20\. Click *Next*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC36.jpg)
+
+21\. Review your entries and click *Finish*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC37.jpg)
 
 Congratulations! You have successfully created your VM Customization Spec for your Linux VMs. You can also export (Duplicate), Edit, Import, and Export a VM Customization Spec.
 -->
@@ -514,89 +726,152 @@ Congratulations! You have successfully created your VM Customization Spec for yo
 
 ゲスト カスタマイゼーション ウィザードで作成したカスタマイズ仕様を管理するために、カスタマイズ仕様マネージャを利用して下さい。
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-28-Image-33.png)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC29.jpg)
 
-1. **メニュー** をクリックします。
-2. **ポリシーおよびプロファイル** をクリックします。
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-29-Image-34.png)
-3. Click on **+ 新規...** をクリックし、新しい Linu 向けカスタマイズ仕様を追加します。
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-29-Image-35.png)
-4. カスタマイズ仕様に名前を付けます。
-5. カスタマイズ仕様に説明を付け加えます。(オプショナル)
-6. **Linux** を選択します。
-7. **Next** をクリックします。
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-30-Image-36.png)
-8. **名前を入力** ボタンをクリックします。
-9. Linux 仮想マシンの名前を入力します。
-10. **数値を付加します** チェック ボックスをクリックします。
-11. ドメイン名に **corp.local** を入力します。
-12. **Next** ボタンをクリックします。
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-31-Image-37.png)
-13. エリアで **US** を選択します
-14. 保存場所で **Eastern** を選択します
-15. **ローカル時間** を選択します。
-16. **Next** をクリックします。
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-31-Image-38.png)
-17. **ネットワーク** スクリーンはデフォルトのままとし、**Next** をクリックします。
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-32-Image-39.png)
-18. プライマリ DNS サーバーに **10.46.159.10** と入力します。
-19. DNS 検索パスに **corp.local** と入力します。
-20. **Next** をクリックします。
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-32-Image-40.png)
-21. 入力した項目を確認し、**Finish** をクリックします。
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-33-Image-41.png)
+1\. vSphere HTML5 クライアントにて **Menu** をクリックします
+2\. **Policies and Profiles** をクリックします
 
-おめでとうございます。Linux 仮想マシンのためのカスタマイズ仕様が作成されました。カスタマイズ仕様は、複製、編集、インポート、エクスポートすることができます。
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC30.jpg)
+
+3\. Click on **+ New** をクリックし、新しい Linu 向けカスタマイズ仕様を追加します
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC31.jpg)
+
+4\. カスタマイズ仕様に *Linux Spec* などといった名前を付けます
+
+5\. カスタマイズ仕様に説明を付け加えます。(オプショナル)
+
+6\. **Linux** を選択します
+
+7\. **Next** をクリックします
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC32.jpg)
+
+8\. **Enter a name** ボタンをクリックします。
+
+9\. ターゲット ゲスト OS セクションにて、Linux 仮想マシンの名前を入力します
+
+10\. **Append numeric value** チェック ボックスをクリックします
+
+11\. ドメイン名に **corp.local** を入力します
+
+12\. **Next** ボタンをクリックします
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC33.jpg)
+
+13\. エリアで **US** を選択します
+
+14\. 保存場所で **Eastern** を選択します
+
+15\. **Local time** を選択します
+
+16\. **Next** をクリックします
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC34.jpg)
+
+17\. **Network** スクリーンはデフォルトのままとし、**Next** をクリックします
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC35.jpg)
+
+18\. プライマリ DNS サーバーに **10.46.159.10** と入力します
+
+19\. DNS 検索パスに **corp.local** と入力します
+
+20\. **Next** をクリックします
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC36.jpg)
+
+21\. 入力した項目を確認し、**Finish** をクリックします
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC37.jpg)
+
+おめでとうございます。Linux 仮想マシンのためのカスタマイズ仕様が作成されました。カスタマイズ仕様は、複製、編集、インポート、エクスポートすることができます
 
 <!--
-## Deploy Virtual Machine
+## Deploy Virtual Machines
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-34-Image-42.png)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC38.jpg)
 
-1. On your Content Libraries (Menu -> Content Libraries)**, select **Student#** and select the **Templates** tab.
-2. Right click on the **centos01-web** template and select **New VM from This Template**
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-34-Image-43.png)
-3. Name your Virtual Machine **StudentVM#** (where # is your student number)
-4. Expand the location area until you see **Workloads** and highlight it
-5. Click **Next**
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-35-Image-44.png)
-6. Expand the destination compute resources until you find **Compute-ResourcePool**, select it
-7. Click **Next** button
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-35-Image-45.png)
-8. Click **Next** button on the Review details screen
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-36-Image-46.png)
-9. In the **Select storage** step, highlight **WorkloadDatastore**
-10. Click **Next**
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-36-Image-47.png)
-11. In the **Select networks** step, click the drop down box to select the Destination Network (you may need to click Browse to see other networks and select your "Student#-LNStudent#-LN" network you created previously
-12. Click **Next**
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-37-Image-48.png)
-13. In the **Ready to complete** section, review to ensure all your selections are correct and click **Finish**
+1\. On your Content Libraries *(Menu -> Content Libraries)*, select *Student#* and select the *Templates* tab.
+
+2\. Right click on the *centos01-web* template and select *New VM from This Template*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC39.jpg)
+
+3\. Name your Virtual Machine *StudentVM#* (where # is your student number)
+
+4\. Expand the location area until you see *Workloads* and highlight it
+
+5\. Click *Next*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC40.jpg)
+
+6\. Expand the destination compute resources until you find *compute-ResourcePool*, select it
+
+7\. Click *Next*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC41.jpg)
+
+8\. Click the *Next* button on the Review details screen
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC42.jpg)
+
+9\. In the *Select storage* step, highlight *WorkloadDatastore*
+
+10\. Click *Next*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC43.jpg)
+
+11\. In the *Select networks* step, click the drop down box to select the Destination Network (you may need to click Browse to see other networks and select your *Student#-LN* network you created previously
+
+12\. Click *Next*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC44.jpg)
+
+13\. In the *Ready to complete* section, review and ensure all your selections are correct and click *Finish*
 -->
 
 ## 仮想マシンのデプロイ
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-34-Image-42.png)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC38.jpg)
 
-1. コンテンツ ライブラリ (メニュー -> コンテンツ ライブラリ) にて、**Student#** を選択し、**Templates** タブを選択します。
-2. **centos01-web** テンプレートを右クリックし、**New VM from This Template** を選択します。
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-34-Image-43.png)
-3. 仮想マシンの名前を **StudentVM#** とします。(# は受講者番号となります。)
-4. **Workloads** が見付かるまでロケーション エリアを展開し、これをハイライトします。
-5. **Next** をクリックします。
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-35-Image-44.png)
-6. **Compute-ResourcePool** が見付かるまで Destination コンピュート リソースを展開し、これを選択します。
-7. **Next** ボタンをクリックします。
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-35-Image-45.png)
-8. 設定の確認スクリーンで **Next** ボタンをクリックします。
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-36-Image-46.png)
-9. **Select storage** ステップにて、**WorkloadDatastore** をハイライトします。
-10. **Next** をクリックします。
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-36-Image-47.png)
-11. **Select networks** ステップで、ドロップ ダウン リストをクリックして Destination Network を選択します。(他のネットワークを参照したり、事前に作成した "Student#-LNStudent#-LN" ネットワークを選択するために、Browse をクリックする必要があるかも知れません)
-12. **Next** をクリックします。
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-37-Image-48.png)
-13. **Ready to complete** セクションにて、全てのセクションが正しいことを確認し、**Finish** をクリックします。
+1\. コンテンツ ライブラリ (メニュー -> コンテンツ ライブラリ) にて、**Student#** を選択し、**Templates** タブを選択します。
+
+2\. **centos01-web** テンプレートを右クリックし、**New VM from This Template** を選択します。
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC39.jpg)
+
+3\. 仮想マシンの名前を **StudentVM#** とします。(# は受講者番号となります。)
+
+4\. **Workloads** が見付かるまでロケーション エリアを展開し、これをハイライトします。
+
+5\. **Next** をクリックします。
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC40.jpg)
+
+6\. **Compute-ResourcePool** が見付かるまで Destination コンピュート リソースを展開し、これを選択します。
+
+7\. **Next** ボタンをクリックします。
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC41.jpg)
+
+8\. 設定の確認スクリーンで **Next** ボタンをクリックします。
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC42.jpg)
+
+9\. **Select storage** ステップにて、**WorkloadDatastore** をハイライトします。
+
+10\. **Next** をクリックします。
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC43.jpg)
+
+11\. **Select networks** ステップで、ドロップ ダウン リストをクリックして Destination Network を選択します。(他のネットワークを参照したり、事前に作成した "Student#-LNStudent#-LN" ネットワークを選択するために、Browse をクリックする必要があるかも知れません)
+
+12\. **Next** をクリックします。
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC44.jpg)
+
+13\. **Ready to complete** セクションにて、全てのセクションが正しいことを確認し、**Finish** をクリックします。
 
 <!--
 ## Convert Virtual Machine to Template
@@ -618,20 +893,28 @@ In this step you will be cloning your newly created Virtual Machine into a Templ
 You have completed this step.
 -->
 
-## 仮想マシンをテンプレートにコンバート
+## 仮想マシンをテンプレートに変換
 
 このステップでは、後続の vRealize Automation セクションのために、新しく作成された仮想マシンを仮想マシンにクローンします。
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-38-Image-49.png)
 
-1. 前のステップの仮想マシンのデプロイが完了していることを確認します。
-2. **メニュー** をクリックします。
-3. **仮想マシンおよびテンプレート** を選択します。
+1\. 前のステップの仮想マシンのデプロイが完了していることを確認します
+
+2\. **Menu** をクリックします
+
+3\. **VMs and Templates** を選択します
+
     ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-39-Image-50.png)
-4. 新しく作成された仮想マシン **Student#** を選択します。(# は受講者番号になります)
-5. **テンプレート** をクリックします。
-6. Select **テンプレートに変換** を
+
+4\. 新しく作成された仮想マシン **Student#** を選択します。(# は受講者番号になります)
+
+5\. **Template** をクリックします
+
+6\. **Convert to Template** を選択します
+
     ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-39-Image-51.png)
-7. 変換の確認 ダイアログで **はい** をクリックします。
+
+7\. 変換の確認 ダイアログで **Yes** をクリックします
 
 このステップを完了しました。
