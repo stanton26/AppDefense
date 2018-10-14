@@ -499,6 +499,7 @@ https://vcenter.sddc-34-216-241-49.vmc.vmware.com:443/cls/vcsp/lib/4aa185b4-3d6e
 13\. **Finish** をクリックします。コンテンツ ライブラリが同期を完了するまで 20 分ほど掛かります。
 
 これで、あなたの VMware Cloud on AWS の vCenter インスタンスから、vSphere のコンテンツ ライブラリを購読することに成功しました
+
 <!--
 ### Create a Local Content Library
 
