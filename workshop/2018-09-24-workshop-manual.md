@@ -12,7 +12,7 @@ author_profile: false
 The VMware Cloud on AWS workshop is your chance to test drive this unique solution in the market place in a classroom session with VMware Cloud on AWS experts and work through hands on lab exercises to understand and gain experience with the solution to understand how it can be used in your business.
 
 The class is a one-day workshop in which we will set up a VMware SDDC environment in AWS, work through common administration activities of the platform and explore integrations with native AWS services and vRealize Suite solutions including vRealize Automation and vRealize Operations.
-You will work through leveraging VMware Cloud on AWS as a target for DRaaS utilsiing VMware Site Recovery Manager and VM Replication and will also have the opportunity to test drive Horizon 7 in the VMware Cloud on AWS platform.
+You will work through leveraging VMware Cloud on AWS as a target for DRaaS utilizing VMware Site Recovery Manager and VM Replication and will also have the opportunity to test drive Horizon 7 in the VMware Cloud on AWS platform.
 
 ## Workshop Details
 
@@ -67,7 +67,7 @@ Import Bookmarks into Chrome by double clicking the Chrome Icon on your Desktop 
 
 Listed below are the lab exercises which are available as part of this experience day event. Please ensure that you complete the **Working with your SDDC lab**, the **AWS Integration** lab relies on sections of the Working with your SDDC lab to be completed. Please note that you will not be able to complete all of the content. For this reason we typically state that the first 3 labs listed below are mandatory lab content. After those labs are complete you can choose your own path. If you are interested in exploring the DRaaS use case in the **VMware Site Recovery Manager** lab, you will need to pair up with another team so that one team can be the "protected site" and the other team can be the "failover" site. All other labs can be completed individually.
 
-Please enjoy these labs, if you have any questions, please do not hestiate to speak to the VMware Cloud on AWS specialists in the room with you.
+Please enjoy these labs, if you have any questions, please do not hesitate to speak to the VMware Cloud on AWS specialists in the room with you.
 
 Lab Name | Description
 [Working with your SDDC](https://vmc-field-team.github.io/labs/v2/working-with-sddc-lab/){:target="_blank"} | Learn the basics of running a VMware on AWS SDDC environment
