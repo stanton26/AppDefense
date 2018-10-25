@@ -54,7 +54,7 @@ vRealize Automation supports VMware Cloud on AWS in delivering a unified hybrid 
 
     ![vRA6](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/vra/vRA6.jpg)
 6. Login with your *vmcws#* user name (where # is your student number)
-7. Enter your password - **VMware1!**
+7. Enter your password (provided at beginning of workshop)
 
 ![vRA7](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/vra/vRA7.jpg)
 
