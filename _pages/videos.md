@@ -39,6 +39,10 @@ Listed below are a number of videos which have been produced by Jeffrey Moore fr
 
 {% include video id="q4HVY4NpldY" provider="youtube" %}
 
+## VMware Cloud on AWS - HLM Validation
+
+{% include video id="88_7RzmzX4A" provider="youtube" %}
+
 ## VMware Cloud on AWS - HCX Integration
 
 {% include video id="bogWtHSLv1g" provider="youtube" %}
