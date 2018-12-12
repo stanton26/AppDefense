@@ -34,3 +34,11 @@ Listed below are a number of videos which have been produced by Jeffrey Moore fr
 ## VMware Cloud on AWS - L2VPN Configuration
 
 {% include video id="e5LAqJ5Nekg" provider="youtube" %}
+
+## VMware Cloud on AWS - HLM Configuration
+
+{% include video id="q4HVY4NpldY" provider="youtube" %}
+
+## VMware Cloud on AWS - HCX Integration
+
+{% include video id="bogWtHSLv1g" provider="youtube" %}
