@@ -78,7 +78,7 @@ Your segment should look similar to the screenshot below...
 
 Like the Management NSX Edge Services Gateway. By default, the Compute NSX Edge Services Gateway is also set to deny all inbound and outbound traffic. You need to add additional firewall rules to allow access to your workload VMs which you provision in the VMware Cloud on AWS platform.
 
-#### Create Firewall Rule under Compute Gateway for Inbound Native AWS Services access
+#### Create Compute Firewall rule for Inbound AWS Traffic
 
 We need to add an inbound firewall rule that allows traffic from our AWS VPC into our network segment we created in our VMC environment.
 
