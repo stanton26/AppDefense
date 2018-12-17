@@ -26,24 +26,26 @@ Select **Login**
 You will be directed to a login page for Cloud Services from VMware. You will need to login with the email address which you provided to the presenter. You will also need to ensure that this email address is associated with a "MyVMware Account" in order for the login to the VMware Cloud Services to work correctly.
     ![Enter credentials](https://s3-us-west-2.amazonaws.com/partner-workshop-screenshots/Login3.png)
 
-In VMware Cloud on AWS we have two Edge Gateways which are protecting the two main networks in the VMware Cloud on AWS SDDC. The **Management Network** and the **Compute Network**. When we first intiate your SDDC environment, the default is for all traffic to both the Management and Compute networks to be denied. In this exercise we will go through the steps required to open up firewall rules so that we can manage the SDDC and not only access compute workloads but allow those compute workloads to communicate with native AWS services.
+In VMware Cloud on AWS we have two Edge Firewalls which are protecting the two main networks in the VMware Cloud on AWS SDDC. The **Management Network** and the **Compute Network**. When we first intiate your SDDC environment, the default is for all traffic to both the Management and Compute networks to be denied. In this exercise we will go through the steps required to open up firewall rules so that we can manage the SDDC and not only access compute workloads but allow those compute workloads to communicate with native AWS services.
 
-### Management Gateway Firewall Rules
+### Management Firewall Rules
 
-By default, the firewall for the Management Gateway is set to deny all inbound and outbound traffic. In this exercise, you will add a firewall rule to allow vCenter traffic. This will allow you to access the vCenter Server in your SDDC.
+By default, the firewall for the Management Network is set to deny all inbound and outbound traffic. In this exercise, you will add a firewall rule to allow vCenter traffic. This will allow you to access the vCenter Server in your SDDC.
+
+Note: This step has to be done by one student only. If you are sharing your SDDC with another student please decide who will be entering the firewall rule. All other tasks are done by both students.
 
 1. From your SDDC, click **View Details**
-2. Click **Network**
-3. Expand **Firewall Rules**
-4. Click **Add Rule**
-    ![Add Rule](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/Screenshot+at+Jul+17+20-48-57.png)
-5. Enter a name for your rule under **Rule Name**, For Example, "vCenter-Allow-Any"
-6. Type **Any** for Source
+2. Click **Networking & Security**
+3. Go to Security click on **Gateway Firewall** and select **Management Gateway**
+4. Click **Add New Rule**
+    ![Add New Rule](https://s3-us-west-2.amazonaws.com/partner-workshop-screenshots/add-mgmt-firewall.jpg)
+5. Enter a name for your rule under **Rule Name**, For Example, "vCenter Inbound Rule"
+6. Select **Any** for Source
 7. Make sure **vCenter** is selected as Destination
 8. Select **HTTPS (TCP 443)** from the drop down box for Service
-9. Click the **SAVE** button, your rule should look like the below image
+9. Click the **Publish** button on the top right, your rule should look like the below image
 
-![vCenter Rule](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/Screenshot+at+Jul+17+20-55-42.png)
+![vCenter Rule](https://s3-us-west-2.amazonaws.com/partner-workshop-screenshots/add_vcenter_firewall.jpg)
 
 Note: In a production environment it is not recommended to open vCenter access from any source but rather from an established VPN connection to a trusted secure network. 
 
