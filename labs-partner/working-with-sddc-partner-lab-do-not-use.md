@@ -26,6 +26,8 @@ Select **Login**
 You will be directed to a login page for Cloud Services from VMware. You will need to login with the email address which you provided to the presenter. You will also need to ensure that this email address is associated with a "MyVMware Account" in order for the login to the VMware Cloud Services to work correctly.
     ![Enter credentials](https://s3-us-west-2.amazonaws.com/partner-workshop-screenshots/Login3.png)
 
+### Firewalls
+
 In VMware Cloud on AWS we have two Edge Firewalls which are protecting the two main networks in the VMware Cloud on AWS SDDC. The **Management Network** and the **Compute Network**. When we first intiate your SDDC environment, the default is for all traffic to both the Management and Compute networks to be denied. In this exercise we will go through the steps required to open up firewall rules so that we can manage the SDDC and not only access compute workloads but allow those compute workloads to communicate with native AWS services.
 
 ### Management Firewall Rules
@@ -92,23 +94,22 @@ We need to add an inbound firewall rule that allows traffic from our AWS VPC int
 8. Click **Save** (Your group should look similar to the screenshot below)
     ![Group](https://s3-us-west-2.amazonaws.com/partner-workshop-screenshots/group1.jpg)
 9. For **Services** select "Any"
-10. Select Publish on top right corner of the screen. (Your Inbound rule should look similar to mine)
+10. Select Publish on top right corner of the screen. (Your Inbound rule should look similar to the screenshot below)
     ![Publish](https://s3-us-west-2.amazonaws.com/partner-workshop-screenshots/ingress.jpg)
 
 #### Create AWS Outbound Firewall Rule
 
 Follow the same process as in the previous step and create AWS Outbound Firewall Rule following these instructions:
 
-1. **Name** - AWS Outbound
-2. **Action** - Allow
-3. **Source** - 192.168.#.0/24 (Where # is your student number)
-4. **Destination** - All connected Amazon VPC
-5. **Service** - ANY
-6. Click **SAVE** button.
+1. Click **ADD NEW RULE**
+2. **Name** - Student# AWS Outbound
+3. **Source** - Select Group#
+4. **Destination** - Connected VPC Prefixes
+5. **Services** - Any 
+6. **Action** - Allow
+7. Publish Firewall Rule (Your firewall rule should look similar to the screenshot below)
+    ![Outbound](https://s3-us-west-2.amazonaws.com/partner-workshop-screenshots/Outbound.jpg)
 
-![AWS Outbound](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/Screenshot+at+Jul+17+21-10-22.png)
-
-We have now successfully created rules which will allow us to access our vCenter server over port 443 from any location, in a real world deployment we would change this to only allow communication from a specific IP address range over a private link, once we have a VPN in place. We have also configured our Compute workloads to be able to communicate with any services in our native AWS VPC which our VMware Cloud on AWS environment is connected too.
 
 ## Log into VMware Cloud on AWS vCenter
 
