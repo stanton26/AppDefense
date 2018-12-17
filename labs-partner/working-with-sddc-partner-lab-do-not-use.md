@@ -30,14 +30,14 @@ In VMware Cloud on AWS we have two Edge Firewalls which are protecting the two m
 
 ### Management Firewall Rules
 
-By default, the firewall for the Management Network is set to deny all inbound and outbound traffic. In this exercise, you will add a firewall rule to allow vCenter traffic. This will allow you to access the vCenter Server in your SDDC.
+By default, the firewall for the Management Gateway is set to deny all inbound and outbound traffic. In this exercise, you will add a firewall rule to allow vCenter traffic. This will allow you to access the vCenter Server in your SDDC.
 
 Note: This step has to be done by one student only. If you are sharing your SDDC with another student please decide who will be entering the firewall rule. All other tasks are done by both students.
 
 1. From your SDDC, click **View Details**
 2. Click **Networking & Security**
 3. Go to Security click on **Gateway Firewall** and select **Management Gateway**
-4. Click **Add New Rule**
+4. Click **ADD NEW RULE**
     ![Add New Rule](https://s3-us-west-2.amazonaws.com/partner-workshop-screenshots/add-mgmt-firewall.jpg)
 5. Enter a name for your rule under **Rule Name**, For Example, "vCenter Inbound Rule"
 6. Select **Any** for Source
@@ -49,26 +49,51 @@ Note: This step has to be done by one student only. If you are sharing your SDDC
 
 Note: In a production environment it is not recommended to open vCenter access from any source but rather from an established VPN connection to a trusted secure network. 
 
+### Create Logical Segments
+
+Logical Networks provide network access to workload VMs. VMware Cloud on AWS supports two types of logical network segments, routed and extended.
+
+Routed networks are the default type. Routed networks have connectivity to other logical networks in the same SDDC and to external network services such as compute gateway firewall and NAT. Extended networks require layer 2 Virtual Private Network (L2VPN) which provides a secure communication tunnel between an on-premises network and one in your cloud SDDC.
+
+Your SDDC starts with a single default logical network, sddc-cgw-network-1 (For the purpose of this lab student 1 must delete this network). Each student will use the VMC console to create additional logical networks.
+
+1. From your SDDC, click **View Details**
+2. Click **Networking & Security**
+3. Go to **Network** and select **Segments**
+4. Select **ADD SEGMENTS**
+    ![Add New Segment](https://s3-us-west-2.amazonaws.com/partner-workshop-screenshots/segments.jpg)
+5. Name your segment student# (Where # is the student number assigned to you).
+6. Select type **Routed** 
+7. Enter gateway address 192.168.#.1 (Where # is the student number assigned to you)
+8. Ensure **Enable DHCP** is selected
+9. Enter the following DHCP IP range 192.168.#.100-192.168.#200 (Where # is the student number assigned to you)
+10. Enter DNS Suffix **corp.local**
+
+Your segment should look similar to the screenshot below...
+![Segment](https://s3-us-west-2.amazonaws.com/partner-workshop-screenshots/add_segment.jpg)
+
 ### Compute Gateway Firewall Rules
 
 Like the Management NSX Edge Services Gateway. By default, the Compute NSX Edge Services Gateway is also set to deny all inbound and outbound traffic. You need to add additional firewall rules to allow access to your workload VMs which you provision in the VMware Cloud on AWS platform.
 
 #### Create Firewall Rule under Compute Gateway for Inbound Native AWS Services access
 
-1. Under **Network** tab, navigate to **Compute Gateway**
-2. Expand **Firewall Rules**
-3. Click **ADD RULE**
+We need to add an inbound firewall rule that allows traffic from our AWS VPC into our network segment we created in our VMC environment.
 
-#### AWS Inbound Firewall Rule
+1. Click **ADD NEW RULE**
+2. **Name** - Student# AWS Inbound
+3. **Source** - Connected VPC Prefixes
+4. For **Set Destination** click on "Create New Group" 
+    ![Create New Group](https://s3-us-west-2.amazonaws.com/partner-workshop-screenshots/create_new_group.jpg)
 
-1. **Name** - AWS Inbound
-2. **Action** - Allow
-3. **Source** - All connected Amazon VPC
-4. **Destination** - 192.168.#.0/24 (Where # is your student number)
-5. **Service** - ANY
-6. Click **SAVE** button.
-
-![Aws Inbound](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/Screenshot+at+Jul+17+21-01-43.png)
+5. Name the group "Group#" (Where # is the student number assigned to you)
+6. Under **Member Type** select IP Address
+7. Under **Members** enter 192.168.#.0/24 (Where # is the student number assigned to you)
+8. Click **Save** (Your group should look similar to the screenshot below)
+    ![Group](https://s3-us-west-2.amazonaws.com/partner-workshop-screenshots/group1.jpg)
+9. For **Services** select "Any"
+10. Select Publish on top right corner of the screen. (Your Inbound rule should look similar to mine)
+    ![Publish](https://s3-us-west-2.amazonaws.com/partner-workshop-screenshots/ingress.jpg)
 
 #### Create AWS Outbound Firewall Rule
 
