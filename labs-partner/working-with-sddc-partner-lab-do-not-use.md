@@ -93,7 +93,7 @@ We need to add an inbound firewall rule that allows traffic from our AWS VPC int
     Based on the matching Criteria, you can apply a configuration to all the VMs in the security group instead of applying the configuration to the VMs in the SDDC environment individually. 
     
     You can use the security groups when you configure Edge or Distributed Firewalls.
-    
+
 5. Name the group "Group#" (Where # is the student number assigned to you)
 6. Under **Member Type** select IP Address
 7. Under **Members** enter 192.168.#.0/24 (Where # is the student number assigned to you)
@@ -182,6 +182,7 @@ You may already have a Content Library in your on-premises data center, you can 
 10. Click **Next**
 11. Highlight the **WorkloadDatastore** as the storage location
 12. Click **Next**
-13. Click **Finish**. Your content library should take about ~20 minutes to complete syncing.
+13. Click **Finish**. Your content library should take about ~20 minutes to complete syncing. Syncing is required prior to proceeding to the next lab. You can take a break during this time prior to proceeding to lab#2 "AWS Integration" 
 
 You have now successfully subscribed to a vSphere content library from your VMware Cloud on AWS vCenter instance.
+
