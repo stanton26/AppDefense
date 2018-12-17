@@ -88,6 +88,12 @@ We need to add an inbound firewall rule that allows traffic from our AWS VPC int
 4. For **Set Destination** click on "Create New Group" 
     ![Create New Group](https://s3-us-west-2.amazonaws.com/partner-workshop-screenshots/create_new_group.jpg)
 
+    Note: Security Group is a group that categorizes VMs based on VM names, IP addresses, and matching criteria of VM name and security tag. 
+
+    Based on the matching Criteria, you can apply a configuration to all the VMs in the security group instead of applying the configuration to the VMs in the SDDC environment individually. 
+    
+    You can use the security groups when you configure Edge or Distributed Firewalls.
+    
 5. Name the group "Group#" (Where # is the student number assigned to you)
 6. Under **Member Type** select IP Address
 7. Under **Members** enter 192.168.#.0/24 (Where # is the student number assigned to you)
