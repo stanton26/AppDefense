@@ -26,62 +26,96 @@ Select **Login**
 You will be directed to a login page for Cloud Services from VMware. You will need to login with the email address which you provided to the presenter. You will also need to ensure that this email address is associated with a "MyVMware Account" in order for the login to the VMware Cloud Services to work correctly.
     ![Enter credentials](https://s3-us-west-2.amazonaws.com/partner-workshop-screenshots/Login3.png)
 
-In VMware Cloud on AWS we have two Edge Gateways which are protecting the two main networks in the VMware Cloud on AWS SDDC. The **Management Network** and the **Compute Network**. When we first intiate your SDDC environment, the default is for all traffic to both the Management and Compute networks to be denied. In this exercise we will go through the steps required to open up firewall rules so that we can manage the SDDC and not only access compute workloads but allow those compute workloads to communicate with native AWS services.
+### Firewalls
 
-### Management Gateway Firewall Rules
+In VMware Cloud on AWS we have two Edge Firewalls which are protecting the two main networks in the VMware Cloud on AWS SDDC. The **Management Network** and the **Compute Network**. When we first intiate your SDDC environment, the default is for all traffic to both the Management and Compute networks to be denied. In this exercise we will go through the steps required to open up firewall rules so that we can manage the SDDC and not only access compute workloads but allow those compute workloads to communicate with native AWS services.
+
+### Management Firewall Rules
 
 By default, the firewall for the Management Gateway is set to deny all inbound and outbound traffic. In this exercise, you will add a firewall rule to allow vCenter traffic. This will allow you to access the vCenter Server in your SDDC.
 
+Note: This step has to be done by one student only. If you are sharing your SDDC with another student please decide who will be entering the firewall rule. All other tasks are done by both students.
+
 1. From your SDDC, click **View Details**
-2. Click **Network**
-3. Expand **Firewall Rules**
-4. Click **Add Rule**
-    ![Add Rule](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/Screenshot+at+Jul+17+20-48-57.png)
-5. Enter a name for your rule under **Rule Name**, For Example, "vCenter-Allow-Any"
-6. Type **Any** for Source
+2. Click **Networking & Security**
+3. Go to Security click on **Gateway Firewall** and select **Management Gateway**
+4. Click **ADD NEW RULE**
+    ![Add New Rule](https://s3-us-west-2.amazonaws.com/partner-workshop-screenshots/add-mgmt-firewall.jpg)
+5. Enter a name for your rule under **Rule Name**, For Example, "vCenter Inbound Rule"
+6. Select **Any** for Source
 7. Make sure **vCenter** is selected as Destination
 8. Select **HTTPS (TCP 443)** from the drop down box for Service
-9. Click the **SAVE** button, your rule should look like the below image
+9. Click the **Publish** button on the top right, your rule should look like the below image
 
-![vCenter Rule](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/Screenshot+at+Jul+17+20-55-42.png)
+![vCenter Rule](https://s3-us-west-2.amazonaws.com/partner-workshop-screenshots/add_vcenter_firewall.jpg)
 
 Note: In a production environment it is not recommended to open vCenter access from any source but rather from an established VPN connection to a trusted secure network. 
+
+### Create Logical Segments
+
+Logical Networks provide network access to workload VMs. VMware Cloud on AWS supports two types of logical network segments, routed and extended.
+
+Routed networks are the default type. Routed networks have connectivity to other logical networks in the same SDDC and to external network services such as compute gateway firewall and NAT. Extended networks require layer 2 Virtual Private Network (L2VPN) which provides a secure communication tunnel between an on-premises network and one in your cloud SDDC.
+
+Your SDDC starts with a single default logical network, sddc-cgw-network-1 (For the purpose of this lab student 1 must delete this network). Each student will use the VMC console to create additional logical networks.
+
+1. From your SDDC, click **View Details**
+2. Click **Networking & Security**
+3. Go to **Network** and select **Segments**
+4. Select **ADD SEGMENTS**
+    ![Add New Segment](https://s3-us-west-2.amazonaws.com/partner-workshop-screenshots/segments.jpg)
+5. Name your segment student# (Where # is the student number assigned to you).
+6. Select type **Routed** 
+7. Enter gateway address 192.168.#.1 (Where # is the student number assigned to you)
+8. Ensure **Enable DHCP** is selected
+9. Enter the following DHCP IP range 192.168.#.100-192.168.#200 (Where # is the student number assigned to you)
+10. Enter DNS Suffix **corp.local**
+
+Your segment should look similar to the screenshot below...
+![Segment](https://s3-us-west-2.amazonaws.com/partner-workshop-screenshots/add_segment.jpg)
 
 ### Compute Gateway Firewall Rules
 
 Like the Management NSX Edge Services Gateway. By default, the Compute NSX Edge Services Gateway is also set to deny all inbound and outbound traffic. You need to add additional firewall rules to allow access to your workload VMs which you provision in the VMware Cloud on AWS platform.
 
-#### Create Firewall Rule under Compute Gateway for Inbound Native AWS Services access
+#### Create Compute Firewall rule for Inbound AWS Traffic
 
-1. Under **Network** tab, navigate to **Compute Gateway**
-2. Expand **Firewall Rules**
-3. Click **ADD RULE**
+We need to add an inbound firewall rule that allows traffic from our AWS VPC into our network segment we created in our VMC environment.
 
-#### AWS Inbound Firewall Rule
+1. Click **ADD NEW RULE**
+2. **Name** - Student# AWS Inbound
+3. **Source** - Connected VPC Prefixes
+4. For **Set Destination** click on "Create New Group" 
+    ![Create New Group](https://s3-us-west-2.amazonaws.com/partner-workshop-screenshots/create_new_group.jpg)
 
-1. **Name** - AWS Inbound
-2. **Action** - Allow
-3. **Source** - All connected Amazon VPC
-4. **Destination** - 192.168.#.0/24 (Where # is your student number)
-5. **Service** - ANY
-6. Click **SAVE** button.
+    Note: Security Group is a group that categorizes VMs based on VM names, IP addresses, and matching criteria of VM name and security tag. 
 
-![Aws Inbound](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/Screenshot+at+Jul+17+21-01-43.png)
+    Based on the matching Criteria, you can apply a configuration to all the VMs in the security group instead of applying the configuration to the VMs in the SDDC environment individually. 
+    
+    You can use the security groups when you configure Edge or Distributed Firewalls.
+
+5. Name the group "Group#" (Where # is the student number assigned to you)
+6. Under **Member Type** select IP Address
+7. Under **Members** enter 192.168.#.0/24 (Where # is the student number assigned to you)
+8. Click **Save** (Your group should look similar to the screenshot below)
+    ![Group](https://s3-us-west-2.amazonaws.com/partner-workshop-screenshots/group1.jpg)
+9. For **Services** select "Any"
+10. Select Publish on top right corner of the screen. (Your Inbound rule should look similar to the screenshot below)
+    ![Publish](https://s3-us-west-2.amazonaws.com/partner-workshop-screenshots/ingress.jpg)
 
 #### Create AWS Outbound Firewall Rule
 
 Follow the same process as in the previous step and create AWS Outbound Firewall Rule following these instructions:
 
-1. **Name** - AWS Outbound
-2. **Action** - Allow
-3. **Source** - 192.168.#.0/24 (Where # is your student number)
-4. **Destination** - All connected Amazon VPC
-5. **Service** - ANY
-6. Click **SAVE** button.
+1. Click **ADD NEW RULE**
+2. **Name** - Student# AWS Outbound
+3. **Source** - Select Group#
+4. **Destination** - Connected VPC Prefixes
+5. **Services** - Any 
+6. **Action** - Allow
+7. Publish Firewall Rule (Your firewall rule should look similar to the screenshot below)
+    ![Outbound](https://s3-us-west-2.amazonaws.com/partner-workshop-screenshots/Outbound.jpg)
 
-![AWS Outbound](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/Screenshot+at+Jul+17+21-10-22.png)
-
-We have now successfully created rules which will allow us to access our vCenter server over port 443 from any location, in a real world deployment we would change this to only allow communication from a specific IP address range over a private link, once we have a VPN in place. We have also configured our Compute workloads to be able to communicate with any services in our native AWS VPC which our VMware Cloud on AWS environment is connected too.
 
 ## Log into VMware Cloud on AWS vCenter
 
@@ -148,93 +182,7 @@ You may already have a Content Library in your on-premises data center, you can 
 10. Click **Next**
 11. Highlight the **WorkloadDatastore** as the storage location
 12. Click **Next**
-13. Click **Finish**. Your content library should take about ~20 minutes to complete syncing.
+13. Click **Finish**. Your content library should take about ~20 minutes to complete syncing. Syncing is required prior to proceeding to the next lab. You can take a break during this time prior to proceeding to lab#2 "AWS Integration" 
 
 You have now successfully subscribed to a vSphere content library from your VMware Cloud on AWS vCenter instance.
 
-### Create a Local Content Library
-
-We will now create a local content library for this VMware Cloud on AWS vCenter instance.
-
-1. Click the + sign to create a new Content Library
-2. Name your new Content Library: **LocalContentLibrary#** (where # is your student #)
-3. (Optional) Enter some notes about your Content Library
-4. Click **Next** button
-5. Make sure **Local content library** is selected
-6. Click **Next**
-7. Highlight the **WorkloadDatastore** as the storage location
-8. Click **Next**
-9. Review your information and click **Finish**
-
-Congratulations, you have created your Local Content Library.
-
-## Create a Logical Network
-
-1. Once you are logged in to your vCenter Server Click on **Menu**
-2. Select **Global Inventory Lists**
-3. Click on **Logical Networks** in the left pane
-4. Click on the **Add** button
-5. Name your New Logical Network **Student#-LN** (where # is your student number)
-6. Select the **Routed Network** radio button
-7. For CIDR Block enter **192.168.#.0/24** (where # is your student #)
-    If your designated student number is between 1 and 9, your CIDR block should look like this: **192.168.1.0/24** - This example represents student number 1. For students 10 thru 20 it should look like this: **192.168.10.0/24** - This example represents student number 10
-8. Enter **192.168.#.1** for the Default Gateway IP - Example: 192.168.1.1
-9. Make sure DHCP is Enabled by clicking on the **checkbox**
-10. Enter **192.168.#.100-192.168.#.200** for IP Range
-11. Type **corp.local** as your DNS Domain Name
-12. Click **OK** to create your new logical network
-
-## Create Linux Customization Spec
-
-When you clone a virtual machine or deploy a virtual machine from a template, you can customize the guest operating system of the virtual machine to change properties such as the computer name, network settings, and license settings.
-
-Customizing guest operating systems can help prevent conflicts that can result if virtual machines with identical settings are deployed, such as conflicts due to duplicate computer names.
-
-You can specify the customization settings by launching the Guest Customization wizard during the cloning or deployment process. Alternatively, you can create customization specifications, which are customization settings stored in the vCenter Server database. During the cloning or deployment process, you can select a customization specification to apply to the new virtual machine.
-
-Use the Customization Specification Manager to manage customization specifications you create with the Guest Customization wizard.
-
-1. In the vCenter HTML5 client click **Menu**
-2. Click **Policies and Profiles**
-3. Click on "+ New" to add a new Customization Specification
-4. Give your VM Customization Spec a name, such as "Linux Spec"
-5. Enter a description for it (Optional)
-6. Make sure to select **Linux** in the Guest OS, Target guest OS section
-7. Click **Next**
-8. Click on the third option, **Enter a name** button
-9. Enter a name for your linux VMs, such as "linux-vm-"
-10. Click on the **Append a numeric value** checkbox
-11. Enter **corp.local** for the Domain Name
-12. Click the **Next** button
-13. Select **US** for Area
-14. Select **Eastern** for Location
-15. Select **Local time**
-16. Click **Next**
-17. Leave the defaults on the **Network** screen and click **Next**
-18. Under Primary DNS Server enter **10.46.159.10** and leave the Secondary DNS Server and Tertiory DNS Server blank
-19. Type **corp.local** for DNS Search Paths and click **Add**
-20. Click **Next**
-21. Review your entries and click **Finish**
-
-Congratulations! You have successfully created your VM Customization Spec for your Linux VMs. You can also export (Duplicate), Edit, Import, and Export a VM Customization Spec.
-
-## Deploy Virtual Machines
-
-1. On your Content Libraries (Menu -> Content Libraries)**, select **Student#** and select the **Templates** tab.
-2. Right click on the **centos-web** template and select **New VM from This Template**
-3. Name your Virtual Machine **StudentVM#** (where # is your student number)
-4. Expand the location area until you see **Workloads** and highlight it
-5. Ensure you tick **Customize this operating system**
-6. Click **Next**
-7. Select the Customization Specification you created in the previous exercise
-8. Click **Next**
-9. Expand the destination compute resources until you find **Compute-ResourcePool**, select it
-10. Click the **Next** button
-11. Click the **Next** button on the Review details screen
-12. In the **Select storage** step, highlight **WorkloadDatastore**
-13. Click **Next**
-14. In the **Select networks** step, click the drop down box to select the Destination Network (you may need to click Browse to see other networks and select your **Student#-LN** network you created previously
-15. Click **Next**
-16. In the "Ready to complete" section, review and ensure all your selections are correct and click **Finish**
-
-Please add comments below if you would like to give feedback on this lab.
