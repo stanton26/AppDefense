@@ -28,4 +28,3 @@ AWS Console <https://vmcworkshop.signin.aws.amazon.com/console>
 Lab Name | Description
 [Working with your SDDC](https://vmc-field-team.github.io/labs-partner/working-with-sddc-partner-lab/){:target="_blank"} | Learn the basics of running a a VMware on AWS SDDC environment
 [AWS Integration](https://vmc-field-team.github.io/labs-partner/aws-integration-partner-lab/){:target="_blank"} | Learn how to integrate with native AWS services such as RDS and EFS
-[Working with your SDDC NSX-T (Do Not Use)](https://vmc-field-team.github.io/labs-partner/working-with-sddc-partner-lab-do-not-use){:target="_blank"} | Work in progress do not use
