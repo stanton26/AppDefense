@@ -53,7 +53,7 @@ As a first step in setting up our integration between the VMware vSphere platfor
 
 In this step we will ensure that we have the correct firewall rules in place in order for our Photo App VM in VMware Cloud on AWS to talk across to the RDS service in our AWS VPC.
 
-1. Go back your VMware Cloud on AWS portal and click on the **Network & Security** tab in order to request a **Public IP address**
+1. Go back to your VMware Cloud on AWS portal and click on the **Network & Security** tab in order to request a **Public IP address**
 2. Under the **System** section click **Public IPs**
 3. Click on **Request New IP** on the notes section enter "Student#" (Where  # is the student number assigned to you) then hit save. Your public IP rquest should look similar to the screenshot below. 
     ![Rquest New IP](https://s3-us-west-2.amazonaws.com/partner-workshop-screenshots/request-new-ip.jpg)
@@ -61,7 +61,7 @@ In this step we will ensure that we have the correct firewall rules in place in 
     Note: You can request public IP addresses to assign to workload VMs to allow access to these VMs from the internet. VMware Cloud on AWS will provision the IP address from AWS.
 
 4. Take note of your newly acquired Public IP Addres
-5. Next youo will create a **NAT rule** from the newly acquired public IP address you noted in your last step to the internal IP address of the VM you created. Click on  **NAT** under the "Network" section to expand the NAT Rules. 
+5. Next you will create a **NAT rule** from the newly acquired public IP address you noted in your last step to the internal IP address of the VM you created. Click on  **NAT** under the "Network" section to expand the NAT Rules. 
 6. Click **ADD RULE**
 7. Name your NAT rule "Student#" (Where # is the student number assigned to you)
 8. Select your Public IP address
@@ -78,13 +78,13 @@ Now we will create a firewalll rule to allow access from the VPN into our photo 
 17. Name your Firewall Rule "Student# Photo Inbound" 
 18. Select **Any** for **Source**
 19. For **Destination** click **CREATE A NEW GROUP** 
-    1. Name it "Student# Public IP"
-    2. For **Member Type** select IP Address
+    1. Name the group "Student# Public IP"
+    2. For **Member Type** select **IP Address**
     3. Under **Members** type the public IP Address assigned to you. 
     4. Click **SAVE**
     5. Click **SAVE**
 20. For **Services** Select "Any"
-21. Click **Publish** button on the top right of the screen
+21. Click **Publish** button on the top right corner of the screen
 22. You should get a **Firewall rule successfully created** notification.
     Your firewal rule should look similar to the screensho below
     ![Inbound Photo VM]
