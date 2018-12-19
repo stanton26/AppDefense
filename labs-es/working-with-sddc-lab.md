@@ -91,6 +91,8 @@ vCenter ahora tiene acceso para que se pueda conectar de cualquier punto en el i
 
 Por defecto, el Compute NSX Edge Services Gateway también esta configurado para denegar todo el tráfico tanto entrante como saliente. Será necesario crear reglas de firewall para permitir el tráfico de acuerdo a las necesidades.
 
+#### Regla de Firewall AWS Entrante
+
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC106.jpg)
 
 Cree una Regla de Firewall bajo la sección Compute Gateway para el acceso nativo a los servicios de AWS.
@@ -133,41 +135,48 @@ Cree una Regla de Firewall bajo la sección Compute Gateway para el acceso nativ
 
 1\. Haga click en *PUBLISH*
 
-#### Regla de Firewall AWS Entrante
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC10.jpg)
-
-Cree una Regla de Firewall AWS entrante siguiendo las siguientes instrucciones:
-
-4\. Name - **AWS Inbound**
-
-5\. Action - **Allow**
-
-6\. Source - **All connected Amazon VPC**
-
-7\. Destination - **192.168.#.0/24** (Donde # es su número de estudiante)
-
-8\. Service - **ANY**
-
-9\. Haga click en el botón *SAVE*
-
 #### Regla de Firewall AWS Saliente
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC11.jpg)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC114.jpg)
 
-Siga el mismo proceso que en la sección anterior y cree una Regla de Firewall AWS Saliente:
+1\. Haga click en *Compute Gateway*
 
-1\. Name - **AWSOutbound**
+2\. Haga click en *ADD NEW RULE*
 
-2\. Action - **Allow**
+ 3\. Nombre la regla *AWS Outbound*
 
-3\. Source - **192.168.#.0/24** (Donde # es su número de estudiante)
+4\. Haga click en *Set Source*
 
-4\. Destination - **All connected Amazon VPC**
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC115.jpg)
 
-5\. Service - **ANY**
+1\. Seleccione *Any*
 
-6\. Haga click en el botón *SAVE*
+2\. Haga click en *SAVE*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC109.jpg)
+
+1\. Haga click en *Set Destination*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC116.jpg)
+
+1\. Seleccione *Connected VPC Prefixes*
+
+2\. Haga click en *SAVE*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC111.jpg)
+
+1\. Haga click en *Set Service*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC112.jpg)
+
+1\. Seleccione *Any*
+
+2\. Haga click en *SAVE*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC113.jpg)
+
+1\. Haga click en *PUBLISH*
+
 
 ## Ingrese al vCenter de VMware Cloud on AWS
 
