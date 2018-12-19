@@ -37,21 +37,27 @@ Agregar un host adicional a un SDDC existente toma alrededor de 10 minutos para 
 
 ## Configuración de Reglas de Firewall en un SDDC
 
-En VMware Cloud on AWS tenemos dos Edge Gateways los cuales protegen las dos redes de un VMware Cloud on AWS SDDC. La **Management Network** y a **Compute Network**. Cuando iniciamos nuestro ambiente SDDC por primera vez, por defecto todo el trafico de las redes de Management y Compute esta prohibido. En este ejercicio seguiremos los pasos necesarios para crear reglas de firewall para poder administrar el SDDC y no solamente las cargas de trabajo, también podremos permitirles comunicarse con los servicios nativos de AWS.
+En VMware Cloud on AWS tenemos dos Edge Gateways los cuales protegen las dos redes de un VMware Cloud on AWS SDDC. La **Management Gateway** y la **Compute Gateway**. Cuando iniciamos nuestro ambiente SDDC por primera vez, por defecto todo el trafico de las redes de Management y Compute esta prohibido. En este ejercicio seguiremos los pasos necesarios para crear reglas de firewall para poder administrar el SDDC y no solamente las cargas de trabajo, también podremos permitirles comunicarse con los servicios nativos de AWS.
 
 ### Reglas de Firewall para el Management Gateway
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC4.jpg)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC99.jpg)
 
 Por defecto, el Firewall está configurado para denegar todo el tráfico tanto entrante como saliente del Management Gateway. En este ejercicio, se agregará una regla de Firewall para permitir el tráfico de vCenter. Para tener acceso al vCenter Server del SDDC, se debe agregar que lo permita al vCenter Server.
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC5.jpg)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC100.jpg)
 
-1\. Haga click en la pestaña titulada *Network*
+1\. Haga click en la pestaña titulada *Networking & Security*
 
- 2\. Bajo *Management Gateway* haga click en la flecha y expanda *Firewall Rules*
+ 2\. Haga click en *Gateway Firewall*
 
-3\. Haga click en el texto titulado *Add Rule*
+3\. Haga click y seleccione *Management Gateway*
+
+4\. Haga click en el botón *ADD NEW RULE*
+
+5\. Nombre la regla de Firewall *vCenter Inbound*
+
+6\. Haga click en *Set Source*
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC6.jpg)
 
