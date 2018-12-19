@@ -47,40 +47,53 @@ As a first step in setting up our integration between the VMware vSphere platfor
 21. Select **VMs and Templates**
 22. Check to make sure your VM is powered on. If not, right-click on your VM
 23. Select **Power** -> **Power On**
-24. Make sure your VM is assigned an IP addresses (may need to a few minutes for this information to be populated). Make a note of this IP address for a future step.
+24. Make sure your VM is assigned an IP addresses. (may need to a few minutes for this information to be populated). Make a note of this IP address for a future step.
 
 ### Firewall Rules for RDS Integration
 
 In this step we will ensure that we have the correct firewall rules in place in order for our Photo App VM in VMware Cloud on AWS to talk across to the RDS service in our AWS VPC.
 
-1. Go back your VMware Cloud on AWS portal and click on the **Network** tab in order to request a **Public IP address**
-2. Under the **Compute Gateway** click and expand **Public IPs**
-3. Click on **REQUEST PUBLIC IP***
-4. (Optional) Enter Notes for this public IP, such as the name of the VM we are linking this too.
-5. Click on **Request**
-6. Take note of your newly acquired Public IP address
-7. Next you will create a **NAT rule** from the newly acquired Public IP address you noted in your last step to the internal IP address of the VM you created. Click on **NAT** under the "Compute Gateway" section to expand the NAT Rules
-8. Click **ADD NAT RULE**
-9. Give your **NAT rule** a name
-10. Your new Public IP address should be pre-filled for you, if not, select it now
-11. Under **Service** select **Any (All Traffic)**
-12. Type your VM's internal IP address
-13. Click the **SAVE** button
-14. You should get a **NAT rule successfully created** notification
-15. Expand **Firewall Rules** under the Compute Gateway section
-16. Click **ADD RULE**
-17. Give your Firewall Rule a name
-18. Select **All Internet and VPN** for **Source**
-19. Type the Public IP Address you noted under **Destination**
-20. Select **Any (All Traffic)** for **Service**
-21. Click **SAVE** button
-22. You should get a **Firewall rule successfully created** notification
+1. Go back to your VMware Cloud on AWS portal and click on the **Network & Security** tab in order to request a **Public IP address**
+2. Under the **System** section click **Public IPs**
+3. Click on **Request New IP** on the notes section enter "Student#" (Where  # is the student number assigned to you) then hit save. Your public IP rquest should look similar to the screenshot below. 
+    ![Rquest New IP](https://s3-us-west-2.amazonaws.com/partner-workshop-screenshots/request-new-ip.jpg)
+    
+    Note: You can request public IP addresses to assign to workload VMs to allow access to these VMs from the internet. VMware Cloud on AWS will provision the IP address from AWS.
+
+4. Take note of your newly acquired Public IP Addres
+5. Next you will create a **NAT rule** from the newly acquired public IP address you noted in your last step to the internal IP address of the VM you created. Click on  **NAT** under the "Network" section to expand the NAT Rules. 
+6. Click **ADD RULE**
+7. Name your NAT rule "Student#" (Where # is the student number assigned to you)
+8. Select your Public IP address
+9. Under **Service** select **Any (All Traffic)**
+10. Type your VM's internal IP address
+11. Save your rule. 
+    Your NAT rule should look similar to the screenshot below. 
+    ![NAT Rule](https://s3-us-west-2.amazonaws.com/partner-workshop-screenshots/nat.jpg)
+
+Now we will create a firewalll rule to allow access from the VPN into our photo VM.
+
+15. Expand **Gateway Firewall** under the Security section and select **Compute Gateway**
+16. Click **ADD NEW RULE**
+17. Name your Firewall Rule "Student# Photo Inbound" 
+18. Select **Any** for **Source**
+19. For **Destination** click **CREATE A NEW GROUP** 
+    1. Name the group "PhotoAPP#" (Where # is the number assigned to your student number)
+    2. For **Member Type** select **Virtual Machine**
+    3. Select your PhotoVM. 
+    4. Click **SAVE**
+    5. Click **SAVE**
+20. For **Services** Select "Any"
+21. Click **Publish** button on the top right corner of the screen
+22. You should get a **Firewall rule successfully created** notification.
+    Your firewal rule should look similar to the screensho below
+    ![Inbound Photo VM](https://s3-us-west-2.amazonaws.com/partner-workshop-screenshots/photo-inbound.jpg)
 
 ### AWS Relational Database Service (RDS Configuration)
 
 On your browser, open a new tab and go to: <https://vmcworkshop.signin.aws.amazon.com/console>
 
-1. For Account ID or alias ensure "vmcworkshop-partner" is specified
+1. For Account ID or alias ensure **vmcworkshop-partner** is specified
 2. IAM user name - Student# (where # is the number assigned to you)
 3. Password - VMCworkshop1211
 4. Click **Sign In**

@@ -28,4 +28,3 @@ AWS Console <https://vmcworkshop.signin.aws.amazon.com/console>
 Lab Name | Description
 [Working with your SDDC](https://vmc-field-team.github.io/labs-partner/working-with-sddc-partner-lab/){:target="_blank"} | Learn the basics of running a a VMware on AWS SDDC environment
 [AWS Integration](https://vmc-field-team.github.io/labs-partner/aws-integration-partner-lab/){:target="_blank"} | Learn how to integrate with native AWS services such as RDS and EFS
-[VMware on AWS APIs (Optional)](https://vmc-field-team.github.io/labs-partner/api-partner-lab/){:target="_blank"} | Learn how to interact with VMware on AWS through APIs
