@@ -59,17 +59,11 @@ Por defecto, el Firewall está configurado para denegar todo el tráfico tanto 
 
 6\. Haga click en *Set Source*
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC6.jpg)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC101.jpg)
 
-4\. Escriba el nombre de la regla en el campo *Rule Name* 
+1\. Haga click en *Any* para seleccionar 
 
-5\. Seleccione *Any* como el tipo de fuente
-
- 6\. Asegúrese que *vCenter* este seleccionado como destino 
-
-7\. Seleccione *HTTPS (TCP 443)* en el menú desplegable Service
-
- 8\. Haga click en el botón *SAVE*, la regla debe ser igual a la de la imagen siguiente
+2\. Haga click en el botón de *Save*
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC7.jpg)
 
