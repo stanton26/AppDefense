@@ -65,23 +65,73 @@ Por defecto, el Firewall está configurado para denegar todo el tráfico tanto 
 
 2\. Haga click en el botón de *Save*
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC7.jpg)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC102.jpg)
+
+1\. Haga click en *Set Destination*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC103.jpg)
+
+1\. Haga click en *System Defined Groups*
+
+2\. Seleccione *vCenter*
+
+3\. Haga click en el botón de *SAVE*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC104.jpg)
+
+1\. Haga click en el espacio bajo *Services* y escoja *HTTPS (TCP 443)* para permitir el acceso al Servidor de vCenter
+
+2\. Publique la regla haciendo click en el boton *PUBLISH*
+
+vCenter ahora tiene acceso para que se pueda conectar de cualquier punto en el internet.
 
 ### Reglas de Firewall para el Compute Gateway
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC8.jpg)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC105.jpg)
 
 Por defecto, el Compute NSX Edge Services Gateway también esta configurado para denegar todo el tráfico tanto entrante como saliente. Será necesario crear reglas de firewall para permitir el tráfico de acuerdo a las necesidades.
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC9.jpg)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC106.jpg)
 
 Cree una Regla de Firewall bajo la sección Compute Gateway para el acceso nativo a los servicios de AWS.
 
-1\. Bajo la pestaña *Network*, navegue hasta *Compute Gateway*
+1\. Haga click en *Compute Gateway*
 
-2\. Expanda *Firewall Rules*
+2\. Haga click en *ADD NEW RULE*
 
- 3\. Haga click en *ADD RULE*
+ 3\. Nombre la regla *AWS Inbound*
+
+4\. Haga click en *Set Source*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC108.jpg)
+
+1\. Seleccione *Connected VPC Prefixes*
+
+2\. Haga click en *SAVE*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC109.jpg)
+
+1\. Haga click en *Set Destination*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC110.jpg)
+
+1\. Seleccione *Any*
+
+2\. Haga click en *SAVE*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC111.jpg)
+
+1\. Haga click en *Set Service*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC112.jpg)
+
+1\. Seleccione *Any*
+
+2\. Haga click en *SAVE*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC113.jpg)
+
+1\. Haga click en *PUBLISH*
 
 #### Regla de Firewall AWS Entrante
 
