@@ -10,7 +10,7 @@ comments: true
 ---
 # Introduction
 
-Very often, customers want to utilise tools which sit above the vCenter API layer and provide additional value to the consumption or monitoring process. One such tool is VMware vRealize Automation which can be utilised to create a governance and "store front" portal so that users can provision workloads where they wish, based on policies defined by the Cloud Administrator.
+Very often, customers want to utilize tools which sit above the vCenter API layer and provide additional value to the consumption or monitoring process. One such tool is VMware vRealize Automation which can be utilized to create a governance and "store front" portal so that users can provision workloads where they wish, based on policies defined by the Cloud Administrator.
 
 ## What is vRealize Automation (vRA)
 
@@ -60,7 +60,7 @@ vRealize Automation supports VMware Cloud on AWS in delivering a unified hybrid 
 
 7\. Login with your *vmcws#* user name (where # is your student number)
 
-8\. Enter your password - **VMware1!**
+8\. Enter your password for your user *vmcws#* provided at beginning of workshop
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/vra/vRA7.jpg)
 

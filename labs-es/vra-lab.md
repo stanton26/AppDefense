@@ -65,7 +65,7 @@ vRealize Automation soporta VMware Cloud on AWS al entregar una experiencia de a
 
 7\. Ingrese con el usuario *vmcws#* donde # es el número de estudiante
 
-8\. Escriba la contraseña **VMware1!**
+8\. Escriba la contraseña **VivaVMConAWS!**
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/vra/vRA7.jpg)
 

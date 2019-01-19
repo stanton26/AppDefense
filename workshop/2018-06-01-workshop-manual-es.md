@@ -75,4 +75,3 @@ Nombre de Módulos | Descripción
 [VMware Site Recovery Manager](https://vmc-field-team.github.io/labs-es/srm-lab/){:target="_blank"} | Conozca cómo puede utilizar VMware Cloud on AWS para los casos de uso de recobro de desastres
 [VMware Hybrid Cloud Extension](https://vmc-field-team.github.io/labs-es/hcx-lab/){:target="_blank"} | Aprenda como la tecnología de VMware Hybrid Cloud Extension (HCX) puede ayudar con migraciones en grandes escalas on migraciones en vivo (vMotion) hacia la plataforma de VMware Cloud on AWS
 [VMware vRealize Automation](https://vmc-field-team.github.io/labs-es/vra-lab/){:target="_blank"} | Utilize la capacidad de integrar herramientas de VMware vRealize Suite con VMware Cloud on AWS
-[VMware Horizon 7](https://vmc-field-team.github.io/labs-es/horizon-lab/){:target="_blank"} | VMware Horizon® 7 para VMware Cloud ™ on AWS ofrece una nube híbrida integrada a la perfección para escritorios virtuales y aplicaciones.
