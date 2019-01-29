@@ -11,6 +11,8 @@ author_profile: false
 
 The VMware Cloud on AWS workshop is your chance to test drive this unique solution in the market place in a classroom session with VMware Cloud on AWS experts and work through hands on lab exercises to understand and gain experience with the solution to understand how it can be used in your business.
 
+Hi Chris was here. really
+
 The class is a one-day workshop in which we will set up a VMware SDDC environment in AWS, work through common administration activities of the platform and explore integrations with native AWS services and vRealize Suite solutions including vRealize Automation and vRealize Operations.
 You will work through leveraging VMware Cloud on AWS as a target for DRaaS utilizing VMware Site Recovery Manager and VM Replication and will also have the opportunity to test drive Horizon 7 in the VMware Cloud on AWS platform.
 
