@@ -19,6 +19,8 @@ In this lab we are going to start with looking at the basic tasks which you will
 
 After you login, you should see a single SDDC in the user interface following the naming format Student-Workshop-#.#. An SDDC is a fully deployed environment including vSphere, NSX, vSAN and vCenter Server. Deployment of a fully configured SDDC takes about two hours so for the purposes of this lab, we have already deployed it for you. This SDDC is in the same state it would be if you have deployed it. Let's take a look at the SDDC properties.
 
+1\. First click on View Details to open the SDDC properties.
+
 ## Configuring SDDC Firewall Rules
 
 In VMware Cloud on AWS we have two Edge Gateways which are protecting the two main networks in the VMware Cloud on AWS SDDC. The **Management Network** and the **Compute Network**. When we first initiate your SDDC environment, the default is for all traffic to both the Management and Compute networks to be denied. In this exercise we will go through the steps required to open up firewall rules so that we can manage the SDDC and not only access compute workloads but allow those compute workloads to communicate with native AWS services.
