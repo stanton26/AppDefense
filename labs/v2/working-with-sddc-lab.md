@@ -37,7 +37,7 @@ You will start with the Summary of the SDDC. There are a number of other tabs av
 From the previous article, you should see the Network & Security information for the SDDC.
 VMware Cloud on AWS allows you to quickly and easily create new logical network segments on
 demand. Let's create a new network segment in the SDDC.
-1\. Click the **Networking & Security** tab, then click on **Segments** to show all of the existing network segments.
+* Click the **Networking & Security** tab, then click on **Segments** to show all of the existing network segments.
 2\. Click on **Add Segments** to create a new network segment.
 3\. Enter **Demo-Net** for the Name of the new network segment.
 4\. For the Gateway/Prefifix Length enter 10.10.xx.1/24 (xx depects your student number). This represents the default gateway
@@ -49,7 +49,12 @@ of the network and the prefix length of the network. For more details on IP addr
 **Note: Make sure you leave the default of Routed for Type and do not enter anything for the DNS suffix.**
 
 <aside class="notice">
-You must replace `meowmeowmeow` with your personal API key.
+Note: CIDR notation is a compact representation of an IP address and its associated routing prefix. The notation is constructed from an IP address, a slash('/') character, and a decimal number. The number is the count of leading bits in the routing mask, traditionally called the network mask.  The IP address is expressed according to the standards of IPv4 or IPv6.
+
+The address may denote a single, distinct interface address or the beginning address of an entire network. The maximum size of the network is given by the number of addresses that are possible with the remaining, least-significant bits below the prefix.  The aggregation of these bits is often called the host identifier.
+For example:
+• 192.168.100.14/24 represents the IPV4 address 192.168.100.14 and its associated routing prefix 192.168.100.0, or equivalently, its subnet mask 255.255.255.0, which has 24 leading 1-bits.
+• The IPV4 block 192.168.100.0/22 represents the 1024 IPV4 addresses from 192.168.100.0 to 192.168.103.255.
 </aside>
 
 ## Configuring SDDC Firewall Rules
