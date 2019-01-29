@@ -120,7 +120,101 @@ Continue configuring the vCenter Inbound Rule:
 
 vCenter should now be accessible from anywhere in the internet.  in the next section, we will access vCenter HTML5 client to being configuring virtual machines.
 
+## Log into VMware Cloud on AWS vCenter
 
+![SDDC010](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc010.jpg)
+
+The settings to connect to the vCenter server associated with the SDDC is available on the setting tab for the SDDC. Let's connect to the vCenter server and login.
+
+1. Click on the **Settings** tab for the SDDC we configured in the last lesson.
+2. Click the **arrow** next to Default vCenter User Account to expose the login details. In this lab we will use the default cloudadmin@vmc.local user.
+3. Copy the **password** by clicking the two squares next to the password. This will copy it to the consoles clipboard.
+4. Click the **arrow** next to **vSphere Client (HTML5)** to expose the URL for vCenter.
+5. Click the **URL** link to **open** the vSphere Client in another tab.
+
+**NOTE: If you experience any login issues below, you can click the two boxes next to the URL below to paste the URL into an incognito window. This should not be needed normally.**
+
+### Login to the vSphere Web Client
+
+To login to the vSphere Web Client:
+
+![SDDC011](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc011.jpg)
+
+1. In the User name field enter **cloudadmin@vmc.local.**
+2. Right-click in the **Password** field and paste the password copied in the previous step.
+3. Click **Login**.
+
+### vSphere Web Client
+
+![SDDC012](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc012.jpg)
+
+You are now logged in to your VMware Cloud AWS vCenter Server as cloudadmin@vmc.local user.
+
+## Create Content Library
+
+Content libraries are container objects for VM templates, vApp templates, and other types of files like ISO images.
+
+You can create a content library in the vSphere Web Client, and populate it with templates, which you can use to deploy virtual machines or vApps in your VMware Cloud on AWS environment or if you already have a Content Library in your on-premises data center, you can use the Content Library to import content into your SDDC.
+
+You can create two types of libraries: local or subscribed library.
+
+**Local Libraries**
+
+You use a local library to store items in a single vCenter Server instance. You can publish the local library so that users from other vCenter Server systems can subscribe to it. When you publish a content library externally, you can configure a password for authentication.
+
+VM templates and vApps templates are stored as OVF file formats in the content library. You can also upload other file types, such as ISO images, text files, and so on, in a content library.
+
+**Subscribed Libraries**
+
+You subscribe to a published library by creating a subscribed library. You can create the subscribed library in the same vCenter Server instance where the published library is, or in a different vCenter Server system. In the Create Library wizard you have the option to download all the contents of the published library immediately after the subscribed library is created, or to download only metadata for the items from the published library and later to download the full content of only the items you intend to use.
+
+To ensure the contents of a subscribed library are up-to-date, the subscribed library automatically synchronizes to the source published library on regular intervals. You can also manually synchronize subscribed libraries.
+
+You can use the option to download content from the source published library immediately or only when needed to manage your storage space.
+
+Synchronization of a subscribed library that is set with the option to download all the contents of the published library immediately, synchronizes both the item metadata and the item contents. During the synchronisation the library items that are new for the subscribed library are fully downloaded to the storage location of the subscribed library.
+
+Synchronization of a subscribed library that is set with the option to download contents only when needed synchronizes only the metadata for the library items from the published library, and does not download the contents of the items. This saves storage space. If you need to use a library item you need to synchronize that item. After you are done using the item, you can delete the item contents to free space on the storage. For subscribed libraries that are set with the option to download contents only when needed, synchronizing the subscribed library downloads only the metadata of all the items in the source published library, while synchronizing a library item downloads the full content of that item to your storage.
+
+If you use a subscribed library, you can only utilize the content, but cannot contribute with content. Only the administrator of the published library can manage the templates and files.
+
+### Access Content Libraries in the vSphere Client
+
+![SDDC013](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc013.jpg)
+
+1. Click on **Menu**
+2. Click on **Content Libraries**
+
+### Subscribe to an existing Content Library
+
+![SDDC014](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc014.jpg)
+
+1. In your Content Library window, click the **+ (plus)** sign to add a new Content Library.
+
+![SDDC015](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc015.jpg)
+
+1. Enter **VMC Content Library** for the Name of the library.
+2. Click the **Next** button.
+
+![SDDC016](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc016.jpg)
+
+1. Select the radio button next to **Subscribed content library.**
+2. Under **Subscription URL** enter the following: https://vcenter.sddc-54-68-196-7.vmwarevmc.com/cls/vcsp/lib/29b938a2-30a2-4f61-90fa-76594db53caf/lib.json
+3. Leave the checkbox **unchecked** next to **Enabled Authentication**.
+4. Make sure Download content is set to **immediately**.
+5. Click **Next** to continue.
+
+![SDDC017](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc017.jpg)
+
+1. Click on **WorkloadDatastore** for content library storage.
+2. Click the **Next** button.
+
+![SDDC018](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc018.jpg)
+
+1. Click the **Finish** button.
+
+**Note:  Depending the size and number of templates it can take a while to sync the content.  This content library should only take a few minutes to synchronize.**
+ 
 
 ### Compute Gateway Firewall Rules
 
