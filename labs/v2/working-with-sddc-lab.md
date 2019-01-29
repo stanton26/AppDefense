@@ -27,7 +27,7 @@ You will start with the Summary of the SDDC. There are a number of other tabs av
 1\. Support - You can contact Support with your SDDC ID, Org ID, vCenter Private and Public IPs and the date of your SDDC Deployment.
 2\. Settings: Gives you access to your vSphere Client (HTML5), vCenter Server API, PowerCLI Connect, vCenter Server and reviews your Authentication information.
 3\. Troubleshooting: Allows you to run network connectivity tests to ensure all necessary access is available to perform select use cases.
-4\. Add Ons: Here you will find Add On services for your VMware Cloud on AWS environment like Hybrid Cloud Extension and VMware Site Recovery
+4\. Add Ons: Here you will find Add On services for your VMware Cloud on AWS environment like Hybrid Cloud Extension and VMware Site Recovery.
 5\. Networking & Security: Provides a full diagram of the Management and Compute Gateways.  This is where you can configuration locgical networks, VPN's and firewall rules. We will cover this in more detail later. Click on Networking & Security to proceed to the next article to learn more about VMware Cloud on AWS Network and Security Configuration.
 
 ## Create a Logical Network
@@ -37,7 +37,8 @@ You will start with the Summary of the SDDC. There are a number of other tabs av
 From the previous article, you should see the Network & Security information for the SDDC.
 VMware Cloud on AWS allows you to quickly and easily create new logical network segments on
 demand. Let's create a new network segment in the SDDC.
-* Click the **Networking & Security** tab, then click on **Segments** to show all of the existing network segments.
+
+1\. Click the **Networking & Security** tab, then click on **Segments** to show all of the existing network segments.
 2\. Click on **Add Segments** to create a new network segment.
 3\. Enter **Demo-Net** for the Name of the new network segment.
 4\. For the Gateway/Prefifix Length enter 10.10.xx.1/24 (xx depects your student number). This represents the default gateway
@@ -53,8 +54,8 @@ Note: CIDR notation is a compact representation of an IP address and its associa
 
 The address may denote a single, distinct interface address or the beginning address of an entire network. The maximum size of the network is given by the number of addresses that are possible with the remaining, least-significant bits below the prefix.  The aggregation of these bits is often called the host identifier.
 For example:
-• 192.168.100.14/24 represents the IPV4 address 192.168.100.14 and its associated routing prefix 192.168.100.0, or equivalently, its subnet mask 255.255.255.0, which has 24 leading 1-bits.
-• The IPV4 block 192.168.100.0/22 represents the 1024 IPV4 addresses from 192.168.100.0 to 192.168.103.255.
+* 192.168.100.14/24 represents the IPV4 address 192.168.100.14 and its associated routing prefix 192.168.100.0, or equivalently, its subnet mask 255.255.255.0, which has 24 leading 1-bits.
+* The IPV4 block 192.168.100.0/22 represents the 1024 IPV4 addresses from 192.168.100.0 to 192.168.103.255.
 </aside>
 
 ## Configuring SDDC Firewall Rules
