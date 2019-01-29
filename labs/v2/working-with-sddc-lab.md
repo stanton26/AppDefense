@@ -21,6 +21,37 @@ After you login, you should see a single SDDC in the user interface following th
 
 1\. First click on View Details to open the SDDC properties.
 
+![SDDC02](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc02.jpg)
+
+You will start with the Summary of the SDDC. There are a number of other tabs available as follows:
+1\. Support - You can contact Support with your SDDC ID, Org ID, vCenter Private and Public IPs and the date of your SDDC Deployment.
+2\. Settings: Gives you access to your vSphere Client (HTML5), vCenter Server API, PowerCLI Connect, vCenter Server and reviews your Authentication information.
+3\. Troubleshooting: Allows you to run network connectivity tests to ensure all necessary access is available to perform select use cases.
+4\. Add Ons: Here you will find Add On services for your VMware Cloud on AWS environment like Hybrid Cloud Extension and VMware Site Recovery
+5\. Networking & Security: Provides a full diagram of the Management and Compute Gateways.  This is where you can configuration locgical networks, VPN's and firewall rules. We will cover this in more detail later. Click on Networking & Security to proceed to the next article to learn more about VMware Cloud on AWS Network and Security Configuration.
+
+## Create a Logical Network
+
+![SDDC03](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc03.jpg)
+
+From the previous article, you should see the Network & Security information for the SDDC.
+VMware Cloud on AWS allows you to quickly and easily create new logical network segments on
+demand. Let's create a new network segment in the SDDC.
+1\. Click the **Networking & Security** tab, then click on **Segments** to show all of the existing network segments.
+2\. Click on **Add Segments** to create a new network segment.
+3\. Enter **Demo-Net** for the Name of the new network segment.
+4\. For the Gateway/Prefifix Length enter 10.10.xx.1/24 (xx depects your student number). This represents the default gateway
+of the network and the prefix length of the network. For more details on IP addressing see below.
+5\. For **DHCP**, click the down arrow and select Enabled to enable DHCP on the network.
+6\. Enter **10.10.xx.10-10.10.xx.200** for the **DHCP IP Range**. This is the range of IP addresses the DHCP server will grant to workloads attached to the network.
+7\. Click **Save** to save the logical network.
+
+**Note: Make sure you leave the default of Routed for Type and do not enter anything for the DNS suffix.**
+
+<aside class="notice">
+You must replace `meowmeowmeow` with your personal API key.
+</aside>
+
 ## Configuring SDDC Firewall Rules
 
 In VMware Cloud on AWS we have two Edge Gateways which are protecting the two main networks in the VMware Cloud on AWS SDDC. The **Management Network** and the **Compute Network**. When we first initiate your SDDC environment, the default is for all traffic to both the Management and Compute networks to be denied. In this exercise we will go through the steps required to open up firewall rules so that we can manage the SDDC and not only access compute workloads but allow those compute workloads to communicate with native AWS services.
