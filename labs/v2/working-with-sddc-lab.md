@@ -13,32 +13,11 @@ comments: true
 
 In this lab we are going to start with looking at the basic tasks which you will perform in the VMware Cloud on AWS user interface when you are administering the platform.
 
-## Add a Host to your SDDC
+## Viewing your SDDC
 
-We will start by adding a host to the VMware Cloud on AWS platform. For the purposes of this lab, we have already pre-created the VMware Cloud on AWS SDDC environments for you, in order to save time.
+![SDDC01](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc01.jpg)
 
-In your chrome browser you will see a bookmark on the bookmarks bar named **VMware Cloud Services**. Please click this bookmark.
-
-You will be directed to a login page for Cloud Services from VMware. You will need to login with the email address which you signed up to the VMware Cloud on AWS Experience day with. You will also need to ensure that this email address is associated with a "MyVMware Account" in order for the login to VMware Cloud Services to work correctly.
-
-You will now be logged into your organization hosting your VMware Cloud on AWS SDDC cluster.
-
-![SDDC1](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC1.jpg)
-
-1. On your *Student Workshop #* SDDC, click on the **View Details** button.
-
-    ![SDDC2](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC2.jpg)
-2. Click on the **Actions** button in the upper right hand corner of the UI
-3. Click on **Add Hosts**
-
-    ![SDDC3](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC3.jpg)
-    ![SDDC3](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC3.jpg)
-4. In this student environment, we have restricted the platform to only allow the addition of one host. If this were a customer environment there would not be this restriction
-5. Click the **Add Hosts** button
-
-Your SDDC environment will now go through the process of adding an additional host to the SDDC environment. The process can take up to 10 minutes to complete. In the background automated tasks are provisioning an additional host, adding the host to the SDDC cluster and extending the VSAN cluster to utilize the storage presented by this additional host. All of this is done without human interaction in roughly 10 minutes. You may choose to wait for this action to process or move onto the next exercise and check back later to see your additional host.
-
-Congratulations! You have completed this step. Please move onto configuring your SDDC Firewall rules below.
+After you login, you should see a single SDDC in the user interface following the naming format Student-Workshop-#.#. An SDDC is a fully deployed environment including vSphere, NSX, vSAN and vCenter Server. Deployment of a fully configured SDDC takes about two hours so for the purposes of this lab, we have already deployed it for you. This SDDC is in the same state it would be if you have deployed it. Let's take a look at the SDDC properties.
 
 ## Configuring SDDC Firewall Rules
 
