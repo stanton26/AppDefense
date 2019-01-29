@@ -73,11 +73,45 @@ By default, all inbound firewall rules are set to Deny in VMware Cloud on AWS. I
 
 **Note: In most enterprise environments, you would create VPN or Direct Connect VIF to allow limited access fifirewall rules to vCenter. In this environment, we will open it to any IP address on the internet which is not recommended.**
 
-1. Click on Gateway Firewall on the lefthand side of the screen.
-2. If it is not already selected, click on Management Gateway to create a firewall rules that allow access to management components in the SDDC.
-3. Click Add New Rule to add a new rule to the edge gateway.
-4. For the Name enter vCenter Inbound Rule.
-5. Click Set Source to define the source for the firewall rule.
+1. Click on **Gateway Firewall** on the lefthand side of the screen.
+2. If it is not already selected, click on **Management Gateway** to create a firewall rules that allow access to management components in the SDDC.
+3. Click **Add New Rule** to add a new rule to the edge gateway.
+4. For the **Name** enter **vCenter Inbound Rule**.
+5. Click **Set Source** to define the source for the firewall rule.
+
+### Select the Firewall Rule Source
+
+![SDDC06](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc06.jpg)
+
+1. Click the **Radio Button next** to **Any**.
+2. Click **Save** to save the source information in the rule.
+
+### Configure Firewall Rule for vCenter Access (Continued)
+
+![SDDC07](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc07.jpg)
+
+1. Click **Set Destination** to launch a new window to set the destination for the rule.
+
+### Select the Firewall Rule Destination
+
+![SDDC08](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc08.jpg)
+
+1. Click the **Radio Button** next to **System Defined Groups**.
+2. Select the **Checkbox** next to **vCenter**.
+3. Click **Save** to save the destination information in the rule.
+
+### Configure Firewall rule for vCenter Access (Contined)
+
+![SDDC09](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc09.jpg)
+
+Continue configuring the vCenter Inbound Rule:
+
+1. Click box below **Services** and select **HTTPS (TCP 443)** to allow SSL access to the vCenter server.
+2. Publish the rules by clicking **Publish** button to activate the firewall rule.
+
+vCenter should now be accessible from anywhere in the internet.  in the next section, we will access vCenter HTML5 client to being configuring virtual machines.
+
+
 
 ### Compute Gateway Firewall Rules
 
