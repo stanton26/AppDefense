@@ -49,14 +49,13 @@ of the network and the prefix length of the network. For more details on IP addr
 
 **Note: Make sure you leave the default of Routed for Type and do not enter anything for the DNS suffix.**
 
-<aside class="notice">
 Note: CIDR notation is a compact representation of an IP address and its associated routing prefix. The notation is constructed from an IP address, a slash('/') character, and a decimal number. The number is the count of leading bits in the routing mask, traditionally called the network mask.  The IP address is expressed according to the standards of IPv4 or IPv6.
 
 The address may denote a single, distinct interface address or the beginning address of an entire network. The maximum size of the network is given by the number of addresses that are possible with the remaining, least-significant bits below the prefix.  The aggregation of these bits is often called the host identifier.
 For example:
 * 192.168.100.14/24 represents the IPV4 address 192.168.100.14 and its associated routing prefix 192.168.100.0, or equivalently, its subnet mask 255.255.255.0, which has 24 leading 1-bits.
 * The IPV4 block 192.168.100.0/22 represents the 1024 IPV4 addresses from 192.168.100.0 to 192.168.103.255.
-</aside>
+
 
 ## Verify Network Segment Configuration
 
@@ -71,7 +70,7 @@ For example:
 
 By default, all inbound firewall rules are set to Deny in VMware Cloud on AWS. In order to access vCenter server, we will need to configure a firewall rule allowing inbound access.
 
-**Note: In most enterprise environments, you would create VPN or Direct Connect VIF to allow limited access fifirewall rules to vCenter. In this environment, we will open it to any IP address on the internet which is not recommended.**
+**Note: In most enterprise environments, you would create VPN or Direct Connect VIF to allow limited access firewall rules to vCenter. In this environment, we will open it to any IP address on the internet which is not recommended.**
 
 1. Click on **Gateway Firewall** on the lefthand side of the screen.
 2. If it is not already selected, click on **Management Gateway** to create a firewall rules that allow access to management components in the SDDC.
