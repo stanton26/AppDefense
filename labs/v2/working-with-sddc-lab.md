@@ -215,7 +215,7 @@ If you use a subscribed library, you can only utilize the content, but cannot co
 
 **Note:  Depending the size and number of templates it can take a while to sync the content.  This content library should only take a few minutes to synchronize.**
 
- ## Create Linux Customization Specification
+## Create Linux Customization Specification
 
 When you clone a virtual machine or deploy a virtual machine from a template, you can customize the guest operating system of the virtual machine to change properties such as the computer name, network settings, and license settings.
 
