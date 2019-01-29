@@ -15,13 +15,13 @@ In this lab we are going to start with looking at the basic tasks which you will
 
 ## Viewing your SDDC
 
-![SDDC01](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc01.jpg)
+![SDDC-Network-01](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc01.jpg)
 
 After you login, you should see a single SDDC in the user interface following the naming format Student-Workshop-#.#. An SDDC is a fully deployed environment including vSphere, NSX, vSAN and vCenter Server. Deployment of a fully configured SDDC takes about two hours so for the purposes of this lab, we have already deployed it for you. This SDDC is in the same state it would be if you have deployed it. Let's take a look at the SDDC properties.
 
 1. First click on View Details to open the SDDC properties.
 
-![SDDC02](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc02.jpg)
+![SDDC-Network-02](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc02.jpg)
 
 You will start with the Summary of the SDDC. There are a number of other tabs available as follows:
 1. Support - You can contact Support with your SDDC ID, Org ID, vCenter Private and Public IPs and the date of your SDDC Deployment.
@@ -32,7 +32,7 @@ You will start with the Summary of the SDDC. There are a number of other tabs av
 
 ## Create a Logical Network
 
-![SDDC03](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc03.jpg)
+![SDDC-Network-03](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc03.jpg)
 
 From the previous article, you should see the Network & Security information for the SDDC.
 VMware Cloud on AWS allows you to quickly and easily create new logical network segments on
@@ -69,14 +69,14 @@ For example:
 
 ## Verify Network Segment Configuration
 
-![SDDC04](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc04.jpg)
+![SDDC-Network-04](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc04.jpg)
 
 1. Verify the network segment was added correctly.  Your information should match the highlighted area above.
 
 
 ## Configure Firewall Rule for vCenter Access
 
-![SDDC05](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc05.jpg)
+![SDDC-Network-05](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc05.jpg)
 
 By default, all inbound firewall rules are set to Deny in VMware Cloud on AWS. In order to access vCenter server, we will need to configure a firewall rule allowing inbound access.
 
@@ -90,20 +90,20 @@ By default, all inbound firewall rules are set to Deny in VMware Cloud on AWS. I
 
 ### Select the Firewall Rule Source
 
-![SDDC06](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc06.jpg)
+![SDDC-Network-06](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc06.jpg)
 
 1. Click the **Radio Button next** to **Any**.
 2. Click **Save** to save the source information in the rule.
 
 ### Configure Firewall Rule for vCenter Access (Continued)
 
-![SDDC07](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc07.jpg)
+![SDDC-Network-07](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc07.jpg)
 
 1. Click **Set Destination** to launch a new window to set the destination for the rule.
 
 ### Select the Firewall Rule Destination
 
-![SDDC08](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc08.jpg)
+![SDDC-Network-08](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc08.jpg)
 
 1. Click the **Radio Button** next to **System Defined Groups**.
 2. Select the **Checkbox** next to **vCenter**.
@@ -111,7 +111,7 @@ By default, all inbound firewall rules are set to Deny in VMware Cloud on AWS. I
 
 ### Configure Firewall rule for vCenter Access (Contined)
 
-![SDDC09](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc09.jpg)
+![SDDC-Network-09](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc09.jpg)
 
 Continue configuring the vCenter Inbound Rule:
 
@@ -122,7 +122,7 @@ vCenter should now be accessible from anywhere in the internet.  in the next sec
 
 ## Log into VMware Cloud on AWS vCenter
 
-![SDDC010](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc010.jpg)
+![SDDC-vcenter-010](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc010.jpg)
 
 The settings to connect to the vCenter server associated with the SDDC is available on the setting tab for the SDDC. Let's connect to the vCenter server and login.
 
@@ -138,7 +138,7 @@ The settings to connect to the vCenter server associated with the SDDC is availa
 
 To login to the vSphere Web Client:
 
-![SDDC011](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc011.jpg)
+![SDDC-vcenter-011](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc011.jpg)
 
 1. In the User name field enter **cloudadmin@vmc.local.**
 2. Right-click in the **Password** field and paste the password copied in the previous step.
@@ -214,7 +214,83 @@ If you use a subscribed library, you can only utilize the content, but cannot co
 1. Click the **Finish** button.
 
 **Note:  Depending the size and number of templates it can take a while to sync the content.  This content library should only take a few minutes to synchronize.**
- 
+
+ ## Create Linux Customization Specification
+
+When you clone a virtual machine or deploy a virtual machine from a template, you can customize the guest operating system of the virtual machine to change properties such as the computer name, network settings, and license settings.
+
+Customizing guest operating systems can help prevent conflicts that can result if virtual machines with identical settings are deployed, such as conflicts due to duplicate computer names.
+
+You can specify the customization settings by launching the Guest Customization wizard during the cloning or deployment process. Alternatively, you can create customization specifications, which are customization settings stored in the vCenter Server database. During the cloning or deployment process, you can select a customization specification to apply to the new virtual machine.
+
+Use the Customization Specification Manager to manage customization specifications you create with the Guest Customization wizard.
+
+### Navigate to Customization Specifications
+
+![SDDC019](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc019.jpg)
+
+1. Click **Menu**.
+2. click on **Policies and Profiles**.
+
+### Add a new VM Customization Specification
+
+![SDDC020](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc020.jpg)
+
+1. Click on **+ New** to add a new Linux Customization Specification.
+
+### Define Customization Specification Details
+
+![SDDC021](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc021.jpg)
+
+1. Enter a **Name** for the Linux Customization Specification (**LinuxSpec** in this example).
+2. Optionally enter a **Description**.
+3. Select the radio button for **Linux** next to **Target guest OS**.
+4. Click the **Next** button to continue.
+
+### Define Specification Naming Standard
+
+![SDDC022](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc022.jpg)
+
+1. Click the **radio button** next to **Use the virtual machine name**.
+2. For **Domain name** enter **corp.local**.
+3. Click the **Next** button to continue.
+
+### Select Time Zone
+
+![SDDC023](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc023.jpg)
+
+1. Select the appropriate **Area** by clicking on the arrow next to the dropdown field.
+2. Select the appropriate **Location**.
+3. Click the **Next** button to continue.
+
+### Select Network Settings
+
+![SDDC024](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc024.jpg)
+
+1. Ensure the radio button next to **Use standard network settings for the guest operating system. including enabling DHCP in all network interfaces** is selected.
+2. Click **Next** to continue.
+
+### Enter DNS Settings
+
+![SDDC025](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc025.jpg)
+
+1. Enter **8.8.8.8** for the Primary DNS server.
+2. Enter **8.8.4.4** for the Secondary DNS server.
+3. For the DNS Search paths enter **corp.local**.
+4. Click the **Add** button to add the corp.local domain to the DNS search path.
+5. Click **Next** to continue.
+
+### Finish Creating the Customization Spec
+
+![SDDC026](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc026.jpg)
+
+1. Review your entries and click on the **Finish** button.
+
+### Customization Spec Created
+
+![SDDC027](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc027.jpg)
+
+Congratulations!  You have successfully created your VM Customization Spec for your Linux VM's.  You can also Export (Duplicate), Edit, Import, and Export a VM Customization Spec.
 
 ### Compute Gateway Firewall Rules
 
