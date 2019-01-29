@@ -58,30 +58,26 @@ For example:
 * The IPV4 block 192.168.100.0/22 represents the 1024 IPV4 addresses from 192.168.100.0 to 192.168.103.255.
 </aside>
 
-## Configuring SDDC Firewall Rules
+## Verify Network Segment Configuration
 
-In VMware Cloud on AWS we have two Edge Gateways which are protecting the two main networks in the VMware Cloud on AWS SDDC. The **Management Network** and the **Compute Network**. When we first initiate your SDDC environment, the default is for all traffic to both the Management and Compute networks to be denied. In this exercise we will go through the steps required to open up firewall rules so that we can manage the SDDC and not only access compute workloads but allow those compute workloads to communicate with native AWS services.
+![SDDC04](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc04.jpg)
 
-### Management Gateway Firewall Rules
+1. Verify the network segment was added correctly.  Your information should match the highlighted area above.
 
-![SDDC4](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC4.jpg)
 
-By default, the firewall for the Management Gateway is set to deny all inbound and outbound traffic. In this exercise, you will add a firewall rule to allow vCenter access. This will allow you to access the vCenter Server in your SDDC from the internet.
+## Configure Firewall Rule for vCenter Access
 
-![SDDC5](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC5.jpg)
+![SDDC05](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc05.jpg)
 
-1. Click **Network** tab
-2. Under Management Gateway expand **Firewall Rules**
-3. Click **Add Rule**
+By default, all inbound firewall rules are set to Deny in VMware Cloud on AWS. In order to access vCenter server, we will need to configure a firewall rule allowing inbound access.
 
-    ![SDDC6](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC6.jpg)
-4. Enter a name for your rule under *Rule Name*, For Example, "vCenter-Allow-Any"
-5. Type *Any* for Source
-6. Make sure *vCenter* is selected as Destination
-7. Select *HTTPS (TCP 443)* from the drop down box for Service
-8. Click the *SAVE* button, your rule should look like the below image
+**Note: In most enterprise environments, you would create VPN or Direct Connect VIF to allow limited access fifirewall rules to vCenter. In this environment, we will open it to any IP address on the internet which is not recommended.**
 
-![SDDC7](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC7.jpg)
+1. Click on Gateway Firewall on the lefthand side of the screen.
+2. If it is not already selected, click on Management Gateway to create a firewall rules that allow access to management components in the SDDC.
+3. Click Add New Rule to add a new rule to the edge gateway.
+4. For the Name enter vCenter Inbound Rule.
+5. Click Set Source to define the source for the firewall rule.
 
 ### Compute Gateway Firewall Rules
 
