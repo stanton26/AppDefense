@@ -49,8 +49,9 @@ of the network and the prefix length of the network. For more details on IP addr
 
 **Note: Make sure you leave the default of Routed for Type and do not enter anything for the DNS suffix.**
 
+<aside class="success">
 Note: CIDR notation is a compact representation of an IP address and its associated routing prefix. The notation is constructed from an IP address, a slash('/') character, and a decimal number. The number is the count of leading bits in the routing mask, traditionally called the network mask.  The IP address is expressed according to the standards of IPv4 or IPv6.
-
+</aside>
 The address may denote a single, distinct interface address or the beginning address of an entire network. The maximum size of the network is given by the number of addresses that are possible with the remaining, least-significant bits below the prefix.  The aggregation of these bits is often called the host identifier.
 For example:
 * 192.168.100.14/24 represents the IPV4 address 192.168.100.14 and its associated routing prefix 192.168.100.0, or equivalently, its subnet mask 255.255.255.0, which has 24 leading 1-bits.
