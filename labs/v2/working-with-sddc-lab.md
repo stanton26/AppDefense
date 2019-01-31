@@ -404,7 +404,7 @@ Before we can clone the web server, we will first need to power the VM on so the
 
 <aside class="notice">
 <font color="dodgerblue">
-<img src="https://s3-us-west-2.amazonaws.com/vmc-workshops-images/info.jpeg" width="25" height="25"> If the webserver doesn't connect to the network and does not receive and IP address from DHCP, ensure the NIC is connected by right-clicking on Webserver01 and then Edit Settings and make sure the checkbox next to Connected is selected.  You may need to repeat this step for the cloned VM webserver02.
+<img src="https://s3-us-west-2.amazonaws.com/vmc-workshops-images/info.jpeg" width="25" height="25"> If the webserver doesn't connect to the network and does not receive and IP address from DHCP, ensure the NIC is connected by right-clicking on <b>webserver01</b> and then <b>Edit Settings</b> and make sure the checkbox next to Connected is selected.  You may need to repeat this step for the cloned VM webserver02.
 </font>
 </aside>
 
