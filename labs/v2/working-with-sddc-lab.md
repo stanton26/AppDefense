@@ -350,6 +350,65 @@ Review the details of the template to be deployed.  There may be a security warn
 
 1. Click **Next** to continue.
 
+### Select Storage
+
+![SDDC-deploy-vm-034](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc034.jpg)
+
+Each VMware Cloud on AWS SDDC will include two datastores in order to separate management and customer workloads.  All customer workloads should be placed in the datastore named WorkloadDatastore.
+
+1. Click **workloadDatastore** to select the datstore where the virtual machine will be provisioned.
+2. Click **Next** to continue.
+
+### Select the Network for the Virtual Machine
+
+![SDDC-deploy-vm-035](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc035.jpg)
+
+We will use the logical network created in a previous exercise for these virtual machines.
+
+1. Click the **arrow** below Destination Network to select the network for the virtual machine.
+2. Click **Demo-Net** to select the network previously created.
+3. Click **Next** to continue.
+
+### Complete the Virtual Machine Deployment
+
+![SDDC-deploy-vm-036](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc036.jpg)
+
+1. Review the information for accuracy and click **Finish** to deploy the virtual machine
+
+It should take a couple of minutes for the virtual machine to deploy.  Continue to the next exercise to clone this virtual machine in order to create a second webserver.
+
+##  Clone a Virtual Machine
+
+In this exercise, you will clone the virtual machine created in the previous exercise in order to create a second webserver.
+
+### Navigate to VMs and Templates
+
+![SDDC-clone-vm-037](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc037.jpg)
+
+1. Validate the virtual machine deployment completed in the previous exercise by looking for the **Deploy OVF Template** task and verifying it is **Complete**.
+2. If complete, click on **Menu**.
+3. Click **VMs and Templates** to navigate to the VMs and Templates view.
+
+## Select and Power On Webserver01
+
+![SDDC-clone-vm-038](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc038.jpg)
+
+Before we can clone the web server, we will first need to power the VM on so the cutomization specification can execute:
+
+1. Click the **arrow** next to **SDDC-Datacenter** to expose the sub-folders.
+2. Click the **arrow** next to workloads to expose **webserver01**
+3. Click on the virtual machine **webserver01**
+4. Click the **green arrow** in the top center of the screen to execte the power on operation.
+
+**Note: Please wait until the virtual machine is fully powered on before proceeding to the next step.**
+
+<aside class="notice">
+<font color="dodgerblue">
+<img src="https://s3-us-west-2.amazonaws.com/vmc-workshops-images/info.jpeg" width="25" height="25"> If the webserver doesn't connect to the network and does not receive and IP address from DHCP, ensure the NIC is connected by right-clicking on Webserver01 and then Edit Settings and make sure the checkbox next to Connected is selected.  You may need to repeat this step for the cloned VM webserver02.
+</font>
+</aside>
+
+
 
 ### Compute Gateway Firewall Rules
 
