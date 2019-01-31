@@ -41,7 +41,7 @@ demand. Let's create a new network segment in the SDDC.
 1. Click the **Networking & Security** tab, then click on **Segments** to show all of the existing network segments.
 2. Click on **Add Segments** to create a new network segment.
 3. Enter **Demo-Net** for the Name of the new network segment.
-4. For the Gateway/Prefifix Length enter 10.10.xx.1/24 (xx depicts your student number). This represents the default gateway
+4. For the Gateway/Prefifix Length enter 10.10.xx.1/24 (xx depicts your student number). This represents the default gateway.
 of the network and the prefix length of the network. For more details on IP addressing see below.
 5. For **DHCP**, click the down arrow and select Enabled to enable DHCP on the network.
 6. Enter **10.10.xx.10-10.10.xx.200** for the **DHCP IP Range**. This is the range of IP addresses the DHCP server will grant to workloads attached to the network.
@@ -291,6 +291,65 @@ Use the Customization Specification Manager to manage customization specificatio
 ![SDDC027](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc027.jpg)
 
 Congratulations!  You have successfully created your VM Customization Spec for your Linux VM's.  You can also Export (Duplicate), Edit, Import, and Export a VM Customization Spec.
+
+## Deploy a Virtual Machine
+
+![SDDC-deploy-vm-013](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc013.jpg)
+
+In the vSphere client window already opened, deploy a template from the content library:
+
+1. Click **Menu**.
+2. Click on **Content Libraries**.
+
+### Select Content Library
+
+![SDDC-deploy-vm-028](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc028.jpg)
+
+1.  Click on the **VMC Content Library** that was previously synchronized.
+
+### Deploy a New Virtual Machine from Template
+
+![SDDC-deploy-vm-029](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc029.jpg)
+
+1. Click the **Templates** tab to access the template synchronized in the content library.
+2. Right-click on the **centos-web**  template to exporthe Actions menu.
+3. Click on **New VM from This Template** to deploy a virtual machine from template.
+
+### Choose Virtual Machine Name and Location
+
+![SDDC-deploy-vm-030](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc030.jpg)
+
+1. Enter **webserver01** for the virtual machine name.
+2. Click the **arrow** next to SDDC-Datacenter to expose the folders available.
+3. In VMware Cloud on AWS customer workloadds should be placed in the Workloads folder (or subfolder).  Click the **Workloads** folder.
+4. Select the **Checkbox** next to  **Customize the operating system**.
+5. Click **Next** to continue.
+
+### Choose Virtual Machine Customization Specification
+
+![SDDC-deploy-vm-031](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc031.jpg)
+
+We will utilize the customization specification created in a previous module to customize the operating system.
+
+1. Click to select the **LinuxSpec** customization specification.
+2. Click **next** to continue.
+
+### Select Resource Pool
+
+![SDDC-deploy-vm-032](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc032.jpg)
+
+1. Click the **arrow** next to Cluster-1 to expose the resource pools available.
+2. In VMware Cloud on AWS customer workloads should be placed in the **Compute-ResourcePool** (or subpool).  Click **Compute-ResourcePool**.
+3. Click **Next** to continue.
+
+### Review the Template Details
+
+![SDDC-deploy-vm-033](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc033.jpg)
+
+Review the details of the template to be deployed.  There may be a security warning displayed, but you can safely ignore that the purpose of this lab.
+
+1. Click **Next** to continue.
+
 
 ### Compute Gateway Firewall Rules
 
