@@ -389,7 +389,7 @@ In this exercise, you will clone the virtual machine created in the previous exe
 2. If complete, click on **Menu**.
 3. Click **VMs and Templates** to navigate to the VMs and Templates view.
 
-## Select and Power On Webserver01
+### Select and Power On Webserver01
 
 ![SDDC-clone-vm-038](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc038.jpg)
 
@@ -408,7 +408,36 @@ Before we can clone the web server, we will first need to power the VM on so the
 </font>
 </aside>
 
+### Initiate Cloning of the Virtual Machine
 
+![SDDC-clone-vm-039](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc039.jpg)
+
+We will now begin the process of cloning this virtual machine.
+
+1. Right-click on **webserver01** to expose the Actions menu.
+2. Click on **Clone** to expose a secondary menu of options.
+3. Click **Clone to Virtual Machine** to initiate the cloning wizard.
+
+### Select Virtual Machine Name and Folder
+
+![SDDC-clone-vm-040](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc040.jpg)
+
+1. Next to **Virtual machien name** enter **webserver02**.
+2. Click the **Workloads** folder for the virtual machine location.
+3. Click **Next** to continue.
+
+### Select Virtual Machine Compute Resource
+
+![SDDC-clone-vm-041](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc041.jpg)
+
+1. Click on **Compute-ResourcePool** to ensure it is selected for the target virtual machine.
+2. Click **Next** to continue.
+
+### Select Virtual Machine Datastore
+
+
+
+STOP HERE!!!!
 
 ### Compute Gateway Firewall Rules
 
