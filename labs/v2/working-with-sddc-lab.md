@@ -435,9 +435,47 @@ We will now begin the process of cloning this virtual machine.
 
 ### Select Virtual Machine Datastore
 
+![SDDC-clone-vm-042](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc042.jpg)
+
+1. Click on **WorkloadDatastore** to ensure it is selected as the destination for the virtual machine.
+2. Click **Next** to continue.
+
+### Select Clonging Options
+
+![SDDC-clone-vm-043](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc043.jpg)
+
+We will now set the options for cloning.  We will need to customize the operating system to change the server name and als power on the virtual machine after cloning is complete.
+
+1. Click the checkbox next to **Customize the operating system**.
+2. Click the checkbox next to **Power on virtual machine after creation**.
+3. Click **Next** to continue.
+
+### Choose Virtual Machine Customization Specification
+
+![SDDC-clone-vm-044](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc044.jpg)
+
+We will utilize the customization specification created in a previous exercise to customize the operating system.
+
+1. Click to select the **LinuxSpec** customization specification.
+2. Click **Next** to continue.
+
+### Complete the Virtual Machine Deployment
+
+1. Review the information for accuracy and click **Finish** to clone the virtual machine.
+
+It should take a couple of minutes fort the virtual machine to clone.  Continue to the next exercise to learn about securing workloads in VMware Cloud on AWS.
+
+<aside class="notice">
+<font color="dodgerblue">
+<img src="https://s3-us-west-2.amazonaws.com/vmc-workshops-images/info.jpeg" width="25" height="25"> If the webserver doesn't connect to the network and does not receive and IP address from DHCP, ensure the NIC is connected by right-clicking on <b>webserver01</b> and then <b>Edit Settings</b> and make sure the checkbox next to Connected is selected.  You may need to repeat this step for the cloned VM webserver02.
+</font>
+</aside>
 
 
-STOP HERE!!!!
+
+
+
+## STOP HERE!!!!
 
 ### Compute Gateway Firewall Rules
 
