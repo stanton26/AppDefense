@@ -29,4 +29,4 @@ Lab Name | Description
 [Working with your SDDC](https://vmc-field-team.github.io/labs-partner/working-with-sddc-partner-lab/){:target="_blank"} | Learn the basics of running a a VMware on AWS SDDC environment
 [AWS Integration](https://vmc-field-team.github.io/labs-partner/aws-integration-partner-lab/){:target="_blank"} | Learn how to integrate with native AWS services such as RDS and EFS
 [Microsegmentation](https://vmc-field-team.github.io/labs-partner/microsegmentation-partner-lab/)
-{:target="_blank"} | Learn the basics of creating east west firewall rules using NSX
+{:target="_blank"} | Learn the basics on how to create east-west firewall rules
