@@ -21,9 +21,10 @@ The distributed firewall rules are implemented to secure workload groups in the 
 
 The source of the rule is a single or multiple workload groups. The source matches to the default any if not defined. The destination of the rule is a single or multiple workloads. The destination matches to the default any if not defined.
 
-When you log into your environment's VMC console you will see a section called **Networking & Security**. Navigate to **Distributed Firewall** under the **Security** tab. 
-    ![DistributedFirewall]
-    (https://s3-us-west-2.amazonaws.com/partner-workshop-screenshots/distributed-firewall-01.jpg)
+When you log into your environment's VMC console you will see a section called **Networking & Security**. Navigate to **Distributed Firewall** under the **Security** tab.
+
+![Distributed-Firewall]
+(https://s3-us-west-2.amazonaws.com/partner-workshop-screenshots/distributed-firewall-01.jpg)
 
 As you can see the distributed firewall has 5 different sections
 
