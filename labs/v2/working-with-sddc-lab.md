@@ -461,6 +461,8 @@ We will utilize the customization specification created in a previous exercise t
 
 ### Complete the Virtual Machine Deployment
 
+![SDDC-clone-vm-045](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc045.jpg)
+
 1. Review the information for accuracy and click **Finish** to clone the virtual machine.
 
 It should take a couple of minutes fort the virtual machine to clone.  Continue to the next exercise to learn about securing workloads in VMware Cloud on AWS.
@@ -470,6 +472,54 @@ It should take a couple of minutes fort the virtual machine to clone.  Continue 
 <img src="https://s3-us-west-2.amazonaws.com/vmc-workshops-images/info.jpeg" width="25" height="25"> If the webserver doesn't connect to the network and does not receive and IP address from DHCP, ensure the NIC is connected by right-clicking on <b>webserver01</b> and then <b>Edit Settings</b> and make sure the checkbox next to Connected is selected.  You may need to repeat this step for the cloned VM webserver02.
 </font>
 </aside>
+
+## Testing connectivity between the Virtual Machines
+
+In this exercise we will test the connectivity between webserver01 and webserver02, which we created in the previous exercises.
+
+### Open Console to Webserver01
+
+![SDDC-test-vm-046](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc046.jpg)
+
+We need to open a console session to webserver01 to validate it can communicate with webserver02.
+
+1. In the vSphere Web Client click on Webserver01 to bring it into focus.
+2. Click the black box below Summary in the middle of the screen. This will attempt to launch a console session but it may fail because the pop-up was blocked. If this occurs follow steps 3-6, otherwise proceed to the next section.
+3. Click the icon with the small red x in the Chrome address bar to launch to pop-up blocker dialog.
+4. Click the radio button next to Always allow pop-ips from https://vcenter.sddc-xx-xx-xxxx.vmwarevmc.com
+5. Clock the Done button.
+6. Return to the black box below the Summary and click it again. The console session should launch in a new tab.
+
+### Find the IP Address for Webserver02
+
+![SDDC-test-vm-047](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc047.jpg)
+
+Before we can test connectivity between the two servers, we need to find the IP address of webserver02.
+
+1. Click the **Chrome Tab** of the vSphere Web Client to bring it back into focus.
+2. Click on the virtual machine **webserver02**.
+3. Take note of the **IP Address** for webserver02 in the middle of the screen. This will be needed in the next step.
+4. Click the **Chrome Tab** of the console session for webserver01 to bring it back into focus.
+
+### Login and Ping Webserver02
+
+![SDDC-test-vm-048](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc048.jpg)
+
+Now that we have to IP address for Webserver02 let's setup a continuous ping to the server to verify communication.
+
+Before beginning click anywhere inside the console window to bring it into focus
+
+1. At the login prompt enter **root** and press Enter.
+2. At the password prompt enter **VMware1!** and press Enter.
+3. At the console prompt, enter **ping 10.10.xx.xxx** and press Enter.  The third octet is based on student number and the last octet of the IP address in most cases it will be 101, but verify this in your configuration.
+4. Verify the pings are successful.
+
+**NOTE: Please leave this ping and console Window open for the next lesson. We will revisit it to verify the web servers can no longer communicate.**
+
+Congratulations! You have now deployed two web servers in VMware Cloud on AWS SDDC and verified they can communicate with each other. In the next lesson we will create firewall rules to block the servers from communicating with each other and also make webserver02 accessible from the internet.
+
+
+
 
 
 
