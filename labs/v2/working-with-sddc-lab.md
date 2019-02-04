@@ -522,7 +522,7 @@ Congratulations! You have now deployed two web servers in VMware Cloud on AWS SD
 
 VMware Cloud on AWS Advanced Network Services is now available for new SDDC deployments.
 
-###Distributed Firewall in VMware Cloud on AWS Advanced Network Services
+### Distributed Firewall in VMware Cloud on AWS Advanced Network Services
 
 ![DFW-01](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/dfw01.jpg)
 
@@ -543,10 +543,10 @@ From the above screenshot, you can see, in addition to the ability to create mul
 
 In addition to the new Distributed Firewall capabilities, grouping objects can now be leveraged within security policies. Security groups support the following grouping criteria/constructs:
 
-• IP Address
-• VM Instance
-• Matching criteria of VM Name
-• Matching Criteria of Security Tag
+* IP Address
+* VM Instance
+* Matching criteria of VM Name
+* Matching Criteria of Security Tag
 
 As shown above, Security Groups can be created under Workload Groups or Management Groups. Workload Groups can be used in DFW and CGW firewall policies and Management Groups can be used under MGW firewall policies. Management Groups only support IP addresses as these groups are infrastructure based. Predefined Management Groups groups already exist for vCenter, ESXi hosts, and NSX Manager. Users can also create groups here based on IP address for on-prem ESXi hosts, vCenter, and other management appliances.
 
