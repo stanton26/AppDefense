@@ -122,24 +122,24 @@ As a first step in setting up our integration between the VMware vSphere platfor
 
     ![RDS11](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS11.jpg)
 19. Check for completion of the deployment of your VM
-20. Click *Menu*
-21. Select *VMs and Templates*
+20. Click **Menu**
+21. Select **VMs and Templates**
 
     ![RDS12](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS12.jpg)
 22. Check to make sure your VM is powered on. If not, right-click on your VM
-23. Select *Power -> **Power On*
+23. Select **Power -> Power On**
 
     ![RDS13](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS13.jpg)
 24. Make sure your VM is assigned an IP addresses (may need to a few minutes for this information to be populated). Make a note of this IP address for a future step.
 
     ![RDS14](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS14.jpg)
 25. Go back your VMware Cloud on AWS portal and click on the *Network* tab in order to request a Public IP address
-26. Under the *Compute Gateway* click and expand *Public IPs*
-27. Click on *REQUEST PUBLIC IP**
+26. Under the **Compute Gateway** click and expand **Public IPs**
+27. Click on **REQUEST PUBLIC IP**
 
     ![RDS15](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS15.jpg)
 28. (Optional) Enter Notes for this public IP, such as the name of the VM we are linking this too
-29. Click on *Request*
+29. Click on **Request**
 
     ![RDS16](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS16.jpg)
 30. You should see a similar notification as the one above
@@ -149,55 +149,55 @@ As a first step in setting up our integration between the VMware vSphere platfor
 
     ![RDS18](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS18.jpg)
 32. Next you will create a NAT rule from the newly acquired Public IP address you noted in your last step to the internal IP address of the VM you created. Click on *NAT* under the *Compute Gateway* section to expand the NAT Rules
-33. Click *ADD NAT RULE*
+33. Click **ADD NAT RULE**
 
     ![RDS19](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS19.jpg)
 34. Give your NAT rule a name
 35. Your new Public IP address should be pre-filled for you, if not, select it now
-36. Under *Service* select *Any (All Traffic)*
+36. Under **Service** select **Any (All Traffic)**
 37. Type your VM's internal IP address
-38. Click the *SAVE* button
+38. Click the **SAVE** button
 
     ![RDS20](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS20.jpg)
-39. You should get a *NAT rule successfully created* notification
+39. You should get a **NAT rule successfully created** notification
 
     ![RDS20](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS21.jpg)
 
-40. Expand *Firewall Rules* under the Compute Gateway section
-41. Click *ADD RULE*
+40. Expand **Firewall Rules** under the Compute Gateway section
+41. Click **ADD RULE**
 
     ![RDS22](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS22.jpg)
 42. Give your Firewall Rule a name
-43. Select *All Internet and VPN* for Source
-44. Type the Public IP Address you noted under *Destination*
-45. Select *Any (All Traffic)* for *Service*
+43. Select **All Internet and VPN** for Source
+44. Type the Public IP Address you noted under **Destination**
+45. Select **Any (All Traffic)** for **Service**
 46. Click **SAVE** button
 
     ![RDS23](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS23.jpg)
-47. You should get a *Firewall rule successfully created* notification
+47. You should get a **Firewall rule successfully created** notification
 
     ![RDS24](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS24.jpg)
 
     On your browser, open a new tab and go to: <https://vmcworkshop.signin.aws.amazon.com/console>
-48. For Account ID or alias ensure *vmcworkshop* is specified
+48. For Account ID or alias ensure **vmcworkshop** is specified
 49. IAM user name - **Student#** (where # is the number assigned to you)
 50. Password - **VMCworkshop1211**
-51. Click *Sign In*
+51. Click **Sign In**
 
     ![RDS25](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS25.jpg)
-52. You are now signed in to the AWS console. Make sure the region selected is *Oregon* in the top right hand corner of the AWS Console
-53. Click on the *RDS* service under the "Database" section
+52. You are now signed in to the AWS console. Make sure the region selected is **Oregon** in the top right hand corner of the AWS Console
+53. Click on the **RDS** service under the "Database" section
 
     ![RDS26](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS26.jpg)
-54. In the left pane click on *Instances*
+54. In the left pane click on **Instances**
 55. Click on the RDS instance that corresponds to your Student number
 
     ![RDS27](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS27.jpg)
-56. Scroll down to the *Details* area and under *Security and network* notice that the RDS instance is not publicly accessible, meaning this instance can only be accessed from within AWS
+56. Scroll down to the **Details** area and under **Security and network** notice that the RDS instance is not publicly accessible, meaning this instance can only be accessed from within AWS.
 
     ![RDS28](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS28.jpg)
-57. Go back to the main *Services* page in the AWS console by clicking the *Services* link in the top left corner of the console
-58. Scroll down to *Networking & Content Delivery* and click *VPC*
+57. Go back to the main **Services** page in the AWS console by clicking the **Services** link in the top left corner of the console
+58. Scroll down to **Networking & Content Delivery** and click **VPC**
 
     ![RDS29](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS29.jpg)
 59. Click on **Security Groups** in the left pane under the "Security" section
@@ -210,14 +210,14 @@ As a first step in setting up our integration between the VMware vSphere platfor
     ![RDS30](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS30.jpg)
 
     AWS Relational Database Service (RDS), also creates its own Elastic Network Interface (ENI) for access which is separate from the ENI created by VMware Cloud on AWS.
-63. Click on *Services* in the top left of the console to go back to the Main Console
-64. Click on *EC2* under the Compute section
+63. Click on **Services** in the top left of the console to go back to the Main Console
+64. Click on **EC2** under the Compute section
 
     ![RDS31](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS31.jpg)
-65. In the EC2 Dashboard click *Network Interfaces* in the left pane under the *Network Interfaces* section
-66. All Student environments belong to the same AWS account, therefore, hundreds of ENI's may exist. In order to minimize the view, type *RDS* in the filter area and press *Enter* to add a filter
+65. In the EC2 Dashboard click **Network Interfaces** in the left pane under the **Network Interfaces** section
+66. All Student environments belong to the same AWS account, therefore, hundreds of ENI's may exist. In order to minimize the view, type **RDS** in the filter area and press *Enter* to add a filter
 67. Highlight your **rds-launch-wizard-#** corresponding to your student number (where # is the number assigned to you)
-68. Make note of the *Primary private IPv4* IP address for the next step
+68. Make note of the **Primary private IPv4** IP address for the next step
 
     ![RDS32](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS32.jpg)
 69. Open an additional browser tab and type your public IP address you requested in the VMware Cloud on AWS portal in the browser address bar followed by /Lychee (case sensitive) ie: x.x.x.x/Lychee
@@ -225,7 +225,7 @@ As a first step in setting up our integration between the VMware vSphere platfor
     Database Host: **x.x.x.x:3306**
     Database Username: **student#** (where # is the number assigned to you)
     Database Password: **VMware1!**
-71. Click *Connect*
+71. Click **Connect**
 
 You have now successfully created a Hybrid Application utilises components across both your VMware on AWS SDDC environment and your AWS services.
 
