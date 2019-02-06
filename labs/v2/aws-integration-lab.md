@@ -10,15 +10,41 @@ author_profile: false
 comments: true
 categories: labs
 ---
-# Introduction
+# Understanding Integrations with AWS Services
 
-One of the most compelling reasons to adopt VMware Cloud on AWS is to integrate your existing systems which sit in your VMware cloud environment, with application platforms which reside in your AWS Virtual Private Cloud (VPC) environment. The intergration which VMware and AWS have created allows for these services to communicate, for free, across a private network address space for services such as EC2 instances, which connect into subnets within a native AWS VPC, or with platform services which have the ability to connect to a VPC Endpoint, such as S3 Storage.
+As the above diagram illustrates, the VMware stack not only sits next to the AWS services, but is tightly integrated with these services. This introduces a new way of thinking about how to design and leverage AWS services with your VMware SDDC. Some integrations our customers are using include:
 
-In this lab we will work through some common basic integrations which you can utilise in your VMware Cloud on AWS platform.
+* VMware front-end and RDS backend
+* VMware back-end and EC2 front-end
+* AWS Application Load Balancer (ELBv2) with VMware front-end (pointing to private IPs)
+* Lambda, Simple Queueing Service (SQS), Simple Notification Service (SNS), S3, Route53, and Cognito
+* AWS Lex, and Alexa with the VMware Cloud APIs
 
-Note: There is a requirement in this lab to have completed the steps in the [Working with your SDDC Lab](https://vmc-field-team.github.io/labs/working-with-sddc-lab/) concerning Content Library creation and Network creation and firewall rule creation.
+These are only a few of the integrations we've seen.There are many different services that can be integrated into your environment.
+In this exercise we'll be exploring integrations with both AWS Simple Storage Service (S3) and AWS Relational Database Service (RDS).
 
-## Integration with AWS Simple Storage Service (S3)
+Note: There is a requirement in this lab to have completed the steps in the [Working with your SDDC Lab](https://vmc-field-team.github.io/labs/v2/working-with-sddc-lab/) concerning Content Library creation and Network creation and firewall rule creation.
+
+## How are these integrations possible?
+
+![aws01](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/aws01.jpg)
+
+In addition to sitting within the AWS Infrastructure, there is an Elastic Network Interface (ENI) connecting VMware Cloud on AWS and the customer's Virtual Private Cloud (VPC), providing a high-bandwidth, low latency connection between the VPC and the SDDC. This is where the traffic flows between the two technologies (VMware and AWS). There are no EGRESS charges across the ENI within the same Availability Zone and there are firewalls on both ends of this
+connection for security purposes.
+
+## How is traffiffic secured across the ENI?
+
+![aws02](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/aws02.jpg)
+
+From the VMware side (see image below), the ENI comes into the SDDC at the Compute Gateway (NSX Edge). This means, on this end of the technology we allow and disallow traffic from the ENI with NSX Firewall rules. By default, no ENI traffic can enter the SDDC. Think of this as a security gate blocking traffic to and from AWS Services on the ENI until the rules are modified.
+
+![aws03](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/aws03.jpg)
+
+On the AWS Services side (see image below), Security Groups are utilized. For those who are not familiar with Security Groups, they act as a virtual firewall for different services (VPCs, Databases, EC2 Instances, etc). This should be configured to deny traffic to and from the VMware SDDC unless otherwise configured.
+
+![aws04](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/aws04.jpg)
+
+In this exercise, everything has been configured on the AWS side for you. You will however walk through how to open AWS traffic to come in and out of your VMware Cloud on AWS SDDC.
 
 ### AWS S3 Backed vSphere Content Library
 
@@ -63,7 +89,7 @@ For the purpose of this exercise, and in the interest of time, the contents of t
 10. Click **NEXT**
 
     ![S3-6](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/S3-6.jpg)
-11. On the *Unable to verify identity of the subscription host* notification click *YES*
+11. On the *Unable to verify identity of the subscription host* notification click **YES**
 
     ![S3-7](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/S3-7.jpg)
 12. Highlight the **WorkloadDatastore** as the storage location
@@ -235,7 +261,7 @@ This functionality provides customers now with choices around how applications a
 
 ### EFS VM Creation
 
-In our next section on integrating AWS services with VMware Cloud on AWS. We will utilise the AWS Elastic File System (EFS) which we can use to mount NFS shares to our VMware Cloud on AWS hosted virtual machines.
+In our next section on integrating AWS services with VMware Cloud on AWS. We will utilize the AWS Elastic File System (EFS) which we can use to mount NFS shares to our VMware Cloud on AWS hosted virtual machines.
 
 ![EFS1](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/EFS1.jpg)
 
