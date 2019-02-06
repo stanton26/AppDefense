@@ -23,11 +23,7 @@ At the start of the workshop, your instructor will have given you logon details 
 ### VMware Cloud on AWS Org Access
 
 You will also receive details from your instructor regarding how to access your VMware Cloud on AWS organization where you will be able to use and configure your SDDC solution in AWS. Your instructor will inform you of these details when you start the lab exercises.
-<!--
-### Location of Files
 
-Any file(s) referenced in this manual are located in the Z: drive of the Horizon desktop you are assigned
--->
 ### Workshop URL's
 
 Below are a list of the URLs you will use over the course of the lab exercises. You can will have a access to these via the bookmarks file which we will import in the following step, they are referenced here as well for your convenience.
@@ -41,28 +37,7 @@ vRealize Operations <https://vrops.corp.local>
 Swagger API Interface <https://vmc.vmware.com/swagger/index.html>
 
 AWS Console <https://vmcworkshop.signin.aws.amazon.com/console>
-<!--
-### Workshop Bookmarks
 
-Import Bookmarks into Chrome by double clicking the Chrome Icon on your Desktop (Preferred browser for workshop)
-
-![bookmarks-01](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/workshop-manual/Screenshot+at+Sep+24+22-00-45.png)
-
-1. Click on the three dots on the top right corner
-2. Select **Bookmarks**
-3. Select **Import bookmarks and settings**
-    ![bookmarks-02](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/workshop-manual/Screenshot+at+Sep+24+22-02-56.png)
-4. Click on the down arrow where it states "Microsoft Edge"
-5. Select **Bookmarks HTML File**  
-6. Click **Choose File**  
-    ![bookmarks-03](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/workshop-manual/Screenshot+at+Sep+24+22-03-42.png)
-7. Navigate to the Z: drive by going to **This PC > Z:\p**
-8. Select **bookmarks_vmc_workshop**
-9. Click **Open**
-    ![bookmarks-04](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/workshop-manual/Screenshot+at+Sep+24+22-04-34.png)
-10. The final step is to click **Done** once you have successfully imported the bookmarks
-    ![bookmarks-05](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/workshop-manual/Screenshot+at+Sep+24+22-05-01.png)
--->
 ## Labs
 
 Listed below are the lab exercises which are available as part of this experience day event. Please ensure that you complete the **Working with your SDDC lab**, the **AWS Integration** lab relies on sections of the Working with your SDDC lab to be completed. Please note that you will not be able to complete all of the content. For this reason we typically state that the first 3 labs listed below are mandatory lab content. After those labs are complete you can choose your own path. If you are interested in exploring the DRaaS use case in the **VMware Site Recovery Manager** lab, you will need to pair up with another team so that one team can be the "protected site" and the other team can be the "failover" site. All other labs can be completed individually.
