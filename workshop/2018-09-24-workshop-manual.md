@@ -30,9 +30,9 @@ Below are a list of the URLs you will use over the course of the lab exercises. 
 
 VMware Cloud on AWS Login <https://vmc.vmware.com>
 
-vRealize Automation <https://vraapp.corp.local/vcac>
+vRealize Automation <https://vraapp.workshop.set.local/vcac>
 
-vRealize Operations <https://vrops.corp.local>
+vRealize Operations <https://vrops.workshop.set.local>
 
 Swagger API Interface <https://vmc.vmware.com/swagger/index.html>
 
