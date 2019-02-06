@@ -96,13 +96,17 @@ For the purpose of this exercise, and in the interest of time, the contents of t
 13. Click **Next** button
 
     ![S3-8](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/S3-8.jpg)
-14. Click *Finish* button. Your content library should take about 20+ minutes to complete syncing.
+14. Click **Finish** button. Your content library should take about 20+ minutes to complete syncing.
 
 It may take a few minutes for your Content to sync, periodically check your content library to ensure you see the content.
 
 Congratulations, you have completed this exercise.
 
 ## AWS Relational Database Service (RDS) Integration
+
+Amazon RDS makes it easy to set up, operate, and scale a relational database in the cloud. It provides cost- efficient and resizable capacity while automating time-consuming administration tasks such as hardware provisioning,database setup, patching and backups. It frees you to focus on your applications so you can give them the fast performance, high availability, security and compatibility they need.
+
+In this exercise, you will be able to integrate a VMware Cloud on AWS virtual machine to work in conjunction with a relational database running in Amazon Web Services (AWS) that has been previously setup on your behalf.
 
 ### Deploy Photo VM
 
