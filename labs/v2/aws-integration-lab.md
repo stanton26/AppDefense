@@ -108,6 +108,179 @@ Amazon RDS makes it easy to set up, operate, and scale a relational database in 
 
 In this exercise, you will be able to integrate a VMware Cloud on AWS virtual machine to work in conjunction with a relational database running in Amazon Web Services (AWS) that has been previously setup on your behalf.
 
+### Compute Gateway Firewall Rules for Native AWS Services
+
+insert pic here
+
+1. In the VMware Cloud on AWS portal click the **Networking & Security** tab.
+2. Click **Groups** in the left pane.
+3. Click **ADD GROUP**.
+
+### Name Workload Group
+
+insert pic here
+
+1. Type **PhotoAppVM** for the Name.
+2. Leave **Virtual Machine** select for Member Type.
+3. Click **Set VMs** under Members.
+
+### Select VMs
+
+insert pic here
+
+1. Click to select **Webserver01**.
+2. Click **SAVE**.
+
+### Save Group
+
+insert pic
+
+1. Click **SAVE**.
+
+### Save Group
+
+insert pic
+
+1. Click **Networking & Security** tab in your VMware Cloud on AWS Portal.
+2. Click **Gateway Firewall** in the left pane.
+2. Click and select **Compute Gateway**.
+3. Click **ADD NEW RULE**.
+
+### Add New Rule - AWS Inbound
+
+insert pic
+
+1. Name your new rule **AWS Inbound**.
+2. Click on **Set Source**.
+
+### Select Source - AWS Inbound
+
+insert pic
+
+1. Click to select **Connected VPC Prefixes**.
+2. Click **SAVE**.
+
+### Set Destination - AWS Inbound
+
+insert pic
+
+1. Click on "Set Destination"
+
+insert pic
+
+1. Click to select **PhotoAppVM**.
+2. Click **SAVE**.
+
+### Set Service - AWS Inbound
+
+1. Click on **Set Service**.
+
+insert pic
+
+1. Click to select **Any**.
+2. Click **SAVE**.
+
+### Publish - AWS Inbound
+
+insert pic 
+
+1. Click on **Publish**.
+
+### Add New Rule - AWS Outbound
+
+insert pic
+
+1. Click **ADD NEW RULE**.
+2. Name your new rule **AWS Outbound**.
+3. Click on **Set Source**.
+
+### Select Source - AWS Outbound
+
+insert pic
+
+1. Click to Select **PhotoAppVM**.
+2. Click **SAVE**.
+
+### Set Destination - AWS Outbound
+
+insert pic
+
+1. Click on **Set Destination**.
+
+### Select Destination - AWS Outbound
+
+insert pic 
+
+1. Click to select **Connected VPC Prefifixes**.
+2. Click **SAVE**.
+
+### Set Service - AWS Outbound
+
+insert pic
+
+1. Click on **Set Service**.
+
+insert pic 
+
+1. Under **Select Services** type "**3306**".
+2. Select **MySQL** checkbox.
+3. Click **SAVE**.
+
+### Publish - AWS Outbound
+
+insert pic
+
+1. Click **Publish**.
+
+### Add New Rule - Public In
+
+insert pic
+
+1. Click on **ADD NEW RULE**.
+
+insert pic
+
+1. Type **Public In** for Name.
+2. Click on **Set Source**.
+
+### Select Source - Public In
+
+insert pic
+
+1. Click to select **Any**.
+2. Click **SAVE**.
+
+### Set Destination - Public In
+
+insert pic
+
+1. Click on **Set Destination**.
+
+### Select Destination - Public In
+
+insert pic
+
+1. Click to select **PhotoAppVM**.
+2. Click **SAVE**.
+
+### Set Service - Public In
+
+insert pic
+
+1. Click **Set Service**.
+
+insert pic
+
+1. Type **HTTP 80** under **Select Services**.
+2. Click to Select **HTTP**.
+3. Click **SAVE**.
+
+### Publish - Public In
+
+insert pic
+
+1. Click **Publish**.
+
 ### Make Note of Webserver01 IP Address
 Insert pic here
 
