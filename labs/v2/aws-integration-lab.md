@@ -32,7 +32,7 @@ Note: There is a requirement in this lab to have completed the steps in the [Wor
 In addition to sitting within the AWS Infrastructure, there is an Elastic Network Interface (ENI) connecting VMware Cloud on AWS and the customer's Virtual Private Cloud (VPC), providing a high-bandwidth, low latency connection between the VPC and the SDDC. This is where the traffic flows between the two technologies (VMware and AWS). There are no EGRESS charges across the ENI within the same Availability Zone and there are firewalls on both ends of this
 connection for security purposes.
 
-## How is traffiffic secured across the ENI?
+## How is traffic secured across the ENI?
 
 ![aws02](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/aws02.jpg)
 
@@ -46,7 +46,7 @@ On the AWS Services side (see image below), Security Groups are utilized. For th
 
 In this exercise, everything has been configured on the AWS side for you. You will however walk through how to open AWS traffic to come in and out of your VMware Cloud on AWS SDDC.
 
-### AWS S3 Backed vSphere Content Library
+## AWS S3 Backed vSphere Content Library
 
 vSphere Content Libraries enable customers to take advantage of different types of storage backing than just vSphere Datastores. The primary requirement is that the content endpoint is accessible over HTTP(s), which means that a number of solutions can be used from a simple web server like Nginx to an advanced distributed object store like AWS's Simple Storage Service (S3).
 
@@ -64,7 +64,7 @@ In case you did not know, S3 usage (ingress/egress) from a customers SDDC is 100
 
 For the purpose of this exercise, and in the interest of time, the contents of this exercise have been uploaded to an existing S3 bucket in AWS for you. Let's create the S3 backed Content Library!
 
-#### Add S3 Backed Content Library
+### Add S3 Backed Content Library
 
 ![S3-2](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/S3-2.jpg)
 
@@ -75,13 +75,13 @@ For the purpose of this exercise, and in the interest of time, the contents of t
 3. In your Content Library window, click the **+** sign to add a new Content Library.
 
     ![S3-4](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/S3-4.jpg)
-4. Name your Content Library *S3 Content Library* or any other name of your choosing
+4. Name your Content Library **S3 Content Library** or any other name of your choosing
 5. (Optional) Enter some notes for your Content Library
 6. Click **NEXT** button
 
     ![S3-5](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/S3-5.jpg)
 7. Select **Subscribed content library**
-8. Under *Subscription URL* enter the following:
+8. Under **Subscription URL** enter the following:
     ```link
     http://vmc-elw-vms.s3-accelerate.amazonaws.com/lib.json
     ```
