@@ -258,77 +258,6 @@ In this exercise, everything has been configured on the AWS side for you. You wi
 
 1. Click **PUBLISH**
 
-## Integration with AWS Simple Storage Service (S3)
-
-### AWS S3 Backed vSphere Content Library
-
-vSphere Content Libraries enable customers to take advantage of different types of storage backing than just vSphere Datastores. The primary requirement is that the content endpoint is accessible over HTTP(s), which means that a number of solutions can be used from a simple web server like Nginx to an advanced distributed object store like AWS's Simple Storage Service (S3).
-
-The workflow to create a 3rd Party vSphere Content Library on S3 is as follows:
-
-1\. Upload and organize the content on S3
-
-2\. Run a python script to index and generate the Content Library metadata
-
-3\. With the ability to remotely index and generate the Content Library metadata files, you do
-not have to keep a local copy of all your content. All changes can be made directly on the S3 bucket and then simply re-run the script to generate the updated metadata which can even be scheduled as a simple cron job.
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/S3-1.jpg)
-
-The python script referenced which can be downloaded [here](https://code.vmware.com/samples/4388/automating-the-creation-of-3rd-party-content-library-directly-on-amazon-s3) can now index content both locally as well as in a remote S3 bucket.
-
-In case you did not know, S3 usage (ingress/egress) from a customers SDDC is 100% free for VMware Cloud on AWS customers by simply using a linked S3 Endpoint. This means you can take advantage of S3 to store your templates, ISOs and other static files, which can also be shared by other SDDCs. This means you are not consuming any of your primary storage for static content and can be used for what it was meant, for your workloads.
-
-For the purpose of this exercise, and in the interest of time, the contents of this exercise have been uploaded to an existing S3 bucket in AWS for you. Let's create the S3 backed Content Library!
-
-#### Add S3 Backed Content Library
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/S3-2.jpg)
-
-1\. On your VMware Cloud on AWS vCenter window click on **
-
-2\. Click on **Content Libraries**
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/S3-3.jpg)
-
-3\. In your Content Library window, click the **+** sign to add a new Content Library.
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/S3-4.jpg)
-
-4\. Name your Content Library **S3 Content Library** or any other name of your choosing
-
-5\. (Optional) Enter some notes for your Content Library
-
-6\. Click **NEXT** button
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/S3-5.jpg)
-
-7\. Select **Subscribed content library**
-
-8\. Under **Subscription URL** enter the following: **http://vmc-elw-vms.s3-accelerate.amazonaws.com/lib.json**
-
-9\. Make sure Download content is set to **immediately**
-
-10\. Click **NEXT**
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/S3-6.jpg)
-
-11\. On the **Unable to very identity of the subscription host** notification click **YES**
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/S3-7.jpg)
-
-12\. Highlight the **WorkloadDatastore** as the storage location
-
-13\. Click **Next** button
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/S3-8.jpg)
-
-14\. Click **Finish** button. Your content library should take about 20+ minutes to complete syncing.
-
-It may take a few minutes for your Content to sync, periodically check your content library to ensure you see the content.
-
-Congratulations, you have completed this exercise.
-
 ## AWS Relational Database Service (RDS) Integration
 
 Amazon RDS makes it easy to set up, operate, and scale a relational database in the cloud. It provides cost- efficient and resizable capacity while automating time-consuming administration tasks such as hardware provisioning, database setup, patching and backups. It frees you to focus on your applications so you can give them the fast performance, high availability, security and compatibility they need.
@@ -487,7 +416,7 @@ AWS Relational Database Service (RDS), also creates its own Elastic Network Inte
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS15.jpg)
 
-1\. Type **vmworld** for both user name and password
+1\. Type **studnet#** (where # is the number assigned to you) for both user name and **VMware1!** for password.
 
 2\. Click **Sign In**
 
