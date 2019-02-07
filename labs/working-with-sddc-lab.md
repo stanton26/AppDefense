@@ -37,7 +37,7 @@ You will now be logged into your organization hosting your VMware Cloud on AWS S
 
 4\. In this student environment, we have restricted the platform to only allow the addition of one host. If this were a customer environment there would not be this restriction
 
-5. Click the *Add Hosts* button
+5\. Click the *Add Hosts* button
 
 Your SDDC environment will now go through the process of adding an additional host to the SDDC environment. The process can take up to 10 minutes to complete. In the background automated tasks are provisioning an additional host, adding the host to the SDDC cluster and extending the VSAN cluster to utilize the storage presented by this additional host. All of this is done without human interaction in roughly 10 minutes. You may choose to wait for this action to process or move onto the next exercise and check back later to see your additional host.
 

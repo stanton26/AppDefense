@@ -24,44 +24,19 @@ At the start of the workshop, your instructor will have given you logon details 
 
 You will also receive details from your instructor regarding how to access your VMware Cloud on AWS organization where you will be able to use and configure your SDDC solution in AWS. Your instructor will inform you of these details when you start the lab exercises.
 
-### Location of Files
-
-Any file(s) referenced in this manual are located in the Z: drive of the Horizon desktop you are assigned
-
 ### Workshop URL's
 
 Below are a list of the URLs you will use over the course of the lab exercises. You can will have a access to these via the bookmarks file which we will import in the following step, they are referenced here as well for your convenience.
 
 VMware Cloud on AWS Login <https://vmc.vmware.com>
 
-vRealize Automation <https://vraapp.corp.local/vcac>
+vRealize Automation <https://vraapp.workshop.set.local/vcac>
 
-vRealize Operations <https://vrops.corp.local>
+vRealize Operations <https://vrops.workshop.set.local>
 
 Swagger API Interface <https://vmc.vmware.com/swagger/index.html>
 
 AWS Console <https://vmcworkshop.signin.aws.amazon.com/console>
-
-### Workshop Bookmarks
-
-Import Bookmarks into Chrome by double clicking the Chrome Icon on your Desktop (Preferred browser for workshop)
-
-![bookmarks-01](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/workshop-manual/Screenshot+at+Sep+24+22-00-45.png)
-
-1. Click on the three dots on the top right corner
-2. Select **Bookmarks**
-3. Select **Import bookmarks and settings**
-    ![bookmarks-02](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/workshop-manual/Screenshot+at+Sep+24+22-02-56.png)
-4. Click on the down arrow where it states "Microsoft Edge"
-5. Select **Bookmarks HTML File**  
-6. Click **Choose File**  
-    ![bookmarks-03](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/workshop-manual/Screenshot+at+Sep+24+22-03-42.png)
-7. Navigate to the Z: drive by going to **This PC > Z:\p**
-8. Select **bookmarks_vmc_workshop**
-9. Click **Open**
-    ![bookmarks-04](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/workshop-manual/Screenshot+at+Sep+24+22-04-34.png)
-10. The final step is to click **Done** once you have successfully imported the bookmarks
-    ![bookmarks-05](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/workshop-manual/Screenshot+at+Sep+24+22-05-01.png)
 
 ## Labs
 
@@ -73,6 +48,9 @@ Lab Name | Description
 [Working with your SDDC](https://vmc-field-team.github.io/labs/v2/working-with-sddc-lab/){:target="_blank"} | Learn the basics of running a VMware on AWS SDDC environment
 [AWS Integration](https://vmc-field-team.github.io/labs/v2/aws-integration-lab/){:target="_blank"} | Learn how to integrate with native AWS services such as RDS and EFS
 [VMware Cloud on AWS APIs](https://vmc-field-team.github.io/labs/v2/api-lab/){:target="_blank"} | Learn how to interact with VMware on AWS through APIs
-[VMware Site Recovery Manager](https://vmc-field-team.github.io/labs/v2/srm-lab/){:target="_blank"} | Learn how you can utilise VMware on AWS for DRaaS use cases
 [VMware Hybrid Cloud Extension](https://vmc-field-team.github.io/labs/v2/hcx-lab/){:target="_blank"} | Learn how VMwares Hybrid Cloud Extension (HCX) technology can help with bulk and live migration to the VMware on AWS cloud platform
-[VMware vRealize Automation](https://vmc-field-team.github.io/labs/v2/vra-lab/){:target="_blank"} | Utilise integration capabilities with VMware cloud management tools
+[VMware vRealize Automation](https://vmc-field-team.github.io/labs/v2/vra-lab/){:target="_blank"} | Utilize integration capabilities with VMware cloud management tools
+
+<!--
+[VMware Site Recovery Manager](https://vmc-field-team.github.io/labs/v2/srm-lab/){:target="_blank"} | Learn how you can utilize VMware on AWS for DRaaS use cases
+-->
