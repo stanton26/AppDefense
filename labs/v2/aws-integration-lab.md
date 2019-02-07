@@ -1,6 +1,6 @@
 ---
 layout: single
-title: **AWS Integration Lab Manual**
+title: "AWS Integration Lab Manual"
 categories: labs
 date: 2018-07-20
 tags: workshop
