@@ -505,3 +505,4 @@ OPTIONAL: Feel free to take a picture of the room with your smart phone and uplo
 In summary, the front end (web server) is running in VMware Cloud on AWS as a VM, the back end which is a MySQL database is running in AWS Relational Database Service (RDS) and communicating through the Elastic Network Interface (ENI) that gets established upon the creation of the SDDC.
 
 You have completed the lab. Thanks for stopping by!
+
