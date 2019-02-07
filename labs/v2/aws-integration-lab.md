@@ -21,15 +21,11 @@ One of the most compelling reasons to adopt VMware Cloud on AWS is to integrate 
 
 As the above diagram illustrates, the VMware stack not only sits next to the AWS services, but is tightly integrated with these services. This introduces a new way of thinking about how to design and leverage AWS services with your VMware SDDC. Some integrations our customers are using include:
 
-• VMware front-end and RDS backend
-
-• VMware back-end and EC2 front-end
-
-• AWS Application Load Balancer (ELBv2) with VMware front-end (pointing to private IPs)
-
-• Lambda, Simple Queueing Service (SQS), Simple Notification Service (SNS), S3, Route53, and Cognito
-
-• AWS Lex, and Alexa with the VMware Cloud APIs
+* VMware front-end and RDS backend
+* VMware back-end and EC2 front-end
+* AWS Application Load Balancer (ELBv2) with VMware front-end (pointing to private IPs)
+* Lambda, Simple Queueing Service (SQS), Simple Notification Service (SNS), S3, Route53, and Cognito
+* AWS Lex, and Alexa with the VMware Cloud APIs
 
 These are only a few of the integrations we've seen. There are many different services that can be integrated into your environment.
 In this exercise we'll be exploring integrations with both AWS Simple Storage Service (S3) and AWS Relational Database Service (RDS).
