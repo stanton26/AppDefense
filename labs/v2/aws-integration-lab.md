@@ -429,7 +429,7 @@ Please note you might get either of the 2 sign on screens above. If you get the 
 
 2\. After highlighting the appropriate security group click on the **Inbound** tab below
 
-    VMware Cloud on AWS establishes routing in the default VPC Security Group, only RDS can leverage this or create its own
+**Note: VMware Cloud on AWS establishes routing in the default VPC Security Group, only RDS can leverage this or create its own**
 
 ### Outbound Traffic
 
@@ -471,9 +471,9 @@ AWS Relational Database Service (RDS), also creates its own Elastic Network Inte
 
 2\. Enter the database connection information below (case sensitive), using the IP address you noted in the previous step from the RDS ENI:
 
-    Database Host: **x.x.x.x:3306**
-    Database Username: **student#** (where # is the number assigned to you)
-    Database Password: **VMware1!**
+    Database Host: x.x.x.x:3306
+    Database Username: student# (where # is the number assigned to you)
+    Database Password: VMware1!
 
 3\. Click **Connect**
 
