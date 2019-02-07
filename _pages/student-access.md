@@ -36,7 +36,7 @@ Follow the steps below to access the desktop via the web browser
 
 [VMware Horizon HTML Portal Access](https://workshop.vmc.ninja/portal/webclient/index.html)
 
-The Password for these desktops is: VivaMexico!
+The Password for these desktops will be shared by the instructor.
 
 | Student Name | Org      | SDDC Name | Student Number | Horizon Login |
 |:-------------|:---------|:----------|:---------------|:--------------|
