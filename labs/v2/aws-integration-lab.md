@@ -30,7 +30,7 @@ As the above diagram illustrates, the VMware stack not only sits next to the AWS
 These are only a few of the integrations we've seen. There are many different services that can be integrated into your environment.
 In this exercise we'll be exploring integrations with both AWS Simple Storage Service (S3) and AWS Relational Database Service (RDS).
 
-Note: There is a requirement in this lab to have completed the steps in the [Working with your SDDC Lab](https://vmc-field-team.github.io/labs/v2/working-with-sddc-lab/) concerning Content Library creation, Network creation, and Firewall Rule creation.
+    Note: There is a requirement in this lab to have completed the steps in the [Working with your SDDC Lab](https://vmc-field-team.github.io/labs/v2/working-with-sddc-lab/) concerning Content Library creation, Network creation, and Firewall Rule creation.
 
 ### How are these integrations possible?
 
