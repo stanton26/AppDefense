@@ -10,12 +10,9 @@ author_profile: false
 comments: true
 categories: labs
 ---
-
 # Introduction
 
 One of the most compelling reasons to adopt VMware Cloud on AWS is to integrate your existing systems which sit in your VMware cloud environment, with application platforms which reside in your AWS Virtual Private Cloud (VPC) environment. The intergration which VMware and AWS have created allows for these services to communicate, for free, across a private network address space for services such as EC2 instances, which connect into subnets within a native AWS VPC, or with platform services which have the ability to connect to a VPC Endpoint, such as S3 Storage.
-
-# CANTON TEST
 
 ## Understanding Integrations with AWS Services
 
