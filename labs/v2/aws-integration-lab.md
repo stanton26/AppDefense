@@ -282,7 +282,7 @@ You will be using the VM created in the previous module in order to complete thi
 
 3\. Click on **REQUEST NEW IP**
 
-4\. In the notes area type **PhotoApp IP**
+4\. In the notes area type **PhotoAppIP**
 
 5\. Click **SAVE**
 
@@ -332,21 +332,21 @@ Please note you might get either of the 2 sign on screens above. If you get the 
 
 1\. You are now signed in to the AWS console. Make sure the region selected is **Oregon**
 
-2\. Click on the **RDS** service (You may need to expand **All services**
+2\. Click on the **RDS** service (You may need to expand **All services**)
 
 ### RDS Instance
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS7.jpg)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS07.jpg)
 
-1\. In the left pane click on **Instances**
+1\. In the left pane click on **Databases**
 
 2\. Click on the RDS instance that corresponds to designated number
 
 ### Navigate to Security Groups
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS8.jpg)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS08.jpg)
 
-1\. Scroll down to the **Details** area and under **Security and network** notice that the RDS instance is not publicly accessible, meaning this instance can only be accessed from within AWS
+1\. Scroll down to the **Details** area and under **Connectivity & security** notice that the RDS instance is not publicly accessible, meaning this instance can only be accessed from within AWS
 
 2\. Click in the blue hyperlink under **Security groups**
 
