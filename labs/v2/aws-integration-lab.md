@@ -146,6 +146,8 @@ In this exercise, everything has been configured on the AWS side for you. You wi
 
 1\. Click on **PUBLISH**
 
+**Note:** Make sure to leave **All Uplinks** in the **Applied To** section.
+
 #### Add New Rule - AWS Outbound
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/AWS-17.jpg)
@@ -199,6 +201,8 @@ In this exercise, everything has been configured on the AWS side for you. You wi
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/AWS-23.jpg)
 
 1\. Click **PUBLISH**
+
+**Note:** Make sure to leave **All Uplinks** in the **Applied To** section.
 
 ### Add New Rule - Public In
 
@@ -257,6 +261,8 @@ In this exercise, everything has been configured on the AWS side for you. You wi
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/AWS-31.jpg)
 
 1. Click **PUBLISH**
+
+**Note:** Make sure to leave **All Uplinks** in the **Applied To** section.
 
 ## AWS Relational Database Service (RDS) Integration
 
