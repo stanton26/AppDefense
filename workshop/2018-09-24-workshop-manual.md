@@ -44,6 +44,7 @@ Listed below are the lab exercises which are available as part of this experienc
 <!---
 If you are interested in exploring the DRaaS use case in the **VMware Site Recovery Manager** lab, you will need to pair up with another team so that one team can be the "protected site" and the other team can be the "failover" site. All other labs can be completed individually.
 -->
+
 Please enjoy these labs, if you have any questions, please do not hesitate to speak to the VMware Cloud on AWS specialists in the room with you.
 
 Lab Name | Description
