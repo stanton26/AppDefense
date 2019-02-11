@@ -312,7 +312,7 @@ In the vSphere client window already opened, deploy a template from the content 
 ![SDDC-deploy-vm-029](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc029.jpg)
 
 1. Click the **Templates** tab to access the template synchronized in the content library.
-2. Right-click on the **centos-web**  template to exporthe Actions menu.
+2. Right-click on the **photoapp-u**  template to exporthe Actions menu.
 3. Click on **New VM from This Template** to deploy a virtual machine from template.
 
 ### Choose Virtual Machine Name and Location

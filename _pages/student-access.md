@@ -36,27 +36,27 @@ Follow the steps below to access the desktop via the web browser
 
 [VMware Horizon HTML Portal Access](https://workshop.vmc.ninja/portal/webclient/index.html)
 
-The Password for these desktops is: VivaVMConAWS!
+The Password for these desktops will be shared by the instructor.
 
-| Student Name | SDDC     | Student Number | Horizon Login |
-|:-------------|:---------|:---------------|:----------|
-|Student 1|VMC-WS1|Student #1|VMCWS1|
-|Student 2|VMC-WS2|Student #2|VMCWS2|
-|Student 3|VMC-WS3|Student #3|VMCWS3|
-|Student 4|VMC-WS4|Student #4|VMCWS4|
-|Student 5|VMC-WS5|Student #5|VMCWS5|
-|Student 6|VMC-WS6|Student #6|VMCWS6|
-|Student 7|VMC-WS7|Student #7|VMCWS7|
-|Student 8|VMC-WS8|Student #8|VMCWS8|
-|Student 9|VMC-WS9|Student #9|VMCWS9|
-|Student 10|VMC-WS10|Student #10|VMCWS10|
-|Student 11|VMC-WS1|Student #11|VMCWS11|
-|Student 12|VMC-WS2|Student #12|VMCWS12|
-|Student 13|VMC-WS3|Student #13|VMCWS13|
-|Student 14|VMC-WS4|Student #14|VMCWS14|
-|Student 15|VMC-WS5|Student #15|VMCWS15|
-|Student 16|VMC-WS6|Student #16|VMCWS16|
-|Student 17|VMC-WS7|Student #17|VMCWS17|
-|Student 18|VMC-WS8|Student #18|VMCWS18|
-|Student 19|VMC-WS9|Student #19|VMCWS19|
-|Student 20|VMC-WS10|Student #20|VMCWS20|
+| Student Name | Org      | SDDC Name | Student Number | Horizon Login |
+|:-------------|:---------|:----------|:---------------|:--------------|
+|Student 1|VMC-WS1|Student-Workshop-1.1|Student #1|VMCWS1|
+|Student 2|VMC-WS2|Student-Workshop-2.1|Student #2|VMCWS2|
+|Student 3|VMC-WS3|Student-Workshop-3.1|Student #3|VMCWS3|
+|Student 4|VMC-WS4|Student-Workshop-4.1|Student #4|VMCWS4|
+|Student 5|VMC-WS5|Student-Workshop-5.1|Student #5|VMCWS5|
+|Student 6|VMC-WS6|Student-Workshop-6.1|Student #6|VMCWS6|
+|Student 7|VMC-WS7|Student-Workshop-7.1|Student #7|VMCWS7|
+|Student 8|VMC-WS8|Student-Workshop-8.1|Student #8|VMCWS8|
+|Student 9|VMC-WS9|Student-Workshop-9.1|Student #9|VMCWS9|
+|Student 10|VMC-WS10|Student-Workshop-10.1|Student #10|VMCWS10|
+|Student 11|VMC-WS1|Student-Workshop-1.2|Student #11|VMCWS11|
+|Student 12|VMC-WS2|Student-Workshop-2.2|Student #12|VMCWS12|
+|Student 13|VMC-WS3|Student-Workshop-3.2|Student #13|VMCWS13|
+|Student 14|VMC-WS4|Student-Workshop-4.2|Student #14|VMCWS14|
+|Student 15|VMC-WS5|Student-Workshop-5.2|Student #15|VMCWS15|
+|Student 16|VMC-WS6|Student-Workshop-6.2|Student #16|VMCWS16|
+|Student 17|VMC-WS7|Student-Workshop-7.2|Student #17|VMCWS17|
+|Student 18|VMC-WS8|Student-Workshop-8.2|Student #18|VMCWS18|
+|Student 19|VMC-WS9|Student-Workshop-9.2|Student #19|VMCWS19|
+|Student 20|VMC-WS10|Student-Workshop-10.2|Student #20|VMCWS20|

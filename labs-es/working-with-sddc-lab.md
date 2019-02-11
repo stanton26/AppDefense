@@ -37,87 +37,146 @@ Agregar un host adicional a un SDDC existente toma alrededor de 10 minutos para 
 
 ## Configuración de Reglas de Firewall en un SDDC
 
-En VMware Cloud on AWS tenemos dos Edge Gateways los cuales protegen las dos redes de un VMware Cloud on AWS SDDC. La **Management Network** y a **Compute Network**. Cuando iniciamos nuestro ambiente SDDC por primera vez, por defecto todo el trafico de las redes de Management y Compute esta prohibido. En este ejercicio seguiremos los pasos necesarios para crear reglas de firewall para poder administrar el SDDC y no solamente las cargas de trabajo, también podremos permitirles comunicarse con los servicios nativos de AWS.
+En VMware Cloud on AWS tenemos dos Edge Gateways los cuales protegen las dos redes de un VMware Cloud on AWS SDDC. La **Management Gateway** y la **Compute Gateway**. Cuando iniciamos nuestro ambiente SDDC por primera vez, por defecto todo el trafico de las redes de Management y Compute esta prohibido. En este ejercicio seguiremos los pasos necesarios para crear reglas de firewall para poder administrar el SDDC y no solamente las cargas de trabajo, también podremos permitirles comunicarse con los servicios nativos de AWS.
 
 ### Reglas de Firewall para el Management Gateway
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC4.jpg)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC99.jpg)
 
 Por defecto, el Firewall está configurado para denegar todo el tráfico tanto entrante como saliente del Management Gateway. En este ejercicio, se agregará una regla de Firewall para permitir el tráfico de vCenter. Para tener acceso al vCenter Server del SDDC, se debe agregar que lo permita al vCenter Server.
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC5.jpg)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC100.jpg)
 
-1\. Haga click en la pestaña titulada *Network*
+1\. Haga click en la pestaña titulada *Networking & Security*
 
- 2\. Bajo *Management Gateway* haga click en la flecha y expanda *Firewall Rules*
+ 2\. Haga click en *Gateway Firewall*
 
-3\. Haga click en el texto titulado *Add Rule*
+3\. Haga click y seleccione *Management Gateway*
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC6.jpg)
+4\. Haga click en el botón *ADD NEW RULE*
 
-4\. Escriba el nombre de la regla en el campo *Rule Name* 
+5\. Nombre la regla de Firewall *vCenter Inbound*
 
-5\. Seleccione *Any* como el tipo de fuente
+6\. Haga click en *Set Source*
 
- 6\. Asegúrese que *vCenter* este seleccionado como destino 
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC101.jpg)
 
-7\. Seleccione *HTTPS (TCP 443)* en el menú desplegable Service
+1\. Haga click en *Any* para seleccionar 
 
- 8\. Haga click en el botón *SAVE*, la regla debe ser igual a la de la imagen siguiente
+2\. Haga click en el botón de *Save*
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC7.jpg)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC102.jpg)
+
+1\. Haga click en *Set Destination*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC103.jpg)
+
+1\. Haga click en *System Defined Groups*
+
+2\. Seleccione *vCenter*
+
+3\. Haga click en el botón de *SAVE*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC104.jpg)
+
+1\. Haga click en el espacio bajo *Services* y escoja *HTTPS (TCP 443)* para permitir el acceso al Servidor de vCenter
+
+2\. Publique la regla haciendo click en el boton *PUBLISH*
+
+vCenter ahora tiene acceso para que se pueda conectar de cualquier punto en el internet.
 
 ### Reglas de Firewall para el Compute Gateway
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC8.jpg)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC105.jpg)
 
 Por defecto, el Compute NSX Edge Services Gateway también esta configurado para denegar todo el tráfico tanto entrante como saliente. Será necesario crear reglas de firewall para permitir el tráfico de acuerdo a las necesidades.
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC9.jpg)
+#### Regla de Firewall AWS Entrante
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC106.jpg)
 
 Cree una Regla de Firewall bajo la sección Compute Gateway para el acceso nativo a los servicios de AWS.
 
-1\. Bajo la pestaña *Network*, navegue hasta *Compute Gateway*
+1\. Haga click en *Compute Gateway*
 
-2\. Expanda *Firewall Rules*
+2\. Haga click en *ADD NEW RULE*
 
- 3\. Haga click en *ADD RULE*
+ 3\. Nombre la regla *AWS Inbound*
 
-#### Regla de Firewall AWS Entrante
+4\. Haga click en *Set Source*
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC10.jpg)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC108.jpg)
 
-Cree una Regla de Firewall AWS entrante siguiendo las siguientes instrucciones:
+1\. Seleccione *Connected VPC Prefixes*
 
-4\. Name - **AWS Inbound**
+2\. Haga click en *SAVE*
 
-5\. Action - **Allow**
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC109.jpg)
 
-6\. Source - **All connected Amazon VPC**
+1\. Haga click en *Set Destination*
 
-7\. Destination - **192.168.#.0/24** (Donde # es su número de estudiante)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC110.jpg)
 
-8\. Service - **ANY**
+1\. Seleccione *Any*
 
-9\. Haga click en el botón *SAVE*
+2\. Haga click en *SAVE*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC111.jpg)
+
+1\. Haga click en *Set Service*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC112.jpg)
+
+1\. Seleccione *Any*
+
+2\. Haga click en *SAVE*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC113.jpg)
+
+1\. Haga click en *PUBLISH*
 
 #### Regla de Firewall AWS Saliente
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC11.jpg)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC114.jpg)
 
-Siga el mismo proceso que en la sección anterior y cree una Regla de Firewall AWS Saliente:
+1\. Haga click en *Compute Gateway*
 
-1\. Name - **AWSOutbound**
+2\. Haga click en *ADD NEW RULE*
 
-2\. Action - **Allow**
+ 3\. Nombre la regla *AWS Outbound*
 
-3\. Source - **192.168.#.0/24** (Donde # es su número de estudiante)
+4\. Haga click en *Set Source*
 
-4\. Destination - **All connected Amazon VPC**
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC115.jpg)
 
-5\. Service - **ANY**
+1\. Seleccione *Any*
 
-6\. Haga click en el botón *SAVE*
+2\. Haga click en *SAVE*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC109.jpg)
+
+1\. Haga click en *Set Destination*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC116.jpg)
+
+1\. Seleccione *Connected VPC Prefixes*
+
+2\. Haga click en *SAVE*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC111.jpg)
+
+1\. Haga click en *Set Service*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC112.jpg)
+
+1\. Seleccione *Any*
+
+2\. Haga click en *SAVE*
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/SDDC113.jpg)
+
+1\. Haga click en *PUBLISH*
+
 
 ## Ingrese al vCenter de VMware Cloud on AWS
 
