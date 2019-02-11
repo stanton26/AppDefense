@@ -37,3 +37,34 @@ As you can see the distributed firewall has 5 different sections
 **Default Rules** The default rules is set to allow all traffic. This is important to understand since our pertimer firewalls are located at T1 tiers which we discussed in "working with your sddc lab" Our tier 1's provide perimeter protection while our distributed firewall rules allow us to define policies inside the sddc. 
 
 Note: In this lab we will be focusing on **Application Rules**. We will be deploying two web servers within our SDDC in the same L2 network and block traffic between the two VM's. 
+
+## Deploy two web servers
+As a first step in our distributed firewall lab, we will be deploying two VM's acting as our web tiers. These two web servers will reside in the same subnet. 
+
+1. If not already opened, open your VMware Cloud on AWS vCenter and click on the **Menu** drop down 
+2. Select Content Libraries
+3. Click on your previously created Content Library named **Student#** (where # is your student number)
+4. Make sure you click on the **Template** tab
+5. Right-click on the **centos-web** template
+6. Select **New VM from This Template**
+7. Name the virtual machine **student#Web01** (where # is your student#)
+8. Expand the location and select Workloads
+9. Click **Next**
+10. Expand the destination to select **Compute-ResourcePool** as the compute resource 
+11. In the "Review details" step click **Next**
+13. In the **Select storage** step, highlight the "WorkloadDatastore"
+14. Click **Next**
+15. Slect the network that elongs to your student number. 
+16. Click **Next**
+17. Click **Finish**
+18. Repeat steps 1-17 and deploy another web VM and name this instance **student#Web02**
+19. Check for completion of the deployment of your VM 
+20. Click **Menu**
+21. Select **VMs and Templates**
+22. Check to make sure your VMs are powered on. If not power on your VM's. 
+23. Make sure your IP's are assigned an IP address. (this might take a few minutes for the informatiuon to be populated). Make a note of the IP addresses for each web VM. 
+
+
+
+
+
