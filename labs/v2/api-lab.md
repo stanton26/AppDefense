@@ -225,19 +225,13 @@ Postman is very easy to install, so let's get started.
     ![Postman5](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/Postman5.jpg)
 
     Go back to your browser window, if you do not have a tab opened for VMware Cloud on AWS, follow the below instructions
-7. Open a new tab
-  Navigate to <https://vmc.vmware.com>
-  Log in with you email address which you used to register for the VMware Cloud on AWS Experience Day
-  Username : **corp\vmcws#** (your student number)
-  Password : **VMware1!**
-
-    ![Postman6](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/Postman6.jpg)
+7. Navigate to <https://github.com/vmware/vsphere-automation-sdk-rest/archive/master.zip> to download the vSphere Automation REST SDK. 
 
     Our internal API development team has done a great job pre-creating SDKs for many of the popular languages in use today. For this module, we will be using the SDK for REST to show you how you can easily import and reuse some pre-built collections to create your own.
-8. Click on *Developer Center*
-9. Click on *View Source*
 
     ![Postman7](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/Postman7.jpg)
+8.  *This step intentionally left blank*
+9.  *This step intentionally left blank*
 10. Click on the download menu
 11. Click on *Open*
 
@@ -430,8 +424,8 @@ body or payload of the response to our request.
 
     ```json
     {
-      "text" : "Your Org ID is: {{ID}}\nYour Org version is: {{version}}\nAnd your Org state is: {{state}}",
-      "username" : "{{name}}"
+      "text" : "{% raw %}Your Org ID is: {{ID}}\nYour Org version is: {{version}}\nAnd your Org state is: {{state}}{% endraw %}",
+      "username" : "{% raw %}{{name}}{% endraw %}"
     }
     ```
 74. Click *Send*
