@@ -146,7 +146,7 @@ Your section should look like the screenshot below
 Your new rule should look like the screenshot below
     ![New-rule](https://s3-us-west-2.amazonaws.com/partner-workshop-screenshots/set-rule.jpg)
 
-###Check Firewall
+### Check Firewall
 Now that our east-west distributed firewall rule is in place let's re-test our ping test to see if connectivity between the two web servers is being blocked. 
 
 1. Return to the console of your first web server and re-run the same ping command you did previously. You should see that the traffic is now prohibited. 
