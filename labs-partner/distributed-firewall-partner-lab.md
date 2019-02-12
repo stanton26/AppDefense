@@ -45,7 +45,7 @@ As a first step in our distributed firewall lab, we will be deploying two VM's a
 2. Select Content Libraries
 3. Click on your previously created Content Library named **Student#** (where # is your student number)
 4. Make sure you click on the **Template** tab
-5. Right-click on the **centos-web** template
+5. Right-click on the **EFS** template
 6. Select **New VM from This Template**
 7. Name the virtual machine **student#Web01** (where # is your student#)
 8. Expand the location and select Workloads
@@ -62,9 +62,18 @@ As a first step in our distributed firewall lab, we will be deploying two VM's a
 20. Click **Menu**
 21. Select **VMs and Templates**
 22. Check to make sure your VMs are powered on. If not power on your VM's. 
-23. Make sure your IP's are assigned an IP address. (this might take a few minutes for the informatiuon to be populated). Make a note of the IP addresses for each web VM. 
 
+## Confirm L2 adjacency
+Now that we have deployed two virtual machines in the same subnet let's log into the VM's and check the network settings and test network connectivity between both web servers. 
 
+1. Open a console to both student#Web01 and studentWeb02. You can do this by right clicking on the VM and selecting **Open Remote Console**.
+Note: ensure that your browser is not blocking popups in case you don't see a remote console window.
+2. Log into both web servers with username: **root** and password **VMware1!**
+3. Once you are logged into the servers enter command **ifconfig**. You should see the server IP address in the proper subnet that you created in lab **Working With Your SDDC**. Make note of both VM's IP addresses. 
+4. Now that we have the IP addresses for each server let's do a ping test to verify connectivity. From student#Web01 ping studdent#Web02 IP address. (Enter ctrl+c to stop pings).
+    ![Ping-Test](https://s3-us-west-2.amazonaws.com/partner-workshop-screenshots/ping-test.jpg)
+
+5. 
 
 
 
