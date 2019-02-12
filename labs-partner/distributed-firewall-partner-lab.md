@@ -73,7 +73,40 @@ Note: ensure that your browser is not blocking popups in case you don't see a re
 4. Now that we have the IP addresses for each server let's do a ping test to verify connectivity. From student#Web01 ping studdent#Web02 IP address. (Enter ctrl+c to stop pings).
     ![Ping-Test](https://s3-us-west-2.amazonaws.com/partner-workshop-screenshots/ping-test.jpg)
 
-5. 
+## Add a Security Group
+Security group is a group that categorizes VMs based on VM names, IP addresses, and matching criteria
+of VM name and security tag.
+Based on the matching criteria, you can apply a configuration to all the VMs in the security group instead
+of applying the configuration to the VMs in the SDDC environment individually.
+You can use security groups when you configure Edge or distributed firewalls.
+
+For this lab we will create a security group based on vm name matching criteria. 
+
+1. Log in to the VMC console at (https://vmc.vmware.com/)
+2. Select **Networking & Security > Groups > Workload Groups**
+3. Click **Add Group**
+4. Enter security group name **securitygroup#** under member type select **Membership Criteria** 
+5. Click **Set Membership Criteria** 
+6. Click **Add Criteria**
+7. For Property select **VM Name** 
+8. For Conddition select **contains**
+9. For Value enter **student#** (where # is the student number assigned to you) click **save**
+10. Click **Save**
+Your security group should look similar to the image below: 
+    ![Security-Group](https://s3-us-west-2.amazonaws.com/partner-workshop-screenshots/security-group.jpg)
+
+### Check Security Group Members
+Now that we have created our security group you can see which members fall under the security group criteria. 
+
+From the workload groups, click on the 3 dots next to your security group and select **View Members**
+![Members](https://s3-us-west-2.amazonaws.com/partner-workshop-screenshots/view-members.jpg)
+
+You should be able all of the VM's you have deployed throughout the lab. 
+
+## Create a Distributed Firewall Rule
+
+
+
 
 
 
