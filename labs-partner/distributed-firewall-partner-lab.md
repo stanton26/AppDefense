@@ -101,9 +101,56 @@ Now that we have created our security group you can see which members fall under
 From the workload groups, click on the 3 dots next to your security group and select **View Members**
 ![Members](https://s3-us-west-2.amazonaws.com/partner-workshop-screenshots/view-members.jpg)
 
-You should be able all of the VM's you have deployed throughout the lab. 
+You should be able to see all of the VM's you have deployed throughout the lab. 
 
-## Create a Distributed Firewall Rule
+## Set Distributed Firewall Rules
+The distributed firewall rules are implemented to secure workload groups in the SDDC environment. A
+firewall is a network security system that monitors and controls the incoming and outgoing network traffic
+based on predetermined firewall rules.
+The source of the rule is a single or multiple workload groups. The source matches to the default any if
+not defined. The destination of the rule is a single or multiple workloads. The destination matches to the
+default any if not defined.
+
+Note: For any traffic attempting to pass through the firewall, the packet information is subjected to the
+rules in the order shown in the rules table, beginning at the top and proceeding to the rules at the bottom.
+In some cases, the order of precedence of two or more rules might be important in determining the
+disposition of a packet.
+
+The default firewall rules apply to traffic that does not match any of the user-defined firewall rules. The
+default firewall rules allow all L3 and L2 traffic to pass through all prepared clusters in your infrastructure.
+The default Layer 3 firewall rule applies to all traffic, including DHCP. If you change the Action to Drop or
+Reject, DHCP traffic is blocked. You must create a rule to allow DHCP traffic.
+
+Now that we have define dour security group we will use it as the source and destination for our firewall rule. 
+
+### Create New Section
+1. Log in to the VMC console at (https://vmc.vmware.com/)
+2. Select **Networking & Security > Distributed Firewall**.
+3. Select **Application Rules** from the right-hand column and click **Add New Section**
+    ![New-Section](https://s3-us-west-2.amazonaws.com/partner-workshop-screenshots/add-new-section.jpg)
+
+4. For name enter **student#** (where # is the student number assigned to you)
+5. Click **Publish** on the top right corner.
+Your section should look like the screenshot below
+    ![Section](https://s3-us-west-2.amazonaws.com/partner-workshop-screenshots/section.jpg)
+
+### Add New Rule
+1. Click the  arrow next to your section
+2. Click **Add New Rule**
+3. For **Name** enter student# (where student# is the number assigned to you)
+4. For **Source** select your security group and click **Save**
+5. For **Destination** select your security group and click **Save**
+6. For **Services** select **any** and click **save**
+7. For **Action** select **reject** 
+8. Click **Publish** on the top right corner
+Your new rule should look like the screenshot below
+    ![New-rule](https://s3-us-west-2.amazonaws.com/partner-workshop-screenshots/set-rule.jpg)
+
+###Check Firewall
+Now that our east-west distributed firewall rule is in place let's re-test our ping test to see if connectivity between the two web servers is being blocked. 
+
+1. Return to the console of your first web server and re-run the same ping command you did previously. You should see that the traffic is now prohibited. 
+    ![Prohibited](https://s3-us-west-2.amazonaws.com/partner-workshop-screenshots/traffic-blocked.jpg)
 
 
 
