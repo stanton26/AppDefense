@@ -412,6 +412,14 @@ AWS Relational Database Service (RDS), also creates its own Elastic Network Inte
 
 3\. Click **Connect**
 
+### Enter Login Information	
+
+ ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS15.jpg)	
+
+ 1\. Type **student#** (where # is the number assigned to you) for user name and **VMware1!** for password.	
+
+ 2\. Click **Sign In**
+
 ### Photo Albums
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS16.jpg)
