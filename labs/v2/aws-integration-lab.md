@@ -412,12 +412,6 @@ AWS Relational Database Service (RDS), also creates its own Elastic Network Inte
 
 3\. Click **Connect**
 
-### Login to Photo App
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS14.jpg)
-
-1\. In the upper left part of the browser window click the little arrow to log in.
-
 ### Enter Login Information
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS15.jpg)
