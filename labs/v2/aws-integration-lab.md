@@ -360,7 +360,7 @@ Please note you might get either of the 2 sign on screens above. If you get the 
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS9.jpg)
 
-1\. Choose the **rds-launch-wizard-#** RDS Security group corresponding to you (may not match your student number)
+1\. Choose the **Student##-RDS-Inbound** RDS Security group corresponding to you (may not match your student number)
 
 2\. After highlighting the appropriate security group click on the **Inbound** tab below
 
@@ -392,7 +392,7 @@ AWS Relational Database Service (RDS), also creates its own Elastic Network Inte
 
 2\. All Student environments belong to the same AWS account, therefore, hundreds of ENI's may exist. In order to minimize the view type **RDS** in the search area and press Enter to add a filter
 
-3\. Highlight your rds-launch-wizard-# corresponding to your student number based on the second octect of the CIDR block in the last column.
+3\. Highlight your **Student##-RDS-Inbound** security group corresponding to your student number based on the second octect of the CIDR block in the last column.
 
     In this example the CIDR block is 172.6.8.187, this would correspond to student **6**
     
