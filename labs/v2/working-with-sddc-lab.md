@@ -199,7 +199,7 @@ If you use a subscribed library, you can only utilize the content, but cannot co
 ![SDDC016](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc016.jpg)
 
 1. Select the radio button next to **Subscribed content library.**
-2. Under **Subscription URL** enter the following: https://vcenter.sddc-54-68-196-7.vmwarevmc.com/cls/vcsp/lib/29b938a2-30a2-4f61-90fa-76594db53caf/lib.json
+2. Under **Subscription URL** enter the following: https://vmc-elw-vms.s3-accelerate.amazonaws.com/lib.json
 3. Leave the checkbox **unchecked** next to **Enabled Authentication**.
 4. Make sure Download content is set to **immediately**.
 5. Click **Next** to continue.
