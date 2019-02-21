@@ -91,7 +91,7 @@ Now we will create a firewalll rule to allow access from the VPN into our photo 
 
 ### AWS Relational Database Service (RDS Configuration)
 
-On your browser, open a new tab and go to: <https://vmcworkshop.signin.aws.amazon.com/console>
+On your browser, open a new tab and go to: <https://vmcworkshop-partner.signin.aws.amazon.com/console>
 
 1. For Account ID or alias ensure **vmcworkshop-partner** is specified
 2. IAM user name - Student# (where # is the number assigned to you)
