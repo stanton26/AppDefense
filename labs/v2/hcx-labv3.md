@@ -2,7 +2,7 @@
 layout: single
 title: "Hybrid Cloud Extension (HCX) Lab Manual"
 categories: labs
-date: 02-21-2019 
+date: 2019-02-21 
 tags: workshop
 toc: true
 classes: wide
