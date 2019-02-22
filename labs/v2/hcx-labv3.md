@@ -58,6 +58,37 @@ Click on the link below to walk through on how to install and configure HCX with
 
 ## HCX - vMotion Migration
 
+Now that you are familar with installing and configuring HCX.  Let's do an actual vMotion migration of a virtual machine to VMware Cloud on AWS.
+
+### Log into On-Prem vCenter
+
+We have provided an on-prem vCenter with virtual machines to migrate.  Based on your student ## please select the appropriate VM to migrate.
+
+From your Horizon desktop (workshop.vmc.ninja) open google and access the on-prem vCenter
+
+**Note: Refer to the Student Access page to log into your Horizon desktop https://vmc-field-team.github.io/student-access/
+
+[HCX01](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/hcx01.jpg)
+
+1. Open Google and enter https://vcenter-workshop.workshop.set.local/ui for the URL.
+2. Type in your student (vmcws#@set.local) credentials.
+3. Type in your password assigned to you.
+4. Click **Login** to continue.
+
+[HCX02](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/hcx02.jpg)
+
+1. Click the arrow to expand **Datacenter**.
+2. Click the arrow to expand **VSAN-Cluster** cluster.
+3. Click the arrow to expand **Migrate** resource pool.
+4. Click on the **Student##** virtual machine.
+5. Make note of the **IP Address** to ping later.
+
+[HCX03](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/hcx03.jpg)
+
+1. Right click on your **Student##** virtual machine.
+2. Hover your mouse over **Hybridity Actions**.
+3. Click on **Migrate to the Cloud**.
+
 ![HCX3](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/HCX3.jpg)
 
 1. Open your Chrome browser and click on the *HCX-vMotion* bookmark
