@@ -55,7 +55,7 @@ Any-to-Any vSphere Cloud App Mobility
 Use the click through demonstration of how to install and configure HCX within your on-prem vCenter environment.
 
 <aside class="notice">
-<embed width="90%" src="https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/HCX-OnPrem-Installation.htm">
+<embed width="90%" height="500" src="https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/HCX-OnPrem-Installation.htm">
 </aside>
 
 ## HCX - vMotion Migration
