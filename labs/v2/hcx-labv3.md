@@ -114,11 +114,50 @@ To migrate your virtual machine VMware Cloud on AWS you will have to select the 
 ![HCX05](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/hcx05.jpg)
 
 1. Verify the validation is successful.
-2. Click on **Finish** to migrate your virtual machine to VMware Cloud on AWS.  Boom.
+2. Click on **Finish** to migrate your virtual machine to VMware Cloud on AWS.
 
+![HCX06](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/hcx06.jpg)
 
+1. Click on **Menu**.
+2. Click on **HCX**.
+   
+![HCX07](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/hcx07.jpg)
 
+Dashboard gives you the number of virtual machines migrated, in progress and scheduled.
 
+1. Click on **Migration** on the left side.
+
+![HCX08](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/hcx08.jpg)
+
+1. Make note of the progress of the vMotion migration.
+2. Click on the **Refresh** button to update the progress.
+
+![HCX09](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/hcx09.jpg)
+
+While the migration is in progress lets look at the ping response.
+
+1. Click on the **Command Prompt** to return to the ping test.
+2. Observe the ping test left running from a previous step and notice it hasn't dropped.
+
+![HCX010](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/hcx010.jpg)
+
+Once the virtual machine has been successfully migrated to VMware Cloud on AWS, lets take the same virtual machine and migrate it back to the on-prem vCenter.
+
+1. Verify the virtual machine has been migrated to the SDDC in VMware Cloud on AWS.
+2. Click on **Migrate Virtual Machines** button.
+
+![HCX011](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/hcx011.jpg)
+
+1. Click on **Reverse Migration** checkbox to switch to the VMware Cloud on AWS vCenter.
+2. Click on **Migrate** resource pool to display the migrated virtual machines.
+3. Click on your **Student##**.
+4. Click on **Specify Destination Folder** and select the **Migrate** folder.
+5. Click on **Specify Destination Container** and select the **Migrate** resource pool.
+6. Click on **Select Storage** and select the **vsanDatastore** datastore.
+7. Click on **Select Migration Type** and select **vMotion**.
+8. Click **Next** to validate your selection.
+
+# STOP HERE
 
 
 ![HCX3](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/HCX3.jpg)
