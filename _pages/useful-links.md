@@ -26,5 +26,5 @@ Link | Description
 [VMware Cloud Community Blog](https://cloud.vmware.com/community/){:target="_blank"} | This is the VMware on AWS Community blog where you will find a number of useful articles from VMware employees on the subject of cloud computing
 [Brian Graf VMware on AWS Series](https://www.brianjgraf.com/category/vmc/){:target="_blank"} | Brian Graf is a Senior Technical Marketing Manager for VMware on AWs at VMware
 [Frank Denneman Blog](http://frankdenneman.nl/){:target="_blank"} | Frank Denneman, Senior Architect for VMware on AWS at VMware R&D
-[Ryan Kelly's Blog](http://www.vmtocloud.com/){:target="_blank"} | Ryan Kelly, Cloud Specialist at VMWare in the VMware on AWS team
+[Ryan Kelly's Blog](http://www.vmtocloud.com/){:target="_blank"} | Ryan Kelly, Cloud Specialist at VMware in the VMware on AWS team
 [Gilles Chekroun's Blog](http://www.gilles.cloud/){:target="_blank"} | Gilles Chekroun is an NSX Systems Engineer at VMware who regularly blogs on the subject of VMware on AWS
