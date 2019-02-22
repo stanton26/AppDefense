@@ -52,7 +52,7 @@ Hybrid Cloud Extension abstracts on-premises and cloud resources and presents th
 
 ## Configure HCX
 
-click on the link below to walk through on how to install and configure HCX within your on-prem vCenter environment.
+Click on the link below to walk through on how to install and configure HCX within your on-prem vCenter environment.
 
 [HCX Install and Configuration](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/HCX-OnPrem-Installation.htm){:target="_blank"}
 
