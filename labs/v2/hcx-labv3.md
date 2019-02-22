@@ -83,11 +83,43 @@ From your Horizon desktop (workshop.vmc.ninja) open google and access the on-pre
 4. Click on the **Student##** virtual machine.
 5. Make note of the **IP Address** to ping later.
 
+![HCX02-1](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/hcx02-1.jpg)
+
+1. Right click on the Windows Icon in the lower left of your desktop.
+2. Click on **Command Prompt**.
+
+![HCX02-2](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/hcx02-2.jpg)
+
+1. In case you didn't capture the IP Address of the virtual machine.
+2. Type in the command prompt **ping -t 172.60.2.xxx**.
+
 ![HCX03](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/hcx03.jpg)
 
 1. Right click on your **Student##** virtual machine.
 2. Hover your mouse over **Hybridity Actions**.
 3. Click on **Migrate to the Cloud**.
+
+![HCX04](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/hcx04.jpg)
+
+To migrate your virtual machine VMware Cloud on AWS you will have to select the destinations for the folder, resource pool and datastore.
+
+**Note: Make sure to select the Migrate folder and resource pool to ensure you can find the same virtual machine when migrating back to on-prem.**
+
+1. Click on **Specify Destination Folder** and select the **Migrate** folder.
+2. Click on **Specify Destination Container** and select the **Migrate** resource pool.
+3. Click on **Select Storage** and select the **WorkloadDatastore** datastore.
+4. Click on **Select Migration Type** and select **vMotion**.
+5. Click **Next** to validate your selection.
+
+![HCX05](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/hcx05.jpg)
+
+1. Verify the validation is successful.
+2. Click on **Finish** to migrate your virtual machine to VMware Cloud on AWS.
+
+
+
+
+
 
 ![HCX3](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/HCX3.jpg)
 
