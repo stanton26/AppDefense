@@ -23,32 +23,32 @@ Hybrid Cloud Extension abstracts on-premises and cloud resources and presents th
 
 ![HCX2](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/HCX2.jpg)
 
-Any-to-Any vSphere Cloud App Mobility
+#### Any-to-Any vSphere Cloud App Mobility
 
-• Rapidly move existing workloads from a vSphere platform to the latest SDDC
-• Reduce upfront planning time for cost and resource analysis
-• Accelerate cloud adoption and avoid retrofitting on-premises environment Business Continuity with Lower TCO
+* Rapidly move existing workloads from a vSphere platform to the latest SDDC
+* Reduce upfront planning time for cost and resource analysis
+* Accelerate cloud adoption and avoid retrofitting on-premises environment Business Continuity with Lower TCO
 
 #### Business Continuity with Lower TCO
 
-• IP and MAC address remapping is not required
-• No need to retrofit existing VM environment
-• Hybrid Cloud Extension provides warm and cold bulk migration, and bidirectional migration
-• Hybrid Cloud Extension simplifies your operational model
+* IP and MAC address remapping is not required
+* No need to retrofit existing VM environment
+* Hybrid Cloud Extension provides warm and cold bulk migration, and bidirectional migration
+* Hybrid Cloud Extension simplifies your operational model
 
 #### Architected for Security
 
-• Ensure highly secure tethering of private and public clouds
-• Protect resources with resilient disaster recovery capabilities
-• Hybrid Cloud Extension hybrid DMZ enables portability of enterprise network and security practices to the cloud
-• Security policies migrate with applications High-Performance Infrastructure Hybridity
+* Ensure highly secure tethering of private and public clouds
+* Protect resources with resilient disaster recovery capabilities
+* Hybrid Cloud Extension hybrid DMZ enables portability of enterprise network and security practices to the cloud
+* Security policies migrate with applications High-Performance Infrastructure Hybridity
 
 #### High-Performance Infrastructure Hybridity
 
-• In-built WAN optimization is tuned for the needs of hybrid use cases
-• Hybrid Cloud Extension provides agile, intelligent routing
-• Traffic load balancing overlay is policy-enforced
-• Multiple VM migration models (including vMotion, warm, cold) make it easy to migrate to and from the cloud without any changes
+* In-built WAN optimization is tuned for the needs of hybrid use cases
+* Hybrid Cloud Extension provides agile, intelligent routing
+* Traffic load balancing overlay is policy-enforced
+* Multiple VM migration models (including vMotion, warm, cold) make it easy to migrate to and from the cloud without any changes
 
 ## Configure HCX
 
