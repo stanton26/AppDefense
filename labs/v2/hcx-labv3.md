@@ -95,7 +95,7 @@ From your Horizon desktop (workshop.vmc.ninja) open google and access the on-pre
 
 ![HCX03](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/hcx03.jpg)
 
-1. Right click on your **Student##** virtual machine.
+1. Go back to vCenter console and right click on your **Student##** virtual machine.
 2. Hover your mouse over **Hybridity Actions**.
 3. Click on **Migrate to the Cloud**.
 
@@ -114,7 +114,7 @@ To migrate your virtual machine VMware Cloud on AWS you will have to select the 
 ![HCX05](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/hcx05.jpg)
 
 1. Verify the validation is successful.
-2. Click on **Finish** to migrate your virtual machine to VMware Cloud on AWS.
+2. Click on **Finish** to migrate your virtual machine to VMware Cloud on AWS.  Boom.
 
 
 
