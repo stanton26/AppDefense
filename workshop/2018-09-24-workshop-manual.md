@@ -51,7 +51,7 @@ Lab Name | Description
 [Working with your SDDC](https://vmc-field-team.github.io/labs/v2/working-with-sddc-lab/){:target="_blank"} | Learn the basics of running a VMware on AWS SDDC environment
 [AWS Integration](https://vmc-field-team.github.io/labs/v2/aws-integration-lab/){:target="_blank"} | Learn how to integrate with native AWS services such as RDS and EFS
 [VMware Cloud on AWS APIs](https://vmc-field-team.github.io/labs/v2/api-lab/){:target="_blank"} | Learn how to interact with VMware on AWS through APIs
-[VMware Hybrid Cloud Extension](https://vmc-field-team.github.io/labs/v2/hcx-lab/){:target="_blank"} | Learn how VMwares Hybrid Cloud Extension (HCX) technology can help with bulk and live migration to the VMware on AWS cloud platform
+[VMware Hybrid Cloud Extension](https://vmc-field-team.github.io/labs/v2/hcx-labv3/){:target="_blank"} | Learn how VMwares Hybrid Cloud Extension (HCX) technology can help with bulk and live migration to the VMware on AWS cloud platform
 [VMware vRealize Automation](https://vmc-field-team.github.io/labs/v2/vra-lab/){:target="_blank"} | Utilize integration capabilities with VMware cloud management tools
 
 <!--
