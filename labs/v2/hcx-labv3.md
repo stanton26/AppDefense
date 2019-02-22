@@ -58,7 +58,7 @@ Click on the link below to walk through on how to install and configure HCX with
 
 ## HCX - vMotion Migration
 
-Now that you are familar with installing and configuring HCX.  Let's do an actual vMotion migration of a virtual machine to VMware Cloud on AWS.
+Now that you are familar with installing and configuring HCX.  Let's do an actual vMotion (live) migration of a virtual machine to VMware Cloud on AWS.
 
 ### Log into On-Prem vCenter
 
@@ -185,10 +185,10 @@ Feel free to try the other migration Types.  Use the same virtual machine **Stud
 
 ![HCX015](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/hcx015.jpg)
 
-### Cloud Motion with vSphere Replication
+#### Cloud Motion with vSphere Replication
 
 This latest option provides zero downtime for workload mobility from source to Destination.  First, the workload disks get replicated to the destination site.  The replication is handled using the HCX built-in vSphere replication.  This process is dependent on the amount of data and available network bandwidth.  Once the data sync is complete the HCX switchover initiates a vMotion.  The vMotion migrates the workload to the destination site and synchronizes only the remaining data (delta) and workload memory state.  There is an option to schedule a maintenance window for the vMotion data sync swithcover otherwise it happens immediately.
 
-### Bulk Migration
+#### Bulk Migration
 
 Bulk Migration creates a new virtual machine on the destination site.  This can either be on-premises or VMC and retains the workload UUID.  Then it uses vSphere Replication to copy a snapshot of the workload from source to destination site while the workload is still powered on.  In this case, a snapshot is a point of the time of the workload disk state, but not the traditional vSphere snapshot.  The Bulk Migration is managed by the HCX interconnect cloud gateway proxy.  During the data sync, there is no interruption to the workloads.  The data sync is dependent on the amount of data and available bandwidth.  There is an option to schedule a maintenance window for the switchover otherwise, the switchover happens immediately.  Once the initial data sync completes, a switchover takes place (unless scheduled). The source site workloads are quiesced and shut down leveraging VMware Tools. If VMware Tools is not available, HCX will prompt you to force power off the workload(s) to initiate the switchover. During the switchover process, a delta sync occurs based on changed block tracking (CBT) to sync the changes since the original snapshot. The workloads on the destination site will begin to power on once the data sync is complete (including delta data changes). There are checks in place to ensure resources are available to power on the workloads. If a destination workload cannot power on due to resources, the source workload will get powered back on.
