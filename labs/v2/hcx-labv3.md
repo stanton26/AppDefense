@@ -43,7 +43,7 @@ Hybrid Cloud Extension abstracts on-premises and cloud resources and presents th
 * Hybrid Cloud Extension hybrid DMZ enables portability of enterprise network and security practices to the cloud
 * Security policies migrate with applications High-Performance Infrastructure Hybridity
 
-#### High-Performance Infrastructure Hybridity
+#### High Performance Infrastucture Hybridity
 
 * In-built WAN optimization is tuned for the needs of hybrid use cases
 * Hybrid Cloud Extension provides agile, intelligent routing
