@@ -66,16 +66,16 @@ We have provided an on-prem vCenter with virtual machines to migrate.  Based on 
 
 From your Horizon desktop (workshop.vmc.ninja) open google and access the on-prem vCenter
 
-**Note: Refer to the Student Access page to log into your Horizon desktop https://vmc-field-team.github.io/student-access/
+**Note: Refer to the Student Access page to log into your Horizon desktop https://vmc-field-team.github.io/student-access/**
 
-[HCX01](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/hcx01.jpg)
+![HCX01](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/hcx01.jpg)
 
 1. Open Google and enter https://vcenter-workshop.workshop.set.local/ui for the URL.
 2. Type in your student (vmcws#@set.local) credentials.
 3. Type in your password assigned to you.
 4. Click **Login** to continue.
 
-[HCX02](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/hcx02.jpg)
+![HCX02](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/hcx02.jpg)
 
 1. Click the arrow to expand **Datacenter**.
 2. Click the arrow to expand **VSAN-Cluster** cluster.
@@ -83,7 +83,7 @@ From your Horizon desktop (workshop.vmc.ninja) open google and access the on-pre
 4. Click on the **Student##** virtual machine.
 5. Make note of the **IP Address** to ping later.
 
-[HCX03](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/hcx03.jpg)
+![HCX03](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/hcx03.jpg)
 
 1. Right click on your **Student##** virtual machine.
 2. Hover your mouse over **Hybridity Actions**.
