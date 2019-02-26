@@ -110,7 +110,8 @@ To migrate your virtual machine VMware Cloud on AWS you will have to select the 
 1. Click on **Specify Destination Folder** and select the **Migrate** folder.
 2. Click on **Specify Destination Container** and select the **Migrate** resource pool.
 3. Click on **Select Storage** and select the **WorkloadDatastore** datastore.
-4. Click on **Select Migration Type** and select **vMotion**.
+4. Click on **Select Migration Type** and select **Cloud Motion with vSphere Replication**.
+   Leave the **schedule failover** as is to make sure the migration happens immediately.
 5. Click **Next** to validate your selection.
 
 ![HCX05](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/hcx05.jpg)
@@ -119,6 +120,8 @@ To migrate your virtual machine VMware Cloud on AWS you will have to select the 
 2. Click on **Finish** to migrate your virtual machine to VMware Cloud on AWS.
 
 ### Migrate Virtual Machine Back to On-Prem Datacenter
+
+We will use vMotion to migrate the virtual machine back to the on-prem vCenter.  Please note that this is a serialized operation and depending on how many are being vMotioned back it could take some time to complete.
 
 ![HCX06](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/hcx06.jpg)
 
@@ -181,7 +184,7 @@ Once the virtual machine has been successfully migrated to VMware Cloud on AWS, 
 
 ### Other Migration Methods
 
-Feel free to try the other migration Types.  Use the same virtual machine **Student##** and follow the same steps but instead of vMotion try **Bulk Migration **or **Cloud Motion with vSphere Replication**.
+Feel free to try the other migration Types.  Use the same virtual machine **Student##** and follow the same steps but instead of vMotion try **Bulk Migration** or **vMotion**.
 
 ![HCX015](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/hcx015.jpg)
 
@@ -192,3 +195,9 @@ This latest option provides zero downtime for workload mobility from source to D
 #### Bulk Migration
 
 Bulk Migration creates a new virtual machine on the destination site.  This can either be on-premises or VMC and retains the workload UUID.  Then it uses vSphere Replication to copy a snapshot of the workload from source to destination site while the workload is still powered on.  In this case, a snapshot is a point of the time of the workload disk state, but not the traditional vSphere snapshot.  The Bulk Migration is managed by the HCX interconnect cloud gateway proxy.  During the data sync, there is no interruption to the workloads.  The data sync is dependent on the amount of data and available bandwidth.  There is an option to schedule a maintenance window for the switchover otherwise, the switchover happens immediately.  Once the initial data sync completes, a switchover takes place (unless scheduled). The source site workloads are quiesced and shut down leveraging VMware Tools. If VMware Tools is not available, HCX will prompt you to force power off the workload(s) to initiate the switchover. During the switchover process, a delta sync occurs based on changed block tracking (CBT) to sync the changes since the original snapshot. The workloads on the destination site will begin to power on once the data sync is complete (including delta data changes). There are checks in place to ensure resources are available to power on the workloads. If a destination workload cannot power on due to resources, the source workload will get powered back on.
+
+#### vMotion "Live Migration"
+
+HCX supports the vMotion we know and love today. The workloads are migrated live with no downtime similar to Cloud Motion with vSphere Replication. vMotion should not be used to migrate hundreds of workloads or workloads with large amounts of data. Instead, use Cloud Motion with vSphere Replication or Bulk Migration. Usually, a vMotion network needs to be configured and routed to the target vSphere host, in this case, the vMotion traffic is handled by the HCX Interconnect cloud gateway for cross-cloud vMotion. vMotion through HCX encapsulates and encrypts all traffic from source to destination removing network complexity of routing to cloud.
+
+HCX has a built-in option to retain the workloads MAC address. If this option is not checked, the workloads will have a different MAC on the destination site. Workloads must be at compatibility (hardware) version 9 or greater and 100 Mbps or above of bandwidth must be available. With vMotion and bi-directional migration, it’s important to consider Enhanced vMotion Compatibility (EVC). The good news here is HCX also handles EVC. The workloads can be migrated seamlessly and once rebooted will inherit the CPU features from the target cluster. This allows a cross-cloud vMotion between different chipset versions (e.g. Sandy Bridge to Skylake) but within the same CPU family (e.g. Intel). **Also, an important thing to note is vMotion is done in a serialized manner.** Only one vMotion occurs at a time and queues the remaining workloads until the current vMotion is complete.
