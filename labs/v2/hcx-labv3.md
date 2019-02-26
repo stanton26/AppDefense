@@ -119,9 +119,7 @@ To migrate your virtual machine VMware Cloud on AWS you will have to select the 
 1. Verify the validation is successful.
 2. Click on **Finish** to migrate your virtual machine to VMware Cloud on AWS.
 
-### Migrate Virtual Machine Back to On-Prem Datacenter
-
-We will use vMotion to migrate the virtual machine back to the on-prem vCenter.  Please note that this is a serialized operation and depending on how many are being vMotioned back it could take some time to complete.
+### Check Migration Progess
 
 ![HCX06](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/hcx06.jpg)
 
@@ -146,9 +144,15 @@ While the migration is in progress lets look at the ping response.
 1. Click on the **Command Prompt** to return to the ping test.
 2. Observe the ping test left running from a previous step and notice it hasn't dropped.
 
-![HCX010](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/hcx010.jpg)
+**Note: Make sure the migration is successful before continuing on to the next step.**
 
 Once the virtual machine has been successfully migrated to VMware Cloud on AWS, lets take the same virtual machine and migrate it back to the on-prem vCenter.
+
+### Migrate Virtual Machine Back to On-Prem Datacenter
+
+We will use vMotion to migrate the virtual machine back to the on-prem vCenter.  Please note that this is a serialized operation and depending on how many are being vMotioned back it could take some time to complete.
+
+![HCX010](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/hcx010.jpg)
 
 1. Verify the virtual machine has been migrated to the SDDC in VMware Cloud on AWS.
 2. Click on **Migrate Virtual Machines** button.
