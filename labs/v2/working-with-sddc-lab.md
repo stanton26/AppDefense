@@ -422,7 +422,7 @@ We will now begin the process of cloning this virtual machine.
 
 ![SDDC-clone-vm-040](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc040.jpg)
 
-1. Next to **Virtual machien name** enter **webserver02**.
+1. Next to **Virtual machine name** enter **webserver02**.
 2. Click the **Workloads** folder for the virtual machine location.
 3. Click **Next** to continue.
 
