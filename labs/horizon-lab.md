@@ -25,8 +25,8 @@ on AWS, with the market-leading capabilities of VMware Horizon for a simple, sec
 
 ### Simplify Public and Hybrid Cloud Management
 
-For customers who are already familiar with Horizon 7 or have Horizon 7 deployed
-on premises, running Horizon 7 on VMware Cloud lets you leverage a unified
+For customers, who are already familiar with Horizon 7 or have Horizon 7 deployed
+on premises, running Horizon 7 on VMware Cloud on AWS lets you leverage a unified
 architecture and familiar tools. You can simplify management for Horizon 7
 deployments using on-premises infrastructure and VMware Cloud on AWS with
 Cloud Pod Architecture (CPA) by linking cloud deployments in different regions,
