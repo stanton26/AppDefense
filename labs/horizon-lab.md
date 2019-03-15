@@ -11,7 +11,7 @@ comments: true
 ---
 
 # Introduction
-Change Test Rob
+
 We do have a working Horizon environment. You are using it to jump on the Workshop SDDC. This Horizon environement is running on our BU SDDC.
 In this Lab we will conect you Student SDDC vCenter to this existing Horizon environment to rollout Desktops. You can then see the new created pool.
 Hold in mind. Only one of the Students per SDDC can do this task.
@@ -25,8 +25,8 @@ on AWS, with the market-leading capabilities of VMware Horizon for a simple, sec
 
 ### Simplify Public and Hybrid Cloud Management
 
-For customers, who are already familiar with Horizon 7 or have Horizon 7 deployed
-on premises, running Horizon 7 on VMware Cloud on AWS lets you leverage a unified
+For customers who are already familiar with Horizon 7 or have Horizon 7 deployed
+on premises, running Horizon 7 on VMware Cloud lets you leverage a unified
 architecture and familiar tools. You can simplify management for Horizon 7
 deployments using on-premises infrastructure and VMware Cloud on AWS with
 Cloud Pod Architecture (CPA) by linking cloud deployments in different regions,
