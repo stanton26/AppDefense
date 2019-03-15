@@ -153,7 +153,7 @@ The next step will be to create the VPN connection between Student-Workshop-X.1 
 3. **Route Based**
 4. **Add VPN**
 
-| Name | Local IP | Remote Public IP | BGP Local IP/Prefix Length | BGP Remote IP | BGP Remote ASN | Status |
+| **Name** | **Local IP** | **Remote Public IP** | **BGP Local IP/Prefix Length** | **BGP Remote IP** | **BGP Remote ASN** | **Status** |
 | Horizon-Student-Workshop-1.1 | Local IP | Remote Public IP | 169.254.111.1/30 | 169.254.111.2 | 65000| |
 | Horizon-Student-Workshop-1.1 | Local IP | Remote Public IP | 169.254.111.2/30 | 169.254.111.1 | 65001| |
 
