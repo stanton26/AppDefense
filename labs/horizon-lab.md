@@ -23,16 +23,7 @@ on AWS, with the market-leading capabilities of VMware Horizon for a simple, sec
 
 ### Simplify Public and Hybrid Cloud Management
 
-For customers, who are already familiar with Horizon 7 or have Horizon 7 deployed
-on premises, running Horizon 7 on VMware Cloud on AWS lets you leverage a unified
-architecture and familiar tools. You can simplify management for Horizon 7
-deployments using on-premises infrastructure and VMware Cloud on AWS with
-Cloud Pod Architecture (CPA) by linking cloud deployments in different regions,
-or by linking on-premises deployments to VMware Cloud on AWS deployments.
-This means that you use the same expertise and tools you know from VMware
-vSphere® and Horizon 7 for operational consistency, and leverage the rich feature
-set and flexibility you expect from Horizon 7
-
+For customers, who are already familiar with Horizon 7 or have Horizon 7 deployed on premises, running Horizon 7 on VMware Cloud on AWS lets you leverage a unified architecture and familiar tools. You can simplify management for Horizon 7 deployments using on-premises infrastructure and VMware Cloud on AWS with Cloud Pod Architecture (CPA) by linking cloud deployments in different regions, or by linking on-premises deployments to VMware Cloud on AWS deployments. This means that you use the same expertise and tools you know from VMware vSphere® and Horizon 7 for operational consistency, and leverage the rich feature set and flexibility you expect from Horizon 7
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/2.png) 
 
@@ -92,26 +83,28 @@ Fill in the following information
 -->
 
 ## Configuring SDDC Firewall Rules
+
 If not done already in the previous lab please also create the Firewall rule for the Management Gateway so you can access the vCenter.
+
 <!-- Comment for Elena: this is step 1. This stays.-->
 
 ### Compute Gateway Firewall Rules
 
 By default, the Compute Gateway is set to deny all inbound and outbound traffic. You need to add additional firewall rules to allow access to your workload VMs which you provision in the VMware Cloud on AWS platform.
 
-#### Create Compute Gateway Firewall Rule
+#### Create Compute Gateway Firewall Rule
 
 1. Under **Network & Security** tab, navigate to **Security**, then **Gateway Firewall**
 2. On the right hand side go to **Compute Gateway**
 3. Click **ADD NEW RULE**
 
-Horizon requires a number of ports to be opened for communcation and Inter-POD connectivity. For the purposes of the lab and ease of management we are going to allow communicaqtiona cross everythig. The first rule we are going to create is an Any Any Any rule. 
+Horizon requires a number of ports to be opened for communcation and Inter-POD connectivity. For the purposes of the lab and ease of management we are going to allow communicaqtiona cross everythig. The first rule we are going to create is an Any Any Any rule.
 
 1. **Name** - Horizon
 2. **Source** - Any
 3. **Destination** - Any
 4. **Service** - Any
-5. **Action** - Allow 
+5. **Action** - Allow
 6. **Applied To** - All Uplinks
 
 The next step will be to edit the **Default VTI Rule** in the Compure Gatwway Firewall Rules section and change **Action** to **Allow**.
@@ -120,12 +113,12 @@ The next step will be to edit the **Default VTI Rule** in the Compure Gatwway Fi
 
 ## Cretea a Logical Network
 
-For our Horizon Lab we prepared several machines like AD, Hoirzon Connections Server, Unified access gateway and the Goldenmaster Image.
+For this Horizon Lab we have prepared several virtual machines, like Active Directory (AD), Hoirzon Connections Server, Unified Access Gateway (UAG) and the Goldenmaster Image.
 The AD, Horizon Connection Server, UAG and Goldenmaster Image will be deployed in a 192.168.20.0/24 subnet. Therefore we need to create this network first.
 
 ## Create a Logical Network
 
-The next step we need to complete is to create a logical network. For our Horizon Lab we are going to need several virtual machines. These are: Active Directory, Hoirzon Connections Server, Unified Access Gateway (UAG) and the Golden Master Image. 
+The next step we need to complete is to create a logical network. For our Horizon Lab we are going to need several virtual machines. These are: Active Directory, Hoirzon Connections Server, Unified Access Gateway (UAG) and the Golden Master Image.
 
 The AD, Horizon Connection Server, UAG and Golden Master Image will be deployed in a 192.168.xxx.xxx/24 subnet. Therefore we need to create this network first.
 
@@ -138,12 +131,13 @@ Depending on weather you are working in SDDC **Student-Workshop-X.1** or **Stude
 **Student-Workshop-X.2** use **Horizon200**
 2. **Type** - Routed
 3. **Tunnel ID** - Leave as is
-4. **Gateway / Prefix Length** 
+4. **Gateway / Prefix Length**
 **Student-Workshop-X.1** use 192.168.100.1/24
 **Student-Workshop-X.2** use 192.168.200.1/24
 5. **DHCP** - Disabled
 
-##Creating a VPN Connection
+## Creating a VPN Connection
+
 The next step will be to create the VPN connection between Student-Workshop-X.1 and Student-Workshop- X.2. To do that, follow the steps below:
 
 1. Go to **Network & Security**
@@ -162,16 +156,17 @@ We have now completed network set up part of the lab. The next step will be to d
 The next step will be to log onto vCenter and deploy VMs.
 
 ## Log into vCenter
-To open vCenter, navigate to **OPEN VCENTER** in the top right hand corner of the screen.
-![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/Open+vCenter.jpg)
 
-## Subscribed Content Libraries
+To open vCenter, navigate to **OPEN VCENTER** in the top right hand corner of the screen.
+![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/Show+vCdenter+Credentials.jpg)
+
+Then go to Show **vCenter Credentials**.
+
+## Horizon Deployment
 
 As part of the lab, we have already subscribed your SDDC to Content Libraries. These are located in an Amazon S3 bucket, where we have the VM templates stored and ready to use. 
 
 In the subscribed content library you will find the Golden Master Image that you need to use for the deploymend of new desktops with the help of horizon
-
-![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/Show+vCdenter+Credentials.jpg)
 
 1. Click on **Menu**
 2. Click on **Content Libraries**
@@ -180,7 +175,7 @@ In the subscribed content library you will find the Golden Master Image that you
 
 You may already have a Content Library in your on-premises data center, you can use the Content Library to import content into your SDDC.
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-20-Image-20.png)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-20-Image-20.png) 
 
 1. In your Content Library window, click the **+** sign to add a new Content Library.
     ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-20-Image-21.png)
@@ -224,8 +219,6 @@ Now that we have subscribed to the Conten Library we can deploy the Horizon Infr
 12. Select the network you created in privious LAB **Horizon#-LN**
 13. Click **next** and **finish**
 
-
-
 ## Create Horizon Server VM
 
 5.  Right Click on the **HZ-76-WS** and choose **New VM from this Template....**
@@ -238,11 +231,9 @@ Now that we have subscribed to the Conten Library we can deploy the Horizon Infr
 12. Select the network you created in privious LAB **Horizon#-LN**
 13. Click **next** and **finish**
 
-
 ## Create your Golden Master Image
 
-With Horizon 7.6 we do have the option to also do Instant Clones. For this lab we prepared two Golden Master Images. The first one is for Instant Clones with the Name **W10-LTBS-1607-IC**, the second one is for Full Clones. You can decide to either go for Full clones or use Instant Clones. We suggest to do instant clones cause it is much faster to rollout this desktops. 
-
+With Horizon 7.6 we do have the option to also do Instant Clones. For this lab we prepared two Golden Master Images. The first one is for Instant Clones with the Name **W10-LTBS-1607-IC**, the second one is for Full Clones. You can decide to either go for Full clones or use Instant Clones. We suggest to do instant clones cause it is much faster to rollout this desktops.
 
 5.  Right Click on the **W10-LTBS-1607-IC Template** and choose **New VM from this Template....**
 6.  Give it the same the name **W10-LTBS-#** where # is put your student ID in
