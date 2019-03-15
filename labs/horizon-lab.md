@@ -153,9 +153,12 @@ The next step will be to create the VPN connection between Student-Workshop-X.1 
 3. **Route Based**
 4. **Add VPN**
 
-| **Name** | **Local IP** | **Remote Public IP** | **BGP Local IP/Prefix Length** | **BGP Remote IP** | **BGP Remote ASN** | **Status** |
-| Horizon-Student-Workshop-1.1 | Local IP | Remote Public IP | 169.254.111.1/30 | 169.254.111.2 | 65000| |
-| Horizon-Student-Workshop-1.1 | Local IP | Remote Public IP | 169.254.111.2/30 | 169.254.111.1 | 65001| |
+| **Name** | **Local IP** | **Remote Public IP** | **BGP Local IP/Prefix Length** | **BGP Remote IP** | **BGP Remote ASN** | **Preshared Key** |
+| Horizon-Student-Workshop-X.1 | Public | *Public IP Student X.2* | 169.254.111.1/30 | 169.254.111.2 | 65000| VMware1! |
+| Horizon-Student-Workshop-X.2 | Public | *Public IP Student X.1* | 169.254.111.2/30 | 169.254.111.1 | 65001| VMware1! |
+
+Note: To complete the **Remote Public IP** field, please work with your workshop partner to obtain their Public IP address.
+
 
 ## Subscribed Content Libraries
 
