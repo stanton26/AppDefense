@@ -12,9 +12,7 @@ comments: true
 
 # Introduction
 
-We do have a working Horizon environment. You are using it to jump on the Workshop SDDC. This Horizon environement is running on our BU SDDC.
-In this Lab we will conect you Student SDDC vCenter to this existing Horizon environment to rollout Desktops. You can then see the new created pool.
-Hold in mind. Only one of the Students per SDDC can do this task.
+In this Lab we are going to cfreate and install a Horizon 7 environment. Using Cloud Pod Architectire to connect two Horizon Environemnts for Global Management and Entitlement Rights.
 
 ## What is Horizon on VMware Cloud on AWS
 
@@ -25,8 +23,8 @@ on AWS, with the market-leading capabilities of VMware Horizon for a simple, sec
 
 ### Simplify Public and Hybrid Cloud Management
 
-For customers who are already familiar with Horizon 7 or have Horizon 7 deployed
-on premises, running Horizon 7 on VMware Cloud lets you leverage a unified
+For customers, who are already familiar with Horizon 7 or have Horizon 7 deployed
+on premises, running Horizon 7 on VMware Cloud on AWS lets you leverage a unified
 architecture and familiar tools. You can simplify management for Horizon 7
 deployments using on-premises infrastructure and VMware Cloud on AWS with
 Cloud Pod Architecture (CPA) by linking cloud deployments in different regions,
@@ -95,75 +93,74 @@ Fill in the following information
 
 ## Configuring SDDC Firewall Rules
 If not done already in the previous lab please also create the Firewall rule for the Management Gateway so you can access the vCenter.
+<!-- Comment for Elena: this is step 1. This stays.-->
 
 ### Compute Gateway Firewall Rules
 
-Like the Management NSX Edge Services Gateway. By default, the Compute NSX Edge Services Gateway is also set to deny all inbound and outbound traffic. You need to add additional firewall rules to allow access to your workload VMs which you provision in the VMware Cloud on AWS platform.
-<!--  
-#### Create Firewall Rule under Compute Gateway 
+By default, the Compute Gateway is set to deny all inbound and outbound traffic. You need to add additional firewall rules to allow access to your workload VMs which you provision in the VMware Cloud on AWS platform.
 
-1. Under **Network** tab, navigate to **Compute Gateway**
-2. Expand **Firewall Rules**
-3. Click **ADD RULE**
+#### Create Compute Gateway Firewall Rule
 
-Follow the same process as in the previous step and create Horizon Inbound and Outbound Firewall Rule following these instructions:
-Just to hold it easy use the Any Any rule.
+1. Under **Network & Security** tab, navigate to **Security**, then **Gateway Firewall**
+2. On the right hand side go to **Compute Gateway**
+3. Click **ADD NEW RULE**
+
+Horizon requires a number of ports to be opened for communcation and Inter-POD connectivity. For the purposes of the lab and ease of management we are going to allow communicaqtiona cross everythig. The first rule we are going to create is an Any Any Any rule. 
 
 1. **Name** - Horizon
-2. **Action** - Allow
-3. **Source** - Any 
-4. **Destination** - Any
-5. **Service** - ANY
-6. Click **SAVE** button.
--->
+2. **Source** - Any
+3. **Destination** - Any
+4. **Service** - Any
+5. **Action** - Allow 
+6. **Applied To** - All Uplinks
 
-<!--  
-## Create Content Library
+The next step will be to edit the **Default VTI Rule** in the Compure Gatwway Firewall Rules section and change **Action** to **Allow**.
 
-Content libraries are container objects for VM templates, vApp templates, and other types of files like ISO images.
+<!-- Elena - include a screen shots -->
 
-You can create a content library in the vSphere Web Client, and populate it with templates, which you can use to deploy virtual machines or vApps in your VMware Cloud on AWS environment or if you already have a Content Library in your on-premises data center, you can use the Content Library to import content into your SDDC.
-
-You can create two types of libraries: local or subscribed libraries.
-
-### Local Libraries
-
-You use a local library to store items in a single vCenter Server instance. You can publish the local library so that users from other vCenter Server systems can subscribe to it. When you publish a content library externally, you can configure a password for authentication.
-
-VM templates and vApp templates are stored as an OVF file format in the content library. You can also upload other file types, such as ISO images, text files, and so on, in a content library.
--->
-
-##Cretea a Logical Network
+## Cretea a Logical Network
 
 For our Horizon Lab we prepared several machines like AD, Hoirzon Connections Server, Unified access gateway and the Goldenmaster Image.
 The AD, Horizon Connection Server, UAG and Goldenmaster Image will be deployed in a 192.168.20.0/24 subnet. Therefore we need to create this network first.
 
 ## Create a Logical Network
 
-1. Once you are logged in to your vCenter Server Click on **Menu**
-2. Select **Global Inventory Lists**
-3. Click on **Logical Networks** in the left pane
-4. Click on the **Add** button
-5. Name your New Logical Network **Horizon#-LN** (where # is your student number)
-6. Select the **Routed Network** radio button
-7. For CIDR Block enter **192.168.20.0/24**
-   
-8. Enter **192.168.20.1** for the Default Gateway IP
-9. Make sure DHCP is disabled
-10. Click **OK** to create your new logical network
+The next step we need to complete is to create a logical network. For our Horizon Lab we are going to need several virtual machines. These are: Active Directory, Hoirzon Connections Server, Unified Access Gateway (UAG) and the Golden Master Image. 
 
+The AD, Horizon Connection Server, UAG and Golden Master Image will be deployed in a 192.168.xxx.xxx/24 subnet. Therefore we need to create this network first.
 
-## Subscribed Libraries
+Navigate to **Networking & Security**, then **Segments** and **Add a segment**
 
-You subscribe to a published library by creating a subscribed library. You can create the subscribed library in the same vCenter Server instance where the published library is, or in a different vCenter Server system. In the Create Library wizard you have the option to download all the contents of the published library immediately after the subscribed library is created, or to download only metadata for the items from the published library and later to download the full content of only the items you intend to use.
+Depending on weather you are working in SDDC **Student-Workshop-X.1** or **Student-Workshop-X.2** environmentm, you will need to create different networks.
 
-To ensure the contents of a subscribed library are up-to-date, the subscribed library automatically synchronizes to the source published library on regular intervals.
+1. **Name**
+**Student-Workshop-X.1** use **Horizon100**
+**Student-Workshop-X.2** use **Horizon200**
+2. **Type** - Routed
+3. **Tunnel ID** - Leave as is
+4. **Gateway / Prefix Length** 
+**Student-Workshop-X.1** use 192.168.100.1/24
+**Student-Workshop-X.2** use 192.168.200.1/24
+5. **DHCP** - Disabled
 
-You can also manually synchronize subscribed libraries. You can use the option to download content from the source published library immediately or only when needed to manage your storage space.
+We have now completed network set up part of the lab. The next step will be to deploy the virtual machines we are going to need for the lab. We are goign to deploy these from templates, located in Content Libraries. 
 
-Synchronization of a subscribed library that is set with the option to download all the contents of the published library immediately, synchronizes both the item metadata and the item contents. During the synchronisation the library items that are new for the subscribed library are fully downloaded to the storage location of the subscribed library.
+##Creating a VPN Connection
+The next step will be to create the VPN connection between Student-Workshop-X.1 and Student-Workshop- X.2. To do that, follow the steps below:
 
-Synchronization of a subscribed library that is set with the option to download contents only when needed synchronizes only the metadata for the library items from the published library, and does not download the contents of the items. This saves storage space. If you need to use a library item you need to synchronize that item. After you are done using the item, you can delete the item contents to free space on the storage. For subscribed libraries that are set with the option to download contents only when needed, synchronizing the subscribed library downloads only the metadata of all the items in the source published library, while synchronizing a library item downloads the full content of that item to your storage. If you use a subscribed library, you can only utilize the content, but cannot contribute with content. Only the administrator of the published library can manage the templates and files.
+1. Go to **Network & Security**
+2. **VPN**
+3. **Route Based**
+4. **Add VPN**
+
+| Name | Local IP | Remote Public IP | 
+| ----------- | ----------- |
+| Header | Title |
+| Paragraph | Text |
+
+## Subscribed Content Libraries
+
+As part of the lab, we have already subscribed your SDDC to Content Libraries. These are located in an Amazon S3 bucket, where we have the VM templates stored and ready to use. 
 
 In the subscribed content library you will find the Golden Master Image that you need to use for the deploymend of new desktops with the help of horizon
 
