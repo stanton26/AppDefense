@@ -143,8 +143,6 @@ Depending on weather you are working in SDDC **Student-Workshop-X.1** or **Stude
 **Student-Workshop-X.2** use 192.168.200.1/24
 5. **DHCP** - Disabled
 
-We have now completed network set up part of the lab. The next step will be to deploy the virtual machines we are going to need for the lab. We are goign to deploy these from templates, located in Content Libraries. 
-
 ##Creating a VPN Connection
 The next step will be to create the VPN connection between Student-Workshop-X.1 and Student-Workshop- X.2. To do that, follow the steps below:
 
@@ -157,8 +155,15 @@ The next step will be to create the VPN connection between Student-Workshop-X.1 
 | Horizon-Student-Workshop-X.1 | Public | *Public IP Student X.2* | 169.254.111.1/30 | 169.254.111.2 | 65000| VMware1! |
 | Horizon-Student-Workshop-X.2 | Public | *Public IP Student X.1* | 169.254.111.2/30 | 169.254.111.1 | 65001| VMware1! |
 
-Note: To complete the **Remote Public IP** field, please work with your workshop partner to obtain their Public IP address.
+**Note:** To complete the **Remote Public IP** field, please work with your workshop partner to obtain their Public IP address.
 
+We have now completed network set up part of the lab. The next step will be to deploy the virtual machines we are going to need for the lab. We are goign to deploy these from templates, located in Content Libraries.
+
+The next step will be to log onto vCenter and deploy VMs.
+
+## Log into vCenter
+To open vCenter, navigate to **OPEN VCENTER** in the top right hand corner of the screen.
+![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/Open+vCenter.jpg)
 
 ## Subscribed Content Libraries
 
