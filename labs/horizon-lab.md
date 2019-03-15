@@ -171,7 +171,7 @@ As part of the lab, we have already subscribed your SDDC to Content Libraries. T
 
 In the subscribed content library you will find the Golden Master Image that you need to use for the deploymend of new desktops with the help of horizon
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-19-Image-19.png)
+![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/Show+vCdenter+Credentials.jpg)
 
 1. Click on **Menu**
 2. Click on **Content Libraries**
