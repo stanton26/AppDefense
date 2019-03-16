@@ -193,7 +193,7 @@ This Golden Master Image will be used to deploy desktops, using Instant Clone te
 10. Select Networks - chose **Horizon100** or **Horizon200** for all three networks. 
 11. Customize template - Complete the following: 
 
-![] (https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/UAG+1.jpg)
+![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/UAG+1.jpg)
 
 > hello!
 
