@@ -129,22 +129,27 @@ As part of the lab, we have already subscribed your SDDC to Content Libraries. T
 
 In the subscribed content library you will find the Active Directory VM, Golden Master Image VM, Unified Access Gateway (UAG) and the Connection Server VM templates, that you need to use for the deploymend of new desktops with Horizon.
 
-The first VM we need to deploy is Active Directory VM. To do that:
-
 1. Click on **Menu**
 2. Click on **Content Libraries**
 3. Click on **horizon-content-library**
-4. Right Click on **AD-100** or **AD-200**, depending on your student workshop number.
-5. Click on **New VM from This Template**
-6. **Virtual Machine Name** - AD-100 or AD-200, depending on your student workshop number.
-7. Under select a location for Virtual Machine, click on **SDDC-Datacenter**, then click on **Workloads**
+
+The first VM we need to deploy is Active Directory VM.
+
+## Create your Active Directory VM
+
+1. Locage and right Click on **AD-100** or **AD-200**, depending on your student workshop number.
+2. Click on **New VM from This Template**
+3. **Virtual Machine Name** - AD-100 or AD-200, depending on your student workshop number.
+4. Under select a location for Virtual Machine, click on **SDDC-Datacenter**, then click on **Workloads**
 
 ![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/create+AD+100-+1.png)
 
-8. Click **Next**
-9. Click **Cluster-1**, then click **Compute-ResourcePool**, then click **Next**
-
-
+5. Click **Next**
+6. Click **Cluster-1**, then click **Compute-ResourcePool**, then click **Next**
+7. Review Details. Click **Next**
+8. Select Storage. Select **WorkloadDatastore** and click **Next**
+9. Select Networks - Select the network you created in the previous lab **Horizon100** or **Horizon200**, depending on your student workshop number.
+10. Click **Next** and **Finish**
 
 
 ## Create your Active Directory VM
