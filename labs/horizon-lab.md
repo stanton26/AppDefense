@@ -192,8 +192,13 @@ This Golden Master Image will be used to deploy desktops, using Instant Clone te
 9. Select Storage. Select **WorkloadDatastore** and click **Next**
 10. Select Networks - chose **Horizon100** or **Horizon200** for all three networks. 
 11. Customize template - Complete the following: 
-- hello
+
 ![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/UAG+1.jpg)
+
+12. In **NIC 1 (eth0) IPv4 address** type **192.168.100.12** or **192.168.200.12**, depending on your student workshop number.
+
+![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/UAG+2.jpg)
+
 
 
 ##Power on the new created VM's
