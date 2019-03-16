@@ -133,11 +133,11 @@ In the subscribed content library you will find the Golden Master Image that you
 2. Click on **Content Libraries**
 3. Click on **horizon-content-library**
 4. Right Click on **AD-100** or **AD-200**, depending on your student workshop number.
+5. Click on **New VM from This Template**
+6. **Virtual Machine Name** - AD-100 or AD-200, depending on your student workshop number.
+7. Under select a location for Virtual Machine, click on **SDDC-Datacenter**, then click on **Workloads**
 
-
-
-
-
+![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/create+AD+100-+1.png)
 
 
 ## Create your Active Directory VM
