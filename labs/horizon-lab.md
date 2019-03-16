@@ -109,53 +109,32 @@ The next step will be to log onto vCenter and deploy VMs.
 
 To open vCenter, navigate to **OPEN VCENTER** in the top right hand corner of the screen.
 
+Then go to **Show vCenter Credentials**
+
 ![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/Show+vCdenter+Credentials.jpg)
 
-Then go to Show **vCenter Credentials**.
+Click on the clipboard icon, next to Password, to copy the password for accessing vCenter.
+
+![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/Open+vCenter.jpg)
+
+Then click on **Open vCenter**. A new browser window will open, where you can log into vCenter.
+
+**Username:** cloudadmin@vmc.local
+**Password:** *Paste Password*
 
 ## Horizon Deployment
 
-As part of the lab, we have already subscribed your SDDC to Content Libraries. These are located in an Amazon S3 bucket, where we have the VM templates stored and ready to use. 
+As part of the lab, we have already subscribed your SDDC to Content Libraries. These are located in an Amazon S3 bucket, where we have the VM templates stored and ready to use.
 
 In the subscribed content library you will find the Golden Master Image that you need to use for the deploymend of new desktops with the help of horizon
 
 1. Click on **Menu**
 2. Click on **Content Libraries**
 
-### Subscribe to an existing Content Library
 
-You may already have a Content Library in your on-premises data center, you can use the Content Library to import content into your SDDC.
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-20-Image-20.png) 
 
-1. In your Content Library window, click the **+** sign to add a new Content Library.
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-20-Image-21.png)
-2. Name your Content Library **Student#-HorizonGM** where **#** is the number assigned to you
-3. (Optional) Enter some notes for your Content Library
-4. Click **Next** button
 
-5. Select **Subscribed content library**
-6. Under **Subscription URL** enter the following: 
-
-**https://vcenter.sddc-34-216-241-49.vmc.vmware.com:443/cls/vcsp/lib/6f0bc23f-3157-4fb5-a4c4-2f3f180b8d8d/lib.json**
-
-    PLEASE NOTE THAT THERE MAY BE AN ISSUE WITH DROPPING/ADDITION OF CHARACTERS FOR THE URL WHEN COPYING AND PASTING FROM THE MANUAL.ASK YOUR INSTRUCTOR IN THE EVENT YOU CANNOT LOCATE IT.
-
-7. Ensure Download content is set to **when needed**
-8. Click **Next**
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-22-Image-23.png)
-9. Highlight the **WorkloadDatastore** as the storage location
-10. Click **Next**
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-22-Image-24.png)
-11. Click **Finish**. Your content library should take about ~20 minutes to complete syncing.
-
-Now that we have subscribed to the Conten Library we can deploy the Horizon Infrastructre:
-
-1.  Click on **Menu**
-2.  Click on **Content Library**
-3.  Click on the content library you subscribed to in the previus lab
-4.  Click on **Templates**
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/GM-W10-1.png)
 
 
 ## Create your Active Directory VM
