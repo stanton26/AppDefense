@@ -297,7 +297,7 @@ Instant Clones require a shapshot of the Golden Master Image. Therefore we need 
 5. Name **1.0**
 6. Click **OK**
 
-Go back to the Horozon Connection Server. 
+Go back to the Horozon Connection Server.
 
 
 
