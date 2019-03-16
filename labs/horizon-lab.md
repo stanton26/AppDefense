@@ -179,6 +179,21 @@ This Golden Master Image will be used to deploy desktops, using Instant Clone te
 9. Select Networks - Select the network you created in the previous lab **Horizon100** or **Horizon200**, depending on your student workshop number.
 10. Click **Next** and **Finish**
 
+## Create your Unified Access Gateway (UAG) VM
+
+1. Locate and right Click on the **UAG-100** or **UAG-200**, depending on your student workshop number.
+2. Click on **New VM from This Template**
+3. **Virtual Machine Name** - UAG-100** or UAG-200, depending on your student workshop number.
+4. Under select a location for Virtual Machine, click on **SDDC-Datacenter**, then click on **Workloads**
+5. Click **Next**
+6. Click **Cluster-1**, then click **Compute-ResourcePool**, then click **Next**
+7. Review Details. Click **Next**
+8. Configuration - chose **Single NIC**, then click **Next**
+9. Select Storage. Select **WorkloadDatastore** and click **Next**
+10. Select Networks - chose **Horizon100** or **Horizon200** for all three networks. 
+11. Customize template - Complete the following: 
+
+![] (https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/UAG+1.jpg)
 
 
 ##Power on the new created VM's
