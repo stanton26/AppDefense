@@ -278,6 +278,18 @@ In the popup window fill in the following:
 
 You have successfully added your vCenter Server.
 
+The next step is to add **Instant Clone Domain Admins**
+1. Go to **Instant Clone Domain Admins** on the right hand side.
+2. Click **Add**
+3. Fill in **User Name** and **Password** filed
+    **User Name** - administrator
+    **Password** - VMware1!
+4. Click OK
+
+![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/CS+7.jpg)
+
+
+
 
 
 
