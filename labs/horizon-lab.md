@@ -193,25 +193,24 @@ This Golden Master Image will be used to deploy desktops, using Instant Clone te
 10. Select Networks - chose **Horizon100** or **Horizon200** for all three networks. 
 11. Customize template - Complete the following:
     - **IPMode for NIC 1 (eth0)** type **STATICV4** 
+    
     ![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/UAG+1.jpg)
+
     - **NIC 1 (eth0) IPv4 address** type **192.168.100.12** or **192.168.200.12**, depending on your student workshop number.
     ![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/UAG+2.jpg)
+
     - **DNS server address** type **192.168.100.10** or **192.168.200.10**, depending on your student workshop number.
     - **NIC 1 (eth0) netmask** type **255.255.255.0**
     - **IPv4 Default Gateway** type **192.168.100.1** or **192.168.200.1**, depending on your student workshop number.
     - **Unified Gateway Appliance Nmae** type **UAG100** or **UAG200**, depending on your student workshop number.
+
     ![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/UAG+3.jpg)
+
     - **Join CEIP** Untick the checkbox, under text.
     - **Password for the root user and the Admin User** type **VMware1!**
+
     ![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/UAG+4.jpg)
 
-![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/UAG+1.jpg)
-
-![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/UAG+2.jpg)
-
-![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/UAG+3.jpg)
-
-![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/UAG+4.jpg)
 
 ##Power on the new created VM's
 1.  Power on the VM **VMCWINDC01**
