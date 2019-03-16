@@ -38,7 +38,7 @@ If not done already in the previous lab please also create the Firewall rule for
 
 By default, the Compute Gateway is set to deny all inbound and outbound traffic. You need to add additional firewall rules to allow access to your workload VMs which you provision in the VMware Cloud on AWS platform.
 
-#### Create Compute Gateway Firewall Rule
+### Create Compute Gateway Firewall Rule
 
 1. Under **Network & Security** tab, navigate to **Security**, then **Gateway Firewall**
 2. On the right hand side go to **Compute Gateway**
