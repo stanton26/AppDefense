@@ -263,11 +263,22 @@ Under vCenter Server tab, click **Add…**.
 
 In the popup window fill in the following:
 
-1. **Server Address** - fill in the Public vCenter IP address, which you noted down in previous section of the lab.
+1. **Server Address** - fill in the Public vCenter IP address, which you noted down in the previous step.
 2. **User Name** - **cloudadmin@vmc.local**
 3. **Password** - fill in the Public vCenter IP address, which you noted down in previous section of the lab.
+4. Make sure that the **VMware Cloud on AWS** tick box is selected
+5. Click **Next**.
 
 ![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/CS+5.jpg)
+
+6. An **Invalid Certificate Detected** popup box will open. Click on **View Certificate**. Then click on **Accept**.
+7. Click **Next**.
+8. Make sure the **Reclaim VM disk space** tick box is unchecked. Click **Next**
+9. Click **Finish**
+
+You have successfully added your vCenter Server.
+
+
 
 
 
