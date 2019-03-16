@@ -27,60 +27,6 @@ For customers, who are already familiar with Horizon 7 or have Horizon 7 deploye
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/2.png) 
 
-<!-- 
-## Create a Cross SDDC VPN
-
-We will be setting up a IPSEC VPN connection between your VPC and the VPC where Horizon Connection Server is already installed.
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/Cross-SDDC-VPN-HZ.png)
-
-1. Go back to the **VMware Cloud on AWS** tab.
-2. In the main SDDC windows, click on **View Details**
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-106-Image-164.png)
-3. Then click on the **Network** menu
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-107-Image-165.png) 
-
-In the Management Gateway box, make a note of the Public IP and the Infrastructure Subnet CIDR.
-Make also a note of the Compute Gatway box. Public IP and the Subnet you created in the previous LAB.
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-107-Image-166.png)![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/Cross-SDDC-VPN-HZ2.png)
-
-Scroll down a little to get to the Management Gateway setting
-
-1. Click the drop down arrow to open the **IPsec VPNs** section
-2. Click on **ADD VPN**
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-102-Image-158.png)
-
-Fill in the following information
-
-1. Make sure the drop down is opened, if not click it under **Management Gateway**
-2. Click on **Add VPN**
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-108-Image-161.png)
-
-    Fill in the following information
-3. Name this VPN **Student MGW# to Host CGW** (where # is your student number)
-4. Enter **54.70.191.234** for the Remote Gateway Public IP
-5. Enter  **192.168.20.0/24** for SDDC under remote network
-6. Pre-shared key is **VMware1!**
-7. Click on **Save**.
-8. Do the same for the same task for establishing connection from Studen SDDC compute gateway and Host coumpute gateway.
-
-Fill in the following information
-
-1. Make sure the drop down is opened, if not click it under **Compute Gateway**
-2. Click on **Add VPN**
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-108-Image-161.png)
-
-    Fill in the following information
-3. Name this VPN **Student CGW# to Host CGW** (where # is your student number)
-4. Enter **54.70.191.234** for the Remote Gateway Public IP
-5. Enter  **192.168.20.0/24** for SDDC under remote network
-6. 6. Select **Studen#-LN** and also **cgw-dns-network** in Local Networks
-7. Pre-shared key is **VMware1!**
-8.  Click on **Save**.
--->
 
 ## Configuring SDDC Firewall Rules
 
