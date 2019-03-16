@@ -132,6 +132,7 @@ In the subscribed content library you will find the Golden Master Image that you
 1. Click on **Menu**
 2. Click on **Content Libraries**
 3. Click on **horizon-content-library**
+4. Right Click on **AD-100** or **AD-200**, depending on your student workshop number.
 
 
 
