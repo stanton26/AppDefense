@@ -120,6 +120,7 @@ Click on the clipboard icon, next to Password, to copy the password for accessin
 Then click on **Open vCenter**. A new browser window will open, where you can log into vCenter.
 
 **Username:** cloudadmin@vmc.local
+
 **Password:** *Paste Password*
 
 ## Horizon Deployment
