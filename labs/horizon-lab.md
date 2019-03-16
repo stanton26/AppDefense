@@ -158,6 +158,7 @@ The next step will be to log onto vCenter and deploy VMs.
 ## Log into vCenter
 
 To open vCenter, navigate to **OPEN VCENTER** in the top right hand corner of the screen.
+
 ![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/Show+vCdenter+Credentials.jpg)
 
 Then go to Show **vCenter Credentials**.
