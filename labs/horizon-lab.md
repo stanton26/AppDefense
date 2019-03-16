@@ -32,7 +32,7 @@ For customers, who are already familiar with Horizon 7 or have Horizon 7 deploye
 
 If not done already in the previous lab please also create the Firewall rule for the Management Gateway so you can access the vCenter.
 
-<!-- Comment for Elena: this is step 1. This stays.-->
+<!-- Comment for Elena: this is step 1. This stays.-->w
 
 ### Compute Gateway Firewall Rules
 
@@ -57,9 +57,6 @@ The next step will be to edit the **Default VTI Rule** in the Compure Gatwway Fi
 1. Click the three point next to **Default VTI Rule** 
 2. **EDIT**
 3. **Action** - Allow
-
-
-<!-- Elena - include a screen shots -->
 
 ## Cretea a Logical Network
 
@@ -114,6 +111,8 @@ Then go to **Show vCenter Credentials**
 ![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/Show+vCdenter+Credentials.jpg)
 
 Click on the clipboard icon, next to Password, to copy the password for accessing vCenter.
+
+Click on the eye icon to make the password visible. **Make a note of this password, as it will be used later on in the lab**.
 
 ![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/Open+vCenter.jpg)
 
@@ -246,13 +245,29 @@ Log into Horizon 7 Administrator Console.
 
 ![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/CS+2.jpg)
 
-Once logged in, on the left hand side, go to **View Configuration**, then **Servers**.
+The next step of the Horizon configuration will be to add the vCenter server of your SDDC. To do that we need to make a note of the vCenter server address, user name and password. To obtain these, do the following.
+
+1. Go back to your VMware Cloud on AWS Console.
+2. Click on oyur SDDC
+3. Click on the **Support** tab and make a note of the vCenter Public IP address.
+
+![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/CS+6.jpg)
+
+Go back to the Web Console of the Horizon Connection Server. On the left hand side, go to **View Configuration**, then **Servers**.
 
 ![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/CS+3.jpg)
 
 Under vCenter Server tab, click **Add…**.
 
 ![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/CS+4.jpg)
+
+In the popup window fill in the following:
+
+1. **Server Address** - fill in the Public vCenter IP address, which you noted down in previous section of the lab.
+2. **User Name** - **cloudadmin@vmc.local**
+3. **Password** - fill in the Public vCenter IP address, which you noted down in previous section of the lab.
+
+![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/CS+5.jpg)
 
 
 
