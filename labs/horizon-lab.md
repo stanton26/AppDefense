@@ -73,7 +73,7 @@ Navigate to **Networking & Security**, then **Segments** and **Add a segment**
 Depending on weather you are working in SDDC **Student-Workshop-X.1** or **Student-Workshop-X.2** environmentm, you will need to create different networks.
 
 1. **Name**
-**Student-Workshop-X.1** use **Horizon100**
+**Student-Workshop-X.1** use **Horizon100** , or 
 **Student-Workshop-X.2** use **Horizon200**
 2. **Type** - Routed
 3. **Tunnel ID** - Leave as is
