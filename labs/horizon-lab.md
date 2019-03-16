@@ -135,7 +135,7 @@ In the subscribed content library you will find the Active Directory VM, Golden 
 
 The first VM we need to deploy is Active Directory VM.
 
-## Create your Active Directory VM
+## Create Active Directory VM
 
 1. Locage and right Click on **AD-100** or **AD-200**, depending on your student workshop number.
 2. Click on **New VM from This Template**
@@ -151,44 +151,34 @@ The first VM we need to deploy is Active Directory VM.
 9. Select Networks - Select the network you created in the previous lab **Horizon100** or **Horizon200**, depending on your student workshop number.
 10. Click **Next** and **Finish**
 
+## Create Horizon Connection Server VM
 
-## Create your Active Directory VM
-
-5.  Right Click on the **VMCWINDC01** and choose **New VM from this Template....**
-6.  Give it the same the name **VMCWINDC01**
-7.  As location click on **Workloads**
-8.  Click on **Next**
-9.  Select **Compute-ResourcePool** and click **Next**
-10. Click **next**
-11. Select **WorkloadDatastore** and click **next**
-12. Select the network you created in privious LAB **Horizon#-LN**
-13. Click **next** and **finish**
-
-## Create Horizon Server VM
-
-5.  Right Click on the **HZ-76-WS** and choose **New VM from this Template....**
-6.  Give it the same the name **HZ-76-WS** where # is put your student ID in
-7.  As location click on **Workloads**
-8.  Click on **Next**
-9.  Select **Compute-ResourcePool** and click **Next**
-10. Click **next**
-11. Select **WorkloadDatastore** and click **next**
-12. Select the network you created in privious LAB **Horizon#-LN**
-13. Click **next** and **finish**
+1. Locate and right Click on the **CS-100** or **CS-200**, depending on your student workshop number. 
+2. Click on **New VM from This Template**
+3. **Virtual Machine Name** - CS-100 or CS-200, depending on your student workshop number.
+4. Under select a location for Virtual Machine, click on **SDDC-Datacenter**, then click on **Workloads**
+5. Click **Next**
+6. Click **Cluster-1**, then click **Compute-ResourcePool**, then click **Next**
+7. Review Details. Click **Next**
+8. Select Storage. Select **WorkloadDatastore** and click **Next**
+9. Select Networks - Select the network you created in the previous lab **Horizon100** or **Horizon200**, depending on your student workshop number.
+10. Click **Next** and **Finish**
 
 ## Create your Golden Master Image
 
-With Horizon 7.6 we do have the option to also do Instant Clones. For this lab we prepared two Golden Master Images. The first one is for Instant Clones with the Name **W10-LTBS-1607-IC**, the second one is for Full Clones. You can decide to either go for Full clones or use Instant Clones. We suggest to do instant clones cause it is much faster to rollout this desktops.
+This Golden Master Image will be used to deploy desktops, using Instant Clone technology.
 
-5.  Right Click on the **W10-LTBS-1607-IC Template** and choose **New VM from this Template....**
-6.  Give it the same the name **W10-LTBS-#** where # is put your student ID in
-7.  As location click on **Templates**
-8.  Click on **Next**
-9.  Select **Compute-ResourcePool** and click **Next**
-10. Click **next**
-11. Select **WorkloadDatastore** and click **next**
-12. Select the network you created in privious step for 192.168.20.0/24 **Horizon#-LN**
-13. Click **next** and **finish**
+1. Locate and right Click on the **GM-W10-WS-1** or **GM-W10-WS-1**, depending on your student workshop number.
+2. Click on **New VM from This Template**
+3. **Virtual Machine Name** -  GM-W10
+4. Under select a location for Virtual Machine, click on **SDDC-Datacenter**, then click on **Workloads**
+5. Click **Next**
+6. Click **Cluster-1**, then click **Compute-ResourcePool**, then click **Next**
+7. Review Details. Click **Next**
+8. Select Storage. Select **WorkloadDatastore** and click **Next**
+9. Select Networks - Select the network you created in the previous lab **Horizon100** or **Horizon200**, depending on your student workshop number.
+10. Click **Next** and **Finish**
+
 
 
 ##Power on the new created VM's
