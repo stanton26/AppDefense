@@ -248,8 +248,8 @@ Log into Horizon 7 Administrator Console.
 The next step of the Horizon configuration will be to add the vCenter server of your SDDC. To do that we need to make a note of the vCenter server address, user name and password. To obtain these, do the following.
 
 1. Go back to your VMware Cloud on AWS Console.
-2. Click on oyur SDDC
-3. Click on the **Support** tab and make a note of the vCenter Public IP address.
+2. Click on your SDDC
+3. Click on the **Support** tab and make a note of the **vCenter Public IP address**.
 
 ![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/CS+6.jpg)
 
