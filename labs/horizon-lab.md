@@ -288,8 +288,16 @@ The next step is to add **Instant Clone Domain Admins**
 
 ![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/CS+7.jpg)
 
+Instant Clones require a shapshot of the Golden Master Image. Therefore we need to create a snapshot of the Golden Master Image VM.
 
+1. Go back to the vSphere Client. 
+2. Click on **Hosts and Clusters**
+3. Locate your Golden Master Image VM **GM-W10**
+4. Right click, go to **Snapshots**, then **Take Snapshot**
+5. Name **1.0**
+6. Click **OK**
 
+Go back to the Horozon Connection Server. 
 
 
 
