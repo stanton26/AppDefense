@@ -53,7 +53,11 @@ Horizon requires a number of ports to be opened for communcation and Inter-POD c
 5. **Action** - Allow
 6. **Applied To** - All Uplinks
 
-The next step will be to edit the **Default VTI Rule** in the Compure Gatwway Firewall Rules section and change **Action** to **Allow**.
+The next step will be to edit the **Default VTI Rule** in the Compure Gatwway Firewall Rules
+1. Click the three point next to **Default VTI Rule** 
+2. **EDIT**
+3. **Action** - Allow
+
 
 <!-- Elena - include a screen shots -->
 
