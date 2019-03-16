@@ -193,10 +193,11 @@ This Golden Master Image will be used to deploy desktops, using Instant Clone te
 10. Select Networks - chose **Horizon100** or **Horizon200** for all three networks. 
 11. Customize template - Complete the following:
     - **IPMode for NIC 1 (eth0)** type **STATICV4** 
-    
+
     ![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/UAG+1.jpg)
 
     - **NIC 1 (eth0) IPv4 address** type **192.168.100.12** or **192.168.200.12**, depending on your student workshop number.
+
     ![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/UAG+2.jpg)
 
     - **DNS server address** type **192.168.100.10** or **192.168.200.10**, depending on your student workshop number.
@@ -212,42 +213,59 @@ This Golden Master Image will be used to deploy desktops, using Instant Clone te
     ![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/UAG+4.jpg)
 
 
-##Power on the new created VM's
-1.  Power on the VM **VMCWINDC01**
-2.  Launch the Web Console
-3.  Sign in with  **corp\vmcws1** and password **VMware1!**
+## Power on Active Directory
+
+1. Power on the VM **AD-100** or **AD-200**, depending on your student workshop number.
+2. Launch the Web Console
+3. Sign in with  **VDIONVMC\Administrator** and password **VMware1!**
+
+## Power on Unified Access Gateway
+
+1. Power on the VM **UAG-100** or **UAG-200**, depending on your student workshop number.
+
+## Power on Horizon Connection Server
+
+1. Power on the VM **CS-100** or **CS-200**, depending on your student workshop number.
+2. Launch the Web Console
+3. Sign in with  **Administrator** and password **VMware1!**
+
+## Configure Horizon Environment
+
+In order to create desktops in your SDDC, first we need to implement your Student SDDC vCenter into the existing Horizon infrastructure.
+
+Once logged into the **Horizon Connection Server**, locate Horizon 7 Administrator Console shortcut, located on the Desktop page of the Horizon Connection Server.
+
+![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/CS+1.jpg)
+
+Double click to open the Administrator Console. That will launcde in a browser window. You will see the below certificate error waring. Proceed to localhost.
+
+Log into Horizon 7 Administrator Console.
+
+**User Name:** Administrator
+**Password** VMware1!
+
+![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/CS+2.jpg)
+
+Once logged in, on the left hand side, go to **View Configuration**, then **Servers**.
+
+![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/CS+3.jpg)
+
+Under vCenter Server tab, click **Add…**.
+
+![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/CS+4.jpg)
 
 
-##Power on the new created VM's
 
-1.  Power on the VM **HZ-76-WS**
-2.  Launch the Web Console
-3.  Sign in with  **corp\vmcws1** and password **VMware1!**
 
-Wait about 10 minutes until all services are runnig. In the meantime jump create the UAG VM
 
-## Create UAG VM
-1.  Go back to your vCenter web Client
-2.  Right click on the compute ressource pool
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/customization9.png)
-3. click on deploy ovf template
-4. ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/customization10.png)
-5.  Select **Local Files**
-6.  Click **Choose Files**
-7.  Go to Z://Horizon/ and select euc-unified-access-gateway-3.3.0.0-8539
-8.  ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/customization11.png)
-9.  Click **Open**
-10. Click **next**
-11. Click **next**
-12. Click **next**
-13. Select **Single NIC**
-14. Click **next**
-15. Select Destination Network for all three networks **Horizon#-LN**
-16. Following Settings need to be done:
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/customization12.png)
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/customization13.png)
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/customization14.png)
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/customization15.png)
+
+
+
+
+
+
+
+
 
 17. Click **Finish**
 18. Wait until the new created UAG VM is powered on.
