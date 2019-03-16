@@ -127,7 +127,9 @@ Then click on **Open vCenter**. A new browser window will open, where you can lo
 
 As part of the lab, we have already subscribed your SDDC to Content Libraries. These are located in an Amazon S3 bucket, where we have the VM templates stored and ready to use.
 
-In the subscribed content library you will find the Golden Master Image that you need to use for the deploymend of new desktops with the help of horizon
+In the subscribed content library you will find the Active Directory VM, Golden Master Image VM, Unified Access Gateway (UAG) and the Connection Server VM templates, that you need to use for the deploymend of new desktops with Horizon.
+
+The first VM we need to deploy is Active Directory VM. To do that:
 
 1. Click on **Menu**
 2. Click on **Content Libraries**
@@ -138,6 +140,11 @@ In the subscribed content library you will find the Golden Master Image that you
 7. Under select a location for Virtual Machine, click on **SDDC-Datacenter**, then click on **Workloads**
 
 ![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/create+AD+100-+1.png)
+
+8. Click **Next**
+9. Click **Cluster-1**, then click **Compute-ResourcePool**, then click **Next**
+
+
 
 
 ## Create your Active Directory VM
