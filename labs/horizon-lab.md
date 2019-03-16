@@ -192,10 +192,9 @@ This Golden Master Image will be used to deploy desktops, using Instant Clone te
 9. Select Storage. Select **WorkloadDatastore** and click **Next**
 10. Select Networks - chose **Horizon100** or **Horizon200** for all three networks. 
 11. Customize template - Complete the following: 
-
+- hello
 ![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/UAG+1.jpg)
 
-> hello!
 
 ##Power on the new created VM's
 1.  Power on the VM **VMCWINDC01**
