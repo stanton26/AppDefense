@@ -195,6 +195,7 @@ This Golden Master Image will be used to deploy desktops, using Instant Clone te
 
 ![] (https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/UAG+1.jpg)
 
+> hello!
 
 ##Power on the new created VM's
 1.  Power on the VM **VMCWINDC01**
