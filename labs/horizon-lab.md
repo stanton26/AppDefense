@@ -452,6 +452,7 @@ NOW you are going to configure your UAG. Go to your Horizon Connection Server.
 
 1. Open a **browser**
 2. navigate to **https://192.168.100.12:9443** or **https://192.168.200.12:9443** , depending on your student workshop ID
-3. login with **admin** and **VMware1!**
-4. Click 
+3. Click **proceed** on the security warning**
+4. click **go back**
+5. login with **admin** and **VMware1!**
 
