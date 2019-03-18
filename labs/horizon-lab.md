@@ -426,7 +426,7 @@ Now that we have a public IP we need to create a NAT rule to your UAG
 ![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/External4.png)
 5. **Save** the file
 6. Close notepad
-7. **restart** your horizon connection server - right click on **Start** , **Studown or sign out**, **restart**
+7. **restart** your horizon connection server - right click on **Start** -> **Studown or sign out** -> **restart**
 8. wait for the server to come back.
 
 
