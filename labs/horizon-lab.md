@@ -477,3 +477,10 @@ NOW you are going to configure your UAG. Go to your Horizon Connection Server.
 14. **Tunnel External URL** type **https://your public IP:443**
 15. Click **Save**
 
+## Access your Desktop
+
+1. Open a browser on your local Machine / Laptop
+2. Navigate to **https://your-public-ip**
+3. **Proceed on the security warnings**
+4. click **VMware Horizon HTML Access** on the right site.
+5. sign in with Username: **Workshop100** **Workshop200** and Password: **VMware1!**
