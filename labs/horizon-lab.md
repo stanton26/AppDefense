@@ -464,3 +464,5 @@ NOW you are going to configure your UAG. Go to your Horizon Connection Server.
 9. For **Connection Server URL** **https://cs-100.vdionvmc.local:443** or **https://cs-200.vdionvmc.local:443**
 10. For **Connection Server URL Thumbprint** go back to the connection server tab and click on the certificate
 ![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/External7.png)
+![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/External8.png)
+
