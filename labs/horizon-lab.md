@@ -288,6 +288,10 @@ The next step is to add **Instant Clone Domain Admins**
 
 ![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/CS+7.jpg)
 
+
+
+## Deploy Desktop Pool
+
 Instant Clones require a shapshot of the Golden Master Image. Therefore we need to create a snapshot of the Golden Master Image VM.
 
 1. Go back to the vSphere Client. 
@@ -296,8 +300,6 @@ Instant Clones require a shapshot of the Golden Master Image. Therefore we need 
 4. Right click, go to **Snapshots**, then **Take Snapshot**
 5. Name **1.0**
 6. Click **OK**
-
-## Deploy Desktop Pool
 
 Go back to the Horizon Connection Server Web Console. Your Horizon Connection Server Console should be still open. If not please open it either via the shortcut on the desktop or go to https://192.169.100.11/admin or https://192.168.200.11/admin, depending on your workshop sddc number.
 
