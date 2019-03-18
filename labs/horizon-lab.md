@@ -77,28 +77,40 @@ Depending on weather you are working in SDDC **Student-Workshop-X.1** or **Stude
 **Student-Workshop-X.1** use **Horizon100** , or 
 **Student-Workshop-X.2** use **Horizon200**
 2. **Type** - Routed
-3. **Tunnel ID** - Leave as is
-4. **Gateway / Prefix Length**
+3. **Gateway / Prefix Length**
 **Student-Workshop-X.1** use 192.168.100.1/24
 **Student-Workshop-X.2** use 192.168.200.1/24
-5. **DHCP** - Disabled
+4. **DHCP** - Disabled
 
 ## Creating a VPN Connection
 
 The next step will be to create the VPN connection between Student-Workshop-X.1 and Student-Workshop- X.2. To do that, follow the steps below:
+
+
+
 
 1. Go to **Network & Security**
 2. **VPN**
 3. **Route Based**
 4. **Add VPN**
 
+**Note** make a note of your Public IP adress.
+**Note** To complete the **Remote Public IP** field,  work with your workshop partner to obtain their Public IP address.
+**Note** Student-Workshop SDDC 1 needs to change the **LOCAL ASN** . Next to Add VPN , click on **EDIT LOCAL ASN** to 65001
+![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/VPN1.png)
+![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/VPN2.png)
+
 | **Name** | **Local IP** | **Remote Public IP** | **BGP Local IP/Prefix Length** | **BGP Remote IP** | **BGP Remote ASN** | **Preshared Key** |
 | Horizon-Student-Workshop-X.1 | Public | *Public IP Student X.2* | 169.254.111.1/30 | 169.254.111.2 | 65000| VMware1! |
 | Horizon-Student-Workshop-X.2 | Public | *Public IP Student X.1* | 169.254.111.2/30 | 169.254.111.1 | 65001| VMware1! |
 
-**Note:** To complete the **Remote Public IP** field, please work with your workshop partner to obtain their Public IP address.
 
 We have now completed network set up part of the lab. The next step will be to deploy the virtual machines we are going to need for the lab. We are goign to deploy these from templates, located in Content Libraries.
+
+**Note** Click the refresh button as described in the screenshot:
+
+![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/VPN3.png)
+
 
 The next step will be to log onto vCenter and deploy VMs.
 
@@ -303,12 +315,10 @@ Instant Clones require a shapshot of the Golden Master Image. Therefore we need 
 
 Go back to the Horizon Connection Server Web Console. Your Horizon Connection Server Console should be still open. If not please open it either via the shortcut on the desktop or go to https://192.169.100.11/admin or https://192.168.200.11/admin, depending on your workshop sddc number.
 
-1. On the Horizon Connection Server admin console on the left site you can click on **Desktop Pools**
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-pool1.png)
-2. Select **Automated Desktop Pool** and click on **Next**
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-pool2.png)
-3. Select **Floating** and click **next**
-4. Select **Instant Clones** and click **next**
+1. On the Horizon Connection Server admin console on the left site you can click on **Catalog** and then **Desktop Pools**
+2. Click **Add** Select **Automated Desktop Pool** click **Next**
+3. Select **Floating** click **next**
+4. Select **Instant Clones** click **next**
 5. On **ID** - type  **Pool1** or **Pool2**, depending on your Stundent workshop ID
 6. On **Display name** - **Pool1** or **Pool2**, depending on your Stundent workshop ID
 7. Click **next**
