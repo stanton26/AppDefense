@@ -381,10 +381,12 @@ Entitle Users to the Pools to access it later with those users:
 1. Click on **Entitlements**
 2. Click **add entitlments**
 3. click **add**
+4. Search in **Name/user name** for **Workshop** you will find two users. 
+5. Select both users and click **OK**
 ![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/Desktops-pool6.png)
 4. click **finish**
 
-Go back to your vSphere Web Client and watch the the provisioning in the task list: It will take around 5-10 min to have the desktops available.
+Go back to your **vSphere Web Client** and watch the the provisioning in the task list: It will take around 5-10 min to have the desktops available.
 
 
 ## External Access
@@ -396,7 +398,7 @@ Now we will make your Horizon environment available from external.
 3. Go to **Networking and Security** tab
 4. On the left site go to **Public IPs**
 5. Click on **REQUEST NEW IP**
-6. **Notes** - type Horizon
+6. **Notes** - type **Horizon**
 7. Click **Save**
 ![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/External1.png)
 
@@ -421,14 +423,14 @@ Now that we have a public IP we need to create a NAT rule to your UAG
 ![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/External3.png)
 
 4. enter your **Public IP** into **balancedHost=**
-![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/External3.png)
+![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/External4.png)
 5. **Save** the file
 6. Close notepad
 7. **restart** your horizon connection server - right click on **Start** , **Studown or sign out**, **restart**
 8. wait for the server to come back.
 
 
-You need to login back into the Horizon Connection Server and open a browser.
+You need to login back into the **Horizon Connection Server** and open a **browser**
 
 1. Login to your horizon connection Server as **Administrator** and  **VMware1!**
 2. Click on the shortcut icon for the Horizon Connection server or navigate to **https://localhost/admin**
