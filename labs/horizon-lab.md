@@ -182,7 +182,7 @@ This Golden Master Image will be used to deploy desktops, using Instant Clone te
 1. Locate and right Click on the **GM-W10-WS-1** or **GM-W10-WS-1**, depending on your student workshop number.
 2. Click on **New VM from This Template**
 3. **Virtual Machine Name** -  GM-W10
-4. Under select a location for Virtual Machine, click on **SDDC-Datacenter**, then click on **Workloads**
+4. Under select a location for Virtual Machine, click on **SDDC-Datacenter**, then click on **Templates**
 5. Click **Next**
 6. Click **Cluster-1**, then click **Compute-ResourcePool**, then click **Next**
 7. Review Details. Click **Next**
@@ -192,8 +192,10 @@ This Golden Master Image will be used to deploy desktops, using Instant Clone te
 
 ## Create your Unified Access Gateway (UAG) VM
 
-1. Locate and right Click on the **UAG-100** or **UAG-200**, depending on your student workshop number.
-2. Click on **New VM from This Template**
+1. Go to **Menu**, **VM and Templates**, 
+2. right click on **Workloads**, select **deploy OVF tempate**, type URL: 
+- **https://s3-us-west-2.amazonaws.com/horizon-200/UAG-200/euc-unified-access-gateway-3.4.0.0-11037344_OVF10.ova**
+- Click **yes**
 3. **Virtual Machine Name** - UAG-100** or UAG-200, depending on your student workshop number.
 4. Under select a location for Virtual Machine, click on **SDDC-Datacenter**, then click on **Workloads**
 5. Click **Next**
@@ -372,9 +374,16 @@ Go back to your Horizon Connection Server Web Console:
 ![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/Desktops-pool4.png)
 5. Click **OK**
 
+Entitle Users to the Pools to access it later with those users:
+
+1. Click on **Entitlements**
+2.
+
 Go back to your vSphere Web Client and watch the the provisioning in the task list: It will take around 5-10 min to have the desktops available.
 
-##External Access
+
+
+## External Access
 
 bla bla bla bla
 
