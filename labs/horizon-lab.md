@@ -273,7 +273,7 @@ In the popup window fill in the following:
 
 6. An **Invalid Certificate Detected** popup box will open. Click on **View Certificate**. Then click on **Accept**.
 7. Click **Next**.
-8. Make sure the **Reclaim VM disk space** tick box is unchecked. Click **Next**
+8. **VERY IMPORTANT** Make sure the **Reclaim VM disk space** tick box is **unchecked**. Click **Next** 
 9. Click **Finish**
 
 You have successfully added your vCenter Server.
@@ -328,7 +328,11 @@ Go back to the Horizon Connection Server Web Console. Your Horizon Connection Se
 20. Do not change guest customization. Click **Next**
 21. Click **Finish**
 
+The deployment of the desktops should start now.
+The deployment will **fail** the first time. Because this is a Single Node SDDC we need to change the newly created Horizon vSAN policys to **no rendundancy**
+For that please switch to your vSphere Web Client Console
 
+1. 
 
 
 
