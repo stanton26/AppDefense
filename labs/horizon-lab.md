@@ -94,9 +94,9 @@ The next step will be to create the VPN connection between Student-Workshop-X.1 
 3. **Route Based**
 4. **Add VPN**
 
-**Note** make a note of your Public IP adress.
-**Note** To complete the **Remote Public IP** field,  work with your workshop partner to obtain their Public IP address.
-**Note** Student-Workshop SDDC 1 needs to change the **LOCAL ASN** . Next to Add VPN , click on **EDIT LOCAL ASN** to 65001
+- **Note** make a note of your Public IP adress.
+- **Note** To complete the **Remote Public IP** field,  work with your workshop partner to obtain their Public IP address.
+- **Note** Student-Workshop SDDC 1 needs to change the **LOCAL ASN** . Next to Add VPN , click on **EDIT LOCAL ASN** to 65001
 ![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/VPN1.png)
 ![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/VPN2.png)
 
