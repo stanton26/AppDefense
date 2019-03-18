@@ -303,7 +303,10 @@ Go back to the Horizon Connection Server Web Console. Your Horizon Connection Se
 
 1. On the Horizon Connection Server admin console on the left site you can click on **Desktop Pools**
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-pool1.png)
-
+2. 2.  Select **Automated Desktop Pool** and click on **Next**
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-pool2.png)
+3.  Select **Floating** and click **next**
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-pool3.png)
 
 
 
