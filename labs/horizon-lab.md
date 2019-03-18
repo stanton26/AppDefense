@@ -473,3 +473,5 @@ NOW you are going to configure your UAG. Go to your Horizon Connection Server.
 
 11. **Switch** to the UAG console in the other **browser tab**
 12. in **Connection Server URL Thumbprint** write **sha1= your copy of the thumbprint**
+13. **Blast External IP** type **https://your public IP:443**
+14. **Tunnel External URL** type **https://your public IP:443**
