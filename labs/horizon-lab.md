@@ -351,6 +351,17 @@ in the screenshot you see 3 but you need to change all **4**
 ![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/Desktops-pool3.png)
 9. repeat this step for the **4** of the above mentionted storage policies!!!
 
+Go back to your Horizon Connection Server Web Console:
+
+1. Click on **Desktops Pools**
+2. double Click on **your new created desktop pool**
+3. Click **Status**
+4. Click **Enable Provisioning**
+![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/Desktops-pool3.png)
+5. Click **OK**
+
+Go back to your vSphere Web Client and watch the the provisioning in the task list: It will take around 5-10 min to have the desktops available.
+
 
 
 
