@@ -97,7 +97,9 @@ The next step will be to create the VPN connection between Student-Workshop-X.1 
 - **Note** make a note of your Public IP adress.
 - **Note** To complete the **Remote Public IP** field,  work with your workshop partner to obtain their Public IP address.
 - **Note** Student-Workshop SDDC 1 needs to change the **LOCAL ASN** . Next to Add VPN , click on **EDIT LOCAL ASN** to 65001
+
 ![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/VPN1.png)
+
 ![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/VPN2.png)
 
 | **Name** | **Local IP** | **Remote Public IP** | **BGP Local IP/Prefix Length** | **BGP Remote IP** | **BGP Remote ASN** | **Preshared Key** |
@@ -105,11 +107,11 @@ The next step will be to create the VPN connection between Student-Workshop-X.1 
 | Horizon-Student-Workshop-X.2 | Public | *Public IP Student X.1* | 169.254.111.2/30 | 169.254.111.1 | 65001| VMware1! |
 
 
-We have now completed network set up part of the lab. The next step will be to deploy the virtual machines we are going to need for the lab. We are goign to deploy these from templates, located in Content Libraries.
-
-**Note** Click the refresh button as described in the screenshot:
+**Note** Click the refresh button as described in the screenshot to see that the tunnel is up and change to **green**
 
 ![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/VPN3.png)
+
+We have now completed network set up part of the lab. The next step will be to deploy the virtual machines we are going to need for the lab. We are goign to deploy these from templates, located in Content Libraries.
 
 
 The next step will be to log onto vCenter and deploy VMs.
