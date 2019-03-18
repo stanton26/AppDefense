@@ -226,13 +226,13 @@ This Golden Master Image will be used to deploy desktops, using Instant Clone te
 
 1. Power on the VM **CS-100** or **CS-200**, depending on your student workshop number.
 2. Launch the Web Console
-3. Sign in with  **Administrator** and password **VMware1!**
+3. Sign in with  **vdionvmc\Administrator** and password **VMware1!**
 
 ## Configure Horizon Environment
 
 In order to create desktops in your SDDC, first we need to implement your Student SDDC vCenter into the existing Horizon infrastructure.
 
-Once logged into the **Horizon Connection Server**, locate Horizon 7 Administrator Console shortcut, located on the Desktop page of the Horizon Connection Server.
+Once logged into the **Horizon Connection Server**, locate Horizon 7 Administrator Console shortcut, located on the Desktop page of the Horizon Connection Server. Or open a browser and browse to **https://192.168.100.11/admin** or **https://192.168.200.11/admin** depending on your workshop sddc number.
 
 ![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/CS+1.jpg)
 
@@ -297,7 +297,13 @@ Instant Clones require a shapshot of the Golden Master Image. Therefore we need 
 5. Name **1.0**
 6. Click **OK**
 
-Go back to the Horozon Connection Server.
+## Deploy Desktop Pool
+
+Go back to the Horizon Connection Server Web Console. Your Horizon Connection Server Console should be still open. If not please open it either via the shortcut on the desktop or go to https://192.169.100.11/admin or https://192.168.200.11/admin, depending on your workshop sddc number.
+
+1. On the Horizon Connection Server admin console on the left site you can click on **Desktop Pools**
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-pool1.png)
+
 
 
 
