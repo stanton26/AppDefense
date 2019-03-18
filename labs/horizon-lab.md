@@ -374,6 +374,9 @@ Go back to your Horizon Connection Server Web Console:
 
 Go back to your vSphere Web Client and watch the the provisioning in the task list: It will take around 5-10 min to have the desktops available.
 
+##External Access
+
+bla bla bla bla
 
 
 
