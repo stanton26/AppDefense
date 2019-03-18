@@ -87,8 +87,6 @@ Depending on weather you are working in SDDC **Student-Workshop-X.1** or **Stude
 The next step will be to create the VPN connection between Student-Workshop-X.1 and Student-Workshop- X.2. To do that, follow the steps below:
 
 
-
-
 1. Go to **Network & Security**
 2. **VPN**
 3. **Route Based**
@@ -326,7 +324,9 @@ Go back to the Horizon Connection Server Web Console. Your Horizon Connection Se
 7. Click **next**
 8. Activate **HTML Access**
 ![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/Desktops-pool1.png)
-9. Under **Naming Pattern:** type - **desktops1{n:fixed=3}** or **desktops2{n:fixed=3}** depending on your Student Workshop ID
+9. Under **Naming Pattern:** type - 
+- **desktops1{n:fixed=3}** or 
+- **desktops2{n:fixed=3}** depending on your Student Workshop ID
 10. change **Max number of machines** - 2
 11. click **next**
 12. Click **Use VMware Virtual SAN**
