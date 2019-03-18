@@ -380,7 +380,7 @@ Entitle Users to the Pools to access it later with those users:
 1. Click on **Entitlements**
 2. Click **add entitlments**
 3. click **add**
-![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/Desktops-pool4.png)
+![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/Desktops-pool6.png)
 4. click **finish**
 
 Go back to your vSphere Web Client and watch the the provisioning in the task list: It will take around 5-10 min to have the desktops available.
