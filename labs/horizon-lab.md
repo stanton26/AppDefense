@@ -329,10 +329,14 @@ Go back to the Horizon Connection Server Web Console. Your Horizon Connection Se
 21. Click **Finish**
 
 The deployment of the desktops should start now.
-The deployment will **fail** the first time. Because this is a Single Node SDDC we need to change the newly created Horizon vSAN policys to **no rendundancy**
+The deployment will **fail** the first time. Because this is a Single Node SDDC, you need to change the newly created Horizon vSAN policys to **no rendundancy**
 For that please switch to your vSphere Web Client Console
 
-1. 
+1. Click **Menu**
+2. Click **Policies and Profiles**
+3. on the left side click **VM Storage Policies**
+4. You will find 4 new Storage Policies that will have a random number at the end. All 4 needs to be changed:
+
 
 
 
