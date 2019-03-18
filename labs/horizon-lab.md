@@ -445,8 +445,15 @@ You need to login back into the **Horizon Connection Server** and open a **brows
 - click **EDIT**
 5. **disable** the tunneling
 ![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/External6.png)
+6. Click **OK**
 
 
+NOW you are going to configure your UAG. Go to your Horizon Connection Server.
+
+1. Open a **browser**
+2. navigate to **https://192.168.100.12:9443** or **https://192.168.200.12:9443** , depending on your student workshop ID
+3. login with **admin** and **VMware1!**
+4. 
 
 
 
