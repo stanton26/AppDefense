@@ -360,7 +360,7 @@ in the screenshot you see 3 but you need to change all **4**
 6. click **NEXT**
 7. Click **Next**
 8. **Storage Policy:** click on **Failues to tolerate** and click on **No data redundancy** , click **next**, click **next** and **finish**
-![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/Desktops-pool3.png)
+![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/Desktops-pool5.png)
 9. repeat this step for the **4** of the above mentionted storage policies!!!
 
 Go back to your Horizon Connection Server Web Console:
@@ -369,7 +369,7 @@ Go back to your Horizon Connection Server Web Console:
 2. double Click on **your new created desktop pool**
 3. Click **Status**
 4. Click **Enable Provisioning**
-![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/Desktops-pool3.png)
+![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/Desktops-pool4.png)
 5. Click **OK**
 
 Go back to your vSphere Web Client and watch the the provisioning in the task list: It will take around 5-10 min to have the desktops available.
