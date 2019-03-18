@@ -331,7 +331,7 @@ Go back to the Horizon Connection Server Web Console. Your Horizon Connection Se
 - **desktops2{n:fixed=3}** depending on your Student Workshop ID
 10. change **Max number of machines** - 2
 11. click **next**
-12. Click **Use VMware Virtual SAN**
+12. Click **Use VMware Virtual SAN**, click **next**
 13. **Parent VM in vCenter:** click **Browse**  and select your **GM-W10** image
 14. **Snapshot:** click **Browse** and select the previous created Snapshot
 15. **VM folder location:** click **Browse**  - select **Workloads**
