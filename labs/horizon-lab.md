@@ -452,11 +452,14 @@ NOW you are going to configure your UAG. Go to your Horizon Connection Server.
 
 1. Open a **browser**
 2. navigate to **https://192.168.100.12:9443** or **https://192.168.200.12:9443** , depending on your student workshop ID
-3. Click **proceed** on the security warning**
+3. Click **proceed** on the **security warning**
 4. click **go back**
 5. login with **admin** and **VMware1!** , Click **login**
 6. Click **Select** on the right site **Configure Mannually**
 7. Click **Edge Service Settings** **Show**
 - Click **settings sign** next to horizon settings
-
-
+- Click **Enable Horizon**
+- Click **Enable Blast**
+- Click **Enable Tunnel**
+9. For **Connection Server URL** **https://cs-100.vdionvmc.local:443** or **https://cs-200.vdionvmc.local:443**
+10. For **Connection Server URL Thumbprint 
