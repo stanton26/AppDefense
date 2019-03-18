@@ -525,3 +525,6 @@ When you joing:
 ![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/CPA4.png)
 
 You now have successfull configured a CPA between SDDC1 and SDDC2. This could also be a SDDC running in Frankfurt and the other one running Oregon for example.
+
+##Simulate a Failover
+
