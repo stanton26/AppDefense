@@ -488,3 +488,11 @@ NOW you are going to configure your UAG. Go to your Horizon Connection Server.
 Congratulations you succesfull access your desktop from external!!!!!!!
 
 
+## Build Cloud Pod Architecture
+
+The Cloud Pod Architecture feature link together multiple View pods to provide a single large desktop brokering and management environment. When the Cloud Pod Archtieture featre is enabled, y ou can join togehter multiple View pods to form a single View implementation called a pod federation. A pod federation can span mulötiple sites and datacenters.
+
+# For confiugring CPA you need to work together in this Section because only one person can initialize the CPA and the other needs to join to it. Please discuss in your **team** who will initialize and who will join the initilized CPA.
+
+![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/CPA1.png)
+
