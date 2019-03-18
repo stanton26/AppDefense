@@ -350,7 +350,7 @@ For that please switch to your **vSphere Web Client Console**
 1. Click **Menu**
 2. Click **Policies and Profiles**
 3. left side click **VM Storage Policies**
-4. You will find **4** new Storage Policies that will have a random number at the end. All 4 needs to be changed:
+4. You will find **4** new Storage Policies that will have a **random number** at the end. All 4 needs to be changed: **search** for them in the storage profiles
 
 - **OS_DISK_FLOATING_.............**
 - **PERSISTENT_DISK_..............**
