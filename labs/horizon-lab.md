@@ -487,6 +487,13 @@ NOW you are going to configure your UAG. Go to your Horizon Connection Server.
 
 Congratulations you succesfull access your desktop from external!!!!!!!
 
+## Exand Desktop Pool
+
+kjhkjhkjhkjhkhkhk
+
+kjnkkjhkjh
+
+kljhkjhkjhkj
 
 ## Build Cloud Pod Architecture
 
@@ -527,4 +534,5 @@ When you joing:
 You now have successfull configured a CPA between SDDC1 and SDDC2. This could also be a SDDC running in Frankfurt and the other one running Oregon for example.
 
 ##Simulate a sddc failure
+
 
