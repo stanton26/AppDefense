@@ -338,8 +338,8 @@ Go back to the Horizon Connection Server Web Console. Your Horizon Connection Se
 16. **Cluster:** click **Browse**  - select **Cluster-1** , click **OK**
 17. **Ressource Pool** click **Browse** - Select **Horizon-RessourcePool** , click **OK**
 18. **Datastore:** click **Browse** - select **WorkloadDatastore** and click **OK**
-19. Do not change Networks. Click **Next**
-20. Do not change guest customization. Click **Next**
+19. Do not change **Networks**. Click **Next**
+20. Do not change **Guest customization**. Click **Next**
 21. Click **Finish**
 
 The deployment of the desktops should start now.
