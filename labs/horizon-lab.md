@@ -228,9 +228,11 @@ This Golden Master Image will be used to deploy desktops, using Instant Clone te
 
 ## Power on Active Directory
 
-1. Power on the VM **AD-100** or **AD-200**, depending on your student workshop number.
-2. Launch the Web Console
-3. Sign in with  **VDIONVMC\Administrator** and password **VMware1!**
+1. Go to **Menu**
+2. Go to **VMs and Templates**
+3. Power on the VM **AD-100** or **AD-200**, depending on your student workshop number.
+4. Launch the Web Console
+5. Sign in with  **VDIONVMC\Administrator** and password **VMware1!**
 
 ## Power on Unified Access Gateway
 
@@ -301,8 +303,6 @@ The next step is to add **Instant Clone Domain Admins**
 4. Click OK
 
 ![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/CS+7.jpg)
-
-
 
 ## Deploy Desktop Pool
 
@@ -377,15 +377,38 @@ Go back to your Horizon Connection Server Web Console:
 Entitle Users to the Pools to access it later with those users:
 
 1. Click on **Entitlements**
-2.
+2. Click **add entitlments**
+3. click **add**
+![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/Desktops-pool4.png)
+4. click **finish**
 
 Go back to your vSphere Web Client and watch the the provisioning in the task list: It will take around 5-10 min to have the desktops available.
 
 
-
 ## External Access
 
-bla bla bla bla
+Now we will make your Horizon environment available from external. 
+
+1. Go to your VMC console.
+2. Go to your SDDC
+3. Go to **Networking and Security** tab
+4. On the left site go to **Public IPs**
+5. Click on **REQUEST NEW IP**
+6. **Notes** - type Horizon
+7. Click **Save**
+
+Now that we have a public IP we need to create a NAT rule to your UAG
+
+1. Go to your VMC console.
+2. Go to your SDDC
+3. Go to **Networking and Security** tab
+4. On the left site go to **NAT**
+5. Click **ADD RULE**
+- **Name** - Horizon
+- **Service** - delete All Traffic, type **HTPPS / 443**
+- **internal IP** - typ ip of your UAG **192.168.100.12** or **192.168.200.12**  depending on your student workshop ID
+7. Click **Save**
+
 
 
 
