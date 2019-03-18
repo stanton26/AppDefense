@@ -434,6 +434,7 @@ You need to login back into the **Horizon Connection Server** and open a **brows
 
 1. Login to your horizon connection Server as **Administrator** and  **VMware1!**
 2. Click on the shortcut icon for the Horizon Connection server or navigate to **https://localhost/admin**
+
 - **Note** it can take up to 5 min to have all services started to be able to browse to the webpage of the horizon connection server
 
 3. Login to the horizon 7 conneciton server administation console with **Administrator** and **VMware1!**
