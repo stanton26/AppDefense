@@ -484,3 +484,7 @@ NOW you are going to configure your UAG. Go to your Horizon Connection Server.
 3. **Proceed on the security warnings**
 4. click **VMware Horizon HTML Access** on the right site.
 5. sign in with Username: **Workshop100** **Workshop200** and Password: **VMware1!**
+
+Congratulations you succesfull access your desktop from external!!!!!!!
+
+
