@@ -456,5 +456,7 @@ NOW you are going to configure your UAG. Go to your Horizon Connection Server.
 4. click **go back**
 5. login with **admin** and **VMware1!** , Click **login**
 6. Click **Select** on the right site **Configure Mannually**
-7. 
+7. Click **Edge Service Settings** **Show**
+- Click **settings sign** next to horizon settings
+
 
