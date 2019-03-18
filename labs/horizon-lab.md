@@ -496,3 +496,32 @@ For configuring CPA you need to work **together** with your partner in this sect
 
 ![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/CPA1.png)
 
+When you decided who will be initize and who will joing proceed as following :
+When you initilize :
+
+
+1. Go to your **Horizon Connection Server**
+2. Open the shortcut for the Horizon Connection Server configuration or go to **https://localhost/admin**
+3. Login with **Administrator** and **VMware1!**
+4. Go to **View Configruation** -> **Cloud Pod Architecture**
+5. Click **Initialize the Cloud Pod Architecture feature**
+6. Click **OK**
+7. **Wait** for to be finished.
+8. Click **OK**
+
+When you joing:
+
+
+1. Go to your **Horizon Connection Server**
+2. Open the shortcut for the Horizon Connection Server configuration or go to **https://localhost/admin**
+3. Login with **Administrator** and **VMware1!**
+4. Go to **View Configruation** -> **Cloud Pod Architecture**
+5. Click **Join the pod federation**
+6. Type for **Connection Server** the local IP-Adress of your Partner either **192.168.100.11** or **192.168.200.11**
+7. **Username**:vdionvmc\Adminstraot
+8. **Password**:
+9. Click **Save**
+10. Wait for the Join
+![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/CPA4.png)
+
+You now have successfull configured a CPA between SDDC1 and SDDC2. This could also be a SDDC running in Frankfurt and the other one running Oregon for example.
