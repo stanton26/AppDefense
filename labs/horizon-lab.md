@@ -397,6 +397,7 @@ Now we will make your Horizon environment available from external.
 5. Click on **REQUEST NEW IP**
 6. **Notes** - type Horizon
 7. Click **Save**
+![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/External1.png)
 
 Now that we have a public IP we need to create a NAT rule to your UAG
 
@@ -406,10 +407,19 @@ Now that we have a public IP we need to create a NAT rule to your UAG
 4. On the left site go to **NAT**
 5. Click **ADD RULE**
 - **Name** - Horizon
-- **Service** - delete All Traffic, type **HTPPS / 443**
-- **internal IP** - typ ip of your UAG **192.168.100.12** or **192.168.200.12**  depending on your student workshop ID
+- **Service** - delete **All Traffic** -  type **HTPPS / 443**
+- **internal IP** - type ip of your UAG **192.168.100.12** or **192.168.200.12**  depending on your student workshop ID
 7. Click **Save**
 
+**Note** make a note of your Public IP cause we will need this later for configuring UAG and Horizon Connection server.
+
+1. Go to **Horizon Connection Server Web Console**
+2. Open *File Explorer** in your Horizon Server
+3. Open the **locked.properties** file under c:\Program Files\VMware\VMmware View\Server\sslgateway\conf\ with your **notepad**
+4. enter your **Public IP** into the filed balancedHost=
+5. **Save** the file
+6. Close notepad
+7. **restart** your horizon connection server - right click on **Start** , **Studown or sign out**, **restart**
 
 
 
