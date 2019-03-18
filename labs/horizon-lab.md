@@ -526,5 +526,5 @@ When you joing:
 
 You now have successfull configured a CPA between SDDC1 and SDDC2. This could also be a SDDC running in Frankfurt and the other one running Oregon for example.
 
-##Simulate a Failover
+##Simulate a sddc failure
 
