@@ -305,10 +305,32 @@ Go back to the Horizon Connection Server Web Console. Your Horizon Connection Se
 
 1. On the Horizon Connection Server admin console on the left site you can click on **Desktop Pools**
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-pool1.png)
-2. 2.  Select **Automated Desktop Pool** and click on **Next**
+2. Select **Automated Desktop Pool** and click on **Next**
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-pool2.png)
-3.  Select **Floating** and click **next**
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-pool3.png)
+3. Select **Floating** and click **next**
+4. Select **Instant Clones** and click **next**
+5. On **ID** - type  **Pool1** or **Pool2**, depending on your Stundent workshop ID
+6. On **Display name** - **Pool1** or **Pool2**, depending on your Stundent workshop ID
+7. Click **next**
+8. Activate **HTML Access**
+![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/Desktops-pool1.png)
+9. Under **Naming Pattern:** type - **desktops1{n:fixed=3}** or **desktops2{n:fixed=3}** depending on your Student Workshop ID
+10. change **Max number of machines** - 2
+11. click **next**
+12. Click **Use VMware Virtual SAN**
+13. **Parent VM in vCenter:** click **Browse**  and select your **GM-W10** image
+14. **Snapshot:** click **Browse** and select the previous created Snapshot
+15. **VM folder location:** click **Browse**  - select **Workloads**
+16. **Cluster:** click **Browse**  - select **Cluster-1** 
+17. **Ressource Pool** click **Browse** - Select **Horizon-RessourcePool**
+18. **Datastore:** click **Browse** - select **WorkloadDatastore** and click **OK**
+19. Do not change Networks. Click **Next**
+20. Do not change guest customization. Click **Next**
+21. Click **Finish**
+
+
+
+
 
 
 
