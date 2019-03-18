@@ -324,8 +324,8 @@ Go back to the Horizon Connection Server Web Console. Your Horizon Connection Se
 5. On **ID** - type  **Pool1** or **Pool2**, depending on your Stundent workshop ID
 6. On **Display name** - **Pool1** or **Pool2**, depending on your Stundent workshop ID
 7. Click **next**
-8. Activate **HTML Access**
-    ![test](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/Desktops-pool1.png)
+8. Activate **HTML Access**, click **next**
+    ![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/Desktops-pool1.png)
 9. Under **Naming Pattern:** type -
 - **desktops1{n:fixed=3}** or
 - **desktops2{n:fixed=3}** depending on your Student Workshop ID
