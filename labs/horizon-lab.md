@@ -325,9 +325,9 @@ Go back to the Horizon Connection Server Web Console. Your Horizon Connection Se
 6. On **Display name** - **Pool1** or **Pool2**, depending on your Stundent workshop ID
 7. Click **next**
 8. Activate **HTML Access**
-![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/Desktops-pool1.png)
-9. Under **Naming Pattern:** type - 
-- **desktops1{n:fixed=3}** or 
+    ![test](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/Desktops-pool1.png)
+9. Under **Naming Pattern:** type -
+- **desktops1{n:fixed=3}** or
 - **desktops2{n:fixed=3}** depending on your Student Workshop ID
 10. change **Max number of machines** - 2
 11. click **next**
@@ -350,6 +350,7 @@ For that please switch to your vSphere Web Client Console
 2. Click **Policies and Profiles**
 3. left side click **VM Storage Policies**
 4. You will find **4** new Storage Policies that will have a random number at the end. All 4 needs to be changed:
+
 - **OS_DISK_FLOATING_.............**
 - **PERSISTENT_DISK_..............**
 - **REPLICA_DISK_.................**
