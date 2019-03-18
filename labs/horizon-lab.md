@@ -461,7 +461,7 @@ NOW you are going to configure your UAG. Go to your Horizon Connection Server.
 - Click **Enable Horizon**
 - Click **Enable Blast**
 - Click **Enable Tunnel**
-9. For **Connection Server URL** **https://cs-100.vdionvmc.local:443** or **https://cs-200.vdionvmc.local:443**
+9. For **Connection Server URL** **https://hz-ws-cs100.vdionvmc.local:443** or **https://hz-ws-cs200.vdionvmc.local:443**
 10. For **Connection Server URL Thumbprint** go back to the connection server tab and click on the certificate
 ![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/External7.png)
 
@@ -476,3 +476,4 @@ NOW you are going to configure your UAG. Go to your Horizon Connection Server.
 13. **Blast External URL** type **https://your public IP:443**
 14. **Tunnel External URL** type **https://your public IP:443**
 15. Click **Save**
+
