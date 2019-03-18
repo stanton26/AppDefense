@@ -465,13 +465,14 @@ NOW you are going to configure your UAG. Go to your Horizon Connection Server.
 10. For **Connection Server URL Thumbprint** go back to the connection server tab and click on the certificate
 ![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/External7.png)
 
-
 ![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/External8.png)
 - Go to **Details** Tab
 - Scroll down to **Thumbprint**
 - **Copy** the thumbprint you see.
 
-11. **Switch** to the UAG console in the other **browser tab**
+
+- **Switch** to the UAG console in the other **browser tab**
 12. in **Connection Server URL Thumbprint** write **sha1= your copy of the thumbprint**
-13. **Blast External IP** type **https://your public IP:443**
+13. **Blast External URL** type **https://your public IP:443**
 14. **Tunnel External URL** type **https://your public IP:443**
+15. Click **Save**
