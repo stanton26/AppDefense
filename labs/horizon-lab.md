@@ -334,20 +334,24 @@ For that please switch to your vSphere Web Client Console
 
 1. Click **Menu**
 2. Click **Policies and Profiles**
-3. on the left side click **VM Storage Policies**
+3. left side click **VM Storage Policies**
 4. You will find **4** new Storage Policies that will have a random number at the end. All 4 needs to be changed:
 - **OS_DISK_FLOATING_.............**
 - **PERSISTENT_DISK_..............**
 - **REPLICA_DISK_.................**
 - **VM_HOME_......................**
+
 in the screenshot you see 3 but you need to change all **4**
 ![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/Desktops-pool2.png)
 
 5. Cick on each of the above and click **Edit Settings**
 6. click **NEXT**
 7. Click **Next**
-8. **Storage Policy:** click on **Failues to tolerate** and click on **No data redundancy**
+8. **Storage Policy:** click on **Failues to tolerate** and click on **No data redundancy** , click **next**, click **next** and **finish**
 ![](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/Desktops-pool3.png)
+9. repeat this step for the **4** of the above mentionted storage policies!!!
+
+
 
 
 
