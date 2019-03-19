@@ -502,7 +502,7 @@ The next step will be to expand the desktop pool we ceated previously in this la
 1. Go to your **Horizon Connection Server**
 2. Open the shortcut for the Horizon Connection Server configuration or go to **https://localhost/admin**
 3. Login with **Administrator** and **VMware1!**
-4. Go to **Catalogue** -> **Desktop Pools**
+4. Go to **Catalog** -> **Desktop Pools**
 5. Right click on your previously created Desktop Pool and click **Edit**
     Go to **Provisioning Settings**
     Change **Maximum Number of Machines** to **20**
