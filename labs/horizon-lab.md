@@ -14,6 +14,24 @@ comments: true
 
 In this Lab we are going to cfreate and install a Horizon 7 environment. Using Cloud Pod Architectire to connect two Horizon Environemnts for Global Management and Entitlement Rights.
 
+## Viewing your SDDC
+
+![SDDC-Network-01](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc01.jpg)
+
+After you login, you should see a single SDDC in the user interface following the naming format Student-Workshop-#.#. An SDDC is a fully deployed environment including vSphere, NSX, vSAN and vCenter Server. Deployment of a fully configured SDDC takes about two hours so for the purposes of this lab, we have already deployed it for you. This SDDC is in the same state it would be if you have deployed it. Let's take a look at the SDDC properties.
+
+1. First click on View Details to open the SDDC properties.
+
+![SDDC-Network-02](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc02.jpg)
+
+You will start with the Summary of the SDDC. There are a number of other tabs available as follows:
+1. Support - You can contact Support with your SDDC ID, Org ID, vCenter Private and Public IPs and the date of your SDDC Deployment.
+2. Settings: Gives you access to your vSphere Client (HTML5), vCenter Server API, PowerCLI Connect, vCenter Server and reviews your Authentication information.
+3. Troubleshooting: Allows you to run network connectivity tests to ensure all necessary access is available to perform select use cases.
+4. Add Ons: Here you will find Add On services for your VMware Cloud on AWS environment like Hybrid Cloud Extension and VMware Site Recovery.
+5. Networking & Security: Provides a full diagram of the Management and Compute Gateways.  This is where you can configuration locgical networks, VPN's and firewall rules. We will cover this in more detail later. Click on Networking & Security to proceed to the next article to learn more about VMware Cloud on AWS Network and Security Configuration.
+
+
 ## What is Horizon on VMware Cloud on AWS
 
 VMware Horizon® 7 for VMware Cloud™ on AWS delivers a seamlessly integrated hybrid cloud for virtual desktops and applications. It combines the enterprise capabilities of the VMware Software-Defined Data Center, delivered as a service
