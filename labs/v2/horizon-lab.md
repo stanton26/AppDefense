@@ -388,23 +388,23 @@ Go back to your Horizon Connection Server Web Console:
     ![Desktops-pool4](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/Desktops-pool4.png)
 5. Click **OK**
 
-Entitle Users to the Pools, to access it later with those users:
+Entitle Users to the Pools, in order to be able to access the desktops later.
 
 1. Click on **Entitlements**
-2. Click **add entitlments**
-3. click **add**
+2. Click **Add Entitlments**
+3. click **Add**
 4. Search in **Name/user name** for **Workshop** you will find two users.
 5. Select both users and click **OK**
     ![Desktops-pool6](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/Desktops-pool6.png)
-6. click **finish**
+6. Click **Finish**
 
 Go back to your **vSphere Web Client** and watch the the provisioning in the task list: It will take around 5-10 min to have the desktops available.
 
 ## External Access
 
-Now we will make your Horizon environment available from external.
+The next step will be to enable your Horizon environment to be accessed externally.
 
-1. Go to your VMC console.
+1. Go to your VMC console
 2. Go to your SDDC
 3. Go to **Networking and Security** tab
 4. On the left site go to **Public IPs**
@@ -413,32 +413,32 @@ Now we will make your Horizon environment available from external.
 7. Click **Save**
 ![External1](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/External1.png)
 
-Now that we have a public IP we need to create a NAT rule to your UAG
+Now that we have a public IP we need to create a NAT rule to your UAG.
 
-1. Go to your VMC console.
+1. Go to your VMC console
 2. Go to your SDDC
 3. Go to **Networking and Security** tab
 4. On the left site go to **NAT**
 5. Click **ADD RULE**
     - **Name** - Horizon
     - **Service** - delete **All Traffic** -  type **HTPPS / 443**
-    - **internal IP** - type ip of your UAG **192.168.100.12** or **192.168.200.12**  depending on your student workshop ID
+    - **Internal IP** - type ip of your UAG **192.168.100.12** or **192.168.200.12**  depending on your student workshop ID
 6. Click **Save**
 
 ![External2](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/External2.png)
 
-**Note** make a note of your Public IP cause we will need this later for configuring UAG and Horizon Connection server.
+**Note** make a note of your Public IP Address, because it will be needed later on in the lab, for configuring the UAG and Horizon Connection server.
 
 1. Go to **Horizon Connection Server Web Console**
-2. Open *File Explorer** in your Horizon Server
-3. Open the **locked.properties** file under c:\Program Files\VMware\VMmware View\Server\sslgateway\conf\ with your **notepad**
+2. Open **File Explorer** in your Horizon Server
+3. Open the **locked.properties** file under c:\Program Files\VMware\VMmware View\Server\sslgateway\conf\ with your **Notepad**
     ![External3](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/External3.png)
-4. enter your **Public IP** into **balancedHost=**
+4. Enter your **Public IP** into **balancedHost=**
     ![External4](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/External4.png)
 5. **Save** the file
-6. Close notepad
-7. **restart** your horizon connection server - right click on **Start** -> **Studown or sign out** -> **restart**
-8. wait for the server to come back.
+6. Close Notepad
+7. **Restart** your horizon connection server - click on **Start** -> **Studown or sign out** -> **Restart**
+8. Wait for the server to come back
 
 You need to login back into the **Horizon Connection Server** and open a **browser**
 
