@@ -490,8 +490,10 @@ NOW you are going to configure your UAG. Go to your Horizon Connection Server.
 1. Open a browser on your local Machine / Laptop
 2. Navigate to **https://your-public-ip**
 3. **Proceed on the security warnings**
-4. click **VMware Horizon HTML Access** on the right site.
-5. sign in with Username: **Workshop100** **Workshop200** and Password: **VMware1!**
+4. Click **VMware Horizon HTML Access** on the right site.
+5. Sign in with Username: **Workshop100** **Workshop200** and Password: **VMware1!**
+6. Click **Start**
+7. **Restart your Desktop**
 
 Congratulations you succesfull access your desktop from external!!!!!!!
 
@@ -548,7 +550,9 @@ When you joing:
 
 You now have successfull configured a CPA between SDDC1 and SDDC2. This could also be a SDDC running in Frankfurt and the other one running Oregon for example.
 
-The next step will be to crate Gloabl Entitlement rights to show some of benefits of CPA. This task can be done by one person. You need to decide which student will create the Global Entitlements policy.
+The next step will be to crate Gloabl Entitlement rights to show some of benefits of CPA. You need to decide which student will create the Global Entitlements policy.
+
+**This task can only be done by one person!**
 
 1. Go to **Catalog** -> **Global Entitlements**
 2. Click **Add**
@@ -573,3 +577,7 @@ We have a Global Policy cretaed.
 
 Horizon best practices we cannot have users in both local and global entitlements. Users can only have one or the other. Therefore the next step will be to delete the Local Pool entitlement.
 
+**The next steps need to be completed by both students**
+
+1. Go to **Catalog** -> **Desktop Pools**
+2. Right Click on your desktop pool. **Remove Entitlement**
