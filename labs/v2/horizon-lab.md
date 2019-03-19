@@ -95,7 +95,7 @@ Depending on weather you are working in SDDC **Student-Workshop-X.1** or **Stude
     - **Student-Workshop-X.2** use 192.168.200.1/24
 4. **DHCP** - Disabled
 
-## Creating a VPN Connection
+### Creating a VPN Connection
 
 The next step will be to create the VPN connection between Student-Workshop-X.1 and Student-Workshop- X.2. To do that, follow the steps below:
 
@@ -156,7 +156,7 @@ In the subscribed content library you will find the Active Directory VM, Golden 
 
 The first VM we need to deploy is Active Directory VM.
 
-## Create Active Directory VM
+### Create Active Directory VM
 
 1. Locage and right Click on **AD-100** or **AD-200**, depending on your student workshop number.
 2. Click on **New VM from This Template**
@@ -170,7 +170,7 @@ The first VM we need to deploy is Active Directory VM.
 9. Select Networks - Select the network you created in the previous lab **Horizon100** or **Horizon200**, depending on your student workshop number.
 10. Click **Next** and **Finish**
 
-## Create Horizon Connection Server VM
+### Create Horizon Connection Server VM
 
 1. Locate and right Click on the **CS-100** or **CS-200**, depending on your student workshop number.
 2. Click on **New VM from This Template**
@@ -183,7 +183,7 @@ The first VM we need to deploy is Active Directory VM.
 9. Select Networks - Select the network you created in the previous lab **Horizon100** or **Horizon200**, depending on your student workshop number.
 10. Click **Next** and **Finish**
 
-## Create your Golden Master Image
+### Create your Golden Master Image
 
 This Golden Master Image will be used to deploy desktops, using Instant Clone technology.
 
@@ -198,7 +198,7 @@ This Golden Master Image will be used to deploy desktops, using Instant Clone te
 9. Select Networks - Select the network you created in the previous lab **Horizon100** or **Horizon200**, depending on your student workshop number.
 10. Click **Next** and **Finish**
 
-## Create your Unified Access Gateway (UAG) VM
+### Create your Unified Access Gateway (UAG) VM
 
 1. Go to **Menu**, **VM and Templates**,
 2. right click on **Workloads**, select **deploy OVF tempate**, type URL:
@@ -233,7 +233,7 @@ This Golden Master Image will be used to deploy desktops, using Instant Clone te
 
     ![UAG+4](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/UAG+4.jpg)
 
-## Power on Active Directory
+### Power on Active Directory
 
 1. Go to **Menu**
 2. Go to **VMs and Templates**
@@ -241,11 +241,11 @@ This Golden Master Image will be used to deploy desktops, using Instant Clone te
 4. Launch the Web Console
 5. Sign in with  **VDIONVMC\Administrator** and password **VMware1!**
 
-## Power on Unified Access Gateway
+### Power on Unified Access Gateway
 
 1. Power on the VM **UAG-100** or **UAG-200**, depending on your student workshop number.
 
-## Power on Horizon Connection Server
+### Power on Horizon Connection Server
 
 1. Power on the VM **CS-100** or **CS-200**, depending on your student workshop number.
 2. Launch the Web Console
@@ -381,7 +381,7 @@ Go back to your Horizon Connection Server Web Console:
 2. double Click on **your new created desktop pool**
 3. Click **Status**
 4. Click **Enable Provisioning**
-![Desktops-pool4](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/Desktops-pool4.png)
+    ![Desktops-pool4](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/Desktops-pool4.png)
 5. Click **OK**
 
 Entitle Users to the Pools to access it later with those users:
@@ -501,9 +501,9 @@ The next step will be to expand the desktop pool we ceated previously in this la
 3. Login with **Administrator** and **VMware1!**
 4. Go to **Catalog** -> **Desktop Pools**
 5. Right click on your previously created Desktop Pool and click **Edit**
-    Go to **Provisioning Settings**
-    Change **Maximum Number of Machines** to **20**
-    Click **OK**
+    - Go to **Provisioning Settings**
+    - Change **Maximum Number of Machines** to **20**
+    - Click **OK**
     ![DesktopPool](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/Desktop7.jpg)
 6. Double click the Desktop Pool.
 7. Go to **Inventory** tab. Monitor progress of desktop creation.
@@ -516,7 +516,7 @@ For configuring CPA you need to work **together** with your partner in this sect
 
 ![CPA1](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/CPA1.png)
 
-When you decided who will be initize and who will joing proceed as following :
+When you decided who will be initize and who will be joining proceed as following :
 When you initilize :
 
 1. Go to your **Horizon Connection Server**
@@ -554,17 +554,17 @@ The next step will be to crate Gloabl Entitlement rights to show some of benefit
 3. **Desktop Entitlement**
 4. Click **Next**
 5. Name and Policy Section
-    Name:**Global Policy**
-    Policies click **Floating**
-    Scope **All Sites**
-    Default Display Protocol **VMware Blast**
-    Allow users to chose protocol **No**
-    Enable **HTML Access**
-    Click **Next**
+    - Name:**Global Policy**
+    - Policies click **Floating**
+    - Scope **All Sites**
+    - Default Display Protocol **VMware Blast**
+    - Allow users to chose protocol **No**
+    - Enable **HTML Access**
+    - Click **Next**
 6. Users and Groups
-    Click **Add**
-    Name/User Name type **workshop** -> click **Find**
-    Select both users. Click **OK**
+    - Click **Add**
+    - Name/User Name type **workshop** -> click **Find**
+    - Select both users. Click **OK**
 7. Click **Next**
 8. Click **Finish**
 
