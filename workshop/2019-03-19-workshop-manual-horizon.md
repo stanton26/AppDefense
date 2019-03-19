@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "Horizon on VMware Cloud on AWS Workshop"
-permalink: /workshop-manual/
+permalink: /workshop-manual-horizon/
 date: 2019-03-19
 tags: workshop
 classes: wide
