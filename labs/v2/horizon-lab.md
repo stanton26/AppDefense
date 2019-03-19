@@ -259,11 +259,11 @@ This Golden Master Image will be used to deploy desktops, using Instant Clone te
 
 In order to create desktops in your SDDC, first we need to implement your Student SDDC vCenter into the existing Horizon infrastructure.
 
-Once logged into the **Horizon Connection Server**, locate Horizon 7 Administrator Console shortcut, located on the Desktop page of the Horizon Connection Server. Or open a browser and browse to **https://192.168.100.11/admin** or **https://192.168.200.11/admin** depending on your workshop sddc number.
+Once logged into the **Horizon Connection Server**, locate Horizon 7 Administrator Console shortcut, located on the Desktop screen of the Horizon Connection Server. Or open a browser and browse to **https://192.168.100.11/admin** or **https://192.168.200.11/admin** depending on your workshop sddc number.
 
 ![CS+1](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/CS+1.jpg)
 
-Double click to open the Administrator Console. That will launcde in a browser window. You will see the below certificate error waring. Proceed to localhost.
+Double click to open the Administrator Console. That will launche in a browser window. You will see the below certificate error waring. Proceed to localhost.
 
 Log into Horizon 7 Administrator Console.
 
@@ -274,9 +274,9 @@ Log into Horizon 7 Administrator Console.
 
 The next step of the Horizon configuration will be to add the vCenter server of your SDDC. To do that we need to make a note of the vCenter server address, user name and password. To obtain these, do the following.
 
-1. Go back to your VMware Cloud on AWS Console.
+1. Go back to your VMware Cloud on AWS Console
 2. Click on your SDDC
-3. Click on the **Support** tab and make a note of the **vCenter Public IP address**.
+3. Click on the **Support** tab and make a note of the **vCenter Public IP address**
 
 ![CS+6](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/CS+6.jpg)
 
@@ -290,16 +290,16 @@ Under vCenter Server tab, click **Add…**.
 
 In the popup window fill in the following:
 
-1. **Server Address** - fill in the Public vCenter IP address, which you noted down in the previous step.
+1. **Server Address** - fill in the Public vCenter IP address, which you noted down in the previous step
 2. **User Name** - **cloudadmin@vmc.local**
-3. **Password** - fill in the Public vCenter IP address, which you noted down in previous section of the lab.
+3. **Password** - fill in the Public vCenter IP address, which you noted down in previous section of the lab
 4. Make sure that the **VMware Cloud on AWS** tick box is selected
-5. Click **Next**.
+5. Click **Next*
 
     ![CS+5](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/CS+5.jpg)
 
-6. An **Invalid Certificate Detected** popup box will open. Click on **View Certificate**. Then click on **Accept**.
-7. Click **Next**.
+6. An **Invalid Certificate Detected** popup box will open. Click on **View Certificate**. Then click **Accept**
+7. Click **Next**
 8. **VERY IMPORTANT** Make sure the **Reclaim VM disk space** tick box is **unchecked**. Click **Next**
 9. Click **Finish**
 
@@ -307,9 +307,9 @@ You have successfully added your vCenter Server.
 
 The next step is to add **Instant Clone Domain Admins**
 
-1. Go to **Instant Clone Domain Admins** on the right hand side.
+1. Go to **Instant Clone Domain Admins** on the right hand side
 2. Click **Add**
-3. Fill in **User Name** and **Password** filed
+3. Fill in **User Name** and **Password** field
     **User Name** - administrator
     **Password** - VMware1!
 4. Click OK
