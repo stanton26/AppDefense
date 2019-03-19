@@ -497,11 +497,19 @@ Congratulations you succesfull access your desktop from external!!!!!!!
 
 ## Exand Desktop Pool
 
-kjhkjhkjhkjhkhkhk
+The next step will be to expand the desktop pool we ceated previously in this lab.
 
-kjnkkjhkjh
-
-kljhkjhkjhkj
+1. Go to your **Horizon Connection Server**
+2. Open the shortcut for the Horizon Connection Server configuration or go to **https://localhost/admin**
+3. Login with **Administrator** and **VMware1!**
+4. Go to **Catalogue** -> **Desktop Pools**
+5. Right click on your previously created Desktop Pool and click **Edit**
+    Go to **Provisioning Settings**
+    Change **Maximum Number of Machines** to **20**
+    Click **OK**
+    ![DesktopPool](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/Desktop7.jpg)
+6. Double click the Desktop Pool.
+7. Go to **Inventory** tab. Monitor progress of desktop creation.
 
 ## Build Cloud Pod Architecture
 
