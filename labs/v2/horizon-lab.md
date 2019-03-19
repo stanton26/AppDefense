@@ -533,7 +533,7 @@ When you initilize :
 7. **Wait** for to be finished.
 8. Click **OK**
 
-When you joing:
+When joining:
 
 1. Go to your **Horizon Connection Server**
 2. Open the shortcut for the Horizon Connection Server configuration or go to **https://localhost/admin**
