@@ -576,8 +576,18 @@ The next step will be to crate Gloabl Entitlement rights to show some of benefit
 We have a Global Policy cretaed.
 
 Horizon best practices we cannot have users in both local and global entitlements. Users can only have one or the other. Therefore the next step will be to delete the Local Pool entitlement.
-
-**The next steps need to be completed by both students**
+**The next steps need to be completed by BOTH students**
 
 1. Go to **Catalog** -> **Desktop Pools**
 2. Right Click on your desktop pool. **Remove Entitlement**
+3. Select both users. Click **OK**
+4. In the pop up message click **OK**
+
+## Add the Desktop Pools to Global Entitlement
+
+1. Go to **Catalog** -> **Global Entitlements**
+2. Double click on your global entitlement.
+3. Click on **Local Pools** tab
+4. Click **Add**
+5. Select your pool and click **Add**
+
