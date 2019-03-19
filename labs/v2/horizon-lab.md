@@ -162,36 +162,36 @@ The first VM we need to deploy is Active Directory VM.
 
 ### Create Active Directory VM
 
-1. Locage and right Click on **AD-100** or **AD-200**, depending on your student workshop number.
+1. Locage and right Click on **AD-100** or **AD-200**, depending on your student workshop number
 2. Click on **New VM from This Template**
-3. **Virtual Machine Name** - AD-100 or AD-200, depending on your student workshop number.
+3. **Virtual Machine Name** - AD-100 or AD-200, depending on your student workshop number
 4. Under select a location for Virtual Machine, click on **SDDC-Datacenter**, then click on **Workloads**
     ![create+AD+100-+1](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/create+AD+100-+1.png)
 5. Click **Next**
 6. Click **Cluster-1**, then click **Compute-ResourcePool**, then click **Next**
 7. Review Details. Click **Next**
 8. Select Storage. Select **WorkloadDatastore** and click **Next**
-9. Select Networks - Select the network you created in the previous lab **Horizon100** or **Horizon200**, depending on your student workshop number.
+9. Select Networks - Select the network you created in the previous lab **Horizon100** or **Horizon200**, depending on your student workshop number
 10. Click **Next** and **Finish**
 
 ### Create Horizon Connection Server VM
 
-1. Locate and right Click on the **CS-100** or **CS-200**, depending on your student workshop number.
+1. Locate and right Click on the **CS-100** or **CS-200**, depending on your student workshop number
 2. Click on **New VM from This Template**
-3. **Virtual Machine Name** - CS-100 or CS-200, depending on your student workshop number.
+3. **Virtual Machine Name** - CS-100 or CS-200, depending on your student workshop number
 4. Under select a location for Virtual Machine, click on **SDDC-Datacenter**, then click on **Workloads**
 5. Click **Next**
 6. Click **Cluster-1**, then click **Compute-ResourcePool**, then click **Next**
 7. Review Details. Click **Next**
 8. Select Storage. Select **WorkloadDatastore** and click **Next**
-9. Select Networks - Select the network you created in the previous lab **Horizon100** or **Horizon200**, depending on your student workshop number.
+9. Select Networks - Select the network you created in the previous lab **Horizon100** or **Horizon200**, depending on your student workshop number
 10. Click **Next** and **Finish**
 
 ### Create your Golden Master Image
 
 This Golden Master Image will be used to deploy desktops, using Instant Clone technology.
 
-1. Locate and right Click on the **GM-W10-WS-1** or **GM-W10-WS-1**, depending on your student workshop number.
+1. Locate and right Click on the **GM-W10-WS-1** or **GM-W10-WS-1**, depending on your student workshop number
 2. Click on **New VM from This Template**
 3. **Virtual Machine Name** -  GM-W10
 4. Under select a location for Virtual Machine, click on **SDDC-Datacenter**, then click on **Templates**
@@ -199,40 +199,40 @@ This Golden Master Image will be used to deploy desktops, using Instant Clone te
 6. Click **Cluster-1**, then click **Compute-ResourcePool**, then click **Next**
 7. Review Details. Click **Next**
 8. Select Storage. Select **WorkloadDatastore** and click **Next**
-9. Select Networks - Select the network you created in the previous lab **Horizon100** or **Horizon200**, depending on your student workshop number.
+9. Select Networks - Select the network you created in the previous lab **Horizon100** or **Horizon200**, depending on your student workshop number
 10. Click **Next** and **Finish**
 
 ### Create your Unified Access Gateway (UAG) VM
 
-1. Go to **Menu**, **VM and Templates**,
-2. right click on **Workloads**, select **deploy OVF tempate**, type URL:
+1. Go to **Menu**, **VM and Templates**
+2. Right click on **Workloads**, select **deploy OVF tempate**, type URL:
     - **https://s3-us-west-2.amazonaws.com/horizon-200/UAG-200/euc-unified-access-gateway-3.4.0.0-11037344_OVF10.ova**
-    - Click **yes**
-3. **Virtual Machine Name** - UAG-100** or UAG-200, depending on your student workshop number.
+    - Click **Yes**
+3. **Virtual Machine Name** - **UAG-100** or **UAG-200**, depending on your student workshop number
 4. Under select a location for Virtual Machine, click on **SDDC-Datacenter**, then click on **Workloads**
 5. Click **Next**
 6. Click **Cluster-1**, then click **Compute-ResourcePool**, then click **Next**
 7. Review Details. Click **Next**
 8. Configuration - chose **Single NIC**, then click **Next**
-9. Select Storage. Select **WorkloadDatastore** and click **Next**
-10. Select Networks - chose **Horizon100** or **Horizon200** for all three networks.
-11. Customize template - Complete the following:
+9. Select Storage - select **WorkloadDatastore** and click **Next**
+10. Select Networks - chose **Horizon100** or **Horizon200** for all three networks
+11. Customize template - complete the following:
     - **IPMode for NIC 1 (eth0)** type **STATICV4**
 
     ![UAG+1](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/UAG+1.jpg)
 
-    - **NIC 1 (eth0) IPv4 address** type **192.168.100.12** or **192.168.200.12**, depending on your student workshop number.
+    - **NIC 1 (eth0) IPv4 address** type **192.168.100.12** or **192.168.200.12**, depending on your student workshop number
 
     ![UAG+2](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/UAG+2.jpg)
 
-    - **DNS server address** type **192.168.100.10** or **192.168.200.10**, depending on your student workshop number.
+    - **DNS server address** type **192.168.100.10** or **192.168.200.10**, depending on your student workshop number
     - **NIC 1 (eth0) netmask** type **255.255.255.0**
-    - **IPv4 Default Gateway** type **192.168.100.1** or **192.168.200.1**, depending on your student workshop number.
-    - **Unified Gateway Appliance Nmae** type **UAG100** or **UAG200**, depending on your student workshop number.
+    - **IPv4 Default Gateway** type **192.168.100.1** or **192.168.200.1**, depending on your student workshop number
+    - **Unified Gateway Appliance Nmae** type **UAG100** or **UAG200**, depending on your student workshop number
 
     ![UAG+3](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/UAG+3.jpg)
 
-    - **Join CEIP** Untick the checkbox, under text.
+    - **Join CEIP** Untick the checkbox, under text
     - **Password for the root user and the Admin User** type **VMware1!**
 
     ![UAG+4](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/UAG+4.jpg)
@@ -241,17 +241,17 @@ This Golden Master Image will be used to deploy desktops, using Instant Clone te
 
 1. Go to **Menu**
 2. Go to **VMs and Templates**
-3. Power on the VM **AD-100** or **AD-200**, depending on your student workshop number.
+3. Power on the VM **AD-100** or **AD-200**, depending on your student workshop number
 4. Launch the Web Console
 5. Sign in with  **VDIONVMC\Administrator** and password **VMware1!**
 
 ### Power on Unified Access Gateway
 
-1. Power on the VM **UAG-100** or **UAG-200**, depending on your student workshop number.
+1. Power on the VM **UAG-100** or **UAG-200**, depending on your student workshop numbe
 
 ### Power on Horizon Connection Server
 
-1. Power on the VM **CS-100** or **CS-200**, depending on your student workshop number.
+1. Power on the VM **CS-100** or **CS-200**, depending on your student workshop number
 2. Launch the Web Console
 3. Sign in with  **vdionvmc\Administrator** and password **VMware1!**
 
