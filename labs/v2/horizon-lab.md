@@ -442,44 +442,46 @@ Now that we have a public IP we need to create a NAT rule to your UAG.
 
 You need to login back into the **Horizon Connection Server** and open a **browser**
 
-1. Login to your horizon connection Server as **Administrator** and  **VMware1!**
+1. Login to your Horizon Connection Server as **Administrator** and **VMware1!**
 2. Click on the shortcut icon for the Horizon Connection server or navigate to **https://localhost/admin**
 
-    - **Note** it can take up to 5 min to have all services started to be able to browse to the webpage of the horizon connection server
+    - **Note** it can take up to 5 min to have all services started to be able to browse to the webpage of the Horizon Connection Server
 
-3. Login to the horizon 7 conneciton server administation console with **Administrator** and **VMware1!**
-4. On the let site go to **View Configuration**
+3. Login to the Horizon 7 Conneciton Server Administation Console with **Administrator** and **VMware1!**
+4. On the left side go to **View Configuration**
     - **Servers**
-    - **connection server** tab
-    - select your **connection server**
-    - click **EDIT**
-5. **disable** the tunneling
+    - **Connection Server** tab
+    - Select your **connection server**
+    - Click **EDIT**
+5. **Dsable** the tunneling
     ![External6](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/External6.png)
 6. Click **OK**
 
-NOW you are going to configure your UAG. Go to your Horizon Connection Server.
+The next step is to configure your UAG. Go to your Horizon Connection Server.
 
 1. Open a **browser**
-2. navigate to **https://192.168.100.12:9443** or **https://192.168.200.12:9443** , depending on your student workshop ID
-3. Click **proceed** on the **security warning**
-4. click **go back**
-5. login with **admin** and **VMware1!** , Click **login**
-6. Click **Select** on the right site **Configure Mannually**
+2. Navigate to **https://192.168.100.12:9443** or **https://192.168.200.12:9443** , depending on your student workshop ID
+3. Click **Proceed** on the **security warning**
+4. Click **Go Back**
+5. Login with **admin** and **VMware1!** , Click **Login**
+6. Click **Select** on the right side **Configure Manually**
 7. Click **Edge Service Settings** **Show**
-    - Click **settings sign** next to horizon settings
+    - Click **Settings sign** next to horizon settings
     - Click **Enable Horizon**
     - Click **Enable Blast**
     - Click **Enable Tunnel**
 8. For **Connection Server URL** **https://hz-ws-cs100.vdionvmc.local:443** or **https://hz-ws-cs200.vdionvmc.local:443**
 9. For **Connection Server URL Thumbprint** go back to the connection server tab and click on the certificate
+
     ![External](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/External7.png)
 
     ![External8](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/External8.png)
+
     - Go to **Details** Tab
     - Scroll down to **Thumbprint**
-    - **Copy** the thumbprint you see.
+    - **Copy** the thumbprint you see
     - **Switch** to the UAG console in the other **browser tab**
-10. in **Connection Server URL Thumbprint** write **sha1= your copy of the thumbprint**
+10. In **Connection Server URL Thumbprint** write **sha1= *your copy of the thumbprint***
 11. **Blast External URL** type **https://your public IP:443**
 12. **Tunnel External URL** type **https://your public IP:443**
 13. Click **Save**
@@ -489,14 +491,14 @@ NOW you are going to configure your UAG. Go to your Horizon Connection Server.
 1. Open a browser on your local Machine / Laptop
 2. Navigate to **https://your-public-ip**
 3. **Proceed on the security warnings**
-4. Click **VMware Horizon HTML Access** on the right site.
+4. Click **VMware Horizon HTML Access** on the right side.
 5. Sign in with Username: **Workshop100** **Workshop200** and Password: **VMware1!**
 6. Click **Start**
 7. **Restart your Desktop**
 
-Congratulations you succesfull access your desktop from external!!!!!!!
+Congratulations! You succesfully accessed your desktop from the Internet!
 
-## Exand Desktop Pool
+## Expand Desktop Pool
 
 The next step will be to expand the desktop pool we ceated previously in this lab.
 
@@ -508,20 +510,23 @@ The next step will be to expand the desktop pool we ceated previously in this la
     - Go to **Provisioning Settings**
     - Change **Maximum Number of Machines** to **20**
     - Click **OK**
+
     ![DesktopPool](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/Desktop7.jpg)
+
 6. Double click the Desktop Pool.
 7. Go to **Inventory** tab. Monitor progress of desktop creation.
 
 ## Build Cloud Pod Architecture
 
-The Cloud Pod Architecture feature link together multiple View pods to provide a single large desktop brokering and management environment. When the Cloud Pod Archtieture featre is enabled, y ou can join togehter multiple View pods to form a single View implementation called a pod federation. A pod federation can span mulötiple sites and datacenters.
+The Cloud Pod Architecture feature link together multiple View pods to provide a single large desktop brokering and management environment. When the Cloud Pod Archtieture featre is enabled, you can join togehter multiple View pods to form a single View implementation called a pod federation. A pod federation can span mulötiple sites and datacenters.
 
-For configuring CPA you need to work **together** with your partner in this section because only *one* person can **initialize** the CPA and the other needs to **join** to it. Please discuss in your **team** who will initialize and who will join the initilized CPA.
+For configuring CPA you need to work **together** with your partner in this section because only **one** person can **initialize** the CPA and the other needs to **join** the CPA. Please discuss within your **team** who will initialize and who will join the initilized CPA.
 
 ![CPA1](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/CPA1.png)
 
-When you decided who will be initize and who will be joining proceed as following :
-When you initilize :
+When you decided who will initize and who will be joining, proceed as follows:
+
+To initilize the CPA:
 
 1. Go to your **Horizon Connection Server**
 2. Open the shortcut for the Horizon Connection Server configuration or go to **https://localhost/admin**
@@ -529,10 +534,10 @@ When you initilize :
 4. Go to **View Configruation** -> **Cloud Pod Architecture**
 5. Click **Initialize the Cloud Pod Architecture feature**
 6. Click **OK**
-7. **Wait** for to be finished.
+7. **Wait** for the task to complete
 8. Click **OK**
 
-When joining:
+To join the CPA:
 
 1. Go to your **Horizon Connection Server**
 2. Open the shortcut for the Horizon Connection Server configuration or go to **https://localhost/admin**
@@ -540,14 +545,14 @@ When joining:
 4. Go to **View Configruation** -> **Cloud Pod Architecture**
 5. Click **Join the pod federation**
 6. Type for **Connection Server** the local IP-Adress of your Partner either **192.168.100.11** or **192.168.200.11**
-7. **Username**:vdionvmc\Adminstraot
-8. **Password**:
+7. **Username** - vdionvmc\Adminstraot
+8. **Password**
 9. Click **Save**
-10. Wait for the Join
+10. Wait to join
 
 ![CPA4](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/CPA4.png)
 
-You now have successfull configured a CPA between SDDC1 and SDDC2. This could also be a SDDC running in Frankfurt and the other one running Oregon for example.
+You now have successfully configured a CPA between SDDC1 and SDDC2. This could also be a SDDC running in two different regions - Frankfurt and Oregon for example.
 
 The next step will be to crate Gloabl Entitlement rights to show some of benefits of CPA. You need to decide which student will create the Global Entitlements policy.
 
@@ -574,7 +579,8 @@ The next step will be to crate Gloabl Entitlement rights to show some of benefit
 
 We have a Global Policy cretaed.
 
-Horizon best practices we cannot have users in both local and global entitlements. Users can only have one or the other. Therefore the next step will be to delete the Local Pool entitlement.
+Following Horizon best practices, we cannot have users in both Local and Global entitlements. Users can only have one or the other. Therefore the next step will be to delete the Local Pool entitlement.
+
 **The next steps need to be completed by BOTH students**
 
 1. Go to **Catalog** -> **Desktop Pools**
@@ -591,6 +597,7 @@ Horizon best practices we cannot have users in both local and global entitlement
 5. Select your pool and click **Add**
 
 Now that we have the Global Entitlements set up, we can simulate a desktop pool failure by disabling one of the desktop pools.
+
 **ONLY ONE person can do this test at a time**
 
 1. Open a browser on your local Machine / Laptop
