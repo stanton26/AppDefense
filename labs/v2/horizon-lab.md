@@ -12,13 +12,13 @@ comments: true
 
 # Introduction
 
-In this Lab we are going to cfreate and install a Horizon 7 environment. Using Cloud Pod Architectire to connect two Horizon Environemnts for Global Management and Entitlement Rights.
+In this Lab we are going to cfreate and install a Horizon 7 environment, using Cloud Pod Architectire to connect two Horizon Environemnts for Global Management and Entitlement Rights.
 
 ## Viewing your SDDC
 
 ![SDDC-Network-01](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc01.jpg)
 
-After you login, you should see a single SDDC in the user interface following the naming format Student-Workshop-#.#. An SDDC is a fully deployed environment including vSphere, NSX, vSAN and vCenter Server. Deployment of a fully configured SDDC takes about two hours so for the purposes of this lab, we have already deployed it for you. This SDDC is in the same state it would be if you have deployed it. Let's take a look at the SDDC properties.
+After you login, you should see a single SDDC in the user interface following the naming format Student-Workshop-#.#. An SDDC is a fully deployed environment including vSphere, NSX, vSAN and vCenter Server. Deployment of a fully configured SDDC takes about two hours, so for the purposes of this lab, we have already deployed it for you. This SDDC is in the same state it would be if you have deployed it. Let's take a look at the SDDC properties.
 
 1. First click on View Details to open the SDDC properties.
 
@@ -49,7 +49,7 @@ For customers, who are already familiar with Horizon 7 or have Horizon 7 deploye
 
 If not done already in the previous lab please also create the Firewall rule for the Management Gateway so you can access the vCenter.
 
-<!-- Comment for Elena: this is step 1. This stays.-->
+<!-- Elena - the above sentence needs changing. there is no previous lab-->
 
 ### Compute Gateway Firewall Rules
 
@@ -61,7 +61,7 @@ By default, the Compute Gateway is set to deny all inbound and outbound traffic.
 2. On the right hand side go to **Compute Gateway**
 3. Click **ADD NEW RULE**
 
-Horizon requires a number of ports to be opened for communcation and Inter-POD connectivity. For the purposes of the lab and ease of management we are going to allow communicaqtiona cross everythig. The first rule we are going to create is an Any Any Any rule.
+Horizon requires a number of ports to be opened for communcation and Inter-POD connectivity. For the purposes of the lab,and ease of management, we are going to allow communicaqtiona cross everythig. The first rule we are going to create is an Any Any Any rule.
 
 1. **Name** - Horizon
 2. **Source** - Any
@@ -72,18 +72,18 @@ Horizon requires a number of ports to be opened for communcation and Inter-POD c
 
 The next step will be to edit the **Default VTI Rule** in the Compure Gatwway Firewall Rules
 
-1. Click the three point next to **Default VTI Rule**
+1. Click the three dots next to **Default VTI Rule**
 2. **EDIT**
 3. **Action** - Allow
 
 ## Cretea a Logical Network
 
-For this Horizon Lab we have prepared several virtual machines, like Active Directory (AD), Hoirzon Connections Server, Unified Access Gateway (UAG) and the Goldenmaster Image.
+For this Horizon Lab we have prepared several virtual machines, which are Active Directory (AD), Hoirzon Connections Server, Unified Access Gateway (UAG) and a Goldenmaster Image.
 The AD, Horizon Connection Server, UAG and Goldenmaster Image will be deployed in a 192.168.20.0/24 subnet. Therefore we need to create this network first.
 
 ## Create a Logical Network
 
-The next step we need to complete is to create a logical network. For our Horizon Lab we are going to need several virtual machines. These are: Active Directory, Hoirzon Connections Server, Unified Access Gateway (UAG) and the Golden Master Image.
+In the next step we are going to create a logical network for the virtual machines, which we will deploy in this lab.
 
 The AD, Horizon Connection Server, UAG and Golden Master Image will be deployed in a 192.168.xxx.xxx/24 subnet. Therefore we need to create this network first.
 
