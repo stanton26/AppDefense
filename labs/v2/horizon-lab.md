@@ -327,27 +327,27 @@ Instant Clones require a shapshot of the Golden Master Image. Therefore we need 
 5. Name **1.0**
 6. Click **OK**
 
-Go back to the Horizon Connection Server Web Console. Your Horizon Connection Server Console should be still open. If not please open it either via the shortcut on the desktop or go to https://192.169.100.11/admin or https://192.168.200.11/admin, depending on your workshop sddc number.
+Go back to the Horizon Connection Server Web Console. Your Horizon Connection Server Console should be still open. If not please open it either via the shortcut on the desktop, or go to https://192.169.100.11/admin or https://192.168.200.11/admin, depending on your workshop sddc number.
 
-1. On the Horizon Connection Server admin console on the left site you can click on **Catalog** and then **Desktop Pools**
-2. Click **Add** Select **Automated Desktop Pool** click **Next**
-3. Select **Floating** click **next**
-4. Select **Instant Clones** click **next**
+1. On the Horizon Connection Server admin console on the left side you can click on **Catalog** and then **Desktop Pools**
+2. Click **Add**, select **Automated Desktop Pool**, click **Next**
+3. Select **Floating** click **Next**
+4. Select **Instant Clones** click **Next**
 5. On **ID** - type  **Pool1** or **Pool2**, depending on your Stundent workshop ID
-6. On **Display name** - **Pool1** or **Pool2**, depending on your Stundent workshop ID
-7. Click **next**
-8. Activate **HTML Access**, click **next**
+6. On **Display Name** - **Pool1** or **Pool2**, depending on your Stundent workshop ID
+7. Click **Next**
+8. Activate **HTML Access**, click **Next**
 
     ![Desktops-pool1](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/Desktops-pool1.png)
 
 9. Under **Naming Pattern:** type -
     - **desktops1{n:fixed=3}** or
     - **desktops2{n:fixed=3}** depending on your Student Workshop ID
-10. change **Max number of machines** - 2
-11. click **next**
-12. Click **Use VMware Virtual SAN**, click **next**
+10. Change **Max number of machines** - 2
+11. click **Next**
+12. Click **Use VMware Virtual SAN**, click **Next**
 13. **Parent VM in vCenter:** click **Browse**  and select your **GM-W10** image , click **OK**
-14. **Snapshot:** click **Browse** and select the previous created Snapshot, click **OK**
+14. **Snapshot:** click **Browse** and select the previously created Snapshot, click **OK**
 15. **VM folder location:** click **Browse**  - select **Workloads**, click **OK**
 16. **Cluster:** click **Browse**  - select **Cluster-1** , click **OK**
 17. **Ressource Pool** click **Browse** - Select **Horizon-RessourcePool** , click **OK**
@@ -357,38 +357,38 @@ Go back to the Horizon Connection Server Web Console. Your Horizon Connection Se
 21. Click **Finish**
 
 The deployment of the desktops should start now.
-The deployment will **fail** the first time. Because this is a Single Node SDDC, you need to change the newly created Horizon vSAN policys to **no rendundancy**
+The deployment will **fail** the first time. Because this is a Single Node SDDC, you need to change the newly created Horizon vSAN policies to **no redundancy**
 
 For that please switch to your **vSphere Web Client Console**
 
 1. Click **Menu**
 2. Click **Policies and Profiles**
-3. left side click **VM Storage Policies**
+3. Left side click **VM Storage Policies**
 4. You will find **4** new Storage Policies that will have a **random number** at the end. All 4 needs to be changed: **search** for them in the storage profiles
     - **OS_DISK_FLOATING_.............**
     - **PERSISTENT_DISK_..............**
     - **REPLICA_DISK_.................**
     - **VM_HOME_......................**
 
-    in the screenshot you see 3 but you need to change all **4**
+    In the screenshot you see 3 but you need to change all **4**
     ![Desktops-pool2](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/Desktops-pool2.png)
 5. Cick on each of the above and click **Edit Settings**
-6. click **NEXT**
+6. Click **Next**
 7. Click **Next**
-8. **Storage Policy:** click on **Failues to tolerate** and click on **No data redundancy** , click **next**, click **next** and **finish**
+8. **Storage Policy:** click on **Failures to tolerate** and click on **No data redundancy** , click **Next**, click **Next** and **Finish**
     ![Desktops-pool5](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/Desktops-pool5.png)
-9. repeat this step for the **4** of the above mentionted storage policies!!!
+9. Repeat these steps for **4** of the above mentionted storage policies!
 
 Go back to your Horizon Connection Server Web Console:
 
 1. Click on **Desktops Pools**
-2. double Click on **your new created desktop pool**
+2. Double Click on **your new created desktop pool**
 3. Click **Status**
 4. Click **Enable Provisioning**
     ![Desktops-pool4](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/Desktops-pool4.png)
 5. Click **OK**
 
-Entitle Users to the Pools to access it later with those users:
+Entitle Users to the Pools, to access it later with those users:
 
 1. Click on **Entitlements**
 2. Click **add entitlments**
