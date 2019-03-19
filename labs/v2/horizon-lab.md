@@ -373,12 +373,11 @@ For that please switch to your **vSphere Web Client Console**
 
     in the screenshot you see 3 but you need to change all **4**
     ![Desktops-pool2](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/Desktops-pool2.png)
-
 5. Cick on each of the above and click **Edit Settings**
 6. click **NEXT**
 7. Click **Next**
 8. **Storage Policy:** click on **Failues to tolerate** and click on **No data redundancy** , click **next**, click **next** and **finish**
-![Desktops-pool5](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/Desktops-pool5.png)
+    ![Desktops-pool5](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/Desktops-pool5.png)
 9. repeat this step for the **4** of the above mentionted storage policies!!!
 
 Go back to your Horizon Connection Server Web Console:
@@ -436,7 +435,7 @@ Now that we have a public IP we need to create a NAT rule to your UAG
 3. Open the **locked.properties** file under c:\Program Files\VMware\VMmware View\Server\sslgateway\conf\ with your **notepad**
     ![External3](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/External3.png)
 4. enter your **Public IP** into **balancedHost=**
-![External4](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/External4.png)
+    ![External4](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/External4.png)
 5. **Save** the file
 6. Close notepad
 7. **restart** your horizon connection server - right click on **Start** -> **Studown or sign out** -> **restart**
@@ -456,7 +455,7 @@ You need to login back into the **Horizon Connection Server** and open a **brows
     - select your **connection server**
     - click **EDIT**
 5. **disable** the tunneling
-![External6](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/External6.png)
+    ![External6](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/External6.png)
 6. Click **OK**
 
 NOW you are going to configure your UAG. Go to your Horizon Connection Server.
