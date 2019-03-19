@@ -547,3 +547,29 @@ When you joing:
 ![CPA4](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/CPA4.png)
 
 You now have successfull configured a CPA between SDDC1 and SDDC2. This could also be a SDDC running in Frankfurt and the other one running Oregon for example.
+
+The next step will be to crate Gloabl Entitlement rights to show some of benefits of CPA. This task can be done by one person. You need to decide which student will create the Global Entitlements policy.
+
+1. Go to **Catalog** -> **Global Entitlements**
+2. Click **Add**
+3. **Desktop Entitlement**
+4. Click **Next**
+5. Name and Policy Section
+    Name:**Global Policy**
+    Policies click **Floating**
+    Scope **All Sites**
+    Default Display Protocol **VMware Blast**
+    Allow users to chose protocol **No**
+    Enable **HTML Access**
+    Click **Next**
+6. Users and Groups
+    Click **Add**
+    Name/User Name type **workshop** -> click **Find**
+    Select both users. Click **OK**
+7. Click **Next**
+8. Click **Finish**
+
+We have a Global Policy cretaed.
+
+Horizon best practices we cannot have users in both local and global entitlements. Users can only have one or the other. Therefore the next step will be to delete the Local Pool entitlement.
+
