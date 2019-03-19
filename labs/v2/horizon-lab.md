@@ -47,8 +47,6 @@ For customers, who are already familiar with Horizon 7 or have Horizon 7 deploye
 
 ## Configuring SDDC Firewall Rules
 
-If not done already in the previous lab please also create the Firewall rule for the Management Gateway so you can access the vCenter.
-
 <!-- Elena - the above sentence needs changing. there is no previous lab-->
 
 ### Compute Gateway Firewall Rules
@@ -76,12 +74,9 @@ The next step will be to edit the **Default VTI Rule** in the Compure Gatwway Fi
 2. **EDIT**
 3. **Action** - Allow
 
-## Cretea a Logical Network
+### Cretea a Logical Network
 
 For this Horizon Lab we have prepared several virtual machines, which are Active Directory (AD), Hoirzon Connections Server, Unified Access Gateway (UAG) and a Goldenmaster Image.
-The AD, Horizon Connection Server, UAG and Goldenmaster Image will be deployed in a 192.168.20.0/24 subnet. Therefore we need to create this network first.
-
-## Create a Logical Network
 
 In the next step we are going to create a logical network for the virtual machines, which we will deploy in this lab.
 
