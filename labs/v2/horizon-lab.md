@@ -50,7 +50,7 @@ For customers, who are already familiar with Horizon 7 or have Horizon 7 deploye
 
 If not done already in the previous lab please also create the Firewall rule for the Management Gateway so you can access the vCenter.
 
-<!-- Comment for Elena: this is step 1. This stays.-->w
+<!-- Comment for Elena: this is step 1. This stays.-->
 
 ### Compute Gateway Firewall Rules
 
@@ -524,7 +524,6 @@ For configuring CPA you need to work **together** with your partner in this sect
 When you decided who will be initize and who will joing proceed as following :
 When you initilize :
 
-
 1. Go to your **Horizon Connection Server**
 2. Open the shortcut for the Horizon Connection Server configuration or go to **https://localhost/admin**
 3. Login with **Administrator** and **VMware1!**
@@ -534,8 +533,7 @@ When you initilize :
 7. **Wait** for to be finished.
 8. Click **OK**
 
-When you joing:
-
+When you are joining:
 
 1. Go to your **Horizon Connection Server**
 2. Open the shortcut for the Horizon Connection Server configuration or go to **https://localhost/admin**
@@ -551,6 +549,6 @@ When you joing:
 
 You now have successfull configured a CPA between SDDC1 and SDDC2. This could also be a SDDC running in Frankfurt and the other one running Oregon for example.
 
-##Simulate a sddc failure
+## Simulate a sddc failure
 
 Test
