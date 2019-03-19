@@ -43,9 +43,11 @@ on AWS, with the market-leading capabilities of VMware Horizon for a simple, sec
 
 ### Simplify Public and Hybrid Cloud Management
 
-For customers, who are already familiar with Horizon 7 or have Horizon 7 deployed on premises, running Horizon 7 on VMware Cloud on AWS lets you leverage a unified architecture and familiar tools. You can simplify management for Horizon 7 deployments using on-premises infrastructure and VMware Cloud on AWS with Cloud Pod Architecture (CPA) by linking cloud deployments in different regions, or by linking on-premises deployments to VMware Cloud on AWS deployments. This means that you use the same expertise and tools you know from VMware vSphere® and Horizon 7 for operational consistency, and leverage the rich feature set and flexibility you expect from Horizon 7
+For customers, who are already familiar with Horizon 7 or have Horizon 7 deployed on premises, running Horizon 7 on VMware Cloud on AWS lets you leverage a unified architecture and familiar tools. You can simplify management for Horizon 7 deployments using on-premises infrastructure and VMware Cloud on AWS with Cloud Pod Architecture (CPA) by linking cloud deployments in different regions, or by linking on-premises deployments to VMware Cloud on AWS deployments. This means that you use the same expertise and tools you know from VMware vSphere® and Horizon 7 for operational consistency, and leverage the rich feature set and flexibility you expect from Horizon 7.
 
 ![2](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/2.png)
+
+Let's proceed to the Workshop excersise.
 
 ## Configuring SDDC Firewall Rules
 
@@ -78,9 +80,9 @@ The next step will be to edit the **Default VTI Rule** in the Compure Gatwway Fi
 
 ### Cretea a Logical Network
 
-For this Horizon Lab we have prepared several virtual machines, which are Active Directory (AD), Hoirzon Connections Server, Unified Access Gateway (UAG) and a Goldenmaster Image.
+For this Horizon Lab we have prepared several virtual machines, which are Active Directory (AD), Hoirzon Connection Server, Unified Access Gateway (UAG) and a Golden Master Image.
 
-In the next step we are going to create a logical network for the virtual machines, which we will deploy in this lab.
+In the next step we are going to create a logical network for the virtual machines we will deploy in this lab.
 
 The AD, Horizon Connection Server, UAG and Golden Master Image will be deployed in a 192.168.xxx.xxx/24 subnet. Therefore we need to create this network first.
 
@@ -92,7 +94,7 @@ Depending on weather you are working in SDDC **Student-Workshop-X.1** or **Stude
     - **Student-Workshop-X.1** use **Horizon100**
     - **Student-Workshop-X.2** use **Horizon200**
 2. **Type** - Routed
-3. **Gateway / Prefix Length**
+3. **Gateway/Prefix Length**
     - **Student-Workshop-X.1** use 192.168.100.1/24
     - **Student-Workshop-X.2** use 192.168.200.1/24
 4. **DHCP** - Disabled
@@ -108,7 +110,7 @@ The next step will be to create the VPN connection between Student-Workshop-X.1 
 
 - **Note** make a note of your Public IP adress.
 - **Note** To complete the **Remote Public IP** field,  work with your workshop partner to obtain their Public IP address.
-- **Note** Student-Workshop SDDC 1 needs to change the **LOCAL ASN** . Next to Add VPN , click on **EDIT LOCAL ASN** to 65001
+- **Note** Student-Workshop SDDC 1 needs to change the **LOCAL ASN**. Next to Add VPN,click on **EDIT LOCAL ASN** and type 65001.
 
 ![VPN1](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/VPN1.png)
 
@@ -118,7 +120,7 @@ The next step will be to create the VPN connection between Student-Workshop-X.1 
 | Horizon-Student-Workshop-X.1 | Public | *Public IP Student X.2* | 169.254.111.1/30 | 169.254.111.2 | 65000| VMware1! |
 | Horizon-Student-Workshop-X.2 | Public | *Public IP Student X.1* | 169.254.111.2/30 | 169.254.111.1 | 65001| VMware1! |
 
-**Note** Click the refresh button as described in the screenshot to see that the tunnel is up and change to **green**
+**Note** Click the refresh button, as shown in the screenshot below, to see that the tunnel is up and change to **green**.
 
 ![VPN3](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/VPN3.png)
 
