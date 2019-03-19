@@ -604,6 +604,6 @@ Now that we have the Global Entitlements set up, we can simulate a desktop pool 
 13. The host name should be a desktop from your partners pool, that resides on another SDDC.
 14. Repeat steps 9 and 10, instead of disabling, chose **Enable Desktop Pool**
 
-Your working partner can repeat the same steps.
+Your Horizon Lab partner can repeat the same steps.
 
 This is the end of the lab. Thank you for attending.
