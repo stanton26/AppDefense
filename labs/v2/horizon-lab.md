@@ -43,13 +43,13 @@ on AWS, with the market-leading capabilities of VMware Horizon for a simple, sec
 
 For customers, who are already familiar with Horizon 7 or have Horizon 7 deployed on premises, running Horizon 7 on VMware Cloud on AWS lets you leverage a unified architecture and familiar tools. You can simplify management for Horizon 7 deployments using on-premises infrastructure and VMware Cloud on AWS with Cloud Pod Architecture (CPA) by linking cloud deployments in different regions, or by linking on-premises deployments to VMware Cloud on AWS deployments. This means that you use the same expertise and tools you know from VMware vSphere® and Horizon 7 for operational consistency, and leverage the rich feature set and flexibility you expect from Horizon 7
 
-![2](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/2.png) 
+![2](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/2.png)
 
 ## Configuring SDDC Firewall Rules
 
 If not done already in the previous lab please also create the Firewall rule for the Management Gateway so you can access the vCenter.
 
-<!-- Comment for Elena: this is step 1. This stays.-->w
+<!-- Comment for Elena: this is step 1. This stays.-->
 
 ### Compute Gateway Firewall Rules
 
@@ -72,7 +72,7 @@ Horizon requires a number of ports to be opened for communcation and Inter-POD c
 
 The next step will be to edit the **Default VTI Rule** in the Compure Gatwway Firewall Rules
 
-1. Click the three point next to **Default VTI Rule** 
+1. Click the three point next to **Default VTI Rule**
 2. **EDIT**
 3. **Action** - Allow
 
@@ -321,7 +321,7 @@ The next step is to add **Instant Clone Domain Admins**
 
 Instant Clones require a shapshot of the Golden Master Image. Therefore we need to create a snapshot of the Golden Master Image VM.
 
-1. Go back to the vSphere Client. 
+1. Go back to the vSphere Client.
 2. Click on **Hosts and Clusters**
 3. Locate your Golden Master Image VM **GM-W10**
 4. Right click, go to **Snapshots**, then **Take Snapshot**
@@ -404,7 +404,7 @@ Go back to your **vSphere Web Client** and watch the the provisioning in the tas
 
 ## External Access
 
-Now we will make your Horizon environment available from external. 
+Now we will make your Horizon environment available from external.
 
 1. Go to your VMC console.
 2. Go to your SDDC
