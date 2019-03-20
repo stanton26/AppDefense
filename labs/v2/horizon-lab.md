@@ -95,8 +95,8 @@ Depending on whether you are working in SDDC **Student-Workshop-X.1** or **Stude
     - **Student-Workshop-X.2** use **Horizon200**
 2. **Type** - Routed
 3. **Gateway/Prefix Length**
-    - **Student-Workshop-X.1** use 192.168.100.1/24
-    - **Student-Workshop-X.2** use 192.168.200.1/24
+    - **Student-Workshop-X.1** use 192.168.100.1/24 - where X is your **Student ID**
+    - **Student-Workshop-X.2** use 192.168.200.1/24 - where X is your **Student ID**
 4. **DHCP** - Disabled
 
 ### Creating a VPN Connection
