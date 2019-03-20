@@ -191,7 +191,7 @@ The first VM we need to deploy is Active Directory VM.
 
 This Golden Master Image will be used to deploy desktops, using Instant Clone technology.
 
-1. Locate and right Click on the **GM-W10-WS-1** or **GM-W10-WS-1**, depending on your student workshop number
+1. Locate and right Click on the **GM-W10-WS-1**
 2. Click on **New VM from This Template**
 3. **Virtual Machine Name** -  GM-W10
 4. Under select a location for Virtual Machine, click on **SDDC-Datacenter**, then click on **Templates**
