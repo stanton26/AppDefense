@@ -492,7 +492,7 @@ The next step is to configure your UAG. Go to your Horizon Connection Server.
     Click the **Refresh Button**
     Click on the **Horizon Settings** arrow
     Check that the last 4 points are **green**
-    ![External8](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/External8.png)
+    ![External9](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/External9.png)
 
 ## Access your Desktop
 
