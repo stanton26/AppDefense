@@ -606,23 +606,23 @@ Following Horizon best practices we cannot have users in both Local and Global e
 
 Now that we have the Global Entitlements set up, we can simulate a desktop pool failure by disabling one of the desktop pools.
 
-**ONLY ONE person can do this test at a time**
+**Only one person can do this test at a time**
 
 1. Open a browser on your local Machine / Laptop
 2. Navigate to **https://your-public-ip**
 3. **Proceed on the security warnings**
-4. Click **VMware Horizon HTML Access** on the right site.
+4. Click **VMware Horizon HTML Access** on the right site
 5. Sign in with Username: **Workshop100** **Workshop200** and Password: **VMware1!**
 6. Open **Command Prompt** and type **hostname**
-7. Make a note of your desktop name.
-8. Go back to your Horizon Connection Server.
+7. Make a note of your desktop name
+8. Go back to your Horizon Connection Server
 9. Go to **Catalog** -> **Desktop Pools**
 10. Right Click on the desktop pool and **Disable Desktop Pool**
 11. Click **OK**
-12. Repeat steps 1 to 6.
-13. The host name should be a desktop from your partners pool, that resides on another SDDC.
-14. Repeat steps 9 and 10, instead of disabling, chose **Enable Desktop Pool**
+12. Repeat steps 1 to 6
+13. The host name should be a desktop from your partner's pool, that resides on their SDDC.
+14. Repeat steps 9 and 10. Instead of disabling, chose **Enable Desktop Pool**
 
 Your Horizon Lab partner can repeat the same steps.
 
-This is the end of the lab. Thank you for attending.
+This is the end of the workshop. Thank you for attending.
