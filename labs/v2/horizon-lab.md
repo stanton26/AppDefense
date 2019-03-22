@@ -394,14 +394,8 @@ Entitle Users to the Pools, in order to be able to access the desktops later.
 
 1. Click on **Entitlements**
 2. Click **Add Entitlments**
-<<<<<<< HEAD
 3. In **Name/User name** type **Workshop**, then **Find**. You will find two users
 4. Select both users and click **OK**
-=======
-3. click **Add**
-4. Search in **Name/user name** for **Workshop** you will find two users.
-5. Select **BOTH** users and click **OK**
->>>>>>> c1afbdd0624f37efd628cfe8c258ee2c1d915f15
     ![Desktops-pool6](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/Desktops-pool6.png)
 5. Click **Finish**
 
