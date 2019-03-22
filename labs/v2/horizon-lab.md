@@ -615,7 +615,6 @@ Now that we have the Global Entitlements set up, we can simulate a desktop pool 
 5. Sign in with Username: **Workshop100** **Workshop200** and Password: **VMware1!**
 6. Open **Command Prompt** and type **hostname**
 7. Make a note of your desktop name.
-8. **Restart** the desktop
 8. Go back to your Horizon Connection Server.
 9. Go to **Catalog** -> **Desktop Pools**
 10. Right Click on the desktop pool and **Disable Desktop Pool**
