@@ -552,8 +552,8 @@ To join the CPA:
 3. Login with **Administrator** and **VMware1!**
 4. Go to **View Configruation** -> **Cloud Pod Architecture**
 5. Click **Join the pod federation**
-6. Type for **Connection Server** the local IP-Adress of your Partner either **192.168.100.11** or **192.168.200.11**
-7. **Username** - vdionvmc\Adminstrator
+6. For **Connection Server** type the local IP-Address of your Partner, which is either **192.168.100.11** or **192.168.200.11**
+7. **Username** - vdionvmc\Administrator
 8. **Password** - VMware1!
 9. Click **Save**
 10. Wait to join
