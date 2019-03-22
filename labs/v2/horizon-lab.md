@@ -457,7 +457,7 @@ You need to login back into the **Horizon Connection Server** and open a **brows
 5. **Disable** the tunneling
 6. Click on **Do not use Blast Secure Gateway**
     ![External6](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/External6.png)
-6. Click **OK**
+7. Click **OK**
 
 The next step is to configure your UAG. Go to your Horizon Connection Server.
 
