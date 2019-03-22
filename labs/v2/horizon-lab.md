@@ -488,6 +488,11 @@ The next step is to configure your UAG. Go to your Horizon Connection Server.
 11. **Blast External URL** type **https://your public IP:443**
 12. **Tunnel External URL** type **https://your public IP:443**
 13. Click **Save**
+14. Verify your configuration
+    Click the **Refresh Button**
+    Click on the **Horizon Settings** arrow
+    Check that the last 4 points are **green**
+    ![External8](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/External8.png)
 
 ## Access your Desktop
 
