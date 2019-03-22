@@ -394,11 +394,10 @@ Entitle Users to the Pools, in order to be able to access the desktops later.
 
 1. Click on **Entitlements**
 2. Click **Add Entitlments**
-3. click **Add**
-4. Search in **Name/user name** for **Workshop** you will find two users.
-5. Select both users and click **OK**
+3. In **Name/User name** type **Workshop**, then **Find**. You will find two users
+4. Select both users and click **OK**
     ![Desktops-pool6](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/Desktops-pool6.png)
-6. Click **Finish**
+5. Click **Finish**
 
 Go back to your **vSphere Web Client** and watch the the provisioning in the task list: It will take around 5-10 min to have the desktops available.
 
