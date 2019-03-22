@@ -293,7 +293,7 @@ In the popup window fill in the following:
 1. **Server Address** - fill in the Public vCenter IP address, which you noted down in the previous step
 2. **User Name** - **cloudadmin@vmc.local**
 3. **Password** - fill in the vCenter Password, which you noted down in previous section of the lab
-    **NOTE** type the password in the description field because you can see it in clear text then compare it with the one you noted.  We saw some Keyboard typos in privious LABS.
+    **NOTE** type the password in the description field because you can see it in clear text!! Compare it with the one you noted.  We saw some Keyboard typos in privious LABS.
 4. Make sure that the **VMware Cloud on AWS** tick box is selected
 5. Click **Next**
 
@@ -302,6 +302,7 @@ In the popup window fill in the following:
 6. An **Invalid Certificate Detected** popup box will open. Click on **View Certificate**. Then click **Accept**
 7. Click **Next**
 8. **VERY IMPORTANT** Make sure the **Reclaim VM disk space** tick box is **unchecked**. Click **Next**
+    **Note**  If the checkbox stays grey, the password is wrong.
 9. Click **Finish**
 
 You have successfully added your vCenter Server.
