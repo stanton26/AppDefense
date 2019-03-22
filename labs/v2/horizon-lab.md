@@ -491,7 +491,7 @@ The next step is to configure your UAG. Go to your Horizon Connection Server.
 14. Verify your configuration
     Click the **Refresh Button**
     Click on the **Horizon Settings** arrow
-    Check that the last 4 points are **green**
+    Check that **Tunnel**, **Blast**, **UDP Tunnel Server**, **Horizon Destination Server** is green
     ![External9](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/External9.png)
 
 ## Access your Desktop
