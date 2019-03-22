@@ -472,7 +472,7 @@ The next step is to configure your UAG. Go to your Horizon Connection Server.
     - Click **Enable Blast**
     - Click **Enable Tunnel**
 8. For **Connection Server URL** **https://hz-ws-cs100.vdionvmc.local:443** or **https://hz-ws-cs200.vdionvmc.local:443**
-9. For **Connection Server URL Thumbprint** go back to the connection server tab and click on the certificate
+9. For **Connection Server URL Thumbprint** go back to the **connection server tab** / **View Administrator** and click on the certificate
 
     ![External](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/External7.png)
 
@@ -493,7 +493,7 @@ The next step is to configure your UAG. Go to your Horizon Connection Server.
 2. Navigate to **https://your-public-ip**
 3. **Proceed on the security warnings**
 4. Click **VMware Horizon HTML Access** on the right side.
-5. Sign in with Username: **Workshop100** **Workshop200** and Password: **VMware1!**
+5. Sign in with Username: **Workshop100** or **Workshop200** and Password: **VMware1!**
 6. Click **Start**
 7. **Restart your Desktop**
 
