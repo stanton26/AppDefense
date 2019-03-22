@@ -473,7 +473,7 @@ The next step is to configure your UAG. Go to your Horizon Connection Server.
     - Click **Enable Horizon**
     - Click **Enable Blast**
     - Click **Enable Tunnel**
-8. For **Connection Server URL** **https://hz-ws-cs100.vdionvmc.local:443** or **https://hz-ws-cs200.vdionvmc.local:443**
+8. For **Connection Server URL** type **https://hz-ws-cs100.vdionvmc.local:443** or **https://hz-ws-cs200.vdionvmc.local:443**, depending on your Studen ID
 9. For **Connection Server URL Thumbprint** go back to the **connection server tab** / **View Administrator** and click on the certificate
 
     ![External](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/External7.png)
@@ -483,8 +483,8 @@ The next step is to configure your UAG. Go to your Horizon Connection Server.
     - Go to **Details** Tab
     - Scroll down to **Thumbprint**
     - **Copy** the thumbprint you see
-    - **Switch** to the UAG console in the other **browser tab**
-10. In **Connection Server URL Thumbprint** write **sha1= *your copy of the thumbprint***
+    - **Switch** to the **UAG Tab** / Console in the other **browser tab**
+10. In **Connection Server URL Thumbprint** write **sha1=*your copy of the thumbprint***
 11. **Blast External URL** type **https://your public IP:443**
 12. **Tunnel External URL** type **https://your public IP:443**
 13. Click **Save**
