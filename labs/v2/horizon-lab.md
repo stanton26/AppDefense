@@ -562,7 +562,7 @@ To join the CPA:
 
 You now have successfully configured a CPA between SDDC1 and SDDC2. This could also be a SDDC running in two different regions - Frankfurt and Oregon for example.
 
-The next step will be to crate Gloabl Entitlement rights to show some of benefits of CPA. You need to decide which student will create the Global Entitlements policy.
+The next step will be to create Global Entitlement rights to show some of the benefits of CPA. You need to decide which student will create the Global Entitlements policy.
 
 **This task can only be done by ONE person!**
 
@@ -571,23 +571,23 @@ The next step will be to crate Gloabl Entitlement rights to show some of benefit
 3. **Desktop Entitlement**
 4. Click **Next**
 5. Name and Policy Section
-    - Name:**Global Policy**
+    - Name **Global Policy**
     - Policies click **Floating**
     - Scope **All Sites**
     - Default Display Protocol **VMware Blast**
-    - Allow users to chose protocol **No**
+    - Allow users to choose protocol **No**
     - Enable **HTML Access**
     - Click **Next**
 6. Users and Groups
     - Click **Add**
-    - Name/User Name type **workshop** -> click **Find**
+    - Name/User Name - type **workshop** -> click **Find**
     - Select both users. Click **OK**
 7. Click **Next**
 8. Click **Finish**
 
-We have a Global Policy cretaed.
+We have a Global Policy created.
 
-Following Horizon best practices, we cannot have users in both Local and Global entitlements. Users can only have one or the other. Therefore the next step will be to delete the Local Pool entitlement.
+Following Horizon best practices we cannot have users in both Local and Global entitlements. Users can only have one or the other. Therefore the next step will be to delete the Local Pool entitlement.
 
 **The next steps need to be completed by BOTH students**
 
