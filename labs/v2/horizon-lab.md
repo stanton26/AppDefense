@@ -342,7 +342,7 @@ Go back to the Horizon Connection Server Web Console. Your Horizon Connection Se
 
     ![Desktops-pool1](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/Desktops-pool1.png)
 
-9. Under **Naming Pattern:** type -
+9. Under **Naming Pattern** type -
     - **desktops1{n:fixed=3}** or
     - **desktops2{n:fixed=3}** depending on your Student Workshop ID
 10. Change **Max number of machines** - 2
