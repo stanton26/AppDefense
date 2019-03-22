@@ -293,6 +293,7 @@ In the popup window fill in the following:
 1. **Server Address** - fill in the Public vCenter IP address, which you noted down in the previous step
 2. **User Name** - **cloudadmin@vmc.local**
 3. **Password** - fill in the vCenter Password, which you noted down in previous section of the lab
+    **NOTE** type the password in the description field then compare it with the one you noted.  We saw some Keyboard typos in privious LABS. 
 4. Make sure that the **VMware Cloud on AWS** tick box is selected
 5. Click **Next**
 
@@ -307,7 +308,7 @@ You have successfully added your vCenter Server.
 
 The next step is to add **Instant Clone Domain Admins**
 
-1. Go to **Instant Clone Domain Admins** on the right hand side
+1. Go to **Instant Clone Domain Admins** on the left hand side
 2. Click **Add**
 3. Fill in **User Name** and **Password** field
     **User Name** - administrator
@@ -318,7 +319,7 @@ The next step is to add **Instant Clone Domain Admins**
 
 ## Deploy Desktop Pool
 
-Instant Clones requires a shapshot of the Golden Master Image. Therefore we need to create a snapshot of the Golden Master Image VM.
+Instant Clones requires a snapshot of the Golden Master Image. Therefore we need to create a snapshot of the Golden Master Image VM.
 
 1. Go back to the vSphere Client.
 2. Click on **Hosts and Clusters**
