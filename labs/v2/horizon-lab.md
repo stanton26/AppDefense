@@ -455,7 +455,8 @@ You need to login back into the **Horizon Connection Server** and open a **brows
     - Select your **connection server**
     - Click **EDIT**
 5. **Disable** the tunneling
-6. Click on **Do not use Blast Secure Gateway**
+     Uncheck **HTTP(S) Secure Tunnel**
+     Click on **Do not use Blast Secure Gateway**
     ![External6](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/External6.png)
 7. Click **OK**
 
