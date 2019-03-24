@@ -80,7 +80,7 @@ The next step will be to edit the **Default VTI Rule** in the Compute Gateway Fi
 
 Finally we'll commit the changes to the Compute Gateway rules by clicking the **Publish** button.
 
-### Cretea a Logical Network
+### Create a Logical Network
 
 For this Horizon Lab we have prepared several virtual machines, which are Active Directory (AD), Horizon Connection Server, Unified Access Gateway (UAG) and a Golden Master Image.
 
@@ -316,7 +316,7 @@ In the popup window fill in the following:
 
 6. An **Invalid Certificate Detected** popup box will open. Click on **View Certificate**. Then click **Accept**
 7. Select **Do not use View Composer**, then click **Next**
-8. **VERY IMPORTANT** Make sure the **Reclaim VM disk space** tick box is **unchecked**, thenc lick **Next**
+8. **VERY IMPORTANT** Make sure the **Reclaim VM disk space** tick box is **unchecked**, then click **Next**
     - **Note**  If the checkbox stays grey, the password is wrong.
 9. Click **Finish**
 
