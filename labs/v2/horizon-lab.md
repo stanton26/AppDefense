@@ -277,7 +277,7 @@ Double click to open the Administrator Console. That will launch into a browser 
 
 **Note:** If you see a warning that Adobe Flash is not installed:
  - Click **Not secure** on the address bar, and set Flash to **Allow**, then reload the page
-![FlashWarning](https://vmc-field-team.github.io/assets/imageshorizon-flash-warning.png)
+![FlashWarning](https://vmc-field-team.github.io/assets/images/horizon-flash-warning.png)
 
 
 Log into Horizon 7 Administrator Console.
