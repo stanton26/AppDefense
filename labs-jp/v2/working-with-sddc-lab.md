@@ -340,12 +340,6 @@ VM templates and vApps templates are stored as OVF file formats in the content l
 
 ## コンテンツ ライブラリの作成
 
-Content libraries are container objects for VM templates, vApp templates, and other types of files like ISO images.
-
-You can create a content library in the vSphere Web Client, and populate it with templates, which you can use to deploy virtual machines or vApps in your VMware Cloud on AWS environment or if you already have a Content Library in your on-premises data center, you can use the Content Library to import content into your SDDC.
-
-You can create two types of libraries: local or subscribed library.
-
 コンテンツ ライブラリは、仮想マシン テンプレート、vApp テンプレート および ISO ファイルなどのその他のタイプのファイルのためのコンテナ オブジェクトです。
 
 vSphere Client でコンテンツ ライブラリを作成できます。コンテンツ ライブラリは、仮想マシンや vApp を VMware Cloud on AWS の環境にデプロイするために使うことができます。また、オンプレミスのデータセンターにすでにコンテンツ ライブラリを持っている場合は、そのコンテンツ ライブラリを使って SDDC にコンテンツをインポートすることもできます。
@@ -478,15 +472,15 @@ You can specify the customization settings by launching the Guest Customization 
 Use the Customization Specification Manager to manage customization specifications you create with the Guest Customization wizard.
 -->
 
-## Create Linux Customization Specification
+## Linux カスタマイズ仕様の作成
 
-When you clone a virtual machine or deploy a virtual machine from a template, you can customize the guest operating system of the virtual machine to change properties such as the computer name, network settings, and license settings.
+仮想マシンをクローンする時、またはテンプレートから仮想マシンをデプロイする時に、コンピューター名、ネットワーク設定、ライセンス設定などのプロパティを変更するために、仮想マシンのゲスト オペレーティング システムをカスタマイズすることができます。
 
-Customizing guest operating systems can help prevent conflicts that can result if virtual machines with identical settings are deployed, such as conflicts due to duplicate computer names.
+ゲスト オペレーティング システムをカスタマイズすることで、同一の仮想マシンをデプロイするといったようなコンピューター名の衝突を避けることができます。
 
-You can specify the customization settings by launching the Guest Customization wizard during the cloning or deployment process. Alternatively, you can create customization specifications, which are customization settings stored in the vCenter Server database. During the cloning or deployment process, you can select a customization specification to apply to the new virtual machine.
+カスタマイズ仕様の設定は、クローンまたはデプロイ プロセスの途中にゲスト カスタマイゼーション ウィザードを起動することで設定できます。また、その代わりとしてカスタマイズ仕様を作成することもできます。これは vCenter のデータベースに保存されます。クローンまたはデプロイ プロセスの中で、新しい仮想マシンに適用するカスタマイズ仕様を選択することができます。
 
-Use the Customization Specification Manager to manage customization specifications you create with the Guest Customization wizard.
+それでは、ゲスト カスタマイゼーション ウィザードを使ってカスタマイズ仕様マネージャーでカスタマイズ仕様を作成しましょう。
 
 <!--
 ### Navigate to Customization Specifications
@@ -497,12 +491,12 @@ Use the Customization Specification Manager to manage customization specificatio
 2. click on **Policies and Profiles**.
 -->
 
-### Navigate to Customization Specifications
+### カスタマイズ仕様の表示
 
 ![SDDC019](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc019.jpg)
 
-1. Click **Menu**.
-2. click on **Policies and Profiles**.
+1. **メニュー** をクリックします。
+2. **ポリシーおよびプロファイル** をクリックします。
 
 <!--
 ### Add a new VM Customization Specification
@@ -512,11 +506,11 @@ Use the Customization Specification Manager to manage customization specificatio
 1. Click on **+ New** to add a new Linux Customization Specification.
 -->
 
-### Add a new VM Customization Specification
+### 新しい仮想マシン カスタマイズ仕様の作成
 
 ![SDDC020](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc020.jpg)
 
-1. Click on **+ New** to add a new Linux Customization Specification.
+1. Linux カスタマイズ仕様を作成するために **+ 新規** をクリックします。
 
 <!--
 ### Define Customization Specification Details
@@ -529,14 +523,14 @@ Use the Customization Specification Manager to manage customization specificatio
 4. Click the **Next** button to continue.
 -->
 
-### Define Customization Specification Details
+### カスタマイズ仕様の詳細を定義
 
 ![SDDC021](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc021.jpg)
 
-1. Enter a **Name** for the Linux Customization Specification (**LinuxSpec** in this example).
-2. Optionally enter a **Description**.
-3. Select the radio button for **Linux** next to **Target guest OS**.
-4. Click the **Next** button to continue.
+1. Linux カスタマイズ仕様の **名前** を入力します。(この例では **LinuxSpec** とします).
+2. 任意に **説明** を入力します。
+3. **ターゲット ゲスト OS** のとなりの **Linux** ラジオボタンを選択します。
+4. 次に進むために **Next** ボタンをクリックします。
 
 <!--
 ### Define Specification Naming Standard
@@ -548,13 +542,13 @@ Use the Customization Specification Manager to manage customization specificatio
 3. Click the **Next** button to continue.
 -->
 
-### Define Specification Naming Standard
+### 仮想マシンの命名標準の定義
 
 ![SDDC022](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc022.jpg)
 
-1. Click the **radio button** next to **Use the virtual machine name**.
-2. For **Domain name** enter **corp.local**.
-3. Click the **Next** button to continue.
+1. **仮想マシン名を使用** のとなりの **ラジオボタン** をクリックします。
+2. **ドメイン名** には **corp.local** と入力します。
+3. 次に進むために **Next** をクリックします。
 
 <!--
 ### Select Time Zone
@@ -566,13 +560,13 @@ Use the Customization Specification Manager to manage customization specificatio
 3. Click the **Next** button to continue.
 -->
 
-### Select Time Zone
+### タイムゾーンの選択
 
 ![SDDC023](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc023.jpg)
 
-1. Select the appropriate **Area** by clicking on the arrow next to the dropdown field.
-2. Select the appropriate **Location**.
-3. Click the **Next** button to continue.
+1. ドロップ ダウン フィールドのとなりにある矢印をクリックし、適切な **エリア** を選択します。
+2. **場所** 適切な場所を選択します。
+3. 次に進むために **Next** をクリックします。
 
 <!--
 ### Select Network Settings
@@ -583,12 +577,12 @@ Use the Customization Specification Manager to manage customization specificatio
 2. Click **Next** to continue.
 -->
 
-### Select Network Settings
+### ネットワーク設定の選択
 
 ![SDDC024](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc024.jpg)
 
-1. Ensure the radio button next to **Use standard network settings for the guest operating system. including enabling DHCP in all network interfaces** is selected.
-2. Click **Next** to continue.
+1. **ゲスト OS に標準ネットワーク設定を使用します（すべてのネットワーク インターフェイスで DHCP を有効化など）** のとなりにあるラジオボタンが選択されていることを確認します。
+2. 次に進むために **Next** をクリックします。
 
 <!--
 ### Enter DNS Settings
@@ -602,15 +596,15 @@ Use the Customization Specification Manager to manage customization specificatio
 5. Click **Next** to continue.
 -->
 
-### Enter DNS Settings
+### DNS 設定の入力
 
 ![SDDC025](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc025.jpg)
 
-1. Enter **8.8.8.8** for the Primary DNS server.
-2. Enter **8.8.4.4** for the Secondary DNS server.
-3. For the DNS Search paths enter **corp.local**.
-4. Click the **Add** button to add the corp.local domain to the DNS search path.
-5. Click **Next** to continue.
+1. プライマリ DNS サーバーに **8.8.8.8** を入力します。
+2. セカンダリ DNS サーバーに **8.8.4.4** を入力します。
+3. DNS 検索パスに **corp.local** を入力します。
+4. corp.local ドメインを DNS 検索パスに追加するために **追加** ボタンをクリックします。
+5. Click **Next** to continue. 次に進むために **Next** をクリックします。
 
 <!--
 ### Finish Creating the Customization Spec
@@ -620,11 +614,11 @@ Use the Customization Specification Manager to manage customization specificatio
 1. Review your entries and click on the **Finish** button.
 -->
 
-### Finish Creating the Customization Spec
+### カスタマイズ使用の作成の終了
 
 ![SDDC026](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc026.jpg)
 
-1. Review your entries and click on the **Finish** button.
+1. 入力した内容を確認し **Finish** ボタンをクリックします。
 
 <!--
 ### Customization Spec Created
@@ -634,11 +628,11 @@ Use the Customization Specification Manager to manage customization specificatio
 Congratulations!  You have successfully created your VM Customization Spec for your Linux VM's.  You can also Export (Duplicate), Edit, Import, and Export a VM Customization Spec.
 -->
 
-### Customization Spec Created
+### カスタマイズ使用の作成完了
 
 ![SDDC027](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc027.jpg)
 
-Congratulations!  You have successfully created your VM Customization Spec for your Linux VM's.  You can also Export (Duplicate), Edit, Import, and Export a VM Customization Spec.
+おめでとうございます！ Linux 仮想マシン向けの仮想マシン カスタマイズ使用の作成に成功しました。カスタマイズ使用は、エクスポート（複製）、編集、インポートすることができます。
 
 <!--
 ## Deploy a Virtual Machine
@@ -651,14 +645,14 @@ In the vSphere client window already opened, deploy a template from the content 
 2. Click on **Content Libraries**.
 -->
 
-## Deploy a Virtual Machine
+## 仮想マシンのデプロイ
 
 ![SDDC-deploy-vm-013](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc013.jpg)
 
-In the vSphere client window already opened, deploy a template from the content library:
+既にオープンされている vSphere Client のウィンドウで、コンテンツ ライブラリからテンプレートをデプロイします:
 
-1. Click **Menu**.
-2. Click on **Content Libraries**.
+1. **メニュー** をクリックします。
+2. **コンテンツ ライブラリ** をクリックします。
 
 <!--
 ### Select Content Library
@@ -668,11 +662,11 @@ In the vSphere client window already opened, deploy a template from the content 
 1.  Click on the **VMC Content Library** that was previously synchronized.
 -->
 
-### Select Content Library
+### コンテンツ ライブラリの選択
 
 ![SDDC-deploy-vm-028](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc028.jpg)
 
-1.  Click on the **VMC Content Library** that was previously synchronized.
+1.  前の手順で同期した **VMC Content Library** をクリックしてください。
 
 <!--
 ### Deploy a New Virtual Machine from Template
@@ -684,13 +678,13 @@ In the vSphere client window already opened, deploy a template from the content 
 3. Click on **New VM from This Template** to deploy a virtual machine from template.
 -->
 
-### Deploy a New Virtual Machine from Template
+### テンプレートからの新しい仮想マシンのデプロイ
 
 ![SDDC-deploy-vm-029](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc029.jpg)
 
-1. Click the **Templates** tab to access the template synchronized in the content library.
-2. Right-click on the **photoapp-u**  template to exporthe Actions menu.
-3. Click on **New VM from This Template** to deploy a virtual machine from template.
+1. コンテンツ ライブラリ内の同期されたテンプレートにアクセスするために、**テンプレート** タブをクリックします。
+2. アクション メニューを表示するために **photoapp-u** テンプレートを右クリックします。
+3. テンプレートから仮想マシンをデプロイするために **このテンプレートから仮想マシンを新規作成** をクリックします。
 
 <!--
 ### Choose Virtual Machine Name and Location
@@ -704,15 +698,15 @@ In the vSphere client window already opened, deploy a template from the content 
 5. Click **Next** to continue.
 -->
 
-### Choose Virtual Machine Name and Location
+### 仮想マシンの名前と場所の選択
 
 ![SDDC-deploy-vm-030](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc030.jpg)
 
-1. Enter **webserver01** for the virtual machine name.
-2. Click the **arrow** next to SDDC-Datacenter to expose the folders available.
-3. In VMware Cloud on AWS customer workloadds should be placed in the Workloads folder (or subfolder).  Click the **Workloads** folder.
-4. Select the **Checkbox** next to  **Customize the operating system**.
-5. Click **Next** to continue.
+1. 仮想マシンの名前として **webserver01** を入力します。
+2. SDDC-DataCenter のとなりの **矢印** をクリックし、フォルダー配下を表示します。
+3. VMware Cloud on AWS では、お客様のワークロードは ワークロード フォルダー（あるいはそのサブフォルダー）に置かれなければなりません。**Workloads** フォルダーをクリックします。
+4. **オペレーティング システムのカスタマイズ** のとなりの **チェックボックス** を選択染ます。
+5. 次に進むために **Next** をクリックします。
 
 <!--
 ### Choose Virtual Machine Customization Specification
@@ -725,14 +719,14 @@ We will utilize the customization specification created in a previous module to 
 2. Click **next** to continue.
 -->
 
-### Choose Virtual Machine Customization Specification
+### 仮想マシン カスタマイズ仕様を選択
 
 ![SDDC-deploy-vm-031](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc031.jpg)
 
-We will utilize the customization specification created in a previous module to customize the operating system.
+オペレーティング システムをカスタマイズするために、前の項目で作成したカスタマイズ使用を使います。
 
-1. Click to select the **LinuxSpec** customization specification.
-2. Click **next** to continue.
+1. **LinuxSpec** カスタマイズ仕様をクリックします。
+2. 次に進むために **Next** をクリックします。
 
 <!--
 ### Select Resource Pool
@@ -744,13 +738,13 @@ We will utilize the customization specification created in a previous module to 
 3. Click **Next** to continue.
 -->
 
-### Select Resource Pool
+### リソースプールを選択します。
 
 ![SDDC-deploy-vm-032](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc032.jpg)
 
-1. Click the **arrow** next to Cluster-1 to expose the resource pools available.
-2. In VMware Cloud on AWS customer workloads should be placed in the **Compute-ResourcePool** (or subpool).  Click **Compute-ResourcePool**.
-3. Click **Next** to continue.
+1. Cluster-1 のとなりの **矢印** をクリックし、配下のリソースプールを表示します。
+2. VMware Cloud on AWS では、お客様のワークロードは **Compute-ResourcePool** （もしくはそのサブ リソースプール）に配置されなければなりません。**Compute-ResourcePool** を選択します。
+3. 次に進むために **Next** をクリックします。
 
 <!--
 ### Review the Template Details
@@ -762,13 +756,13 @@ Review the details of the template to be deployed.  There may be a security warn
 1. Click **Next** to continue.
 -->
 
-### Review the Template Details
+### テンプレートの詳細の確認
 
 ![SDDC-deploy-vm-033](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc033.jpg)
 
-Review the details of the template to be deployed.  There may be a security warning displayed, but you can safely ignore that the purpose of this lab.
+デプロイされるテンプレートの詳細を確認します。セキュリティの警告が表示されるかも知れませんが、このラボでは無視して問題ありません。
 
-1. Click **Next** to continue.
+1. 次に進めむために、**Next** をクリックします。
 
 <!--
 ### Select Storage
@@ -781,14 +775,14 @@ Each VMware Cloud on AWS SDDC will include two datastores in order to separate m
 2. Click **Next** to continue.
 -->
 
-### Select Storage
+### ストレージの選択
 
 ![SDDC-deploy-vm-034](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc034.jpg)
 
-Each VMware Cloud on AWS SDDC will include two datastores in order to separate management and customer workloads.  All customer workloads should be placed in the datastore named WorkloadDatastore.
+VMware Cloud on AWS は、管理ワークロードとお客様のワークロードを分離するために 2 つのデータストアを持ちます。全てのお客様のワークロードは、WorkloadDatastore という名前のデータストアに配置されなければなりません。
 
-1. Click **workloadDatastore** to select the datstore where the virtual machine will be provisioned.
-2. Click **Next** to continue.
+1. 仮想マシンがプロビジョニングされるデータストアを選択するために **WorkloadDatastore** をクリックします。
+2. 次に進むために **Next** をクリックします。
 
 <!--
 ### Select the Network for the Virtual Machine
@@ -802,15 +796,15 @@ We will use the logical network created in a previous exercise for these virtual
 3. Click **Next** to continue.
 -->
 
-### Select the Network for the Virtual Machine
+### 仮想マシンのネットワークを選択します
 
 ![SDDC-deploy-vm-035](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc035.jpg)
 
-We will use the logical network created in a previous exercise for these virtual machines.
+仮想マシンのために、前の項目で作成した論理ネットワークを使います。
 
-1. Click the **arrow** below Destination Network to select the network for the virtual machine.
-2. Click **Demo-Net** to select the network previously created.
-3. Click **Next** to continue.
+1. 仮想マシンのネットワークを選択するために、Click the **arrow** below Destination Network to select the network for the virtual machine.
+2. 前の項目で作成したネットワークを選択するため、**Demo-Net** をクリックします。
+3. 次に進むために **Next** をクリックします。
 
 <!--
 ### Complete the Virtual Machine Deployment
@@ -822,13 +816,13 @@ We will use the logical network created in a previous exercise for these virtual
 It should take a couple of minutes for the virtual machine to deploy.  Continue to the next exercise to clone this virtual machine in order to create a second webserver.
 -->
 
-### Complete the Virtual Machine Deployment
+### 仮想マシンのデプロイの完了
 
 ![SDDC-deploy-vm-036](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc036.jpg)
 
-1. Review the information for accuracy and click **Finish** to deploy the virtual machine
+1. ここまで入力した情報を確認し、仮想マシンをデプロイするために **Finish** をクリックします。
 
-It should take a couple of minutes for the virtual machine to deploy.  Continue to the next exercise to clone this virtual machine in order to create a second webserver.
+仮想マシンのデプロイが終わるまでに数分かかります。次の項目では、2 つ目の Web サーバーを作成するためにこの仮想マシンのクローンします。
 
 <!--
 ##  Clone a Virtual Machine
@@ -836,9 +830,9 @@ It should take a couple of minutes for the virtual machine to deploy.  Continue 
 In this exercise, you will clone the virtual machine created in the previous exercise in order to create a second webserver.
 -->
 
-##  Clone a Virtual Machine
+##  仮想マシンのクローン
 
-In this exercise, you will clone the virtual machine created in the previous exercise in order to create a second webserver.
+この項目では、2 つ目の Web サーバーを作成するために前の項目で作成した仮想マシンをクローンします。
 
 <!--
 ### Navigate to VMs and Templates
@@ -850,13 +844,13 @@ In this exercise, you will clone the virtual machine created in the previous exe
 3. Click **VMs and Templates** to navigate to the VMs and Templates view.
 -->
 
-### Navigate to VMs and Templates
+### 仮想マシンとテンプレートの表示
 
 ![SDDC-clone-vm-037](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc037.jpg)
 
-1. Validate the virtual machine deployment completed in the previous exercise by looking for the **Deploy OVF Template** task and verifying it is **Complete**.
-2. If complete, click on **Menu**.
-3. Click **VMs and Templates** to navigate to the VMs and Templates view.
+1. 前の項目の仮想マシンのデプロイが完了したことを確認するために、**OVF テンプレートのデプロイ** タスクを探し、それが **完了** していることを確認します。
+2. 完了しているならば、**メニュー** をクリックします。
+3. **仮想マシンとテンプレート** をクリックして、仮想マシンとテンプレートのビューを表示してします。
 
 <!--
 ### Select and Power On Webserver01
@@ -879,22 +873,23 @@ Before we can clone the web server, we will first need to power the VM on so the
 </aside>
 -->
 
-### Select and Power On Webserver01
+### Webserver01 のパワーオン
 
 ![SDDC-clone-vm-038](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc038.jpg)
 
 Before we can clone the web server, we will first need to power the VM on so the cutomization specification can execute:
 
-1. Click the **arrow** next to **SDDC-Datacenter** to expose the sub-folders.
-2. Click the **arrow** next to workloads to expose **webserver01**
-3. Click on the virtual machine **webserver01**
-4. Click the **green arrow** in the top center of the screen to execte the power on operation.
+1. サブフォルダーを表示するために **SDDC-Datacenter** のとなりの **矢印** をクリックします。
+2. **webserver01** を表示するために Workloads のとなりの **矢印** をクリックします。
+3. 仮想マシン **webserver01** をクリックします。
+4. 仮想マシンをパワーオンするために、画面上部中央の **緑の矢印** をクリックします。
 
-**Note: Please wait until the virtual machine is fully powered on before proceeding to the next step.**
+
+**注意: 次の項目に進む前に、仮想マシンが完全にパワーオンされるまでお待ち下さい**
 
 <aside class="notice">
 <font color="dodgerblue">
-<img src="https://s3-us-west-2.amazonaws.com/vmc-workshops-images/info.jpeg" width="25" height="25"> If the webserver doesn't connect to the network and does not receive and IP address from DHCP, ensure the NIC is connected by right-clicking on <b>webserver01</b> and then <b>Edit Settings</b> and make sure the checkbox next to Connected is selected.  You may need to repeat this step for the cloned VM webserver02.
+<img src="https://s3-us-west-2.amazonaws.com/vmc-workshops-images/info.jpeg" width="25" height="25"> もし webserver がネットワークに接続されておらず、DHCP から IP アドレスを受け取れていない場合、<b>webserver01</b> を右クリックし、<b>設定の編集</b> をクリックし、 NIC の接続のとなりのチェックボックスが選択されていることを確認し、NIC が接続されていることを確認してください。次の項目でクローンした webserver02 でもこの作業が必要になるかも知れません。
 </font>
 </aside>
 
@@ -910,15 +905,15 @@ We will now begin the process of cloning this virtual machine.
 3. Click **Clone to Virtual Machine** to initiate the cloning wizard.
 -->
 
-### Initiate Cloning of the Virtual Machine
+### 仮想マシンのクローン実行
 
 ![SDDC-clone-vm-039](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc039.jpg)
 
-We will now begin the process of cloning this virtual machine.
+それでは仮想マシンのクローンを行いましょう。
 
-1. Right-click on **webserver01** to expose the Actions menu.
-2. Click on **Clone** to expose a secondary menu of options.
-3. Click **Clone to Virtual Machine** to initiate the cloning wizard.
+1. アクション メニューを表示するために **webserver01** を右クリックします。
+2. セカンダリ メニューを表示するために **クローン作成** をクリックします。
+3. クローン ウィザードを起動するために **仮想マシンにクローン作成** をクリックします。
 
 <!--
 ### Select Virtual Machine Name and Folder
@@ -930,13 +925,13 @@ We will now begin the process of cloning this virtual machine.
 3. Click **Next** to continue.
 -->
 
-### Select Virtual Machine Name and Folder
+### 仮想マシンの命名とフォルダーの選択
 
 ![SDDC-clone-vm-040](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc040.jpg)
 
-1. Next to **Virtual machine name** enter **webserver02**.
-2. Click the **Workloads** folder for the virtual machine location.
-3. Click **Next** to continue.
+1. **仮想マシン名** のとなりに **webserver02** と入力します。
+2. 仮想マシンの配置場所として **Workloads** フォルダをクリックします。
+3. 次に進むために **Next** をクリックします。
 
 <!--
 ### Select Virtual Machine Compute Resource
@@ -947,12 +942,12 @@ We will now begin the process of cloning this virtual machine.
 2. Click **Next** to continue.
 -->
 
-### Select Virtual Machine Compute Resource
+### 仮想マシンのコンピュート リソースを選択
 
 ![SDDC-clone-vm-041](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc041.jpg)
 
-1. Click on **Compute-ResourcePool** to ensure it is selected for the target virtual machine.
-2. Click **Next** to continue.
+1. 対象となる仮想マシンのために **Compute-ResourcePool** をクリックします。
+2. 次に進むために **Next** をクリックします。
 
 <!--
 ### Select Virtual Machine Datastore
@@ -963,12 +958,12 @@ We will now begin the process of cloning this virtual machine.
 2. Click **Next** to continue.
 -->
 
-### Select Virtual Machine Datastore
+### 仮想マシン データストアの選択
 
 ![SDDC-clone-vm-042](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc042.jpg)
 
-1. Click on **WorkloadDatastore** to ensure it is selected as the destination for the virtual machine.
-2. Click **Next** to continue.
+1. 対象となる仮想マシンのために **WorkloadDatastore** をクリックします。
+2. 次に進むために **Next** をクリックします。
 
 <!--
 ### Select Clonging Options
@@ -982,15 +977,15 @@ We will now set the options for cloning.  We will need to customize the operatin
 3. Click **Next** to continue.
 -->
 
-### Select Clonging Options
+### クローン オプションの選択
 
 ![SDDC-clone-vm-043](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc043.jpg)
 
 We will now set the options for cloning.  We will need to customize the operating system to change the server name and als power on the virtual machine after cloning is complete.
 
-1. Click the checkbox next to **Customize the operating system**.
-2. Click the checkbox next to **Power on virtual machine after creation**.
-3. Click **Next** to continue.
+1. **オペレーティング システムのカスタマイズ** のとなりのチェックボックスをクリックします。
+2. **作成後に仮想マシンをパワーオン** のとなりのチェックボックスをクリックします。
+3. 次に進むために **Next** をクリックします。
 
 <!--
 ### Choose Virtual Machine Customization Specification
@@ -1003,14 +998,14 @@ We will utilize the customization specification created in a previous exercise t
 2. Click **Next** to continue.
 -->
 
-### Choose Virtual Machine Customization Specification
+### 仮想マシン カスタマイズ仕様の選択
 
 ![SDDC-clone-vm-044](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc044.jpg)
 
-We will utilize the customization specification created in a previous exercise to customize the operating system.
+オペレーティング システムをカスタマイズするために前の項目で作成したカスタマイズ仕様を利用することができます。
 
-1. Click to select the **LinuxSpec** customization specification.
-2. Click **Next** to continue.
+1. カスタマイズ仕様 **LinuxSpec** を選択するためにクリックします。
+2. 次に進むために **Next** をクリックします。
 
 <!--
 ### Complete the Virtual Machine Deployment
@@ -1028,17 +1023,17 @@ It should take a couple of minutes fort the virtual machine to clone.  Continue 
 </aside>
 -->
 
-### Complete the Virtual Machine Deployment
+### 仮想マシンのデプロイの完了
 
 ![SDDC-clone-vm-045](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc045.jpg)
 
-1. Review the information for accuracy and click **Finish** to clone the virtual machine.
+1. 入力した情報を確認し、仮想マシンをクローンするために **Finish** をクリックします。
 
-It should take a couple of minutes fort the virtual machine to clone.  Continue to the next exercise to learn about securing workloads in VMware Cloud on AWS.
+仮想マシンをクローンするには 2−3 分程度掛かります。以降の項目では、VMware Cloud on AWS でワークロードを安全に保護する方法を学びます。
 
 <aside class="notice">
 <font color="dodgerblue">
-<img src="https://s3-us-west-2.amazonaws.com/vmc-workshops-images/info.jpeg" width="25" height="25"> If the webserver doesn't connect to the network and does not receive and IP address from DHCP, ensure the NIC is connected by right-clicking on <b>webserver01</b> and then <b>Edit Settings</b> and make sure the checkbox next to Connected is selected.  You may need to repeat this step for the cloned VM webserver02.
+<img src="https://s3-us-west-2.amazonaws.com/vmc-workshops-images/info.jpeg" width="25" height="25"> もし webserver がネットワークに接続されておらず、DHCP から IP アドレスを受け取れていない場合、<b>webserver01</b> を右クリックし、<b>設定の編集</b> をクリックし、 NIC の接続のとなりのチェックボックスが選択されていることを確認し、NIC が接続されていることを確認してください。次の項目でクローンした webserver02 でもこの作業が必要になるかも知れません。
 </font>
 </aside>
 
@@ -1048,9 +1043,9 @@ It should take a couple of minutes fort the virtual machine to clone.  Continue 
 In this exercise we will test the connectivity between webserver01 and webserver02, which we created in the previous exercises.
 -->
 
-## Testing connectivity between the Virtual Machines
+## 仮想マシン間の接続性テスト
 
-In this exercise we will test the connectivity between webserver01 and webserver02, which we created in the previous exercises.
+この項目では、前の項目で作成した webserver01 と webserver02 間の接続性テストを行います。
 
 <!--
 ### Open Console to Webserver01
@@ -1067,18 +1062,18 @@ We need to open a console session to webserver01 to validate it can communicate 
 6. Return to the black box below the Summary and click it again. The console session should launch in a new tab.
 -->
 
-### Open Console to Webserver01
+### Webserver01 のコンソール
 
 ![SDDC-test-vm-046](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc046.jpg)
 
-We need to open a console session to webserver01 to validate it can communicate with webserver02.
+webserver02 に通信できることを確認するために、webserver01 へのコンソール セッションを開きます。
 
-1. In the vSphere Web Client click on Webserver01 to bring it into focus.
-2. Click the black box below Summary in the middle of the screen. This will attempt to launch a console session but it may fail because the pop-up was blocked. If this occurs follow steps 3-6, otherwise proceed to the next section.
-3. Click the icon with the small red x in the Chrome address bar to launch to pop-up blocker dialog.
-4. Click the radio button next to Always allow pop-ips from https://vcenter.sddc-xx-xx-xxxx.vmwarevmc.com
-5. Clock the Done button.
-6. Return to the black box below the Summary and click it again. The console session should launch in a new tab.
+1. vSphere Client にて、webserver01 を選択済みにするため、webserver01 をクリックします。
+2. サマリタブの画面中程にある黒い四角をクリックします。この操作は、新しいコンソール セッションを開こうとしますが、もしかするとポップアップがブロックされ開けないかも知れません。その場合は、以下の 3−6 のステップを実行し、そうでなければ次の項目に進みます。
+3. ポップアップ ブロッカー ダイアログを開くために Chrome のアドレス バーにある小さな赤い X マークのアイコンをクリックします。
+4. 「https://vcenter.sddc-xx-xx-xxxx.vmwarevmc.com のポップアップを常に許可する」のとなりのラジオボタンをクリックします。
+5. 完了をクリックします。
+6. サマリタブに戻り黒い四角をもう一度クリックします。こんどは新しいタブでコンソール セッションが開くはずです。
 
 <!--
 ### Find the IP Address for Webserver02
