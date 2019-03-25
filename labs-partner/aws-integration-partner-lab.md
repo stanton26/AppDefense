@@ -71,7 +71,7 @@ In this step we will ensure that we have the correct firewall rules in place in 
     Your NAT rule should look similar to the screenshot below. 
     ![NAT Rule](https://s3-us-west-2.amazonaws.com/partner-workshop-screenshots/nat.jpg)
 
-Now we will create a firewalll rule to allow access from the VPN into our photo VM.
+Now we will create a firewalll rule to allow access from the Internet into our photo VM.
 
 15. Expand **Gateway Firewall** under the Security section and select **Compute Gateway**
 16. Click **ADD NEW RULE**
