@@ -404,7 +404,7 @@ AWS Relational Database Service (RDS), also creates its own Elastic Network Inte
 
 1\. On your smart phone (tablet or personal computer), open up a browser and type your public IP address you requested in the VMware Cloud on AWS portal in the browser address bar followed by /Lychee (case sensitive) ie: 1.2.3.4/Lychee
 
-2\. Enter the database connection information below (case sensitive), using the IP address you noted in the previous step from the RDS ENI:
+2\. Enter the database connection information below (__case sensitive__), using the IP address you noted in the previous step from the RDS ENI:
 
     Database Host: x.x.x.x:3306
     Database Username: student# (where # is the number assigned to you)

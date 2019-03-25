@@ -92,7 +92,7 @@ By default, all inbound firewall rules are set to Deny in VMware Cloud on AWS. I
 
 ![SDDC-Network-06](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc06.jpg)
 
-1. Click the **Radio Button next** to **Any**.
+1. Click the **Radio Button** next to **Any**.
 2. Click **Save** to save the source information in the rule.
 
 ### Configure Firewall Rule for vCenter Access (Continued)
@@ -134,9 +134,9 @@ The settings to connect to the vCenter server associated with the SDDC is availa
 
 **NOTE: If you experience any login issues below, you can click the two boxes next to the URL below to paste the URL into an incognito window. This should not be needed normally.**
 
-### Login to the vSphere Web Client
+### Login to the vSphere Cilent (HTML5)
 
-To login to the vSphere Web Client:
+To login to the vSphere Client (HTML5):
 
 ![SDDC-vcenter-011](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc011.jpg)
 
@@ -144,7 +144,7 @@ To login to the vSphere Web Client:
 2. Right-click in the **Password** field and paste the password copied in the previous step.
 3. Click **Login**.
 
-### vSphere Web Client
+### vSphere Client (HTML5)
 
 ![SDDC012](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc012.jpg)
 
@@ -154,7 +154,7 @@ You are now logged in to your VMware Cloud AWS vCenter Server as cloudadmin@vmc.
 
 Content libraries are container objects for VM templates, vApp templates, and other types of files like ISO images.
 
-You can create a content library in the vSphere Web Client, and populate it with templates, which you can use to deploy virtual machines or vApps in your VMware Cloud on AWS environment or if you already have a Content Library in your on-premises data center, you can use the Content Library to import content into your SDDC.
+You can create a content library in the vSphere Client (HTML5), and populate it with templates, which you can use to deploy virtual machines or vApps in your VMware Cloud on AWS environment or if you already have a Content Library in your on-premises data center, you can use the Content Library to import content into your SDDC.
 
 You can create two types of libraries: local or subscribed library.
 
@@ -422,7 +422,7 @@ We will now begin the process of cloning this virtual machine.
 
 ![SDDC-clone-vm-040](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc040.jpg)
 
-1. Next to **Virtual machien name** enter **webserver02**.
+1. Next to **Virtual machine name** enter **webserver02**.
 2. Click the **Workloads** folder for the virtual machine location.
 3. Click **Next** to continue.
 
@@ -483,11 +483,11 @@ In this exercise we will test the connectivity between webserver01 and webserver
 
 We need to open a console session to webserver01 to validate it can communicate with webserver02.
 
-1. In the vSphere Web Client click on Webserver01 to bring it into focus.
+1. In the vSphere Client (HTML5) click on Webserver01 to bring it into focus.
 2. Click the black box below Summary in the middle of the screen. This will attempt to launch a console session but it may fail because the pop-up was blocked. If this occurs follow steps 3-6, otherwise proceed to the next section.
 3. Click the icon with the small red x in the Chrome address bar to launch to pop-up blocker dialog.
 4. Click the radio button next to Always allow pop-ips from https://vcenter.sddc-xx-xx-xxxx.vmwarevmc.com
-5. Clock the Done button.
+5. Click the Done button.
 6. Return to the black box below the Summary and click it again. The console session should launch in a new tab.
 
 ### Find the IP Address for Webserver02
@@ -496,7 +496,7 @@ We need to open a console session to webserver01 to validate it can communicate 
 
 Before we can test connectivity between the two servers, we need to find the IP address of webserver02.
 
-1. Click the **Chrome Tab** of the vSphere Web Client to bring it back into focus.
+1. Click the **Chrome Tab** of the vSphere Client (HTML5) to bring it back into focus.
 2. Click on the virtual machine **webserver02**.
 3. Take note of the **IP Address** for webserver02 in the middle of the screen. This will be needed in the next step.
 4. Click the **Chrome Tab** of the console session for webserver01 to bring it back into focus.

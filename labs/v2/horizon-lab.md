@@ -12,9 +12,27 @@ comments: true
 
 # Introduction
 
-We do have a working Horizon environment. You are using it to jump on the Workshop SDDC. This Horizon environement is running on our BU SDDC.
-In this Lab we will conect you Student SDDC vCenter to this existing Horizon environment to rollout Desktops. You can then see the new created pool.
-Hold in mind. Only one of the Students per SDDC can do this task.
+In this Lab we are going to create and install a Horizon 7 environment, using Cloud Pod Architecture to connect two Horizon environemnts for Global Management and Entitlement Rights.
+
+## Viewing your SDDC
+
+![SDDC-Network-01](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc01.jpg)
+
+After logging in, you should see two SDDCs in the user interface following the naming format Student-Workshop-#.#. 
+
+An SDDC is a fully deployed environment including vSphere, NSX, vSAN and vCenter Server. Deployment of a fully configured SDDC takes about two hours, so for the purposes of this lab, we have the SDDC already deployed. This SDDC is in the same state as it would be if you had deployed it yourself. Let's take a look at the SDDC properties.
+
+1. First click on **View Details** to open the SDDC properties.
+
+![SDDC-Network-02](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc02.jpg)
+
+Let's start with the Summary of the SDDC. There are a number of other tabs available, which are as follows:
+
+1. **Support** - You can contact Support with your SDDC ID, Org ID, vCenter Private and Public IPs and the date of your SDDC Deployment.
+2. **Settings** - Gives you access to your vSphere Client (HTML5), vCenter Server API, PowerCLI Connect, vCenter Server and reviews your Authentication information.
+3. **Troubleshooting** - Allows you to run network connectivity tests to ensure all necessary access is available to perform select tasks.
+4. **Add Ons** - Here you will find Add On services for your VMware Cloud on AWS environment like Hybrid Cloud Extension (HCX) and VMware Site Recovery.
+5. **Networking & Security** - Provides a full diagram of the Management and Compute Gateways.  This is where you can configure logical networks, VPNs and firewall rules. We will cover this in more detail later. Click on Networking & Security to learn more about VMware Cloud on AWS Network and Security Configuration.
 
 ## What is Horizon on VMware Cloud on AWS
 
@@ -25,397 +43,603 @@ on AWS, with the market-leading capabilities of VMware Horizon for a simple, sec
 
 ### Simplify Public and Hybrid Cloud Management
 
-For customers who are already familiar with Horizon 7 or have Horizon 7 deployed
-on premises, running Horizon 7 on VMware Cloud lets you leverage a unified
-architecture and familiar tools. You can simplify management for Horizon 7
-deployments using on-premises infrastructure and VMware Cloud on AWS with
-Cloud Pod Architecture (CPA) by linking cloud deployments in different regions,
-or by linking on-premises deployments to VMware Cloud on AWS deployments.
-This means that you use the same expertise and tools you know from VMware
-vSphere® and Horizon 7 for operational consistency, and leverage the rich feature
-set and flexibility you expect from Horizon 7
+For customers, who are already familiar with Horizon 7 or have Horizon 7 deployed on premises, running Horizon 7 on VMware Cloud on AWS lets you leverage an unified architecture and familiar tools. You can simplify management for Horizon 7 deployments using on-premises infrastructure and VMware Cloud on AWS with Cloud Pod Architecture (CPA) by linking Cloud deployments in different regions, or by linking on-premises deployments to VMware Cloud on AWS ones. This means that you use the same expertise and tools you know from VMware vSphere® and Horizon 7 for operational consistency, and leverage the rich feature set and flexibility you expect from Horizon 7.
 
 ![2](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/2.png)
 
-<!-- 
-## Create a Cross SDDC VPN
-
-We will be setting up a IPSEC VPN connection between your VPC and the VPC where Horizon Connection Server is already installed.
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/Cross-SDDC-VPN-HZ.png)
-
-1. Go back to the **VMware Cloud on AWS** tab.
-2. In the main SDDC windows, click on **View Details**
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-106-Image-164.png)
-3. Then click on the **Network** menu
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-107-Image-165.png) 
-
-In the Management Gateway box, make a note of the Public IP and the Infrastructure Subnet CIDR.
-Make also a note of the Compute Gatway box. Public IP and the Subnet you created in the previous LAB.
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-107-Image-166.png)![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/Cross-SDDC-VPN-HZ2.png)
-
-Scroll down a little to get to the Management Gateway setting
-
-1. Click the drop down arrow to open the **IPsec VPNs** section
-2. Click on **ADD VPN**
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-102-Image-158.png)
-
-Fill in the following information
-
-1. Make sure the drop down is opened, if not click it under **Management Gateway**
-2. Click on **Add VPN**
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-108-Image-161.png)
-
-    Fill in the following information
-3. Name this VPN **Student MGW# to Host CGW** (where # is your student number)
-4. Enter **54.70.191.234** for the Remote Gateway Public IP
-5. Enter  **192.168.20.0/24** for SDDC under remote network
-6. Pre-shared key is **VMware1!**
-7. Click on **Save**.
-8. Do the same for the same task for establishing connection from Studen SDDC compute gateway and Host coumpute gateway.
-
-Fill in the following information
-
-1. Make sure the drop down is opened, if not click it under **Compute Gateway**
-2. Click on **Add VPN**
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-108-Image-161.png)
-
-    Fill in the following information
-3. Name this VPN **Student CGW# to Host CGW** (where # is your student number)
-4. Enter **54.70.191.234** for the Remote Gateway Public IP
-5. Enter  **192.168.20.0/24** for SDDC under remote network
-6. 6. Select **Studen#-LN** and also **cgw-dns-network** in Local Networks
-7. Pre-shared key is **VMware1!**
-8.  Click on **Save**.
--->
+Let's proceed to the Workshop exercise.
 
 ## Configuring SDDC Firewall Rules
 
-If not done already in the previous lab please also create the Firewall rule for the Management Gateway so you can access the vCenter.
+<!-- Elena - the above sentence needs changing. there is no previous lab-->
 
 ### Compute Gateway Firewall Rules
 
-Like the Management NSX Edge Services Gateway. By default, the Compute NSX Edge Services Gateway is also set to deny all inbound and outbound traffic. You need to add additional firewall rules to allow access to your workload VMs which you provision in the VMware Cloud on AWS platform.
-<!--  
-#### Create Firewall Rule under Compute Gateway 
+By default, the Compute Gateway is set to deny all inbound and outbound traffic. You need to add additional firewall rules to allow access to your workload VMs which you provision in the VMware Cloud on AWS platform.
 
-1. Under **Network** tab, navigate to **Compute Gateway**
-2. Expand **Firewall Rules**
-3. Click **ADD RULE**
+### Create Compute Gateway Firewall Rule
 
-Follow the same process as in the previous step and create Horizon Inbound and Outbound Firewall Rule following these instructions:
-Just to hold it easy use the Any Any rule.
+1. Under **Network & Security** tab, navigate to **Security**, then **Gateway Firewall**
+2. On the right hand side go to **Compute Gateway**
+3. Click **ADD NEW RULE**
+
+Horizon requires a number of ports to be opened for communication and Inter-POD connectivity. For the purposes of the lab, and ease of management, we are going to allow communication across everything. The first rule we are going to create is an Any - Any - Any - rule.
 
 1. **Name** - Horizon
-2. **Action** - Allow
-3. **Source** - Any 
-4. **Destination** - Any
-5. **Service** - ANY
-6. Click **SAVE** button.
--->
+2. **Source** - Any
+3. **Destination** - Any
+4. **Service** - Any
+5. **Action** - Allow
+6. **Applied To** - All Uplinks
 
-<!--  
-## Create Content Library
+The next step will be to edit the **Default VTI Rule** in the Compute Gateway Firewall Rules
 
-Content libraries are container objects for VM templates, vApp templates, and other types of files like ISO images.
+1. Click the three dots next to **Default VTI Rule**
+2. **EDIT**
+3. Set **Action** - Allow
 
-You can create a content library in the vSphere Web Client, and populate it with templates, which you can use to deploy virtual machines or vApps in your VMware Cloud on AWS environment or if you already have a Content Library in your on-premises data center, you can use the Content Library to import content into your SDDC.
+Finally we'll commit the changes to the Compute Gateway rules by clicking the **Publish** button.
 
-You can create two types of libraries: local or subscribed libraries.
+### Create a Logical Network
 
-### Local Libraries
+For this Horizon Lab we have prepared several virtual machines, which are Active Directory (AD), Horizon Connection Server, Unified Access Gateway (UAG) and a Golden Master Image.
 
-You use a local library to store items in a single vCenter Server instance. You can publish the local library so that users from other vCenter Server systems can subscribe to it. When you publish a content library externally, you can configure a password for authentication.
+In the next step we are going to create a logical network for the virtual machines we will deploy in this lab.
 
-VM templates and vApp templates are stored as an OVF file format in the content library. You can also upload other file types, such as ISO images, text files, and so on, in a content library.
--->
+The AD, Horizon Connection Server, UAG and Golden Master Image will be deployed in a 192.168.xxx.xxx/24 subnet. Therefore we need to create this network first.
 
-## Cretea a Logical Network
+Navigate to **Networking & Security** -> **Segments** and click **Add segments**
 
-For our Horizon Lab we prepared several machines like AD, Hoirzon Connections Server, Unified access gateway and the Goldenmaster Image.
-The AD, Horizon Connection Server, UAG and Goldenmaster Image will be deployed in a 192.168.20.0/24 subnet. Therefore we need to create this network first.
+Depending on whether you are working in SDDC **Student-Workshop-X.1** or **Student-Workshop-X.2** environment, you will need to create different networks.
 
-## Create a Logical Network
+1. **Name**
+    - **Student-Workshop-X.1** use **Horizon100**
+    - **Student-Workshop-X.2** use **Horizon200**
+2. **Type** - Routed
+3. **Gateway/Prefix Length**
+    - **Student-Workshop-X.1** use 192.168.100.1/24 - where X is your **Student ID**
+    - **Student-Workshop-X.2** use 192.168.200.1/24 - where X is your **Student ID**
+4. **DHCP** - Disabled
+5. Click **Save**
 
-1. Once you are logged in to your vCenter Server Click on **Menu**
-2. Select **Global Inventory Lists**
-3. Click on **Logical Networks** in the left pane
-4. Click on the **Add** button
-5. Name your New Logical Network **Horizon#-LN** (where # is your student number)
-6. Select the **Routed Network** radio button
-7. For CIDR Block enter **192.168.20.0/24**
-8. Enter **192.168.20.1** for the Default Gateway IP
-9. Make sure DHCP is disabled
-10. Click **OK** to create your new logical network
+### Creating a VPN Connection
 
-## Subscribed Libraries
+The next step will be to create the VPN connection between the Student-Workshop-X.1 and Student-Workshop-X.2 SDDCs. To do that, follow the steps below:
 
-You subscribe to a published library by creating a subscribed library. You can create the subscribed library in the same vCenter Server instance where the published library is, or in a different vCenter Server system. In the Create Library wizard you have the option to download all the contents of the published library immediately after the subscribed library is created, or to download only metadata for the items from the published library and later to download the full content of only the items you intend to use.
+1. Go to **Network & Security**
+2. **VPN**
+3. **Route Based**
+4. **Add VPN**
+5. Set the **Name** to _HorizonWorkshopVPN_
+6. Select **Public IP** in the **Local IP Address** dropdown box
+- **Note** make a note of your Public IP adress and share it with your lab partner.
+7. Complete the other fields per the table below, leave all other settings as default
+- **Note** To complete the **Remote Public IP** field,  work with your workshop partner to obtain their Public IP address.
 
-To ensure the contents of a subscribed library are up-to-date, the subscribed library automatically synchronizes to the source published library on regular intervals.
+| **SDDC** | **Local IP** | **Remote Public IP** | **BGP Local IP/Prefix Length** | **BGP Remote IP** | **BGP Remote ASN** | **Preshared Key** |
+| Student-Workshop-X.1 | Public | *Public IP Student X.2* | 169.254.111.1/30 | 169.254.111.2 | 65000| VMware1! |
+| Student-Workshop-X.2 | Public | *Public IP Student X.1* | 169.254.111.2/30 | 169.254.111.1 | 65001| VMware1! |
 
-You can also manually synchronize subscribed libraries. You can use the option to download content from the source published library immediately or only when needed to manage your storage space.
+![VPN1](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/VPN1.png)
 
-Synchronization of a subscribed library that is set with the option to download all the contents of the published library immediately, synchronizes both the item metadata and the item contents. During the synchronisation the library items that are new for the subscribed library are fully downloaded to the storage location of the subscribed library.
+- **Note** Student-Workshop SDDC 1 needs to change the **LOCAL ASN**. Next to Add VPN,click on **EDIT LOCAL ASN** and type 65001.
+![VPN2](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/VPN2.png)
 
-Synchronization of a subscribed library that is set with the option to download contents only when needed synchronizes only the metadata for the library items from the published library, and does not download the contents of the items. This saves storage space. If you need to use a library item you need to synchronize that item. After you are done using the item, you can delete the item contents to free space on the storage. For subscribed libraries that are set with the option to download contents only when needed, synchronizing the subscribed library downloads only the metadata of all the items in the source published library, while synchronizing a library item downloads the full content of that item to your storage. If you use a subscribed library, you can only utilize the content, but cannot contribute with content. Only the administrator of the published library can manage the templates and files.
+**Note** Click the refresh button, as shown in the screenshot below, to check if the tunnel is up and the status indicator has changed to be **green**.
 
-In the subscribed content library you will find the Golden Master Image that you need to use for the deploymend of new desktops with the help of horizon
+![VPN3](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/VPN3.png)
 
-![Page-19-Image-19](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-19-Image-19.png)
+We have now completed network setup part of the lab. The next step will be to deploy the virtual machines we need for the lab. We are going to deploy those VMs from templates, located in a vSphere Content Library.
+
+The next step will be to log into vCenter and deploy VMs.
+
+## Log into vCenter
+
+To open vCenter, click on **OPEN VCENTER** in the top right hand corner of the screen. A pop-up window will open, where you can view vCenter login credentials.
+
+Then go to **Show vCenter Credentials**
+
+![Show+vCdenter+Credentials](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/Show+vCdenter+Credentials.jpg)
+
+Click on the clipboard icon, next to Password, to copy the password for accessing vCenter.
+
+Click on the eye icon to make the password visible. **Make a note of this password, as it will be used later on in the lab**.
+
+![Open+vCenter](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/Open+vCenter.jpg)
+
+Then click on **Open vCenter**. A new browser window will open, where you can log into vCenter.
+
+**Username:** cloudadmin@vmc.local
+
+**Password:** *Paste Password*
+
+## Horizon Deployment
+
+As part of the lab, we have already subscribed your SDDC to a vSphere Content Library. These are located in an Amazon S3 bucket, where we have the VM templates stored and ready to use.
+
+In the subscribed content library you will find the Active Directory VM, Golden Master Image VM, Unified Access Gateway (UAG) and the Connection Server VM templates, that you need to use for the deployment of new desktops with Horizon.
 
 1. Click on **Menu**
 2. Click on **Content Libraries**
-
-### Subscribe to an existing Content Library
-
-You may already have a Content Library in your on-premises data center, you can use the Content Library to import content into your SDDC.
-
-![Page-20-Image-20](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-20-Image-20.png)
-
-1. In your Content Library window, click the **+** sign to add a new Content Library.
-    ![Page-20-Image-21](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-20-Image-21.png)
-2. Name your Content Library **Student#-HorizonGM** where **#** is the number assigned to you
-3. (Optional) Enter some notes for your Content Library
-4. Click **Next** button
-
-5. Select **Subscribed content library**
-6. Under **Subscription URL** enter the following:
-
-    ```link
-    https://vcenter.sddc-34-216-241-49.vmc.vmware.com:443/cls/vcsp/lib/6f0bc23f-3157-4fb5-a4c4-2f3f180b8d8d/lib.json
-    ```
-
-7. Ensure Download content is set to **when needed**
-8. Click **Next**
-    ![Page-22-Image-23](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-22-Image-23.png)
-9. Highlight the **WorkloadDatastore** as the storage location
-10. Click **Next**
-    ![Page-22-Image-24](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-22-Image-24.png)
-11. Click **Finish**. Your content library should take about ~20 minutes to complete syncing.
-
-Now that we have subscribed to the Conten Library we can deploy the Horizon Infrastructre:
-
-1. Click on **Menu**
-2. Click on **Content Library**
-3. Click on the content library you subscribed to in the previus lab
+3. Click on **horizon-content-library**
 4. Click on **Templates**
-    ![GM-W10-1](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/GM-W10-1.png)
 
-## Create your Active Directory VM
+The first VM we need to deploy is Active Directory VM.
 
-1. Right Click on the **VMCWINDC01** and choose **New VM from this Template....**
-2. Give it the same the name **VMCWINDC01**
-3. As location click on **Workloads**
-4. Click on **Next**
-5. Select **Compute-ResourcePool** and click **Next**
-6. Click **next**
-7. Select **WorkloadDatastore** and click **next**
-8. Select the network you created in privious LAB **Horizon#-LN**
-9. Click **next** and **finish**
+### Create Active Directory VM
 
-## Create Horizon Server VM
-
-1. Right Click on the **HZ-76-WS** and choose **New VM from this Template....**
-2. Give it the same the name **HZ-76-WS** where # is put your student ID in
-3. As location click on **Workloads**
-4. Click on **Next**
-5. Select **Compute-ResourcePool** and click **Next**
-6. Click **next**
-7. Select **WorkloadDatastore** and click **next**
-8. Select the network you created in privious LAB **Horizon#-LN**
-9. Click **next** and **finish**
-
-## Create your Golden Master Image
-
-With Horizon 7.6 we do have the option to also do Instant Clones. For this lab we prepared two Golden Master Images. The first one is for Instant Clones with the Name **W10-LTBS-1607-IC**, the second one is for Full Clones. You can decide to either go for Full clones or use Instant Clones. We suggest to do instant clones cause it is much faster to rollout this desktops.
-
-1. Right Click on the **W10-LTBS-1607-IC Template** and choose **New VM from this Template....**
-2. Give it the same the name **W10-LTBS-#** where # is put your student ID in
-3. As location click on **Templates**
-4. Click on **Next**
-5. Select **Compute-ResourcePool** and click **Next**
-6. Click **next**
-7. Select **WorkloadDatastore** and click **next**
-8. Select the network you created in privious step for 192.168.20.0/24 **Horizon#-LN**
-9. Click **next** and **finish**
-
-## Power on the new created VM's
-
-1. Power on the VM **VMCWINDC01**
-2. Launch the Web Console
-3. Sign in with  **corp\vmcws1** and password **VMware1!**
-4. Power on the VM **HZ-76-WS**
-5. Launch the Web Console
-6. Sign in with  **corp\vmcws1** and password **VMware1!**
-
-Wait about 10 minutes until all services are runnig. In the meantime jump create the UAG VM
-
-## Create UAG VM
-
-1. Go back to your vCenter web Client
-2. Right click on the compute ressource pool
-    ![customization9](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/customization9.png)
-3. click on deploy ovf template
-4. ![customization10](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/customization10.png)
-5. Select **Local Files**
-6. Click **Choose Files**
-7. Go to Z://Horizon/ and select euc-unified-access-gateway-3.3.0.0-8539
-    ![customization11](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/customization11.png)
-8. Click **Open**
-9. Click **next**
-10. Click **next**
-11. Click **next**
-12. Select **Single NIC**
-13. Click **next**
-14. Select Destination Network for all three networks **Horizon#-LN**
-15. Following Settings need to be done:
-    ![customization12](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/customization12.png)
-    ![customization13](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/customization13.png)
-    ![customization14](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/customization14.png)
-    ![customization15](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/customization15.png)
-16. Click **Finish**
-17. Wait until the new created UAG VM is powered on.
-18. Open you browser and go to :
-
-    ```link
-    https://192.168.20.73:9443
-    ```
-
-    ![customization16](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/customization16.png)
-19. Click on Import Settings
-    ![customization17](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/customization17.png)
-20. Browse to ** z://horizon/...
-    ![customization18](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/customization18.png)
-21. Click **Import**
-22. Login to
-    ```link
-    https://192.168.20.72/9443
-    ```
-23. choose the right side **configure manually** and click **select**
-24. Click on Edge Services Settings **show**
-    ![customization19](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/customization19.png)
-25. Tunnel, BLAST,UDP Tunnel Server, HORIZON DESTINATION Server have to be **GREEN**
-
-Now we will request a public IP adress. We will use this public IP adress to access the Horizon infrastructre afterwards. Please go back to VMC console in your browser. Go to the network tab.
-
-1. Scroll down to Compute Gateway and request a new public ip.
-2. Please note this public IP.
-    ![customization8](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/customization8.png)
-3. Click on **NAT**
-4. Click on **ADD NAT RULE**
-5. Under Description type **Horizon Desktop**
-6. Public IP **your requested IP**
-7. Service **HTTPS(TCP 443)
-8. Public Ports **443**
-9. Internal IP **192.168.20.73**
-10. Click **SAVE**
-11. Check the Firewall Rule you previous created. -> ANY ANY ANY
-
-Now we have to create a Snapshot on the Golden Master Image. Cause Instant Clones are working with snapshots.
-
-1. Right click on **W10-LTBS-1607-IC**
-2. Click on **Snapshot**
-3. Take a Snapshot
-4. type a name **1.0** for example
-5. Click **OK**
-
-If decision made to go for Full Clones in the previous step we need to create a windows customization spec for the Full Cones that we will use in Horizon for creating a bunch of VM's and those will be directly placed in the Active Directoy.
-
-## Create a Windows Customization Spec
-
-1. Click on **Menu**
-2. Click **Policies and Profiles**
-3. Click on **create**
-4. Type a Name **Windows**
+1. Locate and right-click on **AD-100** or **AD-200**, depending on your student workshop number
+2. Click on **New VM from This Template**
+3. **Virtual Machine Name** - AD-100 or AD-200, depending on your student workshop number
+4. Under select a location for Virtual Machine, click on **SDDC-Datacenter**, then click on **Workloads**
+    ![create+AD+100-+1](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/create+AD+100-+1.png)
 5. Click **Next**
-6. Type Owner name **VMC** Owner organization **VMC** click **Next**
-7. Check that **Use the virtual machine name** is selected
-8. Do not use a product key **next**
-9. Type Password **VMware1!**
-10. Click **next**
-11. Click **next**
-12. Click **next**
-13. Select **Windows Server domain** and type **corp.local** under username **vmcws#** where # is please chose your ID and your studen password
-14. Click **Finish**
+6. Expand **Cluster-1**, then click **Compute-ResourcePool**, then click **Next**
+7. On the **Review Details** step, click **Next**
+8. On the **Select Storage** step, select **WorkloadDatastore** and click **Next**
+9. On the **Select Networks** step, select the network you created in the previous lab (**Horizon100** or **Horizon200**), depending on your student workshop number
+10. Click **Next** and **Finish**
 
-## Create your SDDC vcenter as an enpoint in the existing Horizon environment
+### Create Horizon Connection Server VM
 
-That you can create desktops in your SDDC we need to implement your Student SDDC vCenter into the existing Horizon infrastructure.
+1. Locate and right-click on the **CS-100** or **CS-200** templae, depending on your student workshop number
+2. Click on **New VM from This Template**
+3. **Virtual Machine Name** - CS-100 or CS-200, depending on your student workshop number
+4. Under select a location for Virtual Machine, expand **SDDC-Datacenter**, then click on **Workloads**
+5. Click **Next**
+6. Expand **Cluster-1**, then click **Compute-ResourcePool**, then click **Next**
+7. On the **Review Details** step, click **Next**
+8. On the **Select Storage** step, select **WorkloadDatastore** and click **Next**
+9. On the **Select Networks** step, select the network you created in the previous lab (**Horizon100** or **Horizon200**), depending on your student workshop number
+10. Click **Next** and **Finish**
 
-1. Please open a Browser and navigate to :
-    ```link
-    https://192.168.20.70/admin
-    ```
-    ![horizon-server1](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-server1.png)
-2. enter student username and password
-3. click **Log In**
+### Create your Golden Master Image
 
-    You now can see the Dashboard / manin page of the Horizon Connection Server. This is the place where we will be working the next hour
+This Golden Master Image will be used to deploy desktops, using Instant Clone technology.
 
-    ![horizon-server2](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-server2.png)
-4. Click on the left site on Servers:
-    ![horizon-server3](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-server3.png)
-5. Click on vCenter Servers **Add**
-6. type in server adress "this is the ip adress of your student vcenter" for example 54.72.217.99
-7. type in username and password / "cloudadmin@vmc.local and the password from cloudadmin of your student vcenter"
-8. you can find your cloudadmin password by going back to the VMC tab in your browser.
-    ![horizon-server10](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-server10.png)
-9. if you had filled in the fields: server adress, user name and password click **next**
-10. you will get a promt Invalid Certifcate Detected
-    ![horizon-server6](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-server6.png)
-11. Click on View Certficate and **Accept**
-12. On View Composer settings check **Do not use View Composer** click **Next**
-13. Please verfiy that **Enable View Storage Accelerator** is NOT selected
-    ![horizon-server8](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-server8.png)
-14. Click **next**
-15. Click **Finish**
+1. Locate and right-click on the **GM** template
+2. Click on **New VM from This Template**
+3. **Virtual Machine Name** -  GM-W10
+4. Under select a location for Virtual Machine, click on **SDDC-Datacenter**, then click on **Templates**
+5. Click **Next**
+6. Click **Cluster-1**, then click **Compute-ResourcePool**, then click **Next**
+7. On the **Review Details** step, click **Next**
+8. On the **Select Storage** step, select **WorkloadDatastore** and click **Next**
+9. On the **Select Networks** step, select the network you created in the previous lab (**Horizon100** or **Horizon200**), depending on your student workshop number
+10. Click **Next** and **Finish**
+
+### Create your Unified Access Gateway (UAG) VM
+
+1. Go to **Menu**, **VM and Templates**
+2. Expand **SDDC-Datacenter**, right-click on **Workloads**, select **Deploy OVF template**, type URL:
+    - **https://s3-us-west-2.amazonaws.com/horizon-200/UAG-200/euc-unified-access-gateway-3.4.0.0-11037344_OVF10.ova**
+    - Click **Next**, and then accept the certificate warning by clicking **Yes**
+3. **Virtual Machine Name** - **UAG-100** or **UAG-200**, depending on your student workshop number
+4. Under select a location for Virtual Machine, click on **SDDC-Datacenter**, then click on **Workloads**
+5. Click **Next**
+6. Expand **Cluster-1**, then click **Compute-ResourcePool**, then click **Next**
+7. On the **Review Details** step, click **Next**
+8. On the **Configuration** step, choose **Single NIC**, then click **Next**
+9. On the **Select Storage** step, select **WorkloadDatastore** and click **Next**
+10. On the **Select Networks** step, select the network you created in the previous lab (**Horizon100** or **Horizon200**) for all three networks, then click **Next**
+11. On the **Customize template** step, configure the following parameters:
+    - **IPMode for NIC 1 (eth0)** type **STATICV4**
+
+    ![UAG+1](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/UAG+1.jpg)
+
+    - **NIC 1 (eth0) IPv4 address** type **192.168.100.12** or **192.168.200.12**, depending on your student workshop number
+
+    ![UAG+2](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/UAG+2.jpg)
+
+    - **DNS server address** type **192.168.100.10** or **192.168.200.10**, depending on your student workshop number
+    - **NIC 1 (eth0) netmask** type **255.255.255.0**
+    - **IPv4 Default Gateway** type **192.168.100.1** or **192.168.200.1**, depending on your student workshop number
+    - **Unified Gateway Appliance Nmae** type **UAG100** or **UAG200**, depending on your student workshop number
+
+    ![UAG+3](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/UAG+3.jpg)
+
+    - **Join CEIP** Untick the checkbox, under text
+    - **Password for the root user and the Admin User** type **VMware1!**
+      - **Note:** It is extremely important to set the password for _both_ the _root_ and the _admin_ user
+
+    ![UAG+4](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/UAG+4.jpg)
+
+    - Click **Next**, then click **Finish**
+
+### Power on Active Directory
+
+1. Go to **Menu**
+2. Go to **VMs and Templates**
+3. Expand **SDDC-Datacenter**, **Workloads**
+4. Power on the VM **AD-100** or **AD-200**, depending on your student workshop number
+5. Launch the Web Console
+6. Sign in with username **VDIONVMC\Administrator** and password **VMware1!**
+
+### Power on Unified Access Gateway
+
+1. Power on the VM **UAG-100** or **UAG-200**, depending on your student workshop numbe
+
+### Power on Horizon Connection Server
+
+1. Power on the VM **CS-100** or **CS-200**, depending on your student workshop number
+2. Launch the Web Console
+3. Sign in with username  **VDIONVMC\Administrator** and password **VMware1!**
+
+## Configure Horizon Environment
+
+In order to create desktops in your SDDC, first we need to implement your Student SDDC vCenter into the existing Horizon infrastructure.
+
+Once logged into the **Horizon Connection Server**, locate Horizon 7 Administrator Console shortcut, located on the Desktop screen of the Horizon Connection Server. Or open a browser and browse to **https://192.168.100.11/admin** or **https://192.168.200.11/admin** depending on your workshop sddc number.
+
+![CS+1](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/CS+1.jpg)
+
+Double click to open the Administrator Console. That will launch into a browser window. You will see a certificate error warning, Acknowledge the warning and proceed to localhost.
+
+**Note:** If you see a warning that Adobe Flash is not installed:
+ - Click **Not secure** on the address bar, and set Flash to **Allow**, then reload the page
+![FlashWarning](https://vmc-field-team.github.io/assets/images/horizon-flash-warning.png)
+
+
+Log into Horizon 7 Administrator Console.
+
+**User Name:** Administrator
+**Password** VMware1!
+
+![CS+2](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/CS+2.jpg)
+
+The next step of the Horizon configuration will be to add the vCenter server of your SDDC. To do that we need to make a note of the vCenter server IP address, user name and password. To obtain these, do the following.
+
+1. Go back to your VMware Cloud on AWS Console
+2. Click on your SDDC
+3. Click on the **Support** tab and make a note of the **vCenter Public IP address**
+
+![CS+6](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/CS+6.jpg)
+
+Go back to the Web Console of the Horizon Connection Server. On the left hand side, go to **View Configuration**, then **Servers**.
+
+![CS+3](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/CS+3.jpg)
+
+Under vCenter Server tab, click **Add…**.
+
+![CS+4](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/CS+4.jpg)
+
+In the popup window fill in the following:
+
+1. **Server Address** - fill in the Public vCenter IP address, which you noted down in the previous step
+2. **User Name** - **cloudadmin@vmc.local**
+3. **Password** - fill in the vCenter Password, which you noted down in previous section of the lab
+    **NOTE** type the password in the description field because you can see it in clear text!! Compare it with the one you noted.  We saw some Keyboard typos in previous workshops.
+4. Make sure that the **VMware Cloud on AWS** tick box is selected
+5. Click **Next**
+
+    ![CS+5](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/CS+5.jpg)
+
+6. An **Invalid Certificate Detected** popup box will open. Click on **View Certificate**. Then click **Accept**
+7. Select **Do not use View Composer**, then click **Next**
+8. **VERY IMPORTANT** Make sure the **Reclaim VM disk space** tick box is **unchecked**, then click **Next**
+    - **Note**  If the checkbox stays grey, the password is wrong.
+9. Click **Finish**
+
+You have successfully added your vCenter Server.
+
+The next step is to add **Instant Clone Domain Admins**
+
+1. Go to **Instant Clone Domain Admins** on the left hand side
+2. Click **Add**
+3. Fill in **User Name** and **Password** field
+    - **User Name** - Administrator
+    - **Password** - VMware1!
+4. Click **OK**
+
+![CS+7](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/CS+7.jpg)
 
 ## Deploy Desktop Pool
 
-Now as we have the vCenter as an Endpoint in Horizon we can start deploying Desktops.
+Instant Clones requires a snapshot of the Golden Master Image. Therefore we need to create a snapshot of the Golden Master Image VM.
 
-1. On the Horizon Connection Server admin console on the left site you can click on **Desktop Pools**
-    ![horizon-pool1](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-pool1.png)
-2. Select **Automated Desktop Pool** and click on **Next**
-    ![horizon-pool2](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-pool2.png)
-3. Select **Dedicated** and click **next**
-    ![horizon-pool3](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-pool3.png)
-4. you will get a promt "More Information" click **Ignore**
-    ![horizon-pool4](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-pool4.png)
-5. Select **Full virtual machines** and select **your Student vCenter** with your student vCenter IP
-    ![horizon-pool5](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-pool5.png)
-6. Type under ID: **Studen-#** Display name **Stunden-#** and select Access group **WS1** under Description **Stundent #**  click **next**
-    Note # is your student ID
-    ![horizon-pool6.1](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-pool6.1.png)
-7. On Desktop Pool Settings under Remote Settings click **Remote machine Power Policy** and select **Always powered on** click **next**
-    ![horizon-pool7.1](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-pool7.1.png)
-8. scroll down and select **HTML Access** click **next**
-    ![horizon-pool8](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-pool8.png)
-9. Under " use a naming pattern" enter **studen-#** click **next**
-    ![horizon-pool9.1](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-pool9.1.png)
-10. Select **Use VMware Virtual SAN**
-    ![horizon-pool11](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-pool11.png)
-    Now we need to select your GM Image which you converted to a Template
-11. Click on **Browse** and select your Golden Master Image for example **W10-LTSB-1**  click **OK**
+1. Go back to the vSphere Client.
+2. Click on **Hosts and Clusters**
+3. Expand **SDDC-Datacenter** -> **Cluster-1** -> **Compute-ResourcePool**
+4. Locate your Golden Master Image VM **GM-W10**
+5. Right-click, go to **Snapshots**, then **Take Snapshot**
+6. Name **1.0**
+7. Click **OK**
 
-    If you cant see any template here it might be that you forgot to convert the VM into a Template. As we are working with full clones we have to have a Template. This will change in the future when we will work with Instant Clones.
+Go back to the Horizon Connection Server Web Console. Your Horizon Connection Server Console should be still opened. If not please open it either via the shortcut on the desktop, or go to https://192.169.100.11/admin or https://192.168.200.11/admin, depending on your workshop sddc number.
 
-    ![horizon-pool12](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-pool12.png)
-12. Click **browse** on VM folder location and select **Workloads** click **OK**
-13. Click **browse** on host and cluster and select the cluster click **OK**
-14. Click **browse** next to Ressource pool and select **Compute-ResourcePool**  click **OK**
-15. Click **browse** next Storage and select **WorkloadDatastore** click **OK**
-16. Verify all fields do have entries and click **next**
-    ![horizon-pool13](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-pool13.png)
-17. On Advanced Storage Options don't select anything just click **next**
-18. Select **Use this customization specification:** and select your customization policy click **netx**
-    ![horizon-pool14](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Horizon-LAB/horizon-pool14.png)
-19. Check all settings and click **Finish**
+1. On the Horizon Connection Server admin console on the left side you can click on **Catalog** and then **Desktop Pools**
+2. Click **Add**, select **Automated Desktop Pool**, click **Next**
+3. Select **Floating** click **Next**
+4. Select **Instant Clones** click **Next**
+5. On **ID** - type  **Pool1** or **Pool2**, depending on your Student workshop ID
+6. On **Display Name** - **Pool1** or **Pool2**, depending on your Student workshop ID
+7. Click **Next**
+8. Activate **HTML Access**, click **Next**
 
-## Check if the desktops get created
+    ![Desktops-pool1](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/Desktops-pool1.png)
 
-Go back to your vCenter and see if the cloning starts. This could take up to 5 minutes
+9. Under **Naming Pattern** type -
+    - **desktops1{n:fixed=3}** or
+    - **desktops2{n:fixed=3}** depending on your Student Workshop ID
+10. Change **Max number of machines** - 2
+11. click **Next**
+12. Click **Use VMware Virtual SAN**, click **Next**
+13. **Parent VM in vCenter:** click **Browse**  and select your **GM-W10** image, click **OK**
+14. **Snapshot:** click **Browse** and select the previously created Snapshot, click **OK**
+15. **VM folder location:** click **Browse**  - select **Workloads**, click **OK**
+16. **Cluster:** click **Browse**  - select **Cluster-1**, click **OK**
+17. **Resource Pool** click **Browse** - Select **Horizon-ResourcePool**, click **OK**
+18. **Datastore:** click **Browse** - select **WorkloadDatastore**, click **OK** - **warning message appears** click **OK**
+19. Do **not** change **Networks**, Click **Next**
+20. Do **not** change **Guest customization**, Click **Next**
+21. Click **Finish**
+
+The deployment of the desktops should start now.
+**NOTE** The deployment will **fail** the first time. Because this is a Single Node SDDC, you need to change the newly created Horizon vSAN policies to **no redundancy**
+
+For that please switch to your **vSphere Web Client Console**
+
+1. Click **Menu**
+2. Click **Policies and Profiles**
+3. Left side click **VM Storage Policies**
+4. You will find **4** new Storage Policies that will have a **random number** at the end. All 4 needs to be changed: **search** for them in the storage profiles
+    - **OS_DISK_FLOATING_.............**
+    - **PERSISTENT_DISK_..............**
+    - **REPLICA_DISK_.................**
+    - **VM_HOME_......................**
+
+    In the screenshot you see 3 but you need to change all **4**
+    ![Desktops-pool2](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/Desktops-pool2.png)
+5. Cick on each of the above and click **Edit Settings**
+6. Click **Next**
+7. Click **Next**
+8. **Storage Policy:** click on **Failures to tolerate** and click on **No data redundancy** , click **Next**, click **Next** and **Finish**
+    ![Desktops-pool5](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/Desktops-pool5.png)
+9. Repeat these steps for **4** of the above mentionted storage policies!
+
+Go back to your Horizon Connection Server Web Console:
+
+1. Click on **Desktops Pools**
+2. Double Click on **your new created desktop pool**
+3. Click **Status**
+4. Click **Enable Provisioning**
+    ![Desktops-pool4](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/Desktops-pool4.png)
+5. Click **OK**
+
+Entitle Users to the Pools, in order to be able to access the desktops later.
+
+1. Click on **Entitlements**
+2. Click **Add Entitlment...**, then click the **Add** button
+3. In **Name/User name** type **Workshop**, then **Find**. You will find two users
+4. Select both users and click **OK**
+    ![Desktops-pool6](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/Desktops-pool6.png)
+5. Click **OK**
+
+Go back to your **vSphere Web Client** and watch the the provisioning in the task list: It will take around 5-10 min to have the desktops available.
+
+## External Access
+
+The next step will be to enable your Horizon environment to be accessed externally.
+
+1. Go to your VMC console
+2. Go to your SDDC
+3. Go to **Networking and Security** tab
+4. On the left site go to **Public IPs**
+5. Click on **REQUEST NEW IP**
+6. **Notes** - type **Horizon**
+7. Click **Save**
+![External1](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/External1.png)
+
+Now that we have a public IP we need to create a NAT rule to your UAG.
+
+1. Go to your VMC console
+2. Go to your SDDC
+3. Go to **Networking and Security** tab
+4. On the left site go to **NAT**
+5. Click **ADD RULE**
+    - **Name** - Horizon
+    - **Service** - delete **All Traffic** -  type **HTPPS / 443**
+    - **Internal IP** - type ip of your UAG **192.168.100.12** or **192.168.200.12**  depending on your student workshop ID
+6. Click **Save**
+
+![External2](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/External2.png)
+
+**Note** make a note of your Public IP Address, because it will be needed later on in the lab, for configuring the UAG and Horizon Connection server.
+
+1. Go to **Horizon Connection Server Web Console**
+2. Open **File Explorer** in your Horizon Server
+3. Open the **locked.properties** file under c:\Program Files\VMware\VMmware View\Server\sslgateway\conf\ with your **Notepad**
+    ![External3](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/External3.png)
+4. Enter your **Public IP** into **balancedHost=**
+    ![External4](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/External4.png)
+5. **Save** the file
+6. Close Notepad
+7. **Restart** your horizon connection server - click on **Start** -> **Stutdown or sign out** -> **Restart**
+8. Wait for the server to come back
+
+You need to login back into the **Horizon Connection Server** and open a **browser**
+
+1. Login to your Horizon Connection Server as **Administrator** and **VMware1!**
+2. Click on the shortcut icon for the Horizon Connection server or navigate to **https://localhost/admin**
+
+    - **Note** it can take up to 5 min to have all services started to be able to browse to the webpage of the Horizon Connection Server
+
+3. Login to the Horizon 7 Conneciton Server Administation Console with **Administrator** and **VMware1!**
+4. On the left side go to **View Configuration**
+    - **Servers**
+    - **Connection Server** tab
+    - Select your **connection server**
+    - Click **EDIT**
+5. **Disable** the tunneling
+    - Uncheck **HTTP(S) Secure Tunnel**
+    - Click on **Do not use Blast Secure Gateway**
+    ![External6](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/External6.png)
+7. Click **OK**
+
+The next step is to configure your UAG. Go to your Horizon Connection Server.
+
+1. Open a **browser**
+2. Navigate to **https://192.168.100.12:9443** or **https://192.168.200.12:9443** , depending on your student workshop ID
+3. Click **Proceed** on the **security warning**
+4. Click **Go Back**
+5. Login with **admin** and **VMware1!** , Click **Login**
+6. Click **Select** on the right side, underneath the **Configure Manually** heading
+7. Click **Edge Service Settings** **Show**
+    - Click **Settings sign** next to horizon settings
+    - Click **Enable Horizon**
+    - Click **Enable Blast**
+    - Click **Enable Tunnel**
+8. For **Connection Server URL** type **https://hz-ws-cs100.vdionvmc.local:443** or **https://hz-ws-cs200.vdionvmc.local:443**, depending on your Student ID
+9. For **Connection Server URL Thumbprint** go back to the **connection server tab** / **View Administrator** and click on the certificate
+
+    ![External](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/External7.png)
+
+    ![External8](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/External8.png)
+
+    - Go to **Details** Tab
+    - Scroll down to **Thumbprint**
+    - **Copy** the thumbprint you see
+    - **Switch** to the **UAG Tab** / Console in the other **browser tab**
+10. In **Connection Server URL Thumbprint** write **sha1=*your copy of the thumbprint***
+11. **Blast External URL** type **https://your public IP:443**
+12. **Tunnel External URL** type **https://your public IP:443**
+13. Click **Save**
+14. Verify your configuration
+     - Click the **Refresh Button**
+     - Click on the **Horizon Settings** chevron
+     - Check that **Tunnel**, **Blast**, **UDP Tunnel Server**, **Horizon Destination Server** is green
+    ![External9](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/External9.png)
+
+## Access your Desktop
+
+1. Open a browser on your local Machine / Laptop
+2. Navigate to **https://your-public-ip**
+3. **Proceed on the security warnings**
+4. Click **VMware Horizon HTML Access** on the right side.
+5. Sign in with Username: **Workshop100** or **Workshop200** and Password: **VMware1!**
+6. Click **Start**
+7. **Restart your Desktop**
+
+Congratulations! You succesfully accessed your desktop from the Internet!
+
+## Expand Desktop Pool
+
+The next step will be to expand the desktop pool we ceated previously in this lab.
+
+1. Go to your **Horizon Connection Server**
+2. Open the shortcut for the Horizon Connection Server configuration or go to **https://localhost/admin**
+3. Login with **Administrator** and **VMware1!**
+4. Go to **Catalog** -> **Desktop Pools**
+5. Right click on your previously created Desktop Pool and click **Edit**
+    - Go to **Provisioning Settings**
+    - Change **Maximum Number of Machines** to **20**
+    - Click **OK**
+
+    ![DesktopPool](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/Desktop7.jpg)
+
+6. Double click the Desktop Pool.
+7. Go to **Inventory** tab. Monitor progress of desktop creation.
+
+## Build Cloud Pod Architecture
+
+The Cloud Pod Architecture feature links together multiple View Pods to provide a single large desktop brokering and management environment. When the Cloud Pod Architecture feature is enabled, you can join together multiple View Pods to form a single View implementation called a Pod Federation. A Pod Federation can span multiple sites and datacenters.
+
+For configuring CPA you need to work **together** with your partner in this section because only **one** person can **initialize** the CPA, and the other needs to **join** the CPA. Please discuss within your **team** who will initialize and who will join the initilized CPA.
+
+![CPA1](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/CPA1.png)
+
+When you decided who will initialize and who will be joining, proceed as follows:
+
+To initilize the CPA:
+
+1. Go to your **Horizon Connection Server**
+2. Open the shortcut for the Horizon Connection Server configuration or go to **https://localhost/admin**
+3. Login with **Administrator** and **VMware1!**
+4. Go to **View Configruation** -> **Cloud Pod Architecture**
+5. Click **Initialize the Cloud Pod Architecture feature**
+6. Click **OK**
+7. **Wait** for the task to complete
+8. Click **OK**
+
+To join the CPA:
+
+1. Go to your **Horizon Connection Server**
+2. Open the shortcut for the Horizon Connection Server configuration or go to **https://localhost/admin**
+3. Login with **Administrator** and **VMware1!**
+4. Go to **View Configruation** -> **Cloud Pod Architecture**
+5. Click **Join the pod federation**
+6. For **Connection Server** type the local IP-Address of your Partner, which is either **192.168.100.11** or **192.168.200.11**
+7. **Username** - vdionvmc\Administrator
+8. **Password** - VMware1!
+9. Click **Save**
+10. Wait to join
+
+![CPA4](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/CPA4.png)
+
+You now have successfully configured a CPA between SDDC1 and SDDC2. This could also be a SDDC running in two different regions - Frankfurt and Oregon for example.
+
+The next step will be to create Global Entitlement rights to show some of the benefits of CPA. You need to decide which student will create the Global Entitlements policy.
+
+**This task can only be done by ONE person!**
+
+1. Go to **Catalog** -> **Global Entitlements**
+2. Click **Add**
+3. **Desktop Entitlement**
+4. Click **Next**
+5. Name and Policy Section
+    - Name **Global Policy**
+    - Policies click **Floating**
+    - Scope **All Sites**
+    - Default Display Protocol **VMware Blast**
+    - Allow users to choose protocol **No**
+    - Enable **HTML Access**
+    - Click **Next**
+6. Users and Groups
+    - Click **Add**
+    - Name/User Name - type **workshop** -> click **Find**
+    - Select both users. Click **OK**
+7. Click **Next**
+8. Click **Finish**
+
+We have a Global Policy created.
+
+Following Horizon best practices we cannot have users in both Local and Global entitlements. Users can only have one or the other. Therefore the next step will be to delete the Local Pool entitlement.
+
+**The next steps need to be completed by BOTH students**
+
+1. Go to **Catalog** -> **Desktop Pools**
+2. Right Click on your desktop pool. **Remove Entitlement**
+3. Select both users. Click **OK**
+4. In the pop up message click **OK**
+
+## Add the Desktop Pools to Global Entitlement
+
+1. Go to **Catalog** -> **Global Entitlements**
+2. Double click on your global entitlement.
+3. Click on **Local Pools** tab
+4. Click **Add**
+5. Select your pool and click **Add**
+
+Now that we have the Global Entitlements set up, we can simulate a desktop pool failure by disabling one of the desktop pools.
+
+**ONLY ONE person can do this test at a time**
+
+1. Open a browser on your local Machine / Laptop
+2. Navigate to **https://your-public-ip**
+3. **Proceed on the security warnings**
+4. Click **VMware Horizon HTML Access** on the right site.
+5. Sign in with Username: **Workshop100** **Workshop200** and Password: **VMware1!**
+6. Open **Command Prompt** and type **hostname**
+7. Make a note of your desktop name.
+8. **Restart** your desktop
+8. Go back to your Horizon Connection Server.
+9. Go to **Catalog** -> **Desktop Pools**
+10. Right Click on the desktop pool and **Disable Desktop Pool**
+11. Click **OK**
+12. Repeat steps 1 to 6.
+13. The host name should be a desktop from your partners pool, that resides on another SDDC.
+14. Repeat steps 9 and 10, instead of disabling, chose **Enable Desktop Pool**
+
+Your Horizon Lab partner can repeat the same steps.
+
+This is the end of the lab. Thank you for attending.
