@@ -164,7 +164,7 @@ SL-1 through SL-10 then log into <https://wwcp-console.signin.aws.amazon.com/con
 4. Click **Sign In**
 5. You are now signed in to the AWS console. Make sure the region selected is **Oregon**
 6. Click on the **EFS** service under the storage section
-7. Select your Student# NFS (where # is the number assigned to you. Students 11 through 20 are assigned shares 1 through 10. For example Student 11 has share 1 Student 12 has shsare 2 and student 20 has shsare 10)
+7. Select your Student# NFS (where # is the number assigned to you. Students 11 through 20 are assigned shares 1 through 10. For example Student 11 has share 1 Student 12 has share 2 and student 20 has share 10)
 8. Note the IP address
 9. Back on your vCenter Server tab, click on **Launch Web Console**  for your EFS VM (Might need to allow pop ups in browser). Log in using the following credentials:
  a. **User**: root
