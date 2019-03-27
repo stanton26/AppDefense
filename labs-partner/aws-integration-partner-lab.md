@@ -96,7 +96,7 @@ SL-1 through SL-10 then log into <https://wwcp-console.signin.aws.amazon.com/con
 
 1. For Account ID or alias ensure **vmcworkshop-partner** is specified for orgs PL-1 through Pl-10 for orgs SL-1 through SL-10 ensure **wwcp-console** is specified as the alias.
 2. IAM user name - Student# (where # is the number assigned to you)
-3. Password - as 
+3. Password - VMCworkshop1211!
 4. Click **Sign In**
 5. You are now signed in to the AWS console. Make sure the region selected is **Oregon** in the top right hand corner of the AWS Console
 6. Click on the **RDS** service under the "Database" section
