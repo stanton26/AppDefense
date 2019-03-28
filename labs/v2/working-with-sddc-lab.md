@@ -487,7 +487,7 @@ We need to open a console session to webserver01 to validate it can communicate 
 2. Click the black box below Summary in the middle of the screen. This will attempt to launch a console session but it may fail because the pop-up was blocked. If this occurs follow steps 3-6, otherwise proceed to the next section.
 3. Click the icon with the small red x in the Chrome address bar to launch to pop-up blocker dialog.
 4. Click the radio button next to Always allow pop-ips from https://vcenter.sddc-xx-xx-xxxx.vmwarevmc.com
-5. Clock the Done button.
+5. Click the Done button.
 6. Return to the black box below the Summary and click it again. The console session should launch in a new tab.
 
 ### Find the IP Address for Webserver02
