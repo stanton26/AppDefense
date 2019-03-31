@@ -71,7 +71,7 @@ In this step we will ensure that we have the correct firewall rules in place in 
     Your NAT rule should look similar to the screenshot below. 
     ![NAT Rule](https://s3-us-west-2.amazonaws.com/partner-workshop-screenshots/nat.jpg)
 
-Now we will create a firewalll rule to allow access from the VPN into our photo VM.
+Now we will create a firewalll rule to allow access from the Internet into our photo VM.
 
 15. Expand **Gateway Firewall** under the Security section and select **Compute Gateway**
 16. Click **ADD NEW RULE**
@@ -91,11 +91,12 @@ Now we will create a firewalll rule to allow access from the VPN into our photo 
 
 ### AWS Relational Database Service (RDS Configuration)
 
-On your browser, open a new tab and go to: <https://vmcworkshop-partner.signin.aws.amazon.com/console>
+On your browser, open a new tab and go to: <https://vmcworkshop-partner.signin.aws.amazon.com/console> if your org starts from PL-1 through PL-10. If your org starts from 
+SL-1 through SL-10 then log into <https://wwcp-console.signin.aws.amazon.com/console> ask your instructor for more information if you are having difficulties identifying your org number. 
 
-1. For Account ID or alias ensure **vmcworkshop-partner** is specified
+1. For Account ID or alias ensure **vmcworkshop-partner** is specified for orgs PL-1 through Pl-10 for orgs SL-1 through SL-10 ensure **wwcp-console** is specified as the alias.
 2. IAM user name - Student# (where # is the number assigned to you)
-3. Password - VMCworkshop1211
+3. Password - as 
 4. Click **Sign In**
 5. You are now signed in to the AWS console. Make sure the region selected is **Oregon** in the top right hand corner of the AWS Console
 6. Click on the **RDS** service under the "Database" section
@@ -154,15 +155,16 @@ In our next section on integrating AWS services with VMware Cloud on AWS. We wil
 
 ### AWS Elastic File System (EFS)
 
-On your browser, open a new tab and go to: <https://vmcworkshop-partner.signin.aws.amazon.com/console>
+On your browser, open a new tab and go to: <https://vmcworkshop-partner.signin.aws.amazon.com/console> if your org starts from PL-1 through PL-10. If your org starts from 
+SL-1 through SL-10 then log into <https://wwcp-console.signin.aws.amazon.com/console> ask your instructor for more information if you are having difficulties identifying your org number. 
 
-1. Account ID or alias - vmcworkshop-partner
+1. For Account ID or alias ensure **vmcworkshop-partner** is specified for orgs PL-1 through Pl-10 for orgs SL-1 through SL-10 ensure **wwcp-console** is specified as the alias.
 2. IAM user name - Student# (where # is the number assigned to you)
 3. Password - **VMCworkshop1211**
 4. Click **Sign In**
 5. You are now signed in to the AWS console. Make sure the region selected is **Oregon**
 6. Click on the **EFS** service under the storage section
-7. Select your Student# NFS (where # is the number assigned to you. Students 11 through 20 are assigned shares 1 through 10. For example Student 11 has share 1 Student 12 has shsare 2 and student 20 has shsare 10)
+7. Select your Student# NFS (where # is the number assigned to you. Students 11 through 20 are assigned shares 1 through 10. For example Student 11 has share 1 Student 12 has share 2 and student 20 has share 10)
 8. Note the IP address
 9. Back on your vCenter Server tab, click on **Launch Web Console**  for your EFS VM (Might need to allow pop ups in browser). Log in using the following credentials:
  a. **User**: root
