@@ -125,7 +125,7 @@ The next step will be to create the VPN connection between the Student-Workshop-
 - **Note** Student-Workshop SDDC 1 needs to change the **LOCAL ASN**. Next to Add VPN,click on **EDIT LOCAL ASN** and type 65001.
 ![VPN2](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/VPN2.png)
 
-**Note** Click the refresh button, as shown in the screenshot below, to check if the tunnel is up and the status indicator has changed to be **green**.
+**Note** Click the refresh button, as shown in the screenshot below, to check if the tunnel is up and the status indicator has changed to be **green**. **DO NOT PROCEED UNTIL THE VPN IS UP, OTHERWISE DESKTOP PROVISIONING WILL FAIL LATER IN THE LAB**
 
 ![VPN3](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/VPN3.png)
 
@@ -264,6 +264,10 @@ This Golden Master Image will be used to deploy desktops, using Instant Clone te
 1. Power on the VM **CS-100** or **CS-200**, depending on your student workshop number
 2. Launch the Web Console
 3. Sign in with username  **VDIONVMC\Administrator** and password **VMware1!**
+
+### Pause Here ###
+
+Before continuing, please ensure that your lab partner is up to the same point. It is very important that the VPN between SDDCs is up, and Active Directory is deployed in both SDDCs. If these things are not in place, Desktop provisioning will fail during the next section of the lab.
 
 ## Configure Horizon Environment
 

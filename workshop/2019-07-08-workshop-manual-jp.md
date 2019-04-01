@@ -119,7 +119,7 @@ Lab Name | Description
 ## ラボ
 
 ラボ名 | 説明
-[SDDC の操作](https://vmc-field-team.github.io/labs-jp/working-with-sddc-lab-jp/){:target="_blank"} | VMware Cloud on AWS の基本的な操作を学びます
+[SDDC の操作](https://vmc-field-team.github.io/labs-jp/v2/working-with-sddc-lab/){:target="_blank"} | VMware Cloud on AWS の基本的な操作を学びます
 [VMware on AWS APIs](https://vmc-field-team.github.io/labs-jp/api-lab-jp/){:target="_blank"} | API を通じて VMware Cloud on AWS を操作する方法を学びます
 [AWS との連携](https://vmc-field-team.github.io/labs-jp/aws-integration-lab-jp/){:target="_blank"} | RDS や EFS といったネイティブの AWS サービスと連携させる方法を学びます
 [VMware Site Recovery Manager](https://vmc-field-team.github.io/labs-jp/srm-lab-jp/){:target="_blank"} | 災害対策のユースケースにおいて、どのように VMware Cloud on AWS を利用するのかを学びます
