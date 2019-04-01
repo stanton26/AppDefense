@@ -1440,17 +1440,17 @@ Now that we have created our dynamic group, let's create a firewall rule to bloc
 5. Click **Publish** to commit the changes.
 -->
 
-### Create a Firewall Rule Section
+### ファイアウォール ルール セクションの作成
 
 ![DFW-tag-015](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/dfw015.jpg)
 
 Now that we have created our dynamic group, let's create a firewall rule to block access between the web servers.
 
-1. Click **Distributed Firewall** on the left-hand side of the screen.
-2. Click **Application Rules**.
-3. Click **Add New Section** to create a new section for the rule. This functionality allows you to group rules logically to make operating the environment simpler.
-4. Under Name, enter **Web Tier**.
-5. Click **Publish** to commit the changes.
+1. 画面左の **分散ファイアウォール** をクリックします。
+2. **アプリケーション ルール** をクリックします。
+3. ルールのための新しいセクションを作成するため、**新しいセクション** をクリックします。この機能により、環境の運用を簡単にするために論理的にルールをグループ化することができます。
+4. 名前の下で **Web Tier** と入力します。
+5. 変更を反映するために **発行** をクリックします。
 
 <!--
 ### Add Firewall Rule
@@ -1466,17 +1466,17 @@ Now that we have the section created, we can now add a firewall rule.
 5. Under Sources click **Any**.
 -->
 
-### Add Firewall Rule
+### ファイアウォール ルールの追加
 
 ![DFW-tag-016](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/dfw016.jpg)
 
-Now that we have the section created, we can now add a firewall rule.
+セクションが作成されたので、ファイアウォール ルールを作成することができます。
 
-1. Click the **arrow** next to the Web Tier section.
-2. Click **Add New Rule** in the menu above the rules.
-3. Under Name, enter **Block Web To Web**.
-4. Under Action, click the **drop-down** and select **Drop**.
-5. Under Sources click **Any**.
+1. Web Tier セクションのとなりの **矢印** をクリックします。
+2. ルールの上のメニューから **新しいルールの追加** をクリックします。
+3. 名前の下に **Block Web To Web** と入力します。
+4. アクションの下で、**ドロップダウン** をクリックし、**ドロップ** を選択します。
+5. 送信元の下で、**Any** をクリックします。
 
 <!--
 ### Select Source
@@ -1487,12 +1487,12 @@ Now that we have the section created, we can now add a firewall rule.
 2. click **Save** to commit the changes to the rule.
 -->
 
-### Select Source
+### 送信元の選択
 
 ![DFW-tag-017](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/dfw017.jpg)
 
-1. Click the **checkbox** next to Web.
-2. click **Save** to commit the changes to the rule.
+1. Web のとなりの **チェックボックス** をクリックします。
+2. ルールの変更を反映するために **Save** をクリックします。
 
 <!--
 ### Add Destination
@@ -1502,11 +1502,11 @@ Now that we have the section created, we can now add a firewall rule.
 1. Under Destinations click **Any**.
 -->
 
-### Add Destination
+### 宛先の追加
 
 ![DFW-tag-018](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/dfw018.jpg)
 
-1. Under Destinations click **Any**.
+1. 宛先の下の **Any** をクリックします。
 
 <!--
 ### Select Destination
@@ -1517,12 +1517,12 @@ Now that we have the section created, we can now add a firewall rule.
 2. click **Save** to commit the changes to the rule.
 -->
 
-### Select Destination
+### 宛先の選択
 
 ![DFW-tag-019](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/dfw019.jpg)
 
-1. Click the **checkbox** next to Web.
-2. click **Save** to commit the changes to the rule.
+1. Web のとなりの **チェックボックス** をクリックします。
+2. ルールの変更を反映するために **Save** をクリックします。
 
 <!--
 ### Publish Firewall Rule
@@ -1532,11 +1532,11 @@ Now that we have the section created, we can now add a firewall rule.
 1. Click **Publish** to commit the rule and begin blocking traffic between the web servers.
 -->
 
-### Publish Firewall Rule
+### ファイアウォール ルールの発行
 
 ![DFW-tag-020](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/dfw020.jpg)
 
-1. Click **Publish** to commit the rule and begin blocking traffic between the web servers.
+1. ルールを反映するために **発行** をクリックします。このあと Web サーバー間のトラフィックはブロックされます。
 
 <!--
 ### Testing the Distributed Firewall Rule
@@ -1550,15 +1550,17 @@ You should still have the console session opened from the previous exercise to w
 The pings should have stopped responding meaning that the distributed firewall rules have been correctly applied. This simple demonstration should give you an idea of the power of the distributed firewall.
 -->
 
-### Testing the Distributed Firewall Rule
+### 分散ファイアウォール ルールのテスト
 
 ![DFW-tag-021](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/dfw021.jpg)
 
 You should still have the console session opened from the previous exercise to webserver01 and it should be running a ping command.
-1. Click the Chrome Tab for **webserver01**.
-2. Ping webserver02 IP address 10.10.xx.xxx.
+まだ webserver01 に対する前の演習でコンソールセッションが開いており、ping コマンドが実行されたままのはずです。
 
-The pings should have stopped responding meaning that the distributed firewall rules have been correctly applied. This simple demonstration should give you an idea of the power of the distributed firewall.
+1. **webserver01** の Chrome タブをクリックします。
+2. webserver02 の IP アドレス 10.10.xx.xxx へ ping します。
+
+ping の反応がなくなっているはずです。これは分散ファイアウォール ルールが正しき適用されていることを意味します。この簡単なデモンストレーションで分散ファイアウォールのメリットをご理解頂けたかと思います。
 
 <!--
 ## Conclusion
@@ -1566,9 +1568,9 @@ The pings should have stopped responding meaning that the distributed firewall r
 In this module, we explored the setup of configuration of a VMware Cloud on AWS SDDC including utilizing the content library, deploying virtual machines, modifying firewall rules and working with virtual machines.
 -->
 
-## Conclusion
+## まとめ
 
-In this module, we explored the setup of configuration of a VMware Cloud on AWS SDDC including utilizing the content library, deploying virtual machines, modifying firewall rules and working with virtual machines.
+このモジュールでは、コンテンツライブラリの利用、仮想マシンのデプロイ、ファイアウォールの修正と仮想マシンへの適用といった VMware Cloud on AWS の構成・設定を見てきました。
 
 <!--
 ## Single Host SDDC
@@ -1582,12 +1584,12 @@ You have completed this module.
 Please add comments below if you would like to give feedback on this exercise.
 -->
 
-## Single Host SDDC
+## シングル ホスト SDDC
 
-If you like the Lab and want to continue experiment and test the VMware Cloud on AWS capabilities, please scan the QR Code below to start your 1-Host experience.
+このラボを気に入って頂き、VMware Cloud on AWS の機能をテストされたい場合には、1 ホスト SDDC を開始するために以下の QR コードをスキャンして下さい。
 
 ![DFW-tag-022](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/dfw022.jpg)
 
-You have completed this module.
+これでこのラボは完了しました。
 
-Please add comments below if you would like to give feedback on this exercise.
+この演習にフィードバックを頂ける場合は、以下にコメントをご記入下さい。
