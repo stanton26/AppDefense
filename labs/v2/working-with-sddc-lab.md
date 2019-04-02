@@ -573,10 +573,10 @@ We will now begin tagging the virtual machines with security tags.
 
 ![DFW-tag-06](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/dfw06.jpg)
 
-1. Click on the **Networking & Securit**y tab to access the networking configuration.
+1. Click on the **Networking & Security** tab to access the networking configuration.
 2. On the left-hand side of the screen click on **Groups**.
 3. Under Groups, click on **Virtual Machines** to access the virtual machines that are part of the SDDC.
-4. Locate **webserver01** and click the three vertical dots and click Edit.
+4. Locate **webserver01** and click the three vertical dots and click **Edit**.
 
 ### Add Security Tag for Web
 

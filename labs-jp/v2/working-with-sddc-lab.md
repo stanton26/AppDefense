@@ -44,7 +44,7 @@ You will start with the Summary of the SDDC. There are a number of other tabs av
 5. Networking & Security: Provides a full diagram of the Management and Compute Gateways.  This is where you can configuration locgical networks, VPN's and firewall rules. We will cover this in more detail later. Click on Networking & Security to proceed to the next article to learn more about VMware Cloud on AWS Network and Security Configuration.
 -->
 
-## Viewing your SDDC
+## SDDC の表示
 
 ![SDDC-Network-01](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc01.jpg)
 
@@ -283,7 +283,6 @@ SDDC の vCenter Server に接続するための設定は、SDDC の設定タブ
 4. vCenter Server の URL を表示するために、**vSphere Client (HTML5)** のとなりにある **矢印** をクリックします。
 5. 別のタブで vSphere Client を開くために **URL** リンクをクリックします。
 
-**NOTE: If you experience any login issues below, you can click the two boxes next to the URL below to paste the URL into an incognito window. This should not be needed normally.**
 **注意: もし以下の手順でなんらかのログインの問題がある場合には、URL のとなりにある 2 つに重なった四角をクリックし URL をコピーし、シークレット ウィンドウに URL をペーストします。これは通常必要ないはずです。**
 
 <!--
@@ -877,7 +876,7 @@ Before we can clone the web server, we will first need to power the VM on so the
 
 ![SDDC-clone-vm-038](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc038.jpg)
 
-Before we can clone the web server, we will first need to power the VM on so the cutomization specification can execute:
+Web サーバーをクローンする前に、カスタマイズ仕様が実行されるように、まず最初に仮想マシンを起動します。
 
 1. サブフォルダーを表示するために **SDDC-Datacenter** のとなりの **矢印** をクリックします。
 2. **webserver01** を表示するために Workloads のとなりの **矢印** をクリックします。
@@ -981,7 +980,7 @@ We will now set the options for cloning.  We will need to customize the operatin
 
 ![SDDC-clone-vm-043](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc043.jpg)
 
-We will now set the options for cloning.  We will need to customize the operating system to change the server name and als power on the virtual machine after cloning is complete.
+ここではクローン作成時のオプションを設定します。サーバー名の変更といったオペレーティング システムのカスタマイズや、クローン作成完了時に仮想マシンをパワーオンするには必要となります。
 
 1. **オペレーティング システムのカスタマイズ** のとなりのチェックボックスをクリックします。
 2. **作成後に仮想マシンをパワーオン** のとなりのチェックボックスをクリックします。
@@ -1088,16 +1087,16 @@ Before we can test connectivity between the two servers, we need to find the IP 
 4. Click the **Chrome Tab** of the console session for webserver01 to bring it back into focus.
 -->
 
-### Find the IP Address for Webserver02
+### Webserver02 の IP アドレスの確認
 
 ![SDDC-test-vm-047](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc047.jpg)
 
-Before we can test connectivity between the two servers, we need to find the IP address of webserver02.
+2 つのサーバー間の接続性をテストする前に、webserver02 の IP アドレスを確認する必要があります。
 
-1. Click the **Chrome Tab** of the vSphere Web Client to bring it back into focus.
-2. Click on the virtual machine **webserver02**.
-3. Take note of the **IP Address** for webserver02 in the middle of the screen. This will be needed in the next step.
-4. Click the **Chrome Tab** of the console session for webserver01 to bring it back into focus.
+1. フォーカスを戻すために、vSphere Client (HTML5) の **Chrome Tab** をクリックします。
+2. 仮想マシン **webserver02** をクリックします。
+3. 画面中程の webserver02 の **IP アドレス** をメモします。これは以降の項目で必要となります。
+4. フォーカスを戻すために、webserver01 のコンソール セッションの **Chrome Tab** をクリックします。
 
 <!--
 ### Login and Ping Webserver02
@@ -1118,22 +1117,22 @@ Before beginning click anywhere inside the console window to bring it into focus
 Congratulations! You have now deployed two web servers in VMware Cloud on AWS SDDC and verified they can communicate with each other. In the next lesson we will create firewall rules to block the servers from communicating with each other and also make webserver02 accessible from the internet.
 -->
 
-### Login and Ping Webserver02
+### ログインと webserver02 への ping
 
 ![SDDC-test-vm-048](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc048.jpg)
 
-Now that we have to IP address for Webserver02 let's setup a continuous ping to the server to verify communication.
+webserver02 の IP アドレスが確認できましたので、接続性を確認するために ping を実行しましょう。
 
-Before beginning click anywhere inside the console window to bring it into focus
+作業を始める前に、フォーカスをコンソール ウィンドウに合わせるためコンソール ウィンドウのどこかをクリックします。
 
-1. At the login prompt enter **root** and press Enter.
-2. At the password prompt enter **VMware1!** and press Enter.
-3. At the console prompt, enter **ping 10.10.xx.xxx** and press Enter.  The third octet is based on student number and the last octet of the IP address in most cases it will be 101, but verify this in your configuration.
-4. Verify the pings are successful.
+1. ログイン プロンプトで **root** と入力し、Enter を押下します。
+2. パスワード プロンプトで **VMware1!** と入力し、Enter を押下します。
+3. コンソール プロンプトで、**ping 10.10.xx.xxx** と入力し Enter を押下します。3 番目のオクテットは受講者番号を、最後のオクテットは大体の場合 101 となります。異なる場合は構成を確認してください。
+4. ping が成功していることを確認してください。
 
-**NOTE: Please leave this ping and console Window open for the next lesson. We will revisit it to verify the web servers can no longer communicate.**
+**注意: 次のレッスンで利用するため、コンソール ウィンドウは開いたままとし、ping も実行し続けておいて下さい。web サーバーが通信できなくなることをこの後確認することになります。**
 
-Congratulations! You have now deployed two web servers in VMware Cloud on AWS SDDC and verified they can communicate with each other. In the next lesson we will create firewall rules to block the servers from communicating with each other and also make webserver02 accessible from the internet.
+おめでとうございます。これで VMware Cloud on AWS 上に 2 つの Web サーバーがデプロイされ、お互いが通信できることを確認できました。次のレッスンでは、サーバー間のお互いの通信をブロックするファイアウォール ルールを作成し、また webserver02 をインターネットからアクセスできるようにします。
 
 <!--
 ## Configuring VMware Cloud on AWS Advanced Network Services
@@ -1141,9 +1140,9 @@ Congratulations! You have now deployed two web servers in VMware Cloud on AWS SD
 VMware Cloud on AWS Advanced Network Services is now available for new SDDC deployments.
 -->
 
-## Configuring VMware Cloud on AWS Advanced Network Services
+## VMware Cloud on AWS アドバンスド ネットワーク サービスの構成
 
-VMware Cloud on AWS Advanced Network Services is now available for new SDDC deployments.
+新しくデプロイされた SDDC では、VMware Cloud on AWS アドバンスド ネットワーク サービスが利用できます。
 
 <!--
 ### Distributed Firewall in VMware Cloud on AWS Advanced Network Services
@@ -1156,14 +1155,13 @@ applied at the VM-level allowing for segmentation within the same L2 network or 
 All networking and security configuration is now done through the VMware Cloud on AWS console via the Networking & Security tab, including creating network segments. This provides ease of operations and management by having all networking and security access through the console.
 -->
 
-### Distributed Firewall in VMware Cloud on AWS Advanced Network Services
+### VMware Cloud on AWS アドバンスド ネットワーク サービスにおける分散ファイアウォール
 
 ![DFW-01](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/dfw01.jpg)
 
-Using VMware Cloud on AWS Advanced Network Services, users have the capability to implement micro-segmentation with Distributed Firewall. Granular security policies can be
-applied at the VM-level allowing for segmentation within the same L2 network or across separate L3 networks. This is shown in the diagram above.
+VMware Cloud on AWS のアドバンスド ネットワーク サービスを使うことで、分散ファイアウォールを使ってマイクロセグメンテーションを実装することができるようになります。粒度の細かいセキュリティ ポリシーを仮想マシンレベルに適用することができます。このポリシーでは、同じ L2 ネットワークや L3 を跨いだセグメンテーションを可能とします。これは上の図のとおりとなります。
 
-All networking and security configuration is now done through the VMware Cloud on AWS console via the Networking & Security tab, including creating network segments. This provides ease of operations and management by having all networking and security access through the console.
+全てのネットワークとセキュリティの構成は、VMware Cloud on AWS コンソールのネットワークとセキュリティ タブを通して行われます。ネットワークセグメントの作成もこの UI を通して行います。コンソールからネットワークとセキュリティの全てにアクセスできることで運用と管理の簡便さを提供しています。
 
 <!--
 ### Distributed Firewall
@@ -1173,11 +1171,11 @@ All networking and security configuration is now done through the VMware Cloud o
 From the above screenshot, you can see, in addition to the ability to create multiple sections, users can organize Distributed Firewall rules into groups (Emergency Rules, Infrastructure Rules, Environment Rules, and Application Rules. The rules are hit from the top-down.
 -->
 
-### Distributed Firewall
+### 分散ファイアウォール
 
 ![DFW-02](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/dfw02.jpg)
 
-From the above screenshot, you can see, in addition to the ability to create multiple sections, users can organize Distributed Firewall rules into groups (Emergency Rules, Infrastructure Rules, Environment Rules, and Application Rules. The rules are hit from the top-down.
+上のスクリーンショットで確認できるように、複数のセクションを作成できるだけでなく、ユーザーは分散ファイアウォール ルールをグループ（緊急時ルール、インフラストラクチャ ルール、環境ルール、アプリケーションルール）に整理することができます。ルールは上から下に適用されます。
 
 <!--
 ### Security Groups
@@ -1194,18 +1192,18 @@ In addition to the new Distributed Firewall capabilities, grouping objects can n
 As shown above, Security Groups can be created under Workload Groups or Management Groups. Workload Groups can be used in DFW and CGW firewall policies and Management Groups can be used under MGW firewall policies. Management Groups only support IP addresses as these groups are infrastructure based. Predefined Management Groups groups already exist for vCenter, ESXi hosts, and NSX Manager. Users can also create groups here based on IP address for on-prem ESXi hosts, vCenter, and other management appliances.
 -->
 
-### Security Groups
+### セキュリティ グループ
 
 ![DFW-03](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/dfw03.jpg)
 
-In addition to the new Distributed Firewall capabilities, grouping objects can now be leveraged within security policies. Security groups support the following grouping criteria/constructs:
+分散ファイアウォール機能に加えて、セキュリティ ポリシーでオブジェクトをグループ化する機能を利用できます。セキュリティグループは、以下のグルーピングをサポートしています。
 
-* IP Address
-* VM Instance
-* Matching criteria of VM Name
-* Matching Criteria of Security Tag
+* IP アドレス
+* VM インスタンス
+* 仮想マシン名とのマッチング基準
+* セキュリティ タグとのマッチング基準
 
-As shown above, Security Groups can be created under Workload Groups or Management Groups. Workload Groups can be used in DFW and CGW firewall policies and Management Groups can be used under MGW firewall policies. Management Groups only support IP addresses as these groups are infrastructure based. Predefined Management Groups groups already exist for vCenter, ESXi hosts, and NSX Manager. Users can also create groups here based on IP address for on-prem ESXi hosts, vCenter, and other management appliances.
+上にあるように、セキュリティ グループはワークロード グループと管理グループの配下に作成されます。ワークロー同ループは、分散ファイアウォールと CGW のファイアウォール ポリシーに使われ、管理グループは MGW ファイアウォール ポリシーに使われます。仮グループはインフラベースとなるため、管理グループは IP アドレスのみをサポートします。定義済みの管理グループのグループとして、vCenter、ESXi ホスト、NSX Manager があります。ユーザーは、オンプレミスの ESXi ホスト、vCenter、その他の管理アプライアンスのために IP アドレスベースのグループを個々に追加することができます。
 
 <!--
 ### View VM's in a Security Group
@@ -1215,11 +1213,11 @@ As shown above, Security Groups can be created under Workload Groups or Manageme
 Here you can see we have deployed some VMs in vCenter and you can see the VMs in inventory within the console. Additionally, we have tagged the VMs with Web, App, and DB Security Tags respectively.
 -->
 
-### View VM's in a Security Group
+### セキュリティ グループでの仮想マシンの確認
 
 ![DFW-04](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/dfw04.jpg)
 
-Here you can see we have deployed some VMs in vCenter and you can see the VMs in inventory within the console. Additionally, we have tagged the VMs with Web, App, and DB Security Tags respectively.
+vCenter でデプロイした仮想マシンを確認することもできますが、コンソールのインベントリでも仮想マシンを確認することができます。加えて、各々 Web、App、DB といったセキュリティタグが仮想マシンにタグ付けされています。
 
 <!--
 ### Tagging Virtual Machines
@@ -1234,16 +1232,16 @@ We will now switch back to the VMware Cloud on AWS console.
 2. Click on **View Details** to access the details for the SDDC.
 -->
 
-## Tagging Virtual Machines
+## 仮想マシンのタグ付け
 
 ![DFW-tag-05](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/dfw05.jpg)
 
-Through the VMware Cloud on AWS console we can apply security tags to virtual machines and then group them.
+VMware Cloud on AWS コンソールにて、仮想マシンにセキュリティ タグを適用し、そしてこれをグルーピングに用います。
 
-We will now switch back to the VMware Cloud on AWS console.
+VMware Cloud on AWS のコンソールに戻りましょう。
 
-1. Click on the **VMware Cloud on AWS Chrome tab** and login with the information you were provided if your session has expired.
-2. Click on **View Details** to access the details for the SDDC.
+1. **VMware Cloud on AWS タブ** をクリックします。もしセッションが期限切れとなっている場合には、ログインし直してください。
+2. SDDC の詳細にアクセスするため **詳細** をクリックします。
 
 <!--
 ### Edit Tags for Webserver01
@@ -1258,16 +1256,16 @@ We will now begin tagging the virtual machines with security tags.
 4. Locate **webserver01** and click the three vertical dots and click Edit.
 -->
 
-### Edit Tags for Webserver01
+### Webserver01 のタグ編集
 
-We will now begin tagging the virtual machines with security tags.
+ここでは仮想マシンにセキュリティ タグをタグ付けします。
 
 ![DFW-tag-06](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/dfw06.jpg)
 
-1. Click on the **Networking & Securit**y tab to access the networking configuration.
-2. On the left-hand side of the screen click on **Groups**.
-3. Under Groups, click on **Virtual Machines** to access the virtual machines that are part of the SDDC.
-4. Locate **webserver01** and click the three vertical dots and click Edit.
+1. ネットワーク構成を変更するために **ネットワークとセキュリティ** タブをクリックします。
+2. 画面左の **グループ** をクリックします。
+3. グループの下部、SDDC の一部の仮想マシンにアクセスするために **仮想マシン** をクリックします。
+4. **webserver01** の横にある縦に並んでいる 3 つの点をクリックし、続いて編集をクリックします。
 
 <!--
 ### Add Security Tag for Web
@@ -1278,12 +1276,12 @@ We will now begin tagging the virtual machines with security tags.
 2. Click **Save** to commit the changes.
 -->
 
-### Add Security Tag for Web
+### Web サーバーのセキュリティ タグの追加
 
 ![DFW-tag-07](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/dfw07.jpg)
 
-1. Under Tags, enter **Web** for webserver01.
-2. Click **Save** to commit the changes.
+1. タグの下に webserver01 のためのタグ **Web** を入力します。
+2. 変更を反映するために **Save** をクリックします。
 
 <!--
 ### Edit Tags for Webserver02
@@ -1295,13 +1293,13 @@ We will now tag Webserver02 with the same Web tag. We will use this to create a 
 1. Locate **webserver02** and click the three vertical dots and click **Edit**.
 -->
 
-### Edit Tags for Webserver02
+### Webserver02 のタグ編集
 
 ![DFW-tag-08](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/dfw08.jpg)
 
-We will now tag Webserver02 with the same Web tag. We will use this to create a group for both web servers.
+次に Webserver02 に同じ Web タグをタグ付けします。このタグにより両方の Web Server のためのグループを作成します。
 
-1. Locate **webserver02** and click the three vertical dots and click **Edit**.
+1. **webserver02** の横にある縦に並んでいる 3 つの点をクリックし、**編集** をクリックします。
 
 <!--
 ### Add Security Tag for Webserver02
@@ -1312,12 +1310,12 @@ We will now tag Webserver02 with the same Web tag. We will use this to create a 
 2. Click **Save** to commit the changes.
 -->
 
-### Add Security Tag for Webserver02
+### Webserver02 のセキュリティ タグの追加
 
 ![DFW-tag-09](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/dfw09.jpg)
 
-1. Under Tags, Enter **Web** for webserver02.
-2. Click **Save** to commit the changes.
+1. タグの下に webserver02 のためのタグ **Web** を入力します。
+2. 変更を反映するために **Save** をクリックします。
 
 <!--
 ### Creating a Dynamic Group
@@ -1335,19 +1333,19 @@ We will now create a group of web servers based on the dynamic security tag we a
 5. Under Members click **Set Membership Criteria**.
 -->
 
-### Creating a Dynamic Group
+### 動的グループの作成
 
 ![DFW-tag-010](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/dfw010.jpg)
 
-Groups can be used in VMware Cloud on AWS Advanced Network Services to group virtual machines and simplify rulebase configuration. In this exercise we will group the two webservers into a group and then create a firewall rule to block communication between them. In a properly architected traditional application there is usually no need for servers in the web tier to communicate.
+VMware Cloud on AWS のアドバンスド ネットワーク サービスにおいて、グループは、仮想マシンをグループ化し、ルールの構成を単純化するために利用されます。この演習では、2 つの Web サーバーを一つのグループにし、これらの間の通信をブロックするファイアウォール ルールを作成します。適切に設計された従来型のアプリケーションでは、Web 層のサーバー同士は通信する必要がありません。
 
-We will now create a group of web servers based on the dynamic security tag we applied earlier.
+ここでは、前の項目で作成した動的なセキュリティ タグを基にして Web サーバーのグループを作成します。
 
-1. Click on **Workload Groups**.
-2. Click on **Add Group**.
-3. Under Name enter **Web** for the name of the group.
-4. Under Member Type, click the **drop down** and select **Membership Criteria**.
-5. Under Members click **Set Membership Criteria**.
+1. **ワークロード グループ** をクリックします。
+2. **グループの追加** をクリックします。
+3. 名前の下に、グループの名前となる **Web** を入力します。
+4. メンバーのタイプの下の **ドロップダウン** をクリックし **Membership Criteria** を選択します。
+5. メンバーの下の **メンバーシップ基準の設定** をクリックします。
 
 <!--
 ### Add Membership Criteria
@@ -1362,16 +1360,16 @@ We will now add the criteria to group machines based on security tag.
 4. Click **Save** to continue.
 -->
 
-### Add Membership Criteria
+### メンバーシップ基準の追加
 
 ![DFW-tag-011](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/dfw011.jpg)
 
-We will now add the criteria to group machines based on security tag.
+ここではセキュリティ タグを基にして、仮想マシンをグループ化する基準を追加します。
 
-1. Click on **+ Add Criteria**.
-2. Under Property, click the **drop-down** and select **Tag**.
-3. Under Value, enter **Web**.
-4. Click **Save** to continue.
+1. **+ Add Criteria** をクリックします。
+2. Property の下の **ドロップダウン** をクリックし、**タグ** を選択します。
+3. Value の下で **Web** を選択します。
+4. 次に進むために **Save** をクリックします。
 
 <!--
 ### Save Workload Group Changes
@@ -1381,11 +1379,11 @@ We will now add the criteria to group machines based on security tag.
 1. Click **Save** to commit the changes.
 -->
 
-### Save Workload Group Changes
+### ワークロード グループの変更の保存
 
 ![DFW-tag-012](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/dfw012.jpg)
 
-1. Click **Save** to commit the changes.
+1. 変更を反映するために **保存** をクリックします。
 
 <!--
 ### View Members
@@ -1398,14 +1396,14 @@ We can now validate the group membership is working as expected.
 2. Click on **View Members** to show the current members of the dynamic group.
 -->
 
-### View Members
+### メンバーの表示
 
 ![DFW-tag-013](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/dfw013.jpg)
 
-We can now validate the group membership is working as expected.
+ここでは、グループ メンバーシップが期待通りに機能しているかどうかを確認します。
 
-1. Click the **three vertical** dots next to the Web group.
-2. Click on **View Members** to show the current members of the dynamic group.
+1. Web グループ横の **縦に 3 つ並んだ点** をクリックします。
+2. 動的グループの現在のメンバーを表示するために **メンバーの表示** をクリックします。
 
 <!--
 ### Validate Group Members
@@ -1418,14 +1416,14 @@ We can now validate the group membership is working as expected.
 Now that this group is created, you can easily add new members by simply applying a security tag.
 -->
 
-### Validate Group Members
+### グループ メンバーの確認
 
 ![DFW-tag-014](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/dfw014.jpg)
 
-1. Validate that both **webserver01** and **webserver02** appear in the group membership. If they do not, go back and verify there are no typos.
-2. Click **Close**.
+1. グループ メンバーシップに **webserver01** と **webserver02** の両方が含まれていることを確認します。含まれていなかった場合、前の手順に戻り打ち間違えがないかどうかを確認します。
+2. **Close** をクリックします。
 
-Now that this group is created, you can easily add new members by simply applying a security tag.
+これでグループが作成されました。セキュリティ シンプルにタグを適用することで、簡単に新しいメンバーを追加することができます。
 
 <!--
 ### Create a Firewall Rule Section
@@ -1441,17 +1439,17 @@ Now that we have created our dynamic group, let's create a firewall rule to bloc
 5. Click **Publish** to commit the changes.
 -->
 
-### Create a Firewall Rule Section
+### ファイアウォール ルール セクションの作成
 
 ![DFW-tag-015](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/dfw015.jpg)
 
-Now that we have created our dynamic group, let's create a firewall rule to block access between the web servers.
+動的グループが作成されましたので、Web サーバー間のアクセスをブロックするファイアウォール ルールを作成しましょう。
 
-1. Click **Distributed Firewall** on the left-hand side of the screen.
-2. Click **Application Rules**.
-3. Click **Add New Section** to create a new section for the rule. This functionality allows you to group rules logically to make operating the environment simpler.
-4. Under Name, enter **Web Tier**.
-5. Click **Publish** to commit the changes.
+1. 画面左の **分散ファイアウォール** をクリックします。
+2. **アプリケーション ルール** をクリックします。
+3. ルールのための新しいセクションを作成するため、**新しいセクション** をクリックします。この機能により、環境の運用を簡単にするために論理的にルールをグループ化することができます。
+4. 名前の下で **Web Tier** と入力します。
+5. 変更を反映するために **発行** をクリックします。
 
 <!--
 ### Add Firewall Rule
@@ -1467,17 +1465,17 @@ Now that we have the section created, we can now add a firewall rule.
 5. Under Sources click **Any**.
 -->
 
-### Add Firewall Rule
+### ファイアウォール ルールの追加
 
 ![DFW-tag-016](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/dfw016.jpg)
 
-Now that we have the section created, we can now add a firewall rule.
+セクションが作成されたので、ファイアウォール ルールを作成することができます。
 
-1. Click the **arrow** next to the Web Tier section.
-2. Click **Add New Rule** in the menu above the rules.
-3. Under Name, enter **Block Web To Web**.
-4. Under Action, click the **drop-down** and select **Drop**.
-5. Under Sources click **Any**.
+1. Web Tier セクションのとなりの **矢印** をクリックします。
+2. ルールの上のメニューから **新しいルールの追加** をクリックします。
+3. 名前の下に **Block Web To Web** と入力します。
+4. アクションの下で、**ドロップダウン** をクリックし、**ドロップ** を選択します。
+5. 送信元の下で、**Any** をクリックします。
 
 <!--
 ### Select Source
@@ -1488,12 +1486,12 @@ Now that we have the section created, we can now add a firewall rule.
 2. click **Save** to commit the changes to the rule.
 -->
 
-### Select Source
+### 送信元の選択
 
 ![DFW-tag-017](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/dfw017.jpg)
 
-1. Click the **checkbox** next to Web.
-2. click **Save** to commit the changes to the rule.
+1. Web のとなりの **チェックボックス** をクリックします。
+2. ルールの変更を反映するために **Save** をクリックします。
 
 <!--
 ### Add Destination
@@ -1503,11 +1501,11 @@ Now that we have the section created, we can now add a firewall rule.
 1. Under Destinations click **Any**.
 -->
 
-### Add Destination
+### 宛先の追加
 
 ![DFW-tag-018](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/dfw018.jpg)
 
-1. Under Destinations click **Any**.
+1. 宛先の下の **Any** をクリックします。
 
 <!--
 ### Select Destination
@@ -1518,12 +1516,12 @@ Now that we have the section created, we can now add a firewall rule.
 2. click **Save** to commit the changes to the rule.
 -->
 
-### Select Destination
+### 宛先の選択
 
 ![DFW-tag-019](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/dfw019.jpg)
 
-1. Click the **checkbox** next to Web.
-2. click **Save** to commit the changes to the rule.
+1. Web のとなりの **チェックボックス** をクリックします。
+2. ルールの変更を反映するために **Save** をクリックします。
 
 <!--
 ### Publish Firewall Rule
@@ -1533,11 +1531,11 @@ Now that we have the section created, we can now add a firewall rule.
 1. Click **Publish** to commit the rule and begin blocking traffic between the web servers.
 -->
 
-### Publish Firewall Rule
+### ファイアウォール ルールの発行
 
 ![DFW-tag-020](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/dfw020.jpg)
 
-1. Click **Publish** to commit the rule and begin blocking traffic between the web servers.
+1. ルールを反映するために **発行** をクリックします。このあと Web サーバー間のトラフィックはブロックされます。
 
 <!--
 ### Testing the Distributed Firewall Rule
@@ -1551,15 +1549,16 @@ You should still have the console session opened from the previous exercise to w
 The pings should have stopped responding meaning that the distributed firewall rules have been correctly applied. This simple demonstration should give you an idea of the power of the distributed firewall.
 -->
 
-### Testing the Distributed Firewall Rule
+### 分散ファイアウォール ルールのテスト
 
 ![DFW-tag-021](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/dfw021.jpg)
 
-You should still have the console session opened from the previous exercise to webserver01 and it should be running a ping command.
-1. Click the Chrome Tab for **webserver01**.
-2. Ping webserver02 IP address 10.10.xx.xxx.
+まだ webserver01 に対する前の演習でコンソールセッションが開いており、ping コマンドが実行されたままのはずです。
 
-The pings should have stopped responding meaning that the distributed firewall rules have been correctly applied. This simple demonstration should give you an idea of the power of the distributed firewall.
+1. **webserver01** の Chrome タブをクリックします。
+2. webserver02 の IP アドレス 10.10.xx.xxx へ ping します。
+
+ping の反応がなくなっているはずです。これは分散ファイアウォール ルールが正しき適用されていることを意味します。この簡単なデモンストレーションで分散ファイアウォールのメリットをご理解頂けたかと思います。
 
 <!--
 ## Conclusion
@@ -1567,9 +1566,9 @@ The pings should have stopped responding meaning that the distributed firewall r
 In this module, we explored the setup of configuration of a VMware Cloud on AWS SDDC including utilizing the content library, deploying virtual machines, modifying firewall rules and working with virtual machines.
 -->
 
-## Conclusion
+## まとめ
 
-In this module, we explored the setup of configuration of a VMware Cloud on AWS SDDC including utilizing the content library, deploying virtual machines, modifying firewall rules and working with virtual machines.
+このモジュールでは、コンテンツライブラリの利用、仮想マシンのデプロイ、ファイアウォールの修正と仮想マシンへの適用といった VMware Cloud on AWS の構成・設定を見てきました。
 
 <!--
 ## Single Host SDDC
@@ -1583,12 +1582,12 @@ You have completed this module.
 Please add comments below if you would like to give feedback on this exercise.
 -->
 
-## Single Host SDDC
+## シングル ホスト SDDC
 
-If you like the Lab and want to continue experiment and test the VMware Cloud on AWS capabilities, please scan the QR Code below to start your 1-Host experience.
+このラボを気に入って頂き、VMware Cloud on AWS の機能をテストされたい場合には、1 ホスト SDDC を開始するために以下の QR コードをスキャンして下さい。
 
 ![DFW-tag-022](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/dfw022.jpg)
 
-You have completed this module.
+これでこのラボは完了しました。
 
-Please add comments below if you would like to give feedback on this exercise.
+この演習にフィードバックを頂ける場合は、以下にコメントをご記入下さい。
