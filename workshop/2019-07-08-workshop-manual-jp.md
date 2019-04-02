@@ -2,7 +2,7 @@
 layout: single
 title: "VMware Cloud on AWS ワークショップ"
 permalink: /workshop-manual-jp/
-date: 2018-08-29
+date: 2019-04-02
 tags: workshop
 classes: wide
 author_profile: false
