@@ -15,9 +15,13 @@ In this lab we are going to start with looking at the basic tasks which you will
 
 ## Viewing your SDDC
 
-![SDDC-Network-01](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc01.jpg)
+![SDDC-Network-01](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc-login.jpg)
 
-After you login using your ced##@vmware-hol.com account assigned, you should see a single SDDC in the user interface following the naming format Student-Workshop-#.#. An SDDC is a fully deployed environment including vSphere, NSX, vSAN and vCenter Server. Deployment of a fully configured SDDC takes about two hours so for the purposes of this lab, we have already deployed it for you. This SDDC is in the same state it would be if you have deployed it. Let's take a look at the SDDC properties.
+Access VMware Cloud on AWS console using https://vmc.vmware.com and use your assigned login credentials ced##@vmware-hol.com.
+
+After you login, you should see a single SDDC in the user interface following the naming format Student-Workshop-#.#. An SDDC is a fully deployed environment including vSphere, NSX, vSAN and vCenter Server. Deployment of a fully configured SDDC takes about two hours so for the purposes of this lab, we have already deployed it for you. This SDDC is in the same state it would be if you have deployed it. Let's take a look at the SDDC properties.
+
+![SDDC-Network-01](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc01.jpg)
 
 1. First click on View Details to open the SDDC properties.
 
