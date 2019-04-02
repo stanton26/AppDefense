@@ -876,7 +876,7 @@ Before we can clone the web server, we will first need to power the VM on so the
 
 ![SDDC-clone-vm-038](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc038.jpg)
 
-Before we can clone the web server, we will first need to power the VM on so the cutomization specification can execute:
+Web サーバーをクローンする前に、カスタマイズ仕様が実行されるように、まず最初に仮想マシンを起動します。
 
 1. サブフォルダーを表示するために **SDDC-Datacenter** のとなりの **矢印** をクリックします。
 2. **webserver01** を表示するために Workloads のとなりの **矢印** をクリックします。
@@ -1217,7 +1217,6 @@ Here you can see we have deployed some VMs in vCenter and you can see the VMs in
 
 ![DFW-04](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/dfw04.jpg)
 
-Here you can see we have deployed some VMs in vCenter and you can see the VMs in inventory within the console. Additionally, we have tagged the VMs with Web, App, and DB Security Tags respectively.
 vCenter でデプロイした仮想マシンを確認することもできますが、コンソールのインベントリでも仮想マシンを確認することができます。加えて、各々 Web、App、DB といったセキュリティタグが仮想マシンにタグ付けされています。
 
 <!--
@@ -1444,7 +1443,7 @@ Now that we have created our dynamic group, let's create a firewall rule to bloc
 
 ![DFW-tag-015](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/dfw015.jpg)
 
-Now that we have created our dynamic group, let's create a firewall rule to block access between the web servers.
+動的グループが作成されましたので、Web サーバー間のアクセスをブロックするファイアウォール ルールを作成しましょう。
 
 1. 画面左の **分散ファイアウォール** をクリックします。
 2. **アプリケーション ルール** をクリックします。
@@ -1554,7 +1553,6 @@ The pings should have stopped responding meaning that the distributed firewall r
 
 ![DFW-tag-021](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/dfw021.jpg)
 
-You should still have the console session opened from the previous exercise to webserver01 and it should be running a ping command.
 まだ webserver01 に対する前の演習でコンソールセッションが開いており、ping コマンドが実行されたままのはずです。
 
 1. **webserver01** の Chrome タブをクリックします。
