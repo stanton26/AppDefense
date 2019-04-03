@@ -29,7 +29,7 @@ After you login, you should see a two single-node SDDC's in the user interface f
 ![SDDC-Network-02](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc02.jpg)
 
 You will start with the Summary of the SDDC. There are a number of other tabs available as follows:
-1. **Support** - You can contact Support with your SDDC ID, Org ID, vCenter Private and Public IPs and the date of your SDDC Deployment.
+1. **Support**: You can contact Support with your SDDC ID, Org ID, vCenter Private and Public IPs and the date of your SDDC Deployment.
 2. **Settings**: Gives you access to your vSphere Client (HTML5), vCenter Server API, PowerCLI Connect, vCenter Server and reviews your Authentication information.
 3. **Troubleshooting**: Allows you to run network connectivity tests to ensure all necessary access is available to perform select use cases.
 4. **Add Ons**: Here you will find Add On services for your VMware Cloud on AWS environment like Hybrid Cloud Extension and VMware Site Recovery.
