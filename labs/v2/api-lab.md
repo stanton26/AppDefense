@@ -83,17 +83,23 @@ If you are not already logged in
 5. Click on the drop down next to your **Name/Org ID**
 6. Click on **My Account**
 
-    ![APIs10](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs10.jpg)
+    ![APIs10](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs010.jpg)
 
     We will now create a new Refresh Token for the ID linked to this Org
-7. Click on *API Tokens* tab
-8. Click **NEW TOKEN**
+1. Click on **API Tokens** tab.
+2. Click **Generate a New API Token**
 
-    ![APIs11](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs11.jpg)
-9. Click on *Create a new token*
+    ![APIs011](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs011.jpg)
 
-    ![APIs12](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs12.jpg)
-10. Click on *Copy to Clipboard*
+1. Give the token a name.
+2. Select checkbox by **Organization Owner.**
+3. Select checkbox by **VMware Cloud on AWS.**
+4. Click **Generate** button.
+
+    ![APIs012](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs012.jpg)
+5.  Click on **Copy** button to save refresh token to clipboard.
+
+***Note:*** Make sure to save this refresh token in a safe place to be used in the next section when using API's in Postman.
 
 Now let's attach to the VMC server, input the command below and append the refresh token after the -refreshtoken parameter
 
@@ -267,53 +273,57 @@ Postman is very easy to install, so let's get started.
 21. Click on the drop down next to your *Name/Org ID*
 22. Click on *My Account*
 
-    ![Postman13](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/Postman13.jpg)
-23. Click on *API Tokens* tab
-24. Click *NEW TOKEN*
 
-    ![Postman14](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/Postman14.jpg)
+    We will now create a new Refresh Token for the ID linked to this Org.
 
-    Now we create a refresh token for your ID tied to this Org
-25. Click on *Continue*
+    ***NOTE***: If you have already generated a token, use the same token that was generated.  You can also regenerate a new token if needed.
 
-    ![Postman15](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/Postman15.jpg)
+    ![Postman13](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs010.jpg)
+23. Click on **API Tokens** tab.
+24. Click **Generate a New API Token**
 
-26. Click on *Copy to Clipboard*
+    ![APIs011](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs011.jpg)
 
-    *NOTE*: If you have not generated a token yet, click on Generate and then copy to clipboard.
+25. Give the token a name.
+26. Select checkbox by **Organization Owner.**
+27. Select checkbox by **VMware Cloud on AWS.**
+28. Click **Generate** button.
+
+    ![APIs012](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs012.jpg)
+29. Click on **Copy** button to save refresh token to clipboard.
 
     ![Postman16](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/Postman16.jpg)
 
     Return to the Postman app. We now need to setup a Postman environment for use with VMC. An environment is where we will be creating and storing our variables. These variables can be local or global, depending on your use within Postman. In this module, we will only be using local variables.
 
-27. Click on *New*
-28. Click on *Environment*
+30. Click on *New*
+31. Click on *Environment*
 
     ![Postman17](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/Postman17.jpg)
-29. Name the environment **VMC**
-30. In the Key column type in **refresh_token**
-31. In the Value column use CTRL-V to paste your actual refresh token you copied in a previous step.
-32. Click on *Add*
-33. Close the window
+32. Name the environment **VMC**
+33. In the Key column type in **refresh_token**
+34. In the Value column use CTRL-V to paste your actual refresh token you copied in a previous step.
+35. Click on *Add*
+36. Close the window
 
     ![Postman18](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/Postman18.jpg)
 
     Now set this as our default environment.
 
     *NOTE*: If you don't set the default environment to *VMC*, then the variables that get created will not be accessible.
-34. Click on the drop down arrow
-35. Select *VMC*
+37. Click on the drop down arrow
+38. Select *VMC*
 
     ![Postman19](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/Postman19.jpg)
 
     Now we will start to build our own collection by using some request that came in the SDK we imported earlier.
-36. Click on *Collections*
-37. Click on - *Authentication and Login*
-38. See how this request is our refresh token variable we defined in an earlier step.
+39. Click on *Collections*
+40. Click on - *Authentication and Login*
+41. See how this request is our refresh token variable we defined in an earlier step.
 
     *NOTE*: If the environment is not set to VMC, this will request will fail because the refresh_token variable is not defined.
-39. Click on *Send*
-40. You will now see the access token that was generated with the refresh token. This is the
+42. Click on *Send*
+43. You will now see the access token that was generated with the refresh token. This is the
 body or payload of the response to our request.
 
     ![Postman20](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/Postman20.jpg)
