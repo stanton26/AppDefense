@@ -71,7 +71,7 @@ From your Horizon desktop (workshop.vmc.ninja) open google and access the on-pre
 ![HCX01](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/hcx01.jpg)
 
 1. Open Google and enter https://vcenter-workshop.workshop.set.local/ui for the URL.
-2. Type in your student (vmcws#@set.local) credentials.
+2. Type in your student (student#@set.local) credentials.
 3. Type in your password assigned to you.
 4. Click **Login** to continue.
 
