@@ -162,47 +162,49 @@ If you are not already logged in, log into your VMware Cloud on AWS organisation
     ![DeveloperCenter4](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/DeveloperCenter4.jpg)
     After the script downloads
 4. Click on the dropdown arrow
-5. Click on *Show in Folder*
-
-    ![DeveloperCenter5](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/DeveloperCenter5.jpg)
-6. Right click on the downloaded script
-7. Click on edit
+5. Click on **Show in Folder**
+6. Unzip the **PowerCLI-Example-Scripts-master.zip** file
+7. Open the **PowerCLI-Example-Scripts-master** folder
+8. Open **Scripts** folder
+9. Open **VMware_Cloud_on_AWS** folder
+10. Right click on the **VMC Example Script.ps1** script
+11. Click on edit
 
     This will open the PowerShell ISE environment. Now you can see the PowerShell commands you used in the previous module as well as other commands you can use with your SDDC. Close the PowerShell ISE windows
 
     ![DeveloperCenter6](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/DeveloperCenter6.jpg)
 
     Let's now run some simple REST API commands built into Developer Center, go back to your browser
-8. Click on the API Explorer menu
-9. Make sure you select your SDDC
-10. Click on the drop down arrow next to Organization
-11. Click on the drop down arrow next to the first "GET" API
-12. Click on *Execute*
+12. Click on the API Explorer menu
+13. Make sure you select your SDDC
+14. Click on the drop down arrow next to Organization
+15. Click on the drop down arrow next to the first "GET" API
+16. Click on *Execute*
 
     ![DeveloperCenter7](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/DeveloperCenter7.jpg)
 
     What did we not do?? We did not put in any authentication to pull this data. The reason is we are using the session authentication to execute these commands. To run these commands in other application, like PowerShell or Postman, you will need to get your resource and session tokens before you can run these commands.
 
     Let's look through the response.
-13. Here you see the Organization's alphanumeric name. Which you can also find in *\#3*
-14. The organization *ID*. *NOTE*: Copy the ID number, without the quotes, for possible use in the next step.
-15. The organization *Display_Name*
-16. The organization Version
+17. Here you see the Organization's alphanumeric name. Which you can also find in *\#3*
+18. The organization *ID*. *NOTE*: Copy the ID number, without the quotes, for possible use in the next step.
+19. The organization *Display_Name*
+20. The organization Version
 
     ![DeveloperCenter8](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/DeveloperCenter8.jpg)
 
     In this step, we will GET some information about our organization
-17. Click on the drop down arrow by SDDCs
-18. Click on **GET**
-19. The Org ID should already be filled in for you, another great feature the developers built in based on customer feedback. *NOTE*: If this Org ID did not automatically fill in, paste it in.
-20. Click on **Execute**
+21. Click on the drop down arrow by SDDCs
+22. Click on **GET**
+23. The Org ID should already be filled in for you, another great feature the developers built in based on customer feedback. *NOTE*: If this Org ID did not automatically fill in, paste it in.
+24. Click on **Execute**
 
     ![DeveloperCenter9](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/DeveloperCenter9.jpg)
 
     Now let's look at the response body
-21. The creation date of the SDDC
-22. The SDDC ID
-23. the SDDC state
+25. The creation date of the SDDC
+26. The SDDC ID
+27. the SDDC state
 
 ## Postman
 
