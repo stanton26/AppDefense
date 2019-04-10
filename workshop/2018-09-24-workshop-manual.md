@@ -26,13 +26,9 @@ You will also receive details from your instructor regarding how to access your 
 
 ### Workshop URL's
 
-Below are a list of the URLs you will use over the course of the lab exercises. You can will have a access to these via the bookmarks file which we will import in the following step, they are referenced here as well for your convenience.
+Below are a list of the URLs you will use over the course of the lab exercises.
 
 VMware Cloud on AWS Login <https://vmc.vmware.com>
-
-vRealize Automation <https://vraapp.workshop.set.local/vcac>
-
-vRealize Operations <https://vrops.workshop.set.local>
 
 Swagger API Interface <https://vmc.vmware.com/swagger/index.html>
 
