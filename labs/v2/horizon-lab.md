@@ -12,7 +12,7 @@ comments: true
 
 # Introduction
 
-In this Lab we are going to create and install a Horizon 7 environment, using Cloud Pod Architecture to connect two Horizon environemnts for Global Management and Entitlement Rights.
+In this Lab we are going to create and install an Horizon 7 environment, using Cloud Pod Architecture to connect two Horizon environments for Global Management and Entitlement Rights.
 
 ## Viewing your SDDC
 
@@ -20,7 +20,7 @@ In this Lab we are going to create and install a Horizon 7 environment, using Cl
 
 After logging in, you should see two SDDCs in the user interface following the naming format Student-Workshop-#.#. 
 
-An SDDC is a fully deployed environment including vSphere, NSX, vSAN and vCenter Server. Deployment of a fully configured SDDC takes about two hours, so for the purposes of this lab, we have the SDDC already deployed. This SDDC is in the same state as it would be if you had deployed it yourself. Let's take a look at the SDDC properties.
+An SDDC is a fully deployed environment including vSphere, NSX, vSAN and vCenter Server. Deployment of a fully configured SDDC takes about two hours, so for the purpose of this lab, we have the SDDC already deployed. This SDDC is in the same state as it would be if you had deployed it yourself. Let's take a look at the SDDC properties.
 
 1. First click on **View Details** to open the SDDC properties.
 
@@ -234,7 +234,7 @@ This Golden Master Image will be used to deploy desktops, using Instant Clone te
     - **DNS server address** type **192.168.100.10** or **192.168.200.10**, depending on your student workshop number
     - **NIC 1 (eth0) netmask** type **255.255.255.0**
     - **IPv4 Default Gateway** type **192.168.100.1** or **192.168.200.1**, depending on your student workshop number
-    - **Unified Gateway Appliance Nmae** type **UAG100** or **UAG200**, depending on your student workshop number
+    - **Unified Gateway Appliance Name** type **UAG100** or **UAG200**, depending on your student workshop number
 
     ![UAG+3](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/UAG+3.jpg)
 
@@ -458,7 +458,7 @@ Now that we have a public IP we need to create a NAT rule to your UAG.
     ![External4](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/External4.png)
 5. **Save** the file
 6. Close Notepad
-7. **Restart** your horizon connection server - click on **Start** -> **Stutdown or sign out** -> **Restart**
+7. **Restart** your Horizon connection server - click on **Start** -> **Shutdown or sign out** -> **Restart**
 8. Wait for the server to come back
 
 You need to login back into the **Horizon Connection Server** and open a **browser**
@@ -468,11 +468,11 @@ You need to login back into the **Horizon Connection Server** and open a **brows
 
     - **Note** it can take up to 5 min to have all services started to be able to browse to the webpage of the Horizon Connection Server
 
-3. Login to the Horizon 7 Conneciton Server Administation Console with **Administrator** and **VMware1!**
+3. Login to the Horizon 7 Connection Server Administation Console with **Administrator** and **VMware1!**
 4. On the left side go to **View Configuration**
     - **Servers**
     - **Connection Server** tab
-    - Select your **connection server**
+    - Select your **Connection Server**
     - Click **EDIT**
 5. **Disable** the tunneling
     - Uncheck **HTTP(S) Secure Tunnel**
@@ -494,7 +494,7 @@ The next step is to configure your UAG. Go to your Horizon Connection Server.
     - Click **Enable Blast**
     - Click **Enable Tunnel**
 8. For **Connection Server URL** type **https://hz-ws-cs100.vdionvmc.local:443** or **https://hz-ws-cs200.vdionvmc.local:443**, depending on your Student ID
-9. For **Connection Server URL Thumbprint** go back to the **connection server tab** / **View Administrator** and click on the certificate
+9. For **Connection Server URL Thumbprint** go back to the **Connection Server tab** / **View Administrator** and click on the certificate
 
     ![External](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/External7.png)
 
@@ -548,18 +548,18 @@ The next step will be to expand the desktop pool we ceated previously in this la
 
 The Cloud Pod Architecture feature links together multiple View Pods to provide a single large desktop brokering and management environment. When the Cloud Pod Architecture feature is enabled, you can join together multiple View Pods to form a single View implementation called a Pod Federation. A Pod Federation can span multiple sites and datacenters.
 
-For configuring CPA you need to work **together** with your partner in this section because only **one** person can **initialize** the CPA, and the other needs to **join** the CPA. Please discuss within your **team** who will initialize and who will join the initilized CPA.
+For configuring CPA you need to work **together** with your partner in this section because only **one** person can **initialize** the CPA, and the other needs to **join** the CPA. Please discuss within your **team** who will initialize and who will join the initialized CPA.
 
 ![CPA1](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/CPA1.png)
 
 When you decided who will initialize and who will be joining, proceed as follows:
 
-To initilize the CPA:
+To initiliaze the CPA:
 
 1. Go to your **Horizon Connection Server**
 2. Open the shortcut for the Horizon Connection Server configuration or go to **https://localhost/admin**
 3. Login with **Administrator** and **VMware1!**
-4. Go to **View Configruation** -> **Cloud Pod Architecture**
+4. Go to **View Configuration** -> **Cloud Pod Architecture**
 5. Click **Initialize the Cloud Pod Architecture feature**
 6. Click **OK**
 7. **Wait** for the task to complete
@@ -570,7 +570,7 @@ To join the CPA:
 1. Go to your **Horizon Connection Server**
 2. Open the shortcut for the Horizon Connection Server configuration or go to **https://localhost/admin**
 3. Login with **Administrator** and **VMware1!**
-4. Go to **View Configruation** -> **Cloud Pod Architecture**
+4. Go to **View Configuration** -> **Cloud Pod Architecture**
 5. Click **Join the pod federation**
 6. For **Connection Server** type the local IP-Address of your Partner, which is either **192.168.100.11** or **192.168.200.11**
 7. **Username** - vdionvmc\Administrator
