@@ -297,12 +297,11 @@ Ahora es necesario obtener el refresh token para nuestra Org en VMC. Regrese a l
     ![APIs011](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs011.jpg)
 
 25. Dele un nombre al token.
-26.
-27.
-28.
+26. Seleccione el checkbox **Organization Owner.**
+27. Seleccione el checkbox **VMware Cloud on AWS.**
+28. Haga click el botón **Generate**.
 
     ![APIs012](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs012.jpg)
-
 
 
 
