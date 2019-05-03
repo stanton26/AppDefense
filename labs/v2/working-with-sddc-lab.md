@@ -46,7 +46,7 @@ demand. Let's create a new network segment in the SDDC.
 1. Click the **Networking & Security** tab, then click on **Segments** to show all of the existing network segments.
 2. Click on **Add Segments** to create a new network segment.
 3. Enter **Demo-Net** for the Name of the new network segment.
-4. For the Gateway/Prefifix Length enter 10.10.xx.1/24 (xx depicts your student number). This represents the default gateway.
+4. For the Gateway/Prefix Length enter 10.10.xx.1/24 (xx depicts your student number). This represents the default gateway.
 of the network and the prefix length of the network. For more details on IP addressing see below.
 5. For **DHCP**, click the down arrow and select Enabled to enable DHCP on the network.
 6. Enter **10.10.xx.10-10.10.xx.200** for the **DHCP IP Range**. This is the range of IP addresses the DHCP server will grant to workloads attached to the network.
@@ -398,7 +398,7 @@ In this exercise, you will clone the virtual machine created in the previous exe
 
 ![SDDC-clone-vm-038](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc038.jpg)
 
-Before we can clone the web server, we will first need to power the VM on so the cutomization specification can execute:
+Before we can clone the web server, we will first need to power the VM on so the customization specification can execute:
 
 1. Click the **arrow** next to **SDDC-Datacenter** to expose the sub-folders.
 2. Click the **arrow** next to workloads to expose **webserver01**
