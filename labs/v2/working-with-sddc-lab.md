@@ -398,7 +398,7 @@ In this exercise, you will clone the virtual machine created in the previous exe
 
 ![SDDC-clone-vm-038](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc038.jpg)
 
-Before we can clone the web server, we will first need to power the VM on so the cutomization specification can execute:
+Before we can clone the web server, we will first need to power the VM on so the customization specification can execute:
 
 1. Click the **arrow** next to **SDDC-Datacenter** to expose the sub-folders.
 2. Click the **arrow** next to workloads to expose **webserver01**
