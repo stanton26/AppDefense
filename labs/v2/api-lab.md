@@ -28,8 +28,7 @@ Install the VMware PowerCLI module
 Install-Module VMware.PowerCLI
 ```
 
-**NOTE**: You will be asked to install the NuGet provider, take the default or press **Y** and press
-enter, you will then be asked to trusted an untrusted repository, **DO NOT** take the default but type **Y** and press Enter.
+**NOTE**: You will be asked to install the NuGet provider, take the default or press **Y** and press enter, you will then be asked to trusted an untrusted repository, **DO NOT** take the default but type **Y** and press Enter.
 
 ![APIs4](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs4.jpg)
 
@@ -69,8 +68,7 @@ Get-VMCCommand -WarningAction:SilentlyContinue
 
 ![APIs8](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs8.jpg)
 
-We now need to get your Refresh Token from the VMC console. Switch back to or open the web
-browser and log into **vmc.vmware.com**
+We now need to get your Refresh Token from the VMC console. Switch back to or open the web browser and log into **vmc.vmware.com**
 
 If you are not already logged in
 
@@ -80,12 +78,14 @@ If you are not already logged in
 4. Click on **Next**
 
     ![APIs9](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs9.jpg)
+
 5. Click on the drop down next to your **Name/Org ID**
 6. Click on **My Account**
 
     ![APIs10](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs010.jpg)
 
     We will now create a new Refresh Token for the ID linked to this Org
+
 1. Click on **API Tokens** tab.
 2. Click **Generate a New API Token**
 
@@ -97,6 +97,7 @@ If you are not already logged in
 4. Click **Generate** button.
 
     ![APIs012](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs012.jpg)
+
 5.  Click on **Copy** button to save refresh token to clipboard.
 
 ***Note:*** Make sure to save this refresh token in a safe place to be used in the next section when using API's in Postman.
@@ -160,6 +161,7 @@ If you are not already logged in, log into your VMware Cloud on AWS organisation
 3. Click on *Download* in the "PowerCLI - VMC Example Script" box
 
     ![DeveloperCenter4](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/DeveloperCenter4.jpg)
+
     After the script downloads
 4. Click on the dropdown arrow
 5. Click on **Show in Folder**
@@ -175,6 +177,7 @@ If you are not already logged in, log into your VMware Cloud on AWS organisation
     ![DeveloperCenter6](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/DeveloperCenter6.jpg)
 
     Let's now run some simple REST API commands built into Developer Center, go back to your browser
+
 12. Click on the API Explorer menu
 13. Make sure you select your SDDC
 14. Click on the drop down arrow next to Organization
@@ -218,6 +221,7 @@ Postman is very easy to install, so let's get started.
 2. Click on *Download the App*
 
     ![Postman2](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/Postman2.jpg)
+
 3. Select Postman for **Windows (64-bit)**. Click **Download**. Double-click on the downloaded file, the install will execute without interaction.
 
     *NOTE*: For cleanup you can close all postman tabs in Chrome
@@ -227,29 +231,34 @@ Postman is very easy to install, so let's get started.
 4. Click on the text: *Skip Signing in and Take me straight to the app*
 
     ![Postman4](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/Postman4.jpg)
+
 5. Uncheck *Show this window on launch*
 6. Close this window
 
     ![Postman5](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/Postman5.jpg)
 
     Go back to your browser window, if you do not have a tab opened for VMware Cloud on AWS, follow the below instructions
+
 7. Navigate to <https://github.com/vmware/vsphere-automation-sdk-rest/archive/master.zip> to download the vSphere Automation REST SDK. 
 
     Our internal API development team has done a great job pre-creating SDKs for many of the popular languages in use today. For this module, we will be using the SDK for REST to show you how you can easily import and reuse some pre-built collections to create your own.
 
     ![Postman7](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/Postman7.jpg)
+
 8.  *This step intentionally left blank*
 9.  *This step intentionally left blank*
 10. Click on the download menu
 11. Click on *Open*
 
     ![Postman8](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/Postman8.jpg)
+
 12. Click on *Extract*
 13. Click on *Extract all*
 
     ![Postman9](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/Postman9.jpg)
 
     We will keep the default file path.
+
 14. Uncheck the box
 15. Click on *Extract*
 
@@ -265,6 +274,7 @@ Postman is very easy to install, so let's get started.
     ![Postman11](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/Postman11.jpg)
 
     To import the VMC collection json file we downloaded earlier.
+
 18. Browse to the directory we extracted the zip file to earlier. That directory should be *C:\downloads\vsphere-automation-sdk-rest-master\vsphere-automation-sdk-rest-master\samples\postman*
 19. Click *VMware Cloud on AWS APIs.postman_collection.json*
 20. Click *Open*
@@ -272,15 +282,16 @@ Postman is very easy to install, so let's get started.
     ![Postman12](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/Postman12.jpg)
 
     We now need to get our refresh token for our Org in VMC. Go back to your VMware Cloud on AWS tab in your browser
+
 21. Click on the drop down next to your *Name/Org ID*
 22. Click on *My Account*
-
 
     We will now create a new Refresh Token for the ID linked to this Org.
 
     ***NOTE***: If you have already generated a token, use the same token that was generated.  You can also regenerate a new token if needed.
 
     ![Postman13](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs010.jpg)
+
 23. Click on **API Tokens** tab.
 24. Click **Generate a New API Token**
 
@@ -292,20 +303,22 @@ Postman is very easy to install, so let's get started.
 28. Click **Generate** button.
 
     ![APIs012](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs012.jpg)
+
 29. Click on **Copy** button to save refresh token to clipboard.
 
     ![Postman16](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/Postman16.jpg)
 
     Return to the Postman app. We now need to setup a Postman environment for use with VMC. An environment is where we will be creating and storing our variables. These variables can be local or global, depending on your use within Postman. In this module, we will only be using local variables.
 
-30. Click on *New*
-31. Click on *Environment*
+30. Click on **New**
+31. Click on **Environment**
 
     ![Postman17](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/Postman17.jpg)
+
 32. Name the environment **VMC**
 33. In the Key column type in **refresh_token**
 34. In the Value column use CTRL-V to paste your actual refresh token you copied in a previous step.
-35. Click on *Add*
+35. Click on **Add**
 36. Close the window
 
     ![Postman18](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/Postman18.jpg)
@@ -313,81 +326,91 @@ Postman is very easy to install, so let's get started.
     Now set this as our default environment.
 
     *NOTE*: If you don't set the default environment to *VMC*, then the variables that get created will not be accessible.
+
 37. Click on the drop down arrow
-38. Select *VMC*
+38. Select **VMC**
 
     ![Postman19](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/Postman19.jpg)
 
     Now we will start to build our own collection by using some request that came in the SDK we imported earlier.
-39. Click on *Collections*
-40. Click on - *Authentication and Login*
+
+39. Click on **Collections**
+40. Click on - **Authentication and Login**
 41. See how this request is our refresh token variable we defined in an earlier step.
 
     *NOTE*: If the environment is not set to VMC, this will request will fail because the refresh_token variable is not defined.
-42. Click on *Send*
-43. You will now see the access token that was generated with the refresh token. This is the
-body or payload of the response to our request.
+
+42. Click on **Send**
+43. You will now see the access token that was generated with the refresh token. This is the body or payload of the response to our request.
 
     ![Postman20](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/Postman20.jpg)
-41. Click on the Eye icon
+
+44. Click on the Eye icon
 
     You will see that we have stored your access token into a variable so we can use it for futurecalls. How did we do that? We ran a "test" on the response body. You will see how in the next step.
 
     ![Postman21](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/Postman21.jpg)
-42. Click on *Tests*
+
+45. Click on **Tests**
 
     The access_token variable was set by running some java script code against the response. We are also using the Postman setEnvironmentVariable function to create it.
 
     ![Postman22](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/Postman22.jpg)
 
     Lets save this request to our own collection so we can use it later.
-43. Click on the drop down arrow
-44. Click on *Save As*
+
+46. Click on the drop down arrow
+47. Click on **Save As**
 
     ![Postman23](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/Postman23.jpg)
 
-45. Change the Request name to *Authorize*
-46. Change the Request description to *Get Access Token*
-47. Click on *+Create Collection*
-48. Type **Workshop** and click the *check box*
+48. Change the Request name to **Authorize**
+49. Change the Request description to *Get Access Token*
+50. Click on **Create Collection**
+51. Type **Workshop** and click the *check box*
 
     ![Postman24](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/Postman24.jpg)
-49. Select the *Workshop* folder
-50. Click on *Save to Workshop*
+
+52. Select the **Workshop** folder
+53. Click on **Save to Workshop**
 
     ![Postman25](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/Postman25.jpg)
 
     A new window will pop open indicating that you created a new collection. We will not do anything here at this time.
-51. Close this window
+
+54. Close this window
 
     ![Postman26](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/Postman26.jpg)
 
     Let's request some details from our Org so we can send them to Slack.
-52. Click on *Orgs* and *List Orgs*
-53. Click on *Headers*
-54. Click *Send*
-55. You see here how we are using the **access_token** variable for the **csp-auth-token**. This will authorize our request. *NOTE*: This access token is only good for 30 minutes. If you run this request and get a response of **400 unauthorized**, go back and run the authorize request.
-56. Look through the response body for your Org's **display_name**
+
+55. Click on **Orgs** and **List Orgs**
+56. Click on **Headers**
+57. Click **Send**
+58. You see here how we are using the **access_token** variable for the **csp-auth-token**. This will authorize our request. *NOTE*: This access token is only good for 30 minutes. If you run this request and get a response of **400 unauthorized**, go back and run the authorize request.
+59. Look through the response body for your Org's **display_name**
 
     ![Postman27](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/Postman27.jpg)
 
     Let's save this request to our own collection so we can use it later.
-57. Click on the drop down arrow
-58. Click on *Save As*
+
+60. Click on the drop down arrow
+61. Click on **Save As**
 
     ![Postman28](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/Postman28.jpg)
-59. Change the Request name to **Org list**
-60. Change the Request description to **Get a list of your Orgs**
-61. Be sure *Workshop* is selected under **Select a collection or folder to save to:**
-62. Click on *Save to Workshop*
+
+62. Change the Request name to **Org list**
+63. Change the Request description to **Get a list of your Orgs**
+64. Be sure *Workshop* is selected under **Select a collection or folder to save to:**
+65. Click on **Save to Workshop**
 
     ![Postman29](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/Postman29.jpg)
 
     We need to replace the Test code that came with the SDK so we can create variable we want to use when send our message to Slack.
-63. Click on Tests
-    Copy and paste the below code into the **Tests** section. *NOTE*: You may have to press CTRL-V to paste into the text box.
 
-64. Click *Send*
+66. Click on **Tests**
+    Copy and paste the below code into the **Tests** section. *NOTE*: You may have to press CTRL-V to paste into the text box.
+67. Click **Send**
 
     ```javascript
     var jsonData = JSON.parse(responseBody);
@@ -405,14 +428,15 @@ body or payload of the response to our request.
     ![Postman30](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/Postman30.jpg)
 
     We can verify if the variables have been created and assigned values.
-65. Click on the eye icon
-66. Scroll down to see if the new variables were created.
+
+68. Click on the eye icon
+69. Scroll down to see if the new variables were created.
     Once verified click on the "eye" icon again to close the window
 
     ![Postman31](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/Postman31.jpg)
 
     Lets save the changes we made to this request.
-67. Click on *Save*
+70. Click on **Save**
 
     ![Postman32](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/Postman32.jpg)
 
@@ -427,12 +451,13 @@ body or payload of the response to our request.
     ```
 
     Now we need to setup the request:
-68. Click on the **+** sign for a new request
-69. Change the request type to *POST*
-70. Cut and paste the above slack channel URL to the *address* box
-71. Select *Body*
-72. Change the format type to *raw*
-73. Type the below code, or cut and paste it into the Body section. *NOTE*: You may have to press CTRL-V to past into the text box.
+
+71. Click on the **+** sign for a new request
+72. Change the request type to **POST**
+73. Cut and paste the above slack channel URL to the *address* box
+74. Select **Body**
+75. Change the format type to **raw**
+76. Type the below code, or cut and paste it into the Body section. *NOTE*: You may have to press CTRL-V to past into the text box.
 
     ```json
     {
@@ -440,35 +465,41 @@ body or payload of the response to our request.
       "username" : "{% raw %}{{name}}{% endraw %}"
     }
     ```
-74. Click *Send*
+
+77. Click **Send**
 
     ![Postman33](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/Postman33.jpg)
 
     Lets save this request to our own collection so we can use it later.
-75. Click on the drop down arrow
-76. Click on *Save As*
+
+78. Click on the drop down arrow
+79. Click on **Save As**
 
      ![Postman34](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/Postman34.jpg)
-77. Change the Request name to **Post to Slack**
-78. Change the Request description to **Post some Org details to slack** Be sure Workshop is selected under *Select a collection or folder to save to:*
-79. Click on *Save to Workshop*
+
+80. Change the Request name to **Post to Slack**
+81. Change the Request description to **Post some Org details to slack** Be sure Workshop is selected under *Select a collection or folder to save to:*
+82. Click on **Save to Workshop**
 
     Check and see if your request posted the Name, ID, Version, and Status of your Org.
 
     ![Postman35](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/Postman35.jpg)
 
     The last thing to show you with Postman is the way that you can run a collection to automate a series of tasks. What we have been doing in this module is building a collection. As you see in the screen shot there are 3 tasks in the Workshop collection.
-80. Click on the Arrow in the Workshop window
-81. Click on *Run*
+
+83. Click on the Arrow in the Workshop window
+84. Click on **Run**
 
     ![Postman36](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/Postman36.jpg)
-82. Click on *Run Workshop*
-83. Be sure the **Environment** is set to VMC
+
+85. Click on **Run Workshop**
+86. Be sure the **Environment** is set to VMC
 
     ![Postman37](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/Postman37.jpg)
 
     If all your work was saved and ran individually, they should run here as well.
-84. Check out the status of each request.
+
+87. Check out the status of each request.
 
 If you have all "200 OK" then you will see another post in slack for your workshop Org.
 
