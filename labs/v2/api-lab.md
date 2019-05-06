@@ -72,33 +72,33 @@ We now need to get your Refresh Token from the VMC console. Switch back to or op
 
 If you are not already logged in
 
-1. open a new tab
-2. Click on the VMware Cloud on AWS shortcut
-3. Fill in your email address
-4. Click on **Next**
+3. Open a new tab
+4. Click on the VMware Cloud on AWS shortcut
+5. Fill in your email address
+6. Click on **Next**
 
     ![APIs9](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs9.jpg)
 
-5. Click on the drop down next to your **Name/Org ID**
-6. Click on **My Account**
+7. Click on the drop down next to your **Name/Org ID**
+8. Click on **My Account**
 
     ![APIs10](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs010.jpg)
 
     We will now create a new Refresh Token for the ID linked to this Org
 
-1. Click on **API Tokens** tab.
-2. Click **Generate a New API Token**
+9. Click on **API Tokens** tab.
+10. Click **Generate a New API Token**
 
     ![APIs011](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs011.jpg)
 
-1. Give the token a name.
-2. Select checkbox by **Organization Owner.**
-3. Select checkbox by **VMware Cloud on AWS.**
-4. Click **Generate** button.
+11. Give the token a name.
+12. Select checkbox by **Organization Owner.**
+13. Select checkbox by **VMware Cloud on AWS.**
+14. Click **Generate** button.
 
     ![APIs012](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs012.jpg)
 
-5.  Click on **Copy** button to save refresh token to clipboard.
+15.  Click on **Copy** button to save refresh token to clipboard.
 
 ***Note:*** Make sure to save this refresh token in a safe place to be used in the next section when using API's in Postman.
 
