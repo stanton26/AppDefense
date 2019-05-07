@@ -36,7 +36,7 @@ In this exercise we'll be exploring integrations with both AWS Simple Storage Se
 
 In addition to sitting within the AWS Infrastructure, there is an Elastic Network Interface (ENI) connecting VMware Cloud on AWS and the customer's Virtual Private Cloud (VPC), providing a high-bandwidth, low latency connection between the VPC and the SDDC. This is where the traffic flows between the two technologies (VMware and AWS). There are no EGRESS charges across the ENI within the same Availability Zone and there are firewalls on both ends of this connection for security purposes.
 
-### How is traffiffic secured across the ENI?
+### How is traffic secured across the ENI?
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/AWS-2.jpg)
 
@@ -54,97 +54,85 @@ In this exercise, everything has been configured on the AWS side for you. You wi
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/AWS-5.jpg)
 
-1\. In the VMware Cloud on AWS portal click the **Networking & Security** tab
-
-2\. Click **Groups** in the left pane
-
-3\. Click **ADD GROUP**
+1. In the VMware Cloud on AWS portal click the **Networking & Security** tab
+2. Click **Groups** in the left pane
+3. Click **ADD GROUP**
 
 #### Name Workload Group
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/AWS-6.jpg)
 
-1\. Type **PhotoAppVM** for the Name
-
-2\. Leave **Virtual Machine** select for Member Type
-
-3\. Click **Set VMs** under Members
+1. Type **PhotoAppVM** for the Name
+2. Leave **Virtual Machine** select for Member Type
+3. Click **Set VMs** under Members
 
 #### Select VMs - Workload Group
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/AWS-7.jpg)
 
-1\. Click to select **Webserver01**
-
-2\. Click **SAVE**
+1. Click to select **Webserver01**
+2. Click **SAVE**
 
 #### Save Group - Workload Group
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/AWS-8.jpg)
 
-1\. Click **SAVE**
+1. Click **SAVE**
 
 ### Firewall Rules
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/AWS-9.jpg)
 
-1\. Click **Networking & Security** tab in your VMware Cloud on AWS Portal
-
-2\. Click **Gateway Firewall** in the left pane
-
-3\. Click and select **Compute Gateway**
-
-4\. Click **ADD NEW RULE**
+1. Click **Networking & Security** tab in your VMware Cloud on AWS Portal
+2. Click **Gateway Firewall** in the left pane
+3. Click and select **Compute Gateway**
+4. Click **ADD NEW RULE**
 
 #### Add New Rule - AWS Inbound
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/AWS-10.jpg)
 
-1\. Name your new rule **AWS Inbound**
-
-2\. Click on **Set Source**
+1. Name your new rule **AWS Inbound**
+2. Click on **Set Source**
 
 #### Select Source - AWS Inbound
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/AWS-11.jpg)
 
-1\. Click to select **Connected VPC Prefifixes**
-
-2\. Click **SAVE**
+1. Click to select **Connected VPC Prefixes**
+2. Click **SAVE**
 
 #### Set Destination - AWS Inbound
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/AWS-12.jpg)
 
-1\. Click on **Set Destination**
+1. Click on **Set Destination**
 
 #### Select Destination - AWS Inbound (Continued)
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/AWS-13.jpg)
 
-1\. Click to select **PhotoAppVM**
-
-2\. Click **SAVE**
+1. Click to select **PhotoAppVM**
+2. Click **SAVE**
 
 #### Set Service - AWS Inbound
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/AWS-14.jpg)
 
-1\. Click on **Set Service**
+1. Click on **Set Service**
 
 #### Set Service - AWS Inbound (Continued)
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/AWS-15.jpg)
 
-1\. Click to select **Any**
-
-2\. Click **SAVE**
+1. Click to select **Any**
+2. Click **SAVE**
 
 #### Publish - AWS Inbound
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/AWS-16.jpg)
 
-1\. Click on **PUBLISH**
+1. Click on **PUBLISH**
 
 **Note:** Make sure to leave **All Uplinks** in the **Applied To** section.
 
@@ -152,55 +140,49 @@ In this exercise, everything has been configured on the AWS side for you. You wi
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/AWS-17.jpg)
 
-1\. Click **ADD NEW RULE**
-
-2\. Name your new rule **AWS Outbound**
-
-3\. Click on **Set Source**
+1. Click **ADD NEW RULE**
+2. Name your new rule **AWS Outbound**
+3. Click on **Set Source**
 
 #### Select Source - AWS Outbound
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/AWS-18.jpg)
 
-1\. Click to Select **PhotoAppVM**
-
-2\. Click **SAVE**
+1. Click to Select **PhotoAppVM**
+2. Click **SAVE**
 
 #### Set Destination - AWS Outbound
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/AWS-19.jpg)
 
-1\. Click on **Set Destination**
+1. Click on **Set Destination**
 
 #### Select Destination - AWS Outbound
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/AWS-20.jpg)
 
-1\. Click to select **Connected VPC Prefifixes**
-
-2\. Click **SAVE**
+1. Click to select **Connected VPC Prefixes**
+2. Click **SAVE**
 
 #### Set Service - AWS Outbound
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/AWS-21.jpg)
 
-1\. Click on **Set Service**
+1. Click on **Set Service**
 
 #### Set Service - AWS Outbound (Continued)
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/AWS-22.jpg)
 
-1\. Under **Select Services** type **3306**
-
-2\. Select **MySQL** checkbox
-
-3\. Click **SAVE**
+1. Under **Select Services** type **3306**
+2. Select **MySQL** checkbox
+3. Click **SAVE**
 
 #### Publish - AWS Outbound
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/AWS-23.jpg)
 
-1\. Click **PUBLISH**
+1. Click **PUBLISH**
 
 **Note:** Make sure to leave **All Uplinks** in the **Applied To** section.
 
@@ -208,53 +190,48 @@ In this exercise, everything has been configured on the AWS side for you. You wi
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/AWS-24.jpg)
 
-1\. Click on **ADD NEW RULE**
+1. Click on **ADD NEW RULE**
 
-#### Add New Rule - Public In
+#### Add New Rule - Public In (Continued)
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/AWS-25.jpg)
 
-1\. Type **Public In** for Name
-
-2\. Click on **Set Source**
+1. Type **Public In** for Name
+2. Click on **Set Source**
 
 #### Select Source - Public In
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/AWS-26.jpg)
 
-1\. Click to select **Any**
-
-2\. Click **SAVE**
+1. Click to select **Any**
+2. Click **SAVE**
 
 #### Set Destination - Public In
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/AWS-27.jpg)
 
-1\. Click on **Set Destination**
+1. Click on **Set Destination**
 
 #### Select Destination - Public In
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/AWS-28.jpg)
 
-1\. Click to select **PhotoAppVM**
-
-2\. Click **SAVE**
+1. Click to select **PhotoAppVM**
+2. Click **SAVE**
 
 #### Set Service - Public In
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/AWS-29.jpg)
 
-1\. Click **Set Service**
+1. Click **Set Service**
 
 #### Set Service - Public In (Continued)
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/AWS-30.jpg)
 
-1\. Type **HTTP 80** under **Select Services**
-
-2\.Click to Select **HTTP**
-
-3\. Click **SAVE**
+1. Type **HTTP 80** under **Select Services**
+2. Click to Select **HTTP**
+3. Click **SAVE**
 
 #### Publish - Public In
 
@@ -276,21 +253,17 @@ In this exercise, you will be able to integrate a VMware Cloud on AWS virtual ma
 
 You will be using the VM created in the previous module in order to complete this exercise.
 
-1\. In your vCenter interface for VMware Cloud on AWS, find your **Webserver01** VM you deployed, and ensure it has been assigned an IP address as shown in the graphic.
+1. In your vCenter interface for VMware Cloud on AWS, find your **Webserver01** VM you deployed, and ensure it has been assigned an IP address as shown in the graphic.
 
 ### Assign Public IP
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS2.jpg)
 
-1\. Go back your VMware Cloud on AWS portal and click on the **Networking & Security** tab in order to request a Public IP address
-
-2\. Click **Public IPs** in the left pane
-
-3\. Click on **REQUEST NEW IP**
-
-4\. In the notes area type **PhotoAppIP**
-
-5\. Click **SAVE**
+1. Go back your VMware Cloud on AWS portal and click on the **Networking & Security** tab in order to request a Public IP address
+2. Click **Public IPs** in the left pane
+3. Click on **REQUEST NEW IP**
+4. In the notes area type **PhotoAppIP**
+5. Click **SAVE**
 
 ### Note New Public IP
 
@@ -302,19 +275,13 @@ Take note of your newly created Public IP.
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS4.jpg)
 
-1\. Click **NAT** in the left pane
-
-2\. Click **ADD NAT RULE**
-
-3\. Type **PhotoApp NAT** for Name
-
-4\. Ensure the Public IP you requested in the previous step appears under Public IP
-
-5\. Leave **All Traffic** (no change)
-
-6\. Type the IP address of your **Webserver01** VM you noted at the beginning of this exercise
-
-7\. Click **SAVE**
+1. Click **NAT** in the left pane
+2. Click **ADD NAT RULE**
+3. Type **PhotoApp NAT** for Name
+4. Ensure the Public IP you requested in the previous step appears under Public IP
+5. Leave **All Traffic** (no change)
+6. Type the IP address of your **Webserver01** VM you noted at the beginning of this exercise
+7. Click **SAVE**
 
 ### AWS Relational Database Service (RDS) Integration
 
@@ -322,13 +289,10 @@ Take note of your newly created Public IP.
 
 On your browser, open a new tab and go to: https://vmcworkshop.signin.aws.amazon.com/console
 
-1\. Account ID or alias - Please refer to the information on the card provided to you for Account ID information
-
-2\. IAM user name - **Student#** (where # is the number assigned to you)
-
-3\. Password - **VMCworkshop1211**
-
-4\. Click **Sign In**
+1. Account ID or alias - Please refer to the information on the card provided to you for Account ID information
+2. IAM user name - **Student#** (where # is the number assigned to you)
+3. Password - **VMCworkshop1211**
+4. Click **Sign In**
 
 Please note you might get either of the 2 sign on screens above. If you get the one on the right, enter Account ID and click **Next**
 
@@ -336,33 +300,29 @@ Please note you might get either of the 2 sign on screens above. If you get the 
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS6.jpg)
 
-1\. You are now signed in to the AWS console. Make sure the region selected is **Oregon**
-
-2\. Click on the **RDS** service (You may need to expand **All services**)
+1. You are now signed in to the AWS console. Make sure the region selected is **Oregon**
+2. Click on the **RDS** service (You may need to expand **All services**)
 
 ### RDS Instance
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS07.jpg)
 
-1\. In the left pane click on **Databases**
-
-2\. Click on the RDS instance that corresponds to designated number
+1. In the left pane click on **Databases**
+2. Click on the RDS instance that corresponds to designated number
 
 ### Navigate to Security Groups
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS08.jpg)
 
-1\. Scroll down to the **Details** area and under **Connectivity & security** notice that the RDS instance is not publicly accessible, meaning this instance can only be accessed from within AWS
-
-2\. Click in the blue hyperlink under **Security groups**
+1. Scroll down to the **Details** area and under **Connectivity & security** notice that the RDS instance is not publicly accessible, meaning this instance can only be accessed from within AWS
+2. Click in the blue hyperlink under **Security groups**
 
 ### Security Groups
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS9.jpg)
 
-1\. Choose the **Student##-RDS-Inbound** RDS Security group corresponding to you (may not match your student number)
-
-2\. After highlighting the appropriate security group click on the **Inbound** tab below
+1. Choose the **Student##-RDS-Inbound** RDS Security group corresponding to you (may not match your student number)
+2. After highlighting the appropriate security group click on the **Inbound** tab below
 
 **Note: VMware Cloud on AWS establishes routing in the default VPC Security Group, only RDS can leverage this or create its own**
 
@@ -370,9 +330,8 @@ Please note you might get either of the 2 sign on screens above. If you get the 
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS10.jpg)
 
-1\. Click **Outbound** tab
-
-2\. You can see All traffic (internal to AWS) allowed, this includes your VMware Cloud on AWS SDDC logical networks.
+1. Click **Outbound** tab
+2. You can see All traffic (internal to AWS) allowed, this includes your VMware Cloud on AWS SDDC logical networks.
 
 ### Elastic Network Interface (ENI)
 
@@ -380,45 +339,40 @@ Please note you might get either of the 2 sign on screens above. If you get the 
 
 AWS Relational Database Service (RDS), also creates its own Elastic Network Interface (ENI) for access which is separate from the ENI created by VMware Cloud on AWS.
 
-1\. Click on **Services** to go back to the Main Console
-
-2\. Click on **EC2**
+1. Click on **Services** to go back to the Main Console
+2. Click on **EC2**
 
 ### ENI (Continued)
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS12.jpg)
 
-1\. In the EC2 Dashboard click **Network Interfaces** in the left panel
-
-2\. All Student environments belong to the same AWS account, therefore, hundreds of ENI's may exist. In order to minimize the view type **RDS** in the search area and press Enter to add a filter
-
-3\. Highlight your **Student##-RDS-Inbound** security group corresponding to your student number based on the second octect of the CIDR block in the last column.
+1. In the EC2 Dashboard click **Network Interfaces** in the left panel
+2. All Student environments belong to the same AWS account, therefore, hundreds of ENI's may exist. In order to minimize the view type **RDS** in the search area and press Enter to add a filter
+3. Highlight your **Student##-RDS-Inbound** security group corresponding to your student number based on the second octect of the CIDR block in the last column.
 
     In this example the CIDR block is 172.6.8.187, this would correspond to student **6**
     
-4\. Make note of the **Primary private IPv4 IP** address for the next step
+4. Make note of the **Primary private IPv4 IP** address for the next step
 
 ### Photo App
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS13.jpg)
 
-1\. On your smart phone (tablet or personal computer), open up a browser and type your public IP address you requested in the VMware Cloud on AWS portal in the browser address bar followed by /Lychee (case sensitive) ie: 1.2.3.4/Lychee
-
-2\. Enter the database connection information below (__case sensitive__), using the IP address you noted in the previous step from the RDS ENI:
+1. On your smart phone (tablet or personal computer), open up a browser and type your public IP address you requested in the VMware Cloud on AWS portal in the browser address bar followed by /Lychee (case sensitive) ie: 1.2.3.4/Lychee
+2. Enter the database connection information below (__case sensitive__), using the IP address you noted in the previous step from the RDS ENI:
 
     Database Host: x.x.x.x:3306
     Database Username: student# (where # is the number assigned to you)
     Database Password: VMware1!
 
-3\. Click **Connect**
+3. Click **Connect**
 
 ### Enter Login Information	
 
  ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS15.jpg)	
 
- 1\. Type **student#** (where # is the number assigned to you) for user name and **VMware1!** for password.	
-
- 2\. Click **Sign In**
+ 1. Type **student#** (where # is the number assigned to you) for user name and **VMware1!** for password.	
+ 2. Click **Sign In**
 
 ### Photo Albums
 
@@ -431,4 +385,3 @@ OPTIONAL: Feel free to take a picture of the room with your smart phone and uplo
 In summary, the front end (web server) is running in VMware Cloud on AWS as a VM, the back end which is a MySQL database is running in AWS Relational Database Service (RDS) and communicating through the Elastic Network Interface (ENI) that gets established upon the creation of the SDDC.
 
 You have completed the lab. Thanks for stopping by!
-

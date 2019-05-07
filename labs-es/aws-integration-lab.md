@@ -10,414 +10,378 @@ author_profile: false
 comments: true
 categories: labs
 ---
+
 # Introducción
 
-Una de las razones más convincentes para adoptar VMware Cloud on AWS es integrar sus sistemas existentes que se encuentran en su entorno de nube VMware, con plataformas de aplicaciones que residen en su entorno de nube privada virtual (VPC) de AWS. La integración que VMware y AWS han creado permite que estos servicios se comuniquen, de forma gratuita, a través de un espacio de direcciones de red privada para servicios como las instancias EC2, que se conectan a subredes dentro de una AWS VPC nativa o con servicios de plataforma que tienen la capacidad de conectarse a un punto final de VPC, como almacenamiento S3.
+Una de las razones más convincentes para adoptar VMware Cloud on AWS es integrar sus sistemas existentes que se encuentran en su entorno de nube VMware, con plataformas de aplicaciones que residen en su entorno de nube privada virtual (VPC) de AWS. La integración que VMware y AWS han creado permite que estos servicios se comuniquen, de forma gratuita, a través de un espacio de direcciones de red privada para servicios como las instancias EC2, que se conectan a subredes dentro de una AWS VPC nativa o con servicios de plataforma que tienen la capacidad de conectarse a un punto final de VPC, como almacenamiento S3. En este módulo, trabajaremos en algunas integraciones básicas comunes que puede utilizar en su plataforma VMware Cloud on AWS.
 
-En este módulo, trabajaremos en algunas integraciones básicas comunes que puede utilizar en su plataforma VMware Cloud on AWS.
+## Entendiendo las integraciones con servicios de AWS
 
-*Nota:* hay un requisito en este módulo de haber completado los pasos en el módulo [Trabajando con un SDDC](https://vmc-field-team.github.io/labs-es/working-with-sddc-lab/) en relación a la creación de un  Content Library, Redes, y las reglas de Firewall.
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/AWS-1.jpg)
 
-## Integración con AWS Simple Storage Service (S3)
+Como el dibujo de arriba demuestra, el software de VMware no solo está posicionado adjunto a servicios de AWS, pero también está integrado herméticamente con estos servicios. Esta integración introduce una nueva manera de pensar en cómo diseñar e influenciar servicios de AWS con su SDDC de VMware. Algunas integraciones que algunos clientes utilizan incluyen:
 
-### Bibliotecas respaldadas por AWS Simple Storage Service (S3)
+* Interfaz de VMware con un backend de RDS
+* Backend VMware e interfaz en EC2
+* AWS Application Load Balancer (ELBv2) con interfaz en VMware (apuntando hacia IPs privadas)
+* Lambda, Simple Queueing Service (SQS), Simple Notification Service (SNS), S3, Route53, and Cognito
+* AWS Lex, and Alexa con APIs de VMware Cloud
 
-Las bibliotecas de contenido de vSphere permiten a los clientes aprovechar diferentes tipos de respaldo de almacenamiento además de vSphere Datastores. El requisito principal es que el punto final del contenido sea accesible a través de HTTP(s), lo que significa que se pueden usar varias soluciones desde un simple servidor web como Nginx hasta un almacén de objetos distribuidos avanzado como el Simple Storage Service (S3) de AWS.
+Estos son solo algunos de los ejemplos de integraciones que hemos visto. Existen muchos diferentes servicios que pueden ser integrados con su ambiente.
+En este ejercicio estaremos explorando integraciones con AWS Simple Storage Service (S3) y con AWS Relational Database Service (RDS).
 
-El flujo de trabajo para crear una biblioteca de contenido de vSphere en S3 es la siguiente:
+**Nota: hay un requisito en este módulo de haber completado los pasos en el módulo [Trabajando con un SDDC](https://vmc-field-team.github.io/labs-es/working-with-sddc-lab/) en relación a la creación de un  Content Library, Redes, y las reglas de Firewall.**
 
-1. Cargue y organice el contenido en S3
+### Cómo son posibles estas integraciones?
 
-2. Ejecute un script de python para indexar y generar los metadatos de la biblioteca de contenido
+Además de existir en la infraestructura de AWS, existe también un Elastic Network Interface (ENI) el cual conecta VMware Cloud on AWS y el Virtual Private Cloud (VPC) del cliente, proveyendo una conección rápida, con latencia baja, entre el VPC y el SDDC. Aquí es donde el tráfico circula entre las dos tecnologías (VMware y AWS). No hay cargo de Egress (transmición de datos) a través del ENI entre la misma zona de disponibilidad y existen Firewalls de los dos lados de esta conección para propósitos de seguridad.
 
-3. Con la capacidad de indexar y generar de forma remota los archivos de metadatos de la Biblioteca de contenido, no es necesario que guarde una copia local de todo su contenido. Todos los cambios pueden realizarse directamente en el depósito S3 y luego simplemente volver a ejecutar el script para generar los metadatos actualizados que incluso se pueden programar como un simple trabajo cron.
+### Cómo se asegura el tráfico a través del ENI?
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/S3-1.jpg)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/AWS-2.jpg)
 
-El script de python al que se hace referencia que se puede descargar [aquí](https://code.vmware.com/samples/4388/automating-the-creation-of-3rd-party-content-library-directly-on-amazon-s3) ahora puede indexar contenido tanto localmente como en un depósito S3 remoto.
+De el lado de VMware (mire gráfica abajo), el ENI entra al SDDC en el NSX Edge Gateway. Esto significa, que de ese lado de la tecnología se permite o no, el tráfico desde el ENI con reglas de firewall de NSX. Por defecto, tráfico del ENI no está permitido hacia el SDDC. Considere esto como una barrera de seguridad, bloqueando el tráfico hacia o desde los servicios de AWS en el ENI hasta que las reglas sean modificadas.
 
-En caso de que no lo supiera, el uso de S3 (ingreso / egreso) desde un SDDC de un cliente es 100% gratis para clientes de VMware Cloud en AWS simplemente usando un S3 Endpoint vinculado. Esto significa que puede aprovechar S3 para almacenar sus plantillas, ISO y otros archivos estáticos, que también pueden compartir otros SDDC. Esto significa que no está consumiendo ninguna parte de su almacenamiento primario para contenido estático y puede usarse para lo que significaba, para sus cargas de trabajo.
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/AWS-3.jpg)
 
-Para éste módulo, y en aras del tiempo, el contenido de este ejercicio se ha cargado en un contenedor S3 existente en AWS para usted. ¡Creemos la Biblioteca de Contenidos respaldada por S3!
+Desde el lado de AWS (mire gráfica abajo), Security Groups son utilizados. Si no está familiarizado con Security Groups, estos actúan como un firewall virtual para diferentes servicios (VPCs, Bases de Datos, instacias de EC2, etc.) de AWS. Estos deben ser configurados para no permitir el tráfico desde y hacia el SDDC de VMware sólo que se desee permitir el tráfico.
 
-#### Agregar biblioteca de contenido con respaldo S3
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/AWS-4.jpg)
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/S3-2.jpg)
+En este ejercicio, ya todo ha sido configurado de el lado de AWS. Aún así observaremos como el tráfico de AWS se puede permitir para que entra y salga del SDDC de VMware Cloud on AWS.
 
-1\. En la ventanilla de VMware Cloud on AWS vCenter haga click en *Menu*
+### Reglas de Firewall en el Compute Gateway para servicios nativos de AWS
 
-2\. Haga click en *Content Libraries*
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/AWS-5.jpg)
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/S3-3.jpg)
+1. En el portal de VMware Cloud on AWS haga click en la pestaña de **Networking & Security**
+2. Haga click en **Groups** en el panel izquierdo
+3. Haga click en **ADD GROUP**
 
-3\. En la ventanilla de Biblioteca de contenido, haga clic en el signo **+** para agregar una nueva Biblioteca de contenido.
+#### Nombre el Workload Group
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/S3-4.jpg)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/AWS-6.jpg)
 
-4\. Nombre su biblioteca de contenido como usted guste, ejemplo **S3 Content Library**
+1. Escriba **PhotoAppVM** como Nombre
+2. Asegúrese que **Virtual Machine** esté seleccionada como Member Type
+3. Haga click en **Set VMs** bajo Members
 
-5\. (Opcional) Ingrese algunas notas para su Biblioteca de contenido
+#### Selecione VMs - Workload Group
 
-6\. Haga click en *NEXT*
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/AWS-7.jpg)
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/S3-5.jpg)
+1. Haga click para seleccionar **Webserver01**
+2. Haga click en **SAVE**
 
-7\. Seleccione *Subscribed content library*
+#### Save Group - Workload Group
 
-8\. En el área *Subscription URL* entre lo siguiente: **http://vmc-elw-vms.s3-accelerate.amazonaws.com/lib.json**
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/AWS-8.jpg)
 
-9\. Asegúrese que *Download content* esté seleccionado con *immediately*
+1. Click **SAVE**
 
-10\. Haga click en *NEXT*
+### Reglas de Firewall
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/S3-6.jpg)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/AWS-9.jpg)
 
-11\. En caso que la notificación "No se puede identificar muy bien el host de suscripción" le aparezca, haga click en *YES*.
+1. Haga click en la pestaña de **Networking & Security** en el portal de VMware Cloud on AWS
+2. Haga click en **Gateway Firewall** en el panel izquierdo
+3. Haga click y seleccione **Compute Gateway**
+4. Haga click en **ADD NEW RULE**
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/S3-7.jpg)
+#### Crear Nueva Regla - AWS Inbound
 
-12\. Resalte *WorkloadDatastore* como la ubicación de almacenamiento
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/AWS-10.jpg)
 
-13\. Haga click en *Next*
+1. Nombre su regla **AWS Inbound**
+2. Haga click en **Set Source**
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/S3-8.jpg)
+#### Seleccione Origen - AWS Inbound
 
-14\. Haga click en el botón *Finish*. Su biblioteca de contenido debe demorar más o menos 20 minutos para completar la sincronización.
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/AWS-11.jpg)
 
-Felicidades, has completado este ejercicio.
+1. Haga click y seleccione **Connected VPC Prefixes**
+2. Haga click en **SAVE**
+
+#### Marcar el destino - AWS Inbound
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/AWS-12.jpg)
+
+1. Haga click en **Set Destination**
+
+#### Seleccione el destino - AWS Inbound
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/AWS-13.jpg)
+
+1. Haga click y seleccione **PhotoAppVM**
+2. Haga click en **SAVE**
+
+#### Marcar el Servicio - AWS Inbound
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/AWS-14.jpg)
+
+1. Haga click en **Set Service**
+
+#### Marcar el servicio - AWS Inbound (Continuación)
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/AWS-15.jpg)
+
+1. Haga click y seleccione **Any**
+2. Haga click en **SAVE**
+
+#### Publicar - AWS Inbound
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/AWS-16.jpg)
+
+1. Haga click en **PUBLISH**
+
+**Nota:** Asegúrese de dejar **All Uplinks** seleccionado en la sección de **Applied To**
+
+#### Agregar nueva regla - AWS Outbound
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/AWS-17.jpg)
+
+1. Haga click en **ADD NEW RULE**
+2. Nombre su regla **AWS Outbound**
+3. Haga click en **Set Source**
+
+#### Seleccionar Origen - AWS Outbound
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/AWS-18.jpg)
+
+1. Haga click y seleccione **PhotoAppVM**
+2. Haga click en **SAVE**
+
+#### Marcar Destino - AWS Outbound
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/AWS-19.jpg)
+
+1. Haga click en **Set Destination**
+
+#### Seleccionar Destino - AWS Outbound
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/AWS-20.jpg)
+
+1. Haga click y seleccione **Connected VPC Prefixes**
+2. Haga click en **SAVE**
+
+#### Marcar Servicio - AWS Outbound
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/AWS-21.jpg)
+
+1. Haga click en **Set Service**
+
+#### Marcar Service - AWS Outbound (Continuación)
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/AWS-22.jpg)
+
+1. Bajo **Select Services** escriba **3306**
+2. Seleccione **MySQL** checkbox
+3. Haga click en **SAVE**
+
+#### Publicar - AWS Outbound
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/AWS-23.jpg)
+
+1. Haga click en **PUBLISH**
+
+**Nota:** Asegúrese de dejar **All Uplinks** en la sección **Applied To**
+
+### Agregar Nueva Regla - Public In
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/AWS-24.jpg)
+
+1. Haga click en **ADD NEW RULE**
+
+#### Agregar Nueva Regla - Public In (Continuación)
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/AWS-25.jpg)
+
+1. Escriba **Public In** como Nombre
+2. Haga click en **Set Source**
+
+#### Seleccionar Origen - Public In
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/AWS-26.jpg)
+
+1. Haga click y seleccione **Any**
+2. Haga click en **SAVE**
+
+#### Marcar Destino - Public In
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/AWS-27.jpg)
+
+1. Haga click en **Set Destination**
+
+#### Seleccionar Destino - Public In
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/AWS-28.jpg)
+
+1. Haga click y seleccione **PhotoAppVM**
+2. Haga click en **SAVE**
+
+#### Marcar Servicio - Public In
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/AWS-29.jpg)
+
+1. Haga click en **Set Service**
+
+#### Marcar Servicio - Public In (Continuación)
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/AWS-30.jpg)
+
+1. Escriba **HTTP 80** bajo **Select Services**
+2. Haga click y seleccione **HTTP**
+3. Haga click en **SAVE**
+
+#### Publicar - Public In
+
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/AWS-31.jpg)
+
+1. Haga click en **PUBLISH**
+
+**Nota:** Asegúrese de dejar **All Uplinks** en la sección de **Applied To**
 
 ## Integración con AWS Relational Database Service (RDS)
 
-### Implementar la VM Photo
+Amazon RDS facilita la configuración, el funcionamiento y la escala de una base de datos relacional en la nube. Proporciona una capacidad rentable y redimensionable a la vez que automatiza las tareas de administración que requieren mucho tiempo, como el aprovisionamiento de hardware, la configuración de la base de datos, la aplicación de parches y las copias de seguridad. Le permite concentrarse en sus aplicaciones para que pueda brindarles el rendimiento rápido, la alta disponibilidad, la seguridad y la compatibilidad que necesitan.
 
-Como primer paso para configurar nuestra integración entre la plataforma VMware Cloud on AWS y los servicios nativos de AWS, implementaremos una máquina virtual que utilizaremos para esta demostración. Esta VM se denominará "Photo VM". Por favor, siga las siguientes instrucciones.
+En este ejercicio, se podrá integrar una máquina virtual de Vmware Cloud on AWS para trabajar en conjunto con una base de datos relacional que se ejecuta en Amazon Web Services (AWS) que ha sido configurada previamente para usted.
+
+### Tome nota de la dirección IP de Webserver01
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS1.jpg)
 
-1\. Si todavía o ha ingresado, abra el vCenter de VMware Cloud on AWS y haga click en *Menu*
+Se utilizará la máquina virtual creada en el módulo anterior para pode completar este ejercicio.
 
-2\. Seleccione *Content Libraries*
+1. En la interface de vCenter de VMware Cloud on AWS, encuentre la VM desplegada en el ejercicio pasado llamada **Webserver01**, asegúrese que se le haya asignado una dirección IP como en la gráfica.
+
+### Asignar IP pública
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS2.jpg)
 
-3\. Haga click en la Biblioteca de Contenido previamente creada con el nombre *Student#* donde # es su número de estudiante
+1. Regrese al portal de VMware Cloud on AWS y haga click en la pestaña de **Networking & Security** para poder solicitar una IP pública
+2. Haga click en **Public IPs** en el panel izquierdo
+3. Haga click en **REQUEST NEW IP**
+4. En el área de notas escriba **PhotoAppIP**
+5. Haga click en **SAVE**
+
+### Tome nota de la nueva IP pública
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS3.jpg)
 
-4\. Si todavía no esta ubicado ahi, asegúrese de hacer click en la pestaña *Template*
+Tome nota de la nueva IP pública asignada.
 
-5\. Haga click derecho en la Plantilla *photo app*
-
-6\. Seleccione *New VM from This Template*
+### Crear una Regla NAT
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS4.jpg)
 
-7\. Dele el nombre a la máquina virtual de **PhotoApp#** donde # es su número de estudiante
+1. Haga click en **NAT** en el panel izquierdo
+2. Haga click en **ADD NAT RULE**
+3. Escriba **PhotoApp NAT** como Nombre
+4. Asegúrese que la IP pública asignada en el paso anterior aparezca bajo Public IP
+5. Deje seleccionado **All Traffic** (no se cambia)
+6. Escriba la dirección IP de su VM **Webserver01** que anotó al iniciar este ejercicio
+7. Haga click en **SAVE**
 
-8\. Expanda la ubicación y seleccione *Workloads*
-
-9\. Haga click en *Next*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS5.jpg)
-
-10\. Expanda el destino hasta encontrar *Compute-ResourcePool* como recurso de cómputo
-
-11\. Haga click en *Next*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS6.jpg)
-
-12\. En el paso **Review details** haga click en *Next*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS7.jpg)
-
-13\. En el paso **Select storage**, seleccione *WorkloadDatastore*
-
-14\. Haga click en *Next*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS8.jpg)
-
-15\. Seleccione la red que se creó en un paso anterior para la VM
-
-16\. Haga click en *Next*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS9.jpg)
-
-17\. Haga click en *Finish*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS10.jpg)
-
-18\. Siga la implementación de la VM hasta que se haya completado
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS11.jpg)
-
-19\. Revise la implementación de la VM
-
-20\. Haga click en *Menu*
-
-21\. Seleccione *VMs and Templates*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS12.jpg)
-
-22\. Asegúrese que la VM esté encendida. Si no lo está, haga click derecho en la VM
-
-23\. Seleccione *Power -> Power On*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS13.jpg)
-
-24\. Asegúrese que una IP ha sido asignada a la VM (podría ser necesario esperar un minuto o dos). Anote esta dirección IP para un paso posterior.
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS14.jpg)
-
-25\. Regrese al portal de VMware Cloud on AWS y haga click en la pestaña *Network* para solicitar una dirección IP Pública
-
-26\. Bajo *Compute Gateway* haga click y expanda *Public IPs*
-
-27\. Haga click en *REQUEST PUBLIC IP*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS15.jpg)
-
-28\. (Opcional) Escriba una nota para esta IP
-
-29\. Haga click en *Request*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS16.jpg)
-
-30\. Debería aparecer una notificación similar a la anterior
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS17.jpg)
-
-31\. Anote la nueva dirección IP Publica adquirida
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS18.jpg)
-
-32\. Ahora se crea una regla de NAT desde la nueva IP Pubica adquirida que fue anotada en el paso anterior a la dirección IP interna de la VM creada. Haga click en *NAT* para expander
-
-33\. Haga click en *ADD NAT RULE*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS19.jpg)
-
-34\. Dele un nombre a la regla de NAT
-
-35\. La nueva dirección IP Publica debería estar presente, sino es necesario escribirla
-
-36\. Bajo *Service* seleccione *Any (All Traffic)*
-
-37\. Escriba la dirección IP de la VM
-
-38\. Haga click en el botón *SAVE*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS20.jpg)
-
-39\. Una notificación de *NAT rule successfully created* debería aparecer
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS21.jpg)
-
-40\. Expanda *Firewall Rules*
-
-41\. Haga click en *ADD RULE*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS22.jpg)
-
-42\. Dele un nombre a la Regla de Firewall
-
-43\. Seleccione *All Internet and VPN* como Source
-
-44\. Escriba la Dirección IP Publica que anotó anteriormente en *Destination*
-
-45\. Seleccione *Any (All Traffic)* para la opción *Service*
-
-46\. Haga click en el botón *SAVE*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS23.jpg)
-
-47\. Deberá aparecer una notificación de *Firewall rule successfully created* similar a la anterior
+## Integración con AWS Relational Database Service (RDS)
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS24.jpg)
 
-En el browser, abra una nueva pestaña y visite https://vmcworkshop.signin.aws.amazon.com/console
+En su buscador, abra una pestaña nueva y entre a este enlace: https://vmcworkshop.signin.aws.amazon.com/console
 
-48\. Account ID o alias - **vmcworkshop**
+1.. Account ID o alias - Por favor utilice la información en la tarjeta proveída para determinar la información de su Account ID
+2. IAM user name - **Student#** (donde # es el número que le fue asignado)
+3. Password - **VMCworkshop1211**
+4. Haga click en **Sign In**
 
-49\. IAM user name - **Student#** donde # es el número que le fue asignado
+Por favor note que puede que reciba 2 pantallas de Sign In en este paso. Si recibe la del lado derecho, entre Account ID y haga click en **Next**
 
-50\. Password - **VMCworkshop1211**
+### Información de RDS
 
-51\. Haga click en *Sign In*
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS6.jpg)
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS25.jpg)
+1. Una vez conectado a la consola de AWS, asegúrese que haya seleccionado la región de **Oregon**
+2. Haga click en el servicio **RDS** (Pueda que necesite expandir **All services**)
 
-52\. Dentro de la consola de AWS. Asegúrese de seleccionar la region **Oregon**
+### Instancia RDS
 
-53\. Haga click en servicio *RDS*
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS07.jpg)
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS26.jpg)
+1. En el panel izquierdo haga click en **Databases**
+2. Haga click en la instancia RDS que corresponde a su número designado
 
-54\. En el panel izquierdo haga click en *Instances*
+### Navegar a Security Groups
 
-55\. Haga click en la instancia de RDS que corresponda a su Número de Estudiante
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS08.jpg)
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS27.jpg)
+1. Baje hasta el área **Details** y bajo **Connectivity & Security** note que la instancia de RDS no es accesible públicamente, lo que significa que esta instacia solo puede ser accedida desde el interior de AWS
+2. Haga click en el enlace azul bajo **Security Groups**
 
-56\. Baje hasta el area *Details* y bajo *Security and network* note que la instancia de RDS no es accesible publicamente, lo que significa que esta instacia solo puede ser accedida desde el interior de AWS
+### Security Groups
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS28.jpg)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS9.jpg)
 
-57\. Regrese a la página principal *Services* en la consola AWS dando click en el enlace *Services*
+1. Escoja el RDS Security Group **Student##-RDS-Inbound** que le corresponda a usted (puede que no sea su número de estudiante)
+2. Después de escoger el security group apropiado, haga click en la pestaña **Inbound**
 
-58\. Baje hasta *Networking & Content Delivery* y haga click en *VPC*
+**Nota: VMware Cloud on AWS establece rutas en el VPC por defecto, solo RDS puede influenciar estas o crear nuevas**
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS29.jpg)
+### Tráfico Outbound
 
-59\. Haga click en *Security Groups* en el panel izquierdo
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS10.jpg)
 
-60\. Escoja el RDS Security Group **rds-launch-wizard-#** que corresponde al número de estudiante
+1. Haga click en la pestaña **Outbound**
+2. Puede observar todo el tráfico (interno a AWS) es permitido, esto incluye el SDDC de VMware Cloud on AWS y los segmentos de red lógicos que existen en el SDDC.
 
-61\. Luego de seleccionar el grupo de seguridad apropiado haga click en la pestaña *Inbound Rules* en la sección inferior
+### Elastic Network Interface (ENI)
 
-VMware Cloud on AWS establece el enrutamiento en el VPC Security Group por defecto, solamente RDS puede utilizar esto o crear esta configuración
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS11.jpg)
 
-62\. Note que el rango del bloque CIDR de la Red Logica Student#-LN Logical Network que fue creada en VMware Cloud on AWS esta autorizada para MySQL en el puerto 3306. Esto fue preparado con anterioridad
+El AWS Relational Database Service (RDS), también crea su propio Elastic Network Interface (ENI) para tener acceso, el cual es un ENI distinto al creado por VMware Cloud on AWS.
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS30.jpg)
+1. Haga click en **Services** para regresar a la consola principal
+2. Haga click en **EC2**
 
-AWS Relational Database Service (RDS), también crea su propia Elastic Network Interface (ENI) para acceso la cúal esta seprada de la ENI creada por VMware Cloud on AWS.
+### ENI (Continuación)
 
-63\. Haga click en *Services* y regrese a Consola Principal
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS12.jpg)
 
-64\. Haga click en *EC2*
+1. En el dashboard de EC2 haga click en **Network Interfaces** en el panel izquierdo
+2. Todos los ambientes de estudiantes pertenecen a la misma cuenta de AWS, por ende, cientos de ENIs pueden existir. Para poder hacer más fácil la búsqueda, escriba **RDS** en el área de búsqueda y oprima Enter para añadir un filtro
+3. Escoja su security group **Student##-RDS-Inbound** que corresponde a su número de estudiante basado en el segundo octect del bloque de IPs en la última columna
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS31.jpg)
+    En este ejemplo, el bloque de IPs es 172.6.8.187, esto correspondería al estudiante **6**
 
-65\. En el EC2 Dashboard haga click en *Network Interfaces* en el panel izquierdo
+4. Tome nota de la dirección **Primary private IPv4 IP** para el siguiente paso
 
-66\. Todos los ambientes de los estudiantes pertenecen a la misma cuenta de AWS, por esta razón, cientos de ENIs podrían existir. Para minimizar la vista, escriba *RDS* en el area de búsqueda y presione *Intro* para agregar un filtro
+### Photo App
 
-67\. Seleccione **rds-launch-wizard-#** que corresponde a su número de estudiante
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS13.jpg)
 
-68\. Anote la dirección *Primary private IPv4 IP* para el próximo paso
+1. En su teléfono inteligente (Tableta o computadora personal), abra un buscador y escriba la IP pública que se pidió en el portal de VMware Cloud on AWS, seguido por /Lychee (distingue mayúsculas y minúsculas),por ejemplo: 1.2.3.4/Lychee
+2. Escriba la información de abajo (_sensible a mayúsculas y minúsculas_) para conectarse a la base de datos, utilizando la dirección IP anotada en el paso previo de el ENI de RDS:
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS32.jpg)
+    Database Host: x.x.x.x:3306
+    Database Username: student# (donde # corresponde a su número de estudiante)
+    Database Password: VMware1!
 
-69\. Abra una pestaña adicional en el browser y escriba la dirección IP pública que fue solicitada en el portal VMware Cloud on AWS en la barra de dirección seguida por /Lychee (sensible a mayúsculas) ie: x.x.x.x/Lychee
+3. Haga click en **Connect**
 
-70\. Escriba la información de conexión a la base de datos descrita abajo (sensible a mayúsculas), usando la dirección IP del RDS ENI que anotó en el paso previo:
-      Database Host: **x.x.x.x:3306**
-      Database Username: **student#**
-      Database Password: **VMware1!**
+### Ingresar información de inicio de sesión
 
-71\. Haga click en *Connect*
+ ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS15.jpg)	
 
-Hemos creado con éxito una aplicación híbrida que utiliza componentes tanto en su entorno de VMware Cloud on AWS SDDC como en sus servicios nativos de AWS.
+1. Escriba **student#** (donde # corresponde a su número asignado) para user name y **VMware1!** como contraseña
+2. Haga click en **Sign In**
 
-Esta funcionalidad ofrece a los clientes ahora opciones sobre cómo se migran las aplicaciones a la nube. Ahora puede dividir su aplicación entre plataformas y consumir servicios en vSphere y AWS. Este nivel de elección realmente puede ayudar a aquellos que buscan migrar a la nube, acelerar ese proceso al no "empantanarse" en la refactorización de partes de una aplicación que son difíciles de trasladar a la nube de hiperescala.
+### Photo Albums
 
-## Integración con AWS Elastic File System (EFS)
+![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/RDS16.jpg)
 
-### Creación de una VM para integrar con EFS
+Felicidades, se ha logrado conectar exitosamente al photo app!
 
-En nuestra próxima sección sobre integración de servicios de AWS con VMware Cloud on AWS, utilizaremos AWS Elastic File System (EFS), que podemos usar para montar recursos compartidos de NFS en nuestras máquinas virtuales alojadas en VMware Cloud on AWS.
+OPCIONAL: Tómese la libertad de tomarle una foto al cuarto donde se encuentra con su teléfono y subirla a la carpeta pública.
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/EFS1.jpg)
+Resumiendo, la interfaz (servidor web) está corriendo en VMware Cloud on AWS como una máquina virtual (VM), el back end, que es una base de datos MySQL, está corriendo en AWS Relational Database Service y comunicándose a través del Elastic Network Interface (ENI) que se establece en el momento de crearse el SDDC.
 
-1\. Navegue en la Biblioteca de Contenido, haga click en *Menu* en el vCenter Server de VMware Cloud on AWS
-
-2\. Seleccione *Content Libraries*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/EFS2.jpg)
-
-3\. Haga click en la Biblioteca de Contenido *Student#*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/EFS3.jpg)
-
-4\. Asegúrese que la pestaña *Templates* esté seleccionada
-
-5\. Haga click derecho en la plantilla *efs*
-
-6\. Seleccione *New VM from This Template*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/EFS4.jpg)
-
-7\. Dele el nombre **EFSVM#** a la VM donde # sea el número de estudiante asignado
-
-8\. Seleccione *Workloads* como la ubicación de la VM
-
-9\. Haga click en *NEXT*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/EFS5.jpg)
-
-10\. Seleccione *Compute-ResourcePool* como el destino de su VM
-
-11\. Haga click en *NEXT*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/EFS6.jpg)
-
-12\. Haga click en *NEXT*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/EFS7.jpg)
-
-13\. Seleccione *WorkloadDatastore* como almacenamiento
-
-14\. Haga click en *NEXT*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/EFS8.jpg)
-
-15\. Seleccione la red en *Destination Network*
-
-16\. Haga click en *NEXT*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/EFS9.jpg)
-
-17\. Haga click en *FINISH*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/EFS10.jpg)
-
-18\. Asegúrese de encender la VM y asegúrese que tenga una dirección IP asignada
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/EFS11.jpg)
-
-En el browser, abra una nueva pestaña y visite: https://vmcworkshop.signin.aws.amazon.com/console
-
-19\. Account ID or alias - **vmcworkshop**
-
-20\. IAM user name - **Student#** donde # es el número asignado
-
-21\. Password - **VMCworkshop1211**
-
-22\. Haga click en *Sign In*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/EFS12.jpg)
-
-23\. Ahora ha ingresado a la consola de AWS. Asegúrese que la región seleccionada sea *Oregon*
-
-24\. Haga click en el servicio *EFS*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/EFS13.jpg)
-
-25\. Seleccione el NFS Student #
-
-26\. Anote la dirección IP
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/EFS14.jpg)
-
-27\. Regrese a la pestaña vCenter Server, haga click en *Launch Web Console* de la VM EFS (es posible que necesite permitir las ventanas emergentes en el browser). Ingrese usando las siguientes credenciales:
-    User: **root**
-    Password: **VMware1!**
-
-Escriba los siguientes comandos en la terminal:
-
-• **cd /**
-
-• **mkdir efs**
-
-• **sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2
-MOUNT_TARGET_IP:/ efs**
-
-    Dónde *MOUNT_TARGET_IP* es la IP que anotó en un paso anterior para su EFS
-
-• **cd efs**
-
-• **touch hello.world**
-
-• **ls**
-
-Hemos integrado AWS EFS don una VM en VMware Cloud on AWS.
+Ha completado este ejercicio, gracias por su visita hoy!
