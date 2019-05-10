@@ -24,7 +24,7 @@ After you login, you should see a two single-node SDDC's in the user interface f
 ![SDDC-Network-01](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc01.jpg)
 
 1. First identify your SDDC that is assigned to you (Student-##).
-2. Click on View Details to open the SDDC properties.
+2. Click on **View Details** to open the SDDC properties.
 
 ![SDDC-Network-02](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc02.jpg)
 
@@ -33,22 +33,20 @@ You will start with the Summary of the SDDC. There are a number of other tabs av
 2. **Settings**: Gives you access to your vSphere Client (HTML5), vCenter Server API, PowerCLI Connect, vCenter Server and reviews your Authentication information.
 3. **Troubleshooting**: Allows you to run network connectivity tests to ensure all necessary access is available to perform select use cases.
 4. **Add Ons**: Here you will find Add On services for your VMware Cloud on AWS environment like Hybrid Cloud Extension and VMware Site Recovery.
-5. **Networking & Security**: Provides a full diagram of the Management and Compute Gateways.  This is where you can configuration locgical networks, VPN's and firewall rules. We will cover this in more detail later. Click on Networking & Security to proceed to the next article to learn more about VMware Cloud on AWS Network and Security Configuration.
+5. **Networking & Security**: Provides a full diagram of the Management and Compute Gateways.  This is where you can configuration locgical networks, VPN's and firewall rules. We will cover this in more detail later. Click on **Networking & Security** to proceed to the next article to learn more about VMware Cloud on AWS Network and Security Configuration.
 
 ## Create a Logical Network
 
 ![SDDC-Network-03](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc03.jpg)
 
 From the previous article, you should see the Network & Security information for the SDDC.
-VMware Cloud on AWS allows you to quickly and easily create new logical network segments on
-demand. Let's create a new network segment in the SDDC.
+VMware Cloud on AWS allows you to quickly and easily create new logical network segments on demand. Let's create a new network segment in the SDDC.
 
 1. Click the **Networking & Security** tab, then click on **Segments** to show all of the existing network segments.
 2. Click on **Add Segments** to create a new network segment.
 3. Enter **Demo-Net** for the Name of the new network segment.
-4. For the Gateway/Prefix Length enter 10.10.xx.1/24 (xx depicts your student number). This represents the default gateway.
-of the network and the prefix length of the network. For more details on IP addressing see below.
-5. For **DHCP**, click the down arrow and select Enabled to enable DHCP on the network.
+4. For the Gateway/Prefix Length enter **10.10.xx.1/24** (xx depicts your student number). This represents the default gateway of the network and the prefix length of the network. For more details on IP addressing see below.
+5. For **DHCP**, click the down arrow and select **Enabled** to enable DHCP on the network.
 6. Enter **10.10.xx.10-10.10.xx.200** for the **DHCP IP Range**. This is the range of IP addresses the DHCP server will grant to workloads attached to the network.
 7. Click **Save** to save the logical network.
 
@@ -78,7 +76,6 @@ For example:
 
 1. Verify the network segment was added correctly.  Your information should match the highlighted area above.
 
-
 ## Configure Firewall Rule for vCenter Access
 
 ![SDDC-Network-05](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc05.jpg)
@@ -97,7 +94,7 @@ By default, all inbound firewall rules are set to Deny in VMware Cloud on AWS. I
 
 ![SDDC-Network-06](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc06.jpg)
 
-1. Click the **Radio Button** next to **Any**.
+1. Click the radio button next to **Any**.
 2. Click **Save** to save the source information in the rule.
 
 ### Configure Firewall Rule for vCenter Access (Continued)
@@ -110,8 +107,8 @@ By default, all inbound firewall rules are set to Deny in VMware Cloud on AWS. I
 
 ![SDDC-Network-08](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc08.jpg)
 
-1. Click the **Radio Button** next to **System Defined Groups**.
-2. Select the **Checkbox** next to **vCenter**.
+1. Click the radio button next to **System Defined Groups**.
+2. Select the checkbox next to **vCenter**.
 3. Click **Save** to save the destination information in the rule.
 
 ### Configure Firewall rule for vCenter Access (Contined)
@@ -139,13 +136,13 @@ The settings to connect to the vCenter server associated with the SDDC is availa
 
 **NOTE: If you experience any login issues below, you can click the two boxes next to the URL below to paste the URL into an incognito window. This should not be needed normally.**
 
-### Login to the vSphere Cilent (HTML5)
+### Login to the vSphere Client (HTML5)
 
 To login to the vSphere Client (HTML5):
 
 ![SDDC-vcenter-011](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc011.jpg)
 
-1. In the User name field enter **cloudadmin@vmc.local.**
+1. In the User name field enter **cloudadmin@vmc.local**
 2. Right-click in the **Password** field and paste the password copied in the previous step.
 3. Click **Login**.
 
@@ -153,7 +150,7 @@ To login to the vSphere Client (HTML5):
 
 ![SDDC012](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc012.jpg)
 
-You are now logged in to your VMware Cloud AWS vCenter Server as cloudadmin@vmc.local user.
+You are now logged in to your VMware Cloud on AWS vCenter Server as cloudadmin@vmc.local user.
 
 ## Create Content Library
 
@@ -205,8 +202,8 @@ If you use a subscribed library, you can only utilize the content, but cannot co
 
 1. Select the radio button next to **Subscribed content library.**
 2. Under **Subscription URL** enter the following: https://vmc-elw-vms.s3-accelerate.amazonaws.com/lib.json
-3. Leave the checkbox **unchecked** next to **Enabled Authentication**.
-4. Make sure Download content is set to **immediately**.
+3. Leave the checkbox **unchecked** next to **Enable Authentication**.
+4. Make sure **Download content** is set to **immediately**.
 5. Click **Next** to continue.
 
 ![SDDC017](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc017.jpg)
@@ -235,7 +232,7 @@ Use the Customization Specification Manager to manage customization specificatio
 ![SDDC019](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc019.jpg)
 
 1. Click **Menu**.
-2. click on **Policies and Profiles**.
+2. Click on **Policies and Profiles**.
 
 ### Add a new VM Customization Specification
 
@@ -256,7 +253,7 @@ Use the Customization Specification Manager to manage customization specificatio
 
 ![SDDC022](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc022.jpg)
 
-1. Click the **radio button** next to **Use the virtual machine name**.
+1. Click the radio button next to **Use the virtual machine name**.
 2. For **Domain name** enter **corp.local**.
 3. Click the **Next** button to continue.
 
@@ -272,7 +269,7 @@ Use the Customization Specification Manager to manage customization specificatio
 
 ![SDDC024](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc024.jpg)
 
-1. Ensure the radio button next to **Use standard network settings for the guest operating system. including enabling DHCP in all network interfaces** is selected.
+1. Ensure the radio button next to **Use standard network settings for the guest operating system, including enabling DHCP in all network interfaces** is selected.
 2. Click **Next** to continue.
 
 ### Enter DNS Settings
@@ -317,7 +314,7 @@ In the vSphere client window already opened, deploy a template from the content 
 ![SDDC-deploy-vm-029](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc029.jpg)
 
 1. Click the **Templates** tab to access the template synchronized in the content library.
-2. Right-click on the **photoapp-u**  template to exporthe Actions menu.
+2. Right-click on the **photoapp-u**  template to expose the Actions menu.
 3. Click on **New VM from This Template** to deploy a virtual machine from template.
 
 ### Choose Virtual Machine Name and Location
@@ -327,7 +324,7 @@ In the vSphere client window already opened, deploy a template from the content 
 1. Enter **webserver01** for the virtual machine name.
 2. Click the **arrow** next to SDDC-Datacenter to expose the folders available.
 3. In VMware Cloud on AWS customer workloadds should be placed in the Workloads folder (or subfolder).  Click the **Workloads** folder.
-4. Select the **Checkbox** next to  **Customize the operating system**.
+4. Select the checkbox next to  **Customize the operating system**.
 5. Click **Next** to continue.
 
 ### Choose Virtual Machine Customization Specification
@@ -343,7 +340,7 @@ We will utilize the customization specification created in a previous module to 
 
 ![SDDC-deploy-vm-032](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc032.jpg)
 
-1. Click the **arrow** next to Cluster-1 to expose the resource pools available.
+1. Click the arrow next to **Cluster-1** to expose the resource pools available.
 2. In VMware Cloud on AWS customer workloads should be placed in the **Compute-ResourcePool** (or subpool).  Click **Compute-ResourcePool**.
 3. Click **Next** to continue.
 
@@ -351,7 +348,7 @@ We will utilize the customization specification created in a previous module to 
 
 ![SDDC-deploy-vm-033](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc033.jpg)
 
-Review the details of the template to be deployed.  There may be a security warning displayed, but you can safely ignore that the purpose of this lab.
+Review the details of the template to be deployed.  There may be a security warning displayed, but you can safely ignore that for the purpose of this lab.
 
 1. Click **Next** to continue.
 
@@ -361,7 +358,7 @@ Review the details of the template to be deployed.  There may be a security warn
 
 Each VMware Cloud on AWS SDDC will include two datastores in order to separate management and customer workloads.  All customer workloads should be placed in the datastore named WorkloadDatastore.
 
-1. Click **workloadDatastore** to select the datstore where the virtual machine will be provisioned.
+1. Click **WorkloadDatastore** to select the datastore where the virtual machine will be provisioned.
 2. Click **Next** to continue.
 
 ### Select the Network for the Virtual Machine
@@ -370,7 +367,7 @@ Each VMware Cloud on AWS SDDC will include two datastores in order to separate m
 
 We will use the logical network created in a previous exercise for these virtual machines.
 
-1. Click the **arrow** below Destination Network to select the network for the virtual machine.
+1. Click the arrow below **Destination Network** to select the network for the virtual machine.
 2. Click **Demo-Net** to select the network previously created.
 3. Click **Next** to continue.
 
@@ -445,7 +442,7 @@ We will now begin the process of cloning this virtual machine.
 1. Click on **WorkloadDatastore** to ensure it is selected as the destination for the virtual machine.
 2. Click **Next** to continue.
 
-### Select Clonging Options
+### Select Cloning Options
 
 ![SDDC-clone-vm-043](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc043.jpg)
 
@@ -491,7 +488,7 @@ We need to open a console session to webserver01 to validate it can communicate 
 1. In the vSphere Client (HTML5) click on Webserver01 to bring it into focus.
 2. Click the black box below Summary in the middle of the screen. This will attempt to launch a console session but it may fail because the pop-up was blocked. If this occurs follow steps 3-6, otherwise proceed to the next section.
 3. Click the icon with the small red x in the Chrome address bar to launch to pop-up blocker dialog.
-4. Click the radio button next to Always allow pop-ips from https://vcenter.sddc-xx-xx-xxxx.vmwarevmc.com
+4. Click the radio button next to Always allow pop-ups from https://vcenter.sddc-xx-xx-xxxx.vmwarevmc.com
 5. Click the Done button.
 6. Return to the black box below the Summary and click it again. The console session should launch in a new tab.
 
@@ -531,8 +528,7 @@ VMware Cloud on AWS Advanced Network Services is now available for new SDDC depl
 
 ![DFW-01](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/dfw01.jpg)
 
-Using VMware Cloud on AWS Advanced Network Services, users have the capability to implement micro-segmentation with Distributed Firewall. Granular security policies can be
-applied at the VM-level allowing for segmentation within the same L2 network or across separate L3 networks. This is shown in the diagram above.
+Using VMware Cloud on AWS Advanced Network Services, users have the capability to implement micro-segmentation with Distributed Firewall. Granular security policies can be applied at the VM-level allowing for segmentation within the same L2 network or across separate L3 networks. This is shown in the diagram above.
 
 All networking and security configuration is now done through the VMware Cloud on AWS console via the Networking & Security tab, including creating network segments. This provides ease of operations and management by having all networking and security access through the console.
 
@@ -709,6 +705,7 @@ Now that we have the section created, we can now add a firewall rule.
 ![DFW-tag-021](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/dfw021.jpg)
 
 You should still have the console session opened from the previous exercise to webserver01 and it should be running a ping command.
+
 1. Click the Chrome Tab for **webserver01**.
 2. Ping webserver02 IP address 10.10.xx.xxx.
 
