@@ -47,7 +47,7 @@ Nombre de Módulos | Descripción
 [Trabajando con un SDDC](https://vmc-field-team.github.io/labs-es/working-with-sddc-lab/){:target="_blank"} | Aprenda los conceptos básicos de un ambiente de VMware Cloud on AWS SDDC
 [Integración con AWS](https://vmc-field-team.github.io/labs-es/aws-integration-lab/){:target="_blank"} | Aprenda como hacer integraciones con servicios nativos de AWS como RDS y EFS
 [VMware Cloud on AWS APIs](https://vmc-field-team.github.io/labs-es/api-lab/){:target="_blank"} | Aprenda a interactuar con VMware Cloud on AWS a través de APIs
-[VMware vRealize Automation](https://vmc-field-team.github.io/labs-es/vra-lab/){:target="_blank"} | Utilize la capacidad de integrar herramientas de VMware vRealize Suite con VMware Cloud on AWS
+[VMware Hybrid Cloud Extension](https://vmc-field-team.github.io/labs-es/hcx-lab/){:target="_blank"} | Aprenda como la tecnología de VMware Hybrid Cloud Extension (HCX) le puede ayudar a hacer migraciones de máquinas virtuales en vivo (vMotion) o en masa (Bulk Migration) hacia la plataforma de VMware Cloud on AWS
 
 
 <!--
