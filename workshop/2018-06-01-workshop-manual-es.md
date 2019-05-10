@@ -11,8 +11,7 @@ author_profile: false
 
 El taller de VMware Cloud on AWS es su oportunidad de probar esta solución única en el mercado en una sesión de clase con expertos de VMware Cloud on AWS y trabajar en ejercicios prácticos para comprender y adquirir experiencia con la solución para comprender cómo puede ser utilizado en su empresa.
 
-La clase es una actividad de un día en la que examinaremos las actividades de configuración de un ambiente de VMware SDDC en AWS y ejecutaremos las actividades de administración comunes de la plataforma; luego, comprenderá cómo puede ejecutar cargas de trabajo en VMware Cloud en AWS. e integrar con servicios nativos de AWS.
-También trabajaremos en ejercicios de integración con las soluciones de vRealize Suite, como vRealize Automation y vRealize Operations. El tema de cómo puede utilizar VMware Cloud en AWS como objetivo para DRaaS utilizando VMware Site Recovery Manager (SRM). También tiene la oportunidad de probar Horizon 7 en VMware Cloud on AWS.
+La clase es una actividad de un día en la que examinaremos las actividades de configuración de un ambiente de VMware SDDC en AWS y ejecutaremos las actividades de administración comunes de la plataforma; luego, comprenderá cómo puede ejecutar cargas de trabajo en VMware Cloud en AWS. e integrar con servicios nativos de AWS. También examinaremos como operar el ambiente de VMware Cloud on AWS a través de APIs como también examinaremos la herramienta de VMware Hybrid Cloud Extension (HCX) que nos permitirá migrar máquinas virtuales a VMware Cloud on AWS en vivo utilizando vMotion o en grupos utilizando tecnología de vSphere Replication.
 
 ## Detalles del taller
 
