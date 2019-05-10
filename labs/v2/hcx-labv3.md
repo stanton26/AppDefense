@@ -64,13 +64,13 @@ Now that you are familar with installing and configuring HCX.  Let's do an actua
 
 We have provided an on-prem vCenter with virtual machines to migrate.  Based on your student ## please select the appropriate VM to migrate.
 
-From your Horizon desktop (workshop.vmc.ninja) open google and access the on-prem vCenter
+From your Horizon desktop (workshop.vmc.ninja) open Google Chrome and access the on-prem vCenter
 
 **Note: Refer to the Student Access page to log into your Horizon desktop https://vmc-field-team.github.io/student-access/**
 
 ![HCX01](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/hcx01.jpg)
 
-1. Open Google and enter https://vcenter-workshop.workshop.set.local/ui for the URL.
+1. Open Google Chrome and enter https://vcenter-workshop.workshop.set.local/ui for the URL.
 2. Type in your student (student#@set.local) credentials.
 3. Type in your password assigned to you.
 4. Click **Login** to continue.
@@ -119,7 +119,7 @@ To migrate your virtual machine VMware Cloud on AWS you will have to select the 
 1. Verify the validation is successful.
 2. Click on **Finish** to migrate your virtual machine to VMware Cloud on AWS.
 
-### Check Migration Progess
+### Check Migration Progress
 
 ![HCX06](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/hcx06.jpg)
 
@@ -170,7 +170,7 @@ We will use vMotion to migrate the virtual machine back to the on-prem vCenter. 
 
 ![HCX012](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/hcx012.jpg)
 
-1. Verify the validaiton is successful.
+1. Verify the validation is successful.
 2. Click on **Finish** to migrate your virtual machine back to your on-prem vCenter.
 
 ![HCX013](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/hcx013.jpg)

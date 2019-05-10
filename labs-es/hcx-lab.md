@@ -23,348 +23,185 @@ Hybrid Cloud Extension abstrae los recursos on-premises y los ubicados en la nub
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/HCX2.jpg)
 
-Any-to-Any vSphere Cloud App Mobility
+#### Any-to-Any vSphere Cloud App Mobility
 
-• Elimina la necesidad de una evaluación de preparación de nube y un diagnostico de dependencia de aplicaciones
+* Movimiento rápido de cargas de trabajo existentes desde una plataforma vSphere al SDDC
+* Reducir el tiempo de planeación inicial para costos y análisis de recursos
+* Acelerar la adopción de nube y evitar cambios importantes en el ambiente on-premise
 
-• Movimiento rápido de cargas de trabajo existentes desde una plataforma vSphere al SDDC
+#### Continuidad de Negocio con un Menor TCO
 
-• Reducir el tiempo de planeación inicial para costos y análisis de recursos
+* Reconfiguración de direcciones IP y MAC no es necesario
+* No es necesario modificar las VMs existentes en el ambiente
+* Hybrid Cloud Extension brinda migración warm y cold en lote y bidireccional
+* Hybrid Cloud Extension simplifica su modelo operacional
 
-• Acelerar la adopción de nube y evitar cambios importantes en el ambiente on-premise
+#### Diseñado para la Seguridad
 
-**Continuidad de Negocio con un Menor TCO**
+* Asegure un control altamente seguro para las nubes privadas y publicas
+* Proteja recursos con capacidades de recuperación de desastre
+* La DMZ híbrida de Hybrid Cloud Extension permite portabilidad de las redes empresariales y las prácticas seguras en la nube
+* Las políticas de seguridad migran junto con las aplicaciones
 
-• Reconfiguración de direcciones IP y MAC no es necesario
+#### Hibridación de Infraestructura de Alto Rendimiento
 
-• No es necesario modificar las VMs existentes en el ambiente
+* Optimización WAN incluida que se adapta a las necesidades de los casos de uso híbridos
+* Hybrid Cloud Extension brinda enrutamiento ágil e inteligente
+* Balanceo de tráfico garantizado por políticas
+* Múltiples modelos de migración de VM (incluyendo vMotion, warm y cold) facilita la migración a y desde la nube sin ningún cambio
 
-• Hybrid Cloud Extension brinda migración warm y cold en lote y bidireccional
+## Configurar HCX
 
-• Hybrid Cloud Extension simplifica su modelo operacional
+Haga click en el enlace a continuación para ensayar los pasos de como instalar y configurar HCX en su ambiente local on-premises.
 
-**Diseñado para la Seguridad**
-
-• Asegure un control altamente seguro para las nubes privadas y publicas
-
-• Proteja recursos con capacidades de recuperación de desastre
-
-• La DMZ híbrida de Hybrid Cloud Extension permite portabilidad de las redes empresariales y
-las prácticas seguras en la nube
-
-• Las políticas de seguridad migran junto con las aplicaciones
-
-**Hibridación de Infraestructura de Alto Rendimiento**
-
-• Optimización WAN incluida que se adapta a las necesidades de los casos de uso híbridos
-
-• Hybrid Cloud Extension brinda enrutamiento ágil e inteligente
-
-• Balanceo de tráfico garantizado por políticas
-
-• Múltiples modelos de migración de VM (incluyendo vMotion, warm y cold) facilita la
-migración a y desde la nube sin ningún cambio
+[HCX Install and Configuration](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/HCX-OnPrem-Installation.htm){:target="_blank"}
 
 ## HCX - Migración usando vMotion
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/HCX3.jpg)
+Ahora que ya está familiarizado en como instalar y configurar HCX, vamos a realizar una migracion en vivo de una máquina virtual utilizando vMotion hacia VMware Cloud on AWS.
 
-1\. Abra Chrome y haga click en el acceso directo *HCX-vMotion*
+### Iniciar Sesión a vCenter On-Prem
 
-2\. Haga click en *X* en el panel derecho y aumente el tamaño de la pantalla principal
+Le hemos proveído un vCenter on-prem con máquinas virtuales para migrar. Dependiendo de su número asignado de estudiante ## favor selecione la máquina virtual respectiva para migrar.
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/HCX4.jpg)
+Desde su escritorio Horizon (workshop.vmc.ninja) abra Google Crhome y acceda a este vCenter on-prem.
 
-La primera pestaña en el browser muestra un vCenter Server on-premise.
+**Nota: Refiera a la página Student Access para iniciar una sesión al escritorio virtual Horizon si es necesario https://vmc-field-team.github.io/student-access/**
 
-3\. Haga click en la segunda pestaña, esta muestra un segundo centro de datos (Tambien podría mostrar un VMware Cloud on AWS vCenter)
+![HCX01](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/hcx01.jpg)
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/HCX5.jpg)
+1. Habra Google Chrome y escriba https://vcenter-workshop.workshop.set.local/ui para el URL.
+2. Escriba su número de estudiante (student#@set.local) para credenciales
+3. Escriba su contraseña asignada
+4. Haga click en **Login** para continuar
 
-4\. Haga click en la primera pestaña del browser y regrese al vCenter on-premise.
+### Migración de una máquina virtual a la nube
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/HCX6.jpg)
+![HCX02](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/hcx02.jpg)
 
-5\. Haga click en la VM con el nombre *Mission Critical Workload 1*
+1. Haga click en la flecha para expander **Datacenter**.
+2. Haga click en la flecha para expander **VSAN-Cluster**.
+3. Haga click en la flecha para expander **Migrate** resource pool.
+4. Haga click en la máquina virtual **Student##**.
+5. Tome nota de la dirección IP para poder hacer un ping en otro ejercicio.
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/HCX7.jpg)
+![HCX02-1](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/hcx02-1.jpg)
 
-6\. Haga click en la Consola
+1. Haga click derecho en el ícono de Windows en la parte inferior izquierda de su escritorio.
+2. Haga click en **Command Prompt**.
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/HCX8.jpg)
+![HCX02-2](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/hcx02-2.jpg)
 
-Una consola se abrirá para la VM *Mission Critical Workload 1*, trate de hacer ping a dirección IP 10.159.137.212 la cual corresponde a una VM en el sitio secundario.
+1. En caso que no apuntó la dirección IP de su máquina virtual.
+2. Escriba en la ventana de command prompt **ping 172.60.2.xxxxx**.
 
-7\. Haga click en la pestaña correspondiente al sitio secundario
+![HCX03](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/hcx03.jpg)
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/HCX9.jpg)
+1. Regrese a su consola de vCenter y haga click derecho en su máquina virtual **Student##**.
+2. Apunte el mouse sobre **Hybridity Actions**.
+3. Haga click en **Migrate to the Cloud**.
 
-8\. Haga click en la VM con el nombre *TargetSite-TestVM*
+![HCX04](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/hcx04.jpg)
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/HCX10.jpg)
+Para migrar la máquina virtual a VMware Cloud on AWS tendrá que escoger el destino para cosas como la carpeta, resource pool y datastore.
 
-9\. Anote la dirección IP correspondiente a esta VM que corresponde a la VM *Mission Critical Workload 1* en el sitio primario e intente hacer ping
+**Nota: Asegúrese de seleccionar la carpeta y resource pool Migrate para asegurarse que pueda encontrar la misma máquina virtual cuando la migre de regreso a on-prem.**
 
-10\. Haga click en la pestaña *Mission Critical Workload 1*
+1. Haga click en **Specify Destination Folder** y seleccione la carpeta **Migrate**.
+2. Haga click en **Specify Destination Container** y seleccione **Migrate**.
+3. Haga click en **Select Storage** y seleccione el datastore **WorkloadDatastore**.
+4. Haga click en **Select Migration Type** y seleccione **Cloud Motion with vSphere Replication**.
+    No modifique el **schedule failover** para asegurar que la migración de la máquina ocurra de inmediato.
+5. Haga click en **Next** para validar su selección.
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/HCX11.jpg)
+![HCX05](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/hcx05.jpg)
 
-• Presione *enter* luego del comando ping
+1. Verifique que la validación fué exitosa.
+2. Haga click en **Finish** para migrar su máquina virtual a VMware Cloud on AWS.
 
-• Haga *Control-C* para detener el ping
+### Chequear el Progreso de la Migración
 
-• Escriba **ping 172.16..4.2**, esta la dirección IP de la VM
+![HCX06](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/hcx06.jpg)
 
-11\. Haga click en la *X* de esta pestaña en su browser
+1. Haga click en **Menu**.
+2. Haga click en **HCX**.
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/HCX12.jpg)
+![HCX07](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/hcx07.jpg)
 
-12\. Haga click en la primera pestaña y regrese al vCenter on-premise
+El Dashboard le demuestra información general de cuántas máquinas virtuales se han migrado, están migrándose, y han sido agendadas para ser migradas.
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/HCX13.jpg)
+1. Haga click en **Migration** en el panel izquierdo.
 
-13\. Haga click en el botón *Actions*
+![HCX08](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/hcx08.jpg)
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/HCX14.jpg)
+1. Tome nota del progreso de la migración con vMotion.
+2. Haga click en el botón de **Refresh** para actualizar el progreso.
 
-14\. Haga click en *Hybridity Actions*
+![HCX09](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/hcx09.jpg)
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/HCX15.jpg)
+Mientras la migración esté en progreso, examine la respuesta del ping.
 
-15\. Haga click en *Migrate to the Cloud*
+1. Haga click en la ventana de **Command Prompt** para regresar a la prueba de ping.
+2. Observe la prueba de ping que dejamos corriendo en un ejercicio anterior y fíjese que no se ha caído.
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/HCX16.jpg)
+**Nota: Asegúrese que la migración sea exitosa antes de continuar con el siguiente paso.**
 
-16\. Haga click en *(Specify Destination Container)*
+Una vez la máquina virtual se haya migrado exitosamente a VMware Cloud on AWS, vamos a tomar la misma máquina y la migraremos de regreso a nuestro vCenter on-prem.
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/HCX17.jpg)
+### Migración de Máquina Virtual de Regreso al Centro de Datos On-prem
 
-17\. Seleccione *RedwoodCluster*
+Utilizaremos vMotion para migrar la máquina virtual de regreso al vCenter on-prem. Note que esto es una operación que se realiza en serie y dependiendo de cuantas máquinas virtuales estén siendo migradas con vMotion a la misma vez, puede que tome unos minutos para completar.
 
-18\. Haga click en el botón *Select Destination*
+![HCX010](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/hcx010.jpg)
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/HCX18.jpg)
+1. Verifique que la máquina virtual haya sido migrada exitosamente al SDDC en VMware Cloud on AWS.
+2. Haga click en el botón **Migrate Virtual Machines**.
 
-19\. Haga click en el botón *(Select Storage)*
+![HCX011](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/hcx011.jpg)
 
-20\. Seleccione *cloudStorage*
+1. Haga click en **Reverse Migration** para cambiar la vista al vCenter de VMware Cloud on AWS.
+2. Haga click en el resource pool **Migrate** para mostrar las máquinas virtuales que fueron migradas.
+3. Haga click en la máquina que le corresponde **Student##**.
+4. Haga click en **Specify Destination Folder** y seleccione la carpeta **Migrate**.
+5. Haga click en **Specify Destination Container** y seleccione el resource pool **Migrate**.
+6. Haga click en **Select Storage** y seleccione el datastore **vsanDatastore**.
+7. Haga click en **Select Migration Type** y seleccione **vMotion**.
+8. Haga click en **Next** para validar su selección.
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/HCX19.jpg)
+![HCX012](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/hcx012.jpg)
 
-21\. Haga click en *(Select Virtual Disk Format)*
+1. Verifique que la validación sea exitosa.
+2. Haga click en **Finish** para migrar su máquina virtual de regreso al vCenter on-prem.
 
-22\. Seleccione *Same format as source*
+![HCX013](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/hcx013.jpg)
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/HCX20.jpg)
+1. Tome nota del progreso de la migración con vMotion.
+2. Haga click en el botón de **Refresh** para actualizar el progreso.
 
-23\. Haga click en *(Select Migration Type)*
+![HCX014](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/hcx014.jpg)
 
-24\. Seleccione *vMotion*
+**Paso Opcional**
 
-25\. Haga click en *Next*
+1. Haga click en el **Command Prompt** para regresar a la prueba de ping.
+2. Observe la prueba de ping que dejamos corriendo en un ejercicio anterior y fíjese que no se ha caído mientras la máquina se migra hacia el vCenter on-prem.
+3. Use ctrl-C para cancelar el ping.
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/HCX21.jpg)
+### Otros métodos de migración
 
-26\. Espere el mesaje *Validation is Successful*
+Tómese la libertad de probar otros tipos de migración. Use la misma máquina virtual **Student##** que le fue asignada y siga los mismos pasos pero en vez de hacer la migración con vMotion, trate de utilizar **Bulk Migration**.
 
-27\. Haga click en el botón *Finish*
+![HCX015](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/hcx015.jpg)
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/HCX22.jpg)
+#### Cloud Motion with vSphere Replication
 
-28\. Haga click en el botón *Home*
+Esta última opción proporciona cero tiempos de inactividad para la movilidad de la carga de trabajo desde el origen hasta el destino. Primero, los discos de carga de trabajo se replican en el sitio de destino. La replicación se maneja utilizando la replicación de vSphere incorporada en HCX. Este proceso depende de la cantidad de datos y el ancho de banda de red disponible. Una vez que se completa la sincronización de datos, HCX inicia un vMotion para completar la migración. vMotion migra la carga de trabajo al sitio de destino y sincroniza solo los datos restantes (delta) y el estado de la memoria de la carga de trabajo. Hay una opción para programar una ventana de mantenimiento para el swithcover de sincronización de datos de vMotion, de lo contrario sucede de inmediato.
 
-29\. Haga click *HCX* en el panel izquierdo
+#### Bulk Migration
 
-30\. Haga click en la pestaña *Migration*
+Bulk Migration crea una nueva máquina virtual en el sitio de destino. Esto puede ser local o VMC y retiene el UUID de la carga de trabajo. Luego usa vSphere Replication para copiar un snapshot de la carga de trabajo desde el sitio de origen al lugar de destino mientras la carga de trabajo aún está encendida. En este caso, un snapshot es un punto del tiempo del estado del disco de carga de trabajo, pero no es el snapshot de vSphere tradicional. Bulk Migration es administrada por el proxy de puerta de enlace en la nube a través del HCX Interconnect. Durante la sincronización de datos, no hay interrupción de las cargas de trabajo. La sincronización de datos depende de la cantidad de datos y el ancho de banda disponible. Existe una opción para programar una ventana de mantenimiento para la conmutación (switchover); de lo contrario, la conmutación se realiza de inmediato. Una vez que se completa la sincronización de datos inicial, tiene lugar una conmutación (a menos que esté programada). Las cargas de trabajo del sitio de origen están inactivas y se cierran aprovechando VMware Tools. Si VMware Tools no está disponible, HCX le solicitará que apague la(s) carga(s) de trabajo para iniciar el cambio. Durante el proceso de cambio, se produce una sincronización delta basada en el seguimiento de bloque modificado (CBT) para sincronizar los cambios desde el snapshot original. Las cargas de trabajo en el sitio de destino comenzarán a encenderse una vez que se complete la sincronización de datos (incluidos los cambios de datos delta). Se han realizado comprobaciones para garantizar que los recursos estén disponibles para encender las cargas de trabajo. Si una carga de trabajo de destino no puede encenderse debido a los recursos, la carga de trabajo de origen se volverá a encender.
 
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/HCX23.jpg)
+#### vMotion "Live Migration"
 
-31\. Revise el progreso de la migracion via vMotion
+HCX es compatible con el vMotion que conocemos y amamos hoy. Las cargas de trabajo se migran en vivo sin tiempo de inactividad similar a Cloud Motion con vSphere Replication. vMotion no debe utilizarse para migrar cientos de cargas de trabajo o cargas de trabajo con grandes cantidades de datos. En su lugar, use Cloud Motion con vSphere Replication o Bulk Migration. Por lo general, una red vMotion debe configurarse y enrutarse al host vSphere de destino, en este caso, el tráfico de vMotion es manejado por el Cloud Gateway del HCX Interconnect para vMotion entre nubes. vMotion a través de HCX encapsula y encripta todo el tráfico desde el origen al destino, eliminando la complejidad de la red de enrutamiento a la nube.
 
-32\. Haga click en el boton *Refresh* para actualizar el estado
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/HCX24.jpg)
-
-33\. Una vez que la migración haya terminado, haga click en la segunda pestaña del browser para abrir el vCenter del sitio de destino
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/HCX25.jpg)
-
-34\. Ahora verá que la VM *Mission Critical Workload 1* se ha migrado exitosamente al Sitio de Destino, haga click en su nombre
-
-35\. Haga click en la consola
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/HCX26.jpg)
-
-• Puede ver el ping que dejo ejecutándose en el paso previo nunca paro y que la VM durante el proceso de vMotion no tuvo caídas
-
-• Presione *Control-C* para detener el ping
-
-36\. Haga click en la *X* de la pestaña del browser para cerrar la pestaña de la consola
-
-### Migración Reversa
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/HCX27.jpg)
-
-37\. Haga click en la primera pestaña del browser
-
-38\. Haga click en el botón *Migrate Virtual Machines*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/HCX28.jpg)
-
-39\. Haga click en la caja de verificación *Reverse Migration*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/HCX29.jpg)
-
-40\. Haga click en la caja de veri cación *Mission Critical Workload 1*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/HCX30.jpg)
-
-41\. Haga click en *(Specify Destination Container)*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/HCX31.jpg)
-
-42\. Seleccione *Tier 0 Workloads*
-
-43\. Haga click en el botón *Select Destination*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/HCX32.jpg)
-
-44\. Haga click en *(Select Storage)*
-
-45\. Seleccione *onpremStorage*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/HCX33.jpg)
-
-46\. Haga click en *(Select Virtual Disk Format)*
-
-47\. Seleccione *Same format as source*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/HCX34.jpg)
-
-48\. Haga click en *(Select Migration Type)*
-
-49\. Seleccione *vMotion*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/HCX35.jpg)
-
-50\. Haga click en *Next*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/HCX36.jpg)
-
-51\. Una vez que el mensaje *Validation is Successful* aparezca
-
-52\. Haga click en el botón *Finish*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/HCX37.jpg)
-
-53\. Revise el progreso del proceso de verificación
-
-54\. Haga click en el botón *Refresh*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/HCX38.jpg)
-
-55\. Haga click en el botón *Home*
-
-56\. Haga click en el botón *Hosts and Clusters*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/HCX39.jpg)
-
-57\. Haga click en la VM *Mission Critical Workload 1*, puede ver que el proceso de migración reversa al vCenter on-premise fue exitoso
-
-## HCX - Migración en Lote
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/Bulk1.jpg)
-
-1\. En Chrome browser haga click en el acceso directo *HCX-Bulk*
-
-2\. Haga click en la *X* para aumentar el tamaño de la pantalla principal
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/Bulk2.jpg)
-
-3\. Como en el módulo de vMotion, en este ejemplo también tendremos el vCenter del sitio principal (on-premises)
-
-4\. Haga click en la segunda pestaña del browser para ver el vCenter del sitio principal
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/Bulk3.jpg)
-
-5\. Haga click en la pestaña del vCenter on-premises
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/Bulk4.jpg)
-
-6\. Haga click en el botón *Home*
-
-7\. Haga click en *HCX*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/Bulk5.jpg)
-
-8\. Haga click en la pestaña *Migration*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/Bulk6.jpg)
-
-9\. Haga click en el botón *Migrate Virtual Machines*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/Bulk7.jpg)
-
-10\. Seleccione *Tier 1 Workloads* en el panel izquierdo
-
-11\. Haga click en la caja de verificación para seleccionar todas las VM
-
-12\. Haga click *(Specify Destination Container)*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/Bulk8.jpg)
-
-13\. Seleccione *RedwoodCluster* como el Destination Container
-
-14\. Haga click en el botón *Select Destination*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/Bulk9.jpg)
-
-15\. Haga click en *(Select Storage)*
-
-16\. Seleccione *cloudStorage*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/Bulk10.jpg)
-
-17\. Haga click en *(Select Virtual Disk Format)*
-
-18\. Seleccione *Same format as source*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/Bulk11.jpg)
-
-19\. Haga click en *(Select Migration Type)*
-
-20\. Seleccione en *Bulk Migration*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/Bulk12.jpg)
-
-21\. Haga click en *HelpDesk Workload 1* para ver las opciones de esta carga de trabajo
-
-22\. Haga click en *HelpDesk Workload 2* para ver las opciones de esta carga de trabajo
-
-23\. Haga click en el sidebar para ver todas las opciones
-
-24\. Haga click en el botón *Next*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/Bulk13.jpg)
-
-25\. Espere que el mensaje *Validation is Successful* aparezca
-
-26\. Haga click en el botón *Finish*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/Bulk14.jpg)
-
-27\. Revise el progreso de la migración
-
-28\. Haga click en el botón *Refresh*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/Bulk15.jpg)
-
-29\. Una vez las migraciones hayan completado, haga click en el botón *Hosts and Clusters*
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/Bulk16.jpg)
-
-30\. Haga click en la segunda pestaña para ver el cloud vCenter
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/Bulk17.jpg)
-
-31\. Puede ver que las dos cargas de trabajo han migrado exitosamente al vCenter Destino
+HCX tiene una opción incorporada para conservar las direcciones MAC de las cargas de trabajo. Si esta opción no está marcada, las cargas de trabajo tendrán un MAC diferente en el sitio de destino. Las cargas de trabajo deben estar en compatibilidad (hardware) versión 9 o mayor y 100 Mbps o superior del ancho de banda debe estar disponible. Con vMotion y la migración bidireccional, es importante tener en cuenta la Compatibilidad de vMotion mejorada (EVC). La buena noticia aquí es que HCX también maneja EVC. Las cargas de trabajo se pueden migrar sin problemas y, una vez que se reinicie, se heredarán las características de la CPU del clúster de destino. Esto permite un vMotion entre nubes entre diferentes versiones de chipset (por ejemplo, Sandy Bridge to Skylake) pero dentro de la misma familia de CPU (por ejemplo, Intel). **Además, es importante tener en cuenta que vMotion se realiza de manera serializada.** Solo se produce un vMotion a la vez y pone en cola las cargas de trabajo restantes hasta que se completa el vMotion actual.
