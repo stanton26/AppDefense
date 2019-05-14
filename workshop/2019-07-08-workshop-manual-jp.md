@@ -120,8 +120,8 @@ Lab Name | Description
 
 ラボ名 | 説明
 [SDDC の操作](https://vmc-field-team.github.io/labs-jp/v2/working-with-sddc-lab/){:target="_blank"} | VMware Cloud on AWS の基本的な操作を学びます
-[VMware on AWS APIs](https://vmc-field-team.github.io/labs-jp/api-lab-jp/){:target="_blank"} | API を通じて VMware Cloud on AWS を操作する方法を学びます
-[AWS との連携](https://vmc-field-team.github.io/labs-jp/aws-integration-lab-jp/){:target="_blank"} | RDS や EFS といったネイティブの AWS サービスと連携させる方法を学びます
-[VMware Site Recovery Manager](https://vmc-field-team.github.io/labs-jp/srm-lab-jp/){:target="_blank"} | 災害対策のユースケースにおいて、どのように VMware Cloud on AWS を利用するのかを学びます
+[AWS との連携](https://vmc-field-team.github.io/labs-jp/v2/aws-integration-lab/){:target="_blank"} | RDS や EFS といったネイティブの AWS サービスと連携させる方法を学びます
+[VMware on AWS APIs](https://vmc-field-team.github.io/labs-jp/v2/api-lab/){:target="_blank"} | API を通じて VMware Cloud on AWS を操作する方法を学びます
+<!-- [VMware Site Recovery Manager](https://vmc-field-team.github.io/labs-jp/srm-lab-jp/){:target="_blank"} | 災害対策のユースケースにおいて、どのように VMware Cloud on AWS を利用するのかを学びます -->
 [VMware Hybrid Cloud Extension](https://vmc-field-team.github.io/labs-jp/hcx-lab-jp/){:target="_blank"} | どのように VMware Hybrid Cloud Extension (TCX) テクノロジーが、VMware Cloud on AWS へバルク/ライブ マイグレーションを実現するのかを学びます
-[VMware vRealize Automation](https://vmc-field-team.github.io/labs-jp/vra-lab-jp/){:target="_blank"} | VMware のクラウド管理ツールを用いた連携を学びます
+<!-- [VMware vRealize Automation](https://vmc-field-team.github.io/labs-jp/vra-lab-jp/){:target="_blank"} | VMware のクラウド管理ツールを用いた連携を学びます -->
