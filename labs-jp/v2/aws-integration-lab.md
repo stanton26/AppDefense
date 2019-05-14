@@ -54,7 +54,6 @@ VMware Cloud on AWS を採用する理由の一つとして、AWS の Virtual Pr
 * Lambda、Simple Queueing Service (SQS)、Simple Notification Service (SNS)、S3、Route53、、Cognito と VMware SDDC を組み合わせたシステム
 * AWS Lex、Alexa と VMware Cloud の API を組み合わせたシステム
 
-In this exercise we'll be exploring integrations with both AWS Simple Storage Service (S3) and AWS Relational Database Service (RDS).
 これらは、顧客が実現した統合の一部でしかありません。このほかにも、皆様の環境に統合できるたくさんのサービスがあります。この演習では、AWS Simple Storage Service (S3) と AWS Relational Database Service (RDS) と VMware Cloud SDDC を組み合わせたシステムを扱います
 
 **注意: このラボを行う要件として、コンテンツライブラリ作成、ネットワーク作成、ファイアウォールルール作成を含む、[SDDC の操作](https://vmc-field-team.github.io/labs/v2/working-with-sddc-lab/)を完了している必要あります。**
@@ -87,7 +86,7 @@ AWS のインフラストラクチャ上に SDDC があるだけでなく、顧�
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/AWS-2.jpg)
 
-VMware 側から見ると、ENI は SDDC にコンピュートゲートウェイ（NSX Edge）から入ってきます。これは、こちら側の終端では ENI からのトラフィックの許可、不許可を NSX ファイアウォールで制御できることを意味します。デフォルトでは、ENI からのトラフィックは SDDC に流れてきません。これは、ルールを変更するまでは ENI を通じた AWS サービスから、サービスへのトラフィックをブロックするセキュリティのゲートとして考えて下さい。
+VMware 側から見ると、ENI は SDDC にコンピュートゲートウェイ（NSX Edge）から入ってきます。これは、こちら側の終端では ENI からのトラフィックの許可、不許可を NSX ファイアウォールで制御できることを意味します。デフォルトでは、ENI からのトラフィックは SDDC に流れてきません。ルールを変更するまでは、これは ENI を通じた AWS サービスから、あるいは、AWS サービスへのトラフィックをブロックするセキュリティのゲートとして考えて下さい。
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/aws-integrations/AWS-3.jpg)
 
@@ -764,7 +763,9 @@ You have completed the lab. Thanks for stopping by!
 2. 以下の DB 接続情報を入力します (__大文字小文字を識別__)。IP アドレスは前のステップでメモした RDS の ENI のものを利用します
 
     Database Host: x.x.x.x:3306
+
     Database Username: student# (# は受講者番号)
+    
     Database Password: VMware1!
 
 3. **Connect** をクリックします
