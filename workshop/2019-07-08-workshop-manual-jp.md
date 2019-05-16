@@ -67,7 +67,7 @@ Import Bookmarks into Chrome by double clicking the Chrome Icon on your Desktop 
 
 ### Horizon でのアクセス
 
-このワークショップのはじめに、インストラクターは VMware Horizon アクセスのためのログイン情報の詳細をお伝え致します。Horizon への接続方法の詳細は、[受講者アクセス手続き](https://vmc-field-team.github.io/student-access-jp/) をご参照下さい。
+このワークショップのはじめに、インストラクターは VMware Horizon アクセスのためのログイン情報の詳細をお伝え致します。Horizon への接続方法の詳細は、[受講者アクセス手続き](https://vmc-field-team.github.io/student-access/) をご参照下さい。
 
 ### ファイルの置き場所
 

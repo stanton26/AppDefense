@@ -352,6 +352,7 @@ A console window is now open for the *Mission Critical Workload 1* VM, it will t
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/HCX25.jpg)
 
 34\. *Mission Critical Workload 1* がターゲット サイトに無事移行されたことを確認できます。*Mission Critical Workload 1* をクリックします
+
 35\. コンソール タブを開きます
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/HCX26.jpg)
@@ -438,6 +439,7 @@ A console window is now open for the *Mission Critical Workload 1* VM, it will t
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/HCX27.jpg)
 
 37\. ブラウザの最初のタブをクリックします
+
 38\. *Migrate Virtual Machines* ボタンをクリックします
 
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/HCX28.jpg)
