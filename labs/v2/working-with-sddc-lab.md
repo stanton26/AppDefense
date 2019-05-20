@@ -405,7 +405,7 @@ Before we can clone the web server, we will first need to power the VM on so the
 **Note: Please wait until the virtual machine is fully powered on before proceeding to the next step.**
 
 {% capture notice-3 %}
-If the webserver doesn't connect to the network and does not receive and IP address from DHCP, ensure the NIC is connected by right-clicking on <b>webserver01</b> and then <b>Edit Settings</b> and make sure the checkbox next to Connected is selected.  You may need to repeat this step for the cloned VM webserver02.
+If the webserver doesn't connect to the network and does not receive an IP address from DHCP. Ensure the NIC is connected by right-clicking on **webserver01** and then **Edit Settings** and make sure the checkbox next to **Connected** is selected. You may need to repeat this step for the cloned VM **webserver02**
 <div class="notice--info">
   {{ notice-3 | markdownify }}
 
