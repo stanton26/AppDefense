@@ -452,7 +452,7 @@ We will now set the options for cloning.  We will need to customize the operatin
 2. Click the checkbox next to **Power on virtual machine after creation**.
 3. Click **Next** to continue.
 
-### Choose Virtual Machine Customization Specification
+### Choose the Virtual Machine Customization Specification
 
 ![SDDC-clone-vm-044](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc044.jpg)
 
@@ -461,7 +461,7 @@ We will utilize the customization specification created in a previous exercise t
 1. Click to select the **LinuxSpec** customization specification.
 2. Click **Next** to continue.
 
-### Complete the Virtual Machine Deployment
+### Complete a Virtual Machine Deployment
 
 ![SDDC-clone-vm-045](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc045.jpg)
 
@@ -469,11 +469,11 @@ We will utilize the customization specification created in a previous exercise t
 
 It should take a couple of minutes fort the virtual machine to clone.  Continue to the next exercise to learn about securing workloads in VMware Cloud on AWS.
 
-<aside class="notice">
-<font color="dodgerblue">
-<img src="https://s3-us-west-2.amazonaws.com/vmc-workshops-images/info.jpeg" width="25" height="25"> If the webserver doesn't connect to the network and does not receive and IP address from DHCP, ensure the NIC is connected by right-clicking on <b>webserver01</b> and then <b>Edit Settings</b> and make sure the checkbox next to Connected is selected.  You may need to repeat this step for the cloned VM webserver02.
-</font>
-</aside>
+{% capture notice-2 %}
+If the webserver doesn't connect to the network and does not receive an IP address from DHCP. Ensure the NIC is connected by right-clicking on **webserver01** and then **Edit Settings** and make sure the checkbox next to **Connected** is selected. You may need to repeat this step for the cloned VM **webserver02**
+<div class="notice--info">
+  {{ notice-2 | markdownify }}
+</div>
 
 ## Testing connectivity between the Virtual Machines
 
