@@ -17,7 +17,7 @@ In this lab we are going to start with looking at the basic tasks which you will
 
 ![SDDC-Network-Login](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc-login.jpg)
 
-Access VMware Cloud on AWS console using https://vmc.vmware.com and use your assigned login credentials **ced##@vmware-hol.com**.
+Access VMware Cloud on AWS console using <https://vmc.vmware.com> and use your assigned login credentials **ced##@vmware-hol.com**.
 
 After you login, you should see a two single-node SDDC's in the user interface following the naming format Student-##. An SDDC is a fully deployed environment including vSphere, NSX, vSAN and vCenter Server. Deployment of a fully configured SDDC takes about two hours so for the purposes of this lab, we have already deployed it for you. This SDDC is in the same state it would be if you have deployed it. Let's take a look at the SDDC properties.
 
@@ -201,7 +201,7 @@ If you use a subscribed library, you can only utilize the content, but cannot co
 ![SDDC016](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc016.jpg)
 
 1. Select the radio button next to **Subscribed content library.**
-2. Under **Subscription URL** enter the following: https://vmc-elw-vms.s3-accelerate.amazonaws.com/lib.json
+2. Under **Subscription URL** enter the following: <https://vmc-elw-vms.s3-accelerate.amazonaws.com/lib.json>
 3. Leave the checkbox **unchecked** next to **Enable Authentication**.
 4. Make sure **Download content** is set to **immediately**.
 5. Click **Next** to continue.
@@ -307,7 +307,7 @@ In the vSphere client window already opened, deploy a template from the content 
 
 ![SDDC-deploy-vm-028](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc028.jpg)
 
-1.  Click on the **VMC Content Library** that was previously synchronized.
+1. Click on the **VMC Content Library** that was previously synchronized.
 
 ### Deploy a New Virtual Machine from Template
 
@@ -379,7 +379,7 @@ We will use the logical network created in a previous exercise for these virtual
 
 It should take a couple of minutes for the virtual machine to deploy.  Continue to the next exercise to clone this virtual machine in order to create a second webserver.
 
-##  Clone a Virtual Machine
+## Clone a Virtual Machine
 
 In this exercise, you will clone the virtual machine created in the previous exercise in order to create a second webserver.
 
@@ -404,11 +404,10 @@ Before we can clone the web server, we will first need to power the VM on so the
 
 **Note: Please wait until the virtual machine is fully powered on before proceeding to the next step.**
 
-<aside class="notice">
-<font color="dodgerblue">
-<img src="https://s3-us-west-2.amazonaws.com/vmc-workshops-images/info.jpeg" width="25" height="25"> If the webserver doesn't connect to the network and does not receive and IP address from DHCP, ensure the NIC is connected by right-clicking on <b>webserver01</b> and then <b>Edit Settings</b> and make sure the checkbox next to Connected is selected.  You may need to repeat this step for the cloned VM webserver02.
-</font>
-</aside>
+{% capture notice-3 %}
+If the webserver doesn't connect to the network and does not receive and IP address from DHCP, ensure the NIC is connected by right-clicking on <b>webserver01</b> and then <b>Edit Settings</b> and make sure the checkbox next to Connected is selected.  You may need to repeat this step for the cloned VM webserver02.
+<div class="notice--info">
+  {{ notice-3 | markdownify }}
 
 ### Initiate Cloning of the Virtual Machine
 
@@ -488,7 +487,7 @@ We need to open a console session to webserver01 to validate it can communicate 
 1. In the vSphere Client (HTML5) click on Webserver01 to bring it into focus.
 2. Click the black box below Summary in the middle of the screen. This will attempt to launch a console session but it may fail because the pop-up was blocked. If this occurs follow steps 3-6, otherwise proceed to the next section.
 3. Click the icon with the small red x in the Chrome address bar to launch to pop-up blocker dialog.
-4. Click the radio button next to Always allow pop-ups from https://vcenter.sddc-xx-xx-xxxx.vmwarevmc.com
+4. Click the radio button next to Always allow pop-ups from <https://vcenter.sddc-xx-xx-xxxx.vmwarevmc.com>
 5. Click the Done button.
 6. Return to the black box below the Summary and click it again. The console session should launch in a new tab.
 
