@@ -29,6 +29,7 @@ After you login, you should see a two single-node SDDC's in the user interface f
 ![SDDC-Network-02](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc02.jpg)
 
 You will start with the Summary of the SDDC. There are a number of other tabs available as follows:
+
 1. **Support**: You can contact Support with your SDDC ID, Org ID, vCenter Private and Public IPs and the date of your SDDC Deployment.
 2. **Settings**: Gives you access to your vSphere Client (HTML5), vCenter Server API, PowerCLI Connect, vCenter Server and reviews your Authentication information.
 3. **Troubleshooting**: Allows you to run network connectivity tests to ensure all necessary access is available to perform select use cases.
@@ -51,6 +52,8 @@ VMware Cloud on AWS allows you to quickly and easily create new logical network 
 7. Click **Save** to save the logical network.
 
 **Note: Make sure you leave the default of Routed for Type and do not enter anything for the DNS suffix.**
+
+{Test notice :.notice}
 
 <aside class="notice">
 <font color="dodgerblue">
@@ -160,13 +163,13 @@ You can create a content library in the vSphere Client (HTML5), and populate it 
 
 You can create two types of libraries: local or subscribed library.
 
-**Local Libraries**
+### Local Libraries
 
 You use a local library to store items in a single vCenter Server instance. You can publish the local library so that users from other vCenter Server systems can subscribe to it. When you publish a content library externally, you can configure a password for authentication.
 
 VM templates and vApps templates are stored as OVF file formats in the content library. You can also upload other file types, such as ISO images, text files, and so on, in a content library.
 
-**Subscribed Libraries**
+### Subscribed Libraries
 
 You subscribe to a published library by creating a subscribed library. You can create the subscribed library in the same vCenter Server instance where the published library is, or in a different vCenter Server system. In the Create Library wizard you have the option to download all the contents of the published library immediately after the subscribed library is created, or to download only metadata for the items from the published library and later to download the full content of only the items you intend to use.
 
