@@ -54,7 +54,7 @@ VMware Cloud on AWS allows you to quickly and easily create new logical network 
 
 **Note: Make sure you leave the default of Routed for Type and do not enter anything for the DNS suffix.**
 
-Note: If the page contains a table of contents, it will no longer appear to the right. Instead it will be forced into the main content container directly following the page's title. {: .notice--info}
+Note: AMB If the page contains a table of contents, it will no longer appear to the right. Instead it will be forced into the main content container directly following the page's title. {: .notice--info}
 
 <aside class="notice">
 <font color="dodgerblue">
