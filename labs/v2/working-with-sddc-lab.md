@@ -404,10 +404,11 @@ Before we can clone the web server, we will first need to power the VM on so the
 
 **Note: Please wait until the virtual machine is fully powered on before proceeding to the next step.**
 
-{% capture notice-2 %}
+{% capture notice-3 %}
 If the webserver doesn't connect to the network and does not receive an IP address from DHCP. Ensure the NIC is connected by right-clicking on **webserver01** and then **Edit Settings** and make sure the checkbox next to **Connected** is selected. You may need to repeat this step for the cloned VM **webserver02**
+{% endcapture %}
 <div class="notice--info">
-  {{ notice-2 | markdownify }}
+  {{ notice-3 | markdownify }}
 </div>
 
 ### Initiate Cloning of the Virtual Machine
@@ -469,10 +470,11 @@ We will utilize the customization specification created in a previous exercise t
 
 It should take a couple of minutes fort the virtual machine to clone.  Continue to the next exercise to learn about securing workloads in VMware Cloud on AWS.
 
-{% capture notice-2 %}
+{% capture notice-4 %}
 If the webserver doesn't connect to the network and does not receive an IP address from DHCP. Ensure the NIC is connected by right-clicking on **webserver01** and then **Edit Settings** and make sure the checkbox next to **Connected** is selected. You may need to repeat this step for the cloned VM **webserver02**
+{% endcapture %}
 <div class="notice--info">
-  {{ notice-2 | markdownify }}
+  {{ notice-4 | markdownify }}
 </div>
 
 ## Testing connectivity between the Virtual Machines
