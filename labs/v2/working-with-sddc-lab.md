@@ -53,7 +53,7 @@ VMware Cloud on AWS allows you to quickly and easily create new logical network 
 
 **Note: Make sure you leave the default of Routed for Type and do not enter anything for the DNS suffix.**
 
-Test Notice Adam{.notice}
+Test Notice Adam {.notice}
 
 <aside class="notice">
 <font color="dodgerblue">
