@@ -246,6 +246,9 @@ compress_html:
   ignore:
     envs: development
 
+# Collections
+collections:
+  - notices
 
 # Defaults
 defaults:
