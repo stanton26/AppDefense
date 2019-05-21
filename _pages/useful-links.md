@@ -20,7 +20,7 @@ Link | Description
 [Dell EMC Networker and VMware on AWS](https://kb.vmware.com/s/article/52351){:target="_blank"} | Knowledgebase article regarding utilising Dell EMC Networker with VMware on AWS
 [Dell EMC Avamar and VMware on AWS](https://kb.vmware.com/s/article/52471){:target="_blank"} | Knowledgebase article regarding utilising Dell EMC Avamar with VMware on AWS
 
-# Blogs
+## Blogs
 
 Link | Description
 [VMware Cloud Community Blog](https://cloud.vmware.com/community/){:target="_blank"} | This is the VMware on AWS Community blog where you will find a number of useful articles from VMware employees on the subject of cloud computing
