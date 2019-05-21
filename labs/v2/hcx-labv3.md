@@ -9,7 +9,7 @@ classes: wide
 author_profile: false
 comments: true
 ---
-# Introduction
+## Introduction
 
 In this lab exercise you will learn about Hybrid Cloud Extension (HCX), Primarily this is a tool, bundled with VMware Cloud on AWS, which will allow you to bulk migrate workloads to VMware Cloud on AWS and significantly reduce the time and complexity of moving workloads into the public cloud sphere.
 

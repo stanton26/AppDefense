@@ -9,7 +9,7 @@ author_profile: false
 categories: labs
 comments: true
 ---
-# Introduction
+## Introduction
 
 In this lab we are going to start with looking at the basic tasks which you will perform in the VMware Cloud on AWS user interface when you are administering the platform.
 
@@ -17,9 +17,13 @@ In this lab we are going to start with looking at the basic tasks which you will
 
 ![SDDC-Network-Login](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc-login.jpg)
 
-Access VMware Cloud on AWS console using https://vmc.vmware.com and use your assigned login credentials **ced##@vmware-hol.com**.
+Access VMware Cloud on AWS console using <https://vmc.vmware.com> and use your assigned login credentials **ced##@vmware-hol.com**.
 
-After you login, you should see a two single-node SDDC's in the user interface following the naming format Student-##. An SDDC is a fully deployed environment including vSphere, NSX, vSAN and vCenter Server. Deployment of a fully configured SDDC takes about two hours so for the purposes of this lab, we have already deployed it for you. This SDDC is in the same state it would be if you have deployed it. Let's take a look at the SDDC properties.
+After you login, you should see two single-node SDDC's in the user interface following the naming format Student-##. An SDDC is a fully deployed environment including vSphere, NSX, vSAN and vCenter Server. Deployment of a fully configured SDDC takes about 90 minutes so for the purposes of this lab, we have already deployed it for you.
+
+This SDDC is in the same state it would be if you have deployed it.
+
+Let's take a look at the SDDC properties.
 
 ![SDDC-Network-01](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc01.jpg)
 
@@ -29,6 +33,7 @@ After you login, you should see a two single-node SDDC's in the user interface f
 ![SDDC-Network-02](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc02.jpg)
 
 You will start with the Summary of the SDDC. There are a number of other tabs available as follows:
+
 1. **Support**: You can contact Support with your SDDC ID, Org ID, vCenter Private and Public IPs and the date of your SDDC Deployment.
 2. **Settings**: Gives you access to your vSphere Client (HTML5), vCenter Server API, PowerCLI Connect, vCenter Server and reviews your Authentication information.
 3. **Troubleshooting**: Allows you to run network connectivity tests to ensure all necessary access is available to perform select use cases.
@@ -39,7 +44,7 @@ You will start with the Summary of the SDDC. There are a number of other tabs av
 
 ![SDDC-Network-03](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc03.jpg)
 
-From the previous article, you should see the Network & Security information for the SDDC.
+From the previous article, you should see the **Network & Security** information for the SDDC.
 VMware Cloud on AWS allows you to quickly and easily create new logical network segments on demand. Let's create a new network segment in the SDDC.
 
 1. Click the **Networking & Security** tab, then click on **Segments** to show all of the existing network segments.
@@ -52,23 +57,22 @@ VMware Cloud on AWS allows you to quickly and easily create new logical network 
 
 **Note: Make sure you leave the default of Routed for Type and do not enter anything for the DNS suffix.**
 
-<aside class="notice">
-<font color="dodgerblue">
-<img src="https://s3-us-west-2.amazonaws.com/vmc-workshops-images/info.jpeg" width="25" height="25"> CIDR notation is a compact representation of an IP address and its associated routing prefix. The notation is constructed from an IP address, a slash('/') character, and a decimal number. The number is the count of leading bits in the routing mask, traditionally called the network mask.  The IP address is expressed according to the standards of IPv4 or IPv6.
-<br/>
-<br/>
+{% capture notice-2 %}
+**CIDR Notation**
+
+CIDR notation is a compact representation of an IP address and its associated routing prefix. The notation is constructed from an IP address, a slash('/') character, and a decimal number. The number is the count of leading bits in the routing mask, traditionally called the network mask.  The IP address is expressed according to the standards of IPv4 or IPv6.
+
 The address may denote a single, distinct interface address or the beginning address of an entire network. The maximum size of the network is given by the number of addresses that are possible with the remaining, least-significant bits below the prefix.  The aggregation of these bits is often called the host identifier.
-<br/>
-<br/>
+
 For example:
-<br/>
-<br/>
-• 192.168.100.14/24 represents the IPV4 address 192.168.100.14 and its associated routing prefix 192.168.100.0, or equivalently, its subnet mask 255.255.255.0, which has 24 leading 1-bits.
-<br/>
-<br/>
-• The IPV4 block 192.168.100.0/22 represents the 1024 IPV4 addresses from 192.168.100.0 to 192.168.103.255.
-</font>
-</aside>
+
+* 192.168.100.14/24 represents the IPV4 address 192.168.100.14 and its associated routing prefix 192.168.100.0, or equivalently, its subnet mask 255.255.255.0, which has 24 leading 1-bits.
+* The IPV4 block 192.168.100.0/22 represents the 1024 IPV4 addresses from 192.168.100.0 to 192.168.103.255.
+{% endcapture %}
+
+<div class="notice--info">
+  {{ notice-2 | markdownify }}
+</div>
 
 ## Verify Network Segment Configuration
 
@@ -160,13 +164,13 @@ You can create a content library in the vSphere Client (HTML5), and populate it 
 
 You can create two types of libraries: local or subscribed library.
 
-**Local Libraries**
+### Local Libraries
 
 You use a local library to store items in a single vCenter Server instance. You can publish the local library so that users from other vCenter Server systems can subscribe to it. When you publish a content library externally, you can configure a password for authentication.
 
 VM templates and vApps templates are stored as OVF file formats in the content library. You can also upload other file types, such as ISO images, text files, and so on, in a content library.
 
-**Subscribed Libraries**
+### Subscribed Libraries
 
 You subscribe to a published library by creating a subscribed library. You can create the subscribed library in the same vCenter Server instance where the published library is, or in a different vCenter Server system. In the Create Library wizard you have the option to download all the contents of the published library immediately after the subscribed library is created, or to download only metadata for the items from the published library and later to download the full content of only the items you intend to use.
 
@@ -201,7 +205,7 @@ If you use a subscribed library, you can only utilize the content, but cannot co
 ![SDDC016](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc016.jpg)
 
 1. Select the radio button next to **Subscribed content library.**
-2. Under **Subscription URL** enter the following: https://vmc-elw-vms.s3-accelerate.amazonaws.com/lib.json
+2. Under **Subscription URL** enter the following: <https://vmc-elw-vms.s3-accelerate.amazonaws.com/lib.json>
 3. Leave the checkbox **unchecked** next to **Enable Authentication**.
 4. Make sure **Download content** is set to **immediately**.
 5. Click **Next** to continue.
@@ -307,7 +311,7 @@ In the vSphere client window already opened, deploy a template from the content 
 
 ![SDDC-deploy-vm-028](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc028.jpg)
 
-1.  Click on the **VMC Content Library** that was previously synchronized.
+1. Click on the **VMC Content Library** that was previously synchronized.
 
 ### Deploy a New Virtual Machine from Template
 
@@ -379,7 +383,7 @@ We will use the logical network created in a previous exercise for these virtual
 
 It should take a couple of minutes for the virtual machine to deploy.  Continue to the next exercise to clone this virtual machine in order to create a second webserver.
 
-##  Clone a Virtual Machine
+## Clone a Virtual Machine
 
 In this exercise, you will clone the virtual machine created in the previous exercise in order to create a second webserver.
 
@@ -404,11 +408,12 @@ Before we can clone the web server, we will first need to power the VM on so the
 
 **Note: Please wait until the virtual machine is fully powered on before proceeding to the next step.**
 
-<aside class="notice">
-<font color="dodgerblue">
-<img src="https://s3-us-west-2.amazonaws.com/vmc-workshops-images/info.jpeg" width="25" height="25"> If the webserver doesn't connect to the network and does not receive and IP address from DHCP, ensure the NIC is connected by right-clicking on <b>webserver01</b> and then <b>Edit Settings</b> and make sure the checkbox next to Connected is selected.  You may need to repeat this step for the cloned VM webserver02.
-</font>
-</aside>
+{% capture notice-3 %}
+If the webserver doesn't connect to the network and does not receive an IP address from DHCP. Ensure the NIC is connected by right-clicking on **webserver01** and then **Edit Settings** and make sure the checkbox next to **Connected** is selected. You may need to repeat this step for the cloned VM **webserver02**
+{% endcapture %}
+<div class="notice--info">
+  {{ notice-3 | markdownify }}
+</div>
 
 ### Initiate Cloning of the Virtual Machine
 
@@ -452,7 +457,7 @@ We will now set the options for cloning.  We will need to customize the operatin
 2. Click the checkbox next to **Power on virtual machine after creation**.
 3. Click **Next** to continue.
 
-### Choose Virtual Machine Customization Specification
+### Choose the Virtual Machine Customization Specification
 
 ![SDDC-clone-vm-044](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc044.jpg)
 
@@ -461,7 +466,7 @@ We will utilize the customization specification created in a previous exercise t
 1. Click to select the **LinuxSpec** customization specification.
 2. Click **Next** to continue.
 
-### Complete the Virtual Machine Deployment
+### Complete a Virtual Machine Deployment
 
 ![SDDC-clone-vm-045](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc045.jpg)
 
@@ -469,11 +474,12 @@ We will utilize the customization specification created in a previous exercise t
 
 It should take a couple of minutes fort the virtual machine to clone.  Continue to the next exercise to learn about securing workloads in VMware Cloud on AWS.
 
-<aside class="notice">
-<font color="dodgerblue">
-<img src="https://s3-us-west-2.amazonaws.com/vmc-workshops-images/info.jpeg" width="25" height="25"> If the webserver doesn't connect to the network and does not receive and IP address from DHCP, ensure the NIC is connected by right-clicking on <b>webserver01</b> and then <b>Edit Settings</b> and make sure the checkbox next to Connected is selected.  You may need to repeat this step for the cloned VM webserver02.
-</font>
-</aside>
+{% capture notice-4 %}
+If the webserver doesn't connect to the network and does not receive an IP address from DHCP. Ensure the NIC is connected by right-clicking on **webserver01** and then **Edit Settings** and make sure the checkbox next to **Connected** is selected. You may need to repeat this step for the cloned VM **webserver02**
+{% endcapture %}
+<div class="notice--info">
+  {{ notice-4 | markdownify }}
+</div>
 
 ## Testing connectivity between the Virtual Machines
 
@@ -488,7 +494,7 @@ We need to open a console session to webserver01 to validate it can communicate 
 1. In the vSphere Client (HTML5) click on Webserver01 to bring it into focus.
 2. Click the black box below Summary in the middle of the screen. This will attempt to launch a console session but it may fail because the pop-up was blocked. If this occurs follow steps 3-6, otherwise proceed to the next section.
 3. Click the icon with the small red x in the Chrome address bar to launch to pop-up blocker dialog.
-4. Click the radio button next to Always allow pop-ups from https://vcenter.sddc-xx-xx-xxxx.vmwarevmc.com
+4. Click the radio button next to Always allow pop-ups from <https://vcenter.sddc-xx-xx-xxxx.vmwarevmc.com>
 5. Click the Done button.
 6. Return to the black box below the Summary and click it again. The console session should launch in a new tab.
 
