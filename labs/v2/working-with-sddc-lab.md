@@ -19,7 +19,11 @@ In this lab we are going to start with looking at the basic tasks which you will
 
 Access VMware Cloud on AWS console using <https://vmc.vmware.com> and use your assigned login credentials **ced##@vmware-hol.com**.
 
-After you login, you should see two single-node SDDC's in the user interface following the naming format Student-##. An SDDC is a fully deployed environment including vSphere, NSX, vSAN and vCenter Server. Deployment of a fully configured SDDC takes about 90 minutes so for the purposes of this lab, we have already deployed it for you. This SDDC is in the same state it would be if you have deployed it. Let's take a look at the SDDC properties.
+After you login, you should see two single-node SDDC's in the user interface following the naming format Student-##. An SDDC is a fully deployed environment including vSphere, NSX, vSAN and vCenter Server. Deployment of a fully configured SDDC takes about 90 minutes so for the purposes of this lab, we have already deployed it for you.
+
+This SDDC is in the same state it would be if you have deployed it.
+
+Let's take a look at the SDDC properties.
 
 ![SDDC-Network-01](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc01.jpg)
 
@@ -40,7 +44,7 @@ You will start with the Summary of the SDDC. There are a number of other tabs av
 
 ![SDDC-Network-03](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc03.jpg)
 
-From the previous article, you should see the Network & Security information for the SDDC.
+From the previous article, you should see the **Network & Security** information for the SDDC.
 VMware Cloud on AWS allows you to quickly and easily create new logical network segments on demand. Let's create a new network segment in the SDDC.
 
 1. Click the **Networking & Security** tab, then click on **Segments** to show all of the existing network segments.
