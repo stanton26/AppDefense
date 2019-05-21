@@ -7,7 +7,7 @@ tags: workshop
 classes: wide
 author_profile: false
 ---
-# Introduction
+## Introduction
 
 The VMware Cloud on AWS workshop is your chance to test drive this unique solution in the market place in a classroom session with VMware Cloud on AWS experts and work through hands on lab exercises to understand and gain experience with the solution to understand how it can be used in your business.
 
@@ -15,7 +15,6 @@ The class is a one-day workshop in which we will set up a VMware SDDC environmen
 You will work through leveraging VMware Cloud on AWS as a target for DRaaS utilizing VMware Site Recovery Manager and VM Replication and will also have the opportunity to test drive Horizon 7 in the VMware Cloud on AWS platform.
 
 ## Workshop Details
-
 
 ### VMware Cloud on AWS Org Access
 
@@ -26,7 +25,6 @@ You will also receive details from your instructor regarding how to access your 
 Below are a list of the URLs you will use over the course of the lab exercises. You can will have a access to these via the bookmarks file which we will import in the following step, they are referenced here as well for your convenience.
 
 VMware Cloud on AWS Login <https://vmc.vmware.com>
-
 
 Please enjoy these labs, if you have any questions, please do not hesitate to speak to the VMware Cloud on AWS specialists in the room with you.
 
