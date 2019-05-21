@@ -678,6 +678,12 @@ In the vSphere client window already opened, deploy a template from the content 
 
 ### テンプレートからの新しい仮想マシンのデプロイ
 
+**重要** 2019年5月21日現在、HTML 5 ベースの vSphere Client において、コンテンツライブラリからのテンプレートの展開に問題が発生しています。ワークアラウンドとして、Adobe Flash ベースの vSphere Client を利用してください。Adobe Flash ベースの vSphere Client の UI は、以下のアドレスにアクセスします。
+
+https://${cloud_vcenter_hostname}/vsphere-client/
+
+${cloud_vcenter_hostname} は HTML 5 ベースの vSphere Client の URL と同じ値が利用されます。
+
 ![SDDC-deploy-vm-029](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc029.jpg)
 
 1. コンテンツ ライブラリ内の同期されたテンプレートにアクセスするために、**テンプレート** タブをクリックします。

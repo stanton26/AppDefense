@@ -19,7 +19,7 @@ The class is a one-day activity where we will go through the acitivities of sett
 
 VMware Cloud on AWS ワークショップは、業界でもユニークなこのソリューションを、エキスパートによるクラスルーム セッションにてお試しすることができます。このワークショップでは、ハンズオン形式の演習を通してソリューションの理解と経験を深め、実際のビジネスにおいてどのようにこのソリューションを適用できるかどうかを理解できるようになります。
 
-このクラスは 1 Day のアクティビティになります。まず、AWS 内での VMware SDDC 環境のセットアップを行い、次にこのプラットフォームでの一般的な管理操作を行っていきます。そして、VMware Cloud on AWS でワークロードを実行する方法と、ネイティブの AWS サービスと統合/連携させる方法を確認し、vRealize Automation、vRealize Operations といった vRealize Suite ソリューションと統合する方法を見ていきます。さらには、VMware Site Recovery Manager と VMware vSphere Replication と用いて VMware Cloud on AWS を DR as a Service (DRaaS) のターゲットとする方法を確認していきます。また、VMware Cloud on AWS プラットフォームで Horizon 7 を試すことも可能です。
+このクラスは 1 Day のアクティビティになります。まず、AWS 内での VMware SDDC 環境のセットアップを行い、次にこのプラットフォームでの一般的な管理操作を行っていきます。そして、VMware Cloud on AWS でワークロードを実行する方法と、ネイティブの AWS サービスと統合/連携させる方法を確認します。
 
 <!--
 ## Workshop Details
@@ -69,40 +69,13 @@ Import Bookmarks into Chrome by double clicking the Chrome Icon on your Desktop 
 
 このワークショップのはじめに、インストラクターは VMware Horizon アクセスのためのログイン情報の詳細をお伝え致します。Horizon への接続方法の詳細は、[受講者アクセス手続き](https://vmc-field-team.github.io/student-access/) をご参照下さい。
 
-### ファイルの置き場所
-
-割り当てられた Horizon デスクトップの Z: ドライブに、このマニュアルで参照している全てのファイルがあります。
-
 ### ワークショップの URL
 
 VMware Cloud on AWS ログイン <https://vmc.vmware.com>
 
-vRealize Automation <https://vraapp.corp.local/vcac>
-
-vRealize Operations <https://vrops.corp.local>
-
 Swagger API インターフェース <https://vmc.vmware.com/swagger/index.html>
 
 AWS コンソール <https://vmcworkshop.signin.aws.amazon.com/console>
-
-### ワークショップのブックマーク
-
-Import Bookmarks into Chrome by double clicking the Chrome Icon on your Desktop (Preferred browser for workshop)
-デスクトップ上の Chrome アイコンをダブルクリックし Chrome を起動し、ブックマークを Chrome にインポートします。(推奨ブラウザ: Chrome)
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-7-Image-1.png)
-
-1. 右上隅の 3 つの点 (Google Chrome の設定) をクリックします
-2. **ブックマーク** を選択します
-3. **ブックマークと設定をインポート** を選択します
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-8-Image-2.png)
-4. "Microsoft Edge" と表示されているドロップ ダウンをクリックします
-5. **HTML ファイルをブックマークに登録** を選択します
-6. **ファイルを選択** をクリックします
-    ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/Page-9-Image-4.png)
-7. Z: ドライブに移動します
-8. **bookmarks_vmc_workshop** を選択します
-9. **開く** をクリックします
 
 <!--
 ## Labs
