@@ -31,4 +31,4 @@ VMware Cloud on AWS Login <https://vmc.vmware.com>
 Please enjoy these labs, if you have any questions, please do not hesitate to speak to the VMware Cloud on AWS specialists in the room with you.
 
 Lab Name | Description
-[Horizon LAB](https://vmc-field-team.github.io/labs/v2/horizon-lab/){:target="_blank"} | Learn the basics of running Horizon on VMware Cloud on AWS
+[Horizon in VMware Cloud on AWS](https://vmc-field-team.github.io/labs/v2/horizon-lab/){:target="_blank"} | Learn the basics of running Horizon on VMware Cloud on AWS
