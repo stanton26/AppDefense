@@ -490,7 +490,7 @@ You need to login back into the **Horizon Connection Server** and open a **brows
 The next step is to configure your UAG. Go to your Horizon Connection Server.
 
 1. Open a **browser**
-2. Navigate to **https://192.168.100.12:9443** or **https://192.168.200.12:9443** , depending on your student workshop ID
+2. Navigate to <https://192.168.100.12:9443> or <https://192.168.200.12:9443>, depending on your student workshop ID
 3. Click **Proceed** on the **security warning**
 4. Click **Go Back**
 5. Login with **admin** and **VMware1!** , Click **Login**
@@ -524,7 +524,7 @@ The next step is to configure your UAG. Go to your Horizon Connection Server.
 ## Access your Desktop
 
 1. Open a browser on your local Machine / Laptop
-2. Navigate to **https://your-public-ip**
+2. Navigate to <https://your-public-ip>
 3. **Proceed on the security warnings**
 4. Click **VMware Horizon HTML Access** on the right side.
 5. Sign in with Username: **Workshop100** or **Workshop200** and Password: **VMware1!**
@@ -538,7 +538,7 @@ Congratulations! You succesfully accessed your desktop from the Internet!
 The next step will be to expand the desktop pool we ceated previously in this lab.
 
 1. Go to your **Horizon Connection Server**
-2. Open the shortcut for the Horizon Connection Server configuration or go to **https://localhost/admin**
+2. Open the shortcut for the Horizon Connection Server configuration or go to <https://localhost/admin>
 3. Login with **Administrator** and **VMware1!**
 4. Go to **Catalog** -> **Desktop Pools**
 5. Right click on your previously created Desktop Pool and click **Edit**
@@ -616,7 +616,13 @@ We have a Global Policy created.
 
 Following Horizon best practices we cannot have users in both Local and Global entitlements. Users can only have one or the other. Therefore the next step will be to delete the Local Pool entitlement.
 
+{% capture notice-2 %}
 **The next steps need to be completed by BOTH students**
+{% endcapture %}
+
+<div class="notice--info">
+  {{ notice-2 | markdownify }}
+</div>
 
 1. Go to **Catalog** -> **Desktop Pools**
 2. Right Click on your desktop pool. **Remove Entitlement**
@@ -633,7 +639,13 @@ Following Horizon best practices we cannot have users in both Local and Global e
 
 Now that we have the Global Entitlements set up, we can simulate a desktop pool failure by disabling one of the desktop pools.
 
+{% capture notice-2 %}
 **ONLY ONE person can do this test at a time**
+{% endcapture %}
+
+<div class="notice--info">
+  {{ notice-2 | markdownify }}
+</div>
 
 1. Open a browser on your local Machine / Laptop
 2. Navigate to **https://your-public-ip**
@@ -643,13 +655,13 @@ Now that we have the Global Entitlements set up, we can simulate a desktop pool 
 6. Open **Command Prompt** and type **hostname**
 7. Make a note of your desktop name.
 8. **Restart** your desktop
-8. Go back to your Horizon Connection Server.
-9. Go to **Catalog** -> **Desktop Pools**
-10. Right Click on the desktop pool and **Disable Desktop Pool**
-11. Click **OK**
-12. Repeat steps 1 to 6.
-13. The host name should be a desktop from your partners pool, that resides on another SDDC.
-14. Repeat steps 9 and 10, instead of disabling, chose **Enable Desktop Pool**
+9. Go back to your Horizon Connection Server.
+10. Go to **Catalog** -> **Desktop Pools**
+11. Right Click on the desktop pool and **Disable Desktop Pool**
+12. Click **OK**
+13. Repeat steps 1 to 6.
+14. The host name should be a desktop from your partners pool, that resides on another SDDC.
+15. Repeat steps 9 and 10, instead of disabling, chose **Enable Desktop Pool**
 
 Your Horizon Lab partner can repeat the same steps.
 
