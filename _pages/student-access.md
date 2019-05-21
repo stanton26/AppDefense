@@ -8,9 +8,7 @@ classes: wide
 ---
 # Student Access
 
-In order to access your student lab environment you will need to connect through the Horizon portal. You can do this either through your web browser, or you can download the client.
-
-Please be aware that this Horizon connection at the moment currently uses a self signed certificate, please click continue if prompted to accept a self signed certificate
+As VMware Cloud on AWS <https://vmc.vmware.com> is a publicly accessible service, you are able to use your local browser on your laptop for the majority of the interactions you will make with the platform during this training class. This may be helpful if you are using non-english language regional settings. However there are modules in this lab that require using PowerShell and the API tool, Postman, if you are using a Mac and do not have Powershell Core installed or if you do not wish to install Postman, you will then need to use the provided Horizon Desktop session in order to complete these tasks. Please see the details on accessing this environment below.
 
 ## Horizon Client Access
 
