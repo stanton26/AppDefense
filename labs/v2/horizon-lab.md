@@ -10,7 +10,7 @@ author_profile: false
 comments: true
 ---
 
-# Introduction
+## Introduction
 
 In this Lab we are going to create and install an Horizon 7 environment, using Cloud Pod Architecture to connect two Horizon environments for Global Management and Entitlement Rights.
 
@@ -112,9 +112,9 @@ The next step will be to create the VPN connection between the Student-Workshop-
 4. **Add VPN**
 5. Set the **Name** to _HorizonWorkshopVPN_
 6. Select **Public IP** in the **Local IP Address** dropdown box
-- **Note** make a note of your Public IP adress and share it with your lab partner.
+    - **Note** make a note of your Public IP adress and share it with your lab partner.
 7. Complete the other fields per the table below, leave all other settings as default
-- **Note** To complete the **Remote Public IP** field,  work with your workshop partner to obtain their Public IP address.
+    - **Note** To complete the **Remote Public IP** field,  work with your workshop partner to obtain their Public IP address.
 
 | **SDDC** | **Local IP** | **Remote Public IP** | **BGP Local IP/Prefix Length** | **BGP Remote IP** | **BGP Remote ASN** | **Preshared Key** |
 | Student-Workshop-X.1 | Public | *Public IP Student X.2* | 169.254.111.1/30 | 169.254.111.2 | 65000| VMware1! |
@@ -212,7 +212,7 @@ This Golden Master Image will be used to deploy desktops, using Instant Clone te
 
 1. Go to **Menu**, **VM and Templates**
 2. Expand **SDDC-Datacenter**, right-click on **Workloads**, select **Deploy OVF template**, type URL:
-    - **https://s3-us-west-2.amazonaws.com/horizon-200/UAG-200/euc-unified-access-gateway-3.4.0.0-11037344_OVF10.ova**
+    - <https://s3-us-west-2.amazonaws.com/horizon-200/UAG-200/euc-unified-access-gateway-3.4.0.0-11037344_OVF10.ova>
     - Click **Next**, and then accept the certificate warning by clicking **Yes**
 3. **Virtual Machine Name** - **UAG-100** or **UAG-200**, depending on your student workshop number
 4. Under select a location for Virtual Machine, click on **SDDC-Datacenter**, then click on **Workloads**
@@ -265,7 +265,13 @@ This Golden Master Image will be used to deploy desktops, using Instant Clone te
 2. Launch the Web Console
 3. Sign in with username  **VDIONVMC\Administrator** and password **VMware1!**
 
-### Pause Here ###
+{% capture notice-2 %}
+**Pause Here**
+{% endcapture %}
+
+<div class="notice--info">
+  {{ notice-2 | markdownify }}
+</div>
 
 Before continuing, please ensure that your lab partner is up to the same point. It is very important that the VPN between SDDCs is up, and Active Directory is deployed in both SDDCs. If these things are not in place, Desktop provisioning will fail during the next section of the lab.
 
@@ -273,16 +279,17 @@ Before continuing, please ensure that your lab partner is up to the same point. 
 
 In order to create desktops in your SDDC, first we need to implement your Student SDDC vCenter into the existing Horizon infrastructure.
 
-Once logged into the **Horizon Connection Server**, locate Horizon 7 Administrator Console shortcut, located on the Desktop screen of the Horizon Connection Server. Or open a browser and browse to **https://192.168.100.11/admin** or **https://192.168.200.11/admin** depending on your workshop sddc number.
+Once logged into the **Horizon Connection Server**, locate Horizon 7 Administrator Console shortcut, located on the Desktop screen of the Horizon Connection Server. Or open a browser and browse to <https://192.168.100.11/admin> or <https://192.168.200.11/admin> depending on your workshop sddc number.
 
 ![CS+1](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/CS+1.jpg)
 
 Double click to open the Administrator Console. That will launch into a browser window. You will see a certificate error warning, Acknowledge the warning and proceed to localhost.
 
 **Note:** If you see a warning that Adobe Flash is not installed:
- - Click **Not secure** on the address bar, and set Flash to **Allow**, then reload the page
-![FlashWarning](https://vmc-field-team.github.io/assets/images/horizon-flash-warning.png)
 
+Click **Not secure** on the address bar, and set Flash to **Allow**, then reload the page
+
+![FlashWarning](https://vmc-field-team.github.io/assets/images/horizon-flash-warning.png)
 
 Log into Horizon 7 Administrator Console.
 
@@ -349,7 +356,7 @@ Instant Clones requires a snapshot of the Golden Master Image. Therefore we need
 6. Name **1.0**
 7. Click **OK**
 
-Go back to the Horizon Connection Server Web Console. Your Horizon Connection Server Console should be still opened. If not please open it either via the shortcut on the desktop, or go to https://192.169.100.11/admin or https://192.168.200.11/admin, depending on your workshop sddc number.
+Go back to the Horizon Connection Server Web Console. Your Horizon Connection Server Console should be still opened. If not please open it either via the shortcut on the desktop, or go to <https://192.169.100.11/admin> or <https://192.168.200.11/admin>, depending on your workshop sddc number.
 
 1. On the Horizon Connection Server admin console on the left side you can click on **Catalog** and then **Desktop Pools**
 2. Click **Add**, select **Automated Desktop Pool**, click **Next**
@@ -464,7 +471,7 @@ Now that we have a public IP we need to create a NAT rule to your UAG.
 You need to login back into the **Horizon Connection Server** and open a **browser**
 
 1. Login to your Horizon Connection Server as **Administrator** and **VMware1!**
-2. Click on the shortcut icon for the Horizon Connection server or navigate to **https://localhost/admin**
+2. Click on the shortcut icon for the Horizon Connection server or navigate to <https://localhost/admin>
 
     - **Note** it can take up to 5 min to have all services started to be able to browse to the webpage of the Horizon Connection Server
 
@@ -478,7 +485,7 @@ You need to login back into the **Horizon Connection Server** and open a **brows
     - Uncheck **HTTP(S) Secure Tunnel**
     - Click on **Do not use Blast Secure Gateway**
     ![External6](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/External6.png)
-7. Click **OK**
+6. Click **OK**
 
 The next step is to configure your UAG. Go to your Horizon Connection Server.
 
@@ -493,7 +500,7 @@ The next step is to configure your UAG. Go to your Horizon Connection Server.
     - Click **Enable Horizon**
     - Click **Enable Blast**
     - Click **Enable Tunnel**
-8. For **Connection Server URL** type **https://hz-ws-cs100.vdionvmc.local:443** or **https://hz-ws-cs200.vdionvmc.local:443**, depending on your Student ID
+8. For **Connection Server URL** type <https://hz-ws-cs100.vdionvmc.local:443> or <https://hz-ws-cs200.vdionvmc.local:443>, depending on your Student ID
 9. For **Connection Server URL Thumbprint** go back to the **Connection Server tab** / **View Administrator** and click on the certificate
 
     ![External](https://s3-us-west-2.amazonaws.com/horizon-workshop/Screenshots/External7.png)

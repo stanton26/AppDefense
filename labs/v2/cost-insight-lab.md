@@ -10,7 +10,7 @@ author_profile: false
 comments: true
 ---
 
-# Introduction
+## Introduction
 
 ## What is Log Intelligence
 

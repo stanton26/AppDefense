@@ -9,7 +9,7 @@ author_profile: false
 categories: labs
 comments: true
 ---
-# Introduction
+## Introduction
 
 In this lab we are going to start with looking at the basic tasks which you will perform in the VMware Cloud on AWS user interface when you are administering the platform.
 
