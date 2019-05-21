@@ -640,7 +640,7 @@ Following Horizon best practices we cannot have users in both Local and Global e
 Now that we have the Global Entitlements set up, we can simulate a desktop pool failure by disabling one of the desktop pools.
 
 {% capture notice-2 %}
-**ONLY ONE person can do this test at a time**
+**Only one person can do this test at a time**
 {% endcapture %}
 
 <div class="notice--info">
