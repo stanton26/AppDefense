@@ -34,10 +34,11 @@ https://www.markdownguide.org
 
 <!-- More content -->
 
+<!-- Below is an example of how to create a notice -->
 
 {% capture notice-2 %}
-
-
+Notice Example
+{% endcapture %}
 <div class="notice--info">
   {{ notice-2 | markdownify }}
 </div>

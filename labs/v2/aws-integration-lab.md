@@ -332,7 +332,7 @@ Please note you might get either of the 2 sign on screens above. If you get the 
 
 {% capture notice-2 %}
 **Note: VMware Cloud on AWS establishes routing in the default VPC Security Group, only RDS can leverage this or create its own**
-
+{% endcapture %}
 <div class="notice--info">
   {{ notice-2 | markdownify }}
 </div>
