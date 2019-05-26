@@ -33,3 +33,11 @@ https://www.markdownguide.org
 ### Level 3 heading 2
 
 <!-- More content -->
+
+
+{% capture notice-2 %}
+
+
+<div class="notice--info">
+  {{ notice-2 | markdownify }}
+</div>

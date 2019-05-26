@@ -9,7 +9,8 @@ author_profile: false
 comments: true
 categories: labs
 ---
-# Introduction
+
+## Introduction
 
 In this lab you will pair up with another student group in order to simulate the setup and configuration tasks for VMware Site Recovery Manager
 

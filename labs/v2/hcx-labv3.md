@@ -66,11 +66,16 @@ We have provided an on-prem vCenter with virtual machines to migrate.  Based on 
 
 From your Horizon desktop (workshop.vmc.ninja) open Google Chrome and access the on-prem vCenter
 
-**Note: Refer to the Student Access page to log into your Horizon desktop https://vmc-field-team.github.io/student-access/**
+{% capture notice-2 %}
+Note: Refer to the [Student Access](https://vmc-field-team.github.io/student-access/){:target="_blank"} page to log into your Horizon desktop
+
+<div class="notice--info">
+  {{ notice-2 | markdownify }}
+</div>
 
 ![HCX01](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/hcx01.jpg)
 
-1. Open Google Chrome and enter https://vcenter-workshop.workshop.set.local/ui for the URL.
+1. Open Google Chrome and enter <https://vcenter-workshop.workshop.set.local/ui> for the URL.
 2. Type in your student (student#@set.local) credentials.
 3. Type in your password assigned to you.
 4. Click **Login** to continue.
@@ -125,7 +130,7 @@ To migrate your virtual machine VMware Cloud on AWS you will have to select the 
 
 1. Click on **Menu**.
 2. Click on **HCX**.
-   
+
 ![HCX07](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/hcx07.jpg)
 
 Dashboard gives you the number of virtual machines migrated, in progress and scheduled.
@@ -180,7 +185,11 @@ We will use vMotion to migrate the virtual machine back to the on-prem vCenter. 
 
 ![HCX014](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/hcx014.jpg)
 
-**Optional**
+{% capture notice-2 %}
+**Optional Exercises**
+<div class="notice--info">
+  {{ notice-2 | markdownify }}
+</div>
 
 1. Click on the **Command Prompt** to return to the ping test.
 2. Observe the ping test left running from a previous step and notice it hasn't dropped while migrating back to on-prem vCenter.
