@@ -18,7 +18,7 @@ In this Lab we are going to create and install an Horizon 7 environment, using C
 
 ![SDDC-Network-01](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc01.jpg)
 
-After logging in, you should see two SDDCs in the user interface following the naming format Student-Workshop-#.#. 
+After logging in, you should see two SDDCs in the user interface following the naming format Student-Workshop-#.#.
 
 An SDDC is a fully deployed environment including vSphere, NSX, vSAN and vCenter Server. Deployment of a fully configured SDDC takes about two hours, so for the purpose of this lab, we have the SDDC already deployed. This SDDC is in the same state as it would be if you had deployed it yourself. Let's take a look at the SDDC properties.
 
