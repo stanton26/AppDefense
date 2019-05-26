@@ -68,7 +68,7 @@ From your Horizon desktop (workshop.vmc.ninja) open Google Chrome and access the
 
 {% capture notice-2 %}
 Note: Refer to the [Student Access](https://vmc-field-team.github.io/student-access/){:target="_blank"} page to log into your Horizon desktop
-
+{% endcapture %}
 <div class="notice--info">
   {{ notice-2 | markdownify }}
 </div>
@@ -187,6 +187,7 @@ We will use vMotion to migrate the virtual machine back to the on-prem vCenter. 
 
 {% capture notice-2 %}
 **Optional Exercises**
+{% endcapture %}
 <div class="notice--info">
   {{ notice-2 | markdownify }}
 </div>
