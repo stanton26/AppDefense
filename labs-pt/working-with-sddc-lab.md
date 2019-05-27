@@ -9,33 +9,33 @@ author_profile: false
 categories: labs
 comments: true
 ---
-# Introduction
+# Introdução
 
-In this lab we are going to start with looking at the basic tasks which you will perform in the VMware Cloud on AWS user interface when you are administering the platform.
+Neste laboratório, começaremos examinando as tarefas básicas que você executará na interface do VMware Cloud on AWS para administrar a plataforma.
 
-## Viewing your SDDC
+## Visualizando o seu SDDC
 
 ![SDDC-Network-Login](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc-login.jpg)
 
-Access VMware Cloud on AWS console using https://vmc.vmware.com and use your assigned login credentials **ced##@vmware-hol.com**.
+Acesse a console do VMware Cloud on AWS no link https://vmc.vmware.com e use as credenciais de login fornecidas **ced##@vmware-hol.com**.
 
-After you login, you should see a two single-node SDDC's in the user interface following the naming format Student-##. An SDDC is a fully deployed environment including vSphere, NSX, vSAN and vCenter Server. Deployment of a fully configured SDDC takes about two hours so for the purposes of this lab, we have already deployed it for you. This SDDC is in the same state it would be if you have deployed it. Let's take a look at the SDDC properties.
+Após o login, você verá dois SDDCs com apenas um nó na interface do usuário, seguindo o nomenclatura Student - ##. Um SDDC é um ambiente dedicado, incluindo vSphere, NSX, vSAN e o vCenter Server. A criação de um SDDC totalmente configurado leva cerca de duas horas, portanto, para as finalidades deste laboratório, já o criamos para você. Este SDDC está na mesma configuração caso tivesse sido implantado por você. Vamos dar uma olhada nas propriedades do SDDC.
 
 ![SDDC-Network-01](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc01.jpg)
 
-1. First identify your SDDC that is assigned to you (Student-##).
-2. Click on View Details to open the SDDC properties.
+1. Primeiro identique o SDDC designado para você (Student-##).
+2. Clique em View Details para abrir as propriedades do SDDC.
 
 ![SDDC-Network-02](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc02.jpg)
 
-You will start with the Summary of the SDDC. There are a number of other tabs available as follows:
-1. **Support**: You can contact Support with your SDDC ID, Org ID, vCenter Private and Public IPs and the date of your SDDC Deployment.
-2. **Settings**: Gives you access to your vSphere Client (HTML5), vCenter Server API, PowerCLI Connect, vCenter Server and reviews your Authentication information.
-3. **Troubleshooting**: Allows you to run network connectivity tests to ensure all necessary access is available to perform select use cases.
-4. **Add Ons**: Here you will find Add On services for your VMware Cloud on AWS environment like Hybrid Cloud Extension and VMware Site Recovery.
-5. **Networking & Security**: Provides a full diagram of the Management and Compute Gateways.  This is where you can configuration locgical networks, VPN's and firewall rules. We will cover this in more detail later. Click on Networking & Security to proceed to the next article to learn more about VMware Cloud on AWS Network and Security Configuration.
+Você irá iniciar com o resumo do SDDC. Existem diversas outras abas disponíveis:
+1. **Support**: Você poderá entrar em contato com o Suporte através do seu SDDC ID, Org ID, IP público ou privado do vCenter e a data da criação do seu SDDC.
+2. **Settings**: Fornece acesso ao vSphere Client (HTML5), APIs do vCenter, PowerCLI e informa as credenciais para autenticação.
+3. **Troubleshooting**: Permite a execução de testes de conectividade para todos os acessos necessários para executar alguns casos de uso selecionados.
+4. **Add Ons**: Aqui você irá encontrar os serviços Add-On para o seu ambiente VMware Cloud on AWS como o HCX - Hybrid Cloud Extension e o VMware Site Recovery.
+5. **Networking & Security**: Fornece o diagrama completo de configuração dos Gateways de Management e Compute. Será aqui aonde as configurações de redes lógicas, VPNs e regras de Firewall/Segurança serão realizadas. Iremos detalhar a seguir. Clique em Networking & Security para ir a próxima sessão e  aprender mais sobre as configurações de Redes e Segurança no VMware Cloud on AWS.
 
-## Create a Logical Network
+## Criando uma Rede Lógica
 
 ![SDDC-Network-03](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc03.jpg)
 
