@@ -30,7 +30,7 @@ Como o diagrama acima ilustra, os workloads VMware não apenas ficam ao lado dos
 Estas são apenas algumas das integrações que vimos. Existem muitos serviços diferentes que podem ser integrados ao seu ambiente.
 Neste exercício, exploraremos as integrações com o AWS Simple Storage Service (S3) e o AWS Relational Database Service (RDS).
 
-**Nota: Existe um requisito neste laboratório e é necessário ter concluído os passos no [Trabalhando com o seu SDDC] (https://vmc-field-team.github.io/labs-pt/working-with-sddc- lab /) sobre criação de Content Library, criação de Redes e criação de regras de firewall.**
+**Nota: Existe um requisito neste laboratório e é necessário ter concluído os passos no [Trabalhando com o seu SDDC] (https://vmc-field-team.github.io/labs-pt/working-with-sddc-lab/) sobre criação de Content Library, criação de Redes e criação de regras de firewall.**
 
 ### Como essas integrações são possíveis?
 
