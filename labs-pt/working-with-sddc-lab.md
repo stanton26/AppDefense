@@ -395,7 +395,7 @@ Vamos agora definir as opções para clonagem. Precisaremos personalizar o siste
 
 1. Revise as informações para precisão e clique em **Finish** para clonar a máquina virtual.
 
-Deve demorar alguns minutos para a máquina virtual clonar. Continue para o próximo exercício para aprender a proteger as cargas de trabalho no VMware Cloud na AWS.
+**NOTA: Deve demorar alguns minutos para a máquina virtual clonar. Continue para o próximo exercício para aprender a proteger as cargas de trabalho no VMware Cloud na AWS.**
 
 <aside class="notice">
 <font color="dodgerblue">
