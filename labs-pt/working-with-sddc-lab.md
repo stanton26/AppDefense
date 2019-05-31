@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "Working with your SDDC Lab Manual"
+title: "Trabalhando com o seu SDDC"
 date: 2018-09-24
 tags: workshop
 toc: true
