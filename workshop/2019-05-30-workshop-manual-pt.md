@@ -9,38 +9,38 @@ author_profile: false
 ---
 ## Introdução
 
-The VMware Cloud on AWS workshop is your chance to test drive this unique solution in the market place in a classroom session with VMware Cloud on AWS experts and work through hands on lab exercises to understand and gain experience with the solution to understand how it can be used in your business.
+O workshop VMware Cloud on AWS é a sua chance de testar essa solução exclusiva no mercado em uma sessão dcom especialistas em VMware e AWS e trabalhar em exercícios práticos para entender e ganhar experiência com a solução para entender como ela pode ser usado em seu negócio.
 
-The class is a one-day workshop in which we will set up a VMware SDDC environment in AWS, work through common administration activities of the platform and explore integrations with native AWS services and vRealize Suite solutions including vRealize Automation and vRealize Operations.
+A aula é um workshop de um dia no qual criaremos um SDDC na AWS, trabalharemos por meio de atividades de administração da plataforma e exploraremos integrações com serviços nativos da AWS e muito mais.
 
-## Workshop Details
+## Detalhes do Workshop
 
-### Horizon Access
+### Acesso ao VDI
 
-At the start of the workshop, your instructor will have given you logon details to use in a VMware Horizon session. In order to access details regarding how to connect to Horizon, you will have been directed to the following link to [Student Access Instructions](https://vmc-field-team.github.io/student-access/)
+No início do workshop, seu instrutor fornecerá detalhes de login para usar em uma sessão do VMware Horizon. Para acessar os detalhes sobre como se conectar ao Horizon, você será direcionado para o seguinte link para [Instruções de acesso do aluno] (https://vmc-field-team.github.io/student-access/)
 
-### VMware Cloud on AWS Org Access
+### Acesso a Organização no VMware Cloud on AWS
 
-You will also receive details from your instructor regarding how to access your VMware Cloud on AWS organization where you will be able to use and configure your SDDC solution in AWS. Your instructor will inform you of these details when you start the lab exercises.
+Você também receberá detalhes de seu instrutor sobre como acessar sua organização VMware Cloud on AWS, na qual poderá usar e configurar seu SDDC na AWS. Seu instrutor irá informá-lo desses detalhes quando você iniciar os exercícios de laboratório.
 
 ### Workshop URL's
 
-Below are a list of the URLs you will use over the course of the lab exercises.
+Abaixo está uma lista dos URLs que você usará ao longo dos exercícios de laboratório.
 
 VMware Cloud on AWS Login <https://vmc.vmware.com>
 
 Swagger API Interface <https://vmc.vmware.com/swagger/index.html>
 
-AWS Console <https://vmcworkshop.signin.aws.amazon.com/console>
+Console AWS <https://vmcworkshop.signin.aws.amazon.com/console>
 
-## Labs
+## Laboratórios
 
-Listed below are the lab exercises which are available as part of this experience day event. Please ensure that you complete the **Working with your SDDC** lab, the **AWS Integration** lab relies on sections of the Working with your SDDC lab to be completed. Please note that you will not be able to complete all of the content. For this reason we typically state that the first 3 labs listed below are mandatory lab content. After those labs are complete you can choose your own path.
+Abaixo estão listados os exercícios de laboratório que estão disponíveis como parte deste evento do dia da experiência. Certifique-se de realizar o laboratório **Trabalhando com seu SDDC**, o laboratório **Integração com AWS** depende de seções do laboratório Trabalhando com seu SDDC. Por favor, note que talvez você não poderá completar todo o conteúdo. Por esse motivo, geralmente afirmamos que os três primeiros laboratórios listados abaixo são obrigatórios. Depois que esses laboratórios estiverem concluídos, você poderá escolher seu próprio caminho.
 
-Please enjoy these labs, if you have any questions, please do not hesitate to speak to the VMware Cloud on AWS specialists in the room with you.
+Por favor, aproveite estes laboratórios, se você tiver alguma dúvida, por favor, não hesite em falar com o especialista na sala com você.
 
 Lab Name | Description
-[Working with your SDDC](https://vmc-field-team.github.io/labs/v2/working-with-sddc-lab/){:target="_blank"} | Learn the basics of running a VMware on AWS SDDC environment
-[AWS Integration](https://vmc-field-team.github.io/labs/v2/aws-integration-lab/){:target="_blank"} | Learn how to integrate with native AWS services such as RDS and EFS
-[VMware Cloud on AWS APIs](https://vmc-field-team.github.io/labs/v2/api-lab/){:target="_blank"} | Learn how to interact with VMware on AWS through APIs
-[VMware Hybrid Cloud Extension](https://vmc-field-team.github.io/labs/v2/hcx-labv3/){:target="_blank"} | Learn how VMware Hybrid Cloud Extension (HCX) technology can help with bulk and live migration to the VMware Cloud on AWS cloud platform
+[Trabalhando com o seu SDDC](https://vmc-field-team.github.io/labs-pt/working-with-sddc-lab/){:target="_blank"} | Aprenda os conceitos básicos do VMware Cloud on AWS
+[Integração com AWS](https://vmc-field-team.github.io/labs-pt/aws-integration-lab/){:target="_blank"} | Aprenda a integrar o SDDC com serviços nativos da AWS, como RDS e EFS
+[VMware Cloud on AWS APIs](https://vmc-field-team.github.io/labs-pt/api-lab/){:target="_blank"} | Aprenda a interagir com o VMware Cloud on AWS por meio de APIs
+[VMware Hybrid Cloud Extension](https://vmc-field-team.github.io/labs-pt/hcx-labv3/){:target="_blank"} | Saiba como a tecnologia HCX (Hybrid Cloud Extension) da VMware pode ajudar com a migração em massa ou usando vMotion para a plataforma de nuvem VMware Cloud on AWS
