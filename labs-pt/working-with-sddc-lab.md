@@ -335,7 +335,7 @@ Antes de podermos clonar o servidor web, primeiro precisamos ligar a Máquina Vi
 
 <aside class="notice">
 <font color="dodgerblue">
-<img src="https://s3-us-west-2.amazonaws.com/vmc-workshops-images/info.jpeg" width="25" height="25"> Se o servidor da Web não se conectar à rede e não receber o endereço IP do DHCP, verifique se a NIC está conectada clicando com o botão direito do mouse em <b> webserver01 </ b> e, em seguida, em <b> Edit Settings </ b> e verifique se a caixa de seleção ao lado de Connected está selecionada. Pode ser necessário repetir esta etapa para o servidor webserver02.
+<img src="https://s3-us-west-2.amazonaws.com/vmc-workshops-images/info.jpeg" width="25" height="25"> Se o servidor da Web não se conectar à rede e não receber o endereço IP do DHCP, verifique se a NIC está conectada clicando com o botão direito do mouse em <b> webserver01 </b> e, em seguida, em <b> Edit Settings </b> e verifique se a caixa de seleção ao lado de Connected está selecionada. Pode ser necessário repetir esta etapa para o servidor webserver02.
 </font>
 </aside>
 
