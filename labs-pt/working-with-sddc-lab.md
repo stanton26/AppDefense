@@ -399,7 +399,7 @@ Deve demorar alguns minutos para a máquina virtual clonar. Continue para o pró
 
 <aside class="notice">
 <font color="dodgerblue">
-<img src="https://s3-us-west-2.amazonaws.com/vmc-workshops-images/info.jpeg" width="25" height="25"> Se o servidor da Web não se conectar à rede e não receber o endereço IP do DHCP, verifique se a NIC está conectada clicando com o botão direito do mouse em <b> webserver01 </ b> e, em seguida, em <b> Edit Settings </ b> e verifique se a caixa de seleção ao lado de Connected está selecionada.
+<img src="https://s3-us-west-2.amazonaws.com/vmc-workshops-images/info.jpeg" width="25" height="25"> Se o servidor da Web não se conectar à rede e não receber o endereço IP do DHCP, verifique se a NIC está conectada clicando com o botão direito do mouse em <b> webserver01 </b> e, em seguida, em <b> Edit Settings </b> e verifique se a caixa de seleção ao lado de Connected está selecionada.
 </font>
 </aside>
 
