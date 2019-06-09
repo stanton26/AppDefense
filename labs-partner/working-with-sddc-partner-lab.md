@@ -175,14 +175,13 @@ You may already have a Content Library in your on-premises data center, you can 
 5. Select **Subscribed content library**
 6. Under **Subscription URL** enter the following:
 
-    <http://cl.zpod.io/lib.json>
-7. Click the checkbox for **Enable Authentication**
-8. For the **Password** enter: **VMware1!**
-9. Ensure Download content is set to **Immediately**
-10. Click **Next**
-11. Highlight the **WorkloadDatastore** as the storage location
-12. Click **Next**
-13. Click **Finish**. Your content library should take about ~20 minutes to complete syncing. Syncing is required prior to proceeding to the next lab. You can take a break during this time prior to proceeding to lab#2 "AWS Integration" 
+    <https://partner-library.s3-us-west-1.amazonaws.com/ContentLib/lib.json>
+7. Do not check **Enable Authentication**
+8. Ensure Download content is set to **Immediately**
+9. Click **Next**
+10. Highlight the **WorkloadDatastore** as the storage location
+11. Click **Next**
+12. Click **Finish**. Your content library should take about ~20 minutes to complete syncing. Syncing is required prior to proceeding to the next lab. You can take a break during this time prior to proceeding to lab#2 "AWS Integration" 
 
 You have now successfully subscribed to a vSphere content library from your VMware Cloud on AWS vCenter instance.
 
