@@ -12,7 +12,7 @@ comments: true
 ## Introduction
 Configure a VPN to provide a secure connection to your SDDC over the public Internet or AWS Direct Connect. Route-based and policy-based VPNs are supported. Either type of VPN can connect to the SDDC over the Internet. A route-based VPN can also connect to the SDDC over AWS Direct Connect.
 
-In this lab exercise we will be showing how you can establish network connectivity to another SDDC hosted on VMC on AWS. We will go through the steps to configure a policy based L3VPN as well as how to extend a network into another SDDC by leveraging L2VPN. 
+In this lab exercise we will be showing how you can establish network connectivity to another SDDC hosted on VMC on AWS. We will go through the steps to configure a policy based L3VPN.
 
 This lab requires the interaction of only one group member per SDDC. (Students who will not be hands on keyboard should follow the steps inputed by their team members)
 
