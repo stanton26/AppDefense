@@ -23,47 +23,13 @@ For your credentials enter **student##** for username (where your number is your
 
 ## Using PowerShell
 
-![APIs1](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs1.jpg)
-
 1. Click on **Start**, and scroll down until you see the Windows PowerShell menu
-2. Right click on the **PowerShell** CLI shortcut icon and select **Run as Administrator**
-
-    ![APIs3](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs3.jpg)
-
-Install the VMware PowerCLI module
-
-```powershell
-Install-Module VMware.PowerCLI
-```
-
-**NOTE**: You will be asked to install the NuGet provider, take the default or press **Y** and press enter, you will then be asked to trusted an untrusted repository, **DO NOT** take the default but type **Y** and press Enter.
-
-![APIs4](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs4.jpg)
-
-We now need to set the execution policy to Remote Signed.
-
-```powershell
-Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Force
-```
-
-![APIs5](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs5.jpg)
-
-You now will need to set the PowerCLI Configuration to Ignore Invalid Certificates.
-
-**IMPORTANT STEP:**
-
-```powershell
-Set-PowerCLIConfiguration -InvalidCertificateAction Ignore -Confirm:$false -WarningAction:SilentlyContinue
-```
-
-**NOTE**: Be sure the "i" in "Ignore" is capitalized if you are not using copy/paste
-
-![APIs6](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs6.jpg)
+2. Right click on the **PowerShell** CLI shortcut icon
 
 We now need to install the VMware CLI commands
 
 ```powershell
-Install-Module -name VMware.VMC -scope AllUsers -Force
+Install-Module -name VMware.VMC -scope CurrentUser
 ```
 
 ![APIs7](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/APIs7.jpg)
