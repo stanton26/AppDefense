@@ -95,3 +95,7 @@ You use templates to rapidly deploy and provision new virtual machines and easil
     ![Screenshot](https://github-partner-lab-screenshots.s3-us-west-2.amazonaws.com/operations+screenshots/13.jpg)
 
 13. Repeat steps to create another virtual machine. The second machine should be named Win10-recovery##. The ## is the student number assigned to you. We will use this VM to failover in our Site Recovery lab. 
+
+14. Monitor the progress of the 2 deplooyed virtual machines  and wait for completion. 
+
+## Task 3 Modifying Virtual Machine and Virtual Hardware. 
