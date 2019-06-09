@@ -26,8 +26,9 @@ AWS Console <https://vmcworkshop.signin.aws.amazon.com/console>
 ## Labs
 
 Lab Name | Description
-[Working with your SDDC](https://vmc-field-team.github.io/labs-partner/working-with-sddc-partner-lab/){:target="_blank"} | Learn the basics of running a a VMware Cloud on AWS SDDC environment
-[AWS Integration](https://vmc-field-team.github.io/labs-partner/aws-integration-partner-lab/){:target="_blank"} | Learn how to integrate with native AWS services such as RDS and EFS
-[Distributed Firewall](https://vmc-field-team.github.io/labs-partner/distributed-firewall-partner-lab/){:target="_blank"} | Learn the basics on how to create east-west firewall rules using NSX Distributed Firewall Capabilities
+[Working-with-your-SDDC](https://vmc-field-team.github.io/labs-partner/working-with-sddc-partner-lab/){:target="_blank"} | Learn the basics of running a a VMware Cloud on AWS SDDC environment
+[AWS-Integration](https://vmc-field-team.github.io/labs-partner/aws-integration-partner-lab/){:target="_blank"} | Learn how to integrate with native AWS services such as RDS and EFS
+[Distributed-Firewall](https://vmc-field-team.github.io/labs-partner/distributed-firewall-partner-lab/){:target="_blank"} | Learn the basics on how to create east-west firewall rules using NSX Distributed Firewall Capabilities
+[Workload-Operations](https://vmc-field-team.github.io/labs-partner/workload-operations){:target="_blank} | Go through some of the basic operations of VM deployment and monitoring
 [API-Lab](https://vmc-field-team.github.io/labs-partner/api-partner-lab){:target="_blank"} | Learn the basics of API operations on VMware Cloud on AWS 
 [VPN-Lab](https://vmc-field-team.github.io/labs-partner/vpn-lab){:target="_blank"} | Learn the basics of Configuring a VPN on VMware Cloud on AWS
