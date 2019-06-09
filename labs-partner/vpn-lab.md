@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "VMware Cloud on AWS API Lab Manual"
+title: "VMware Cloud on AWS VPN Lab Manual"
 date: 2018-07-18
 tags: workshop
 toc: true
