@@ -181,7 +181,7 @@ You may already have a Content Library in your on-premises data center, you can 
 9. Click **Next**
 10. Highlight the **WorkloadDatastore** as the storage location
 11. Click **Next**
-12. Click **Finish**. Your content library should take about ~20 minutes to complete syncing. Syncing is required prior to proceeding to the next lab. You can take a break during this time prior to proceeding to lab#2 "AWS Integration" 
+12. Click **Finish**. Your content library should take about ~20 minutes to complete syncing. Syncing is required prior to proceeding to the next lab. You can take a break during this time prior to proceeding to lab #2 "AWS Integration" 
 
 You have now successfully subscribed to a vSphere content library from your VMware Cloud on AWS vCenter instance.
 
