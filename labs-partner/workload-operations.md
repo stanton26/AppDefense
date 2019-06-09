@@ -18,6 +18,6 @@ The virtual machines deployed in this lab are a requirement for your Site Recove
 
 1.  Log into your vCenter Web Client > click the **Menu** icon and slect **Policies and Profiles**
     
-   ![Policies-and-Profiles]<https://github-partner-lab-screenshots.s3-us-west-2.amazonaws.com/operations+screenshots/1.jpg>
+   ![Screenshot](https://github-partner-lab-screenshots.s3-us-west-2.amazonaws.com/operations+screenshots/1.jpg)
 
 2. 
