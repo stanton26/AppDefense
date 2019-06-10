@@ -330,7 +330,7 @@ In the vSphere client window already opened, deploy a template from the content 
 Please skip adding the customization specification by not checking the box next to **Customize the operating system**
 {% endcapture %}
 
-<div class="notice--custspec1">
+<div class="notice--info">
   {{ notice--custspec1 | markdownify }}
 </div>
 
@@ -461,7 +461,7 @@ We will now begin the process of cloning this virtual machine.
 Please skip adding the customization specification by not checking the box next to **Customize the operating system**
 {% endcapture %}
 
-<div class="notice--custspec">
+<div class="notice--info">
   {{ notice--custspec | markdownify }}
 </div>
 
