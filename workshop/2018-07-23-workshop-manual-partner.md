@@ -31,5 +31,5 @@ Lab Name | Description
 [Distributed-Firewall](https://vmc-field-team.github.io/labs-partner/distributed-firewall-partner-lab/){:target="_blank"} | Learn the basics on how to create east-west firewall rules using NSX Distributed Firewall Capabilities
 [Workload-Operations](https://vmc-field-team.github.io/labs-partner/workload-operations){:target="_blank} | Go through some of the basic operations of VM deployment and monitoring
 [API-Lab](https://vmc-field-team.github.io/labs-partner/api-partner-lab){:target="_blank"} | Learn the basics of API operations on VMware Cloud on AWS 
-[VPN-Lab](https://vmc-field-team.github.io/labs-partner/vpn-lab){:target="_blank"} | Learn the basics of Configuring a VPN on VMware Cloud on AWS
+[VPN-Lab](https://vmc-field-team.github.io/labs-partner/vpn-lab){:target="_blank"} | Learn the basics of configuring a VPN on VMware Cloud on AWS
 [Site-Recovery-Lab](https://vmc-field-team.github.io/labs-partner/site-recovery-lab) | Learn the basics of enabling Site Recovery and configuring cloud to cloud DR
