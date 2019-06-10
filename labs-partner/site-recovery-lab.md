@@ -96,33 +96,9 @@ vSphere Replication > for services select VMware Site Recovery vSphere Replicati
 ![Screenshot](https://github-partner-lab-screenshots.s3-us-west-2.amazonaws.com/site+recovery+screenshots/8.jpg)
 
 
-### Firewall Rules for Site Recovery
+**Note**  Althoug in  this exercise we have written our rules as "any" as the source and the  destination we should not configure in suchh  manner for production environments but rather you should define your source as an IP_SET containing your protected infrastructure management subnets. 
 
-For this module we will utilize the brand new *Firewall Rule Accelerator* option in the VMware
-Cloud on AWS portal.
 
-The firewall rule accelerator will create a group of firewall rules for a set of use cases. The
-Remote Network of the selected VPN will be used as the source or destination for these rules.
-You can edit the rules in the Firewall Rules section after they are created if desired although
-there should be no need to edit them.
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM14.jpg)
-
-1\. Click on the *Network* tab
-
-2\. Expand the *Firewall Rule Accelerator* area
-
-3\. For Rule Group select *Site Recovery* option
-
-4\. For VPN Select the VPN created against the Student you were paired up with, and you will repeat the same process for the VPN created to the Host infrastructure.
-
-    MAKE SURE TO REPEAT THIS STEP FOR BOTH VPN'S CREATED, THE ONE WITH YOUR PEER STUDENT, AND THE ONE FOR THE HOST.
-
-5\. Click on *Create Firewall Rules*
-
-Watch as the firewall rules get created automatically for you. Once completed, repeat for second VPN, once that one completes you can examine the firewall rules created.
-
-![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM15.jpg)
 
 ### VMware Site Recovery - Site Pairing
 
