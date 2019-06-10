@@ -22,11 +22,11 @@ This lab is a prequisite for the Site Recovery Lab
 
 Given that we only have 10 SDDC's we will be pairing SDDC's 1 through 5 with SDDC's 6 through 10. 
 
-**SDDC-1 Paired with SDDC-6**
-**SDDC-2 Paired with SDDC-7**
-**SDDC-3 Paired with SDDC-8**
-**SDDC-4 Paired with SDDC-9**
-**SDDC-5 Paired with SDDC-10**
+SDDC-1 Paired with SDDC-6
+SDDC-2 Paired with SDDC-7
+SDDC-3 Paired with SDDC-8
+SDDC-4 Paired with SDDC-9
+SDDC-5 Paired with SDDC-10
 
 ## L3VPN Coniguration
 
