@@ -99,3 +99,64 @@ You use templates to rapidly deploy and provision new virtual machines and easil
 14. Monitor the progress of the 2 deplooyed virtual machines  and wait for completion. 
 
 ## Task 3 Modifying Virtual Machine and Virtual Hardware. 
+
+In the following exercises we will modifying the hard drive space and the vRAM of the deployed VMs. 
+
+### Modifying Virtual Machine Hard Drive 
+
+1. Right-click on your Win10-## virtual machine in the Navigator and select "Edit Settings" 
+
+2. On the "Virtual Hardware" tab, record the size (GB) of the Hard Disk1. 
+    ![Screenshot](https://github-partner-lab-screenshots.s3-us-west-2.amazonaws.com/operations+screenshots/14.jpg)
+
+3. In the "Hard disk 1" text box, increase the disk size by 2 GB and click "ok". 
+    ![Screenshot](https://github-partner-lab-screenshots.s3-us-west-2.amazonaws.com/operations+screenshots/15.jpg)
+
+4. On the "Win10-##" Summary tab, select launch "Web Console. 
+
+5. If you are not logged into windows go ahead and log in as Administrator/VMware1!
+
+6. In this step we will be extending our disk to the increased disk space. 
+    a. Right-Click on "This PC" and Select "Manage" 
+    ![Screenshot](https://github-partner-lab-screenshots.s3-us-west-2.amazonaws.com/operations+screenshots/16.jpg)
+
+    b. Click on "Disk Management" 
+    ![Screenshot](https://github-partner-lab-screenshots.s3-us-west-2.amazonaws.com/operations+screenshots/17.jpg)
+
+    c. In the lower right pane, verify that the 2GB unaloccated disk space is discovered
+    ![Screenshot](https://github-partner-lab-screenshots.s3-us-west-2.amazonaws.com/operations+screenshots/18.jpg)
+
+    If the 2.00 GB of unallocated space has not been discovered, click the Action menu and select "Rescan Disk"
+
+    d. Click "Next"
+
+    e. on the "Select Disks" page, verify that Disk 0 is selected in the "Selected" pane and click Next. 
+
+    f. On the "Completing the Extend Volume" Wizard page, review the information and click finish. 
+
+7. In the "Disk Management" window, verify that the local c: drive (Disk 0) is extended. 
+
+8. close the "Disk Management window" and close the Virtual Machine Console. 
+
+### Adjusting Memory Allocation on a Virtual Machine
+
+vSphere allows you to add or modify the virtual machine memory once the virtual machine has been deployed. This could be done to enhance virtual machine performance or to righ size VM based on it's workloads. 
+
+1. Right-click the Win10-## virtual machine and select Power > Shutdown Guest OS from the Navigator pane. 
+![Screenshot](https://github-partner-lab-screenshots.s3-us-west-2.amazonaws.com/operations+screenshots/19.jpg)
+
+2. Click "Yes" to verify the shutdown
+
+3. On the Win10-Clone Summary tab, expand the view of the VM Hardware pane and record the amount (GB) of active memory
+
+4. Right-click the Win10-## virtual machine in the Navigator pane and select "Edit Settings" 
+![Screenshot](https://github-partner-lab-screenshots.s3-us-west-2.amazonaws.com/operations+screenshots/20.jpg)
+
+5. Enter 4500 in the Memory text box and verify that MB is selected from the drop-down menu. 
+
+6. Click "Ok"
+
+7. Verify that the memory is increased on the virtual machine's Summary tab. 
+
+
+
