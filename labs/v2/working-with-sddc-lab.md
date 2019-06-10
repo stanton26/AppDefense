@@ -325,6 +325,15 @@ In the vSphere client window already opened, deploy a template from the content 
 
 ![SDDC-deploy-vm-030](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc030.jpg)
 
+{% capture notice--custspec1 %}
+**Note:**
+Please skip adding the customization specification by not checking the box next to **Customize the operating system**
+{% endcapture %}
+
+<div class="notice--custspec1">
+  {{ notice--custspec1 | markdownify }}
+</div>
+
 1. Enter **webserver01** for the virtual machine name.
 2. Click the **arrow** next to SDDC-Datacenter to expose the folders available.
 3. In VMware Cloud on AWS customer workloadds should be placed in the Workloads folder (or subfolder).  Click the **Workloads** folder.
