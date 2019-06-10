@@ -14,7 +14,7 @@ Configure a VPN to provide a secure connection to your SDDC over the public Inte
 
 In this lab exercise we will be showing how you can establish network connectivity to another SDDC hosted on VMC on AWS. We will go through the steps to configure a policy based L3VPN.
 
-This lab requires the interaction of only one group member per SDDC. (Students who will not be hands on keyboard should follow the steps inputed by their team members)
+This lab requires the interaction of only one group member per SDDC. (This step requires the interaction of only one student. Plase decide between you and your partner who will performing this step)
 
 This lab is a prequisite for the Site Recovery Lab 
 

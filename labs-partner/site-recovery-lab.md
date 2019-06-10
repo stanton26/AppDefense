@@ -47,7 +47,7 @@ VMware Site Recovery enables the testing of recovery plans, using a temporary co
 
 Important Instructions for Site Recovery Exercises
 
-**Note:** Activating the Site Recovery add on is an operation done per SDDC, therefore only one team member per SDDC should perform this step.
+**Note:** Activating the Site Recovery add on is an operation done per SDDC, therefore only one team member per SDDC should perform this step. Please decide which team member will be activating site recovery. 
 
 1. If you have not already done so log into your SDDC at <https://vmc.vmware.com/console/sddcs> and open your SDDC
 ![Screenshot](https://github-partner-lab-screenshots.s3-us-west-2.amazonaws.com/site+recovery+screenshots/1.jpg)
@@ -70,9 +70,11 @@ Pairing Site Recovery to an on premise or cloud environment requires layer 3 con
 
 To enable VMware Site Recovery on your SDDC environment, you must create firewall rules between your on-premises or cloud data center and the Management Gateway.
 
+**Note:** Only one student should open the firewall rules. Please decide between you and your partner who will be configuring the firewall rules for Site Recovery)
+
 **Note:** You must enable Site Recovery on your SDDC before proceeding. 
 
-**Rules Requireed:**
+**Rules Required:**
   1. Allow inbound service HTTPS (TCP 433) to vCenter (This rule should have been created on lab "Working with your SDDC)
   2. Allow inbound service SRM Server Management (TCP 9086) to Site Recovery Manager
   3. Allow inbound service VR Server Management (TCP 8043) to vSphere Replication
