@@ -14,7 +14,7 @@ Configure a VPN to provide a secure connection to your SDDC over the public Inte
 
 In this lab exercise we will be showing how you can establish network connectivity to another SDDC hosted on VMC on AWS. We will go through the steps to configure a policy based L3VPN.
 
-This lab requires the interaction of only one group member per SDDC. (This step requires the interaction of only one student. Plase decide between you and your partner who will performing this step)
+**Note** This lab requires the interaction of only one group member per SDDC. Plase decide between you and your partner who will performing this step
 
 This lab is a prequisite for the Site Recovery Lab 
 
@@ -51,7 +51,7 @@ In this exercise we will be configuring a policy based VPN and exposing our mgmt
 
 1. If you are not already logged in log in to the VMC Console at <https://vmc.vmware.com>.
 2. Select **Networking & Security > VPN > Policy Based**.
-3. Click **ADD VPN** and give the new VPN a name simillar to **"MGMT SDDC# to SDDC#"**
+3. Click **ADD VPN** and give the new VPN a name simillar to **student 1 to student 6"**
 4. Select **Public IP Adrress** as your **Local IP Address** for the VPN. 
 5. Enter the **Remote Public IP** address of your assigned target SDDC (Get this information from your peer assigned to your paired SDDC)
 6. **Skip this Step** If your on-premises gateway is behidn a NAT device, enter the gateway address as the **Remote Private IP**. This IP address must match the local identity (IKE ID) sent by the on-premises VPN gateway. If this field is empty, the **Remote Public IP** field is used to match the local identity of the on-premises VPN gateway. 
