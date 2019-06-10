@@ -447,6 +447,15 @@ We will now begin the process of cloning this virtual machine.
 1. Click on **WorkloadDatastore** to ensure it is selected as the destination for the virtual machine.
 2. Click **Next** to continue.
 
+{% capture notice--custspec %}
+**Note:**
+Please skip adding the customization specification by not checking the box next to **Customize the operating system**
+{% endcapture %}
+
+<div class="notice--custspec">
+  {{ notice--custspec | markdownify }}
+</div>
+
 ### Select Cloning Options
 
 ![SDDC-clone-vm-043](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc043.jpg)
