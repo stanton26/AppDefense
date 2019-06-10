@@ -14,6 +14,8 @@ categories: labs
 
 In this lab you will pair up with another student group in order to simulate the setup and configuration tasks for VMware Site Recovery Manager
 
+This lab envrionment will configure a cloud to cloudd DR scenario. We will not be pairing Site Recovery with an on premise environment, however such configuratiton is also possible. 
+
 **Group Pairings** 
 Since we only have 10 SDDDCs in our environment we will be pairing in groups of 2 SDDC's per team.
 
@@ -54,11 +56,44 @@ Important Instructions for Site Recovery Exercises
 ![Screenshot](https://github-partner-lab-screenshots.s3-us-west-2.amazonaws.com/site+recovery+screenshots/2.jpg)
 
 3. Verify "Default extension ID" is selected and click **Acitvate**
+
 4. The activation of the service should take aboutt 10 to 15 min. 
 
 
-## Open Firewall Rules for Site Recovery
+## Configuring Network Connectivity for Site Recovery
 
+Site Recovery Components are installed on the management resource pool inside your SDDC. These are accessed behind the management gateway and do not have public IP addresses assigned to them but rather consume private infrastructure IP space  definedd during the deployment of the SDDC.
+
+Pairing Site Recovery to an on premise or cloud environment requires layer 3 connectivity either by IPSecVPN or Ddirect Connect. We have established this network connectivity in our previous "VPN-lab" If you have not completed this lab you will not be able to proceed. 
+
+### Management Gateway Firewall Configuration
+
+To enable VMware Site Recovery on your SDDC environment, you must create firewall rules between your on-premises or cloud data center and the Management Gateway.
+
+**Note:** You must enable Site Recovery on your SDDC before proceeding. 
+
+**Rules Requireed:**
+  1. Allow inbound service HTTPS (TCP 433) to vCenter (This rule should have been created on lab "Working with your SDDC)
+  2. Allow inbound service SRM Server Management (TCP 9086) to Site Recovery Manager
+  3. Allow inbound service VR Server Management (TCP 8043) to vSphere Replication
+  4. Allow outbound service Any (All Traffic) from vCenter, Site Recovery Manager, and vSphere Replication
+
+**Procedure:**
+1. Select Networking & Security > Edge Firewall > Management Gateway.
+![Screenshot](https://github-partner-lab-screenshots.s3-us-west-2.amazonaws.com/site+recovery+screenshots/4.jpg)
+
+2. Select Add New Rule > Name the rule Inbound SRM > for source enter any > for destination go to system defined and select site recovery manager >  for services select VMware Site Recovery SRM > set Action to Allow > Publish the Firewall rule. Your rule should look like this
+![Screenshot](https://github-partner-lab-screenshots.s3-us-west-2.amazonaws.com/site+recovery+screenshots/5.jpg)
+
+3. Select Add New Rule > Name the rule inbound VR  > for source enter any > for destination go to system defined and select 
+vSphere Replication > for services select VMware Site Recovery vSphere Replication > set Action to Allow  > Publish the Firewall rule. Your rule should look like this. 
+![Screenshot](https://github-partner-lab-screenshots.s3-us-west-2.amazonaws.com/site+recovery+screenshots/6.jpg)
+
+4. Select Add New Rule > Name the rule Outbound SRM > for source select Site Recovery Manager > for destination select any for services select any > for action select allow > Publish your firewall rule. Your rule should look like this. 
+![Screenshot](https://github-partner-lab-screenshots.s3-us-west-2.amazonaws.com/site+recovery+screenshots/7.jpg)
+
+5. Select Add New Rule > Name the rule Outbound VR > for source select vSphere Replication > for destination select any > for services select any > for action select allow > Publish your firewall rule. Your rule should look like this. 
+![Screenshot](https://github-partner-lab-screenshots.s3-us-west-2.amazonaws.com/site+recovery+screenshots/8.jpg)
 
 
 ### Firewall Rules for Site Recovery
