@@ -54,8 +54,6 @@ Important Instructions for Site Recovery Exercises
 ![Screenshot](https://github-partner-lab-screenshots.s3-us-west-2.amazonaws.com/site+recovery+screenshots/2.jpg)
 
 3. Verify "Default extension ID" is selected and click **Acitvate**
-![Screenshott](s3://github-partner-lab-screenshots/site recovery screenshots/3.jpg)
-
 4. The activation of the service should take aboutt 10 to 15 min. 
 
 
