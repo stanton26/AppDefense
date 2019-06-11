@@ -100,7 +100,7 @@ vSphere Replication > for services select VMware Site Recovery vSphere Replicati
 
 **Note**  Opening up your firewall to any source and destination  is not a recommended practice  for production environments. It is recommended you allow traffic only to your on premises environments or to another cloud SDDC for Site Recovery  Configuration. 
 
-### VMware Site Recovery - Site Pairing
+### VMware Site Recovery
 
 *IMPORTANT NOTE*: Only one person can do the Site Pairing exercise. Please decide between you and your partner who performs this step.
 
