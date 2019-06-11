@@ -98,9 +98,7 @@ vSphere Replication > for services select VMware Site Recovery vSphere Replicati
 ![Screenshot](https://github-partner-lab-screenshots.s3-us-west-2.amazonaws.com/site+recovery+screenshots/8.jpg)
 
 
-**Note**  Althoug in  this exercise we have written our rules as "any" as the source and the  destination we should not configure in suchh  manner for production environments but rather you should define your source as an IP_SET containing your protected infrastructure management subnets. 
-
-
+**Note**  Opening up your firewall to any source and destination  is not a recommended practice  for production environments. It is recommended you allow traffic only to your on premises environments or to another cloud SDDC for Site Recovery  Configuration. 
 
 ### VMware Site Recovery - Site Pairing
 
@@ -128,7 +126,14 @@ vSphere Replication > for services select VMware Site Recovery vSphere Replicati
 
 8. Ensure DNS server is set to 8.8.8.8 and click OK and close
 
-9. Your Widnows10 VM  should  now  have access to the internet. Open  a web browser in your Windows10 VM and log into <https://vmc.vmware.com/>
+9. Your Widnows10 VM  should  now  have access to the internet. Open  a web browser in your Windows10 VM and log into <https://cloud.vmware.com>
+
+10. Log in with  my VMware Credentials
+
+11. Click on "Console" on the top right corner
+![Screenshot](https://github-partner-lab-screenshots.s3-us-west-2.amazonaws.com/site+recovery+screenshots/11.jpg)
+
+12. 
 
 ### Site Pairing
 
