@@ -106,6 +106,32 @@ vSphere Replication > for services select VMware Site Recovery vSphere Replicati
 
 *IMPORTANT NOTE*: Only one person can do the Site Pairing exercise. Please decide between you and your partner who performs this step.
 
+**Note**  As mentioned before Site Recovery Components are only accessible behind the Management Gateway Firewall, therefore we will be u sing our Windows10 VM inside our SDDC for the following steps. 
+
+#### Accessing your Windows 10 VM
+
+1. Log into your vCenter's SDDC and open a web console to your win10-## VM you created in the operations lab. 
+![Screenshot](https://github-partner-lab-screenshots.s3-us-west-2.amazonaws.com/site+recovery+screenshots/9.jpg)
+
+2. Log into windows as "desktop-admin/VMware1!"
+
+3. Click the "Start Button" and type "Change Ethernet Settings" and click on the icon. 
+![Screenshot](https://github-partner-lab-screenshots.s3-us-west-2.amazonaws.com/site+recovery+screenshots/10.jpg)
+
+4. Click on  "Change Adapter Options" 
+
+5. Right click on "Ethernet 0"
+
+6. Select TCP/IPV4 and click on "Properties"
+
+7. Click "Obtain IP Address Automatically"
+
+8. Ensure DNS server is set to 8.8.8.8 and click OK and close
+
+9. Your Widnows10 VM  should  now  have access to the internet. Open  a web browser in your Windows10 VM and log into <https://vmc.vmware.com/>
+
+### Site Pairing
+
 ![](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/srm-lab/SRM16.jpg)
 
 1\. On your VMware Cloud on AWS Portal click on the *Add Ons* tab

@@ -116,6 +116,14 @@ Follow the same process as in the previous step and create AWS Outbound Firewall
 7. Publish Firewall Rule (Your firewall rule should look similar to the screenshot below)
     ![Outbound](https://s3-us-west-2.amazonaws.com/partner-workshop-screenshots/Outbound.jpg)
 
+#### Create an Outbound Firewall Rule to Allow VM Internet Access
+1. Click **ADD NEW RULE**
+2. **Name** - Internet Access
+3. **Source** - Select Group#
+4. **Destination** - Any
+5. **Services** - Any
+6. **Action** - Allow
+7. Publish Firewall Rule
 
 ## Log into VMware Cloud on AWS vCenter
 
