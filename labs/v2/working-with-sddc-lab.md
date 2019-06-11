@@ -325,6 +325,15 @@ In the vSphere client window already opened, deploy a template from the content 
 
 ![SDDC-deploy-vm-030](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/working-with-sddc-lab/sddc030.jpg)
 
+{% capture notice--custspec1 %}
+**Note:**
+Please skip adding the customization specification by not checking the box next to **Customize the operating system**
+{% endcapture %}
+
+<div class="notice--info">
+  {{ notice--custspec1 | markdownify }}
+</div>
+
 1. Enter **webserver01** for the virtual machine name.
 2. Click the **arrow** next to SDDC-Datacenter to expose the folders available.
 3. In VMware Cloud on AWS customer workloadds should be placed in the Workloads folder (or subfolder).  Click the **Workloads** folder.
@@ -446,6 +455,15 @@ We will now begin the process of cloning this virtual machine.
 
 1. Click on **WorkloadDatastore** to ensure it is selected as the destination for the virtual machine.
 2. Click **Next** to continue.
+
+{% capture notice--custspec %}
+**Note:**
+Please skip adding the customization specification by not checking the box next to **Customize the operating system**
+{% endcapture %}
+
+<div class="notice--info">
+  {{ notice--custspec | markdownify }}
+</div>
 
 ### Select Cloning Options
 
