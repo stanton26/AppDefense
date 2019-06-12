@@ -66,7 +66,7 @@ Your SDDC starts with a single default logical network, sddc-cgw-network-1 (For 
     ![Add New Segment](https://s3-us-west-2.amazonaws.com/partner-workshop-screenshots/segments.jpg)
 5. Name your segment student# (Where # is the student number assigned to you).
 6. Select type **Routed** 
-7. Enter gateway address 192.168.#.1 (Where # is the student number assigned to you)
+7. Enter gateway address 192.168.#.1\24 (Where # is the student number assigned to you)
 8. Ensure **Enable DHCP** is selected
 9. Enter the following DHCP IP range 192.168.#.100-192.168.#200 (Where # is the student number assigned to you)
 10. Enter DNS Suffix **corp.local**
