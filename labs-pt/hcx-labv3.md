@@ -69,7 +69,7 @@ Na área de trabalho do Horizon (workshop.vmc.ninja), abra o google e acesse o v
 
 ![HCX01](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/HCX/hcx01.jpg)
 
-1. Abra o Google e digite https: //vcenter-workshop.workshop.set.local/ui para o URL.
+1. Abra o Google e digite https://vcenter-workshop.workshop.set.local/ui para o URL.
 2. Digite suas credenciais de estudante (student#@set.local).
 3. Digite sua senha atribuída a você.
 4. Clique em **Login** para continuar.
