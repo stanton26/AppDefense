@@ -425,6 +425,7 @@ Feche a janela do explorador de arquivos
     ```
 
     Agora precisamos configurar a solicitação:
+    
 68. Clique em **+** para uma nova Request
 69. Mude request type para *POST*
 70. Recorte e cole o URL do canal slack acima para o *address*
