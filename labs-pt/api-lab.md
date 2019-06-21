@@ -258,7 +258,7 @@ Feche a janela do explorador de arquivos.
 
     ![Postman10](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/Postman10.jpg)
 
-    Agora que temos o Postman instalado e nossas amostras de REST em nosso sistema local, vamos importar a coleção VMC e usar algumas solicitações para construir nossa própria coleção.
+Agora que temos o Postman instalado e nossas amostras de REST em nosso sistema local, vamos importar a coleção VMC e usar algumas solicitações para construir nossa própria coleção.
 
 16. Clique em *Import*
 17. Clique em *Choose Files*
