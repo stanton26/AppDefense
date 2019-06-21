@@ -254,7 +254,7 @@ O Postman é muito fácil de instalar, então vamos começar.
 14. Desmarque a caixa
 15. Clique em *Extract*
 
-Feche a janela do explorador de arquivos
+Feche a janela do explorador de arquivos.
 
     ![Postman10](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/Postman10.jpg)
 
