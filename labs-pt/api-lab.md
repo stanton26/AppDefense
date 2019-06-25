@@ -250,14 +250,15 @@ O Postman é muito fácil de instalar, então vamos começar.
     ![Postman9](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/Postman9.jpg)
 
     Vamos manter o caminho do arquivo padrão.
+
 14. Desmarque a caixa
 15. Clique em *Extract*
 
-Feche a janela do explorador de arquivos
+Feche a janela do explorador de arquivos.
 
     ![Postman10](https://s3-us-west-2.amazonaws.com/vmc-workshops-images/APIs/Postman10.jpg)
 
-    Agora que temos o Postman instalado e nossas amostras de REST em nosso sistema local, vamos importar a coleção VMC e usar algumas solicitações para construir nossa própria coleção.
+Agora que temos o Postman instalado e nossas amostras de REST em nosso sistema local, vamos importar a coleção VMC e usar algumas solicitações para construir nossa própria coleção.
 
 16. Clique em *Import*
 17. Clique em *Choose Files*
@@ -425,6 +426,7 @@ Feche a janela do explorador de arquivos
     ```
 
     Agora precisamos configurar a solicitação:
+
 68. Clique em **+** para uma nova Request
 69. Mude request type para *POST*
 70. Recorte e cole o URL do canal slack acima para o *address*
