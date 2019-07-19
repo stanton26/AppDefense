@@ -9,13 +9,14 @@ author_profile: false
 categories: labs
 comments: true
 ---
-# Introduction
+
+## Introduction
 
 In this lab we are going to start with looking at the basic tasks which you will perform in the VMware Cloud on AWS user interface when you are administering the platform.
 
 ## Configuring SDDC Firewall Rules
 
-We will start by allowing inbound internet access to your vCenter managing your SDDC. We have already pre-created the VMware Cloud on AWS SDDC environment for you, in order to save time. 
+We will start by allowing inbound internet access to your vCenter managing your SDDC. We have already pre-created the VMware Cloud on AWS SDDC environment for you, in order to save time.
 
 In your browser of choice please login to <https://cloud.vmware.com> click on "Log in" at the top right hand corner of the screen.
     ![cloud.vmwware.com](https://s3-us-west-2.amazonaws.com/partner-workshop-screenshots/Login1.png)
@@ -49,7 +50,7 @@ Note: This step has to be done by one student only. If you are sharing your SDDC
 
 ![vCenter Rule](https://s3-us-west-2.amazonaws.com/partner-workshop-screenshots/add_vcenter_firewall.jpg)
 
-Note: In a production environment it is not recommended to open vCenter access from any source but rather from an established VPN connection to a trusted secure network. 
+Note: In a production environment it is not recommended to open vCenter access from any source but rather from an established VPN connection to a trusted secure network.
 
 ### Create Logical Segments
 
@@ -65,8 +66,8 @@ Your SDDC starts with a single default logical network, sddc-cgw-network-1 (For 
 4. Select **ADD SEGMENTS**
     ![Add New Segment](https://s3-us-west-2.amazonaws.com/partner-workshop-screenshots/segments.jpg)
 5. Name your segment student# (Where # is the student number assigned to you).
-6. Select type **Routed** 
-7. Enter gateway address 192.168.#.1\24 (Where # is the student number assigned to you)
+6. Select type **Routed**
+7. Enter gateway address 192.168.#.1/24 (Where # is the student number assigned to you)
 8. Ensure **Enable DHCP** is selected
 9. Enter the following DHCP IP range 192.168.#.100-192.168.#200 (Where # is the student number assigned to you)
 10. Enter DNS Suffix **corp.local**
@@ -85,13 +86,12 @@ We need to add an inbound firewall rule that allows traffic from our AWS VPC int
 1. Click **ADD NEW RULE**
 2. **Name** - Student# AWS Inbound
 3. **Source** - Connected VPC Prefixes
-4. For **Set Destination** click on "Create New Group" 
+4. For **Set Destination** click on "Create New Group"
     ![Create New Group](https://s3-us-west-2.amazonaws.com/partner-workshop-screenshots/create_new_group.jpg)
 
-    Note: Security Group is a group that categorizes VMs based on VM names, IP addresses, and matching criteria of VM name and security tag. 
+    Note: Security Group is a group that categorizes VMs based on VM names, IP addresses, and matching criteria of VM name and security tag.
 
-    Based on the matching Criteria, you can apply a configuration to all the VMs in the security group instead of applying the configuration to the VMs in the SDDC environment individually. 
-    
+    Based on the matching Criteria, you can apply a configuration to all the VMs in the security group instead of applying the configuration to the VMs in the SDDC environment individually.
     You can use the security groups when you configure Edge or Distributed Firewalls.
 
 5. Name the group "Group#" (Where # is the student number assigned to you)
@@ -111,12 +111,13 @@ Follow the same process as in the previous step and create AWS Outbound Firewall
 2. **Name** - Student# AWS Outbound
 3. **Source** - Select Group#
 4. **Destination** - Connected VPC Prefixes
-5. **Services** - Any 
+5. **Services** - Any
 6. **Action** - Allow
 7. Publish Firewall Rule (Your firewall rule should look similar to the screenshot below)
     ![Outbound](https://s3-us-west-2.amazonaws.com/partner-workshop-screenshots/Outbound.jpg)
 
 #### Create an Outbound Firewall Rule to Allow VM Internet Access
+
 1. Click **ADD NEW RULE**
 2. **Name** - Internet Access
 3. **Source** - Select Group#
@@ -189,7 +190,6 @@ You may already have a Content Library in your on-premises data center, you can 
 9. Click **Next**
 10. Highlight the **WorkloadDatastore** as the storage location
 11. Click **Next**
-12. Click **Finish**. Your content library should take about ~20 minutes to complete syncing. Syncing is required prior to proceeding to the next lab. You can take a break during this time prior to proceeding to lab #2 "AWS Integration" 
+12. Click **Finish**. Your content library should take about ~20 minutes to complete syncing. Syncing is required prior to proceeding to the next lab. You can take a break during this time prior to proceeding to lab #2 "AWS Integration"
 
 You have now successfully subscribed to a vSphere content library from your VMware Cloud on AWS vCenter instance.
-
