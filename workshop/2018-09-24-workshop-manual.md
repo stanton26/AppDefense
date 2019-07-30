@@ -1,46 +1,55 @@
 ---
 layout: single
-title: "VMware Cloud on AWS Workshop"
+title: "Discovery Mode"
 permalink: /workshop-manual/
 date: 2019-05-20
 tags: workshop
 classes: wide
 author_profile: false
 ---
-## Introduction
+## What is Discovery Mode? 
 
-The VMware Cloud on AWS workshop is your chance to test drive this unique solution in the market place in a classroom session with VMware Cloud on AWS experts and work through hands on lab exercises to understand and gain experience with the solution to understand how it can be used in your business.
+In Discovery Mode AppDefense creates a list of allowed behaviors to build a blueprint or a birth certificate of the natural state of the application.(Please note we recommend staying in discovery mode for at least 14 days) 
 
-The class is a one-day workshop in which we will set up a VMware SDDC environment in AWS, work through common administration activities of the platform and explore integrations with native AWS services and vRealize Suite solutions including vRealize Automation and vRealize Operations.
+## What is the Purpose of Discovery Mode? 
+This mode helps AppDefense to understand how the application must function so that AppDefense can identify malicious or unintended behaviors.
 
-## Workshop Details
+## What is learned in Discovery Mode? 
+Processes- ...  
+Behaviors-  are process executions (CLIs) and network activities (inbound and outbound connections) exhibited within a service.
 
-### Horizon Access
+## Viewing Behaviors 
 
-At the start of the workshop, your instructor will have given you logon details to use in a VMware Horizon session. In order to access details regarding how to connect to Horizon, you will have been directed to the following link to [Student Access Instructions](https://vmc-field-team.github.io/student-access/)
+On the "Behaviors" tab, click the behavior that you want to view.
 
-### VMware Cloud on AWS Org Access
+You can see the details by expanding > next to any of the services listed. You can expand the section next to CLI by clicking >.
 
-You will also receive details from your instructor regarding how to access your VMware Cloud on AWS organization where you will be able to use and configure your SDDC solution in AWS. Your instructor will inform you of these details when you start the lab exercises.
+ "Path" :is the location where the process was launched from within the OS file structure.
 
-### Workshop URL's
+Hash: Hash value on the process. This is an extra protection, in case a rogue process using a trusted name is launched.
 
-Below are a list of the URLs you will use over the course of the lab exercises.
+Beahvior analysis: Behavior analysis can be Unknown, Anomalous, or Verified. Analysis for behaviors is displayed for all Processes.
 
-VMware Cloud on AWS Login <https://vmc.vmware.com>
+Reputation: Process reputation can be Good, Bad, or Unknown.
 
-Swagger API Interface <https://vmc.vmware.com/swagger/index.html>
+Trust Score and Threat Score: The Trust Score and Threat Score values are provided by a back-end integration with a third-party reputation service for Windows-based services. This integration provides insight into behaviors that are learned which security team might not know. For Linux based systems, these scores are derived by integration from various package deployment sites.
 
-AWS Console <https://vmcworkshop.signin.aws.amazon.com/console>
+Outbound and Inbound Connections: These sections provide information on what ports and addresses are being listened to and communicated across.
 
-## Labs
+## Moving to Protected Mode: 
+Moving to Protected Mode is a simple proccess. Following the 14 day discovery period there are only a few steps to complete before moving to protected mode. 
 
-Listed below are the lab exercises which are available as part of this experience day event. Please ensure that you complete the **Working with your SDDC** lab, the **AWS Integration** lab relies on sections of the Working with your SDDC lab to be completed. Please note that you will not be able to complete all of the content. For this reason we typically state that the first 3 labs listed below are mandatory lab content. After those labs are complete you can choose your own path.
 
-Please enjoy these labs, if you have any questions, please do not hesitate to speak to the VMware Cloud on AWS specialists in the room with you.
+### Procedure for Moving to Protected 
 
-Lab Name | Description
-[Working with your SDDC](https://vmc-field-team.github.io/labs/v2/working-with-sddc-lab/){:target="_blank"} | Learn the basics of running a VMware on AWS SDDC environment
-[AWS Integration](https://vmc-field-team.github.io/labs/v2/aws-integration-lab/){:target="_blank"} | Learn how to integrate with native AWS services such as RDS.
-[VMware Cloud on AWS APIs](https://vmc-field-team.github.io/labs/v2/api-lab/){:target="_blank"} | Learn how to interact with VMware on AWS through APIs
-[VMware Hybrid Cloud Extension](https://vmc-field-team.github.io/labs/v2/hcx-labv3/){:target="_blank"} | Learn how VMware Hybrid Cloud Extension (HCX) technology can help with bulk and live migration to the VMware Cloud on AWS cloud platform
+1. Check the behavior chart in the scope dashboard. If more than a couple of behaviors (5+) are being learned over the last couple of days, this scope is not ready for protected, let it sit another couple of days. 
+2. Check for any malicious processes, integrity alerts, or ML checks. If you see any malicious activity (shown in red), investigate further and take action if needed. 
+3. Finally, identify any processes or behaviors that should be deleted/ added to blacklist based on internal best practices. 
+4. To add the selected scope to the Protected Mode, click the Verify and Protect button at the top of the page. 
+
+## Helpful URLs
+
+Below are a list of the URLs realated to Protected Mode that you may find useful:
+
+Moving to Protected Mode by Paige Clapper <https://www.youtube.com/watch?v=cssrfaDrPpY>
+

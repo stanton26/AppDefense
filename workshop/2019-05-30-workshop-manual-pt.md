@@ -1,46 +1,79 @@
 ---
 layout: single
-title: "VMware Cloud on AWS Workshop"
+title: "Rule Enforcement"
 permalink: /workshop-manual-pt/
 date: 2019-05-20
 tags: workshop
 classes: wide
 author_profile: false
 ---
-## Introdução
+## Introdcution to Rule Enforcement: 
+After the security scope is in the Protected Mode, you can still review and edit services associated with the scope.
 
-O workshop VMware Cloud on AWS é a sua chance de testar essa solução exclusiva no mercado em uma sessão dcom especialistas em VMware e AWS e trabalhar em exercícios práticos para entender e ganhar experiência com a solução para entender como ela pode ser usado em seu negócio.
+There are four vectors that are used to alert and remediate. By default, the only action for the Remediation rules is set to Alert and the enforcement is automatic. You can edit the rule settings. You can edit the settings based on the action that you want AppDefense to take.
 
-A aula é um workshop de um dia no qual criaremos um SDDC na AWS, trabalharemos por meio de atividades de administração da plataforma e exploraremos integrações com serviços nativos da AWS e muito mais.
+Enforce Outbound Connections: If AppDefense sees a new outbound connection from an allowed process, what do you want it to do?
+Enforce Inbound Connections: If AppDefense sees a new inbound connection from an allowed process, what do you want it to do?
+Enforce Guest OS Integrity: Windows-only. If AppDefense detects that the integrity of your operating system (OS) has been compromised, what do you like it to do?
+Enforce AppDefense Module Integrity: Windows-only. If AppDefense detects the integrity, the AppDefense Module has been compromised (potentially turned off), what do you like it to do?
+You cannot set automatic remediation action for the Guest module down alert. Remediation for this action can only be taken manually.
 
-## Detalhes do Workshop
 
-### Acesso ao VDI
+### NSX Only Quarantine: 
 
-No início do workshop, seu instrutor fornecerá detalhes de login para usar em uma sessão do VMware Horizon. Para acessar os detalhes sobre como se conectar ao Horizon, você será direcionado para o seguinte link para [Instruções de acesso do aluno] (https://vmc-field-team.github.io/student-access/)
+Quarantine is a remediation action that can be enforced by following this procedure: 
+1. Select your Scope from Dashboard. 
+2. Click on "Services" tab. 
+3. Select "Edit service."
+4. Click on "Rules" tab. 
+5. For your remediation 
+action select "Quarantine.
 
-### Acesso a Organização no VMware Cloud on AWS
+### Block 
 
-Você também receberá detalhes de seu instrutor sobre como acessar sua organização VMware Cloud on AWS, na qual poderá usar e configurar seu SDDC na AWS. Seu instrutor irá informá-lo desses detalhes quando você iniciar os exercícios de laboratório.
+Block is a remediation action that can be enforced by following this procedure: 
+1. Select your Scope from Dashboard. 
+2. Click on "Services" tab. 
+3. Select "Edit service."
+4. Click on "Rules" tab. 
+5. For your remediation 
+action select "Block and send alert"
 
-### Workshop URL's
 
-Abaixo está uma lista dos URLs que você usará ao longo dos exercícios de laboratório.
+### Suspend 
 
-VMware Cloud on AWS Login <https://vmc.vmware.com>
+Tgus action syspens the virtual Machine directly on Vcenter Server. 
 
-Swagger API Interface <https://vmc.vmware.com/swagger/index.html>
+Suspend is a remediation action that can be enforced by following this procedure: 
+1. Select your Scope from Dashboard. 
+2. Click on "Services" tab. 
+3. Select "Edit service."
+4. Click on "Rules" tab. 
+5. For your remediation 
+action select "Block and send alert"
 
-Console AWS <https://vmcworkshop.signin.aws.amazon.com/console>
+### Power Off
 
-## Laboratórios
+Virtual machine is powerted off directly on the vCetner Server.
 
-Abaixo estão listados os exercícios de laboratório que estão disponíveis como parte deste evento do dia da experiência. Certifique-se de realizar o laboratório **Trabalhando com seu SDDC**, o laboratório **Integração com AWS** depende de seções do laboratório Trabalhando com seu SDDC. Por favor, note que talvez você não poderá completar todo o conteúdo. Por esse motivo, geralmente afirmamos que os três primeiros laboratórios listados abaixo são obrigatórios. Depois que esses laboratórios estiverem concluídos, você poderá escolher seu próprio caminho.
+"Power Off" is a remediation action that can be enforced by following this procedure: 
+1. Select your Scope from Dashboard. 
+2. Click on "Services" tab. 
+3. Select "Edit service."
+4. Click on "Rules" tab. 
+5. For your remediation 
+action select "Power Off"
 
-Por favor, aproveite estes laboratórios, se você tiver alguma dúvida, por favor, não hesite em falar com o especialista na sala com você.
+### Snapshot 
 
-Lab Name | Description
-[Trabalhando com o seu SDDC](https://vmc-field-team.github.io/labs-pt/working-with-sddc-lab/){:target="_blank"} | Aprenda os conceitos básicos do VMware Cloud on AWS
-[Integração com AWS](https://vmc-field-team.github.io/labs-pt/aws-integration-lab/){:target="_blank"} | Aprenda a integrar o SDDC com serviços nativos da AWS, como RDS e EFS
-[VMware Cloud on AWS APIs](https://vmc-field-team.github.io/labs-pt/api-lab/){:target="_blank"} | Aprenda a interagir com o VMware Cloud on AWS por meio de APIs
-[VMware Hybrid Cloud Extension](https://vmc-field-team.github.io/labs-pt/hcx-labv3/){:target="_blank"} | Saiba como a tecnologia HCX (Hybrid Cloud Extension) da VMware pode ajudar com a migração em massa ou usando vMotion para a plataforma de nuvem VMware Cloud on AWS
+This action takes a snapshot of the virtual machine.
+
+Snapshot is a remediation action that can be enforced by following this procedure: 
+1. Select your Scope from Dashboard. 
+2. Click on "Services" tab. 
+3. Select "Edit service."
+4. Click on "Rules" tab. 
+5. For your remediation 
+action select "Snapshot"
+
+

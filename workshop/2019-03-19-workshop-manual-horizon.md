@@ -1,32 +1,40 @@
 ---
 layout: single
-title: "Horizon on VMware Cloud on AWS Workshop"
+title: "Protected Mode"
 permalink: /workshop-manual-horizon/
 date: 2019-03-19
 tags: workshop
 classes: wide
 author_profile: false
 ---
-## Introduction
+## What is Protected Mode? 
+In proteced Mode, application beahavior is locked down and rules are applied.
 
-The VMware Cloud on AWS workshop is your chance to test drive this unique solution in the market place in a classroom session with VMware Cloud on AWS experts and work through hands on lab exercises to understand and gain experience with the solution to understand how it can be used in your business.
+### What happens when I move my scope into Protected Mode? 
+When a scope is moved into protected mode,all application behavior is now locked down and rules and remediation actions are now enforced. The armor has been applied, and your application is now safe in Protected Mode.
 
-The class is a one-day workshop in which we will set up a VMware SDDC environment in AWS, work through common administration activities of the platform and explore integrations with native AWS services and vRealize Suite solutions including vRealize Automation and vRealize Operations.
-You will work through leveraging VMware Cloud on AWS as a target for DRaaS utilizing VMware Site Recovery Manager and VM Replication and will also have the opportunity to test drive Horizon 7 in the VMware Cloud on AWS platform.
 
-## Workshop Details
+## Alerts 
+What are Alerts? 
+- AppDefense learns the behaviors (discovery mode)  and sends alerts based on the rule settings.
+- Alert is a method available to monitor behaviors in AppDefense Manager. Any deviation from the known good state triggers an event or alert. The deviation can be due to process characteristics, process behavior, integrity of the Operating System (OS), or AppDefense module. The different kinds of events are seen on UI at two locations, Alerts page and under Events > Monitoring page.
 
-### VMware Cloud on AWS Org Access
+AppDefense classifies alerts based on their threat level. When you log in to AppDefense Manager, in the left navigation, click Alerts. The alerts are grouped based on the process name. (They will appear as: Critical, Serious, Minor)
 
-You will also receive details from your instructor regarding how to access your VMware Cloud on AWS organization where you will be able to use and configure your SDDC solution in AWS. Your instructor will inform you of these details when you start the lab exercises.
+## Events
+AppDefense generates different types and subtypes (categories) of alerts and events, with different severity levels. Alerts page displays the Event Type column. Following are the main events types that are listed under the Event Type column.
 
-### Workshop URL's
+Process driven events = Process Monitoring, Inbound coonnections, Outbound connections. 
 
-Below are a list of the URLs you will use over the course of the lab exercises. You can will have a access to these via the bookmarks file which we will import in the following step, they are referenced here as well for your convenience.
+System integrity driven events = Appdefense modeule Integrity, Gues OS Integrity
 
-VMware Cloud on AWS Login <https://vmc.vmware.com>
+Managment Driven Events= Management Alert, Guest module down, 
 
-Please enjoy these labs, if you have any questions, please do not hesitate to speak to the VMware Cloud on AWS specialists in the room with you.
+## Blacklist and Whiteliost 
+A Blacklist is an explicit listing of processes that are not allowed, when added to the Blacklist a process will be removed from every service in every scope.  A Whitelist is an explicit listing of processes that are allowed, once added to the Whitelist a process will be added to every service within every scope.  This can be applied in the service or in the "manage process" tab. 
 
-Lab Name | Description
-[Horizon in VMware Cloud on AWS](https://vmc-field-team.github.io/labs/v2/horizon-lab/){:target="_blank"} | Learn the basics of running Horizon on VMware Cloud on AWS
+### Helpful URL's
+
+Below are a list of the URLs related to protected mode: 
+
+Alert Classification by Nolan Karpinski <https://www.youtube.com/watch?v=QbmfQBalTGw&t=2s>
