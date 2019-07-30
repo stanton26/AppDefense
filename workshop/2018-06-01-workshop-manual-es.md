@@ -1,53 +1,59 @@
 ---
 layout: single
-title: "Taller de VMware Cloud on AWS"
+title: "Deploying AppDefense"
 permalink: /workshop-manual-es/
 date: 2018-09-08
 tags: workshop
 classes: wide
 author_profile: false
 ---
-# Introducción
+# Deployment Timeline
 
-El taller de VMware Cloud on AWS es su oportunidad de probar esta solución única en el mercado en una sesión de clase con expertos de VMware Cloud on AWS y trabajar en ejercicios prácticos para comprender y adquirir experiencia con la solución para comprender cómo puede ser utilizado en su empresa.
+AppDefense takes between 4-6 weeks to fully deploy and get operationalized. Below is an overview of the weekly deployment schedule once all pre-requistes are met: 
 
-La clase es una actividad de un día en la que examinaremos las actividades de configuración de un ambiente de VMware SDDC en AWS y ejecutaremos las actividades de administración comunes de la plataforma; luego, comprenderá cómo puede ejecutar cargas de trabajo en VMware Cloud en AWS. e integrar con servicios nativos de AWS. También examinaremos como operar el ambiente de VMware Cloud on AWS a través de APIs como también examinaremos la herramienta de VMware Hybrid Cloud Extension (HCX) que nos permitirá migrar máquinas virtuales a VMware Cloud on AWS en vivo utilizando vMotion o en grupos utilizando tecnología de vSphere Replication.
+Week One:
+Deploy the Appdefense Appliance, Host,  and Guest Modules. (This step)
+Set up scopes and Services
 
-## Detalles del taller
+Week Two-Three:
+Once Scopes and Services are set up discovery will begin 
+No user action for this period of time
 
-### Accesso en Horizon
+Week Four-Five:
+Check the Scope Dashboard to see if the number of behaviors learned over time has tapered off
+Move to protected mode
+Integrate with internal SIEM
 
-Al comienzo del taller, su instructor le habrá proporcionado los datos de inicio de sesión para usar en una sesión de VDI en VMware Horizon 7 instalado en la plataforma de VMware Cloud on AWS. Para acceder a los detalles sobre cómo conectarse a Horizon, favor dirigirse al siguiente enlace [Student Access Instructions](https://vmc-field-team.github.io/student-access/)
+Beyond: 
+Identify and implement desired rules for service(s)
 
-### Acceso a la Org de VMware Cloud on AWS
+## Deployment Procedure 
+1. Deploy the OVA
+include networking requirement info/ admin and root password tips
+2. Register appliance
+SSO Creds/ best practice tips
+3. Deploy host from AppDefense Manager
+This needs to be done with every host that will have AppDefense enabled VMs
+ This does not require a reboot!
+4. Deploy Guest Module (through VMtools)
+you will need version 10.3.2 or higher of VMtools
+- Please plan for a reboot with the guest module Install
+- Check some of our blogs for scripting tips to deploy to many VMs
+- Enable guest integrity
+- Deploy the guest module
 
-También recibirá detalles de su instructor de cómo tener acceso a su organización de VMware Cloud on AWS donde podrá utilizar y configurar la solución de SDDC en AWS. Su instructor le informará estos detalles antes de empezar los ejercicios de este taller.
+### Helpful URL's
 
-### URL's del taller
+Find helpful links to documentation and videos related to deployment below
 
-Abajo encontará URLs que se usarán durante los ejercicios del taller.
+Appdefense Deployment cycle explained by Paige Clapper: <https://www.youtube.com/watch?v=PYH9Cdg6F9Q&t=1s>
 
-VMware Cloud on AWS Login <https://vmc.vmware.com>
+Deployment Tutorial:  <https://www.youtube.com/watch?v=D2nMRzmJXF0&t=40s>
 
-Swagger API Interface <https://vmc.vmware.com/swagger/index.html>
 
-AWS Console <https://vmcworkshop.signin.aws.amazon.com/console>
-
-## Módulos
-
-A continuación se enumeran los ejercicios de laboratorio que están disponibles como parte de este evento del día de experiencia. Asegúrese de completar el ejercicio **Trabajando con un SDDC**, el laboratorio **Integración con AWS** se basa en las secciones del ejercicio **Trabajando con un SDDC** para completar. Tenga en cuenta que no podrá completar todo el contenido. Por esta razón, generalmente declaramos que los primeros 3 laboratorios que se enumeran a continuación son contenidos de laboratorio obligatorios. Después de que esos laboratorios estén completos, puedes elegir tu propio camino.
 <!---
 If you are interested in exploring the DRaaS use case in the **VMware Site Recovery Manager** lab, you will need to pair up with another team so that one team can be the "protected site" and the other team can be the "failover" site. All other labs can be completed individually.
 -->
-
-Disfrute los ejercicios, si tiene alguna duda, por favor no dude en preguntarles a los especialistas de VMware Cloud on AWS que se encuentran con usted hoy.
-
-Nombre de Módulos | Descripción
-[Trabajando con un SDDC](https://vmc-field-team.github.io/labs-es/working-with-sddc-lab/){:target="_blank"} | Aprenda los conceptos básicos de un ambiente de VMware Cloud on AWS SDDC
-[Integración con AWS](https://vmc-field-team.github.io/labs-es/aws-integration-lab/){:target="_blank"} | Aprenda como hacer integraciones con servicios nativos de AWS como RDS y EFS
-[VMware Cloud on AWS APIs](https://vmc-field-team.github.io/labs-es/api-lab/){:target="_blank"} | Aprenda a interactuar con VMware Cloud on AWS a través de APIs
-[VMware Hybrid Cloud Extension](https://vmc-field-team.github.io/labs-es/hcx-lab/){:target="_blank"} | Aprenda como la tecnología de VMware Hybrid Cloud Extension (HCX) le puede ayudar a hacer migraciones de máquinas virtuales en vivo (vMotion) o en masa (Bulk Migration) hacia la plataforma de VMware Cloud on AWS
-
 
 <!--
 [VMware Site Recovery Manager](https://vmc-field-team.github.io/labs/v2/srm-lab/){:target="_blank"} | Learn how you can utilize VMware on AWS for DRaaS use cases
